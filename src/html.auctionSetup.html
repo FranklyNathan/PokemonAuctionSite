@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Setup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/input/input.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+  </head>
+
+  <body style="padding: 1rem">
+    <div style="display: flex; width: 100%; justify-content: center">
+      <h1 style="background-color: var(--container-bg-color); padding: 0.5rem 1rem; border: 1px solid black">Auction Setup</h1>
+    </div>
+    <sl-dialog id="welcome-dialog" open label="Welcome!">
+      <p>This is an auction style draft app for fantasy sports leagues.</p>
+      <p>Use the form to enter all your league's teams and the available funds for each.</p>
+      <p>
+        Upload a CSV file (with at least "name", "team", and "position" headers) of the players available to draft. If you are in a keeper
+        league, add the "drafted_by_id" column to the CSV and set it to the team ID of the team that drafted the player. The team ID
+        corresponds to the order of the teams entered in the form, starting at 1 (same as the draft order).
+      </p>
+      <p>Once you've set up the auction, send the link to your league mates so they can join your auction!</p>
+      <sl-button id="test-auction" slot="footer" variant="primary" href="/test">Test Auction</sl-button>
+      <sl-button id="custom-auction" slot="footer" variant="primary">Custom Auction</sl-button>
+    </sl-dialog>
+    <form
+      id="form"
+      method="post"
+      action="new-auction"
+      enctype="multipart/form-data"
+      style="display: flex; flex-direction: column; align-items: center; padding-bottom: 2rem"
+    >
+      <div
+        style="
+          background-color: var(--container-bg-color);
+          border-radius: 0;
+          border: 1px solid black;
+          padding: 1rem;
+          min-width: 10rem;
+          max-width: 60rem;
+          margin-bottom: 2rem;
+        "
+      >
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between">
+          <sl-input
+            id="numTeams"
+            name="numTeams"
+            label="Number of Teams"
+            type="number"
+            value="8"
+            min="2"
+            max="100"
+            step="1"
+            required
+            inputmode="decimal"
+            pattern="[0-9]+"
+            style="padding: 1rem"
+            class="label-no-move-input"
+            size="small"
+          ></sl-input>
+          <div style="display: flex; flex-wrap: wrap; align-items: center">
+            <sl-input
+              id="defaultFunds"
+              name="defaultFunds"
+              label="Default Funds"
+              type="number"
+              value="200"
+              min="0"
+              max="1000000"
+              step="1"
+              required
+              inputmode="decimal"
+              pattern="[0-9]+"
+              style="padding: 1rem"
+              class="label-no-move-input"
+              size="small"
+            ></sl-input>
+            <sl-button id="updateDefaultFunds" size="small"> Set All to Default</sl-button>
+          </div>
+        </div>
+        <div style="font-size: x-small">Draft Order</div>
+        <div id="teamNames" style="margin-bottom: 3rem"></div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem">
+          <sl-input
+            id="biddingTimeLimit"
+            name="biddingTimeLimit"
+            label="Bidding Time Limit (seconds)"
+            help-text="The first bidding time limit after player selection is doubled so teams can look up the player."
+            type="number"
+            value="10"
+            min="5"
+            max="60"
+            step="1"
+            required
+            inputmode="decimal"
+            pattern="[0-9]+"
+            style="padding: 1rem; max-width: 20rem"
+            class="label-no-move-input"
+            size="small"
+          ></sl-input>
+          <sl-input
+            id="playerSelectionTimeLimit"
+            name="playerSelectionTimeLimit"
+            label="Player Selection Time Limit (seconds)"
+            type="number"
+            value="45"
+            min="10"
+            max="180"
+            step="1"
+            required
+            inputmode="decimal"
+            pattern="[0-9]+"
+            style="padding: 1rem; max-width: 20rem"
+            class="label-no-move-input"
+            size="small"
+          ></sl-input>
+          <sl-input
+            id="maxRosterSize"
+            name="maxRosterSize"
+            label="Max Roster Size"
+            type="number"
+            value="19"
+            min="1"
+            max="100"
+            step="1"
+            required
+            inputmode="decimal"
+            pattern="[0-9]+"
+            style="padding: 1rem; max-width: 20rem"
+            class="label-no-move-input"
+            size="small"
+          ></sl-input>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
+        <input
+          id="csvInput"
+          name="csvInput"
+          type="file"
+          accept=".csv"
+          required
+          style="opacity: 0; height: 0; max-height: 0; margin-bottom: -1rem"
+        />
+        <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name', 'position', and 'team'">
+          Upload Players CSV
+        </sl-button>
+        <div id="csvFileName" style="height: 1rem"></div>
+      </div>
+
+      <sl-button type="submit" id="formSubmit" style="align-self: center; margin-top: 3rem"> Create Auction! </sl-button>
+    </form>
+  </body>
+
+  <script type="module">
+    // stop the "flash-of-undefined-components" by waiting until all components are registered.
+    await Promise.allSettled([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-input')]);
+    // Add the `ready` class so the UI fades in.
+    document.body.classList.add('ready');
+
+    document.getElementById('custom-auction').addEventListener('click', (e) => {
+      document.getElementById('welcome-dialog')?.hide();
+    });
+
+    const numTeamsEl = document.getElementById('numTeams');
+    const defaultFundsEl = document.getElementById('defaultFunds');
+    const updateDefaultFundsEl = document.getElementById('updateDefaultFunds');
+    const teamNamesContainer = document.getElementById('teamNames');
+    const formEl = document.getElementById('form');
+
+    function teamNameFundsHTML(n) {
+      return `
+        <div id="team${n}Config" style="display: flex; flex-wrap: wrap; align-content: center; gap: 0.5rem; padding-top: 0.5rem">
+          <div style="flex: 6; display: flex; font-weight: bold; align-items: center; justify-content: center;">${n + 1}</div>
+          <sl-input name="team${n}Name" class="requiredConfig" placeholder="Team ${n + 1} Name" style="flex: 74;" pattern="[a-zA-Z0-9']+" title="Name must not use any special characters!" maxlength="50" autocomplete="off"></sl-input>
+          <sl-input name="team${n}Funds" class="requiredConfig default-funds" placeholder="Available Funds" type="number" min="0" max="1000000" step="1" title="Integer value" inputmode="decimal" style="flex: 20;" autocomplete="off"></sl-input>
+        </div>`;
+    }
+
+    let numTeams = 0; // initial number of teams
+    function updateTeamNameInputs(newNumTeams) {
+      // adds or removes team configurations, keeping existing team config HTML untouched
+      //   to prevent data loss
+      const diff = newNumTeams - numTeams;
+      if (diff > 0) {
+        // add more team configs
+        for (let i = numTeams; i < newNumTeams; i++) {
+          // insert the new HTML to the DOM.
+          teamNamesContainer.insertAdjacentHTML('beforeend', teamNameFundsHTML(i));
+        }
+      } else {
+        // remove team configs
+        for (let i = numTeams - 1; i >= newNumTeams; i--) {
+          document.getElementById(`team${i}Config`)?.remove();
+        }
+      }
+      numTeams = newNumTeams; // update the stored value
+    }
+
+    updateTeamNameInputs(8); // create the initial inputs for the teams
+
+    // add the correct number of team detail sections when the numTeams input value changes
+    numTeamsEl.addEventListener('sl-change', (event) => {
+      numTeamsEl.reportValidity();
+      if (numTeamsEl.checkValidity()) {
+        // convert string to number!
+        updateTeamNameInputs(+numTeamsEl.value);
+      }
+    });
+
+    // update all teams with the default funds when button is clicked
+    updateDefaultFundsEl.addEventListener('click', () => {
+      if (defaultFundsEl.checkValidity()) {
+        document.querySelectorAll('sl-input.default-funds').forEach((el) => (el.value = defaultFundsEl.value));
+      }
+    });
+
+    /////////////////////////
+    // custom form validation
+    // dynamically adding/removing inputs screws with the built in validation
+    /////////////////////////
+    formEl.addEventListener('submit', () => {
+      // Prevent the default form submission initially
+      event.preventDefault();
+
+      let valid = true;
+      for (const input of document.querySelectorAll('.requiredConfig')) {
+        if (!input.checkValidity() || input.value == '') {
+          input.focus();
+          input.reportValidity();
+          valid = false;
+          break;
+        }
+      }
+
+      if (valid) {
+        // continue with regular validation
+        formEl.submit();
+      }
+    });
+
+    //////////////////
+    // CSV input stuff
+    //////////////////
+
+    // wire up the more stylish button to click the hidden file input
+    const csvSelectEl = document.getElementById('csvSelect');
+    const csvInputEl = document.getElementById('csvInput');
+    const csvFileNameEl = document.getElementById('csvFileName');
+
+    csvSelectEl.addEventListener(
+      'click',
+      () => {
+        if (csvInputEl) csvInputEl.click();
+      },
+      false,
+    );
+    // show the uploaded file name
+    csvInputEl.addEventListener('change', () => {
+      if (csvInputEl.files && csvInputEl.files.length > 0) {
+        csvFileNameEl.innerHTML = '📄 ' + csvInputEl.files[0].name;
+      } else {
+        csvFileNameEl.innerHTML = '';
+      }
+    });
+  </script>
+</html>

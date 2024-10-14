@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- shoelace components -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/alert/alert.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tooltip/tooltip.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio/radio.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio-group/radio-group.js"
+    ></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/card/card.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/animation/animation.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/input/input.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/badge/badge.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/progress-bar/progress-bar.js"
+    ></script>
+    <script src="vendor/ag-grid.js"></script>
+    <script src="vendor/confetti.js"></script>
+    <script src="vendor/papaparse.js"></script>
+  </head>
+
+  <body>
+    <div style="display: flex; flex-direction: column; height: 100%; padding: 1rem; overflow-x: auto; overflow-y: hidden">
+      <!-- Top section with teams -->
+      <div style="width: 100%; display: flex; background-color: var(--container-bg-color); border: 1px solid black; padding: 0.2rem">
+        <div
+          id="teamsSection"
+          style="
+            flex: 4;
+            display: flex;
+            justify-content: stretch;
+            gap: 0.4rem;
+            height: fit-content;
+            min-height: fit-content;
+            padding: 0.4rem;
+            margin-right: 0.5rem;
+            border-right: 1px solid black;
+            overflow-x: auto;
+          "
+        ></div>
+        <div
+          id="doneTeamsSection"
+          style="
+            flex: 1;
+            display: flex;
+            justify-content: stretch;
+            gap: 0.4rem;
+            height: fit-content;
+            min-height: fit-content;
+            padding: 0.4rem;
+            overflow-x: auto;
+          "
+        ></div>
+      </div>
+      <!-- center content container -->
+      <div style="display: flex; justify-content: space-between; gap: 1rem; height: 100%; padding-top: 1rem">
+        <!-- Player list -->
+        <div id="players-table-wrapper" style="width: 75%" class="ag-theme-balham"></div>
+
+        <!-- right side section with timer, current bid, player up for auction, etc -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem; height: 100%">
+          <div
+            style="
+              flex: 8;
+              flex-shrink: 0;
+              position: relative;
+              background-color: var(--container-bg-color);
+              border: 1px solid black;
+              padding-top: 4rem;
+              padding-bottom: 1rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div style="position: absolute; top: 0; width: 100%; padding: 1rem">
+              <sl-progress-bar id="time" value="0"></sl-progress-bar>
+            </div>
+
+            <div id="player-card-container" style="display: flex; flex-direction: column; align-items: center; width: 100%">
+              <div id="waiting-msg" style="padding: 0 1rem; text-wrap: wrap; font-size: large; text-align: center"></div>
+              <sl-card id="player" hidden class="player-card" style="width: 90%; max-width: 25rem; min-height: 5rem"></sl-card>
+            </div>
+
+            <span id="ready-up-container" hidden>
+              <sl-button id="ready-up" size="large" style="width: 6rem">
+                <sl-animation name="flash" easing="ease-in-out" duration="2000" play>
+                  <strong>Ready Up!</strong>
+                </sl-animation>
+              </sl-button>
+            </span>
+            <div style="display: flex; justify-content: center; gap: 1rem">
+              <div id="highest-bidder" style="max-width: 15rem; overflow: hidden"></div>
+              <sl-animation id="current-bid-animation" name="tada" easing="linear" duration="1000" iterations="1">
+                <div id="current-bid" class="current-bid" style="font-size: xx-large"></div>
+              </sl-animation>
+            </div>
+            <div style="width: 100%; padding-left: 0.5rem; padding-right: 0.5rem">
+              <span id="raise-buttons-label">raise</span>
+              <div
+                style="
+                  display: flex;
+                  width: 100%;
+                  justify-content: space-evenly;
+                  border: 1px solid black;
+                  border-radius: 0;
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  background: white;
+                "
+              >
+                <sl-button id="raise1" disabled value="1" class="bet fixed-bet" style="width: 4rem"> $1 </sl-button>
+                <sl-button id="raise2" disabled value="2" class="bet fixed-bet" style="width: 4rem"> $2 </sl-button>
+                <sl-button id="raise5" disabled value="5" class="bet fixed-bet" style="width: 4rem"> $5 </sl-button>
+                <sl-button id="raise10" disabled value="10" class="bet fixed-bet" style="width: 4rem"> $10 </sl-button>
+              </div>
+              <div style="display: flex; margin-top: 2rem; justify-content: center; gap: 1rem">
+                <sl-input
+                  id="raise-input"
+                  type="number"
+                  style="width: 7rem; box-shadow: var(--shadow-color) 0.15rem 0.15rem"
+                  min="1"
+                  step="1"
+                  inputmode="decimal"
+                ></sl-input>
+                <sl-button id="raise" disabled class="bet"> Custom Bet </sl-button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fade-bottom"
+            style="
+              position: relative;
+              width: 100%;
+              flex: 1;
+              max-height: 5rem;
+              overflow: hidden;
+              border: 1px solid black;
+              border-radius: 0;
+              background-color: var(--container-bg-color);
+            "
+          >
+            <div
+              id="draft-log"
+              style="
+                display: flex;
+                flex-direction: column;
+                max-height: 5rem;
+                padding: 0.4rem 0;
+                gap: 0.5rem;
+                width: 100%;
+                font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+                line-height: 1em;
+                overflow-y: scroll;
+              "
+            ></div>
+          </div>
+          <!-- right side section -->
+        </div>
+      </div>
+    </div>
+
+    <sl-dialog id="teamSelectionDialog" label="Select Your Team" style="--width: 50vw">
+      <div id="dialogContent" style="display: flex; gap: 1rem; flex-wrap: wrap"></div>
+    </sl-dialog>
+
+    <sl-dialog id="disconnectedDialog" label="Disconnected!">
+      <div style="display: flex; justify-content: space-between">
+        Reload the page to reconnect.
+        <sl-button id="refreshButton" slot="footer" variant="primary">Reload</sl-button>
+      </div>
+    </sl-dialog>
+
+    <sl-dialog id="noTeamsDialog" label="All Teams Connected!">
+      <div style="display: flex; justify-content: space-between">
+        All teams have already connected to this auction. If someone took your spot, call them and give them an earful.
+        <sl-button id="refreshButton2" slot="footer" variant="primary">Reload</sl-button>
+      </div>
+    </sl-dialog>
+
+    <!--
+      define some reusable templates
+    -->
+    <template id="participant-template">
+      <style>
+        .ready {
+          background-color: var(--sl-color-green-200);
+        }
+        .waiting {
+          background-color: var(--sl-color-amber-200);
+        }
+        .disconnected {
+          color: gray;
+          background-color: var(--sl-color-rose-200);
+        }
+      </style>
+      <div style="position: relative">
+        <div style="position: absolute; left: 0.2rem; font-size: smaller; color: gray; cursor: default">
+          <sl-tooltip content="Draft Position" hoist style="--sl-tooltip-arrow-size: 0">
+            <slot name="draft-position"></slot>
+          </sl-tooltip>
+        </div>
+        <div id="top-right" style="position: absolute; right: 0.2rem; top: 0.2rem; cursor: default"></div>
+        <div style="position: absolute; bottom: 0.3rem; left: 0.2rem; font-size: smaller; font-weight: bold; color: gray; cursor: default">
+          <slot name="lower-left-content">
+            <sl-tooltip content="Disconnected" hoist style="--sl-tooltip-arrow-size: 0"> D </sl-tooltip>
+          </slot>
+        </div>
+        <div style="position: absolute; bottom: 0.3rem; right: 0.2rem; font-size: smaller; color: gray; cursor: default">
+          <sl-tooltip content="Roster Count" hoist style="--sl-tooltip-arrow-size: 0">
+            <slot name="lower-right-content"></slot>
+          </sl-tooltip>
+        </div>
+        <div
+          id="main-content"
+          class="disconnected"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            min-width: 5rem;
+            height: 4rem;
+            border-radius: 0;
+            border: 1px solid black;
+            border-bottom: 3px solid gray;
+          "
+        >
+          <div><slot name="participant-name"></slot></div>
+          <div><slot name="remaining-funds"></slot></div>
+        </div>
+      </div>
+    </template>
+  </body>
+
+  <script type="module">
+    const SECONDS = 1000;
+    const ctx = {
+      ws: null, // websocket
+      // type Team = {
+      //   clientId: number;
+      //   teamName: string;
+      //   remainingFunds: number;
+      //   connected: boolean;
+      //   ready: boolean;  // team has selected they are ready to start the auction
+      //   rosterCount: number;
+      // }
+      // the actual teams map is injected into this HTML by the server, replacing the string replace target below
+      teams: {}, // this is the target for a string replace server side
+      playersTable: null,
+      playersTableData: [],
+      myClientId: undefined, // number
+      stateId: 'pre_auction', // this is the target for a string replace server side
+      selectedPlayerId: null, // number
+      currentBid: null, // number
+      highestBidder: null, // number
+      currentlySelectingTeam: null, // number
+      timer: null, // CountDownTimer
+      currentTimeLimit: null,
+      biddingTimeLimit: null, // number
+      playerSelectionTimeLimit: null, // number
+      maxRosterSize: null, // number   // this is the target for a string replace server side
+      extraPlayerStatsFields: [], // holds IDs of extra fields that were added to the players data
+    };
+
+    ///////////
+    // define the reusable web component templates from the above HTML
+    ///////////
+    customElements.define(
+      'participant-el',
+      class extends HTMLElement {
+        constructor() {
+          super();
+          let participant = document.getElementById('participant-template');
+          let myparticipant = participant.content;
+
+          const shadowRoot = this.attachShadow({ mode: 'open' }).appendChild(myparticipant.cloneNode(true));
+        }
+      },
+    );
+
+    // module imports
+    import { CountDownTimer } from './modules/CountDownTimer.js';
+    import { initTeamSelection } from './modules/teamSelectionModal.js';
+    import { setTimerTime, initBidButtonListeners } from './modules/html.js';
+    import { loadPlayersData } from './modules/playersTable.js';
+
+    ctx.timer = new CountDownTimer(60 * SECONDS);
+    // set the timer to update the UI on each "tick"
+    ctx.timer.onTick((remaining, parsed) => {
+      setTimerTime(
+        `${String(parsed.minutes).padStart(2, '0')}:${String(parsed.seconds).padStart(2, '0')}`,
+        remaining,
+        ctx.currentTimeLimit,
+      );
+    });
+
+    // stop the "flash-of-undefined-components" by waiting until all components are registered.
+    await Promise.allSettled([
+      customElements.whenDefined('sl-button'),
+      customElements.whenDefined('sl-dialog'),
+      customElements.whenDefined('sl-radio'),
+      customElements.whenDefined('sl-radio-group'),
+      customElements.whenDefined('sl-progress-bar'),
+    ]);
+    // Add the `ready` class so the UI fades in.
+    document.body.classList.add('ready');
+    // team selection needs the sl-dialog component to be defined
+    initTeamSelection(ctx);
+    initBidButtonListeners(ctx);
+    await loadPlayersData(ctx);
+    document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
+    document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());
+  </script>
+</html>

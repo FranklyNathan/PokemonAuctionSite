@@ -1,0 +1,38 @@
+{
+  "clientMap": {
+    "0": {
+      "clientId": 0,
+      "ws": null,
+      "teamName": "Fisher",
+      "initialFunds": 200,
+      "remainingFunds": 200,
+      "ready": false,
+      "connected": false
+    },
+    "1": {
+      "clientId": 1,
+      "ws": null,
+      "teamName": "Nathaniel",
+      "initialFunds": 10,
+      "remainingFunds": 10,
+      "ready": false,
+      "connected": false
+    },
+    "2": {
+      "clientId": 2,
+      "ws": null,
+      "teamName": "Spencer",
+      "initialFunds": 50,
+      "remainingFunds": 50,
+      "ready": false,
+      "connected": false
+    }
+  },
+  "maxRosterSize": 3,
+  "draftOrder": [0, 1, 2],
+  "draftPosition": 0,
+  "serverState": "pre_auction",
+  "clientIdIncrementer": 3,
+  "biddingTimeLimit": 10000,
+  "playerSelectionTimeLimit": 30000
+}

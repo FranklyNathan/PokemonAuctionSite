@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- shoelace components -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/alert/alert.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio/radio.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio-group/radio-group.js"
+    ></script>
+    <script src="../vendor/ag-grid.js"></script>
+    <script src="../vendor/papaparse.js"></script>
+  </head>
+
+  <body style="display: flex; flex-direction: column; align-items: center; height: 100vh; margin: 0; padding: 2rem">
+    <h1 style="background-color: var(--sl-color-gray-50); padding: 0.5rem 1rem; border: 1px solid black">Results</h1>
+    <div id="players-table-wrapper" style="height: 100%; width: 100%; margin-bottom: 2rem" class="ag-theme-balham"></div>
+    <sl-button href="#" disabled download="auction-results.csv" id="download">Download CSV</sl-button>
+  </body>
+
+  <script type="module">
+    import { loadResultsData } from '../modules/playersTable.js';
+    const loadResultsPromise = loadResultsData();
+
+    await customElements.whenDefined('sl-button');
+    document.body.classList.add('ready');
+
+    const csvStr = await loadResultsPromise;
+
+    const downloadEl = document.getElementById('download');
+    downloadEl.removeAttribute('disabled');
+    downloadEl.addEventListener('click', function (event) {
+      // Set the href of the download link
+      downloadEl.setAttribute('href', URL.createObjectURL(new Blob(csvStr, { type: 'text/plain' })));
+    });
+  </script>
+</html>

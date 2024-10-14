@@ -1,0 +1,23 @@
+orank,name,team,position,goals,assists,points,plus/minus,powerplay_points,shots_on_goal,hits,blocks,wins,saves,shots_against,save_percentage,drafted_by_id,cost
+1,Connor McDavid,Edmonton Oilers,C,32,100,132,35,44,263,118,39,,,,,,
+2,Nathan MacKinnon,Colorado Avalanche,C,51,89,140,35,48,405,55,69,,,,,,
+3,Nikita Kucherov,Tampa Bay Lightning,RW,44,100,144,8,53,306,45,35,,,,,,
+4,Auston Matthews,Toronto Maple Leafs,C,69,38,107,31,29,369,89,93,,,,,,
+5,David Pastrnak,Boston Bruins,RW,47,63,110,21,35,382,70,19,,,,,,
+6,Artemi Panarin,New York Rangers,LW,49,71,120,18,44,303,18,15,,,,,1,29
+7,Leon Draisaitl,Edmonton Oilers,"C,LW",41,65,106,26,39,217,58,26,,,,,,
+8,Mikko Rantanen,Colorado Avalanche,RW,42,62,104,19,40,271,53,49,,,,,,
+9,Cale Makar,Colorado Avalanche,D,21,69,90,15,39,231,37,148,,,,,,
+10,William Nylander,Toronto Maple Leafs,RW,40,58,98,1,35,316,32,29,,,,,,
+11,J.T. Miller,Vancouver Canucks,"C,RW",37,66,103,32,40,194,217,61,,,,,,
+12,Matthew Tkachuk,Florida Panthers,"LW,RW",26,62,88,19,32,280,151,28,,,,,,
+13,Kirill Kaprizov,Minnesota Wild,LW,46,50,96,11,41,277,55,38,,,,,,
+14,Jack Hughes,New Jersey Devils,"C,LW",27,47,74,-12,31,274,11,24,,,,,2,22
+15,Brady Tkachuk,Ottawa Senators,"C,LW",37,37,74,1,22,357,294,34,,,,,,
+16,Sam Reinhart,Florida Panthers,"C,RW",57,37,94,29,34,233,78,66,,,,,,
+17,Quinn Hughes,Vancouver Canucks,D,17,75,92,38,38,199,29,55,,,,,,
+18,Sidney Crosby,Pittsburgh Penguins,C,42,52,94,7,23,278,101,37,,,,,,
+19,Zach Hyman,Edmonton Oilers,"LW,RW",54,23,77,36,20,290,87,37,,,,,,
+20,Filip Forsberg,Nashville Predators,LW,48,46,94,16,32,347,141,44,,,,,,
+27,Igor Shesterkin,New York Rangers,G,,,,,,,,,36,1465,1606,0.912,,
+28,Jeremy Swayman,Boston Bruins,G,,,,,,,,,25,1179,1287,0.916,,

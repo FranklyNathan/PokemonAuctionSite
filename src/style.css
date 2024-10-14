@@ -1,0 +1,148 @@
+:root {
+    --shadow-color: #b4b4b4;
+    --container-bg-color: var(--sl-color-gray-100);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--sl-font-sans);
+}
+body {
+    opacity: 0;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* background-color: #45474b; */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23666' opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+body.ready {
+    opacity: 1;
+    transition: 0.2s opacity;
+}
+
+sl-button::part(base) {
+    box-shadow: var(--shadow-color) 0.15rem 0.15rem;
+    border: 1px solid black;
+    background-color: var(--sl-color-primary-200);
+    color: black;
+    border-radius: 0;
+}
+/* make the raise buttons fun to hover */
+sl-button.bet::part(base) {
+    transition: var(--sl-transition-x-fast) transform ease;
+    background-color: var(--sl-color-green-400);
+}
+sl-button.bet.hover::part(base):hover {
+    transform: scale(1.2) rotate(-1.8deg);
+    color: black;
+}
+sl-button[disabled]::part(base) {
+    cursor: default;
+}
+sl-button.bet::part(base):active {
+    border: 1px solid black;
+    color: black;
+}
+
+sl-dialog::part(panel) {
+    border-radius: 0;
+    box-shadow: var(--shadow-color) 0 0 15px;
+}
+
+sl-input {
+    --sl-input-required-content: '';
+}
+sl-input::part(base) {
+    border-radius: 0;
+    border: 1px solid black;
+}
+.label-no-move-input::part(form-control) {
+    display: grid;
+}
+.label-no-move-input::part(form-control-label) {
+    overflow: visible;
+    transform: translate(0, -1.1rem);
+    height: 0;
+    margin: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+sl-card {
+    --padding: 0.5rem;
+    --border-radius: 0;
+    --border-color: black;
+}
+sl-card.player-card::part(base) {
+    border-color: black;
+}
+sl-card::part(header) {
+    --padding: 1.5rem;
+}
+
+sl-progress-bar::part(base) {
+    --indicator-color: var(--sl-color-green-400);
+    --track-color: var(--sl-color-neutral-300);
+}
+sl-progress-bar.low::part(base) {
+    --indicator-color: var(--sl-color-amber-400);
+}
+sl-progress-bar.lower::part(base) {
+    --indicator-color: var(--sl-color-orange-400);
+}
+sl-progress-bar.lowest::part(base) {
+    --indicator-color: var(--sl-color-rose-400);
+}
+
+/* star checkbox in players table*/
+.star-checked::after,
+.star-unchecked::after {
+    content: '\2605'; /* Filled star Unicode character */
+    line-height: 1; /* ensure line height matches font size */
+    cursor: pointer;
+}
+.star-checked::after {
+    color: gold;
+}
+.star-unchecked::after {
+    color: #ddd;
+}
+.star-unchecked:hover::after {
+    color: #bbb;
+}
+
+#players-table-wrapper.ag-theme-balham {
+    --ag-balham-active-color: var(--sl-color-primary-700);
+    --ag-row-hover-color: #00000008;
+    --ag-selected-row-background-color: var(--sl-color-primary-100);
+    --ag-range-selection-border-color: transparent;
+    --ag-border-color: black;
+    --ag-border-radius: 0;
+    --ag-odd-row-background-color: var(--sl-color-gray-50);
+}
+
+/* Add an affect to make the bottom of the drafts scroller to make text fade out */
+.fade-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6%; /* The height of the fade effect */
+    background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--container-bg-color) 0%, transparent),
+        color-mix(in srgb, var(--container-bg-color) 100%, transparent)
+    );
+    pointer-events: none; /* Ensures the overlay doesn't interfere with text interaction */
+}
+
+.draft-item {
+    transition: background-color 5s;
+}
+
+.new-draft {
+    background-color: var(--sl-color-blue-400);
+}
