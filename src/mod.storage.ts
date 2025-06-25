@@ -54,30 +54,30 @@ export function getPlayersJsonString(ctx: Ctx) {
 }
 
 export function getResultsJsonString(ctx: Ctx) {
-  return ctx.sql
+  const players = ctx.sql
     .exec(
       // build a JSON array string as the single row of the results
-      `SELECT '[' || GROUP_CONCAT(
-        -- get a subset of the fields in player_data
-        json_object(
-            'name', json_extract(player_data, '$.name'),
-            'team', json_extract(player_data, '$.team'),
-            'position', json_extract(player_data, '$.position'),
-            'drafted_by_id', json_extract(player_data, '$.drafted_by_id'),
-            'cost', json_extract(player_data, '$.cost'),
-            -- without the JSON() conversion, booleans are 1s and 0s (reflecting sqlites storage of bools)
-            'keeper', CASE
-                WHEN json_extract(player_data, '$.keeper') THEN JSON('true')
-                ELSE JSON('false')
-            END
-        )
-      ) || ']' AS players
+      `SELECT
+        json_extract(player_data, '$.name') as name,
+        json_extract(player_data, '$.team') as team,
+        json_extract(player_data, '$.position') as position,
+        json_extract(player_data, '$.drafted_by_id') as drafted_by_id,
+        json_extract(player_data, '$.cost') as cost,
+        json_extract(player_data, '$.keeper') as keeper
       FROM player
       WHERE json_extract(player_data, '$.drafted_by_id') IS NOT NULL
       ORDER BY player_id;`,
     )
-    .one()
-    .players?.toString();
+    .toArray()
+    .map((row) => {
+      // add the team name using the drafted_by_id
+      if (typeof row.drafted_by_id == 'number') {
+        row.pickedBy = ctx.clientMap?.[row.drafted_by_id]?.teamName ?? '';
+      }
+      return Object(row);
+    });
+
+  return JSON.stringify(players);
 }
 
 export function setDraft(ctx: Ctx) {

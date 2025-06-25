@@ -39,7 +39,7 @@
     downloadEl.removeAttribute('disabled');
     downloadEl.addEventListener('click', function (event) {
       // Set the href of the download link
-      downloadEl.setAttribute('href', URL.createObjectURL(new Blob(csvStr, { type: 'text/plain' })));
+      downloadEl.setAttribute('href', URL.createObjectURL(new Blob([csvStr], { type: 'text/plain' })));
     });
   </script>
 </html>

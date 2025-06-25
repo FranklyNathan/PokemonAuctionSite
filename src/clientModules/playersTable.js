@@ -6,7 +6,6 @@ function isValidNumber(s) {
 }
 
 async function getPlayersJson(type) {
-  // get the URI: ID of the
   const uri = window.location.origin + '/' + window.location.pathname.split('/')[1] + '/' + type;
   const req = new Request(uri);
   return await window
@@ -357,5 +356,13 @@ export async function loadResultsData() {
   const playersTableWrapperEl = document.getElementById('players-table-wrapper');
   createResultsTable(playersTableWrapperEl, playerRows);
 
-  return Papa.unparse(playerRows);
+  // return CSV for downloading
+  return Papa.unparse(
+    playerRows.map((row) => {
+      // update the column header casing so its consistent
+      row.picked_by = row?.pickedBy;
+      delete row.pickedBy;
+      return row;
+    }),
+  );
 }
