@@ -81,31 +81,31 @@ There are **four states**. Possible actions performed in the state and how the s
 https://asciiflow.com/#/
 
 ```
-                            ┌─────────────┐
-                            │             │
-                            │ Pre-Auction │
-                            │             │
-                            └──────┬──────┘
-                                   │
-  ┌───────┐                        └────Start-auction───┐
-  │New team bids highest                                │    ┌───────┐
-  │       │                                             │    │   Team leaves
-  │   ┌───▼─────────┐                          ┌───────▼───▼──┐   │
-  └───┤   Bidding    ◄──────Player-selected────┤     Player     ├───┘
-      │   (team X    │                          │   Selection    │
-      │ highest bid) ├───Time-to-bid-expires───►  By Team X     │
-      └────┬─────────┘                          └────────────────┘
-           │
-    bidding ends AND
-      (Team rosters
-          full
-           OR
-    Teams with roster
-    space out of money)      ┌──────────────┐
-           │                 │              │
-           └─────────────────►Post-Auction │
-                             │              │
-                             └──────────────┘
+                                ┌─────────────┐
+                                │             │
+                                │ Pre-Auction │
+                                │             │
+                                └──────┬──────┘
+                                       │
+      ┌───────┐                        └────Start-auction──┐
+New team bids │                                            │   ┌───────┐
+    highest   │                                            │   │  Team leaves
+      │   ┌───▼──────────┐                         ┌───────▼───▼──┐    │
+      └───┤   Bidding    ◄──────Player-selected────┤    Player    ├────┘
+          │   (team X    │                         │   Selection  │
+          │ highest bid) ├───Time-to-bid-expires───►   By Team X  │
+          └────┬─────────┘                         └──────────────┘
+               │
+        bidding ends AND
+          (Team rosters
+              full
+               OR
+        Teams with roster
+        space out of money)      ┌──────────────┐
+               │                 │              │
+               └─────────────────► Post-Auction │
+                                 │              │
+                                 └──────────────┘
 ```
 
 When the server receives a message from the client, often it will have to validate the client action. For example, a team cannot bid more money than they currently have left. Rules like this are enforced on the client side too, but server needs to validate as well because we don't trust the client!
@@ -132,35 +132,35 @@ There are **six states**. User actions in each state are listed as well:
 6. Post-Auction
 
 ```
-                   ┌────────────────────────────────────────────────────────────────┐
-                   │                                                                │
-                   │     ┌─────────────┐                                            │
-                   │     │             │                                            │
-                   │     │ Pre-Auction │             ┌─────────────────────────┐    │
-                   │     │             │             │                         │    │
-                   │     └──────┬──────┘             │    ┌───────┬───────┐    │    │
-                   │            │                    │    │       │       │    │    │
-                   └───────┐    └────Start-auction───┤    │   Other Team  │    │    │
-                           │                         │    │     Leaves    │    │    │
-                           │                         │    │       │       │    │    │
-   ┌──────────────┐        │                  ┌─────▼────▼──┐   │    ┌──▼───▼───▼─┐
-   │   Bidding    ├───Time-to-bid-expires────►    Player     ├───┘    │    Player     │
-   │ (Other team  │                           │   Selection   │        │  Selection    │
-   │   leading)   ◄──────Player-Selected─────┤ by Other Team │        │ by This Team  │
-   └────┬───┬───▲┘                           └───────────▲──┘        └──┬────┬───────┘
-        │   │   │                                          │   Player     │    │
-        │   │   └──────┐                                   └──runs out of─┘    │
-        │   │          │                                    time or leaves     │
-        │   │  ┌───────┴──────┐                                                │
-        │   │  │    Bidding   │          This team selects a player            │
-        │   └──►  (This team  ◄───────────and places starting bid────────────┘
-        │      │    Leading)  │
-        │      └──────────────┘
-        │                         Team rosters           ┌──────────────┐
-        │                            full                │              │
-        └────Bidding-ends-AND─────────OR─────────────────► Post-Auction│
-                               Teams with roster         │              │
-                               space out of money        └──────────────┘
+                ┌────────────────────────────────────────────────────────────┐
+                │                                                            │
+                │     ┌─────────────┐                                        │
+                │     │             │                                        │
+                │     │ Pre-Auction │            ┌───────────────────────┐   │
+                │     │             │            │                       │   │
+                │     └──────┬──────┘            │     ┌───────┬─────┐   │   │
+                │            │                   │     │       │     │   │   │
+                └───────┐    └────Start-auction──┤     │  Other Team │   │   │
+                        │                        │     │    Leaves   │   │   │
+                        │                        │     │       │     │   │   │
+┌─────────────┐         │                 ┌──────▼────▼───┐    │  ┌──▼───▼───▼────┐
+│   Bidding   ├────Time-to-bid-expires────►    Player     ├────┘  │     Player    │
+│ (Other team │                           │    Selection  │       │    Selection  │
+│   leading)  ◄───────Player-Selected─────┤ by Other Team │       │  by This Team │
+└────┬───┬───▲┘                           └───────────▲───┘       └──┬────┬───────┘
+     │   │   │                                        │    Player    │    │
+     │   │   └──────┐                                 └──runs out of─┘    │
+     │   │          │                                  time or leaves     │
+     │   │  ┌───────┴──────┐                                              │
+     │   │  │    Bidding   │          This team selects a player          │
+     │   └──►  (This team  ◄───────────and places starting bid────────────┘
+     │      │    Leading)  │
+     │      └──────────────┘
+     │                         Team rosters           ┌──────────────┐
+     │                            full                │              │
+     └────Bidding-ends-AND─────────OR─────────────────► Post-Auction │
+                            Teams with roster         │              │
+                            space out of money        └──────────────┘
 ```
 
 ### Server Client Communication
