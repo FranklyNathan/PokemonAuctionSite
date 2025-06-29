@@ -68,8 +68,13 @@ export class Auction implements DurableObject {
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
           maxRosterSize: 15, // default overwridden by auction setup
-          setAlarm: this.storage.setAlarm.bind(this.storage),
+          _setAlarm: this.storage.setAlarm.bind(this.storage),
+          setAlarm: (durationMs: number) => {
+            this.ctx.currentTimeLimit = durationMs;
+            this.ctx._setAlarm(Date.now() + durationMs);
+          },
           deleteAlarm: this.storage.deleteAlarm.bind(this.storage),
+          getAlarm: this.storage.getAlarm.bind(this.storage),
           storeCtx: async () => await this.storage.put('ctx', getSerializableCtx(this.ctx)),
           // leave currentlySelectingTeam, selectedPlayerId, currentBid, and highestBidder undefined.
         };
@@ -114,7 +119,7 @@ export class Auction implements DurableObject {
 
   async alarm() {
     await transitionState(this.ctx);
-    updateClients(this.ctx, true);
+    await updateClients(this.ctx, true, true);
     await this.ctx.storeCtx();
   }
 

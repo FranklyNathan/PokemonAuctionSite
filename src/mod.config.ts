@@ -44,18 +44,6 @@ export interface Peer {
   ready: boolean;
 }
 
-export interface InitClientMessage {
-  type: 'initialize';
-  stateId: State;
-  peers: Peer[];
-  currentBid?: number;
-  highestBidder?: ClientId;
-  currentlySelectingTeam?: ClientId;
-  selectedPlayerId?: PlayerId;
-  biddingTimeLimit: number;
-  playerSelectionTimeLimit: number;
-}
-
 export interface ServerMessage {
   type: ServerMessageType;
   stateId: State;
@@ -64,6 +52,8 @@ export interface ServerMessage {
   highestBidder?: ClientId;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;
+  currentAlarmTime?: number; // target timestamp when alarm will run out in milliseconds elapsed since the UNIX epoch
+  currentTimeLimit?: number; // original total time duration of the current alarm in ms
   message?: string;
 }
 
@@ -95,7 +85,10 @@ export interface Ctx {
   clientIdIncrementer: number; // what ID to use for the next incoming client
   biddingTimeLimit: number; // length of time in milliseconds for the Bidding state
   playerSelectionTimeLimit: number; // length of time in milliseconds for the Player Selection state
+  currentTimeLimit?: number;
+  _setAlarm: Function;
   setAlarm: Function;
   deleteAlarm: Function;
+  getAlarm: Function;
   storeCtx: Function;
 }

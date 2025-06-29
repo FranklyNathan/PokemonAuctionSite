@@ -1,4 +1,4 @@
-import { Ctx, State, ServerMessage, ServerMessageType, InitClientMessage } from './mod.config';
+import { Ctx, State, ServerMessage, ServerMessageType } from './mod.config';
 import { getUndraftedCount, getRosterCounts, getTeamRosterCount, setDraft } from './mod.storage';
 
 export function isValidNumber(s: string): boolean {
@@ -27,14 +27,20 @@ export function getSerializableCtx(ctx: Ctx) {
     clientIdIncrementer: ctx.clientIdIncrementer,
     biddingTimeLimit: ctx.biddingTimeLimit,
     playerSelectionTimeLimit: ctx.playerSelectionTimeLimit,
+    currentTimeLimit: ctx.currentTimeLimit,
   };
 }
 
 export function unserializeCtx(ctx: Ctx, state: DurableObjectState, sql: SqlStorage) {
   // add the unserializable parts back to the context object:
   // set and delete alarm
-  ctx.setAlarm = state.storage.setAlarm.bind(state.storage);
+  ctx._setAlarm = state.storage.setAlarm.bind(state.storage);
+  ctx.setAlarm = (durationMs: number) => {
+    ctx.currentTimeLimit = durationMs;
+    ctx._setAlarm(Date.now() + durationMs);
+  };
   ctx.deleteAlarm = state.storage.deleteAlarm.bind(state.storage);
+  ctx.getAlarm = state.storage.getAlarm.bind(state.storage);
   ctx.sql = sql;
   // function to store the context to the durable object storage
   ctx.storeCtx = async () => await state.storage.put('ctx', getSerializableCtx(ctx));
@@ -83,10 +89,10 @@ function setupPlayerSelection(ctx: Ctx, increment = true) {
     ctx.currentlySelectingTeam = ctx.draftPosition || 0;
   }
 
-  ctx.setAlarm(Date.now() + ctx.playerSelectionTimeLimit);
+  ctx.setAlarm(ctx.playerSelectionTimeLimit);
 }
 
-export function updateClients(ctx: Ctx, sendPeers = false, message?: string) {
+export async function updateClients(ctx: Ctx, sendPeers = false, sendTimerUpdate?: boolean, message?: string) {
   let msg: ServerMessage = {
     type: ServerMessageType.Update,
     stateId: ctx.serverState,
@@ -96,6 +102,11 @@ export function updateClients(ctx: Ctx, sendPeers = false, message?: string) {
     selectedPlayerId: ctx.selectedPlayerId,
     message: message,
   };
+
+  if (sendTimerUpdate) {
+    msg.currentAlarmTime = await ctx.getAlarm();
+    msg.currentTimeLimit = ctx.currentTimeLimit;
+  }
 
   if (sendPeers) {
     const rosterSizes = getRosterCounts(ctx);
@@ -115,36 +126,6 @@ export function updateClients(ctx: Ctx, sendPeers = false, message?: string) {
   Object.values(ctx.clientMap)
     .filter((client) => client.connected && client.ws?.readyState == WebSocket.OPEN) // get the currently connected clients
     .forEach((client) => client.ws?.send(msgStr));
-}
-
-export function initializeClient(ctx: Ctx, clientWs: WebSocket) {
-  let msg: InitClientMessage = {
-    type: 'initialize',
-    stateId: ctx.serverState,
-    currentBid: ctx.currentBid,
-    highestBidder: ctx.highestBidder,
-    currentlySelectingTeam: ctx.currentlySelectingTeam,
-    selectedPlayerId: ctx.selectedPlayerId,
-    peers: Object.values(ctx.clientMap).map((client) => ({
-      clientId: client.clientId,
-      remainingFunds: client.remainingFunds,
-      connected: client.connected,
-      ready: client.ready,
-    })),
-    biddingTimeLimit: ctx.biddingTimeLimit,
-    playerSelectionTimeLimit: ctx.playerSelectionTimeLimit,
-  };
-
-  const msgStr = JSON.stringify(msg);
-
-  if (clientWs.readyState == WebSocket.OPEN) {
-    clientWs.send(msgStr);
-  } else {
-    console.error(`Failed to send initializeClient message to client!`);
-  }
-
-  // let other clients know that another peer has joined
-  updateClients(ctx, true, 'Team joined');
 }
 
 function recordDraft(ctx: Ctx) {
@@ -231,7 +212,7 @@ export async function transitionState(ctx: Ctx) {
       ctx.serverState = State.Bidding;
       ctx.currentlySelectingTeam = undefined;
       // give double the time for the first bid after a player is selected so teams have time to pull up stats
-      ctx.setAlarm(Date.now() + ctx.biddingTimeLimit * 2);
+      ctx.setAlarm(ctx.biddingTimeLimit * 2);
       break;
   }
 }

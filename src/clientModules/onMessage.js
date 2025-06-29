@@ -18,6 +18,7 @@ import {
   moveTeamToCompleteSection,
   disableRaiseButtons,
   enableRaiseButtons,
+  isValidNumber,
 } from './html.js';
 
 /*
@@ -39,8 +40,6 @@ ctx: {
   highestBidder: number,
   currentlySelectingTeam: number,
   timer: CountDownTimer,
-  biddingTimeLimit: number,
-  playerSelectionTimeLimit: number,
 }
 */
 /**
@@ -85,26 +84,30 @@ function isTeamDoneDrafting(ctx, team) {
   return team.rosterCount >= ctx.maxRosterSize || team.remainingFunds <= 0;
 }
 
+function updateTimer(ctx, targetTimestamp, currentTimeLimit) {
+  ctx.timer.stop();
+  ctx.currentTimeLimit = currentTimeLimit;
+  ctx.timer.updateDuration(targetTimestamp - Date.now());
+  ctx.timer.start();
+}
+
 function handleServerUpdate(msg, ctx) {
   if (!msg.hasOwnProperty('stateId')) {
     toast('Invalid message!', 'A message from the server is missing the `stateId` field', 'danger');
     return;
   }
 
-  // update the UI if their are changes
+  if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
+    updateTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit);
+  }
+
+  // update the UI if there are changes
   if (msg.stateId != ctx.stateId) {
     // handle state change
-    // if we are entering bidding or player selection then restart the timer
-    ctx.timer.stop();
     // reset the player card to empty
     hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
     switch (msg.stateId) {
       case 'bidding':
-        // for the initial bid right after a player is selected, allow twice as long so teams
-        //   have time to look up the player and stats
-        ctx.currentTimeLimit = ctx.biddingTimeLimit * 2;
-        ctx.timer.updateDuration(ctx.biddingTimeLimit * 2);
-        ctx.timer.start();
         // update the raise buttons label back to be "raise" if this is the
         //   client who was just selecting a player. the label for them is
         //   currently "bid".
@@ -128,9 +131,6 @@ function handleServerUpdate(msg, ctx) {
           recordDraft(ctx);
         }
         disableRaiseButtons();
-        ctx.currentTimeLimit = ctx.playerSelectionTimeLimit;
-        ctx.timer.updateDuration(ctx.playerSelectionTimeLimit);
-        ctx.timer.start();
         if (msg.currentlySelectingTeam != undefined) {
           const previouslySelectingTeam = ctx.currentlySelectingTeam || 0;
           ctx.currentlySelectingTeam = msg.currentlySelectingTeam;
@@ -153,20 +153,11 @@ function handleServerUpdate(msg, ctx) {
 
     ctx.stateId = msg.stateId;
   } else if (ctx.stateId == 'bidding' && msg.currentBid != ctx.currentBid) {
-    // if we didn't change state in bidding, and the current bid was updated, someone
-    //   just made a higher bid. reset the timer so that others have time to
-    //   bid now
-    ctx.timer.stop();
-    // first bid after player selection is doubled, reset it to the regular bidding limit
-    ctx.currentTimeLimit = ctx.biddingTimeLimit;
-    ctx.timer.updateDuration(ctx.biddingTimeLimit);
-    ctx.timer.start();
+    // nothing to do, already handled the timer at the start of this function
   } else if (ctx.stateId == 'player_selection' && msg.currentlySelectingTeam != ctx.currentlySelectingTeam) {
     // if we are in the player_selection state, and the team that was supposed to pick a
     //   player timed out, we will get a message with a different `currentlySelectingTeam`.
     hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
-    ctx.timer.stop();
-    ctx.timer.start();
     // if this client is the client now selecting, update the raise buttons label to be 'bid', otherwise
     //   set it back to 'raise'.
     updateRaiseButtonsLabel(ctx.myClientId == ctx.currentlySelectingTeam);
@@ -250,23 +241,8 @@ export function getOnMessageFunc() {
   return function onMessage(event, ctx) {
     const msg = JSON.parse(event?.data);
     switch (msg?.type) {
-      case 'initialize':
-        if (!msg?.stateId) {
-          const m = 'Initial message from server did not include the stateId!';
-          console.error(m);
-          toast('Invalid Server Message', m, 'danger');
-          return;
-        }
-        ctx.stateId = msg.stateId;
-
-        if (msg.biddingTimeLimit != undefined) {
-          ctx.biddingTimeLimit = msg.biddingTimeLimit;
-        }
-
-        if (msg.playerSelectionTimeLimit != undefined) {
-          ctx.playerSelectionTimeLimit = msg.playerSelectionTimeLimit;
-        }
-
+      case 'update':
+        handleServerUpdate(msg, ctx);
         return;
       case 'error':
         if (msg.message) {
@@ -278,8 +254,6 @@ export function getOnMessageFunc() {
         toast('Error', m, 'danger');
         console.error(m);
         return;
-      case 'update':
-        handleServerUpdate(msg, ctx);
     }
   };
 }

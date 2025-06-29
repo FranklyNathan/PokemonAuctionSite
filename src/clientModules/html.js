@@ -276,7 +276,7 @@ export function initReadyUp(ctx) {
   });
 }
 
-function isValidNumber(s) {
+export function isValidNumber(s) {
   return !isNaN(+s) && !isNaN(parseFloat(s));
 }
 

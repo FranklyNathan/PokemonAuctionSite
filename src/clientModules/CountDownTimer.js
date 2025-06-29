@@ -19,7 +19,7 @@ export class CountDownTimer {
   parse(milliseconds) {
     return {
       minutes: Math.trunc(milliseconds / 1000 / 60),
-      seconds: Math.trunc((milliseconds % 60000) / 1000),
+      seconds: Math.round((milliseconds % 60000) / 1000),
     };
   }
 

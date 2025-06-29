@@ -1,5 +1,5 @@
 import { Ctx, ClientId, ServerMessageType, State } from './mod.config';
-import { initializeClient, isValidNumber } from './mod.helpers';
+import { updateClients, isValidNumber } from './mod.helpers';
 import { setupAuction, initPlayers } from './mod.auctionSetup';
 
 import auctionHtml from './html.auction.html';
@@ -8,7 +8,7 @@ import * as testCtx from './test_ctx.json';
 import testPlayers from './test_players.csv';
 import { getPlayersJsonString, getResultsJsonString, getTeamRosterCount } from './mod.storage';
 
-function setupWebSocket(ctx: Ctx, state: DurableObjectState, ws: WebSocket, clientId: ClientId) {
+async function setupWebSocket(ctx: Ctx, state: DurableObjectState, ws: WebSocket, clientId: ClientId) {
   if (ctx.clientMap[clientId] == undefined) {
     console.error(`Failed to find client with clientId '${clientId}'. Currently have clientIds: ${Object.keys(ctx.clientMap)}`);
     ws.accept();
@@ -34,7 +34,7 @@ function setupWebSocket(ctx: Ctx, state: DurableObjectState, ws: WebSocket, clie
   ctx.clientMap[clientId].ws = ws;
 
   // send the players for the auction and who else is connected
-  initializeClient(ctx, ws);
+  await updateClients(ctx, true, true, 'Team joined!');
 }
 
 export async function handleWebsocket(request: Request, path: string[], ctx: Ctx, state: DurableObjectState): Promise<Response> {
@@ -67,7 +67,7 @@ export async function handleWebsocket(request: Request, path: string[], ctx: Ctx
   }
 
   // set up the server's web socket
-  setupWebSocket(ctx, state, serverWs, clientId);
+  await setupWebSocket(ctx, state, serverWs, clientId);
 
   ctx.storeCtx(); // save new client to storage
 

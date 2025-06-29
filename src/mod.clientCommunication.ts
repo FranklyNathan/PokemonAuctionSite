@@ -166,10 +166,10 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       }
       // reset the bidding time limit
       ctx.deleteAlarm();
-      ctx.setAlarm(Date.now() + ctx.biddingTimeLimit);
+      ctx.setAlarm(ctx.biddingTimeLimit);
       break;
   }
-  updateClients(ctx, true);
+  await updateClients(ctx, true, true);
 }
 
 ///////////////////
@@ -197,5 +197,5 @@ export async function closeOrErrorHandler(ctx: Ctx, clientId: ClientId) {
   }
 
   // if we are in the bidding state, no need to do anything, auction continues
-  updateClients(ctx, true);
+  await updateClients(ctx, true, false);
 }
