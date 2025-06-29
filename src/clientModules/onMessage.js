@@ -101,8 +101,14 @@ function handleServerUpdate(msg, ctx) {
     updateTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit);
   }
 
-  // update the UI if there are changes
-  if (msg.stateId != ctx.stateId) {
+  // update the UI if there was a state change or we haven't performed the initial UI update
+  if (msg.stateId != ctx.stateId || !ctx.performedInitialUpdate) {
+    // if a player rejoins in the middle of the bidding phase, the `msg.stateId != ctx.stateId`
+    //   check won't match, but we still need to initialize their UI as if it was a state change
+    //   so we have to keep track of whether we have done the initial update.
+    if (!ctx.performedInitialUpdate) {
+      ctx.performedInitialUpdate = true;
+    }
     // handle state change
     // reset the player card to empty
     hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
@@ -152,8 +158,6 @@ function handleServerUpdate(msg, ctx) {
     }
 
     ctx.stateId = msg.stateId;
-  } else if (ctx.stateId == 'bidding' && msg.currentBid != ctx.currentBid) {
-    // nothing to do, already handled the timer at the start of this function
   } else if (ctx.stateId == 'player_selection' && msg.currentlySelectingTeam != ctx.currentlySelectingTeam) {
     // if we are in the player_selection state, and the team that was supposed to pick a
     //   player timed out, we will get a message with a different `currentlySelectingTeam`.

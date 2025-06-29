@@ -279,6 +279,8 @@
       playerSelectionTimeLimit: null, // number
       maxRosterSize: null, // number   // this is the target for a string replace server side
       extraPlayerStatsFields: [], // holds IDs of extra fields that were added to the players data
+      // keep track of whether we have done the initial UI update when a player joins
+      performedInitialUpdate: false,
     };
 
     ///////////
