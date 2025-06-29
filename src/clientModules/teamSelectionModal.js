@@ -1,4 +1,4 @@
-import { getOnMessageFunc } from './onMessage.js';
+import { onMessage } from './onMessage.js';
 import {
   getTeamLowerLeftContentClass,
   showTeamConnected,
@@ -13,7 +13,7 @@ import {
 
 let reconnectAttempted = false;
 
-function setupWebsocket(ctx, clientId, onMessage, wsUrl, reconnectTimeoutId) {
+function setupWebsocket(ctx, clientId, wsUrl, reconnectTimeoutId) {
   if (reconnectTimeoutId != null) {
     clearTimeout(reconnectTimeoutId);
   }
@@ -38,7 +38,7 @@ function setupWebsocket(ctx, clientId, onMessage, wsUrl, reconnectTimeoutId) {
     if (!reconnectAttempted) {
       console.warn('Trying to reconnect...');
       reconnectAttempted = true;
-      setupWebsocket(ctx, clientId, onMessage, wsUrl, to);
+      setupWebsocket(ctx, clientId, wsUrl, to);
     }
   });
   websocket.addEventListener('close', (e) => {
@@ -55,7 +55,6 @@ function setupWebsocket(ctx, clientId, onMessage, wsUrl, reconnectTimeoutId) {
 
 // This file populates the team selection modal and opens it. Run when client loads page.
 function connect(clientId, ctx) {
-  const onMessage = getOnMessageFunc();
   // connect websocket
   let wsUrl = window.location.host + window.location.pathname + '/websocket' + '/' + clientId;
   // localhost doesn't support secure ws connection
@@ -64,7 +63,7 @@ function connect(clientId, ctx) {
   } else {
     wsUrl = 'wss://' + wsUrl;
   }
-  setupWebsocket(ctx, clientId, onMessage, wsUrl);
+  setupWebsocket(ctx, clientId, wsUrl);
 }
 
 export function initTeamSelection(ctx) {

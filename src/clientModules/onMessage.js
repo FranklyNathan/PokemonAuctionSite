@@ -241,23 +241,21 @@ type msg {
 }
 */
 
-export function getOnMessageFunc() {
-  return function onMessage(event, ctx) {
-    const msg = JSON.parse(event?.data);
-    switch (msg?.type) {
-      case 'update':
-        handleServerUpdate(msg, ctx);
+export function onMessage(event, ctx) {
+  const msg = JSON.parse(event?.data);
+  switch (msg?.type) {
+    case 'update':
+      handleServerUpdate(msg, ctx);
+      return;
+    case 'error':
+      if (msg.message) {
+        console.error(msg.message);
+        toast('Error', msg.message, 'danger');
         return;
-      case 'error':
-        if (msg.message) {
-          console.error(msg.message);
-          toast('Error', msg.message, 'danger');
-          return;
-        }
-        const m = 'Received error message from the server with no other details...';
-        toast('Error', m, 'danger');
-        console.error(m);
-        return;
-    }
-  };
+      }
+      const m = 'Received error message from the server with no other details...';
+      toast('Error', m, 'danger');
+      console.error(m);
+      return;
+  }
 }
