@@ -74,6 +74,8 @@ export function getResultsJsonString(ctx: Ctx) {
       if (typeof row.drafted_by_id == 'number') {
         row.pickedBy = ctx.clientMap?.[row.drafted_by_id]?.teamName ?? '';
       }
+      // convert sqlite's representation of booleans as 1 or 0 to actual booleans
+      row.keeper = row.keeper == 1;
       return Object(row);
     });
 

@@ -151,7 +151,7 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
       <strong>${playerData.position}</strong>
     </div>
     <div style="display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: 1fr 1fr; gap: 0.5rem;  font-family: 'Nimbus Mono PS', 'Courier New', monospace">
-      <div style="padding: 0.2rem; display: flex; justify-content: flex-end; font-family: inherit">Team</div>
+      <div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">Team</div>
       <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData.team}</div>
   `;
   // filter to just the fields that have data
@@ -161,7 +161,7 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
     const colHeader = field
       .replace(/^[-_]*(.)/, (_, c) => c.toUpperCase()) // Initial char (after -/_)
       .replace(/[-_]+(.)/g, (_, c) => ' ' + c.toUpperCase()); // First char after each -/_
-    cardInner += `<div style="padding: 0.2rem; display: flex; justify-content: flex-end; font-family: inherit">${colHeader}</div>
+    cardInner += `<div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">${colHeader}</div>
     <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData[field]}</div>
     `;
   }

@@ -1,6 +1,6 @@
 name = "auction"
 main = "src/index.ts"
-compatibility_date = "2024-01-17"
+compatibility_date = "2025-06-29"
 
 logpush = true
 
@@ -8,16 +8,23 @@ logpush = true
 rules = [
   # bundle the clientModules as text so they can be imported as text and served to the
   #   client instead of being bundled as actual js code and interpreted when imported.
-  { type = "Text", globs = ["**/clientModules/*.js", "**/*.css"], fallthrough = true },
+  { type = "Text", globs = [
+    "**/clientModules/*.js",
+    "**/*.css",
+  ], fallthrough = true },
   # vendor the packages imported from the browser
   { type = "Text", globs = [
     "**/node_modules/ag-grid-community/dist/ag-grid-community.min.js",
     "**/node_modules/canvas-confetti/dist/confetti.browser.js",
-    "**/node_modules/papaparse/papaparse.min.js"
+    "**/node_modules/papaparse/papaparse.min.js",
   ], fallthrough = true },
   # bundle test players CSV
-  { type = "Text", globs = ["**/test_players.csv"], fallthrough = true },
-  { type = "Data", globs = ["**/assets/*.svg"], fallthrough = true }
+  { type = "Text", globs = [
+    "**/test_players.csv",
+  ], fallthrough = true },
+  { type = "Data", globs = [
+    "**/assets/*.svg",
+  ], fallthrough = true },
 ]
 
 # Bind a Durable Object. Durable objects are a scale-to-zero compute primitive based on the actor model.

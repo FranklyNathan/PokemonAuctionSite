@@ -358,10 +358,12 @@ export async function loadResultsData() {
 
   // return CSV for downloading
   return Papa.unparse(
-    playerRows.map((row) => {
-      // update the column header casing so its consistent
+    // JSON parse / stringify to make a copy
+    JSON.parse(JSON.stringify(playerRows)).map((row) => {
+      // update the column header casing so its consistent snake case
       row.picked_by = row?.pickedBy;
       delete row.pickedBy;
+      delete row.drafted_by_id; // no need for end users to see IDs
       return row;
     }),
   );
