@@ -4,14 +4,8 @@
 - [ ] add ability to pass on bidding (highest bidder gets player if everyone else passes)
 - [ ] add ability to pass on selecting a player
 - [ ] add ability to write in player name to draft
-- [ ] When a client rejoins partway through a phase, the time limit for the phase never starts
-  - need to keep track of the time the phase timer started in the server's ctx
-  - when a player rejoins, add the remaining time to the message from the server so client can set remaining time
 - [ ] improve mobile functionality (works but players table super squished)
 - [ ] how to start the auction again if after all clients disconnect, 1 or more clients rejoin?
-  - player selection state is partially functional because whoever's up just needs to select a player, which triggers transition into the bidding state
-    - until the select a player, they have infinite time though...
-  - if everyone leaves in the bidding state, the transition timer is deleted and there is no way to
 - [ ] find an easy way to bundle shoelace dependency with the server so app doesn't depend on any other servers to get dependencies.
 
 # Technical Design
@@ -50,9 +44,9 @@ Components should be updated precisely when data is updated. Don't use a single 
 
 All clients (one per team), need to have auction timing coordinated!
 
-- When the auction starts, all clients need to start their local timers to show a countdown
-- When bidding time for a player is up, all clients timers should transition to the countdown for the next team to pick a player to bid on.
-- When the team has chosen a player, all clients should start the bidding countdown again.
+- Server will send the target time of when the current timer will expire.
+  - timestamp (instead of sending remaining time duration) allows the client that receives the timestamp to calculate the remaining time themselves so its never different between clients even if one has a slow internet connection.
+- Server also sends the original timer duration so client UI can show a progress bar.
 
 **The server signals all client state changes**. The server has the ground truth timer running. The server will send a message to all clients to:
 
@@ -185,42 +179,35 @@ That's it! Simple.
 
 **Exhaustive list of Server => Client messages**
 
-- "players" - server sending the auction players to the client
-- "bid" - server lets all clients know the knew highest bid. Data dictionary contains:
-  - bid (The new highest bid)
-  - highest_bidder (which team is the highest bidder)
-- "state_player_selection" - Transition into the Player Selection state. Data dictionary contains:
-  - state_id: "player_selection"
-  - selecting_team (which team is up to select a player)
-- "state_bidding" - Transition into the Player Selection state. Data dictionary contains:
-  - state_id: "bidding"
-  - bid (the starting bid)
-  - highest_bidder (which team is the highest bidder)
-- "post_auction" - Transition into the Player Selection state. Data dictionary contains:
-  - state_id: "post_auction
+- "update" - server sends full update of necessary server state, see schema below
+- "error" - something went wrong
 
 Message schema:
 
 ```
 {
-    "type": "bid OR state_player_selection OR state_bidding OR statePostAuction OR error",
-    "state_id": "state_player_selection OR state_bidding OR post_auction",
+    "type": "update OR error",
+    "state_id": "pre_auction OR player_selection OR bidding OR post_auction",
     "current_bid": 9,
-    "highest_bidder": "team_0",
-    "currently_selecting_team": "Fisher",
+    "highest_bidder": <team 1 ID>,
+    "currently_selecting_team": <team 3 ID>,
+    "selectedPlayerId": 25,
+    "currentAlarmTime": 1751235531543,
+    "currentTimeLimit": 10000,
     "peers": [
       {
         "client_id": 0,
         "remaining_funds": 97,
         "connected": true,
-        "ready": true
-
+        "ready": true,
+        "rosterCount": 5
       },
       {
         "client_id": 1,
         "remaining_funds": 140,
         "connected": true,
-        "ready": true
+        "ready": true,
+        "rosterCount": 1
       },
     ]
     "message": "string"
@@ -305,3 +292,48 @@ Option 3, durable objects sqlite storage interface, seems like the best option h
   - player_id: integer primary key
   - player_data: JSONB (whole json object. this way we don't have to have a dynamic number of columns based on what was uploaded)
     - we can still do operations on the json data by using sqlites json functions when a player is drafted.
+
+
+
+# Presentation Notes
+
+* Technical goals of the project:
+    * Explore web standards, no framework
+        * Web components - reusable custom elements
+    * Minimal dependencies
+        * Shoelace components
+            * Don’t want to write a bunch of custom CSS, and shoelace offers components like a notification
+        * AG Grid
+        * Papaparse CSV parsing
+        * Confetti!
+* Infrastructure - Cloudflare
+    * Stateless worker receives all HTTP requests
+    * Durable Object handles auction state, websocket traffic
+        * 1 durable object per auction
+        * SQLite storage layer for auction data
+* Highlighted characteristics of this project
+    * Highly (infinitely?) scalable
+    * Cheap - workers shut down immediately, durable objects shutdown when not in use too
+    * Strong client authorization model, server verifies everything, someone scripting the website should not have any impact
+    * Customizable player stats via CSV upload, not specific to NHL
+* Technical design
+    * State machine - auction states
+        * Pre auction
+        * Player selection
+        * Bidding
+        * Post auction
+    * Server is the single source of truth, clients only change state when server tells them to
+    * All user interaction (bidding, player selection, etc) is validated by the server
+        * client is in the correct state (all client messages include the state they think they are in)
+        * team has enough funds
+        * player has not already been drafted
+    * Timer is very important aspect
+        * Durable Objects offers a “timer” API that takes a target timestamp to run a callback
+        * Pass state change function as callback which sends a websocket update to all clients
+* Issues
+    * Websockets started dropping connection after an hour or so, have to refresh page
+        * Added reconnect attempt on the client side
+* What did I learn
+    * Web components are pretty low level, not comparable to ease of use of React or Svelte components at the moment
+    * It’s not super complicated to create an interactive UI with just JS and DOM APIs
+    * Cloudflare is cool
