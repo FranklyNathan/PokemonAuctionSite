@@ -253,7 +253,6 @@ function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
     rowSelection: 'single',
     floatingFiltersHeight: 60,
     getRowId: (params) => params.data.team + params.data.name,
-    onRowClicked: (e) => playerSelected(ctx, e.data),
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },

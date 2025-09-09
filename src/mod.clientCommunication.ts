@@ -84,13 +84,6 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
       } else if (ctx.serverState == State.PlayerSelection) {
         // validate a bid in the Player Selection state
         // only the team currently selecting a player can bid
-        if (clientId != ctx.currentlySelectingTeam) {
-          return sendError(
-            ctx,
-            `Bidding is only allowed by the team currently selecting a player: ${ctx.currentlySelectingTeam}`,
-            clientId,
-          );
-        }
         // validate the client sent us the selectedPlayerId for the player they selected
         if (!msg.hasOwnProperty('selectedPlayerId')) {
           return sendError(
@@ -103,6 +96,12 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
           return sendError(ctx, `The selectedPlayerId ${msg.selectedPlayerId} is not a valid number!`, clientId);
         }
         msg.selectedPlayerId = Math.trunc(+msg.selectedPlayerId); // convert the selectedPlayerId to an integer
+
+        // the selected player must match the player the server has selected for auction
+        if (ctx.selectedPlayerId !== msg.selectedPlayerId) {
+          return sendError(ctx, `The selected player ID ${msg.selectedPlayerId} does not match the player up for auction!`, clientId);
+        }
+
         // make sure the selectedPlayerId sent by the client is a valid player ID
         const draftedByArray = getPlayerDraftedById(ctx, msg.selectedPlayerId);
         if (draftedByArray.length == 0) {
@@ -159,8 +158,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       ctx.currentBid = msg.bid;
       ctx.highestBidder = clientId;
       if (ctx.serverState == State.PlayerSelection) {
-        ctx.selectedPlayerId = msg.selectedPlayerId;
-        ctx.highestBidder = clientId;
+        // This was the first bid on the player, transition to Bidding state
         await transitionState(ctx);
         break;
       }

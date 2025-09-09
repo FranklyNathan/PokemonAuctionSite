@@ -171,7 +171,7 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
 export function hideSelectedPlayerCard(teamName) {
   document.getElementById('player').setAttribute('hidden', 'true');
   if (typeof teamName == 'string') {
-    document.getElementById('waiting-msg').innerHTML = `Waiting for <u>${teamName}</u> to Select a Player`;
+    document.getElementById('waiting-msg').innerHTML = `Waiting for <u>${teamName}</u> to make a bid`;
   }
 }
 
@@ -282,8 +282,6 @@ export function isValidNumber(s) {
 
 export function initBidButtonListeners(ctx) {
   function onClick(e) {
-    // during player selection phase, only the team up to select a player can click these.
-    if (ctx.stateId == 'player_selection' && ctx.myClientId != ctx.currentlySelectingTeam) return;
     if (ctx.selectedPlayerId == undefined || e.target.value == undefined) return;
     if (e.target.hasAttribute('disabled')) return;
 
@@ -310,8 +308,6 @@ export function initBidButtonListeners(ctx) {
 
   // for the custom raise button we have to get the value from the input
   document.getElementById('raise').addEventListener('click', (e) => {
-    // during player selection phase, only the team up to select a player can click these.
-    if (ctx.stateId == 'player_selection' && ctx.myClientId != ctx.currentlySelectingTeam) return;
     if (e.target.hasAttribute('disabled')) return;
     const raiseInputEl = document.getElementById('raise-input');
     if (ctx.selectedPlayerId == undefined || e.target.value == undefined || raiseInputEl == undefined) return;

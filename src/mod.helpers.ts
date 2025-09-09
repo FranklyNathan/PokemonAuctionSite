@@ -1,5 +1,5 @@
 import { Ctx, State, ServerMessage, ServerMessageType } from './mod.config';
-import { getUndraftedCount, getRosterCounts, getTeamRosterCount, setDraft } from './mod.storage';
+import { getUndraftedCount, getRosterCounts, getTeamRosterCount, setDraft, getRandomUndraftedPlayer } from './mod.storage';
 
 export function isValidNumber(s: string): boolean {
   return !isNaN(+s) && !isNaN(parseFloat(s));
@@ -51,44 +51,18 @@ export function unserializeCtx(ctx: Ctx, state: DurableObjectState, sql: SqlStor
   return ctx;
 }
 
-function nextDraftOrder(ctx: Ctx) {
-  // get a copy of the initial draft position. this way we can exit if theres a bug
-  //   and we do a full loop around the teams.
-  const originalDraftPosition = ctx.draftPosition;
-  while (true) {
-    // increment the draft position, looping back to 0 if we go beyond the number of teams
-    ctx.draftPosition = (ctx.draftPosition + 1) % ctx.draftOrder.length;
-
-    // check if this team is valid to select a player
-    const client = ctx.clientMap[ctx.draftOrder[ctx.draftPosition]];
-    const rosterSize = getTeamRosterCount(ctx, client.clientId) || 0;
-    if (client.connected && client.remainingFunds > 0 && rosterSize < ctx.maxRosterSize) {
-      ctx.currentlySelectingTeam = client.clientId;
-      return;
-    }
-
-    if (ctx.draftPosition == originalDraftPosition) {
-      // we have gone all the way around and didn't find a new team...
-      //   this shouldn't happen. So we don't keep looping forever
-      //   just use team 0;
-      ctx.currentlySelectingTeam = 0;
-      break;
-    }
-  }
-}
-
-function setupPlayerSelection(ctx: Ctx, increment = true) {
+function setupPlayerSelection(ctx: Ctx) {
   ctx.serverState = State.PlayerSelection;
-  ctx.currentBid = undefined;
+  ctx.currentBid = 0;
   ctx.selectedPlayerId = undefined;
+  ctx.highestBidder = undefined;
+  ctx.currentlySelectingTeam = undefined;
 
-  // choose new team to select a player
-  if (increment) {
-    nextDraftOrder(ctx);
-  } else {
-    ctx.currentlySelectingTeam = ctx.draftPosition || 0;
+  // Instead of the client selecting a player, the server does it randomly.
+  const randomPlayer = getRandomUndraftedPlayer(ctx);
+  if (randomPlayer) {
+    ctx.selectedPlayerId = randomPlayer.player_id;
   }
-
   ctx.setAlarm(ctx.playerSelectionTimeLimit);
 }
 
@@ -172,7 +146,7 @@ export async function transitionState(ctx: Ctx) {
     case State.PreAuction:
       // second argument false: don't increment selecting team because we start at
       //   team 0 and team 0 has not picked yet.
-      setupPlayerSelection(ctx, false);
+      setupPlayerSelection(ctx);
 
       break;
     case State.Bidding:
@@ -197,22 +171,22 @@ export async function transitionState(ctx: Ctx) {
       setupPlayerSelection(ctx);
       break;
     case State.PlayerSelection:
-      // check if we should go to results (can happen if valid teams left)
       if (isDraftComplete(ctx)) {
         await goToPostAuction(ctx);
         break;
       }
 
-      // check if we timed out waiting for team to select a player. stay in player selection state
-      if (ctx.selectedPlayerId == undefined) {
+      // If highestBidder is set, it means a bid was made and we should move to Bidding state.
+      if (ctx.highestBidder !== undefined) {
+        // A team has made an initial bid. Move to the bidding state
+        ctx.serverState = State.Bidding;
+        ctx.currentlySelectingTeam = undefined;
+        ctx.setAlarm(ctx.biddingTimeLimit);
+      } else {
+        // The alarm fired, which means the team that was supposed to make a bid timed out.
+        // Stay in player selection state, and move to the next team.
         setupPlayerSelection(ctx);
-        break;
       }
-      // A team has selected a player. Move to the bidding state
-      ctx.serverState = State.Bidding;
-      ctx.currentlySelectingTeam = undefined;
-      // give double the time for the first bid after a player is selected so teams have time to pull up stats
-      ctx.setAlarm(ctx.biddingTimeLimit * 2);
       break;
   }
 }

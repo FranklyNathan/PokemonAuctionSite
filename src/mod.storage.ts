@@ -49,6 +49,18 @@ export function getPlayerDraftedById(ctx: Ctx, playerId: number): Array<number |
     .map((row) => row.drafted_by_id?.valueOf() as number);
 }
 
+export function getRandomUndraftedPlayer(ctx: Ctx): { player_id: number } | null {
+  const result = ctx.sql
+    .exec("SELECT player_id FROM player WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL ORDER BY RANDOM() LIMIT 1")
+    .one();
+  if (result) {
+    return {
+      player_id: result.player_id as number,
+    };
+  }
+  return null;
+}
+
 export function getPlayersJsonString(ctx: Ctx) {
   return ctx.sql.exec("SELECT '[' || GROUP_CONCAT(player_data) || ']' as players FROM player").one().players?.toString();
 }

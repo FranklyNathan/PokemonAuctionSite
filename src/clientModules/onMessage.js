@@ -102,7 +102,12 @@ function handleServerUpdate(msg, ctx) {
   }
 
   // update the UI if there was a state change or we haven't performed the initial UI update
-  if (msg.stateId != ctx.stateId || !ctx.performedInitialUpdate) {
+  if (
+    msg.stateId != ctx.stateId ||
+    !ctx.performedInitialUpdate ||
+    // if we are in player selection and the player changes (due to timeout), re-run state change logic
+    (ctx.stateId == 'player_selection' && msg.selectedPlayerId != ctx.selectedPlayerId)
+  ) {
     // if a player rejoins in the middle of the bidding phase, the `msg.stateId != ctx.stateId`
     //   check won't match, but we still need to initialize their UI as if it was a state change
     //   so we have to keep track of whether we have done the initial update.
@@ -115,11 +120,9 @@ function handleServerUpdate(msg, ctx) {
     switch (msg.stateId) {
       case 'bidding':
         // update the raise buttons label back to be "raise" if this is the
-        //   client who was just selecting a player. the label for them is
-        //   currently "bid".
-        if (ctx.myClientId == ctx.currentlySelectingTeam) {
-          updateRaiseButtonsLabel(true);
-        } else if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
+        //   button label to "raise".
+        updateRaiseButtonsLabel(true);
+        if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
           // only enable the raise buttons if this team is still drafting
           enableRaiseButtons();
         }
@@ -136,16 +139,25 @@ function handleServerUpdate(msg, ctx) {
         if (ctx.stateId == 'bidding') {
           recordDraft(ctx);
         }
-        disableRaiseButtons();
-        if (msg.currentlySelectingTeam != undefined) {
-          const previouslySelectingTeam = ctx.currentlySelectingTeam || 0;
-          ctx.currentlySelectingTeam = msg.currentlySelectingTeam;
-          updateCurrentlySelectingTeam(ctx, previouslySelectingTeam);
+        // if there was a selecting team, remove the indicator
+        if (ctx.currentlySelectingTeam != undefined) {
+          removeSelectingIndicator(ctx);
         }
-        // if this client is selecting a player, the raise buttons are now used
-        //   as starting bid buttons. update the label to say "bid" instead of "raise"
-        if (ctx.myClientId == ctx.currentlySelectingTeam) {
-          updateRaiseButtonsLabel(false);
+        ctx.currentlySelectingTeam = undefined;
+
+        // The first bid can be made by any team.
+        updateRaiseButtonsLabel(false); // label is "bid"
+        if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
+          enableRaiseButtons();
+        } else {
+          disableRaiseButtons();
+        }
+        // set the player card to the selected player
+        if (msg.selectedPlayerId != undefined) {
+          const playerData = ctx.playersTableData[msg.selectedPlayerId];
+          updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+        } else {
+          hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
         }
         break;
       case 'post_auction':
@@ -158,19 +170,6 @@ function handleServerUpdate(msg, ctx) {
     }
 
     ctx.stateId = msg.stateId;
-  } else if (ctx.stateId == 'player_selection' && msg.currentlySelectingTeam != ctx.currentlySelectingTeam) {
-    // if we are in the player_selection state, and the team that was supposed to pick a
-    //   player timed out, we will get a message with a different `currentlySelectingTeam`.
-    hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
-    // if this client is the client now selecting, update the raise buttons label to be 'bid', otherwise
-    //   set it back to 'raise'.
-    updateRaiseButtonsLabel(ctx.myClientId == ctx.currentlySelectingTeam);
-
-    // update the selecting indicator
-    removeSelectingIndicator(ctx); // remove existing selecting indicator
-    const previouslySelectingTeam = ctx.currentlySelectingTeam || 0;
-    ctx.currentlySelectingTeam = msg.currentlySelectingTeam;
-    updateCurrentlySelectingTeam(ctx, previouslySelectingTeam);
   }
 
   if (msg.peers) {
