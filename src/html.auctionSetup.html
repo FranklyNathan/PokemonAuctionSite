@@ -17,7 +17,11 @@
     <div style="display: flex; width: 100%; justify-content: center">
       <h1 style="background-color: var(--container-bg-color); padding: 0.5rem 1rem; border: 1px solid black">Auction Setup</h1>
     </div>
-    <sl-dialog id="welcome-dialog" open label="Welcome!">
+    <sl-dialog id="welcome-dialog" open>
+      <div slot="label" style="display: flex; align-items: center; gap: 1rem">
+        Welcome!
+        <img src="/images/Froakie.png" alt="Froakie" style="height: 2.5rem" />
+      </div>
       <p>This is an auction style draft app for fantasy sports leagues.</p>
       <p>Use the form to enter all your league's teams and the available funds for each.</p>
       <p>

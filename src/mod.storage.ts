@@ -1,12 +1,17 @@
 import { ClientId, Ctx } from './mod.config';
 
 export function storePlayers(sql: SqlStorage, players: any[]) {
+  // Drop the table if it exists to ensure a clean slate for the new auction.
+  sql.exec('DROP TABLE IF EXISTS player;');
   sql.exec(`
     CREATE TABLE player(
       player_id INTEGER PRIMARY KEY,
       player_data JSON
     );
   `);
+  if (players.length === 0) {
+    return; // Nothing to insert
+  }
   // inner map replaces `null` values with the string "null", otherwise string interpolation puts empty string
   let vals = players.map((p) => `(${p.player_id}, '${JSON.stringify(p)}')`).join(',');
   let insert = 'INSERT INTO player (player_id, player_data) VALUES ' + vals;

@@ -142,6 +142,11 @@ export function addDraftLog(teamName, cost, playerName) {
 
 export function updateSelectedPlayerCard(playerData, extraFields) {
   document.getElementById('waiting-msg').innerHTML = '';
+  const pokemonImageEl = document.getElementById('pokemon-image');
+  const imagePath = `/images/${encodeURIComponent(playerData.name)}.png`;
+  pokemonImageEl.src = imagePath;
+  pokemonImageEl.alt = playerData.name;
+  pokemonImageEl.style.display = 'block';
   const card = document.getElementById('player');
   card.removeAttribute('hidden');
   let cardInner = `
@@ -170,6 +175,8 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
 
 export function hideSelectedPlayerCard(teamName) {
   document.getElementById('player').setAttribute('hidden', 'true');
+  const pokemonImageEl = document.getElementById('pokemon-image');
+  pokemonImageEl.style.display = 'none';
   if (typeof teamName == 'string') {
     document.getElementById('waiting-msg').innerHTML = `Waiting for <u>${teamName}</u> to make a bid`;
   }

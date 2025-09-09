@@ -1,5 +1,7 @@
 import { State, SECONDS, Ctx, ServerMessageType } from './mod.config';
 import { transitionState, updateClients, getSerializableCtx, unserializeCtx } from './mod.helpers';
+import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
+import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import auctionSetupHtml from './html.auctionSetup.html';
 import resultsHtml from './html.results.html';
@@ -15,11 +17,14 @@ import {
 } from './routes.DO';
 import { handleDO, handleNewAuction as handleNewAuctionWorker, handleIcon, handleModule, handleVendor } from './routes.worker';
 
+const assetManifest = JSON.parse(manifestJSON);
+
 /**
  * Associate bindings declared in wrangler.toml with the TypeScript type system
  */
 export interface Env {
   AUCTION: DurableObjectNamespace;
+  __STATIC_CONTENT: KVNamespace;
 }
 
 /**
@@ -31,6 +36,7 @@ export class Auction implements DurableObject {
   storage!: DurableObjectStorage;
   state!: DurableObjectState;
   durableObjectId!: DurableObjectId;
+  env: Env;
   bucket!: R2Bucket;
   sql!: SqlStorage;
 
@@ -51,6 +57,7 @@ export class Auction implements DurableObject {
       this.storage = state.storage;
       this.durableObjectId = state.id;
       this.state = state;
+      this.env = env;
       this.sql = this.storage.sql;
 
       const existing: Ctx | undefined = await state.storage.get('ctx');
@@ -91,11 +98,11 @@ export class Auction implements DurableObject {
    */
   async fetch(request: Request): Promise<Response> {
     let url = new URL(request.url);
-    // slice(1) removes the leading backslash in the pathname
-    let path = url.pathname.slice(1).split('/');
+    const path = url.pathname.slice(1).split('/');
+    const route = path.length > 1 ? path[1] : path[0];
 
     try {
-      if (path[1] == 'websocket') {
+      if (route == 'websocket') {
         return await handleWebsocket(request, path, this.ctx, this.state);
       } else if (path[1] == 'results') {
         // post-auction page with just the players table
@@ -103,7 +110,7 @@ export class Auction implements DurableObject {
       } else if (path[0] == 'new-auction') {
         return await handleNewAuctionDO(request, this.ctx, url);
       } else if (path[0] == 'test') {
-        return await handleTest(request, this.ctx);
+        return await handleTest(request, this.ctx, url);
       } else if (path[1] == 'players-data') {
         return await handlePlayersData(request, this.ctx);
       } else if (path[1] == 'results-data') {
@@ -112,7 +119,7 @@ export class Auction implements DurableObject {
         return await handleAuction(request, this.ctx);
       }
     } catch (e) {
-      console.error(e);
+      console.error(`[Durable Object Fetch] Error on path ${url.pathname}:`, e);
       return new Response('Server Error...', { status: 500 });
     }
   }
@@ -166,19 +173,48 @@ export default {
    * @param ctx - The execution context of the Worker
    * @returns The response to be sent back to the client
    */
-  async fetch(request: Request, env: Env, _: ExecutionContext): Promise<Response> {
-    // We will create a `DurableObjectId` using the pathname from the Worker request
-    // This id refers to a unique instance of our 'MyDurableObject' class above
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const url = new URL(request.url);
+    console.log(`[Worker Fetch] Received request for: ${url.pathname}`);
 
-    let url = new URL(request.url);
+    if (request.method.toUpperCase() === 'GET') {
+      try {
+        // Try to serve static assets first for GET requests
+        return await getAssetFromKV(
+          {
+            request,
+            waitUntil: (promise) => ctx.waitUntil(promise),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: assetManifest,
+          },
+        );
+      } catch (e) {
+        if (!(e instanceof NotFoundError)) {
+          // This is a real error, not just a file not found.
+          console.error(`[Worker Fetch] Error serving static asset for path ${url.pathname}:`, e);
+          return new Response('Server Error...', { status: 500 });
+        }
+        // It's a NotFoundError, so it's not a static asset. Continue to the API router.
+        console.log(`[Worker Fetch] Not a static asset, proceeding to API router for path: ${url.pathname}`);
+      }
+    }
+    
+    // API Router
     let path = url.pathname.slice(1).split('/');
-
     try {
       if (!path[0] && request.method.toLowerCase() == 'get') {
         // User is setting up a new auction
         return new Response(auctionSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'test') {
-        return await handleNewAuctionWorker(request, env);
+        const response = await handleNewAuctionWorker(request, env);
+        // If the handler returned an error, let's log it before returning it.
+        // This helps debug cases where handlers catch their own errors and return a 500.
+        if (!response.ok) {
+          console.error(`[Worker Fetch] Handler for ${url.pathname} returned an error response:`, response.status, response.statusText);
+        }
+        return response;
       } else if (path[0] == 'style.css') {
         return new Response(css, { headers: { 'Content-Type': 'text/css;charset=UTF-8' } });
       } else if (path[0] == 'modules') {
@@ -187,16 +223,18 @@ export default {
         return await handleIcon(request, path);
       } else if (path[0] == 'vendor') {
         return await handleVendor(request, path);
-      } else if (path[0] == 'favicon.ico') {
-        return new Response('404 Not Found', { status: 404 });
-      } else if (path[0] && /^[0-9a-f]{64}$/.test(path[0])) {
+      } else if (path[0] && /^[0-9a-f]{64,64}$/.test(path[0])) {
         return await handleDO(request, env, path);
+      } else if (path[0] === 'favicon.ico') {
+        // Browsers automatically request this. Return nothing to avoid 404s in logs.
+        return new Response(null, { status: 204 });
       }
+      // If no API route matched, it's a 404 for the API.
+      console.log(`[Worker Fetch] No API route matched for path: ${url.pathname}`);
+      return new Response('404 Not Found', { status: 404 });
     } catch (e) {
-      console.error(e);
+      console.error(`[Worker Fetch] Error in API router for path ${url.pathname}:`, e);
       return new Response('Server Error...', { status: 500 });
     }
-
-    return new Response('404 Not Found', { status: 404 });
   },
 };

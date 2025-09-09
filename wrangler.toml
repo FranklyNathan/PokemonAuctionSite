@@ -21,8 +21,8 @@ rules = [
   { type = "Text", globs = [
     "**/test_players.csv",
   ], fallthrough = true },
-  { type = "Data", globs = [
-    "**/assets/*.svg",
+  { type = "Text", globs = [
+    "**/*.svg",
   ], fallthrough = true },
 ]
 
@@ -36,5 +36,8 @@ class_name = "Auction"
 # Durable Object migrations.
 # Docs: https://developers.cloudflare.com/workers/learning/using-durable-objects#configure-durable-object-classes-with-migrations
 [[migrations]]
-tag = "v1"
-new_sqlite_classes = ["Auction"]
+  tag = "v1"
+  new_sqlite_classes = ["Auction"]
+
+[site]
+bucket = "./assets"

@@ -113,7 +113,7 @@ export async function handleResultsData(_: Request, ctx: Ctx): Promise<Response>
   });
 }
 
-export async function handleTest(req: Request, ctx: Ctx): Promise<Response> {
+export async function handleTest(req: Request, ctx: Ctx, url: URL): Promise<Response> {
   const thisTestCtx = structuredClone(testCtx) as unknown as Ctx;
   Object.assign(ctx, thisTestCtx);
   await ctx.storeCtx();
@@ -123,8 +123,7 @@ export async function handleTest(req: Request, ctx: Ctx): Promise<Response> {
   if (res instanceof Response) return res;
 
   // redirect to the url for the test auction
-  const newUrl = new URL(req.url).origin + '/' + ctx.auctionId;
-  return Response.redirect(newUrl, 302);
+  return Response.redirect(url.origin + '/' + ctx.auctionId, 302);
 }
 
 export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {

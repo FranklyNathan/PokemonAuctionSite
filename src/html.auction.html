@@ -71,9 +71,18 @@
       </div>
       <!-- center content container -->
       <div style="display: flex; justify-content: space-between; gap: 1rem; height: 100%; padding-top: 1rem">
-        <!-- Player list -->
-        <div id="players-table-wrapper" style="width: 75%" class="ag-theme-balham"></div>
-
+        <!-- Left side section -->
+        <div style="width: 75%; display: flex; flex-direction: column; gap: 1rem">
+          <!-- Pokemon Info Section -->
+          <div
+            id="pokemon-info-section"
+            style="height: 300px; background-color: var(--container-bg-color); border: 1px solid black; padding: 1rem; display: flex; justify-content: center; align-items: center;"
+          >
+            <img id="pokemon-image" src="" alt="" style="display: none; max-height: 100%; max-width: 100%" />
+          </div>
+          <!-- Player list -->
+          <div id="players-table-wrapper" style="height: 100%; width: 100%" class="ag-theme-balham"></div>
+        </div>
         <!-- right side section with timer, current bid, player up for auction, etc -->
         <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem; height: 100%">
           <div
