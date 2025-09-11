@@ -13,5 +13,8 @@ export function playerSelected(ctx, playerData) {
     }
     ctx.selectedPlayerId = playerData.playerId;
     updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+
+    // Show the species info. The image is handled by updateSelectedPlayerCard.
+    displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
   }
 }

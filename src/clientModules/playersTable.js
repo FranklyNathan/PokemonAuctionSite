@@ -6,8 +6,10 @@ function isValidNumber(s) {
 }
 
 async function getPlayersJson(type) {
-  const uri = window.location.origin + '/' + window.location.pathname.split('/')[1] + '/' + type;
-  const req = new Request(uri);
+  // Construct a URL relative to the auction's base path.
+  const url = new URL(window.location.href);
+  url.pathname = `/${url.pathname.split('/')[1]}/${type}`;
+  const req = new Request(url.toString());
   return await window
     .fetch(req)
     .then((response) => {
@@ -146,24 +148,51 @@ const cols = [
     filter: 'agTextColumnFilter',
     floatingFilter: true,
     pinned: 'left',
+    cellRenderer: (params) => {
+      if (!params.value) {
+        return '';
+      }
+      const pokemonName = params.value;
+      const iconName = pokemonName.toLowerCase();
+      const iconPath = `/MiniIcons/${iconName}.png`;
+      return `
+        <span style="display: flex; align-items: center; height: 100%;">
+          <div style="width: 32px; display: flex; justify-content: center; align-items: center; margin-right: 8px; flex-shrink: 0;">
+            <img src="${iconPath}" alt="${pokemonName}" title="${pokemonName}" style="max-height: 24px; max-width: 24px;">
+          </div>
+          <span>${pokemonName}</span>
+        </span>
+      `;
+    },
   },
   {
-    field: 'team',
-    headerName: 'Team',
+    field: 'type',
+    headerName: 'Type',
     minWidth: 200,
     filter: 'agTextColumnFilter',
     floatingFilter: true,
-  },
-  {
-    field: 'position',
-    headerName: 'Position',
-    minWidth: 100,
-    filter: 'agTextColumnFilter',
-    floatingFilter: true,
+    cellRenderer: (params) => {
+      if (!params.value) {
+        return '';
+      }
+      const types = params.value.split('/');
+      const iconsHtml = types
+        .map((type) => {
+          const trimmedType = type.trim();
+          // Construct the path to the icon in your assets folder
+          const iconPath = `/TypeIcons/${trimmedType}IC_SV.png`;
+          // Log the path to the browser's developer console to help debug 404s
+          console.log('Requesting type icon from:', iconPath);
+          // Return an img tag for each type
+          return `<img src="${iconPath}" alt="${trimmedType}" title="${trimmedType}" style="height: 16px; vertical-align: middle;">`;
+        })
+        .join(' ');
+      return iconsHtml;
+    },
   },
   {
     field: 'pickedBy',
-    headerName: 'Picked By',
+    headerName: 'Drafted By',
     minWidth: 200,
     filter: 'agTextColumnFilter',
     floatingFilter: true,
@@ -252,7 +281,7 @@ function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
     columnDefs: cols,
     rowSelection: 'single',
     floatingFiltersHeight: 60,
-    getRowId: (params) => params.data.team + params.data.name,
+    getRowId: (params) => params.data.type + params.data.name,
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },
@@ -264,6 +293,15 @@ function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
 export async function loadPlayersData(ctx) {
   const playerRows = await getPlayersJson('players-data');
 
+  const playersTableWrapperEl = document.getElementById('players-table-wrapper');
+  if (!playerRows || playerRows.length === 0) {
+    toast('Warning', 'No players were found for this auction. The player list will be empty.', 'warning');
+    console.warn('No players were loaded for this auction.');
+    ctx.playersTableData = [];
+    // Create an empty table
+    ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, []);
+    return;
+  }
   // update the player rows with application specific data
   playerRows.forEach((row, idx) => {
     let draftedById = row.drafted_by_id;
@@ -287,8 +325,7 @@ export async function loadPlayersData(ctx) {
     let newPlayer = {
       playerId: row.player_id || idx,
       name: row.name,
-      team: row.team,
-      position: row.position,
+      type: row.type,
       drafted: draftedById != null,
       pickedBy: draftedByName,
       cost: cost,
@@ -303,7 +340,6 @@ export async function loadPlayersData(ctx) {
   ctx.playersTableData = playerRows;
 
   // create the players table
-  const playersTableWrapperEl = document.getElementById('players-table-wrapper');
   const playerFields = Object.keys(playerRows[0]);
   ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields);
 }
@@ -334,7 +370,7 @@ function createResultsTable(playersTableWrapperEl, playersData) {
     columnDefs: cols,
     rowSelection: 'single',
     floatingFiltersHeight: 60,
-    getRowId: (params) => params.data.team + params.data.name,
+    getRowId: (params) => params.data.type + params.data.name,
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },

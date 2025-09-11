@@ -1,11 +1,10 @@
 :root {
-    --shadow-color: #b4b4b4;
-    --container-bg-color: var(--sl-color-gray-100);
+  --shadow-color: #b4b4b4;
+  --container-bg-color: var(--sl-color-gray-100);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: var(--sl-font-sans);
+  box-sizing: border-box;
 }
 body {
     opacity: 0;

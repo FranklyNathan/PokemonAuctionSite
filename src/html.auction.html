@@ -76,9 +76,12 @@
           <!-- Pokemon Info Section -->
           <div
             id="pokemon-info-section"
-            style="height: 300px; background-color: var(--container-bg-color); border: 1px solid black; padding: 1rem; display: flex; justify-content: center; align-items: center;"
+            style="height: 300px; background-color: var(--container-bg-color); border: 1px solid black; padding: 1rem; display: flex; justify-content: space-evenly; align-items: stretch; gap: 2rem;"
           >
-            <img id="pokemon-image" src="" alt="" style="display: none; max-height: 100%; max-width: 100%" />
+            <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+              <img id="pokemon-image" src="" alt="" style="display: none; max-height: 100%; max-width: 100%; object-fit: contain;" />
+            </div>
+            <pre id="species-info-text" style="display: none; flex: 1; text-align: left; white-space: pre-wrap; overflow-y: auto; font-size: 0.9rem; margin: 0;"></pre>
           </div>
           <!-- Player list -->
           <div id="players-table-wrapper" style="height: 100%; width: 100%" class="ag-theme-balham"></div>
@@ -182,6 +185,9 @@
               "
             ></div>
           </div>
+          <div style="display: flex; justify-content: flex-end; padding-top: 0.5rem">
+            <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
+          </div>
           <!-- right side section -->
         </div>
       </div>
@@ -260,6 +266,74 @@
     </template>
   </body>
 
+  <script>
+    /**
+     * Fetches and parses the speciesinfo.txt file.
+     * The file is expected to have blocks of text for each Pokémon,
+     * with the Pokémon's name on a line by itself.
+     * @returns {Promise<Map<string, string>>} A map of Pokémon names to their info.
+     */
+    async function fetchAndParsePokemonInfo() {
+      const speciesInfoMap = new Map();
+      try {
+        const response = await fetch('/api/speciesinfo');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        let text = await response.text();
+        // Remove Byte Order Mark (BOM) if it exists, as it can interfere with parsing the first key.
+        if (text.charCodeAt(0) === 0xfeff) {
+          text = text.substring(1);
+        }
+
+        const lines = text.split(/\r\n?|\n/);
+        let currentPokemonName = null;
+        let currentInfo = [];
+        for (const line of lines) {
+          if (line.trim() === '') {
+            // When we hit a blank line, save the previous Pokémon's data.
+            if (currentPokemonName) {
+              speciesInfoMap.set(currentPokemonName, currentInfo.join('\n').trim());
+              currentPokemonName = null;
+              currentInfo = [];
+            }
+          } else if (!currentPokemonName) {
+            // This is the first line of a new Pokémon block.
+            currentPokemonName = line.trim();
+          } else {
+            // This is an info line for the current Pokémon.
+            currentInfo.push(line);
+          }
+        }
+        // Add the very last Pokémon in the file.
+        if (currentPokemonName) {
+          speciesInfoMap.set(currentPokemonName, currentInfo.join('\n').trim());
+        }
+      } catch (e) {
+        console.error('Failed to load or parse speciesinfo.txt:', e);
+      }
+      return speciesInfoMap;
+    }
+
+    /**
+     * Updates the UI to display the auctioned player's image and species info.
+     * @param {object} player - The player object from the players table.
+     * @param {Map<string, string>} speciesInfoMap - The parsed species info.
+     */
+    function displayPlayerAuctionInfo(player, speciesInfoMap) {
+      const imageEl = document.getElementById('pokemon-image');
+      const infoEl = document.getElementById('species-info-text');
+
+      if (player && player.name) {
+        const info = speciesInfoMap.get(player.name);
+        infoEl.textContent = info || 'No additional info available.';
+        infoEl.style.display = 'block';
+      } else {
+        infoEl.style.display = 'none';
+      }
+    }
+  </script>
+
   <script type="module">
     const SECONDS = 1000;
     const ctx = {
@@ -278,6 +352,7 @@
       playersTableData: [],
       myClientId: undefined, // number
       stateId: 'pre_auction', // this is the target for a string replace server side
+      isPaused: false,
       selectedPlayerId: null, // number
       currentBid: null, // number
       highestBidder: null, // number
@@ -309,10 +384,10 @@
     );
 
     // module imports
-    import { CountDownTimer } from './modules/CountDownTimer.js';
-    import { initTeamSelection } from './modules/teamSelectionModal.js';
-    import { setTimerTime, initBidButtonListeners } from './modules/html.js';
-    import { loadPlayersData } from './modules/playersTable.js';
+    import { CountDownTimer } from '/clientModules/CountDownTimer.js';
+    import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
+    import { setTimerTime, initBidButtonListeners } from '/clientModules/html.js';
+    import { loadPlayersData } from '/clientModules/playersTable.js';
 
     ctx.timer = new CountDownTimer(60 * SECONDS);
     // set the timer to update the UI on each "tick"
@@ -337,8 +412,17 @@
     // team selection needs the sl-dialog component to be defined
     initTeamSelection(ctx);
     initBidButtonListeners(ctx);
-    await loadPlayersData(ctx);
+    ctx.speciesInfoMap = await fetchAndParsePokemonInfo(); // Load species info
+    await loadPlayersData(ctx); // Load player data
     document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
     document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());
+
+    // Pause button listener
+    const pauseButton = document.getElementById('pause-button');
+    pauseButton.addEventListener('click', () => {
+      if (ctx.ws) {
+        ctx.ws.send(JSON.stringify({ type: 'toggle_pause' }));
+      }
+    });
   </script>
 </html>

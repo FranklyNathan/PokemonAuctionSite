@@ -25,9 +25,9 @@
       <p>This is an auction style draft app for fantasy sports leagues.</p>
       <p>Use the form to enter all your league's teams and the available funds for each.</p>
       <p>
-        Upload a CSV file (with at least "name", "team", and "position" headers) of the players available to draft. If you are in a keeper
-        league, add the "drafted_by_id" column to the CSV and set it to the team ID of the team that drafted the player. The team ID
-        corresponds to the order of the teams entered in the form, starting at 1 (same as the draft order).
+        Upload a CSV file (with at least "name" and "type" headers) of the players available to draft. If you are in a keeper
+        league, add the "drafted_by_id" column to the CSV and set it to the team ID of the team that drafted the player. The team ID corresponds
+        to the order of the teams entered in the form, starting at 1 (same as the draft order).
       </p>
       <p>Once you've set up the auction, send the link to your league mates so they can join your auction!</p>
       <sl-button id="test-auction" slot="footer" variant="primary" href="/test">Test Auction</sl-button>
@@ -57,7 +57,7 @@
             name="numTeams"
             label="Number of Teams"
             type="number"
-            value="8"
+            value="2"
             min="2"
             max="100"
             step="1"
@@ -151,7 +151,7 @@
           required
           style="opacity: 0; height: 0; max-height: 0; margin-bottom: -1rem"
         />
-        <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name', 'position', and 'team'">
+        <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
           Upload Players CSV
         </sl-button>
         <div id="csvFileName" style="height: 1rem"></div>
@@ -182,7 +182,7 @@
         <div id="team${n}Config" style="display: flex; flex-wrap: wrap; align-content: center; gap: 0.5rem; padding-top: 0.5rem">
           <div style="flex: 6; display: flex; font-weight: bold; align-items: center; justify-content: center;">${n + 1}</div>
           <sl-input name="team${n}Name" class="requiredConfig" placeholder="Team ${n + 1} Name" style="flex: 74;" pattern="[a-zA-Z0-9']+" title="Name must not use any special characters!" maxlength="50" autocomplete="off"></sl-input>
-          <sl-input name="team${n}Funds" class="requiredConfig default-funds" placeholder="Available Funds" type="number" min="0" max="1000000" step="1" title="Integer value" inputmode="decimal" style="flex: 20;" autocomplete="off"></sl-input>
+          <sl-input name="team${n}Funds" class="requiredConfig default-funds" placeholder="Available Funds" type="number" min="0" max="1000000" step="1" title="Integer value" inputmode="decimal" style="flex: 20;" autocomplete="off" value="${defaultFundsEl.value}"></sl-input>
         </div>`;
     }
 
@@ -206,7 +206,7 @@
       numTeams = newNumTeams; // update the stored value
     }
 
-    updateTeamNameInputs(8); // create the initial inputs for the teams
+    updateTeamNameInputs(2); // create the initial inputs for the teams
 
     // add the correct number of team detail sections when the numTeams input value changes
     numTeamsEl.addEventListener('sl-change', (event) => {

@@ -50,6 +50,14 @@ ctx: {
  * Called when moving out of the bidding phase.
  */
 function recordDraft(ctx) {
+  if (!ctx.playersTableData || ctx.playersTableData.length === 0) {
+    console.error('recordDraft called before playersTableData was loaded. Aborting.');
+    return;
+  }
+  if (ctx.selectedPlayerId == null || !ctx.playersTableData?.[ctx.selectedPlayerId]) {
+    console.error(`recordDraft called with invalid selectedPlayerId: ${ctx.selectedPlayerId} or empty player data.`);
+    return;
+  }
   // in order to avoid iterating over the array looking for the
   //   the correct playerId, this assumes the playerIds are
   //   already in ascending order starting at zero. which should
@@ -66,7 +74,7 @@ function recordDraft(ctx) {
 
   // update the table row
   const row = ctx.playersTable.getRowNode(
-    ctx.playersTableData[ctx.selectedPlayerId].team + ctx.playersTableData[ctx.selectedPlayerId].name,
+    ctx.playersTableData[ctx.selectedPlayerId].type + ctx.playersTableData[ctx.selectedPlayerId].name,
   );
   row.setData(ctx.playersTableData[ctx.selectedPlayerId]);
   ctx.playersTable.refreshClientSideRowModel(); // refresh the filtering so if a user is filtered on draft status it shows new draft
@@ -101,6 +109,17 @@ function handleServerUpdate(msg, ctx) {
     updateTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit);
   }
 
+  // Handle pause state
+  if (typeof msg.isPaused === 'boolean' && msg.isPaused !== ctx.isPaused) {
+    ctx.isPaused = msg.isPaused;
+    const pauseButton = document.getElementById('pause-button');
+    if (ctx.isPaused) {
+      ctx.timer.stop();
+      pauseButton.innerHTML = 'Play';
+    } else {
+      pauseButton.innerHTML = 'Pause';
+    }
+  }
   // update the UI if there was a state change or we haven't performed the initial UI update
   if (
     msg.stateId != ctx.stateId ||
@@ -130,8 +149,13 @@ function handleServerUpdate(msg, ctx) {
         removeSelectingIndicator(ctx);
         // set the player card to the selected player
         if (msg.selectedPlayerId != undefined) {
-          const playerData = ctx.playersTableData[msg.selectedPlayerId];
-          updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
+          if (playerData) {
+            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
+          } else {
+            console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
+          }
         }
         break;
       case 'player_selection':
@@ -154,10 +178,16 @@ function handleServerUpdate(msg, ctx) {
         }
         // set the player card to the selected player
         if (msg.selectedPlayerId != undefined) {
-          const playerData = ctx.playersTableData[msg.selectedPlayerId];
-          updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
+          if (playerData) {
+            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
+          } else {
+            console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
+          }
         } else {
           hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
+          displayPlayerAuctionInfo(null, ctx.speciesInfoMap);
         }
         break;
       case 'post_auction':

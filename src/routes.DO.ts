@@ -1,4 +1,4 @@
-import { Ctx, ClientId, ServerMessageType, State } from './mod.config';
+import { Ctx, ClientId, ServerMessageType, State, Player } from './mod.config';
 import { updateClients, isValidNumber } from './mod.helpers';
 import { setupAuction, initPlayers } from './mod.auctionSetup';
 
@@ -119,7 +119,16 @@ export async function handleTest(req: Request, ctx: Ctx, url: URL): Promise<Resp
   await ctx.storeCtx();
 
   // load the players CSV
-  const res = initPlayers(ctx, testPlayers);
+  const players: Player[] = testPlayers.map((p: any) => {
+    return {
+      id: p.id,
+      name: p.name,
+      type: p.team, // The test data uses 'team', so we map it to 'type'
+      isStarred: false,
+    };
+  });
+
+  const res = await initPlayers(ctx, players);
   if (res instanceof Response) return res;
 
   // redirect to the url for the test auction

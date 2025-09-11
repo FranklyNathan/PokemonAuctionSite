@@ -156,8 +156,8 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
       <strong>${playerData.position}</strong>
     </div>
     <div style="display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: 1fr 1fr; gap: 0.5rem;  font-family: 'Nimbus Mono PS', 'Courier New', monospace">
-      <div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">Team</div>
-      <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData.team}</div>
+      <div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">Type</div>
+      <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData.type}</div>
   `;
   // filter to just the fields that have data
   const fieldsFilter = extraFields.filter((f) => playerData[f] != undefined && playerData[f] != '');

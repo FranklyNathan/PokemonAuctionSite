@@ -1,9 +1,10 @@
-import { State, SECONDS, Ctx, ServerMessageType } from './mod.config';
+import { State, SECONDS, Ctx, ServerMessageType, ClientMessageType } from './mod.config';
 import { transitionState, updateClients, getSerializableCtx, unserializeCtx } from './mod.helpers';
 import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import auctionSetupHtml from './html.auctionSetup.html';
+import speciesInfoText from '../assets/speciesinfo.txt';
 import resultsHtml from './html.results.html';
 import css from './style.css';
 
@@ -72,6 +73,7 @@ export class Auction implements DurableObject {
           draftPosition: 0,
           serverState: State.PreAuction,
           clientIdIncrementer: 0,
+          isPaused: false,
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
           maxRosterSize: 15, // default overwridden by auction setup
@@ -99,6 +101,7 @@ export class Auction implements DurableObject {
   async fetch(request: Request): Promise<Response> {
     let url = new URL(request.url);
     const path = url.pathname.slice(1).split('/');
+    console.log(`[Durable Object] FETCH HANDLER | Received request for path: ${url.pathname}`);
     const route = path.length > 1 ? path[1] : path[0];
 
     try {
@@ -116,6 +119,7 @@ export class Auction implements DurableObject {
       } else if (path[1] == 'results-data') {
         return await handleResultsData(request, this.ctx);
       } else {
+        console.log(`[Durable Object] Path did not match a specific DO route. Treating as request for main auction HTML.`);
         return await handleAuction(request, this.ctx);
       }
     } catch (e) {
@@ -141,6 +145,25 @@ export class Auction implements DurableObject {
         }),
       );
     } else {
+      const clientMsg = JSON.parse(message as string);
+      if (clientMsg.type === ClientMessageType.TogglePause) {
+        this.ctx.isPaused = !this.ctx.isPaused;
+        if (this.ctx.isPaused) {
+          // Pause the timer
+          const alarmTime = await this.ctx.getAlarm();
+          if (alarmTime) {
+            this.ctx.remainingTimeOnPause = alarmTime - Date.now();
+            await this.ctx.deleteAlarm();
+          }
+        } else {
+          // Resume the timer
+          if (this.ctx.remainingTimeOnPause) {
+            await this.ctx.setAlarm(this.ctx.remainingTimeOnPause);
+            this.ctx.remainingTimeOnPause = undefined;
+          }
+        }
+        await updateClients(this.ctx, false, true, 'Auction Paused/Resumed');
+      }
       await handleClientMessage(this.ctx, +clientIdStr, message);
       await this.ctx.storeCtx();
     }
@@ -176,10 +199,11 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     console.log(`[Worker Fetch] Received request for: ${url.pathname}`);
-
+    
     if (request.method.toUpperCase() === 'GET') {
       try {
         // Try to serve static assets first for GET requests
+        console.log(`[Worker Fetch] 1. Attempting to serve as a static asset from KV: ${url.pathname}`);
         return await getAssetFromKV(
           {
             request,
@@ -203,21 +227,26 @@ export default {
     
     // API Router
     let path = url.pathname.slice(1).split('/');
+    console.log(`[Worker Fetch] 2. Entering API router for path: ${url.pathname}`);
     try {
       if (!path[0] && request.method.toLowerCase() == 'get') {
         // User is setting up a new auction
         return new Response(auctionSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
-      } else if (path[0] == 'new-auction' || path[0] == 'test') {
+      } else if (path[0] == 'new-auction' || path[0] == 'test' || path[0] == 'new-pokemon-auction') {
         const response = await handleNewAuctionWorker(request, env);
         // If the handler returned an error, let's log it before returning it.
-        // This helps debug cases where handlers catch their own errors and return a 500.
-        if (!response.ok) {
+        // A 302 redirect is not "ok", but it's expected. Only log actual server errors (4xx or 5xx).
+        if (response.status >= 400) {
           console.error(`[Worker Fetch] Handler for ${url.pathname} returned an error response:`, response.status, response.statusText);
         }
         return response;
+      } else if (path[0] === 'api' && path[1] === 'speciesinfo') {
+        console.log(`[Worker Fetch] Matched /api/speciesinfo route. Content length: ${speciesInfoText.length}`);
+        return new Response(speciesInfoText, { headers: { 'Content-Type': 'text/plain' } });
       } else if (path[0] == 'style.css') {
         return new Response(css, { headers: { 'Content-Type': 'text/css;charset=UTF-8' } });
-      } else if (path[0] == 'modules') {
+      } else if (path[0] == 'clientModules') {
+        console.log(`[Worker Fetch] 3. Routing to handleModule for path: ${url.pathname}`);
         return await handleModule(request, path);
       } else if (path[0] == 'assets' && path[1] == 'icons') {
         return await handleIcon(request, path);
@@ -230,10 +259,10 @@ export default {
         return new Response(null, { status: 204 });
       }
       // If no API route matched, it's a 404 for the API.
-      console.log(`[Worker Fetch] No API route matched for path: ${url.pathname}`);
+      console.log(`[Worker Fetch] 4. No API route matched for path: ${url.pathname}`);
       return new Response('404 Not Found', { status: 404 });
     } catch (e) {
-      console.error(`[Worker Fetch] Error in API router for path ${url.pathname}:`, e);
+      console.error(`[Worker Fetch] 5. Uncaught error in API router for path ${url.pathname}:`, e);
       return new Response('Server Error...', { status: 500 });
     }
   },

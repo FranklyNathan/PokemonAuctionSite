@@ -9,6 +9,7 @@ export const SECONDS = 1000;
 export enum ClientMessageType {
   ReadyUp = 'ready_up',
   Bid = 'bid',
+  TogglePause = 'toggle_pause',
   Error = 'error',
 }
 
@@ -50,6 +51,7 @@ export interface ServerMessage {
   peers?: Peer[];
   currentBid?: number;
   highestBidder?: ClientId;
+  isPaused?: boolean;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;
   currentAlarmTime?: number; // target timestamp when alarm will run out in milliseconds elapsed since the UNIX epoch
@@ -58,6 +60,13 @@ export interface ServerMessage {
 }
 
 export type PlayerId = number;
+
+export interface Player {
+  id: number;
+  name: string;
+  type: string;
+  isStarred: boolean;
+}
 
 export interface Client {
   clientId: ClientId;
@@ -80,6 +89,8 @@ export interface Ctx {
   serverState: State;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;
+  isPaused: boolean;
+  remainingTimeOnPause?: number;
   highestBidder?: ClientId;
   currentBid?: number;
   clientIdIncrementer: number; // what ID to use for the next incoming client

@@ -3,14 +3,23 @@ import { storePlayers } from './mod.storage';
 import { Ctx, SECONDS } from './mod.config';
 import Papa from 'papaparse';
 
-export function initPlayers(ctx: Ctx, csvText: string) {
-  const parseRes = Papa.parse(csvText, { header: true, skipEmptyLines: true, dynamicTyping: true });
-  const headers = parseRes.meta.fields || [];
-  const playerRows = parseRes.data as any[];
+export async function initPlayers(ctx: Ctx, data: string | any[]) {
+  let playerRows: any[];
+  let headers: string[];
 
-  if (!(headers.includes('name') && headers.includes('team') && headers.includes('position'))) {
-    return new Response("CSV file did not have 'name', 'team', and/or 'position' headers!", { status: 400 });
+  if (typeof data === 'string') {
+    const parseRes = Papa.parse(data, { header: true, skipEmptyLines: true, dynamicTyping: true });
+    headers = parseRes.meta.fields || [];
+    playerRows = parseRes.data as any[];
+    if (!(headers.includes('name') && headers.includes('type'))) {
+      return new Response("CSV file did not have 'name' and 'type' headers!", { status: 400 });
+    }
+  } else {
+    // Data is pre-parsed from the test auction
+    playerRows = data;
+    headers = playerRows.length > 0 ? Object.keys(playerRows[0]) : [];
   }
+
   // add draft data columns if not provided
   if (!headers.includes('player_id')) headers.push('player_id');
   if (!headers.includes('cost')) headers.push('cost');
@@ -32,7 +41,7 @@ export function initPlayers(ctx: Ctx, csvText: string) {
   });
 
   try {
-    storePlayers(ctx.sql, playerRows);
+    await storePlayers(ctx.sql, playerRows);
   } catch (e) {
     console.error(e);
     return new Response('Failed to import players and create the auction!', { status: 500 });
@@ -92,7 +101,7 @@ export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response |
   }
 
   const csvText = await file.text();
-  const res = initPlayers(ctx, csvText);
+  const res = await initPlayers(ctx, csvText);
   if (res instanceof Response) {
     // error returned as Response
     return res;
