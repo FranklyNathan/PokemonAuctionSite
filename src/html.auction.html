@@ -36,27 +36,18 @@
     <script src="vendor/papaparse.js"></script>
   </head>
 
+  <style>
+    #player::part(body) {
+      display: none;
+    }
+  </style>
+
   <body>
     <div style="display: flex; flex-direction: column; height: 100%; padding: 1rem; overflow-x: auto; overflow-y: hidden">
       <!-- Top section with teams -->
       <div style="width: 100%; display: flex; background-color: var(--container-bg-color); border: 1px solid black; padding: 0.2rem">
         <div
           id="teamsSection"
-          style="
-            flex: 4;
-            display: flex;
-            justify-content: stretch;
-            gap: 0.4rem;
-            height: fit-content;
-            min-height: fit-content;
-            padding: 0.4rem;
-            margin-right: 0.5rem;
-            border-right: 1px solid black;
-            overflow-x: auto;
-          "
-        ></div>
-        <div
-          id="doneTeamsSection"
           style="
             flex: 1;
             display: flex;
@@ -90,7 +81,7 @@
         <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem; height: 100%">
           <div
             style="
-              flex: 8;
+              flex: 6;
               flex-shrink: 0;
               position: relative;
               background-color: var(--container-bg-color);
@@ -126,7 +117,6 @@
               </sl-animation>
             </div>
             <div style="width: 100%; padding-left: 0.5rem; padding-right: 0.5rem">
-              <span id="raise-buttons-label">raise</span>
               <div
                 style="
                   display: flex;
@@ -162,8 +152,8 @@
             style="
               position: relative;
               width: 100%;
-              flex: 1;
-              max-height: 5rem;
+              flex: 2;
+              max-height: 10rem;
               overflow: hidden;
               border: 1px solid black;
               border-radius: 0;
@@ -225,6 +215,9 @@
         .disconnected {
           color: gray;
           background-color: var(--sl-color-rose-200);
+        }
+        .done {
+          background-color: var(--sl-color-sky-200);
         }
       </style>
       <div style="position: relative">
@@ -389,13 +382,13 @@
     import { setTimerTime, initBidButtonListeners } from '/clientModules/html.js';
     import { loadPlayersData } from '/clientModules/playersTable.js';
 
-    ctx.timer = new CountDownTimer(60 * SECONDS);
+    ctx.timer = new CountDownTimer();
     // set the timer to update the UI on each "tick"
-    ctx.timer.onTick((remaining, parsed) => {
+    ctx.timer.onTick((remaining, parsed, displayDuration) => {
       setTimerTime(
         `${String(parsed.minutes).padStart(2, '0')}:${String(parsed.seconds).padStart(2, '0')}`,
         remaining,
-        ctx.currentTimeLimit,
+        displayDuration,
       );
     });
 
@@ -421,7 +414,7 @@
     const pauseButton = document.getElementById('pause-button');
     pauseButton.addEventListener('click', () => {
       if (ctx.ws) {
-        ctx.ws.send(JSON.stringify({ type: 'toggle_pause' }));
+        ctx.ws.send(JSON.stringify({ type: 'toggle_pause', stateId: ctx.stateId }));
       }
     });
   </script>

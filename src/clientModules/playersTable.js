@@ -212,52 +212,6 @@ const cols = [
 /////////////////////////////
 
 function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
-  // show the drafted and starred cols
-  cols.splice(4, 0, {
-    field: 'drafted',
-    headerName: 'Drafted',
-    cellDataType: 'boolean',
-    minWidth: 100,
-    filter: BooleanFilter,
-    filterParams: { trueName: 'Drafted', falseName: 'Available' },
-    suppressHeaderMenuButton: true,
-    floatingFilter: true,
-    floatingFilterComponent: BooleanFloatingFilterComponent,
-    floatingFilterComponentParams: { trueName: 'Drafted', falseName: 'Available' },
-    suppressFloatingFilterButton: true,
-    suppressHeaderFilterButton: true,
-  });
-  cols.push({
-    field: 'starred',
-    headerName: 'Starred',
-    cellDataType: 'boolean',
-    cellClass: (params) => (params.value ? 'star-checked' : 'star-unchecked'),
-    cellStyle: { 'text-align': 'center' }, // Center the star in the cell
-    editable: false, // suppress the double click to show checkbox functionality
-    // make it editable manually
-    onCellClicked: (params) => {
-      const newValue = !params.value;
-      params.node.setDataValue(params.column.colId, newValue);
-    },
-    cellRenderer: (params) => '', // Empty string to override default renderer
-    cellStyle: {
-      'text-align': 'center',
-      display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center',
-      height: '100%',
-      'font-size': '22px',
-    },
-    minWidth: 100,
-    filter: BooleanFilter,
-    filterParams: { trueName: 'Starred', falseName: 'Not Starred' },
-    suppressHeaderMenuButton: true,
-    floatingFilter: true,
-    floatingFilterComponent: BooleanFloatingFilterComponent,
-    floatingFilterComponentParams: { trueName: 'Starred', falseName: 'Not Starred' },
-    suppressFloatingFilterButton: true,
-    suppressHeaderFilterButton: true,
-  });
   // add any custom columns to the table
   const currentFields = new Set(cols.map((c) => c.field));
   currentFields.add('playerId').add('keeper'); // don't add these to the table
@@ -280,7 +234,7 @@ function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
     rowData: ctx?.playersTableData || [],
     columnDefs: cols,
     rowSelection: 'single',
-    floatingFiltersHeight: 60,
+    floatingFiltersHeight: 40,
     getRowId: (params) => params.data.type + params.data.name,
     autoSizeStrategy: {
       type: 'fitGridWidth',
@@ -318,19 +272,16 @@ export async function loadPlayersData(ctx) {
       ctx.teams?.[draftedById]?.drafted?.push({ playerId: idx, cost: cost || 0 });
     }
 
-    // no need to keep this around anymore
-    delete row.drafted_by_id;
-    delete row.player_id;
-
     let newPlayer = {
-      playerId: row.player_id || idx,
+      // Ensure playerId is correctly assigned from the index.
+      // The original player_id from the data source is not needed after this.
+      playerId: idx,
       name: row.name,
       type: row.type,
-      drafted: draftedById != null,
+      // Use null for drafted_by_id if it's not a valid number.
       pickedBy: draftedByName,
       cost: cost,
       keeper: row.keeper || draftedById != null,
-      starred: false, // add the "starred" data user's can edit in the data table
     };
     // Overwrite existing keys with the above values we just set. This preserves any
     //   other bonus data the auction creator passed in (other fields like `goals`, etc)
@@ -369,7 +320,7 @@ function createResultsTable(playersTableWrapperEl, playersData) {
     rowData: playersData,
     columnDefs: cols,
     rowSelection: 'single',
-    floatingFiltersHeight: 60,
+    floatingFiltersHeight: 40,
     getRowId: (params) => params.data.type + params.data.name,
     autoSizeStrategy: {
       type: 'fitGridWidth',

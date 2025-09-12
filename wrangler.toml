@@ -17,10 +17,6 @@ rules = [
     "**/node_modules/canvas-confetti/dist/confetti.browser.js",
     "**/node_modules/papaparse/papaparse.min.js",
   ], fallthrough = true },
-  # bundle test players CSV
-  { type = "Text", globs = [
-    "**/test_players.csv",
-  ], fallthrough = true },
   { type = "Text", globs = [
     "**/*.svg",
   ], fallthrough = true },

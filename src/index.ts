@@ -67,6 +67,7 @@ export class Auction implements DurableObject {
       } else {
         this.ctx = {
           auctionId: state.id.toString(),
+          storage: this.storage,
           sql: state.storage.sql,
           clientMap: {},
           draftOrder: [],
@@ -76,7 +77,6 @@ export class Auction implements DurableObject {
           isPaused: false,
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
-          maxRosterSize: 15, // default overwridden by auction setup
           _setAlarm: this.storage.setAlarm.bind(this.storage),
           setAlarm: (durationMs: number) => {
             this.ctx.currentTimeLimit = durationMs;
@@ -112,8 +112,6 @@ export class Auction implements DurableObject {
         return new Response(resultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction') {
         return await handleNewAuctionDO(request, this.ctx, url);
-      } else if (path[0] == 'test') {
-        return await handleTest(request, this.ctx, url);
       } else if (path[1] == 'players-data') {
         return await handlePlayersData(request, this.ctx);
       } else if (path[1] == 'results-data') {
@@ -129,6 +127,11 @@ export class Auction implements DurableObject {
   }
 
   async alarm() {
+    if (this.ctx.isPaused) {
+      console.log('[Server] Alarm fired while paused. Ignoring.');
+      // Do nothing. The timer will be correctly resumed when the user un-pauses.
+      return;
+    }
     await transitionState(this.ctx);
     await updateClients(this.ctx, true, true);
     await this.ctx.storeCtx();
@@ -145,24 +148,11 @@ export class Auction implements DurableObject {
         }),
       );
     } else {
-      const clientMsg = JSON.parse(message as string);
-      if (clientMsg.type === ClientMessageType.TogglePause) {
-        this.ctx.isPaused = !this.ctx.isPaused;
-        if (this.ctx.isPaused) {
-          // Pause the timer
-          const alarmTime = await this.ctx.getAlarm();
-          if (alarmTime) {
-            this.ctx.remainingTimeOnPause = alarmTime - Date.now();
-            await this.ctx.deleteAlarm();
-          }
-        } else {
-          // Resume the timer
-          if (this.ctx.remainingTimeOnPause) {
-            await this.ctx.setAlarm(this.ctx.remainingTimeOnPause);
-            this.ctx.remainingTimeOnPause = undefined;
-          }
-        }
-        await updateClients(this.ctx, false, true, 'Auction Paused/Resumed');
+      console.log(`[Durable Object] webSocketMessage received from client ${clientIdStr}.`);
+      try {
+        console.log(`[Durable Object] Message content: ${message as string}`);
+      } catch (e) {
+        console.log('[Durable Object] Message content is not a string.');
       }
       await handleClientMessage(this.ctx, +clientIdStr, message);
       await this.ctx.storeCtx();
@@ -232,8 +222,8 @@ export default {
       if (!path[0] && request.method.toLowerCase() == 'get') {
         // User is setting up a new auction
         return new Response(auctionSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
-      } else if (path[0] == 'new-auction' || path[0] == 'test' || path[0] == 'new-pokemon-auction') {
-        const response = await handleNewAuctionWorker(request, env);
+      } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
+        const response = await handleNewAuctionWorker(request, env, path.slice(1));
         // If the handler returned an error, let's log it before returning it.
         // A 302 redirect is not "ok", but it's expected. Only log actual server errors (4xx or 5xx).
         if (response.status >= 400) {

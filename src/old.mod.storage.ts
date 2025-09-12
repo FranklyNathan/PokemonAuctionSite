@@ -1,38 +1,20 @@
 import { ClientId, Ctx } from './mod.config';
 
-export async function createPlayersTable(ctx: Ctx) {
-  await ctx.sql.exec('DROP TABLE IF EXISTS players;');
-  await ctx.sql.exec(`
-    CREATE TABLE players(
+export function storePlayers(sql: SqlStorage, players: any[]) {
+  sql.exec(`
+    CREATE TABLE player(
       player_id INTEGER PRIMARY KEY,
       player_data JSON
     );
   `);
-}
-
-export async function insertPlayers(ctx: Ctx, players: any[]) {
-  if (!players || players.length === 0) {
-    return;
-  }
-
-  // Revert to a simpler, one-by-one insert. This is less efficient for huge
-  // datasets, but is far more reliable and avoids issues with parameter binding
-  // limits and SQL syntax interpretation in the Durable Object environment.
-  for (const player of players) {
-    try {
-      // Using exec with string interpolation to match the old, working implementation.
-      // Note: This pattern can be vulnerable to SQL injection if player data contains single quotes.
-      await ctx.sql.exec(`INSERT INTO players (player_id, player_data) VALUES (${player.player_id}, '${JSON.stringify(player)}')`);
-    } catch (e) {
-      console.error('Single player insert failed:', e);
-      console.error('Player data:', player);
-      throw e; // Re-throw the error to be caught by the caller.
-    }
-  }
+  // inner map replaces `null` values with the string "null", otherwise string interpolation puts empty string
+  let vals = players.map((p) => `(${p.player_id}, '${JSON.stringify(p)}')`).join(',');
+  let insert = 'INSERT INTO player (player_id, player_data) VALUES ' + vals;
+  sql.exec(insert);
 }
 
 export function getUndraftedCount(ctx: Ctx) {
-  return ctx.sql.exec("SELECT COUNT(*) as count FROM players WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL").one()
+  return ctx.sql.exec("SELECT COUNT(*) as count FROM player WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL").one()
     .count as number;
 }
 
@@ -44,7 +26,7 @@ export function getRosterCounts(ctx: Ctx): { [id: string]: number } {
         `select
           JSON_EXTRACT(player_data, '$.drafted_by_id') as client_id,
           count(*) as count
-        from players
+        from player
         where JSON_EXTRACT(player_data, '$.drafted_by_id') is not null
         group by JSON_EXTRACT(player_data, '$.drafted_by_id');`,
       )
@@ -55,21 +37,21 @@ export function getRosterCounts(ctx: Ctx): { [id: string]: number } {
 
 export function getTeamRosterCount(ctx: Ctx, clientId: ClientId): number {
   return ctx.sql
-    .exec(`select count(*) as count from players where JSON_EXTRACT(player_data, '$.drafted_by_id') = ${clientId}`)
+    .exec(`select count(*) as count from player where JSON_EXTRACT(player_data, '$.drafted_by_id') = ${clientId}`)
     .one()
     .count?.valueOf() as number;
 }
 
 export function getPlayerDraftedById(ctx: Ctx, playerId: number): Array<number | null> {
   return ctx.sql
-    .exec(`SELECT JSON_EXTRACT(player_data, '$.drafted_by_id') as drafted_by_id FROM players WHERE player_id = ${playerId}`)
+    .exec(`SELECT JSON_EXTRACT(player_data, '$.drafted_by_id') as drafted_by_id FROM player WHERE player_id = ${playerId}`)
     .toArray()
     .map((row) => row.drafted_by_id?.valueOf() as number);
 }
 
 export function getRandomUndraftedPlayer(ctx: Ctx): { player_id: number } | null {
   const result = ctx.sql
-    .exec("SELECT player_id FROM players WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL ORDER BY RANDOM() LIMIT 1")
+    .exec("SELECT player_id FROM player WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL ORDER BY RANDOM() LIMIT 1")
     .one();
   if (result) {
     return {
@@ -80,7 +62,7 @@ export function getRandomUndraftedPlayer(ctx: Ctx): { player_id: number } | null
 }
 
 export function getPlayersJsonString(ctx: Ctx) {
-  return ctx.sql.exec("SELECT '[' || GROUP_CONCAT(player_data) || ']' as players FROM players").one().players?.toString();
+  return ctx.sql.exec("SELECT '[' || GROUP_CONCAT(player_data) || ']' as players FROM player").one().players?.toString();
 }
 
 export function getResultsJsonString(ctx: Ctx) {
@@ -94,7 +76,7 @@ export function getResultsJsonString(ctx: Ctx) {
         json_extract(player_data, '$.drafted_by_id') as drafted_by_id,
         json_extract(player_data, '$.cost') as cost,
         json_extract(player_data, '$.keeper') as keeper
-      FROM players
+      FROM player
       WHERE json_extract(player_data, '$.drafted_by_id') IS NOT NULL
       ORDER BY player_id;`,
     )
@@ -113,14 +95,13 @@ export function getResultsJsonString(ctx: Ctx) {
 }
 
 export function setDraft(ctx: Ctx) {
-  ctx.sql
-    .exec(
-      `UPDATE players
+  ctx.sql.exec(
+    `UPDATE player
     SET player_data = JSON_PATCH(
       player_data,
       JSON_OBJECT('drafted_by_id', ${ctx.highestBidder}, 'cost', ${ctx.currentBid})
     )
     WHERE player_id = ${ctx.selectedPlayerId}
     ;`,
-    );
+  );
 }

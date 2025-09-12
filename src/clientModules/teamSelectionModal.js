@@ -89,19 +89,13 @@ export function initTeamSelection(ctx) {
         style: 'flex-grow: 1; max-width: 20rem',
         innerHTML: `
           <span slot="draft-position">${team.draftPosition + 1}</span>
-          <span slot="top-right" id="team${team.clientId}trc"></span>
+          <span slot="top-right" id="team${team.clientId}trc" style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 2px;"></span>
           <span slot="lower-left-content" id="team${team.clientId}llc">${content}</span>
-          <span slot="lower-right-content" id="team${team.clientId}lrc">${team.rosterCount}/${ctx.maxRosterSize}</span>
           <span slot="participant-name" id="team${team.clientId}name">${team.teamName}</span>
           <span slot="remaining-funds" id="team${team.clientId}RemainingFunds">$${team.remainingFunds}</span>
         `,
       });
-      // if this team is starting with no funds or a full roster, put them in the done section
-      if (team.rosterCount >= ctx.maxRosterSize || team.remainingFunds <= 0) {
-        document.getElementById('doneTeamsSection').insertAdjacentElement('beforeend', teamEl);
-      } else {
-        document.getElementById('teamsSection').insertAdjacentElement('beforeend', teamEl);
-      }
+      document.getElementById('teamsSection').insertAdjacentElement('beforeend', teamEl);
       // set the class (can only do this after the template has been created)
       teamEl.shadowRoot.getElementById('main-content').setAttribute('class', cls);
 

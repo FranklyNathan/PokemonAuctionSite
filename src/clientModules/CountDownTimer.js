@@ -5,15 +5,10 @@ export class CountDownTimer {
   running; // boolean - whether the timer is still running
   timeoutId; // timeoutID
 
-  constructor(duration, granularity = 1000) {
-    this.duration = duration;
+  constructor(granularity = 1000) {
     this.granularity = granularity;
     this.tickFns = [];
     this.running = false;
-  }
-
-  updateDuration(milliseconds) {
-    this.duration = milliseconds;
   }
 
   parse(milliseconds) {
@@ -30,16 +25,29 @@ export class CountDownTimer {
     return this;
   }
 
-  start() {
-    if (this.running) return;
+  start(duration, totalDuration) {
+    console.log(`[Debug] CountDownTimer.start called with duration: ${duration}, totalDuration: ${totalDuration}`);
+    // Always allow starting, even if a previous timer was considered running.
+    this.stop(); // Ensure any existing timeout is cleared before starting a new one.
+    this.running = true;
+    this.duration = duration;
+    const displayDuration = totalDuration ?? duration;
     let start = Date.now();
     let that = this; // make a ref to the class so we can reference easily
     let diff; // holds the remaining time on the timer
 
+    // If the duration is not positive, don't start the timer loop.
+    // Just run the tick functions once with 0 to signal completion.
+    if (duration <= 0) {
+      console.log('[Debug] Timer duration is <= 0. Signalling completion and stopping.');
+      that.tickFns.forEach((fn) => fn(0, that.parse(0), displayDuration));
+      return;
+    }
+
     (function timer() {
       // calculate the remaining time on the timer
-      // do this instead of trusting setInterval, which is untrustworthy
-      diff = that.duration - Math.trunc(Date.now() - start);
+      // This is the core of the timer logic.
+      diff = that.duration - (Date.now() - start);
 
       if (diff > 0) {
         that.timeoutId = setTimeout(timer, that.granularity);
@@ -49,11 +57,13 @@ export class CountDownTimer {
       }
 
       // call each registered function
-      that.tickFns.forEach((fn) => fn(diff, that.parse(diff)));
+      console.log(`[Debug] Timer tick. Remaining diff: ${diff}`);
+      that.tickFns.forEach((fn) => fn(diff, that.parse(diff), displayDuration));
     })();
   }
 
   stop() {
+    console.log('[Debug] CountDownTimer.stop called.');
     if (this.timeoutId != undefined) {
       clearTimeout(this.timeoutId);
     }

@@ -1,5 +1,5 @@
 import { Ctx, State, ServerMessage, ServerMessageType } from './mod.config';
-import { getUndraftedCount, getRosterCounts, getTeamRosterCount, setDraft, getRandomUndraftedPlayer } from './mod.storage';
+import { getUndraftedCount, getRosterCounts, setDraft, getRandomUndraftedPlayer } from './mod.storage';
 
 export function isValidNumber(s: string): boolean {
   return !isNaN(+s) && !isNaN(parseFloat(s));
@@ -18,12 +18,13 @@ export function getSerializableCtx(ctx: Ctx) {
     ),
     draftOrder: ctx.draftOrder,
     draftPosition: ctx.draftPosition,
-    maxRosterSize: ctx.maxRosterSize,
     serverState: ctx.serverState,
     currentlySelectingTeam: ctx.currentlySelectingTeam,
     selectedPlayerId: ctx.selectedPlayerId,
     highestBidder: ctx.highestBidder,
     currentBid: ctx.currentBid,
+    isPaused: ctx.isPaused,
+    remainingTimeOnPause: ctx.remainingTimeOnPause,
     clientIdIncrementer: ctx.clientIdIncrementer,
     biddingTimeLimit: ctx.biddingTimeLimit,
     playerSelectionTimeLimit: ctx.playerSelectionTimeLimit,
@@ -35,6 +36,7 @@ export function unserializeCtx(ctx: Ctx, state: DurableObjectState, sql: SqlStor
   // add the unserializable parts back to the context object:
   // set and delete alarm
   ctx._setAlarm = state.storage.setAlarm.bind(state.storage);
+  ctx.storage = state.storage;
   ctx.setAlarm = (durationMs: number) => {
     ctx.currentTimeLimit = durationMs;
     ctx._setAlarm(Date.now() + durationMs);
@@ -66,13 +68,21 @@ function setupPlayerSelection(ctx: Ctx) {
   ctx.setAlarm(ctx.playerSelectionTimeLimit);
 }
 
-export async function updateClients(ctx: Ctx, sendPeers = false, sendTimerUpdate?: boolean, message?: string) {
+export async function updateClients(
+  ctx: Ctx,
+  sendPeers = false,
+  sendTimerUpdate?: boolean,
+  message?: string,
+  remainingTimeOnResume?: number,
+) {
+  console.log(`[Server] Broadcasting 'updateClients'. state: ${ctx.serverState}, bid: ${ctx.currentBid}, bidder: ${ctx.highestBidder}`);
   let msg: ServerMessage = {
     type: ServerMessageType.Update,
     stateId: ctx.serverState,
     currentBid: ctx.currentBid,
     highestBidder: ctx.highestBidder,
     currentlySelectingTeam: ctx.currentlySelectingTeam,
+    isPaused: ctx.isPaused,
     selectedPlayerId: ctx.selectedPlayerId,
     message: message,
   };
@@ -82,15 +92,17 @@ export async function updateClients(ctx: Ctx, sendPeers = false, sendTimerUpdate
     msg.currentTimeLimit = ctx.currentTimeLimit;
   }
 
+  if (remainingTimeOnResume) {
+    msg.remainingTimeOnResume = remainingTimeOnResume;
+  }
+
   if (sendPeers) {
-    const rosterSizes = getRosterCounts(ctx);
     msg.peers = Object.values(ctx.clientMap).map((client) => {
       return {
         clientId: client.clientId,
         remainingFunds: client.remainingFunds,
         connected: client.connected,
         ready: client.ready,
-        rosterCount: rosterSizes?.[client.clientId.toString()] || 0,
       };
     });
   }
@@ -115,9 +127,7 @@ function isDraftComplete(ctx: Ctx) {
   const availablePlayersCount = getUndraftedCount(ctx) || 0;
   return (
     // all teams have no remaining funds or full roster or disconnected
-    Object.values(ctx.clientMap).every(
-      (client) => client.remainingFunds <= 0 || rosterSizes?.[client.clientId] >= ctx.maxRosterSize || !client.connected,
-    ) ||
+    Object.values(ctx.clientMap).every((client) => client.remainingFunds <= 0 || !client.connected) ||
     // or there aren't any more available players
     availablePlayersCount == 0
   );
@@ -136,6 +146,7 @@ async function goToPostAuction(ctx: Ctx) {
 ///////////////
 
 export async function transitionState(ctx: Ctx) {
+  console.log(`[transitionState] ALARM FIRED. Transitioning from state: ${ctx.serverState}`);
   ctx.deleteAlarm(); // remove current timer that will call transitionState again
   // if all players are disconnected, exit with resetting the alarm.
   if (Object.values(ctx.clientMap).every((c) => !c.connected)) {

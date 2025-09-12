@@ -22,16 +22,13 @@
         Welcome!
         <img src="/images/Froakie.png" alt="Froakie" style="height: 2.5rem" />
       </div>
-      <p>This is an auction style draft app for fantasy sports leagues.</p>
-      <p>Use the form to enter all your league's teams and the available funds for each.</p>
+      <p>This is an auction style draft app for Pokemon speedruns.</p>
+      <p>Use the form to enter all your drafters and the available funds for each.</p>
       <p>
-        Upload a CSV file (with at least "name" and "type" headers) of the players available to draft. If you are in a keeper
-        league, add the "drafted_by_id" column to the CSV and set it to the team ID of the team that drafted the player. The team ID corresponds
-        to the order of the teams entered in the form, starting at 1 (same as the draft order).
+        Upload a CSV file (with at least "name" and "type" headers) of the pokemon available to draft.
       </p>
       <p>Once you've set up the auction, send the link to your league mates so they can join your auction!</p>
-      <sl-button id="test-auction" slot="footer" variant="primary" href="/test">Test Auction</sl-button>
-      <sl-button id="custom-auction" slot="footer" variant="primary">Custom Auction</sl-button>
+      <sl-button id="custom-auction" slot="footer" variant="primary">Got it!</sl-button>
     </sl-dialog>
     <form
       id="form"
@@ -123,22 +120,6 @@
             class="label-no-move-input"
             size="small"
           ></sl-input>
-          <sl-input
-            id="maxRosterSize"
-            name="maxRosterSize"
-            label="Max Roster Size"
-            type="number"
-            value="19"
-            min="1"
-            max="100"
-            step="1"
-            required
-            inputmode="decimal"
-            pattern="[0-9]+"
-            style="padding: 1rem; max-width: 20rem"
-            class="label-no-move-input"
-            size="small"
-          ></sl-input>
         </div>
       </div>
 
@@ -152,7 +133,7 @@
           style="opacity: 0; height: 0; max-height: 0; margin-bottom: -1rem"
         />
         <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
-          Upload Players CSV
+          Upload Pokemon CSV
         </sl-button>
         <div id="csvFileName" style="height: 1rem"></div>
       </div>

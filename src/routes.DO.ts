@@ -3,10 +3,7 @@ import { updateClients, isValidNumber } from './mod.helpers';
 import { setupAuction, initPlayers } from './mod.auctionSetup';
 
 import auctionHtml from './html.auction.html';
-
-import * as testCtx from './test_ctx.json';
-import testPlayers from './test_players.csv';
-import { getPlayersJsonString, getResultsJsonString, getTeamRosterCount } from './mod.storage';
+import { getPlayersJsonString, getResultsJsonString } from './mod.storage';
 
 async function setupWebSocket(ctx: Ctx, state: DurableObjectState, ws: WebSocket, clientId: ClientId) {
   if (ctx.clientMap[clientId] == undefined) {
@@ -113,28 +110,6 @@ export async function handleResultsData(_: Request, ctx: Ctx): Promise<Response>
   });
 }
 
-export async function handleTest(req: Request, ctx: Ctx, url: URL): Promise<Response> {
-  const thisTestCtx = structuredClone(testCtx) as unknown as Ctx;
-  Object.assign(ctx, thisTestCtx);
-  await ctx.storeCtx();
-
-  // load the players CSV
-  const players: Player[] = testPlayers.map((p: any) => {
-    return {
-      id: p.id,
-      name: p.name,
-      type: p.team, // The test data uses 'team', so we map it to 'type'
-      isStarred: false,
-    };
-  });
-
-  const res = await initPlayers(ctx, players);
-  if (res instanceof Response) return res;
-
-  // redirect to the url for the test auction
-  return Response.redirect(url.origin + '/' + ctx.auctionId, 302);
-}
-
 export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {
   // if the auction is already over, redirect to results page
   if (ctx.serverState == State.PostAuction) {
@@ -147,8 +122,6 @@ export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {
       // Create a new inner object without the key to be removed
       const { ws: _, ...newClient } = ctx.clientMap[clientId];
       (newClient as any).draftPosition = idx; // add the draft position to the team
-      const rosterCountRecord = getTeamRosterCount(ctx, clientId);
-      (newClient as any).rosterCount = rosterCountRecord || 0;
       return [clientId, newClient];
     }),
   );
@@ -162,9 +135,6 @@ export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {
   // state
   const stateStr = `stateId: '${ctx.serverState}'`;
   auctionHtmlStr = auctionHtmlStr.replace("stateId: 'pre_auction'", stateStr);
-  // max roster size
-  const maxRosterStr = `maxRosterSize: ${ctx.maxRosterSize}`;
-  auctionHtmlStr = auctionHtmlStr.replace('maxRosterSize: null', maxRosterStr);
 
   return new Response(auctionHtmlStr, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
 }

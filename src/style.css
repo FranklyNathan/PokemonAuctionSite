@@ -94,6 +94,9 @@ sl-progress-bar.lower::part(base) {
 sl-progress-bar.lowest::part(base) {
     --indicator-color: var(--sl-color-rose-400);
 }
+sl-progress-bar.paused::part(base) {
+    --indicator-color: var(--sl-color-sky-400);
+}
 
 /* star checkbox in players table*/
 .star-checked::after,

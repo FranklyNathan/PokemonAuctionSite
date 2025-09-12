@@ -99,13 +99,19 @@ export function showTeamDisconnected(team) {
   shadow.getElementById('main-content').setAttribute('class', cls2);
 }
 
-export function updateTeamConnected(team) {
+export function updateTeamCard(team, isDone) {
   const shadow = document.getElementById(`team${team.clientId}`).shadowRoot;
-  // get the content and classname for this team's connected state
-  const [content, cls] = getTeamLowerLeftContentClass(team.connected, team.ready);
-  // update team card
-  document.getElementById(`team${team.clientId}llc`).innerHTML = content;
-  shadow.getElementById('main-content').setAttribute('class', cls);
+  if (isDone) {
+    // If the team is done, their card is blue, and we don't show a status icon.
+    document.getElementById(`team${team.clientId}llc`).innerHTML = '';
+    shadow.getElementById('main-content').setAttribute('class', 'done');
+  } else {
+    // Otherwise, use the existing logic for connected/ready status.
+    const [content, cls] = getTeamLowerLeftContentClass(team.connected, team.ready);
+    // update team card
+    document.getElementById(`team${team.clientId}llc`).innerHTML = content;
+    shadow.getElementById('main-content').setAttribute('class', cls);
+  }
 }
 
 export function updateCurrentBid(ctx) {
@@ -148,29 +154,30 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';
   const card = document.getElementById('player');
+  card.style.minHeight = 'auto'; // Allow the card to shrink to its content.
+
+  // Parse types and create image tags for them.
+  const types = playerData.type.split(/[\s,\/]+/).filter((t) => t); // Handles "Fire", "Fire/Flying", "Fire, Flying"
+  const typeImagesHtml = types.map((type) => {
+      const trimmedType = type.trim();
+      return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 20px;">`;
+    }).join('');
+
   card.removeAttribute('hidden');
   let cardInner = `
-    <div slot="header" style="display: flex; justify-content: space-between; overflow: hidden;">
-      <strong>${playerData.name}</strong>
-      <span style="min-width: 4rem"></span>
-      <strong>${playerData.position}</strong>
+    <div slot="header" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; overflow: hidden;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; min-width: 0;">
+        <div style="width: 24px; display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
+          <img src="/MiniIcons/${playerData.name.toLowerCase()}.png" alt="${playerData.name}" style="max-height: 24px; max-width: 24px; vertical-align: middle;">
+        </div>
+        <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${playerData.name}</strong>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.1rem; flex-shrink: 0;">
+        ${typeImagesHtml}
+      </div>
     </div>
-    <div style="display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: 1fr 1fr; gap: 0.5rem;  font-family: 'Nimbus Mono PS', 'Courier New', monospace">
-      <div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">Type</div>
-      <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData.type}</div>
   `;
-  // filter to just the fields that have data
-  const fieldsFilter = extraFields.filter((f) => playerData[f] != undefined && playerData[f] != '');
-  // only show first 10 fields
-  for (const field of fieldsFilter.slice(0, 10)) {
-    const colHeader = field
-      .replace(/^[-_]*(.)/, (_, c) => c.toUpperCase()) // Initial char (after -/_)
-      .replace(/[-_]+(.)/g, (_, c) => ' ' + c.toUpperCase()); // First char after each -/_
-    cardInner += `<div style="padding: 0.2rem; display: flex; justify-content: flex-end; text-align: end; font-family: inherit">${colHeader}</div>
-    <div style="padding: 0.2rem; background-color: var(--sl-color-neutral-300); font-family: inherit">${playerData[field]}</div>
-    `;
-  }
-  card.innerHTML = cardInner + '</div>';
+  card.innerHTML = cardInner;
 }
 
 export function hideSelectedPlayerCard(teamName) {
@@ -227,19 +234,25 @@ export function updateCurrentlySelectingTeam(ctx, previouslySelectingTeam) {
     '<sl-badge variant="primary">Selecting</sl-badge>';
 }
 
+export function addPlayerIconToTeamCard(clientId, playerName) {
+  const iconContainer = document.getElementById(`team${clientId}trc`);
+  console.log(`[Debug] addPlayerIconToTeamCard called for clientId: ${clientId}, playerName: ${playerName}`);
+  if (iconContainer) {
+    console.log(`[Debug] Found icon container 'team${clientId}trc'. Appending icon.`);
+    const iconName = playerName.toLowerCase();
+    const iconPath = `/MiniIcons/${iconName}.png`;
+    iconContainer.insertAdjacentHTML(
+      'beforeend',
+      `<img src="${iconPath}" alt="${playerName}" title="${playerName}" style="max-height: 20px; max-width: 20px;">`,
+    );
+  } else {
+    console.error(`[Debug] Could not find icon container with ID 'team${clientId}trc'.`);
+  }
+}
+
 export function removeSelectingIndicator(ctx) {
   if (typeof ctx.currentlySelectingTeam != 'number') return;
   document.getElementById(`team${ctx.currentlySelectingTeam}`).shadowRoot.getElementById('top-right').innerHTML = '';
-}
-
-export function updateTeamRosterCount(clientId, rosterCount, maxRosterSize) {
-  document.getElementById(`team${clientId}lrc`).innerHTML = rosterCount + '/' + maxRosterSize;
-}
-
-export function moveTeamToCompleteSection(clientId) {
-  const team = document.getElementById(`team${clientId}`);
-  team.remove();
-  document.getElementById('doneTeamsSection').insertAdjacentElement('beforeEnd', team);
 }
 
 export function setTimerTime(time, timeRemaining, timeLimit) {
@@ -261,10 +274,6 @@ export function setTimerTime(time, timeRemaining, timeLimit) {
 export function resetTimerTime() {
   document.getElementById('time').setAttribute('value', 0);
   document.getElementById('time').innerHTML = '';
-}
-
-export function updateRaiseButtonsLabel(raise) {
-  document.getElementById('raise-buttons-label').innerHTML = raise ? 'raise' : 'bid';
 }
 
 export function initReadyUp(ctx) {
@@ -289,6 +298,7 @@ export function isValidNumber(s) {
 
 export function initBidButtonListeners(ctx) {
   function onClick(e) {
+    if (ctx.isPaused) return; // Do not allow bidding when paused
     if (ctx.selectedPlayerId == undefined || e.target.value == undefined) return;
     if (e.target.hasAttribute('disabled')) return;
 
@@ -308,6 +318,10 @@ export function initBidButtonListeners(ctx) {
       }),
     );
 
+    // Optimistically disable buttons to prevent double-bidding or race conditions.
+    console.log('[Client Bid] Optimistically disabling buttons after sending bid.');
+    disableRaiseButtons();
+
     // remove focus from the button so keyboard doesn't trigger an accidental bid
     e.target.blur();
   }
@@ -315,6 +329,7 @@ export function initBidButtonListeners(ctx) {
 
   // for the custom raise button we have to get the value from the input
   document.getElementById('raise').addEventListener('click', (e) => {
+    if (ctx.isPaused) return; // Do not allow bidding when paused
     if (e.target.hasAttribute('disabled')) return;
     const raiseInputEl = document.getElementById('raise-input');
     if (ctx.selectedPlayerId == undefined || e.target.value == undefined || raiseInputEl == undefined) return;
@@ -329,6 +344,11 @@ export function initBidButtonListeners(ctx) {
         message: 'Player selected',
       }),
     );
+
+    // Optimistically disable buttons to prevent double-bidding or race conditions.
+    console.log('[Client Bid] Optimistically disabling buttons after sending custom bid.');
+    disableRaiseButtons();
+
     // remove focus from the button so keyboard doesn't trigger an accidental bid
     e.target.blur();
   });

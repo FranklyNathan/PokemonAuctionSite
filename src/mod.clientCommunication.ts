@@ -20,6 +20,7 @@ function sendError(ctx: Ctx, msg: string, clientId: ClientId) {
 }
 
 function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCounts: { [clientId: string]: number }): ClientMessage | null {
+  console.log(`[validate] 1. Validating message from clientId: ${clientId}`, msg);
   // check for an invalid message
   // make sure message type is valid
   if (!(msg.hasOwnProperty('type') && Object.values<string>(ClientMessageType).includes(msg.type))) {
@@ -34,8 +35,14 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
     );
   }
   if (msg.stateId != ctx.serverState) {
+    console.log(`[validate] FAILED: stateId mismatch. Client: ${msg.stateId}, Server: ${ctx.serverState}`);
+    // Special case for the opening bid race condition.
+    if (msg.type === ClientMessageType.Bid && msg.stateId === State.PlayerSelection && ctx.serverState === State.Bidding) {
+      return sendError(ctx, `Too slow! ${ctx.clientMap[ctx.highestBidder!].teamName} made the opening bid of $${ctx.currentBid}.`, clientId);
+    }
     return sendError(ctx, `Your 'stateId' (${msg.stateId}) does not match the server's state (${ctx.serverState})!`, clientId);
   }
+  console.log(`[validate] 2. Entering switch for type: ${msg.type}`);
   switch (msg.type as ClientMessageType) {
     case 'ready_up':
       if (ctx.serverState != State.PreAuction) {
@@ -62,11 +69,6 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
           `The bid is greater than your remaing funds! Bid = ${msg.bid}, remaing funds for ${ctx.clientMap[clientId].teamName} = ${ctx.clientMap[clientId].remainingFunds}`,
           clientId,
         );
-      }
-
-      // make sure the team isn't over the max roster size
-      if ((rosterCounts?.[clientId.toString()] || 0) >= ctx.maxRosterSize) {
-        return sendError(ctx, `You are already at the max roster size (${ctx.maxRosterSize})!`, clientId);
       }
 
       // validate by state
@@ -114,15 +116,15 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         return sendError(ctx, `Bidding is invalid in the (${ctx.serverState}) state`, clientId);
       }
       break;
-    default:
-      return sendError(ctx, `The message type (${msg.type}) is invalid!`, clientId);
   }
 
+  console.log(`[validate] 4. Message passed validation.`);
   return msg as ClientMessage;
 }
 
 export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageData: string | ArrayBuffer) {
   if (typeof messageData !== 'string') {
+    console.error('[Server] Received non-string websocket message.');
     return sendError(ctx, 'Websocket message data must be a JSON string!', clientId);
   }
 
@@ -131,7 +133,10 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
   // first validate the message
   let obj = JSON.parse(messageData);
   let msg = validateClientMessage(ctx, clientId, obj, rosterCounts);
-  if (msg == null) return;
+  if (msg == null) {
+    console.log('[Server] Message failed validation. No action taken.');
+    return;
+  }
 
   // next act on the message.
   switch (msg.type) {
@@ -139,35 +144,68 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       ctx.clientMap[clientId].ready = true;
       // if all clients are ready (only need the clients who aren't "done" drafting at the time of
       //   joining (full roster or no money)), go to player selection
-      if (
-        Object.values(ctx.clientMap).every(
-          (client) =>
-            (client.connected && client.ready) || // client has readied up
-            rosterCounts?.[client.clientId.toString()] >= ctx.maxRosterSize || // client is at the max roster size
-            client.remainingFunds <= 0, // client has no remaining funds
-        )
-      ) {
+      const allReady = Object.values(ctx.clientMap).every(
+        (client) =>
+          (client.connected && client.ready) || // client has readied up or
+          client.remainingFunds <= 0, // client has no remaining funds
+      );
+      if (allReady) {
         await transitionState(ctx);
+      }
+      await updateClients(ctx, true, true);
+      break;
+    case ClientMessageType.TogglePause:
+      ctx.isPaused = !ctx.isPaused;
+      if (ctx.isPaused) {
+        // Pause the timer
+        const alarmTime = await ctx.getAlarm();
+        if (alarmTime) {
+          ctx.remainingTimeOnPause = alarmTime - Date.now();
+        }
+        await ctx.deleteAlarm();
+        await ctx.storeCtx(); // Persist the pause state and remaining time immediately.
+        await updateClients(ctx, false, true, 'Auction Paused');
+      } else {
+        // Resume the timer
+        if (ctx.remainingTimeOnPause && ctx.remainingTimeOnPause > 0) {
+          const resumeTime = ctx.remainingTimeOnPause;
+          ctx.remainingTimeOnPause = undefined; // Clear the value from memory.
+          await ctx._setAlarm(Date.now() + resumeTime);
+          await ctx.storeCtx(); // Persist the new alarm state immediately.
+          await updateClients(ctx, false, true, 'Auction Resumed', resumeTime);
+        } else {
+          // The timer would have expired while paused. Trigger the alarm's action immediately.
+          console.log('[Server] Timer expired while paused. Transitioning state.');
+          await transitionState(ctx);
+        }
       }
       break;
     case ClientMessageType.Bid:
       // check that msg.bid is not undefined to make TS happy
+      console.log(`[Server] Processing valid bid of ${msg.bid} from clientId: ${clientId}. Current state: ${ctx.serverState}`);
       if (msg.bid == undefined) return sendError(ctx, "The 'bid' parameter is empty!", clientId);
       // set the currentBid to this message's bid. We already validated the message's bid is the
       //   highest in validateClientMessageSchema().
       ctx.currentBid = msg.bid;
       ctx.highestBidder = clientId;
       if (ctx.serverState == State.PlayerSelection) {
-        // This was the first bid on the player, transition to Bidding state
-        await transitionState(ctx);
-        break;
+        // This was the first bid on the player, so manually transition the state.
+        ctx.serverState = State.Bidding;
+        ctx.currentlySelectingTeam = undefined;
+        console.log('[Server] First bid received. Manually transitioned state to Bidding.');
       }
-      // reset the bidding time limit
+      // For every valid bid (first or subsequent), reset the timer and update clients.
       ctx.deleteAlarm();
+      console.log(`[Server] Setting alarm for ${ctx.biddingTimeLimit}ms.`);
       ctx.setAlarm(ctx.biddingTimeLimit);
+      await updateClients(ctx, true, true);
       break;
+    default:
+      // A message type that has passed validation but has no action to take.
+      // This is fine, we just don't need to send an update to clients.
+      console.log(`[Server] Received a valid but unhandled message type: ${msg.type}`);
+      return; // Exit without sending a client update
   }
-  await updateClients(ctx, true, true);
 }
 
 ///////////////////

@@ -56,6 +56,7 @@ export interface ServerMessage {
   selectedPlayerId?: PlayerId;
   currentAlarmTime?: number; // target timestamp when alarm will run out in milliseconds elapsed since the UNIX epoch
   currentTimeLimit?: number; // original total time duration of the current alarm in ms
+  remainingTimeOnResume?: number; // The remaining time in ms when a timer is resumed from a pause.
   message?: string;
 }
 
@@ -81,11 +82,11 @@ export interface Client {
 export interface Ctx {
   // maps client IDs to their websockets. just a handle to get the websocket.
   auctionId: string;
+  storage: DurableObjectStorage;
   sql: SqlStorage;
   clientMap: { [clientId: ClientId]: Client };
   draftOrder: ClientId[];
   draftPosition: number;
-  maxRosterSize: number;
   serverState: State;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;

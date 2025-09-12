@@ -1,9 +1,9 @@
 import { isValidNumber } from './mod.helpers';
-import { storePlayers } from './mod.storage';
+import { createPlayersTable, insertPlayers } from './mod.storage';
 import { Ctx, SECONDS } from './mod.config';
 import Papa from 'papaparse';
 
-export async function initPlayers(ctx: Ctx, data: string | any[]) {
+export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Response | void> {
   let playerRows: any[];
   let headers: string[];
 
@@ -41,9 +41,10 @@ export async function initPlayers(ctx: Ctx, data: string | any[]) {
   });
 
   try {
-    await storePlayers(ctx.sql, playerRows);
+    await createPlayersTable(ctx);
+    await insertPlayers(ctx, playerRows);
   } catch (e) {
-    console.error(e);
+    console.error('Error during player initialization and database insertion:', e);
     return new Response('Failed to import players and create the auction!', { status: 500 });
   }
 }
@@ -51,23 +52,14 @@ export async function initPlayers(ctx: Ctx, data: string | any[]) {
 export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response | undefined> {
   const playerSelectionTimeLimit = form.get('playerSelectionTimeLimit');
   const biddingTimeLimit = form.get('biddingTimeLimit');
-  const maxRosterSize = form.get('maxRosterSize');
   if (
-    !(
-      typeof playerSelectionTimeLimit == 'string' &&
-      isValidNumber(playerSelectionTimeLimit) &&
-      typeof biddingTimeLimit == 'string' &&
-      isValidNumber(biddingTimeLimit) &&
-      typeof maxRosterSize == 'string' &&
-      isValidNumber(maxRosterSize)
-    )
+    !(typeof playerSelectionTimeLimit == 'string' && isValidNumber(playerSelectionTimeLimit) && typeof biddingTimeLimit == 'string' && isValidNumber(biddingTimeLimit))
   ) {
     return new Response('Got invalid values for the Player Selection Time Limit, Bidding Time Limit, or both!', { status: 400 });
   }
 
   ctx.playerSelectionTimeLimit = +playerSelectionTimeLimit * SECONDS;
   ctx.biddingTimeLimit = +biddingTimeLimit * SECONDS;
-  ctx.maxRosterSize = +maxRosterSize;
 
   // this logic started as supporting not specifying specific teams and just letting a certain number of people join
   let numTeams = 100; // default number of teams
