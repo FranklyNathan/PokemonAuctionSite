@@ -60,6 +60,7 @@ function startNewAuctionRound(ctx: Ctx) {
   ctx.selectedPlayerId = undefined;
   ctx.highestBidder = undefined;
   ctx.currentlySelectingTeam = undefined;
+  ctx.flashbangedClientId = null;
 
   console.log('[Server] Getting random undrafted player...');
   // Instead of the client selecting a player, the server does it randomly.
@@ -97,6 +98,7 @@ export async function updateClients(
     highestBidder: ctx.highestBidder,
     currentlySelectingTeam: ctx.currentlySelectingTeam,
     isPaused: ctx.isPaused,
+    flashbangedClientId: ctx.flashbangedClientId,
     selectedPlayerId: ctx.selectedPlayerId,
     message: message,
   };

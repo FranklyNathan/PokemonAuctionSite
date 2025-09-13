@@ -84,6 +84,24 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         return sendError(ctx, `Bidding is invalid in the (${ctx.serverState}) state`, clientId);
       }
       break;
+    case 'flashbang':
+      if (ctx.serverState !== State.Bidding) {
+        return sendError(ctx, `Flashbanging is only allowed during the bidding phase!`, clientId);
+      }
+      if (!msg.hasOwnProperty('targetClientId') || !isValidNumber(String(msg.targetClientId))) {
+        return sendError(ctx, `The 'targetClientId' is missing or invalid.`, clientId);
+      }
+      if (clientId === msg.targetClientId) {
+        return sendError(ctx, `You cannot flashbang yourself!`, clientId);
+      }
+      if (ctx.flashbangedClientId != null) {
+        return sendError(ctx, `Another player is already flashbanged.`, clientId);
+      }
+      const flashbangCost = 5;
+      if (ctx.clientMap[clientId].remainingFunds < flashbangCost) {
+        return sendError(ctx, `You do not have enough funds to flashbang ($${flashbangCost} required).`, clientId);
+      }
+      break;
   }
 
   console.log(`[validate] 4. Message passed validation.`);
@@ -162,6 +180,10 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       ctx.currentBid = msg.bid;
       ctx.highestBidder = clientId;
       // For every valid bid (first or subsequent), reset the timer and update clients.
+      if (ctx.flashbangedClientId != null) {
+        console.log(`[Server] A bid was placed. Clearing flashbang on client ID: ${ctx.flashbangedClientId}`);
+        ctx.flashbangedClientId = null;
+      }
       ctx.deleteAlarm();
 
       let newTimeLimit = ctx.biddingTimeLimit;
@@ -174,6 +196,17 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       console.log(`[Server] Setting alarm for ${newTimeLimit}ms.`);
       ctx.setAlarm(newTimeLimit);
       await updateClients(ctx, true, true);
+      return; // Exit after sending the bid update.
+    case ClientMessageType.Flashbang:
+      if (msg.targetClientId === undefined) return sendError(ctx, 'Invalid target for flashbang.', clientId);
+      const flashbangCost = 5;
+      ctx.clientMap[clientId].remainingFunds -= flashbangCost;
+      ctx.flashbangedClientId = msg.targetClientId;
+      console.log(`[Server] Client ${clientId} flashbanged client ${msg.targetClientId} for $${flashbangCost}.`);
+      // Send an update to all clients about the cost change and new flashbang state.
+      // No timer update is needed for this action.
+      const flashbangerName = ctx.clientMap[clientId].teamName;
+      await updateClients(ctx, true, false, `${flashbangerName} used Flashbang!`);
       return; // Exit after sending the bid update.
     default:
       // A message type that has passed validation but has no action to take.

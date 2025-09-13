@@ -88,7 +88,7 @@ export function initTeamSelection(ctx) {
         id: `team${team.clientId}`,
         style: 'flex-grow: 1; max-width: 20rem',
         innerHTML: `
-          <span slot="draft-position">${team.draftPosition + 1}</span>
+          <span slot="top-left-action" id="team${team.clientId}tlac"></span>
           <span slot="top-right" id="team${team.clientId}trc" style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 2px; width: 90px;"></span>
           <span slot="lower-left-content" id="team${team.clientId}llc">${content}</span>
           <span slot="participant-name" id="team${team.clientId}name">${team.teamName}</span>

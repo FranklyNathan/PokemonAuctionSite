@@ -10,6 +10,7 @@ export enum ClientMessageType {
   ReadyUp = 'ready_up',
   Bid = 'bid',
   TogglePause = 'toggle_pause',
+  Flashbang = 'flashbang',
   Error = 'error',
 }
 
@@ -35,6 +36,7 @@ export interface ClientMessage {
   stateId: State;
   bid?: number;
   selectedPlayerId?: number;
+  targetClientId?: ClientId;
   message?: string;
 }
 
@@ -52,6 +54,7 @@ export interface ServerMessage {
   currentBid?: number;
   highestBidder?: ClientId;
   isPaused?: boolean;
+  flashbangedClientId?: ClientId;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;
   currentAlarmTime?: number; // target timestamp when alarm will run out in milliseconds elapsed since the UNIX epoch
@@ -93,6 +96,7 @@ export interface Ctx {
   isPaused: boolean;
   remainingTimeOnPause?: number;
   highestBidder?: ClientId;
+  flashbangedClientId?: ClientId;
   currentBid?: number;
   clientIdIncrementer: number; // what ID to use for the next incoming client
   biddingTimeLimit: number; // length of time in milliseconds for the Bidding state

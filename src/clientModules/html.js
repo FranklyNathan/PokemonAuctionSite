@@ -99,18 +99,56 @@ export function showTeamDisconnected(team) {
   shadow.getElementById('main-content').setAttribute('class', cls2);
 }
 
-export function updateTeamCard(team, isDone) {
-  const shadow = document.getElementById(`team${team.clientId}`).shadowRoot;
+export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws, stateId, highestBidder) {
+  console.log(`[Debug] updateTeamCard for team '${team.teamName}' (ID: ${team.clientId}). Current highestBidder: ${highestBidder}.`);
+  const teamCardEl = document.getElementById(`team${team.clientId}`);
+  const shadow = teamCardEl.shadowRoot;
+  // Get containers for both top-left and top-right actions.
+  const topLeftActionContainer = document.getElementById(`team${team.clientId}tlac`);
+  // Target the slotted span element in the light DOM, not the container in the shadow DOM.
+  const topRightContainer = document.getElementById(`team${team.clientId}trc`);
+
+  // Clear action/status indicators but preserve drafted player icons in the top right.
+  topLeftActionContainer.innerHTML = '';
+  const badge = topRightContainer.querySelector('sl-badge');
+  if (badge) badge.remove();
+
+  // Handle high bidder highlight by adding/removing a class on the host element
+  if (highestBidder === team.clientId) {
+    console.log(`[Debug] Team ${team.teamName} IS the highest bidder. Adding 'high-bidder' class.`);
+    teamCardEl.classList.add('high-bidder');
+  } else {
+    console.log(`[Debug] Team ${team.teamName} is NOT the highest bidder. Removing 'high-bidder' class.`);
+    teamCardEl.classList.remove('high-bidder');
+  }
+
   if (isDone) {
     // If the team is done, their card is blue, and we don't show a status icon.
     document.getElementById(`team${team.clientId}llc`).innerHTML = '';
     shadow.getElementById('main-content').setAttribute('class', 'done');
+  } else if (flashbangedClientId === team.clientId) {
+    // If the team is flashbanged, show a badge and give it a special class.
+    topLeftActionContainer.innerHTML = '<sl-badge variant="danger">Flashed</sl-badge>';
+    shadow.getElementById('main-content').setAttribute('class', 'flashbanged');
   } else {
     // Otherwise, use the existing logic for connected/ready status.
     const [content, cls] = getTeamLowerLeftContentClass(team.connected, team.ready);
     // update team card
     document.getElementById(`team${team.clientId}llc`).innerHTML = content;
     shadow.getElementById('main-content').setAttribute('class', cls);
+
+    // Add flashbang icon if it's not my team and we are in the bidding state.
+    const shouldShowFlashbang = team.clientId !== myClientId && stateId === 'bidding';
+
+    if (shouldShowFlashbang) {
+      const flashbangIconHtml = `<img src="/generic/Flashbang.png" alt="Flashbang" title="Flashbang ($5)" style="height: 16px; cursor: pointer;">`;
+      topLeftActionContainer.innerHTML = flashbangIconHtml;
+      const flashbangIcon = topLeftActionContainer.querySelector('img');
+      flashbangIcon.addEventListener('click', () => {
+        console.log(`[Client Action] Sending flashbang to ${team.clientId}`);
+        ws.send(JSON.stringify({ type: 'flashbang', stateId: stateId, targetClientId: team.clientId }));
+      });
+    }
   }
 }
 
@@ -124,12 +162,12 @@ export function jiggleCurrentBid() {
 
 export function updateHighestBidder(ctx) {
   const name = ctx.teams[ctx.highestBidder].teamName;
-  document.getElementById('highest-bidder').innerHTML = name;
+  document.getElementById('highest-bidder').innerHTML = `High Bidder: ${name}`;
 }
 
 export function clearHighestBidder() {
   document.getElementById('current-bid').innerHTML = '';
-  document.getElementById('highest-bidder').innerHTML = '';
+  document.getElementById('highest-bidder').innerHTML = 'No bids yet.';
 }
 
 export function addDraftLog(teamName, cost, playerName) {
@@ -216,6 +254,24 @@ export function enableRaiseButtons() {
   document.getElementById('raise').classList.add('hover');
 }
 
+export function showFlashbangOverlay() {
+  const messages = [
+    "Uh Oh! You've been flashbanged!",
+    'You idiot!  You\'ve been flashbanged!',
+    'Somebody flashbanged you! Maybe they have a crush!',
+  ];
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+  const overlay = document.getElementById('flashbang-overlay');
+  overlay.style.display = 'flex';
+  overlay.innerHTML = randomMessage;
+}
+
+export function hideFlashbangOverlay() {
+  const overlay = document.getElementById('flashbang-overlay');
+  overlay.style.display = 'none';
+}
+
 export function updateCurrentlySelectingTeam(ctx, previouslySelectingTeam) {
   if (ctx.currentlySelectingTeam != previouslySelectingTeam) {
     // rotate the currently selecting team's card to the start of the teams section.
@@ -237,8 +293,8 @@ export function updateCurrentlySelectingTeam(ctx, previouslySelectingTeam) {
 
 export function addPlayerIconToTeamCard(clientId, playerName) {
   // Find the parent participant-el component first.
-  const teamCard = document.getElementById(`team${clientId}`);
-  const iconContainer = teamCard?.querySelector(`#team${clientId}trc`);
+  // The icon container is in the light DOM, so we can select it directly by its ID.
+  const iconContainer = document.getElementById(`team${clientId}trc`);
   console.log(`[Debug] addPlayerIconToTeamCard called for clientId: ${clientId}, playerName: ${playerName}`);
   if (iconContainer) {
     // Stop adding icons once the limit of 12 is reached.
@@ -364,10 +420,12 @@ export function initBidButtonListeners(ctx) {
 }
 
 function getStatColor(statValue) {
-  if (statValue >= 150) return '#00c853'; // green
-  if (statValue >= 120) return '#aeea00'; // light-green
-  if (statValue >= 90) return '#ffeb3b'; // yellow
-  if (statValue >= 60) return '#ff9800'; // orange
+  if (statValue >= 130) return '#2196f3'; // blue
+  if (statValue >= 110) return '#2e7d32'; // dark green
+  if (statValue >= 90) return '#00c853'; // green
+  if (statValue >= 70) return '#aeea00'; // light-green
+  if (statValue >= 50) return '#ffeb3b'; // yellow
+  if (statValue >= 35) return '#ff9800'; // orange
   return '#f44336'; // red
 }
 
@@ -469,13 +527,15 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     infoEl.innerHTML = `
       <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
       <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
-      <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
+      <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
         ${abilitiesHtml}
       </div>
-      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 1rem;">
+      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
         ${statsHtml}
       </div>
-      ${keyMovesHtml}
+      <div style="font-size: 0.9rem;">
+        ${keyMovesHtml}
+      </div>
     `;
     infoEl.style.display = 'block';
 
@@ -534,7 +594,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       // Add an arrow from the base pokemon to the first evolution
       const firstEvo = evolutions[0];
       const arrowHtml = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem;">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
           <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
           <div style="font-size: 0.7rem; text-align: center; width: 70px;">${firstEvo.info.evolution_method || ''}</div>
         </div>
@@ -608,7 +668,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           })
           .join('');
         const evolutionHtml = `
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 200px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 140px;">
             <div style="flex-shrink: 0; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
               <img src="${imagePath}" alt="${evo.name}" title="${evo.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;"
                    onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')" />
@@ -617,7 +677,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
             <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: center;">
               ${abilitiesHtml}
             </div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin-left: 3rem;">
               ${statsHtml}
             </div>
           </div>
@@ -628,7 +688,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         if (index < evolutions.length - 1) {
           const nextEvo = evolutions[index + 1];
           const arrowHtml = `
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
               <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
               <div style="font-size: 0.7rem; text-align: center; width: 70px;">${nextEvo.info.evolution_method || ''}</div>
             </div>

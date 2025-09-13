@@ -16,6 +16,8 @@ import {
   enableRaiseButtons,
   disableRaiseButtons,
   isValidNumber,
+  showFlashbangOverlay,
+  hideFlashbangOverlay,
   updateTeamCard,
 } from './html.js';
 
@@ -73,6 +75,10 @@ function recordDraft(ctx) {
 
   // clear the highest bidder and highest bid
   clearHighestBidder();
+  // Also reset the context's bid state to ensure the next bid update is processed correctly.
+  ctx.currentBid = 0;
+  ctx.highestBidder = undefined;
+  console.log('[Debug] Cleared local bid context after recording draft.');
 
   // celebrate if this is the highest bidder and they just drafted a player
   if (ctx.highestBidder == ctx.myClientId) {
@@ -121,8 +127,14 @@ function handleServerUpdate(msg, ctx) {
   // Check if a draft just completed BEFORE updating any other part of the context.
   // This is crucial because we need the `ctx` from the end of the bidding phase
   // to correctly record who won.
-  if (ctx.stateId === 'bidding' && msg.stateId !== 'bidding') {
-    console.log('[Debug] Auction ended. Calling recordDraft with old context.');
+  if (
+    ctx.stateId === 'bidding' &&
+    msg.stateId === 'bidding' &&
+    msg.selectedPlayerId !== ctx.selectedPlayerId &&
+    ctx.selectedPlayerId !== null &&
+    ctx.highestBidder !== undefined
+  ) {
+    console.log('[Debug] New auction round started. Recording draft for previous round.');
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
   }
@@ -138,6 +150,22 @@ function handleServerUpdate(msg, ctx) {
     console.log(`[Debug] Updating highestBidder from ${ctx.highestBidder} to ${msg.highestBidder}`);
     ctx.highestBidder = msg.highestBidder;
     updateHighestBidder(ctx);
+    // After the highest bidder changes, we must re-render all team cards to apply/remove the highlight.
+    console.log('[Debug] Highest bidder changed. Re-rendering all team cards to update highlights.');
+    for (const team of Object.values(ctx.teams)) {
+      updateTeamCard(ctx.teams[team.clientId], isTeamDoneDrafting(ctx, team), ctx.myClientId, ctx.flashbangedClientId, ctx.ws, ctx.stateId, ctx.highestBidder);
+    }
+  }
+  if (msg.hasOwnProperty('flashbangedClientId')) {
+    ctx.flashbangedClientId = msg.flashbangedClientId;
+    if (ctx.flashbangedClientId === ctx.myClientId) {
+      console.log('[Client] I have been flashbanged!');
+      showFlashbangOverlay();
+      disableRaiseButtons();
+    } else {
+      // If I am not flashbanged (or it just cleared), hide the overlay.
+      hideFlashbangOverlay();
+    }
   }
 
   // Handle pause state
@@ -227,7 +255,11 @@ function handleServerUpdate(msg, ctx) {
   // This logic runs on EVERY update to ensure button state is correct, even without a state change.
   if (ctx.stateId === 'bidding') {
     console.log(`[Client onMessage] In bidding state. My ID: ${ctx.myClientId}, Highest Bidder: ${msg.highestBidder}`);
-    if (ctx.myClientId !== msg.highestBidder && !isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
+    if (
+      ctx.myClientId !== msg.highestBidder &&
+      !isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId]) &&
+      ctx.flashbangedClientId !== ctx.myClientId // Cannot bid if flashbanged
+    ) {
       console.log('[Client onMessage] Enabling raise buttons because I am not the highest bidder.');
       enableRaiseButtons();
     } else {
@@ -245,17 +277,12 @@ function handleServerUpdate(msg, ctx) {
         updateRemainingFunds(peer);
       }
 
-      // Possibly update the team's connected/ready indicators in the top bar.
-      // If either the connected flag or ready flag have changed, make updates.
-      if (
-        (typeof peer.connected == 'boolean' && ctx.teams[peer.clientId].connected != peer.connected) ||
-        (typeof peer.ready == 'boolean' && ctx.teams[peer.clientId].ready != peer.ready) ||
-        isTeamDoneDrafting(ctx, peer) // Also update if they just became "done"
-      ) {
-        ctx.teams[peer.clientId].connected = peer.connected;
-        ctx.teams[peer.clientId].ready = peer.ready;
-        updateTeamCard(ctx.teams[peer.clientId], isTeamDoneDrafting(ctx, peer));
-      }
+      // Update the team's connected/ready state from the message.
+      ctx.teams[peer.clientId].connected = peer.connected;
+      ctx.teams[peer.clientId].ready = peer.ready;
+      // Re-render the team card to reflect any changes (connection status, flashbang, state change for dropdowns, etc.).
+      // This is called for every peer on every update to ensure UI consistency.
+      updateTeamCard(ctx.teams[peer.clientId], isTeamDoneDrafting(ctx, peer), ctx.myClientId, ctx.flashbangedClientId, ctx.ws, ctx.stateId, ctx.highestBidder);
     }
   }
 
