@@ -1,4 +1,4 @@
-import { getBooleanFilterButtons, toast } from './html.js';
+import { getBooleanFilterButtons, toast, updateDraftCounter } from './html.js';
 import { playerSelected } from './clientActions.js';
 
 function isValidNumber(s) {
@@ -240,6 +240,16 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },
+    onRowClicked: (event) => {
+      // After the auction, allow users to click rows to see player info.
+      if (ctx.stateId === 'auction_over') {
+        console.log('[Client] Auction over. Displaying player info for:', event.data.name);
+        // This is a client-side only action to view player details.
+        // We need to find the full player object from the map to pass to the display function.
+        const fullPlayerData = ctx.playerMap.get(event.data.player_id);
+        playerSelected(fullPlayerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
+      }
+    },
   };
   const playersTable = agGrid.createGrid(playersTableWrapperEl, playerTableOptions);
   return playersTable;
@@ -247,6 +257,7 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
 
 export async function loadPlayersData(ctx) {
   const playerRows = await getPlayersJson('players-data');
+  const { playerSelected } = await import('./clientActions.js');
 
   const playersTableWrapperEl = document.getElementById('players-table-wrapper');
   if (!playerRows || playerRows.length === 0) {
@@ -267,6 +278,9 @@ export async function loadPlayersData(ctx) {
     return { ...innerData, player_id: row.player_id };
   });
 
+  // Count how many players have already been drafted to initialize the counter.
+  let initialDraftedCount = 0;
+
   // Update the player rows with application-specific data
   processedPlayerRows.forEach((row, idx) => {
     let draftedById = row.drafted_by_id;
@@ -274,6 +288,7 @@ export async function loadPlayersData(ctx) {
     let cost = undefined;
     // if the ID matches one of the teams, add the player to their roster
     if (typeof draftedById == 'number' && Object.keys(ctx.teams).includes(draftedById.toString())) {
+      initialDraftedCount++;
       draftedByName = ctx.teams?.[draftedById]?.teamName;
       if (isValidNumber(row.cost)) {
         cost = +row.cost;
@@ -298,6 +313,10 @@ export async function loadPlayersData(ctx) {
     Object.assign(row, newPlayer);
   });
 
+  // Set the initial drafted count on the context and update the UI.
+  ctx.draftedPokemonCount = initialDraftedCount;
+  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
+
   // Create a map for fast lookups by the persistent `player_id`.
   // This map contains ALL players, including evolutions.
   ctx.playerMap = new Map(processedPlayerRows.map(p => [p.player_id, p]));
@@ -311,7 +330,7 @@ export async function loadPlayersData(ctx) {
 
   // create the players table
   const playerFields = basePokemon.length > 0 ? Object.keys(basePokemon[0]) : [];
-  ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields);
+  ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields, playerSelected);
 }
 
 /////////////////////////////

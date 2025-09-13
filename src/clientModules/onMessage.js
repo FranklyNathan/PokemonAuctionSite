@@ -132,14 +132,19 @@ function handleServerUpdate(msg, ctx) {
   // Check if a draft just completed BEFORE updating any other part of the context.
   // This is crucial because we need the `ctx` from the end of the bidding phase
   // to correctly record who won.
+  const draftJustCompleted = ctx.stateId === 'bidding' && ctx.highestBidder !== undefined;
+
+  // Case 1: A new auction round is starting (bidding -> bidding).
   if (
-    ctx.stateId === 'bidding' &&
+    draftJustCompleted &&
     msg.stateId === 'bidding' &&
-    msg.selectedPlayerId !== ctx.selectedPlayerId &&
-    ctx.selectedPlayerId !== null &&
-    ctx.highestBidder !== undefined
+    (msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId)
   ) {
     console.log('[Debug] New auction round started. Recording draft for previous round.');
+    recordDraft(ctx);
+  } else if (draftJustCompleted && msg.stateId !== 'bidding') {
+    // Case 2: The auction is ending (bidding -> auction_over/post_auction).
+    console.log('[Debug] Final auction round ended. Recording final draft.');
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
   }
@@ -251,6 +256,12 @@ function handleServerUpdate(msg, ctx) {
             console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
           }
         }
+        break;
+      case 'auction_over':
+        console.log('[Client onMessage] Auction is over. Disabling controls.');
+        document.getElementById('waiting-msg').innerHTML = 'The auction has ended!';
+        disableRaiseButtons();
+        resetTimerTime();
         break;
       case 'post_auction':
         // go to the results page

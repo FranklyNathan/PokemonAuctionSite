@@ -43,6 +43,10 @@
     #player::part(body) {
       display: none;
     }
+
+    .sl-theme-dark sl-button[variant='neutral']::part(label) {
+      color: white;
+    }
   </style>
 
   <body>
@@ -183,7 +187,7 @@
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.5rem;">
             <div id="draft-counter" style="color: var(--sl-color-neutral-600);"></div>
             <div style="display: flex; justify-content: center; gap: 0.5rem; width: 100%;">
-              <sl-button id="download-results-button" variant="neutral" size="small" style="--sl-color-neutral-foreground: white;">Download Results</sl-button>
+            <sl-button id="download-results-button" variant="neutral" size="small">Download Results</sl-button>
               <sl-button id="dark-mode-toggle" variant="neutral" size="small" style="width: 3rem; --sl-spacing-x-small: 0.25rem;"></sl-button>
               <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
             </div>
@@ -457,6 +461,17 @@
     // team selection needs the sl-dialog component to be defined
     initTeamSelection(ctx);
     initBidButtonListeners(ctx);
+
+    // Add listener for 'Enter' key on the custom bid input
+    const raiseInput = document.getElementById('raise-input');
+    const raiseButton = document.getElementById('raise');
+    raiseInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // prevent any default form submission
+        raiseButton.click(); // trigger the custom bid button's click event
+      }
+    });
+
     ctx.speciesInfoMap = await fetchAndParsePokemonInfo();
     await loadPlayersData(ctx);
 

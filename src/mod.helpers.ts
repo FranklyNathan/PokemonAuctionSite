@@ -80,7 +80,7 @@ function startNewAuctionRound(ctx: Ctx) {
   } else {
     // If no player is found (e.g., all base pokemon are drafted), end the draft.
     console.log('[Server] No more undrafted base-form Pokémon. Ending draft.');
-    goToPostAuction(ctx);
+    endAuction(ctx);
   }
 }
 
@@ -158,12 +158,15 @@ function isDraftComplete(ctx: Ctx) {
   );
 }
 
-async function goToPostAuction(ctx: Ctx) {
-  // going to post auction causes clients to close websockets, and once all sockets close
-  //   the closeOrErrorHandler() function serializes the state to the durable object,
-  //   so no need to handle that here.
+async function endAuction(ctx: Ctx) {
+  console.log('[Server] The auction has ended. Transitioning to AuctionOver state.');
   ctx.deleteAlarm();
-  ctx.serverState = State.PostAuction;
+  ctx.serverState = State.AuctionOver;
+  // Clear out auction-specific fields to present a clean final state.
+  ctx.selectedPlayerId = undefined;
+  ctx.highestBidder = undefined;
+  ctx.currentBid = 0;
+  ctx.flashbangedClientId = null;
 }
 
 ///////////////
@@ -199,7 +202,7 @@ export async function transitionState(ctx: Ctx) {
 
       // check if we should go to results
       if (isDraftComplete(ctx)) {
-        await goToPostAuction(ctx);
+        await endAuction(ctx);
         break;
       }
 

@@ -190,8 +190,11 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       if (ctx.currentBid < 10) {
         newTimeLimit = ctx.biddingTimeLimit * 2;
         console.log(`[Server] Bid is under $10. Doubling timer to ${newTimeLimit}ms.`);
+      } else if (ctx.currentBid > 29) {
+        newTimeLimit = ctx.biddingTimeLimit / 1.5;
+        console.log(`[Server] Bid is over $30. Halving timer to ${newTimeLimit}ms.`);
       } else {
-        console.log(`[Server] Bid is $10 or over. Using standard timer of ${newTimeLimit}ms.`);
+        console.log(`[Server] Bid is between $10 and $30. Using standard timer of ${newTimeLimit}ms.`);
       }
       console.log(`[Server] Setting alarm for ${newTimeLimit}ms.`);
       ctx.setAlarm(newTimeLimit);

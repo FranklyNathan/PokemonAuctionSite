@@ -23,6 +23,7 @@ export enum State {
   PreAuction = 'pre_auction',
   PlayerSelection = 'player_selection',
   Bidding = 'bidding',
+  AuctionOver = 'auction_over',
   PostAuction = 'post_auction',
 }
 
