@@ -27,7 +27,6 @@ export function getSerializableCtx(ctx: Ctx) {
     remainingTimeOnPause: ctx.remainingTimeOnPause,
     clientIdIncrementer: ctx.clientIdIncrementer,
     biddingTimeLimit: ctx.biddingTimeLimit,
-    playerSelectionTimeLimit: ctx.playerSelectionTimeLimit,
     totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     currentTimeLimit: ctx.currentTimeLimit,
   };

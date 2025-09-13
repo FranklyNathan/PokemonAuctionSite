@@ -9,6 +9,7 @@ async function getPlayersJson(type) {
   // Construct a URL relative to the auction's base path.
   const url = new URL(window.location.href);
   url.pathname = `/${url.pathname.split('/')[1]}/${type}`;
+  console.log(`[Debug] getPlayersJson: Fetching from URL: ${url.toString()}`);
   const req = new Request(url.toString());
   return await window
     .fetch(req)
@@ -19,11 +20,14 @@ async function getPlayersJson(type) {
           return Promise.reject(msg);
         });
       } else {
+        console.log('[Debug] getPlayersJson: Fetch successful.');
         return response.json();
       }
     })
     .catch((e) => {
       console.error(e);
+      toast('Error', `Could not load player data: ${e}`, 'danger');
+      return Promise.reject(e);
     });
 }
 
@@ -257,7 +261,6 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
 
 export async function loadPlayersData(ctx) {
   const playerRows = await getPlayersJson('players-data');
-  const { playerSelected } = await import('./clientActions.js');
 
   const playersTableWrapperEl = document.getElementById('players-table-wrapper');
   if (!playerRows || playerRows.length === 0) {
@@ -338,6 +341,7 @@ export async function loadPlayersData(ctx) {
 /////////////////////////////
 
 function createResultsTable(playersTableWrapperEl, playersData) {
+  console.log('[Debug] createResultsTable: Starting table creation.');
   // we are in the post auction, add column indicating drafted or keeper
   cols.push({
     field: 'keeper',
@@ -365,20 +369,24 @@ function createResultsTable(playersTableWrapperEl, playersData) {
     },
   };
   const playersTable = agGrid.createGrid(playersTableWrapperEl, playerTableOptions);
+  console.log('[Debug] createResultsTable: ag-Grid created.');
   return playersTable;
 }
 
 export async function loadResultsData() {
+  console.log('[Debug] loadResultsData: Starting.');
   // download players file from r2
   const playerRows = await getPlayersJson('results-data');
   if (playerRows == undefined) {
-    console.warn('Failed to load results data!');
+    console.warn('[Debug] loadResultsData: getPlayersJson returned undefined. Aborting.');
     return;
   }
+  console.log(`[Debug] loadResultsData: Loaded ${playerRows.length} player rows.`);
 
   // create the players table
   const playersTableWrapperEl = document.getElementById('players-table-wrapper');
   createResultsTable(playersTableWrapperEl, playerRows);
+  console.log('[Debug] loadResultsData: Table created.');
 
   // return CSV for downloading
   return Papa.unparse(

@@ -56,23 +56,19 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
 }
 
 export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response | undefined> {
-  const playerSelectionTimeLimit = form.get('playerSelectionTimeLimit');
   const biddingTimeLimit = form.get('biddingTimeLimit');
   const totalPokemonAuctioned = form.get('totalPokemonAuctioned');
   if (
     !(
-      typeof playerSelectionTimeLimit == 'string' &&
-      isValidNumber(playerSelectionTimeLimit) &&
       typeof biddingTimeLimit == 'string' &&
       isValidNumber(biddingTimeLimit) &&
       typeof totalPokemonAuctioned == 'string' &&
       isValidNumber(totalPokemonAuctioned)
     )
   ) {
-    return new Response('Got invalid values for one of the time limits or total Pokémon auctioned!', { status: 400 });
+    return new Response('Got invalid values for the time limit or total Pokémon auctioned!', { status: 400 });
   }
 
-  ctx.playerSelectionTimeLimit = +playerSelectionTimeLimit * SECONDS;
   ctx.biddingTimeLimit = +biddingTimeLimit * SECONDS;
   ctx.totalPokemonAuctioned = +totalPokemonAuctioned;
 

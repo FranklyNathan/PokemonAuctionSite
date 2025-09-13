@@ -107,7 +107,6 @@ export function showTeamDisconnected(team) {
 }
 
 export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws, stateId, highestBidder) {
-  console.log(`[Debug] updateTeamCard for team '${team.teamName}' (ID: ${team.clientId}). Current highestBidder: ${highestBidder}.`);
   const teamCardEl = document.getElementById(`team${team.clientId}`);
   const shadow = teamCardEl.shadowRoot;
   // Get containers for both top-left and top-right actions.
@@ -122,10 +121,8 @@ export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws
 
   // Handle high bidder highlight by adding/removing a class on the host element
   if (highestBidder === team.clientId) {
-    console.log(`[Debug] Team ${team.teamName} IS the highest bidder. Adding 'high-bidder' class.`);
     teamCardEl.classList.add('high-bidder');
   } else {
-    console.log(`[Debug] Team ${team.teamName} is NOT the highest bidder. Removing 'high-bidder' class.`);
     teamCardEl.classList.remove('high-bidder');
   }
 

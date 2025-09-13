@@ -223,6 +223,15 @@ export default {
         // User is setting up a new auction
         return new Response(auctionSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
+      } 
+      
+      // Handle asset routes that might be requested from within an auction page (e.g., /<auction_id>/clientModules/...)
+      // We check for these before checking for an auction ID to prevent the DO from incorrectly handling the request.
+      if (path.includes('clientModules')) {
+        return await handleModule(request, ['clientModules', path[path.length -1]]);
+      }
+
+      if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
         const response = await handleNewAuctionWorker(request, env, path.slice(1));
         // If the handler returned an error, let's log it before returning it.
         // A 302 redirect is not "ok", but it's expected. Only log actual server errors (4xx or 5xx).

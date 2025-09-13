@@ -9,30 +9,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      .sl-theme-dark .download-icon {
+        filter: invert(1);
+      }
+    </style>
     <!-- shoelace components -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/alert/alert.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio/radio.js"></script>
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio-group/radio-group.js"
     ></script>
-    <script src="../vendor/ag-grid.js"></script>
-    <script src="../vendor/papaparse.js"></script>
+    <script src="/vendor/ag-grid.js"></script>
+    <script src="/vendor/papaparse.js"></script>
   </head>
 
   <body style="display: flex; flex-direction: column; align-items: center; height: 100vh; margin: 0; padding: 2rem">
     <h1 style="background-color: var(--sl-color-gray-50); padding: 0.5rem 1rem; border: 1px solid black">Results</h1>
     <div id="players-table-wrapper" style="height: 100%; width: 100%; margin-bottom: 2rem" class="ag-theme-balham"></div>
-    <sl-button href="#" disabled download="auction-results.csv" id="download">Download CSV</sl-button>
+    <sl-button href="#" disabled download="auction-results.csv" id="download" variant="neutral" size="large" title="Download Results as CSV">
+      <img class="download-icon" src="/generic/Download.png" alt="Download Results" style="height: 2rem;" />
+    </sl-button>
   </body>
 
   <script type="module">
-    import { loadResultsData } from '../modules/playersTable.js';
+    import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
+    import { loadResultsData } from '/clientModules/playersTable.js';
+
+    console.log('[Debug] Results page script started.');
+    // Set the base path for all Shoelace assets (including icons). This was the missing piece.
+    setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+    console.log('[Debug] Shoelace base path set. Icons should now load.');
+
+    console.log('[Debug] Imported loadResultsData.');
     const loadResultsPromise = loadResultsData();
+    console.log('[Debug] Called loadResultsData, promise is pending.');
 
     await customElements.whenDefined('sl-button');
-
+    await customElements.whenDefined('sl-icon');
+    console.log('[Debug] sl-button and sl-icon components are defined.');
     // --- Dark Mode Logic ---
     // Check for saved theme in localStorage on page load and apply it.
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -47,14 +65,24 @@
     // --- End Dark Mode Logic ---
 
     document.body.classList.add('ready');
+    console.log('[Debug] Body class set to ready.');
 
     const csvStr = await loadResultsPromise;
+    console.log('[Debug] loadResultsPromise resolved. CSV data length:', csvStr?.length);
 
     const downloadEl = document.getElementById('download');
-    downloadEl.removeAttribute('disabled');
-    downloadEl.addEventListener('click', function (event) {
-      // Set the href of the download link
-      downloadEl.setAttribute('href', URL.createObjectURL(new Blob([csvStr], { type: 'text/plain' })));
-    });
+    if (downloadEl) {
+      console.log('[Debug] Found download button element.');
+      downloadEl.removeAttribute('disabled');
+      console.log('[Debug] Enabled download button.');
+      downloadEl.addEventListener('click', function (event) {
+        console.log('[Debug] Download button clicked.');
+        // Set the href of the download link
+        downloadEl.setAttribute('href', URL.createObjectURL(new Blob([csvStr], { type: 'text/plain' })));
+        console.log('[Debug] Set href for download.');
+      });
+    } else {
+      console.error('[Debug] Could not find download button element!');
+    }
   </script>
 </html>

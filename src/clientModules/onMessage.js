@@ -140,28 +140,24 @@ function handleServerUpdate(msg, ctx) {
     msg.stateId === 'bidding' &&
     (msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId)
   ) {
-    console.log('[Debug] New auction round started. Recording draft for previous round.');
     recordDraft(ctx);
   } else if (draftJustCompleted && msg.stateId !== 'bidding') {
     // Case 2: The auction is ending (bidding -> auction_over/post_auction).
-    console.log('[Debug] Final auction round ended. Recording final draft.');
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
   }
 
   // Always update bid and bidder info first, as this is critical feedback.
   if (typeof msg.currentBid == 'number' && msg.currentBid != ctx.currentBid) {
-    console.log(`[Debug] Updating currentBid from ${ctx.currentBid} to ${msg.currentBid}`);
     ctx.currentBid = msg.currentBid;
     updateCurrentBid(ctx);
     jiggleCurrentBid();
   }
-  if (typeof msg.highestBidder == 'number' && msg.highestBidder != ctx.highestBidder) {
+  if (isValidNumber(msg.highestBidder) && msg.highestBidder != ctx.highestBidder) {
     console.log(`[Debug] Updating highestBidder from ${ctx.highestBidder} to ${msg.highestBidder}`);
     ctx.highestBidder = msg.highestBidder;
     updateHighestBidder(ctx);
     // After the highest bidder changes, we must re-render all team cards to apply/remove the highlight.
-    console.log('[Debug] Highest bidder changed. Re-rendering all team cards to update highlights.');
     for (const team of Object.values(ctx.teams)) {
       updateTeamCard(ctx.teams[team.clientId], isTeamDoneDrafting(ctx, team), ctx.myClientId, ctx.flashbangedClientId, ctx.ws, ctx.stateId, ctx.highestBidder);
     }
@@ -188,7 +184,7 @@ function handleServerUpdate(msg, ctx) {
   }
 
   // Handle pause state
-  if (typeof msg.isPaused === 'boolean' && msg.isPaused !== ctx.isPaused) {
+  if (typeof msg.isPaused === 'boolean' && (msg.isPaused !== ctx.isPaused || !ctx.performedInitialUpdate)) {
     console.log(`[Debug] Pause state change detected. Message isPaused: ${msg.isPaused}, Client isPaused: ${ctx.isPaused}`);
     handledPauseChange = true;
     ctx.isPaused = msg.isPaused;
@@ -197,12 +193,14 @@ function handleServerUpdate(msg, ctx) {
     if (ctx.isPaused) {
       console.log('[Debug] Pausing client timer.');
       ctx.timer.stop();
-      pauseButton.innerHTML = 'Resume';
+      pauseButton.innerHTML = '<sl-icon name="play-fill" label="Resume" style="font-size: 1.4rem; position: relative; top: 1px;"></sl-icon>';
+      pauseButton.innerHTML = '<sl-icon name="play-fill" label="Resume" style="font-size: 1.4rem; height: 1.4rem; width: 1.4rem;"></sl-icon>';
       disableRaiseButtons();
       timeEl.classList.add('paused');
     } else {
       console.log('[Debug] Resuming client timer.');
-      pauseButton.innerHTML = 'Pause';
+      pauseButton.innerHTML = '<sl-icon name="pause-fill" label="Pause" style="font-size: 1.4rem; position: relative; top: 1px;"></sl-icon>';
+      pauseButton.innerHTML = '<sl-icon name="pause-fill" label="Pause" style="font-size: 1.4rem; height: 1.4rem; width: 1.4rem;"></sl-icon>';
       timeEl.classList.remove('paused');
       enableRaiseButtons(); // Re-enable buttons on resume.
       // Also update the time limit from the message, so we don't trigger the generic update below.

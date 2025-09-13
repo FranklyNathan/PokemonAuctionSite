@@ -17,6 +17,7 @@
       type="module"
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"
     ></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dropdown/dropdown.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/menu/menu.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/menu-item/menu-item.js"></script>
@@ -46,6 +47,20 @@
 
     .sl-theme-dark sl-button[variant='neutral']::part(label) {
       color: white;
+    }
+
+    .sl-theme-dark .download-icon {
+      filter: invert(1);
+    }
+
+    .control-button {
+      --sl-spacing-x-small: 0; /* remove horizontal padding */
+    }
+
+    .control-button::part(base) {
+      width: 3rem;
+      height: 1rem;
+      justify-content: center;
     }
   </style>
 
@@ -186,10 +201,14 @@
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.5rem;">
             <div id="draft-counter" style="color: var(--sl-color-neutral-600);"></div>
-            <div style="display: flex; justify-content: center; gap: 0.5rem; width: 100%;">
-            <sl-button id="download-results-button" variant="neutral" size="small">Download Results</sl-button>
-              <sl-button id="dark-mode-toggle" variant="neutral" size="small" style="width: 3rem; --sl-spacing-x-small: 0.25rem;"></sl-button>
-              <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; width: 100%;">
+              <sl-button id="download-results-button" class="control-button" variant="neutral" title="Download Results">
+                <img class="download-icon" src="/generic/Download.png" alt="Download Results" style="height: 1.4rem;" />
+              </sl-button>
+              <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
+              <sl-button id="pause-button" class="control-button" variant="neutral" title="Pause/Resume Timer">
+                <sl-icon name="pause-fill" label="Pause" style="font-size: 1.4rem;"></sl-icon>
+              </sl-button>
             </div>
           </div>
           <!-- right side section -->
@@ -286,6 +305,13 @@
   </body>
 
   <script type="module">
+    // module imports
+    import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
+    import { CountDownTimer } from '/clientModules/CountDownTimer.js';
+    import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
+    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
+    import { loadPlayersData } from '/clientModules/playersTable.js';
+
     const SECONDS = 1000;
     const ctx = {
       ws: null, // websocket
@@ -314,7 +340,6 @@
       biddingTimeLimit: null, // number
       totalPokemonAuctioned: 0,
       draftedPokemonCount: 0,
-      playerSelectionTimeLimit: null, // number
       maxRosterSize: null, // number   // this is the target for a string replace server side
       extraPlayerStatsFields: [], // holds IDs of extra fields that were added to the players data
       // keep track of whether we have done the initial UI update when a player joins
@@ -399,11 +424,7 @@
       return speciesInfoMap;
     }
 
-    // module imports
-    import { CountDownTimer } from '/clientModules/CountDownTimer.js';
-    import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
-    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
-    import { loadPlayersData } from '/clientModules/playersTable.js';
+    setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
 
     // --- Helper Functions ---
     const get = (id) => document.getElementById(id);
@@ -416,12 +437,12 @@
       const tableWrapper = document.getElementById('players-table-wrapper');
       if (theme === 'dark') {
         htmlEl.classList.add('sl-theme-dark');
-        if (tableWrapper) tableWrapper.classList.add('ag-theme-balham-dark');
-        darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.2rem; vertical-align: middle;">';
+        if (tableWrapper) { tableWrapper.classList.add('ag-theme-balham-dark'); }
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: +3px;">';
       } else {
         htmlEl.classList.remove('sl-theme-dark');
-        if (tableWrapper) tableWrapper.classList.remove('ag-theme-balham-dark');
-        darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.2rem; vertical-align: middle;">';
+        if (tableWrapper) { tableWrapper.classList.remove('ag-theme-balham-dark'); }
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: +3px;">';
       }
     }
 
@@ -454,14 +475,11 @@
       customElements.whenDefined('sl-radio'),
       customElements.whenDefined('sl-radio-group'),
       customElements.whenDefined('sl-progress-bar'),
+      customElements.whenDefined('sl-icon'),
     ]);
 
     // Add the `ready` class so the UI fades in.
     document.body.classList.add('ready');
-    // team selection needs the sl-dialog component to be defined
-    initTeamSelection(ctx);
-    initBidButtonListeners(ctx);
-
     // Add listener for 'Enter' key on the custom bid input
     const raiseInput = document.getElementById('raise-input');
     const raiseButton = document.getElementById('raise');
@@ -472,8 +490,13 @@
       }
     });
 
+    // Load all necessary data (like the playerMap) before initializing UI that depends on it.
     ctx.speciesInfoMap = await fetchAndParsePokemonInfo();
     await loadPlayersData(ctx);
+
+    // Now that data is loaded, initialize the interactive components like the team selection dialog.
+    initTeamSelection(ctx);
+    initBidButtonListeners(ctx);
 
     document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
     document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());
