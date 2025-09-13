@@ -53,19 +53,26 @@ export function unserializeCtx(ctx: Ctx, state: DurableObjectState, sql: SqlStor
   return ctx;
 }
 
-function setupPlayerSelection(ctx: Ctx) {
-  ctx.serverState = State.PlayerSelection;
+function startNewAuctionRound(ctx: Ctx) {
+  console.log('[Server] Starting new auction round...');
+  ctx.serverState = State.Bidding;
   ctx.currentBid = 0;
   ctx.selectedPlayerId = undefined;
   ctx.highestBidder = undefined;
   ctx.currentlySelectingTeam = undefined;
 
+  console.log('[Server] Getting random undrafted player...');
   // Instead of the client selecting a player, the server does it randomly.
   const randomPlayer = getRandomUndraftedPlayer(ctx);
   if (randomPlayer) {
+    console.log(`[Server] Selected player ID: ${randomPlayer.player_id}. Setting alarm.`);
     ctx.selectedPlayerId = randomPlayer.player_id;
+    ctx.setAlarm(ctx.biddingTimeLimit);
+  } else {
+    // If no player is found (e.g., all base pokemon are drafted), end the draft.
+    console.log('[Server] No more undrafted base-form Pokémon. Ending draft.');
+    goToPostAuction(ctx);
   }
-  ctx.setAlarm(ctx.playerSelectionTimeLimit);
 }
 
 export async function updateClients(
@@ -146,7 +153,7 @@ async function goToPostAuction(ctx: Ctx) {
 ///////////////
 
 export async function transitionState(ctx: Ctx) {
-  console.log(`[transitionState] ALARM FIRED. Transitioning from state: ${ctx.serverState}`);
+  console.log(`[transitionState] Transitioning from state: ${ctx.serverState}`);
   ctx.deleteAlarm(); // remove current timer that will call transitionState again
   // if all players are disconnected, exit with resetting the alarm.
   if (Object.values(ctx.clientMap).every((c) => !c.connected)) {
@@ -157,8 +164,7 @@ export async function transitionState(ctx: Ctx) {
     case State.PreAuction:
       // second argument false: don't increment selecting team because we start at
       //   team 0 and team 0 has not picked yet.
-      setupPlayerSelection(ctx);
-
+      startNewAuctionRound(ctx);
       break;
     case State.Bidding:
       if (ctx.highestBidder == undefined || ctx.selectedPlayerId == undefined || ctx.currentBid == undefined) {
@@ -179,25 +185,14 @@ export async function transitionState(ctx: Ctx) {
         break;
       }
 
-      setupPlayerSelection(ctx);
+      startNewAuctionRound(ctx);
       break;
     case State.PlayerSelection:
-      if (isDraftComplete(ctx)) {
-        await goToPostAuction(ctx);
-        break;
-      }
-
-      // If highestBidder is set, it means a bid was made and we should move to Bidding state.
-      if (ctx.highestBidder !== undefined) {
-        // A team has made an initial bid. Move to the bidding state
-        ctx.serverState = State.Bidding;
-        ctx.currentlySelectingTeam = undefined;
-        ctx.setAlarm(ctx.biddingTimeLimit);
-      } else {
-        // The alarm fired, which means the team that was supposed to make a bid timed out.
-        // Stay in player selection state, and move to the next team.
-        setupPlayerSelection(ctx);
-      }
+      // This state is no longer used for starting new rounds. If the alarm fires in this
+      // state, it means a bid was made and the timer ran out, so the bidding is over.
+      // We transition to the next round, which is handled by the Bidding case.
+      console.log('[transitionState] Alarm fired in PlayerSelection state. This should not happen in the new flow. Transitioning to new round.');
+      startNewAuctionRound(ctx);
       break;
   }
 }

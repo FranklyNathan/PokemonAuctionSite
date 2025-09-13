@@ -36,10 +36,6 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
   }
   if (msg.stateId != ctx.serverState) {
     console.log(`[validate] FAILED: stateId mismatch. Client: ${msg.stateId}, Server: ${ctx.serverState}`);
-    // Special case for the opening bid race condition.
-    if (msg.type === ClientMessageType.Bid && msg.stateId === State.PlayerSelection && ctx.serverState === State.Bidding) {
-      return sendError(ctx, `Too slow! ${ctx.clientMap[ctx.highestBidder!].teamName} made the opening bid of $${ctx.currentBid}.`, clientId);
-    }
     return sendError(ctx, `Your 'stateId' (${msg.stateId}) does not match the server's state (${ctx.serverState})!`, clientId);
   }
   console.log(`[validate] 2. Entering switch for type: ${msg.type}`);
@@ -83,36 +79,8 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
           return sendError(ctx, `Your bid (${msg.bid}) is not greater than the current highest bid (${ctx.currentBid})`, clientId);
         }
         // bidding time must not have expired (handled by checking if we are in the bidding state)
-      } else if (ctx.serverState == State.PlayerSelection) {
-        // validate a bid in the Player Selection state
-        // only the team currently selecting a player can bid
-        // validate the client sent us the selectedPlayerId for the player they selected
-        if (!msg.hasOwnProperty('selectedPlayerId')) {
-          return sendError(
-            ctx,
-            "Message did not contain the 'selectedPlayerId' field, which is necessary when selecting a player!",
-            clientId,
-          );
-        }
-        if (!isValidNumber(msg.selectedPlayerId)) {
-          return sendError(ctx, `The selectedPlayerId ${msg.selectedPlayerId} is not a valid number!`, clientId);
-        }
-        msg.selectedPlayerId = Math.trunc(+msg.selectedPlayerId); // convert the selectedPlayerId to an integer
-
-        // the selected player must match the player the server has selected for auction
-        if (ctx.selectedPlayerId !== msg.selectedPlayerId) {
-          return sendError(ctx, `The selected player ID ${msg.selectedPlayerId} does not match the player up for auction!`, clientId);
-        }
-
-        // make sure the selectedPlayerId sent by the client is a valid player ID
-        const draftedByArray = getPlayerDraftedById(ctx, msg.selectedPlayerId);
-        if (draftedByArray.length == 0) {
-          return sendError(ctx, `The selected player ID ${msg.selectedPlayerId} is not a known player ID!`, clientId);
-        } else if (draftedByArray[0] != null) {
-          return sendError(ctx, `The selected player (playerId ${msg.selectedPlayerId}) has already been drafted!`, clientId);
-        }
       } else {
-        // if we aren't in the bidding or player selection state, a bid type message is invalid
+        // if we aren't in the bidding state, a bid type message is invalid
         return sendError(ctx, `Bidding is invalid in the (${ctx.serverState}) state`, clientId);
       }
       break;
@@ -150,9 +118,15 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
           client.remainingFunds <= 0, // client has no remaining funds
       );
       if (allReady) {
+        console.log('[Server] All players are ready. Sending final pre-auction update.');
+        // Send a final update for the PreAuction state so all clients see everyone as "ready".
+        await updateClients(ctx, true, true);
+        console.log('[Server] Pre-auction update sent. Transitioning to Bidding state...');
+        // Now, transition to the next state (Bidding).
+        // This function changes the state but does not send an update.
         await transitionState(ctx);
+        console.log(`[Server] State transitioned. Current server state is now: ${ctx.serverState}`);
       }
-      await updateClients(ctx, true, true);
       break;
     case ClientMessageType.TogglePause:
       ctx.isPaused = !ctx.isPaused;
@@ -188,24 +162,23 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       //   highest in validateClientMessageSchema().
       ctx.currentBid = msg.bid;
       ctx.highestBidder = clientId;
-      if (ctx.serverState == State.PlayerSelection) {
-        // This was the first bid on the player, so manually transition the state.
-        ctx.serverState = State.Bidding;
-        ctx.currentlySelectingTeam = undefined;
-        console.log('[Server] First bid received. Manually transitioned state to Bidding.');
-      }
       // For every valid bid (first or subsequent), reset the timer and update clients.
       ctx.deleteAlarm();
       console.log(`[Server] Setting alarm for ${ctx.biddingTimeLimit}ms.`);
       ctx.setAlarm(ctx.biddingTimeLimit);
       await updateClients(ctx, true, true);
-      break;
+      return; // Exit after sending the bid update.
     default:
       // A message type that has passed validation but has no action to take.
       // This is fine, we just don't need to send an update to clients.
       console.log(`[Server] Received a valid but unhandled message type: ${msg.type}`);
       return; // Exit without sending a client update
   }
+
+  // After handling a message that might change state (like ReadyUp), send a final update.
+  // We exclude messages that have their own update logic and return path (like Bid).
+  console.log(`[Server] Sending final update for state: ${ctx.serverState}`);
+  await updateClients(ctx, true, true);
 }
 
 ///////////////////

@@ -18,6 +18,7 @@ import {
   isValidNumber,
   updateTeamCard,
 } from './html.js';
+import { displayPlayerAuctionInfo } from './html.js';
 
 /*
 ctx: {
@@ -53,11 +54,11 @@ function recordDraft(ctx) {
     console.error('recordDraft called before playersTableData was loaded. Aborting.');
     return;
   }
-  if (ctx.selectedPlayerId == null || !ctx.playersTableData?.[ctx.selectedPlayerId]) {
+  const selectedPlayer = ctx.playerMap.get(ctx.selectedPlayerId);
+  if (!selectedPlayer) {
     console.error(`recordDraft called with invalid selectedPlayerId: ${ctx.selectedPlayerId} or empty player data.`);
     return;
   }
-  const selectedPlayer = ctx.playersTableData[ctx.selectedPlayerId];
   selectedPlayer.pickedBy = ctx.teams[ctx.highestBidder].teamName;
   selectedPlayer.cost = ctx.currentBid;
 
@@ -67,10 +68,8 @@ function recordDraft(ctx) {
   addPlayerIconToTeamCard(ctx.highestBidder, selectedPlayer.name);
 
   // update the table row
-  const row = ctx.playersTable.getRowNode(
-    ctx.playersTableData[ctx.selectedPlayerId].type + ctx.playersTableData[ctx.selectedPlayerId].name,
-  );
-  row.setData(ctx.playersTableData[ctx.selectedPlayerId]);
+  const row = ctx.playersTable.getRowNode(selectedPlayer.type + selectedPlayer.name);
+  row.setData(selectedPlayer);
   ctx.playersTable.refreshClientSideRowModel(); // refresh the filtering so if a user is filtered on draft status it shows new draft
 
   // clear the highest bidder and highest bid
@@ -112,7 +111,7 @@ function handleServerUpdate(msg, ctx) {
   // Check if a draft just completed BEFORE updating any other part of the context.
   // This is crucial because we need the `ctx` from the end of the bidding phase
   // to correctly record who won.
-  if (ctx.stateId === 'bidding' && msg.stateId === 'player_selection') {
+  if (ctx.stateId === 'bidding' && msg.stateId === 'bidding' && msg.selectedPlayerId !== ctx.selectedPlayerId) {
     console.log('[Debug] Auction ended. Calling recordDraft with old context.');
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
@@ -167,12 +166,11 @@ function handleServerUpdate(msg, ctx) {
   if (
     msg.stateId != ctx.stateId ||
     !ctx.performedInitialUpdate ||
-    // if we are in player selection and the player changes (due to timeout), re-run state change logic
-    (ctx.stateId == 'player_selection' && msg.selectedPlayerId != ctx.selectedPlayerId)
+    // If the player being auctioned changes (e.g., a new round starts), we must re-run the state change logic to update the UI.
+    (msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId)
   ) {
     // if a player rejoins in the middle of the bidding phase, the `msg.stateId != ctx.stateId`
     console.log(`[Client onMessage] State change detected. Old: ${ctx.stateId}, New: ${msg.stateId}. Entering state-change UI block.`);
-    console.log(`[Client onMessage] State change detected. Old: ${ctx.stateId}, New: ${msg.stateId}`);
     //   check won't match, but we still need to initialize their UI as if it was a state change
     //   so we have to keep track of whether we have done the initial update.
     if (!ctx.performedInitialUpdate) {
@@ -180,7 +178,7 @@ function handleServerUpdate(msg, ctx) {
     }
     // handle state change
     // reset the player card to empty
-    hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
+    hideSelectedPlayerCard();
     switch (msg.stateId) {
       case 'bidding':
         console.log('[Client onMessage] In bidding state. Checking if buttons should be enabled.');
@@ -192,33 +190,7 @@ function handleServerUpdate(msg, ctx) {
         removeSelectingIndicator(ctx);
         // set the player card to the selected player
         if (msg.selectedPlayerId != undefined) {
-          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
-          if (playerData) {
-            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
-            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
-          } else {
-            console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
-          }
-        }
-        break;
-      case 'player_selection':
-        // if previous state was bidding, the highest bidder got the player!
-        // if there was a selecting team, remove the indicator
-        if (ctx.currentlySelectingTeam != undefined) {
-          removeSelectingIndicator(ctx);
-        }
-        ctx.currentlySelectingTeam = undefined;
-
-        // The first bid can be made by any team.
-        console.log('[Client onMessage] In player_selection state. Checking if buttons should be enabled.');
-        if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
-          enableRaiseButtons();
-        } else {
-          disableRaiseButtons();
-        }
-        // set the player card to the selected player
-        if (msg.selectedPlayerId != undefined) {
-          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
+          const playerData = ctx.playerMap.get(msg.selectedPlayerId);
           if (playerData) {
             updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
             displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);

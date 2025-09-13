@@ -20,29 +20,35 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
     headers = playerRows.length > 0 ? Object.keys(playerRows[0]) : [];
   }
 
-  // add draft data columns if not provided
-  if (!headers.includes('player_id')) headers.push('player_id');
-  if (!headers.includes('cost')) headers.push('cost');
-  if (!headers.includes('drafted_by_id')) headers.push('drafted_by_id');
-  if (!headers.includes('keeper')) headers.push('keeper');
+  const processedPlayerRows = playerRows.map((row, idx) => {
+    const draftedByIdRaw = row.drafted_by_id;
+    let drafted_by_id = null;
+    let cost = null;
+    let keeper = false;
 
-  playerRows.forEach((row, idx) => {
-    row.player_id = idx;
-    row.drafted_by_id = row.drafted_by_id - 1; // convert to zero based index
     // if the ID matches one of the teams, add the player to their roster
-    if (typeof row.drafted_by_id == 'number' && Object.keys(ctx.clientMap).includes(row.drafted_by_id.toString())) {
-      if (typeof row.cost != 'number') row.cost = null;
-      row.keeper = true;
-    } else {
-      row.drafted_by_id = null;
-      row.cost = null;
-      row.keeper = false;
+    if (typeof draftedByIdRaw === 'number' && Object.keys(ctx.clientMap).includes(String(draftedByIdRaw - 1))) {
+      drafted_by_id = draftedByIdRaw - 1; // convert to zero based index
+      cost = typeof row.cost === 'number' ? row.cost : null;
+      keeper = true;
     }
+
+    // Add draft-specific properties to the player object from the CSV row.
+    row.cost = cost;
+    row.drafted_by_id = drafted_by_id;
+    row.keeper = keeper;
+
+    // Create the final nested structure that the database queries expect.
+    return {
+      player_id: idx,
+      player_data: row,
+    };
   });
 
   try {
+    console.log('[Debug] Attempting to insert processed player rows:', JSON.stringify(processedPlayerRows.slice(0, 2), null, 2)); // Log first 2 for brevity
     await createPlayersTable(ctx);
-    await insertPlayers(ctx, playerRows);
+    await insertPlayers(ctx, processedPlayerRows);
   } catch (e) {
     console.error('Error during player initialization and database insertion:', e);
     return new Response('Failed to import players and create the auction!', { status: 500 });

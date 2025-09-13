@@ -154,6 +154,8 @@ export function updateSelectedPlayerCard(playerData, extraFields) {
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';
   const card = document.getElementById('player');
+
+  document.getElementById('evolution-info-container').style.display = 'none';
   card.style.minHeight = 'auto'; // Allow the card to shrink to its content.
 
   // Parse types and create image tags for them.
@@ -184,6 +186,7 @@ export function hideSelectedPlayerCard(teamName) {
   document.getElementById('player').setAttribute('hidden', 'true');
   const pokemonImageEl = document.getElementById('pokemon-image');
   pokemonImageEl.style.display = 'none';
+  document.getElementById('evolution-info-container').style.display = 'none';
   if (typeof teamName == 'string') {
     document.getElementById('waiting-msg').innerHTML = `Waiting for <u>${teamName}</u> to make a bid`;
   }
@@ -355,4 +358,26 @@ export function initBidButtonListeners(ctx) {
     // remove focus from the button so keyboard doesn't trigger an accidental bid
     e.target.blur();
   });
+}
+
+/**
+ * Updates the UI to display the auctioned player's image and species info.
+ * Builds and displays the evolution chain for the auctioned player.
+ * @param {object} player - The player object from the players table.
+ * @param {Map<string, string>} speciesInfoMap - The parsed species info.
+ */
+export function displayPlayerAuctionInfo(player, speciesInfoMap) {
+  const infoEl = document.getElementById('species-info-text');
+  const infoContainer = document.getElementById('evolution-info-container');
+  infoContainer.innerHTML = ''; // Clear previous content
+  infoContainer.style.display = 'none';
+  infoEl.style.display = 'none';
+
+  if (player && player.name) {
+    const info = speciesInfoMap.get(player.name);
+    if (info && info.description) {
+      infoEl.textContent = info.description;
+      infoEl.style.display = 'block';
+    }
+  }
 }

@@ -35,6 +35,15 @@ sl-button.bet.hover::part(base):hover {
     transform: scale(1.2) rotate(-1.8deg);
     color: black;
 }
+
+.sl-theme-dark sl-button[variant='neutral']::part(base) {
+  color: var(--sl-color-neutral-100);
+}
+/* Override the neutral button color specifically for the pause button in dark mode. */
+.sl-theme-dark #pause-button::part(base) {
+  color: white;
+}
+
 sl-button[disabled]::part(base) {
     cursor: default;
 }

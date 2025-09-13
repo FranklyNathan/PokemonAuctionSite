@@ -212,14 +212,15 @@ const cols = [
 /////////////////////////////
 
 function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
+  const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // add any custom columns to the table
-  const currentFields = new Set(cols.map((c) => c.field));
+  const currentFields = new Set(tableCols.map((c) => c.field));
   currentFields.add('playerId').add('keeper'); // don't add these to the table
   // find the extra stats fields that were added and save them to the Ctx
   ctx.extraPlayerStatsFields = playerFields.filter((fieldId) => !currentFields.has(fieldId));
   // add extra stats fields to the table
   ctx.extraPlayerStatsFields.forEach((fieldId) => {
-    cols.push({
+    tableCols.push({
       field: fieldId,
       headerName: fieldId
         .replace(/^[-_]*(.)/, (_, c) => c.toUpperCase()) // Initial char (after -/_)
@@ -232,7 +233,7 @@ function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
 
   const playerTableOptions = {
     rowData: ctx?.playersTableData || [],
-    columnDefs: cols,
+    columnDefs: tableCols,
     rowSelection: 'single',
     floatingFiltersHeight: 40,
     getRowId: (params) => params.data.type + params.data.name,
@@ -256,8 +257,18 @@ export async function loadPlayersData(ctx) {
     ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, []);
     return;
   }
-  // update the player rows with application specific data
-  playerRows.forEach((row, idx) => {
+
+  // The server sends each player's data as a nested JSON string within the 'player_data' field.
+  // We need to parse this string and merge its contents into the top-level player object.
+  const processedPlayerRows = playerRows.map(row => {
+    // The server now sends a clean structure where `row.player_data` contains the player's attributes.
+    // We just need to merge that with the top-level `player_id`.
+    const innerData = typeof row.player_data === 'string' ? JSON.parse(row.player_data) : row.player_data;
+    return { ...innerData, player_id: row.player_id };
+  });
+
+  // Update the player rows with application-specific data
+  processedPlayerRows.forEach((row, idx) => {
     let draftedById = row.drafted_by_id;
     let draftedByName = undefined;
     let cost = undefined;
@@ -273,9 +284,8 @@ export async function loadPlayersData(ctx) {
     }
 
     let newPlayer = {
-      // Ensure playerId is correctly assigned from the index.
-      // The original player_id from the data source is not needed after this.
-      playerId: idx,
+      // The player_id from the database is the source of truth.
+      playerId: row.player_id,
       name: row.name,
       type: row.type,
       // Use null for drafted_by_id if it's not a valid number.
@@ -288,10 +298,16 @@ export async function loadPlayersData(ctx) {
     Object.assign(row, newPlayer);
   });
 
-  ctx.playersTableData = playerRows;
+  // Create a map for fast lookups by the persistent `player_id`.
+  // This map contains ALL players, including evolutions.
+  ctx.playerMap = new Map(processedPlayerRows.map(p => [p.player_id, p]));
+
+  // For the visible table, only show auctionable (base) Pokémon.
+  const basePokemon = processedPlayerRows.filter(p => p.stage === 'base');
+  ctx.playersTableData = basePokemon;
 
   // create the players table
-  const playerFields = Object.keys(playerRows[0]);
+  const playerFields = basePokemon.length > 0 ? Object.keys(basePokemon[0]) : [];
   ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields);
 }
 

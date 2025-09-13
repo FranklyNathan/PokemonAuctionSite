@@ -20,13 +20,19 @@ export async function insertPlayers(ctx: Ctx, players: any[]) {
   // limits and SQL syntax interpretation in the Durable Object environment.
   for (const player of players) {
     try {
-      // Using exec with string interpolation to match the old, working implementation.
-      // Note: This pattern can be vulnerable to SQL injection if player data contains single quotes.
-      await ctx.sql.exec(`INSERT INTO players (player_id, player_data) VALUES (${player.player_id}, '${JSON.stringify(player)}')`);
+      // The incoming `player` object is already correctly structured.
+      const playerDataString = JSON.stringify(player.player_data).replace(/'/g, "''");
+
+      // The diagnostic step proved that parameterized queries fail with this driver for JSON strings,
+      // but raw SQL with escaped quotes succeeds. We will use the working method.
+      const rawSql = `INSERT INTO players (player_id, player_data) VALUES (${player.player_id}, '${playerDataString}')`;
+      
+      await ctx.sql.exec(rawSql);
     } catch (e) {
-      console.error('Single player insert failed:', e);
-      console.error('Player data:', player);
-      throw e; // Re-throw the error to be caught by the caller.
+      console.error('[DATABASE_INSERT_ERROR] A single player insert failed. See details below.');
+      console.error('Error Object:', e);
+      console.error('Player Data that Failed:', JSON.stringify(player, null, 2));
+      throw new Error('Database insertion failed for a player.'); // Re-throw a more specific error.
     }
   }
 }
@@ -67,20 +73,40 @@ export function getPlayerDraftedById(ctx: Ctx, playerId: number): Array<number |
     .map((row) => row.drafted_by_id?.valueOf() as number);
 }
 
+export function getPlayerById(ctx: Ctx, playerId: number): any | null {
+  const result = ctx.sql.exec(`SELECT player_data FROM players WHERE player_id = ${playerId}`).one();
+  if (result && result.player_data) {
+    return JSON.parse(result.player_data as string);
+  }
+  return null;
+}
+
 export function getRandomUndraftedPlayer(ctx: Ctx): { player_id: number } | null {
   const result = ctx.sql
-    .exec("SELECT player_id FROM players WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL ORDER BY RANDOM() LIMIT 1")
-    .one();
-  if (result) {
+    .exec(
+      `SELECT player_id FROM players
+        WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL
+        AND JSON_EXTRACT(player_data, '$.stage') = 'base'
+        ORDER BY RANDOM() LIMIT 1`,
+    )
+    .toArray();
+  if (result.length > 0) {
+    const player = result[0];
     return {
-      player_id: result.player_id as number,
+      player_id: player.player_id as number,
     };
   }
   return null;
 }
 
 export function getPlayersJsonString(ctx: Ctx) {
-  return ctx.sql.exec("SELECT '[' || GROUP_CONCAT(player_data) || ']' as players FROM players").one().players?.toString();
+  // This query constructs a JSON array string. The previous json_group_array approach was
+  // too resource-intensive. GROUP_CONCAT is more reliable in this environment.
+  // We construct a JSON object for each player and then concatenate them into a single string.
+  return ctx.sql.exec(`
+    SELECT '[' || GROUP_CONCAT(json_object('player_id', player_id, 'player_data', json(player_data))) || ']' as players
+    FROM players
+  `).one().players?.toString();
 }
 
 export function getResultsJsonString(ctx: Ctx) {
@@ -89,8 +115,7 @@ export function getResultsJsonString(ctx: Ctx) {
       // build a JSON array string as the single row of the results
       `SELECT
         json_extract(player_data, '$.name') as name,
-        json_extract(player_data, '$.team') as team,
-        json_extract(player_data, '$.position') as position,
+        json_extract(player_data, '$.type') as type,
         json_extract(player_data, '$.drafted_by_id') as drafted_by_id,
         json_extract(player_data, '$.cost') as cost,
         json_extract(player_data, '$.keeper') as keeper
