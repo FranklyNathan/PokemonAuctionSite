@@ -18,7 +18,6 @@ import {
   isValidNumber,
   updateTeamCard,
 } from './html.js';
-import { displayPlayerAuctionInfo } from './html.js';
 
 /*
 ctx: {
@@ -192,8 +191,7 @@ function handleServerUpdate(msg, ctx) {
         if (msg.selectedPlayerId != undefined) {
           const playerData = ctx.playerMap.get(msg.selectedPlayerId);
           if (playerData) {
-            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
-            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
+            updateSelectedPlayerCard(playerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
           } else {
             console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
           }

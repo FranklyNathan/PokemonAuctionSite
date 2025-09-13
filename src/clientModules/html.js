@@ -146,23 +146,25 @@ export function addDraftLog(teamName, cost, playerName) {
   setTimeout(() => log.firstChild.classList.remove('new-draft'), 100);
 }
 
-export function updateSelectedPlayerCard(playerData, extraFields) {
+export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers) {
+  console.log('[Debug] updateSelectedPlayerCard called for player:', playerData);
+  console.log('[Debug] speciesInfoMap available:', speciesInfoMap instanceof Map && speciesInfoMap.size > 0);
   document.getElementById('waiting-msg').innerHTML = '';
   const pokemonImageEl = document.getElementById('pokemon-image');
   const imagePath = `/images/${encodeURIComponent(playerData.name)}.png`;
   pokemonImageEl.src = imagePath;
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';
+  displayPlayerAuctionInfo(playerData, speciesInfoMap, allPlayers);
   const card = document.getElementById('player');
 
-  document.getElementById('evolution-info-container').style.display = 'none';
   card.style.minHeight = 'auto'; // Allow the card to shrink to its content.
 
   // Parse types and create image tags for them.
   const types = playerData.type.split(/[\s,\/]+/).filter((t) => t); // Handles "Fire", "Fire/Flying", "Fire, Flying"
   const typeImagesHtml = types.map((type) => {
       const trimmedType = type.trim();
-      return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 20px;">`;
+      return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
     }).join('');
 
   card.removeAttribute('hidden');
@@ -360,24 +362,239 @@ export function initBidButtonListeners(ctx) {
   });
 }
 
+function getStatColor(statValue) {
+  if (statValue >= 150) return '#00c853'; // green
+  if (statValue >= 120) return '#aeea00'; // light-green
+  if (statValue >= 90) return '#ffeb3b'; // yellow
+  if (statValue >= 60) return '#ff9800'; // orange
+  return '#f44336'; // red
+}
+
 /**
  * Updates the UI to display the auctioned player's image and species info.
  * Builds and displays the evolution chain for the auctioned player.
- * @param {object} player - The player object from the players table.
- * @param {Map<string, string>} speciesInfoMap - The parsed species info.
+ * @param {object} player - The base player object from the players table.
+ * @param {Map<string, object>} speciesInfoMap - The parsed species info for descriptions.
+ * @param {Array<object>} allPlayers - The full list of player data from pok.csv.
  */
-export function displayPlayerAuctionInfo(player, speciesInfoMap) {
+export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
+  console.log('[Evo Debug] displayPlayerAuctionInfo called for player:', player, 'with allPlayers count:', allPlayers?.length);
   const infoEl = document.getElementById('species-info-text');
   const infoContainer = document.getElementById('evolution-info-container');
   infoContainer.innerHTML = ''; // Clear previous content
-  infoContainer.style.display = 'none';
+  infoContainer.style.display = 'none'; // Default to none, will be set to flex if evolutions exist
+  infoContainer.style.flexDirection = 'column';
+  infoContainer.style.gap = '1rem';
   infoEl.style.display = 'none';
 
-  if (player && player.name) {
-    const info = speciesInfoMap.get(player.name);
-    if (info && info.description) {
-      infoEl.textContent = info.description;
-      infoEl.style.display = 'block';
+  infoEl.innerHTML = ''; // Clear previous content
+
+  if (player && player.name && allPlayers && allPlayers.length > 0) {
+    let currentPokemonName = player.name;
+    let info = speciesInfoMap.get(currentPokemonName);
+
+    // Build abilities HTML for base pokemon
+    const abilityDivs = [];
+    if (player.ability1) abilityDivs.push(`<div>${player.ability1.trim()}</div>`);
+    if (player.ability2) abilityDivs.push(`<div>${player.ability2.trim()}</div>`);
+    if (player.hidden_ability) abilityDivs.push(`<div>${player.hidden_ability.trim()} (H)</div>`);
+    const abilitiesHtml = abilityDivs.join('');
+
+    // Build stats HTML for base pokemon
+    const stats = [
+      { label: 'HP', key: 'hp' },
+      { label: 'Atk', key: 'attack' },
+      { label: 'Def', key: 'defense' },
+      { label: 'SpAtk', key: 'sp_attack' },
+      { label: 'SpDef', key: 'sp_defense' },
+      { label: 'Spd', key: 'speed' },
+    ];
+    const maxStat = 255;
+    const statsHtml = stats
+      .map((stat) => {
+        const statValue = player[stat.key];
+        if (!statValue) return '';
+        const barWidth = (statValue / maxStat) * 100;
+        const barColor = getStatColor(statValue);
+        return `
+          <div style="display: flex; align-items: center; gap: 4px; font-size: 0.7rem; width: 100%;">
+            <span style="width: 35px; text-align: right; font-weight: bold;">${stat.label}</span>
+            <span style="width: 25px; text-align: left;">${statValue}</span>
+            <div style="flex-grow: 1; height: 8px;">
+              <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
+            </div>
+          </div>`;
+      })
+      .join('');
+
+    // Get key moves from speciesInfoMap
+    const keyMovesHtml = info && info.description ? `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${info.description}</pre>` : '';
+
+    infoEl.innerHTML = `
+      <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+      <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1rem;">
+        ${abilitiesHtml}
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px; width: 100%; margin-bottom: 1rem;">
+        ${statsHtml}
+      </div>
+      ${keyMovesHtml}
+    `;
+    infoEl.style.display = 'block';
+
+    // Add type icons below the base pokemon's image
+    const types = player.type.split(/[\s,\/]+/).filter((t) => t);
+    const typeImagesHtml = types
+      .map((type) => {
+        const trimmedType = type.trim();
+        return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+      })
+      .join('');
+    document.getElementById('pokemon-image-types').innerHTML = typeImagesHtml;
+
+    // Build and display evolution chain based on CSV order
+    const evolutions = [];
+    console.log('[Evo Debug] Starting to look for evolution chain from pok.csv structure...');
+
+    // 1. Find the index of the base form for the selected Pokémon's family.
+    const playerIndex = allPlayers.findIndex((p) => p.name === player.name);
+    let baseIndex = -1;
+    if (playerIndex !== -1) {
+      for (let i = playerIndex; i >= 0; i--) {
+        if (allPlayers[i].stage === 'base') {
+          baseIndex = i;
+          console.log(`[Evo Debug] Found base form '${allPlayers[i].name}' at index ${i}.`);
+          break;
+        }
+      }
     }
+
+    // 2. Iterate forward from the base form to find all its evolutions.
+    if (baseIndex !== -1) {
+      for (let i = baseIndex + 1; i < allPlayers.length; i++) {
+        const nextPokemon = allPlayers[i];
+        if (nextPokemon.stage === 'base') {
+          console.log(`[Evo Debug] Reached next base form '${nextPokemon.name}'. Ending chain search.`);
+          break; // Reached the next Pokémon family
+        }
+        // Any non-base Pokémon is an evolution in this family.
+        // Also, make sure we don't add the currently selected pokemon to its own evolution list.
+        if (nextPokemon.name !== player.name) {
+          evolutions.push({ name: nextPokemon.name, info: nextPokemon });
+        }
+      }
+    }
+
+    console.log('[Evo Debug] Finished building evolution chain. Total evolutions found:', evolutions.length, evolutions);
+
+    if (evolutions.length > 0) {
+      console.log('[Evo Debug] Found evolutions, preparing to render them to the DOM.');
+      infoContainer.style.display = 'flex'; // Show the container
+      infoContainer.style.flexDirection = 'row'; // Arrange evolutions horizontally
+      infoContainer.style.justifyContent = 'flex-start'; // Distribute space
+      infoContainer.style.alignItems = 'flex-start'; // Align to the top
+
+      // Add an arrow from the base pokemon to the first evolution
+      const firstEvo = evolutions[0];
+      const arrowHtml = `
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem;">
+          <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
+          <div style="font-size: 0.7rem; text-align: center; width: 70px;">${firstEvo.info.evolution_method || ''}</div>
+        </div>
+      `;
+      infoContainer.insertAdjacentHTML('beforeend', arrowHtml);
+
+      evolutions.forEach((evo, index) => {
+        let imageName = evo.name;
+        // Handle Mega Evolution naming convention ("Mega Pokemon" -> "Pokemon-Mega")
+        if (imageName.startsWith('Mega ')) {
+          const parts = imageName.split(' ');
+          imageName = `${parts[1]}-Mega`;
+        }
+        imageName = imageName.replace(/[^a-zA-Z0-9-]/g, '');
+        const imagePath = `/evolutions/${imageName}.png`;
+        console.log(`[Evo Debug] Rendering evolution '${evo.name}'. Image path: '${imagePath}'`);
+
+        // Get types and create vertically stacked image tags
+        const types = evo.info.type.split(/[\s,\/]+/).filter((t) => t);
+        const typeImagesHtml = types
+          .map((type) => {
+            const trimmedType = type.trim();
+            return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+          })
+          .join('');
+
+        // Get abilities and create vertically stacked divs
+        let abilitiesHtml = '';
+        const abilityDivs = [];
+        if (evo.info.ability1) {
+          abilityDivs.push(`<div>${evo.info.ability1.trim()}</div>`);
+        }
+        if (evo.info.ability2) {
+          abilityDivs.push(`<div>${evo.info.ability2.trim()}</div>`);
+        }
+        if (evo.info.hidden_ability) {
+          abilityDivs.push(`<div>${evo.info.hidden_ability.trim()} (H)</div>`);
+        }
+        abilitiesHtml = abilityDivs.join('');
+
+        // Generate stats bar graph
+        const stats = [
+          { label: 'HP', key: 'hp' },
+          { label: 'Atk', key: 'attack' },
+          { label: 'Def', key: 'defense' },
+          { label: 'SpAtk', key: 'sp_attack' },
+          { label: 'SpDef', key: 'sp_defense' },
+          { label: 'Spd', key: 'speed' },
+        ];
+        const maxStat = 255; // A common ceiling for base stats for scaling
+        const statsHtml = stats
+          .map((stat) => {
+            const statValue = evo.info[stat.key];
+            if (!statValue) return '';
+            const barWidth = (statValue / maxStat) * 100;
+            const barColor = getStatColor(statValue);
+            return `
+              <div style="display: flex; align-items: center; gap: 4px; font-size: 0.7rem; width: 100%;">
+                <span style="width: 35px; text-align: right; font-weight: bold;">${stat.label}</span>
+                <span style="width: 25px; text-align: left;">${statValue}</span>
+                <div style="flex-grow: 1; height: 8px;">
+                  <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
+                </div>
+              </div>`;
+          })
+          .join('');
+        const evolutionHtml = `
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 200px;">
+            <div style="flex-shrink: 0; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+              <img src="${imagePath}" alt="${evo.name}" title="${evo.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                   onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.1rem;">${typeImagesHtml}</div>
+            <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: center;">
+              ${abilitiesHtml}
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; width: 100%;">
+              ${statsHtml}
+            </div>
+          </div>
+        `;
+        infoContainer.insertAdjacentHTML('beforeend', evolutionHtml);
+
+        // If this is not the last evolution, add an arrow and the evolution method to get to the next one.
+        if (index < evolutions.length - 1) {
+          const nextEvo = evolutions[index + 1];
+          const arrowHtml = `
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem;">
+              <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
+              <div style="font-size: 0.7rem; text-align: center; width: 70px;">${nextEvo.info.evolution_method || ''}</div>
+            </div>
+          `;
+          infoContainer.insertAdjacentHTML('beforeend', arrowHtml);
+        }
+      });
+    }
+  } else {
+    console.log('[Evo Debug] displayPlayerAuctionInfo called with no player, name, or allPlayers list. Aborting.');
   }
 }

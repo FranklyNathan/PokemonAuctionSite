@@ -211,11 +211,11 @@ const cols = [
 // pre-results specific functions
 /////////////////////////////
 
-function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
+export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
   const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // add any custom columns to the table
   const currentFields = new Set(tableCols.map((c) => c.field));
-  currentFields.add('playerId').add('keeper'); // don't add these to the table
+  currentFields.add('player_id').add('keeper').add('stage').add('evolution_method').add('drafted_by_id'); // don't add these to the table
   // find the extra stats fields that were added and save them to the Ctx
   ctx.extraPlayerStatsFields = playerFields.filter((fieldId) => !currentFields.has(fieldId));
   // add extra stats fields to the table
@@ -301,6 +301,9 @@ export async function loadPlayersData(ctx) {
   // Create a map for fast lookups by the persistent `player_id`.
   // This map contains ALL players, including evolutions.
   ctx.playerMap = new Map(processedPlayerRows.map(p => [p.player_id, p]));
+
+  // Create a pristine, unsorted copy for evolution lookups.
+  ctx.allPlayersUnsorted = processedPlayerRows;
 
   // For the visible table, only show auctionable (base) Pokémon.
   const basePokemon = processedPlayerRows.filter(p => p.stage === 'base');

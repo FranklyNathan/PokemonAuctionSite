@@ -69,11 +69,12 @@
             id="pokemon-info-section"
             style="height: 300px; background-color: var(--container-bg-color); border: 1px solid black; padding: 1rem; display: flex; justify-content: space-evenly; align-items: stretch; gap: 2rem;"
           >
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-              <img id="pokemon-image" src="" alt="" style="display: none; max-height: 100%; max-width: 100%; object-fit: contain;" />
+            <div id="species-info-text" style="display: none; flex: 1; text-align: left; overflow-y: auto; font-size: 0.9rem; margin: 0;"></div>
+            <div id="pokemon-image-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.5rem;">
+              <img id="pokemon-image" src="" alt="" style="display: none; max-height: 80%; max-width: 100%; object-fit: contain;" />
+              <div id="pokemon-image-types" style="display: flex; gap: 0.2rem;"></div>
             </div>
-            <pre id="species-info-text" style="display: none; flex: 1; text-align: left; white-space: pre-wrap; overflow-y: auto; font-size: 0.9rem; margin: 0;"></pre>
-            <div id="evolution-info-container" style="display: none; flex: 1.5; text-align: left; overflow-y: auto; font-size: 0.9rem; margin: 0;"></div>
+            <div id="evolution-info-container" style="display: none; flex: 2; text-align: left; overflow-y: auto; font-size: 0.9rem; margin: 0; gap: 1rem; flex-direction: column;"></div>
           </div>
           <!-- Player list -->
           <div id="players-table-wrapper" style="height: 100%; width: 100%" class="ag-theme-balham"></div>
@@ -282,6 +283,7 @@
       // }
       // the actual teams map is injected into this HTML by the server, replacing the string replace target below
       teams: {}, // this is the target for a string replace server side
+      allPlayersUnsorted: [], // A pristine, unsorted copy of all players for evolution lookups.
       playersTable: null,
       playersTableData: [],
       myClientId: undefined, // number
@@ -366,18 +368,8 @@
           if (parts.length > 1) {
             const key = parts[0].trim().toLowerCase();
             const value = parts.slice(1).join(':').trim();
-
-            if (key === 'type') {
-              currentInfo.type = value;
-            } else if (key === 'abilities') {
-              currentInfo.abilities = value.split(',').map((s) => s.trim());
-            } else if (key === 'evolves to') {
-              currentInfo.evolvesTo = value;
-            } else if (key === 'evolution method') {
-              currentInfo.evolutionMethod = value;
-            } else {
-              description.push(line);
-            }
+            // All key:value pairs are now just part of the description.
+            description.push(line);
           } else {
             description.push(line);
           }
@@ -392,9 +384,12 @@
     // module imports
     import { CountDownTimer } from '/clientModules/CountDownTimer.js';
     import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
-    import { setTimerTime, initBidButtonListeners } from '/clientModules/html.js';
+    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon } from '/clientModules/html.js';
     import { loadPlayersData } from '/clientModules/playersTable.js';
 
+    // --- Helper Functions ---
+    const get = (id) => document.getElementById(id);
+    
     // --- Dark Mode Logic ---
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const htmlEl = document.documentElement;
@@ -448,8 +443,8 @@
     // team selection needs the sl-dialog component to be defined
     initTeamSelection(ctx);
     initBidButtonListeners(ctx);
-    ctx.speciesInfoMap = await fetchAndParsePokemonInfo(); // Load species info
-    await loadPlayersData(ctx); // Load player data
+    ctx.speciesInfoMap = await fetchAndParsePokemonInfo();
+    await loadPlayersData(ctx);
 
     document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
     document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());

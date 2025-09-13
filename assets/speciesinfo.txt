@@ -1,13 +1,4 @@
 Abra
-Type:
-   Psychic
-Abilities:
-   Synchronize
-   Inner Focus
-   Magic Guard (H)
-Evolution:
-   Kadabra (16)
-   Alakazam (L.Cord)
 Key Moves:
    Confusion (16)
    Psybeam (21)
@@ -16,30 +7,12 @@ Key Moves:
    Calm Mind (41)
 
 Applin
-Type:
-   Grass
-   Grass/Dragon (Evo.)
-Abilities:
-   Gluttony
-   Ripen
-   Various (H)
-Evolution:
-   Appletun (+Lavaridge)
-   Flapple (+Fortree)
-   Dipplin (+Rustboro)
-   Hydrapple (42)
 Key Moves:
    Leech Seed (MR)
    Dragon Dance (MR*)
    Giga Drain (TM)
 
 Archen
-Type:
-   Rock/Flying
-Abilities:
-   Defeatist
-Evolution:
-   Archeops (Rzr. Claw)
 Key Moves:
    Pluck (15)
    Ancient Power (22)
@@ -50,15 +23,6 @@ Key Moves:
    U-Turn (45)
 
 Aron
-Type:
-   Steel/Rock
-Abilities:
-   Sturdy
-   Rock Head
-   Heavy Metal (H)
-Evolution:
-   Lairon (32)
-   Aggron (42)
 Key Moves:
    Protect (16)
    Iron Head (22)
@@ -66,30 +30,11 @@ Key Moves:
    Hone Claws (TM)
 
 Azurill
-Type:
-   Fairy/Normal
-   Fairy/Water (14)
-Abilities:
-   Thick Fat
-   Huge Power(!)
-   Sap Sipper (H)
-Evolution:
-   Marill (14)
-   Azumarill (18)
 Key Moves:
    Aqua Tail (20)
    Play Rough (23)
 
 Bagon
-Type:
-   Dragon
-   Dragon/Flying (50)
-Abilities:
-   Intimidate (55)
-   Moxie (H)
-Evolution:
-   Shelgon (30)
-   Salamence (50)
 Key Moves:
    Dragon Breath (13)
    Dragon Claw (29)
@@ -97,14 +42,6 @@ Key Moves:
    Protect (30)
 
 Beldum
-Type:
-   Steel/Psychic
-Abilities:
-   Clear Body
-   Light Metal (H)
-Evolution:
-   Metang (20)
-   Metagross (45)
 Key Moves:
    Bullet Punch (29)
    Hone Claws (TM)
@@ -112,15 +49,6 @@ Key Moves:
    Meteor Mash (44)
 
 Budew
-Type:
-   Grass/Poison
-Abilities:
-   Natural Cure
-   Poison Point
-   Technician (H)
-Evolution:
-   Roselia (20)
-   Roserade (Shiny St.)
 Key Moves:
    Growth (4)
    Giga Drain (29)
@@ -128,27 +56,12 @@ Key Moves:
    Dazzling Gleam (TM)
 
 Buizel
-Type:
-   Water
-Abilities:
-   Swift Swim
-   Water Veil (H)
-Evolution:
-   Floatzel (26)
 Key Moves:
    Water Gun (15)
    Aqua Jet (24)
    Water Pulse (TM)
 
 Buneary
-Type:
-   Normal
-Abilities:
-   Klutz
-   Cute Charm
-   Limber (H)
-Evolution:
-   Lopunny (20)
 Key Moves:
    Jump Kick (23)
    Facade (TM)
@@ -156,15 +69,6 @@ Key Moves:
    Charm (46)
 
 Bunnelby
-Type:
-   Normal
-   Normal/Ground (20)
-Abilities:
-   Pickup
-   Cheek Pouch
-   Huge Power(H!)
-Evolution:
-   Diggersby (20)
 Key Moves:
    Take Down (15)
    Mud Shot (18)
@@ -173,27 +77,12 @@ Key Moves:
    Earthquake (57)
 
 Cacnea
-Type:
-   Grass
-   Grass/Dark (32)
-Abilities:
-   Sand Veil
-   Water Absorb(H!)
-Evolution:
-   Cacturne (32)
 Key Moves:
    Leech Seed (10)
    Needle Arm (16)
    Spiky Shield (32)
 
 Carvanha
-Type:
-   Water/Dark
-Abilities:
-   Rough Skin
-   Speed Boost (H)
-Evolution:
-   Sharpedo (30)
 Key Moves:
    Aqua Jet (11)
    Ice Fang (25)
@@ -201,16 +90,6 @@ Key Moves:
    Waterfall (TM)
 
 Capsakid
-Type:
-   Grass
-   Grass/Fire (Evo.)
-Abilities:
-   Chlorophyll
-   Insomnia
-   Klutz (H)
-   Moody (H)
-Evolution:
-   Scovillain (Fire Stone)
 Key Moves:
    Razor Leaf (13)
    Flamethrower (Evo.)
@@ -219,15 +98,6 @@ Key Moves:
    Giga Drain (TM)
 
 Chespin
-Type:
-   Grass
-   Grass/Fighting (36)
-Abilities:
-   Overgrow
-   Bulletproof (H)
-Evolution:
-   Quilladin (16)
-   Chesnaught (36)
 Key Moves:
   Leech Seed (15)
   Needle Arm (16)
@@ -236,14 +106,6 @@ Key Moves:
   Hammer Arm (MR)
 
 Chinchou
-Type:
-   Water/Electric
-Abilities:
-   Volt Absorb(!)
-   Illuminate
-   Water Absorb (H)
-Evolution:
-   Lanturn (27)
 Key Moves:
    Bubble Beam (20)
    Spark (23)
@@ -254,28 +116,12 @@ Key Moves:
    Discharge (37)
 
 Combee
-Type:
-   Bug/Flying
-Abilities:
-   Honey Gather
-   Hustle (H)
-Evolution:
-   Vespiquen (21)
 Key Moves:
    Gust (1)
    Bug Bite (13)
    Power Gem (25)
    
 Corphish
-Type:
-   Water
-   Water/Dark (30)
-Abilities:
-   Hyper Cutter
-   Shell Armor
-   Adaptability (H!)
-Evolution:
-   Crawdaunt (30)
 Key Moves:
    Knock Off (23)
    Hone Claws (TM)
@@ -283,17 +129,6 @@ Key Moves:
    Swords Dance (37)
 
 Cosmog
-Type:
-   Psychic
-   Psychic/Steel (55)
-   Psychic/Ghost (55)
-Abilities:
-   Full Metal Body
-   Shadow Shield
-Evolution:
-   Cosmoem (43)
-   Solgaleo (53)
-   Lunala (53)
 Key Moves:
    Calm Mind (TM)
    Moongeist Beam (53)
@@ -301,13 +136,6 @@ Key Moves:
    Moonlight (MR)
 
 Cubone
-Type:
-   Ground
-   Ghost/Fire (Evo.)
-Abilities:
-   Various
-Evolution:
-   Marowak (28)
 Key Moves:
    Bonemerang (21)
    Shadow Bone (27*)
@@ -316,14 +144,6 @@ Note:
    Thief Thick Club from Flannery’s Marowak
 
 Cutiefly
-Type:
-   Bug/Fairy
-Abilities:
-   Honey Gather
-   Shield Dust
-   Sweet Veil (H)
-Evolution:
-   Ribombee (25)
 Key Moves:
    Draining Kiss (16)
    Bug Buzz (28)
@@ -331,15 +151,6 @@ Key Moves:
    Quiver Dance (49)
 
 Darumaka
-Type:
-   Ice
-   Ice/Fire (Form)
-Abilities:
-   Sheer Force
-   Gorilla Tactics
-   Zen Mode (H!)
-Evolution:
-   Darmanitan (Ice St.)
 Key Moves:
    Bite (8)
    Ice Punch (28)
@@ -348,13 +159,6 @@ Key Moves:
    Brick Break (TM)
 
 Dewpider
-Type:
-   Water/Bug
-Abilities:
-   Water Bubble
-   Water Absorb (H)
-Evolution:
-   Araquanid (22)
 Key Moves:
    Spider Web (8)
    Bubble Beam (16)
@@ -362,27 +166,11 @@ Key Moves:
    Leech Life (33)
 
 Diglett
-Type:
-   Ground
-Abilities:
-   Sand Veil
-   Arena Trap
-   Sand Force (H)
-Evolution:
-   Dugtrio (26)
 Key Moves:
    Bulldoze (18)
    Earthquake (47)
 
 Drifloon
-Type:
-   Ghost/Flying
-Abilities:
-   Aftermath
-   Unburden
-   Flare Boost (H)
-Evolution:
-   Drifblim (28)
 Key Moves:
    Gust (8)
    Fly (HM)
@@ -390,15 +178,6 @@ Key Moves:
    Shadow Ball (40/TM)
 
 Drilbur
-Type:
-   Ground
-   Ground/Steel (31)
-Abilities:
-   Sand Rush
-   Sand Force
-   Mold Breaker (H)
-Evolution:
-   Excadrill (31)
 Key Moves:
    Dig (19)
    Hone Claws (22)
@@ -406,43 +185,18 @@ Key Moves:
    Earthquake (36)
 
 Electrike
-Type:
-   Electric
-Abilities:
-   Static
-   Lightning Rod
-   Minus (H)
-Evolution:
-   Manectric (26)
 Key Moves:
    Thunder Fang (19)
    Discharge (30)
    Overheat (TM)
 
 Elekid
-Type:
-   Electric
-Abilities:
-   Static
-   Vital Spirit (H)
-Evolution:
-   Electabuzz (30)
-   Electivire (L.Cord)
 Key Moves:
    Thunder Punch (29)
    Discharge (36)
    Brick Break (TM)
 
 Exeggcute
-Type:
-   Grass/Psychic
-   Grass/Dragon (Evo)
-Abilities:
-   Chlorophyll
-   Harvest (H)
-Evolution:
-   Exeggutor (Leaf St.)
-   Exeggutor (Sun St.)
 Key Moves:
    Bullet Seed (TM)
    Leech Seed (11)
@@ -451,15 +205,6 @@ Key Moves:
    Calm Mind (TM)
 
 Fennekin
-Type:
-   Fire
-   Fire/Psychic (16)
-Abilities:
-   Blaze
-   Magician (H)
-Evolution:
-   Braixen (16)
-   Delphox (36)
 Key Moves:
    Flame Charge (14)
    Psybeam (18)
@@ -467,14 +212,6 @@ Key Moves:
    Dazzling Gleam (TM)
 
 Flabebe
-Type:
-   Fairy
-Abilities:
-   Flower Veil
-   Symbiosis (H)
-Evolution:
-   Floette (19)
-   Florges (Shiny St.)
 Key Moves:
    Fairy Wind (6)
    Wish (20)
@@ -482,15 +219,6 @@ Key Moves:
    Moonblast (MR)
 
 Fletchling
-Type:
-   Normal/Flying
-   Fire/Flying (17)
-Abilities:
-   Flame Body
-   Gale Wings (H)
-Evolution:
-   Fletchinder (17)
-   Talonflame (35)
 Key Moves:
    Peck (10)
    Overheat (TM)
@@ -499,15 +227,6 @@ Key Moves:
    Flare Blitz (MR)
 
 Froakie
-Type:
-   Water
-   Water/Dark (36)
-Abilities:
-   Torrent
-   Protean (H)
-Evolution:
-   Frogadier (16)
-   Greninja (36)
 Key Moves:
    Lick (10)
    Water Pulse (14)
@@ -515,15 +234,6 @@ Key Moves:
    Dark Pulse (TM)
 
 Fuecoco
-Type:
-   Fire
-   Fire/Ghost (Evo.)
-Abilities:
-   Blaze
-   Unaware (H)
-Evolution:
-   Crocalor (16)
-   Skeledirge (36)
 Key Moves:
    Incinerate (15)
    Overheat (TM)
@@ -531,41 +241,16 @@ Key Moves:
    Shadow Ball (38)
 
 Geodude
-Type:
-   Rock/Ground
-Abilities:
-   Rock Head
-   Sturdy
-   Sand Veil (H)
-Evolution:
-   Graveler (25)
-   Golem (L.Cord)
 Key Moves:
    Bulldoze (22)
    Earthquake (40)
 
 Gimmighoul
-Type:
-   Ghost
-   Steel/Ghost (Evo.)
-Abilities:
-   Rattled*
-   Good as Gold (Evo.)
-Evolution
-   Gholdengo (Spc.)
 Key Moves:
    Thunderbolt (TM)
    Shadow Ball (35)
 
 Gligar
-Type:
-   Ground/Flying
-Abilities:
-   Hyper Cutter
-   Sand Veil
-   Poison Heal (H!)
-Evolution:
-   Gliscor (Rzr. Fang)
 Key Moves:
    Knock Off (10)
    Acrobatics (22)
@@ -576,16 +261,6 @@ Key Moves:
    Sky Uppercut (55)
 
 Goomy
-Type:
-   Dragon
-   Dragon/Steel (Evo.)
-Abilities:
-   Sap Sipper
-   Hydration
-   Gooey (H)
-Evolution:
-   Sliggoo (M. Coat)
-   Goodra (Rain)
 Key Moves:
    Protect (9)
    Rain Dance (25)
@@ -595,13 +270,6 @@ Key Moves:
    Iron Head (49)
 
 Greavard
-Type:
-   Ghost
-Abilities:
-   Pickup
-   Fluffy (H)
-Evolution:
-   Houndstone (30)
 Key Moves:
    Dig (16)
    Crunch (28)
@@ -609,40 +277,17 @@ Key Moves:
    Last Respects (Evo.)
 
 Growlithe
-Type:
-   Fire
-Abilities:
-   Intimidate
-   Flash Fire
-   Justified (H)
-Evolution:
-   Arcanine (Fire St.)
 Key Moves:
    Flame Wheel (21)
    Flamethrower (TM)
    Overheat (TM)
 
 Grubbin
-Type:
-   Bug
-   Bug/Electric (20)
-Abilities:
-   Swarm
-   Levitate (Evo.)
-Evolution:
-   Charjabug (20)
-   Vikavolt (Thndr St.)
 Key Moves:
    Bug Bite (13)
    Thunderbolt (33)
 
 Hawlucha
-Type:
-   Fighting/Flying
-Abilities:
-   Limber
-   Unburden
-   Mold Breaker (H)
 Key Moves:
    Hone Claws (1)
    Karate Chop (4)
@@ -653,14 +298,6 @@ Key Moves:
    High Jump Kick (44)
 
 Honedge
-Type:
-   Steel/Ghost
-Abilities:
-   No Guard
-   Stance Change (Evo.)
-Evolution:
-   Doublade (35)
-   Aegislash (Dusk St.)
 Key Moves:
    Swords Dance (1)
    Autotomize (18)
@@ -670,16 +307,6 @@ Key Moves:
    Night Slash (MR)
 
 Horsea
-Type:
-   Water
-   Water/Dragon (Evo.)
-Abilities:
-   Swift Swim
-   Sniper
-   Damp (H)
-Evolution:
-   Seadra (32)
-   Kingdra (D. Scale)
 Key Moves:
    Water Gun (13)
    Surf (HM)
@@ -689,15 +316,6 @@ Key Moves:
    Waterfall (HM)
 
 Houndour
-Type:
-   Fire
-   Dark
-Abilities:
-   Early Bird
-   Flash Fire
-   Unnerve (H)
-Evolution:
-   Houndoom (24)
 Key Moves:
    Ember (1)
    Bite (16)
@@ -707,16 +325,6 @@ Key Moves:
    Nasty Plot (MR)   
 
 Jangmo-o
-Type:
-   Dragon
-   Dragon/Fighting (35)
-Abilities:
-   Soundproof
-   Bulletproof
-   Overcoat (H)
-Evolution:
-   Hakamo-o (35)
-   Kommo-o (45)
 Key Moves:
    Protect (13)
    Dragon Tail (17)
@@ -724,15 +332,6 @@ Key Moves:
    Dragon Dance (53*)
 
 Litten
-Type:
-   Fire
-   Fire/Dark (34)
-Abilities:
-   Blaze
-   Intimidate (H!)
-Evolution:
-   Torracat (17)
-   Incineroar (34)
 Key Moves:
    Fire Fang (14)
    Double Kick (16)
@@ -741,15 +340,6 @@ Key Moves:
    Flare Blitz (55)
 
 Litwick
-Type:
-   Ghost/Fire
-Abilities:
-   Flame Body
-   Flash Fire
-   Infiltrator (H)
-Evolution:
-   Lampent (41)
-   Chandelure (Dusk St.)
 Key Moves:
    Will-o-Wisp (16)
    Flame Burst (20)
@@ -758,15 +348,6 @@ Key Moves:
    Overheat (TM)
 
 Magnemite
-Type:
-   Electric/Steel
-Abilities:
-   Magnet Pull
-   Sturdy
-   Analytic (H)
-Evolution:
-   Magneton (30)
-   Magnezone (Thndr St.)
 Key Moves:
    Mirror Shot (23)
    Flash Cannon (33)
@@ -774,30 +355,12 @@ Key Moves:
    Discharge (43)
 
 Makuhita
-Type:
-   Fighting
-Abilities:
-   Thick Fat
-   Guts(!)
-   Sheer Force (H)
-Evolution:
-   Hariyama (24)
 Key Moves:
    Knock Off (19)
    Vital Throw (22)
    Close Combat (46)
 
 Mankey
-Type:
-   Fighting
-   Fighting/Ghost (Evo.)
-Abilities:
-   Vital Spirit
-   Anger Point
-   Defiant (H)
-Evolution:
-   Primeape (28)
-   Annihilape (Spc.)
 Key Moves:
    Karate Chop (8)
    Bulk Up (TM)
@@ -805,14 +368,6 @@ Key Moves:
    Close Combat (39)
 
 Mareep
-Type:
-   Electric
-Abilities:
-   Static
-   Plus (H)
-Evolution:
-   Flaaffy (15)
-   Ampharos (30)
 Key Moves:
    Thunder Punch (30)
    Dazzling Gleam (TM)
@@ -821,27 +376,12 @@ Key Moves:
    Dragon Pulse (MR)
 
 Mawile
-Type:
-   Steel/Fairy
-Abilities:
-   Hyper Cutter
-   Intimidate (!)
-   Sheer Force (H)
 Key Moves:
    Fairy Wind (1)
    Iron Head (45)
    Play Rough (49)
 
 Mime Jr
-Type:
-   Psychic/Ice
-Abilities:
-   Vital Spirit
-   Screen Cleaner
-   Ice Body (H)
-Evolution:
-   Mr. Mime (15*)
-   Mr. Rime (42)
 Key Moves:
    Confusion (4)
    Encore (18)
@@ -850,24 +390,12 @@ Key Moves:
    Freeze Dry (44)
 
 Minccino
-Type:
-   Normal
-Abilities:
-   Cute Charm
-   Technician(!)
-   Skill Link (H!)
-Evolution:
-   Cinccino (Shiny St.)
 Key Moves:
    Encore (15)
    Tail Slap (25)
    Charm (27)
 
 Minior
-Type:
-   Rock/Flying
-Abilities:
-   Shields Down
 Key Moves:
    Defense Curl (3)
    Rollout (8)
@@ -875,14 +403,6 @@ Key Moves:
    Stealth Rock (24)
 
 Morelull
-Type:
-   Grass/Fairy
-Abilities:
-   Illuminate
-   Effect Spore
-   Rain Dish (H)
-Evolution:
-   Shiinotic (24)
 Key Moves:
    Moonlight (11)
    Giga Drain (31)
@@ -891,29 +411,12 @@ Key Moves:
    Spore (40)
 
 Mudbray
-Type:
-   Ground
-Abilities:
-   Own Tempo
-   Stamina(!)
-   Inner Focus
-Evolution:
-   Mudsdale (30)
 Key Moves:
    Double Kick (15)
    High Horsepower (24)
    Earthquake (47)
 
 Mudkip
-Type:
-   Water
-   Water/Ground (16)
-Abilities:
-   Torrent
-   Damp (H)
-Evolution:
-   Marshtomp (16)
-   Swampert (36)
 Key Moves:
    Mud Bomb (22)
    Ice Beam (TM)
@@ -923,43 +426,17 @@ Key Moves:
    Hammer Arm (MR)
 
 Munchlax
-Type:
-   Normal
-Abilities:
-   Pickup
-   Thick Fat
-   Gluttony (H)
-Evolution:
-   Snorlax (30*)
 Key Moves:
    Body Slam (25)
    Rest (TM)
 
 Nincada
-Type:
-   Bug/Ground
-   Bug/Flying (20)
-   Bug/Ghost (20)
-Abilities:
-   Speed Boost (20)
-   Wonder Guard (20)  
-Evolution:
-   Ninjask (20)
-   Shedinja (20)
 Key Moves:
    Fury Cutter (20)   
    Shadow Ball (33)
    Baton Pass (35)
 
 Noibat
-Type:
-   Flying/Dragon
-Abilities:
-   Frisk
-   Telepathy
-   Infiltrator (H)
-Evolution:
-   Noivern (Rzr. Fang)
 Key Moves:
    Wing Attack (16)
    Air Cutter (23)
@@ -970,14 +447,6 @@ Key Moves:
    Tailwind (35)
 
 Numel
-Type:
-   Fire/Ground
-Abilities:
-   Magma Armor
-   Solid Rock
-   Anger Point (H)
-Evolution:
-   Camerupt (33)
 Key Moves:
    Magnitude (12)
    Lava Plume (22)
@@ -985,47 +454,18 @@ Key Moves:
    Rock Slide (33)
 
 Pancham
-Type:
-   Fighting
-   Fighting/Dark (32)
-Abilities:
-   Mold Breaker
-   Iron Fist
-   Scrappy (H)
-Evolution:
-   Pangoro (32)
 Key Moves:
    Bulk Up (TM)
    Crunch (42)
    Sky Uppercut (52)
 
 Poochyena
-Type:
-   Dark
-Abilities:
-   Run Away*
-   Quick Feet
-   Moxie (H)
-   Intimidate (Evo!)
-Evolution:
-   Mightyena (18)
 Key Moves:
    Bite (10)
    Snarl (18)
    Crunch (40)
 
 Pichu
-Type:
-   Electric
-   Electric/Psychic (Evo.)
-Abilities:
-   Static
-   Lightning Rod (H)
-   Surge Surfer (Evo.)
-Evolution:
-   Pikachu (20)
-   Raichu (Thndr St.)
-   Raichu (Sun St.)
 Key Moves:
    Charm (5)
    Nasty Plot (13)
@@ -1033,47 +473,17 @@ Key Moves:
    Psychic (TM/MR)
 
 Pikipek
-Type:
-   Normal/Flying
-Abilities:
-   Keen Eye
-   Skill Link
-   Pickup (H)
-Evolution:
-   Trumbeak (14)
-   Toucannon (28)
 Key Moves:
    Pluck (15)
    Beak Blast (28)
 
 Poliwag
-Type:
-   Water
-   Water/Fighting (Evo.)
-Abilities:
-   Water Absorb
-   Damp
-   Drizzle (H!)
-   Swift Swim (H)
-Evolution:
-   Poliwhirl (25)
-   Poliwrath (Water St.)
-   Politoed (K. Rock)
 Key Moves:
    Water Gun (5)
    Rain Dance (18)
    Dynamic Punch (32)   
 
 Popplio
-Type:
-   Water
-   Water/Fairy (34)
-Abilities:
-   Torrent
-   Liquid Voice (H)
-Evolution:
-   Brionne (17)
-   Primarina (34)
 Key Moves:
    Disarming Voice (8)
    Aqua Jet (14)
@@ -1083,16 +493,6 @@ Key Moves:
    Moonblast (44)
 
 Porygon
-Type:
-   Normal
-Abilities:
-   Trace*
-   Download
-   Analytic (H)
-   Adaptability (Evo.)
-Evolution:
-   Porygon2 (23)
-   Porygon-Z (L.Cord)
 Key Moves:
    Recover (18)
    Ice Beam (TM)
@@ -1100,30 +500,12 @@ Key Moves:
    Nasty Plot (MR)
 
 Ralts
-Type:
-   Psychic/Fairy
-   Psychic/Fighting (Evo.)
-Abilities:
-   Various
-Evolution:
-   Kirlia (20)
-   Gardevoir (30)
-   Gallade (Dawn St.)
 Key Moves:
    Draining Kiss (23)
    Calm Mind (26/TM)
    Psychic (30)
 
 Riolu
-Type:
-   Fighting
-   Fighting/Steel (30)
-Abilities:
-   Steadfast
-   Inner Focus
-   Justified (H)
-Evolution:
-   Lucario (30)
 Key Moves:
    Force Palm (15)
    Aura Sphere (30)
@@ -1131,15 +513,6 @@ Key Moves:
    Calm Mind (42)
 
 Rockruff
-Type:
-   Rock
-Abilities:
-   Keen Eye
-   Vital Spirit
-   Steadfast (H)
-   No Guard (H)
-Evolution:
-   Lycanroc (25)
 Key Moves:
    Rock Tomb (TM)
    Accelerock (25)
@@ -1147,16 +520,6 @@ Key Moves:
    Stealth Rock (29)
    
 Rolycoly
-Type:
-   Rock
-   Rock/Fire (18)
-Abilities:
-   Heatproof
-   Steam Engine
-   Flash Fire (H)
-Evolution:
-   Carkol (18)
-   Coalossal (34)
 Key Moves:
    Rock Tomb (TM)
    Ancient Power (20)
@@ -1165,26 +528,12 @@ Key Moves:
    Stealth Rocks
 
 Rookidee
-Type:
-   Flying
-   Flying/Steel (38)
-Abilities:
-   Keen Eye
-   Unnerve
-   Mirror Armor (H)
-Evolution:
-   Corvisquire (18)
-   Corviknight (38)
 Key Moves:
    Hone Claws (8)
    Pluck (16)
    Steel Wing (TM)
 
 Rotom
-Type:
-   Electric/Various
-Abilities:
-   Levitate
 Key Moves:
    Shock Wave (22/TM)
    Ominous Wind (29)
@@ -1198,17 +547,6 @@ Key Moves:
    Hydro Pump (Form)
 
 Rowlet
-Type:
-   Grass/Flying
-   Grass/Ghost (34)
-   Grass/Fighting (Evo.)
-Abilities:
-   Overgrow
-   Long Reach (H)
-Evolution:
-   Dartrix (17)
-   Decidueye (34)
-   Decidueye (K. Rock)
 Key Moves:
    Giga Drain (TM)
    Spirit Shackle (34*)
@@ -1216,12 +554,6 @@ Key Moves:
    Leaf Storm (MR)
 
 Sableye
-Type:
-   Dark/Ghost
-Abilities:
-   Keen Eye
-   Stall
-   Prankster (H)
 Key Moves:
    Detect (14)
    Shadow Sneak (16)
@@ -1231,13 +563,6 @@ Key Moves:
    Shadow Ball (39)
 
 Salandit
-Type:
-   Poison/Fire
-Abilities:
-   Corrosion
-   Oblivious (H)
-Evolution:
-   Salazzle (33)
 Key Moves:
    Thief (1)
    Dragon Rage (13)
@@ -1248,15 +573,6 @@ Key Moves:
    Encore (MR)
 
 Sandile
-Type:
-   Ground/Dark
-Abilities:
-   Intimidate
-   Moxie
-   Anger Point (H)
-Evolution:
-   Krokorok (29)
-   Krookodile (40)
 Key Moves:
    Sand Tomb (13)
    Crunch (28)
@@ -1264,16 +580,6 @@ Key Moves:
    Earthquake (54)
 
 Scatterbug
-Type:
-   Bug
-   Bug/Flying (12)
-Abilities:
-   Shield Dust
-   Compound Eyes(!)
-   Friend Guard (H)
-Evolution:
-   Spewpa (9)
-   Vivillon (12)
 Key Moves:
    Protect (9)
    Bug Bite (15)
@@ -1283,17 +589,6 @@ Key Moves:
    Powder (55)
    
 Scyther
-Type:
-   Bug/Flying
-   Bug/Steel (Evo.)
-   Bug/Rock (Evo.)
-Abilities:
-   Technician(!)
-   Swarm
-   Sharpness (H)
-Evolution:
-   Kleavor (K. Rock)
-   Scizor (Metal Coat)
 Key Moves:
    Steel Wing (TM)
    X-Scizor (40/41)
@@ -1301,15 +596,6 @@ Key Moves:
    Brick Break (TM)
 
 Shellder
-Type:
-   Water
-   Water/Ice (Evo.)
-Abilities:
-   Shell Armor
-   Skill Link(!)
-   Overcoat (H)
-Evolution:
-   Cloyster (Water St.)
 Key Moves:
    Shell Smash (MR)
    Icicle Spear (13)
@@ -1318,29 +604,11 @@ Key Moves:
    Ice Beam (TM)
 
 Shinx
-Type:
-   Electric
-Abilities:
-   Rivalry
-   Intimidate(!)
-   Guts (H!)
-Evolution:
-   Luxio (15)
-   Luxray (30)
 Key Moves:
    Spark (13)
    Thunderbolt (TM)
 
 Shroomish
-Type:
-   Grass
-   Grass/Fighting (23)
-Abilities:
-   Effect Spore
-   Poison Heal(!)
-   Technician (H!)
-Evolution:
-   Breloom (23)
 Key Moves:
    Mach Punch (23)
    Fury Cutter (MT)
@@ -1349,13 +617,6 @@ Key Moves:
    Seed Bomb (44)
 
 Skiddo
-Type:
-   Grass
-Abilities:
-   Sap Sipper
-   Grass Pelt (H)
-Evolution:
-   Gogoat (32)
 Key Moves:
    Leech Seed (12)
    Razor Leaf (13)
@@ -1366,15 +627,6 @@ Key Moves:
    Brick Break (TM)
 
 Skrelp
-Type:
-   Poison/Water
-   Poison/Dragon (Evo.)
-Abilities:
-   Poison Point
-   Poison Touch
-   Adaptability (H!)
-Evolution:
-   Dragalge (D. Scale)
 Key Moves:
    Bubble (12)
    Water Pulse (25/TM)
@@ -1382,14 +634,6 @@ Key Moves:
    Thunderbolt (TM)
 
 Slowpoke
-Type:
-   Poison/Psychic
-Abilities:
-   Various
-   Regenerator (H!)
-Evolution:
-   Slowbro (37)
-   Slowking (K. Rock)
 Key Moves:
    Confusion (12)
    Zen Headbutt (24)   
@@ -1399,14 +643,6 @@ Key Moves:
    Calm Mind (TM)
 
 Sneasel
-Type:
-   Fighting/Poison
-Abilities:
-   Inner Focus
-   Keen Eye
-   Pickpocket (H)
-Evolution:
-   Sneasler (Rzr. Claw)
 Key Moves:
    Poison Jab (24)
    Dire Claw (28)
@@ -1415,16 +651,6 @@ Key Moves:
    X-Scissor (TM)
 
 Snorunt
-Type:
-   Ice
-   Ice/Ghost (Evo.)
-Abilities:
-   Ice Body
-   Inner Focus
-   Cursed Body (H)
-Evolution:
-   Glalie (42)
-   Froslass (Dawn St.)
 Key Moves:
    Ice Shard (10)
    Icy Wind (14)   
@@ -1433,15 +659,6 @@ Key Moves:
    Shadow Ball (42*)
 
 Solosis
-Type:
-   Psychic
-Abilities:
-   Overcoat
-   Magic Guard
-   Regenerator (H)
-Evolution:
-   Duosion (32)
-   Reuniclus (41)
 Key Moves:
    Charm (19)
    Recover (24)
@@ -1449,15 +666,6 @@ Key Moves:
    Calm Mind (TM)
 
 Spheal
-Type:
-   Ice/Water
-Abilities:
-   Thick Fat
-   Ice Body
-   Oblivious (H)
-Evolution:
-   Sealeo (32)
-   Walrein (44)
 Key Moves:
    Water Gun (1)
    Encore (9)
@@ -1466,14 +674,6 @@ Key Moves:
    Ice Beam (TM)
 
 Spoink
-Type:
-   Psychic
-Abilities:
-   Thick Fat
-   Own Tempo
-   Gluttony (H)
-Evolution:
-   Grumpig (32)
 Key Moves:
    Psybeam (14)
    Zen Headbutt (26)
@@ -1481,15 +681,6 @@ Key Moves:
    Dazzling Gleam (TM)
 
 Sprigatito
-Type:
-   Grass
-   Grass/Dark (36)
-Abilities:
-   Overgrow
-   Protean (H)
-Evolution:
-   Floragato (16)
-   Meowscarada (36)
 Key Moves:
    Hone Claws (10)
    Seed Bomb (17)
@@ -1499,15 +690,6 @@ Key Moves:
    Play Rough (42)
 
 Surskit
-Type:
-   Bug/Water
-   Bug/Flying (22)
-Abilities:
-   Swift Swim*
-   Intimidate (Evo.)
-   Unnerve (H)
-Evolution:
-   Masquerain (22)
 Key Moves:
    Air Cutter (22)
    Water Pulse (TM)
@@ -1516,15 +698,6 @@ Key Moves:
    Quiver Dance (52)
 
 Swinub
-Type:
-   Ice/Ground
-Abilities:
-   Oblivious
-   Snow Cloak
-   Thick Fat (H)
-Evolution:
-   Piloswine (33)
-   Mamoswine (MR)
 Key Moves:
    Mud Bomb (18)
    Ice Beam (TM)
@@ -1532,15 +705,6 @@ Key Moves:
    Ancient Power (MR)
 
 Teddiursa
-Type:
-   Normal
-   Normal/Ground (48)
-Abilities:
-   Various
-   Guts (Evo.)(!)
-Evolution:
-   Ursaring (30)
-   Ursaluna (50*)
 Key Moves:
    Bulk Up (TM)
    Play Rough (29)
@@ -1548,15 +712,6 @@ Key Moves:
    High Horsepower (48)
 
 Tentacool
-Type:
-   Water
-   Poison
-Abilities:
-   Clear Body
-   Liquid Ooze
-   Rain Dish (H)
-Evolution:
-   Tentacruel (30)
 Key Moves:
    Toxic Spikes (13)
    Water Pulse (16/TM)
@@ -1565,15 +720,6 @@ Key Moves:
    Dazzling Gleam (TM)
 
 Tinkatink
-Type:
-   Fairy/Steel
-Abilities:
-   Mold Breaker
-   Own Tempo
-   Pickpocket
-Evolution:
-   Tinkatuff (24)
-   Tinkaton (38)
 Key Moves:
    Brutal Swing (24)
    Play Rough (35)
@@ -1581,16 +727,6 @@ Key Moves:
    Knock Off (52)
 
 Togepi
-Type:
-   Fairy
-   Fairy/Flying (20)
-Abilities:
-   Hustle
-   Serene Grace
-   Super Luck (H)
-Evolution:
-   Togetic (20)
-   Togekiss (Shiny St.)
 Key Moves:
    Yawn (13)
    Encore (17)
@@ -1600,15 +736,6 @@ Key Moves:
    Aura Sphere (MR)
 
 Torchic
-Type:
-   Fire
-   Fire/Fighting (16)
-Abilities:
-   Blaze
-   Speed Boost (H)
-Evolution:
-   Combusken (16)
-   Blaziken (36)
 Key Moves:
    Double Kick (16)
    Bulk Up (TM)
@@ -1618,15 +745,6 @@ Key Moves:
    Sky Uppercut (57)
 
 Trapinch
-Type:
-   Ground
-   Ground/Dragon (35)
-Abilities:
-   Various
-   Levitate (Evo.)
-Evolution:
-   Vibrava (35)
-   Flygon (45)
 Key Moves:
    Bulldoze (8)
    Dig (22)
@@ -1635,14 +753,6 @@ Key Moves:
    Dragon Rush (47)
 
 Treecko
-Type:
-   Grass
-Abilities:
-   Overgrow
-   Unburden (H)
-Evolution:
-   Grovyle (16)
-   Sceptile (36)
 Key Moves:
    Leaf Blade (23)
    Dual Chop (36)
@@ -1652,71 +762,30 @@ Key Moves:
    Leaf Storm (MR)
 
 Trubbish
-Type:
-   Poison
-Abilities:
-   Stench
-   Sticky Hold
-   Aftermath (H)
-   Weak Armor (Evo.)
-Evolution:
-   Garbodor (36)
 Key Moves:
    Sludge (18)
    Sludge Bomb (29)
    Thunderbolt (TM)
 
 Tyrogue
-Type:
-   Fighting
-Abilities:
-   Various
-Evolution:
-   Hitmonlee (20*)
-   Hitmonchan (20**)
-   Hitmontop (20***)
 Key Moves:
    High Jump Kick (29*)
    Vacuum Wave (26**)
    Rolling Kick (20***)
 
 Venipede
-Type:
-   Bug/Poison
-Abilities:
-   Poison Point
-   Swarm
-   Speed Boost (H)
-Evolution:
-   Whirlipede (22)
-   Scolipede (30)
 Key Moves:
    Protect (15)
    Bug Bite (23)
    Venoshock (28)
 
 Voltorb
-Type:
-   Electric/Grass
-Abilities:
-   Static
-   Soundproof
-   Aftermath (H)
-Evolution:
-   Leaf Stone
 Key Moves:
    Electro Ball (22)
    Giga Drain (TM)
    Discharge (34)
 
 Vulpix
-Type:
-   Ice/Fairy
-Abilities:
-   Snow Cloak
-   Snow Warning(H!)
-Evolution:
-   Ninetales (Ice St.)
 Key Moves:
    Ice Shard (10)
    Icy Wind (15)
@@ -1727,14 +796,6 @@ Key Moves:
    Calm Mind (TM)
 
 Wingull
-Type:
-   Water/Flying
-Abilities:
-   Keen Eye
-   Hydration*
-   Drizzle (H!) (25)
-Evolution:
-   Pelipper(!) (25)
 Key Moves:
    Water Pulse (15)
    Air Cutter (22)
@@ -1744,10 +805,6 @@ Key Moves:
    Ice Beam (TM)
 
 Wishiwashi
-Type:
-   Water
-Abilities:
-   Schooling
 Key Moves:
    Brine (14)
    Aqua Ring (17)
@@ -1756,14 +813,6 @@ Key Moves:
    Ice Beam (TM)
 
 Wooper
-Type:
-   Poison/Ground
-Abilities:
-   Poison Point
-   Water Absorb(!)
-   Unaware (H)
-Evolution:
-   Clodsire (20)
 Key Moves:
    Mud Shot (1)
    Toxic Spikes (12)
@@ -1773,14 +822,6 @@ Key Moves:
    Earthquake (48)
 
 Zigzagoon
-Type:
-   Normal/Dark
-Abilities:
-   Various
-   Guts(!) (Evo.)
-Evolution:
-   Linoone (20)
-   Obstagoon (35)
 Key Moves:
    Snarl (9)
    Night Slash (20)
@@ -1789,29 +830,12 @@ Key Moves:
    Bulk Up (TM)
 
 Zubat
-Type:
-   Poison/Flying
-Abilities:
-   Inner Focus
-   Infiltrator (H)
-Evolution:
-   Golbat (22)
-   Crobat (40)
 Key Moves:
    Wing Attack (13)
    Air Cutter (19)
    Poison Fang (27)
 
 Staryu
-Type:
-   Water
-   Water/Psychic (Evo.)
-Abilities:
-   Illuminate
-   Natural Cure
-   Analytic (H)
-Evolution:
-   Starmie (Water Stone)
 Key Moves:
    Rapid Spin (7)
    Bubble Beam (18)
@@ -1821,14 +845,6 @@ Key Moves:
    Ice Beam (TM)
 
 Helioptile
-Type:
-  Electric/Normal
-Abilities:
-   Dry Skin (!)
-   Sand Veil
-   Solar Power (H)
-Evolution:
-   Heliolisk (Thndr. Stone)
 Key Moves:
    Mud Slap (13)
    Parabolic Charge (25)
@@ -1838,15 +854,6 @@ Key Moves:
    Dark Pulse (TM)
 
 Cetoddle
-Type:
-   Ice
-Abilities:
-   Thick Fat
-   Snow Cloak
-   Slush Rush
-   Sheer Force (H)
-Evolution:
-   Cetitan (Ice Stone)
 Key Moves:
    Ice Shard (12)
    Avalanche (27)
@@ -1854,14 +861,6 @@ Key Moves:
    Ice Spinner (44)
 
 Tadbulb
-Type:
-  Electric
-Abilities:
-   Own Tempo
-   Static
-   Damp (H)
-Evolution:
-   Bellibolt (Thndr. Stone)
 Key Moves:
    Spark (21)
    Mud Shot (24)
@@ -1870,15 +869,6 @@ Key Moves:
 
 
 Kubfu
-Type:
-  Fighting
-  Fighting/Dark
-  Fighting/Water
-Abilities:
-   Inner Focus
-   Unseen Fist (Evo)
-Evolution:
-   Urshifu (Location)
 Key Moves:
    Rock Smash (1)
    Brick Break (24)
@@ -1887,14 +877,6 @@ Key Moves:
    Surging Strikes (Evo.)
 
 Gible
-Type:
-  Dragon/Ground
-Abilities:
-   Sand Veil
-   Rough Skin (H)
-Evolution:
-   Gabite (24)
-   Garchomp (48)
 Key Moves:
    Dragon Rage (7)
    Dual Chop (24)
@@ -1903,14 +885,6 @@ Key Moves:
    Earthquake (TM)
 
 Turtwig
-Type:
-  Grass/Ground
-Abilities:
-   Overgrow
-   Shell Armor (H)
-Evolution:
-   Grotle (16)
-   Torterra (32)
 Key Moves:
    Razor Leaf (13)
    Leech Seed (32)
@@ -1918,30 +892,12 @@ Key Moves:
    Wood Hammer (MR)
 
 Oddish
-Type:
-  Grass/Poison
-  Grass (Evo.)
-Abilities:
-   Chlorophyll
-   Various (H)
-Evolution:
-   Gloom (21)
-   Vileplume (Leaf St.)
-   Bellossom (Sun St.)
 Key Moves:
    Mega Drain (19)
    Sludge Bomb (TM)
    Giga Drain (TM)
 
 Shuppet
-Type:
-   Ghost
-Abilities:
-   Insomnia
-   Frisk
-   Cursed Body (H)
-Evolution:
-   Banette (37)
 Key Moves:
    Knock Off (1)
    Will O Wisp (16)
@@ -1952,10 +908,6 @@ Key Moves:
    Dazzling Gleam (TM)
 
 Oricorio
-Type:
-   Flying/Various
-Abilities:
-   Dancer
 Key Moves:
    Air Cutter (13)
    Feather Dance (20)
@@ -1963,11 +915,6 @@ Key Moves:
    Revelation Dance (40)
 
 Duraludon
-Type:
-   Steel/Dragon
-Evolution:
-Archaludon (47)
-Abilities:
 Key Moves:
    Hone Claws (12)
    Breaking Swipe (24)
