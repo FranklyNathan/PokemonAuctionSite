@@ -199,11 +199,13 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
   card.style.minHeight = 'auto'; // Allow the card to shrink to its content.
 
   // Parse types and create image tags for them.
-  const types = playerData.type.split(/[\s,\/]+/).filter((t) => t); // Handles "Fire", "Fire/Flying", "Fire, Flying"
-  const typeImagesHtml = types.map((type) => {
+  const types = playerData.type ? playerData.type.split(/[\s,\/]+/).filter((t) => t) : [];
+  const typeImagesHtml = types
+    .map((type) => {
       const trimmedType = type.trim();
       return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
-    }).join('');
+    })
+    .join('');
 
   card.removeAttribute('hidden');
   let cardInner = `
@@ -421,8 +423,7 @@ export function initBidButtonListeners(ctx) {
 
 function getStatColor(statValue) {
   if (statValue >= 130) return '#2196f3'; // blue
-  if (statValue >= 110) return '#2e7d32'; // dark green
-  if (statValue >= 90) return '#00c853'; // green
+  if (statValue >= 95) return '#00c853'; // green
   if (statValue >= 70) return '#aeea00'; // light-green
   if (statValue >= 50) return '#ffeb3b'; // yellow
   if (statValue >= 35) return '#ff9800'; // orange
@@ -524,30 +525,40 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       keyMovesHtml = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${moveLines}</pre>`;
     }
 
-    infoEl.innerHTML = `
-      <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
-      <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
-      <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
-        ${abilitiesHtml}
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
-        ${statsHtml}
-      </div>
-      <div style="font-size: 0.9rem;">
-        ${keyMovesHtml}
-      </div>
-    `;
-    infoEl.style.display = 'block';
+    // Only display the info text block if there is actual info to show besides the name.
+    const hasInfoContent = abilitiesHtml.trim() !== '' || statsHtml.trim() !== '' || keyMovesHtml.trim() !== '';
+
+    if (hasInfoContent) {
+      infoEl.innerHTML = `
+        <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
+        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+        <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
+          ${abilitiesHtml}
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
+          ${statsHtml}
+        </div>
+        <div style="font-size: 0.9rem;">
+          ${keyMovesHtml}
+        </div>
+      `;
+      infoEl.style.display = 'block';
+    }
 
     // Add type icons below the base pokemon's image
-    const types = player.type.split(/[\s,\/]+/).filter((t) => t);
-    const typeImagesHtml = types
-      .map((type) => {
-        const trimmedType = type.trim();
-        return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
-      })
-      .join('');
-    document.getElementById('pokemon-image-types').innerHTML = typeImagesHtml;
+    const imageTypesContainer = document.getElementById('pokemon-image-types');
+    if (player.type) {
+      const types = player.type.split(/[\s,\/]+/).filter((t) => t);
+      const typeImagesHtml = types
+        .map((type) => {
+          const trimmedType = type.trim();
+          return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+        })
+        .join('');
+      imageTypesContainer.innerHTML = typeImagesHtml;
+    } else {
+      imageTypesContainer.innerHTML = ''; // Clear types for typeless Pokemon
+    }
 
     // Build and display evolution chain based on CSV order
     const evolutions = [];
@@ -615,13 +626,16 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         console.log(`[Evo Debug] Rendering evolution '${evo.name}'. Image path: '${imagePath}'`);
 
         // Get types and create vertically stacked image tags
-        const types = evo.info.type.split(/[\s,\/]+/).filter((t) => t);
-        const typeImagesHtml = types
-          .map((type) => {
-            const trimmedType = type.trim();
-            return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
-          })
-          .join('');
+        let typeImagesHtml = '';
+        if (evo.info.type) {
+          const types = evo.info.type.split(/[\s,\/]+/).filter((t) => t);
+          typeImagesHtml = types
+            .map((type) => {
+              const trimmedType = type.trim();
+              return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+            })
+            .join('');
+        }
 
         // Get abilities and create vertically stacked divs
         const evoAbilityDivs = [];

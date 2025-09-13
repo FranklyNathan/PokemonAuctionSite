@@ -163,7 +163,8 @@ Lycanroc,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25
 Rotom,Electric/Ghost,base,Levitate,,,50,50,77,95,77,91,
 Rowlet,Grass/Flying,base,Overgrow,,Long Reach,68,55,55,50,50,42,
 Dartrix,Grass/Flying,evo,Overgrow,,Long Reach,78,75,75,70,70,52,Level 17
-Decidueye,Grass/Ghost,evo,Overgrow,,Long Reach,78,107,75,100,100,70,Level 34
+Decidueye,Grass/Ghost,evo,Overgrow,,Long Reach,78,107,75,100,100,70,Level 34 at night
+Decidueye-Hisui,Grass/Fighting,evo,Overgrow,,Scrappy,88,112,80,95,95,60,Level 34 at day
 Sableye,Dark/Ghost,base,Keen Eye,Stall,Prankster,50,75,75,65,65,50,
 Mega Sableye,Dark/Ghost,mega,Magic Bounce,,,50,85,125,85,115,20,Sablenite
 Salandit,Poison/Fire,base,Corrosion,,Oblivious,48,44,40,71,40,77,
@@ -192,7 +193,7 @@ Skiddo,Grass,base,Sap Sipper,,Grass Pelt,66,65,48,62,57,52,
 Gogoat,Grass,evo,Sap Sipper,,Grass Pelt,123,100,62,97,81,68,Level 32
 Skrelp,Poison/Water,base,Poison Point,Poison Touch,Adaptability,50,60,60,60,60,30,
 Dragalge,Poison/Dragon,evo,Poison Point,Poison Touch,Adaptability,65,75,90,97,123,44,Dragon Scale
-Slowpoke-Galar,Psychic,base,Gluttony,Own Tempo,Regenerator,90,65,65,40,40,15,
+Slowpoke,Psychic,base,Gluttony,Own Tempo,Regenerator,90,65,65,40,40,15,
 Slowbro-Galar,Poison/Psychic,evo,Quick Draw,Own Tempo,Regenerator,95,100,95,100,70,30,Level 37
 Slowking-Galar,Poison/Psychic,evo,Curious Medicine,Own Tempo,Regenerator,95,65,80,110,110,30,King's Rock
 Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,
@@ -238,16 +239,43 @@ Torterra,Grass/Ground,evo,Overgrow,,Shell Armor,95,109,105,75,85,56,Level 32
 Venipede,Bug/Poison,base,Poison Point,Swarm,Speed Boost,30,45,59,30,39,57, 
 Whirlipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,40,55,99,40,79,47,Level 22
 Scolipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,60,100,89,55,69,112,Level 30
-Vulpix-Alola,Ice,base,Snow Cloak,,Snow Warning,38,41,40,50,65,65,
+Vulpix,Ice,base,Snow Cloak,,Snow Warning,38,41,40,50,65,65,
 Ninetales-Alola,Ice/Fairy,evo,Snow Cloak,,Snow Warning,73,67,75,81,100,109,Ice Stone
 Wingull,Water/Flying,base,Keen Eye,Hydration,Rain Dish,40,30,30,55,30,85,
 Pelipper,Water/Flying,evo,Keen Eye,Drizzle,Rain Dish,60,50,100,95,70,65,Level 25
 Wishiwashi,Water,base,Schooling,,,45,20,20,25,25,40,
-Wooper-Paldea,Poison/Ground,base,Poison Point,Water Absorb,Unaware,55,45,45,25,25,15,
+Wooper,Poison/Ground,base,Poison Point,Water Absorb,Unaware,55,45,45,25,25,15,
 Clodsire,Poison/Ground,evo,Poison Point,Water Absorb,Unaware,130,75,60,45,100,20,Level 20
-Zigzagoon-Galar,Dark/Normal,base,Pickup,Gluttony,Quick Feet,38,30,41,30,41,60,
+Zigzagoon,Dark/Normal,base,Pickup,Gluttony,Quick Feet,38,30,41,30,41,60,
 Linoone-Galar,Dark/Normal,evo,Pickup,Gluttony,Quick Feet,78,70,61,50,61,100,Level 20
 Obstagoon,Dark/Normal,evo,Reckless,Guts,Defiant,93,90,101,60,81,95,Level 35
 Zubat,Poison/Flying,base,Inner Focus,,Infiltrator,40,45,35,30,40,55,
 Golbat,Poison/Flying,evo,Inner Focus,,Infiltrator,75,80,70,65,75,90,Level 22
 Crobat,Poison/Flying,evo,Inner Focus,,Infiltrator,85,90,80,70,80,130,Soothe Bell
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
+Egg,,base,,,,,,,,,,
