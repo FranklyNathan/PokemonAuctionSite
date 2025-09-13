@@ -144,7 +144,7 @@ const cols = [
   {
     field: 'name',
     headerName: 'Name',
-    minWidth: 200,
+    minWidth: 150,
     filter: 'agTextColumnFilter',
     floatingFilter: true,
     pinned: 'left',
@@ -215,7 +215,7 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
   const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // add any custom columns to the table
   const currentFields = new Set(tableCols.map((c) => c.field));
-  currentFields.add('player_id').add('keeper').add('stage').add('evolution_method').add('drafted_by_id'); // don't add these to the table
+  currentFields.add('playerId').add('player_id').add('keeper').add('stage').add('evolution_method').add('drafted_by_id'); // don't add these to the table
   // find the extra stats fields that were added and save them to the Ctx
   ctx.extraPlayerStatsFields = playerFields.filter((fieldId) => !currentFields.has(fieldId));
   // add extra stats fields to the table

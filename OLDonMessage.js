@@ -53,11 +53,11 @@ function recordDraft(ctx) {
     console.error('recordDraft called before playersTableData was loaded. Aborting.');
     return;
   }
-  const selectedPlayer = ctx.playerMap.get(ctx.selectedPlayerId);
-  if (!selectedPlayer) {
+  if (ctx.selectedPlayerId == null || !ctx.playersTableData?.[ctx.selectedPlayerId]) {
     console.error(`recordDraft called with invalid selectedPlayerId: ${ctx.selectedPlayerId} or empty player data.`);
     return;
   }
+  const selectedPlayer = ctx.playersTableData[ctx.selectedPlayerId];
   selectedPlayer.pickedBy = ctx.teams[ctx.highestBidder].teamName;
   selectedPlayer.cost = ctx.currentBid;
 
@@ -67,8 +67,10 @@ function recordDraft(ctx) {
   addPlayerIconToTeamCard(ctx.highestBidder, selectedPlayer.name);
 
   // update the table row
-  const row = ctx.playersTable.getRowNode(selectedPlayer.type + selectedPlayer.name);
-  row.setData(selectedPlayer);
+  const row = ctx.playersTable.getRowNode(
+    ctx.playersTableData[ctx.selectedPlayerId].type + ctx.playersTableData[ctx.selectedPlayerId].name,
+  );
+  row.setData(ctx.playersTableData[ctx.selectedPlayerId]);
   ctx.playersTable.refreshClientSideRowModel(); // refresh the filtering so if a user is filtered on draft status it shows new draft
 
   // clear the highest bidder and highest bid
@@ -85,12 +87,10 @@ function isTeamDoneDrafting(ctx, team) {
 }
 
 function updateTimer(ctx, currentTimeLimit) {
-  console.log(`[Debug] updateTimer called with currentTimeLimit: ${currentTimeLimit}. Stack trace:`);
-  console.trace();
   console.log(`[Client Timer] Updating timer. Starting with duration: ${currentTimeLimit}ms`);
   ctx.timer.stop();
   ctx.currentTimeLimit = currentTimeLimit;
-  ctx.timer.start(currentTimeLimit, currentTimeLimit);
+  ctx.timer.start(currentTimeLimit);
 }
 
 function resumeTimer(ctx, targetTimestamp) {
@@ -102,18 +102,17 @@ function resumeTimer(ctx, targetTimestamp) {
 }
 
 function handleServerUpdate(msg, ctx) {
-  let handledPauseChange = false; // Flag to prevent double-updating the timer on resume.
   if (!msg.hasOwnProperty('stateId')) {
     toast('Invalid message!', 'A message from the server is missing the `stateId` field', 'danger');
     return;
   }
 
-  console.log(`[Debug] handleServerUpdate received message. Current client isPaused state: ${ctx.isPaused}. Message:`, msg);
+  console.log('[Debug] handleServerUpdate received message:', msg);
 
   // Check if a draft just completed BEFORE updating any other part of the context.
   // This is crucial because we need the `ctx` from the end of the bidding phase
   // to correctly record who won.
-  if (ctx.stateId === 'bidding' && msg.stateId !== 'bidding') {
+  if (ctx.stateId === 'bidding' && msg.stateId === 'player_selection') {
     console.log('[Debug] Auction ended. Calling recordDraft with old context.');
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
@@ -134,8 +133,6 @@ function handleServerUpdate(msg, ctx) {
 
   // Handle pause state
   if (typeof msg.isPaused === 'boolean' && msg.isPaused !== ctx.isPaused) {
-    console.log(`[Debug] Pause state change detected. Message isPaused: ${msg.isPaused}, Client isPaused: ${ctx.isPaused}`);
-    handledPauseChange = true;
     ctx.isPaused = msg.isPaused;
     const pauseButton = document.getElementById('pause-button');
     const timeEl = document.getElementById('time');
@@ -150,32 +147,19 @@ function handleServerUpdate(msg, ctx) {
       pauseButton.innerHTML = 'Pause';
       timeEl.classList.remove('paused');
       enableRaiseButtons(); // Re-enable buttons on resume.
-      // Also update the time limit from the message, so we don't trigger the generic update below.
-      if (isValidNumber(msg.currentTimeLimit)) {
-        ctx.currentTimeLimit = +msg.currentTimeLimit;
-      }
-
       // When un-pausing, restart the timer with the remaining time from the server.
       if (isValidNumber(msg.remainingTimeOnResume)) {
         console.log(`[Client Timer] Resuming with duration from server: ${msg.remainingTimeOnResume}ms`);
         // Explicitly stop any lingering timer before starting a new one to ensure a clean resume.
         ctx.timer.stop();
-        console.log(`[Debug] Calling timer.start with remainingTime: ${msg.remainingTimeOnResume} and currentTimeLimit: ${ctx.currentTimeLimit}`);
         ctx.timer.start(msg.remainingTimeOnResume, ctx.currentTimeLimit);
-      } else {
-        // This case should ideally not be hit if the server is behaving correctly.
-        // If it is, it means we resumed but didn't get the remaining time.
-        // We will have to wait for the next generic timer update.
-        console.warn('[Client Timer] Resume message received without remainingTimeOnResume. Timer may be out of sync.');
+      } else if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
+        // Fallback for regular updates that might coincide with resume
+        updateTimer(ctx, +msg.currentTimeLimit);
       }
     }
-  } else if (
-    isValidNumber(msg.currentAlarmTime) &&
-    isValidNumber(msg.currentTimeLimit) &&
-    +msg.currentTimeLimit !== ctx.currentTimeLimit
-  ) {
-    console.log('[Debug] Generic timer update condition met. Calling updateTimer.');
-    // This is the generic timer update. It should only run if we are NOT handling a pause/resume state change.
+  } else if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
+    // Only run the generic timer update if we are not handling a pause state change.
     updateTimer(ctx, +msg.currentTimeLimit);
   }
 
@@ -183,11 +167,12 @@ function handleServerUpdate(msg, ctx) {
   if (
     msg.stateId != ctx.stateId ||
     !ctx.performedInitialUpdate ||
-    // If the player being auctioned changes (e.g., a new round starts), we must re-run the state change logic to update the UI.
-    (msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId)
+    // if we are in player selection and the player changes (due to timeout), re-run state change logic
+    (ctx.stateId == 'player_selection' && msg.selectedPlayerId != ctx.selectedPlayerId)
   ) {
     // if a player rejoins in the middle of the bidding phase, the `msg.stateId != ctx.stateId`
     console.log(`[Client onMessage] State change detected. Old: ${ctx.stateId}, New: ${msg.stateId}. Entering state-change UI block.`);
+    console.log(`[Client onMessage] State change detected. Old: ${ctx.stateId}, New: ${msg.stateId}`);
     //   check won't match, but we still need to initialize their UI as if it was a state change
     //   so we have to keep track of whether we have done the initial update.
     if (!ctx.performedInitialUpdate) {
@@ -195,7 +180,7 @@ function handleServerUpdate(msg, ctx) {
     }
     // handle state change
     // reset the player card to empty
-    hideSelectedPlayerCard();
+    hideSelectedPlayerCard(ctx.teams?.[msg.currentlySelectingTeam]?.teamName);
     switch (msg.stateId) {
       case 'bidding':
         console.log('[Client onMessage] In bidding state. Checking if buttons should be enabled.');
@@ -207,9 +192,36 @@ function handleServerUpdate(msg, ctx) {
         removeSelectingIndicator(ctx);
         // set the player card to the selected player
         if (msg.selectedPlayerId != undefined) {
-          const playerData = ctx.playerMap.get(msg.selectedPlayerId);
+          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
           if (playerData) {
-            updateSelectedPlayerCard(playerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
+            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
+          } else {
+            console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
+          }
+        }
+        break;
+      case 'player_selection':
+        // if previous state was bidding, the highest bidder got the player!
+        // if there was a selecting team, remove the indicator
+        if (ctx.currentlySelectingTeam != undefined) {
+          removeSelectingIndicator(ctx);
+        }
+        ctx.currentlySelectingTeam = undefined;
+
+        // The first bid can be made by any team.
+        console.log('[Client onMessage] In player_selection state. Checking if buttons should be enabled.');
+        if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
+          enableRaiseButtons();
+        } else {
+          disableRaiseButtons();
+        }
+        // set the player card to the selected player
+        if (msg.selectedPlayerId != undefined) {
+          const playerData = ctx.playersTableData?.[msg.selectedPlayerId];
+          if (playerData) {
+            updateSelectedPlayerCard(playerData, ctx.extraPlayerStatsFields);
+            displayPlayerAuctionInfo(playerData, ctx.speciesInfoMap);
           } else {
             console.error(`Could not find player data for selectedPlayerId: ${msg.selectedPlayerId}`);
           }

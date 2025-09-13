@@ -143,14 +143,13 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
         // Resume the timer
         if (ctx.remainingTimeOnPause && ctx.remainingTimeOnPause > 0) {
           const resumeTime = ctx.remainingTimeOnPause;
-          ctx.remainingTimeOnPause = undefined; // Clear the value from memory.
           await ctx._setAlarm(Date.now() + resumeTime);
+          ctx.remainingTimeOnPause = undefined; // Clear the value after setting the new alarm.
           await ctx.storeCtx(); // Persist the new alarm state immediately.
           await updateClients(ctx, false, true, 'Auction Resumed', resumeTime);
         } else {
-          // The timer would have expired while paused. Trigger the alarm's action immediately.
-          console.log('[Server] Timer expired while paused. Transitioning state.');
-          await transitionState(ctx);
+          // If there was no remaining time on pause, do nothing. The alarm would have already fired or will fire correctly.
+          console.log('[Server] Resuming with no remainingTimeOnPause. The alarm should handle the state transition if it expired.');
         }
       }
       break;

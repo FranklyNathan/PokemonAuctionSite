@@ -26,11 +26,13 @@ export class CountDownTimer {
   }
 
   start(duration, totalDuration) {
-    console.log(`[Debug] CountDownTimer.start called with duration: ${duration}, totalDuration: ${totalDuration}`);
+    console.log(`[Debug] CountDownTimer.start called with duration: ${duration}, totalDuration: ${totalDuration}. Stack trace:`);
+    console.trace();
     // Always allow starting, even if a previous timer was considered running.
     this.stop(); // Ensure any existing timeout is cleared before starting a new one.
     this.running = true;
     this.duration = duration;
+    console.log(`[Debug] CountDownTimer internal duration set to: ${this.duration}`);
     const displayDuration = totalDuration ?? duration;
     let start = Date.now();
     let that = this; // make a ref to the class so we can reference easily

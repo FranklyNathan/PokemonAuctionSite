@@ -266,6 +266,7 @@ export function removeSelectingIndicator(ctx) {
 export function setTimerTime(time, timeRemaining, timeLimit) {
   const timeEl = document.getElementById('time');
   const pct = (timeRemaining / timeLimit) * 100;
+  console.log(`[Debug] setTimerTime: time=${time}, timeRemaining=${timeRemaining}, timeLimit=${timeLimit}, pct=${pct}`);
   timeEl.setAttribute('value', pct);
   timeEl.innerHTML = time;
 
@@ -417,10 +418,10 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         const barWidth = (statValue / maxStat) * 100;
         const barColor = getStatColor(statValue);
         return `
-          <div style="display: flex; align-items: center; gap: 4px; font-size: 0.7rem; width: 100%;">
-            <span style="width: 35px; text-align: right; font-weight: bold;">${stat.label}</span>
-            <span style="width: 25px; text-align: left;">${statValue}</span>
-            <div style="flex-grow: 1; height: 8px;">
+          <div style="display: flex; align-items: center; font-size: 0.7rem;">
+            <span style="width: 35px; text-align: right; font-weight: bold; margin-right: 4px;">${stat.label}</span>
+            <span style="width: 25px; text-align: left; margin-right: 1px;">${statValue}</span>
+            <div style="width: 100px; height: 8px;">
               <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
             </div>
           </div>`;
@@ -432,10 +433,10 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
 
     infoEl.innerHTML = `
       <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
-      <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 1rem;">
+      <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
         ${abilitiesHtml}
       </div>
-      <div style="display: flex; flex-direction: column; gap: 2px; width: 100%; margin-bottom: 1rem;">
+      <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 1rem;">
         ${statsHtml}
       </div>
       ${keyMovesHtml}
@@ -491,7 +492,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       console.log('[Evo Debug] Found evolutions, preparing to render them to the DOM.');
       infoContainer.style.display = 'flex'; // Show the container
       infoContainer.style.flexDirection = 'row'; // Arrange evolutions horizontally
-      infoContainer.style.justifyContent = 'flex-start'; // Distribute space
+      infoContainer.style.justifyContent = 'flex-start'; // Align to the start
       infoContainer.style.alignItems = 'flex-start'; // Align to the top
 
       // Add an arrow from the base pokemon to the first evolution
@@ -508,8 +509,10 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         let imageName = evo.name;
         // Handle Mega Evolution naming convention ("Mega Pokemon" -> "Pokemon-Mega")
         if (imageName.startsWith('Mega ')) {
+          console.log(`[Mega Debug] Detected Mega Evolution: '${evo.name}'.`);
           const parts = imageName.split(' ');
           imageName = `${parts[1]}-Mega`;
+          console.log(`[Mega Debug] Transformed name to: '${imageName}'.`);
         }
         imageName = imageName.replace(/[^a-zA-Z0-9-]/g, '');
         const imagePath = `/evolutions/${imageName}.png`;
@@ -555,10 +558,10 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
             const barWidth = (statValue / maxStat) * 100;
             const barColor = getStatColor(statValue);
             return `
-              <div style="display: flex; align-items: center; gap: 4px; font-size: 0.7rem; width: 100%;">
-                <span style="width: 35px; text-align: right; font-weight: bold;">${stat.label}</span>
-                <span style="width: 25px; text-align: left;">${statValue}</span>
-                <div style="flex-grow: 1; height: 8px;">
+              <div style="display: flex; align-items: center; font-size: 0.7rem;">
+                <span style="width: 35px; text-align: right; font-weight: bold; margin-right: 4px;">${stat.label}</span>
+                <span style="width: 25px; text-align: left; margin-right: 1px;">${statValue}</span>
+                <div style="width: 100px; height: 8px;">
                   <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
                 </div>
               </div>`;
@@ -568,13 +571,13 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 200px;">
             <div style="flex-shrink: 0; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
               <img src="${imagePath}" alt="${evo.name}" title="${evo.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;"
-                   onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')">
+                   onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')" />
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 0.1rem;">${typeImagesHtml}</div>
             <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: center;">
               ${abilitiesHtml}
             </div>
-            <div style="display: flex; flex-direction: column; gap: 2px; width: 100%;">
+            <div style="display: flex; flex-direction: column; gap: 2px;">
               ${statsHtml}
             </div>
           </div>
