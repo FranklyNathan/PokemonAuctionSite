@@ -163,8 +163,16 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       ctx.highestBidder = clientId;
       // For every valid bid (first or subsequent), reset the timer and update clients.
       ctx.deleteAlarm();
-      console.log(`[Server] Setting alarm for ${ctx.biddingTimeLimit}ms.`);
-      ctx.setAlarm(ctx.biddingTimeLimit);
+
+      let newTimeLimit = ctx.biddingTimeLimit;
+      if (ctx.currentBid < 10) {
+        newTimeLimit = ctx.biddingTimeLimit * 2;
+        console.log(`[Server] Bid is under $10. Doubling timer to ${newTimeLimit}ms.`);
+      } else {
+        console.log(`[Server] Bid is $10 or over. Using standard timer of ${newTimeLimit}ms.`);
+      }
+      console.log(`[Server] Setting alarm for ${newTimeLimit}ms.`);
+      ctx.setAlarm(newTimeLimit);
       await updateClients(ctx, true, true);
       return; // Exit after sending the bid update.
     default:
