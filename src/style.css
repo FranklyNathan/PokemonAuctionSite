@@ -1,6 +1,7 @@
 :root {
   --shadow-color: var(--sl-color-neutral-400);
   --container-bg-color: var(--sl-color-gray-100);
+  --input-shadow-color: var(--sl-color-neutral-400);
 }
 
 * {
@@ -26,6 +27,11 @@ sl-button::part(base) {
     color: black;
     border-radius: 0;
 }
+.sl-theme-dark {
+  --shadow-color: #000;
+  --input-shadow-color: #000;
+}
+
 /* make the raise buttons fun to hover */
 sl-button.bet::part(base) {
     transition: var(--sl-transition-x-fast) transform ease;

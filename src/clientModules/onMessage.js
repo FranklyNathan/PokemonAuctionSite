@@ -85,20 +85,28 @@ function isTeamDoneDrafting(ctx, team) {
 }
 
 function updateTimer(ctx, currentTimeLimit) {
-  console.log(`[Debug] updateTimer called with currentTimeLimit: ${currentTimeLimit}. Stack trace:`);
-  console.trace();
-  console.log(`[Client Timer] Updating timer. Starting with duration: ${currentTimeLimit}ms`);
-  ctx.timer.stop();
-  ctx.currentTimeLimit = currentTimeLimit;
-  ctx.timer.start(currentTimeLimit, currentTimeLimit);
+  console.log(`[Debug] updateTimer called with currentTimeLimit: ${currentTimeLimit}.`);
 }
 
-function resumeTimer(ctx, targetTimestamp) {
-  const remainingTime = targetTimestamp - Date.now();
-  console.log(`[Client Timer] Resuming timer. Remaining duration: ${remainingTime}ms`);
+function startOrResumeTimer(ctx, targetTimestamp, totalDuration) {
+  console.log(`[Debug] startOrResumeTimer called. targetTimestamp: ${targetTimestamp}, totalDuration: ${totalDuration}`);
+  let remainingTime = targetTimestamp - Date.now();
+
+  // Prevent the timer from starting with more time than the total limit due to clock drift.
+  if (remainingTime > totalDuration) {
+    console.warn(`[Client Timer] Calculated remaining time (${remainingTime}ms) is greater than total duration (${totalDuration}ms). Capping at total duration.`);
+    remainingTime = totalDuration;
+  }
+  console.log(`[Client Timer] Starting/Resuming timer. Remaining duration calculated as: ${remainingTime}ms`);
+
+  // Stop any existing timer before starting a new one.
   ctx.timer.stop();
-  // Note: We don't update ctx.currentTimeLimit here, as it's needed for the progress bar to show the correct percentage.
-  ctx.timer.start(remainingTime);
+
+  // The total duration is needed for the progress bar calculation.
+  ctx.currentTimeLimit = totalDuration;
+
+  // Start the timer with the calculated remaining time and the total duration for the progress bar.
+  ctx.timer.start(remainingTime, totalDuration);
 }
 
 function handleServerUpdate(msg, ctx) {
@@ -157,11 +165,7 @@ function handleServerUpdate(msg, ctx) {
 
       // When un-pausing, restart the timer with the remaining time from the server.
       if (isValidNumber(msg.remainingTimeOnResume)) {
-        console.log(`[Client Timer] Resuming with duration from server: ${msg.remainingTimeOnResume}ms`);
-        // Explicitly stop any lingering timer before starting a new one to ensure a clean resume.
-        ctx.timer.stop();
-        console.log(`[Debug] Calling timer.start with remainingTime: ${msg.remainingTimeOnResume} and currentTimeLimit: ${ctx.currentTimeLimit}`);
-        ctx.timer.start(msg.remainingTimeOnResume, ctx.currentTimeLimit);
+        console.log(`[Client Timer] Resume message received. The generic timer update will handle syncing the clock.`);
       } else {
         // This case should ideally not be hit if the server is behaving correctly.
         // If it is, it means we resumed but didn't get the remaining time.
@@ -169,14 +173,11 @@ function handleServerUpdate(msg, ctx) {
         console.warn('[Client Timer] Resume message received without remainingTimeOnResume. Timer may be out of sync.');
       }
     }
-  } else if (
-    isValidNumber(msg.currentAlarmTime) &&
-    isValidNumber(msg.currentTimeLimit) &&
-    +msg.currentTimeLimit !== ctx.currentTimeLimit
-  ) {
-    console.log('[Debug] Generic timer update condition met. Calling updateTimer.');
-    // This is the generic timer update. It should only run if we are NOT handling a pause/resume state change.
-    updateTimer(ctx, +msg.currentTimeLimit);
+  } else if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
+    // This is the generic timer update. It runs on every applicable server message.
+    // It ensures the client timer is always synced with the server's alarm time.
+    console.log('[Debug] Generic timer update condition met. Calling startOrResumeTimer.');
+    startOrResumeTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit);
   }
 
   // update the UI if there was a state change or we haven't performed the initial UI update
@@ -199,12 +200,6 @@ function handleServerUpdate(msg, ctx) {
     switch (msg.stateId) {
       case 'bidding':
         console.log('[Client onMessage] In bidding state. Checking if buttons should be enabled.');
-        if (!isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId])) {
-          // only enable the raise buttons if this team is still drafting
-          enableRaiseButtons();
-        }
-        // remove the 'selecting' indicator from the team that just selected
-        removeSelectingIndicator(ctx);
         // set the player card to the selected player
         if (msg.selectedPlayerId != undefined) {
           const playerData = ctx.playerMap.get(msg.selectedPlayerId);

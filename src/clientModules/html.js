@@ -385,7 +385,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
   infoContainer.innerHTML = ''; // Clear previous content
   infoContainer.style.display = 'none'; // Default to none, will be set to flex if evolutions exist
   infoContainer.style.flexDirection = 'column';
-  infoContainer.style.gap = '1rem';
+  infoContainer.style.gap = '0.5rem';
   infoEl.style.display = 'none';
 
   infoEl.innerHTML = ''; // Clear previous content
@@ -394,11 +394,24 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     let currentPokemonName = player.name;
     let info = speciesInfoMap.get(currentPokemonName);
 
+    const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
+
     // Build abilities HTML for base pokemon
     const abilityDivs = [];
-    if (player.ability1) abilityDivs.push(`<div>${player.ability1.trim()}</div>`);
-    if (player.ability2) abilityDivs.push(`<div>${player.ability2.trim()}</div>`);
-    if (player.hidden_ability) abilityDivs.push(`<div>${player.hidden_ability.trim()} (H)</div>`);
+    if (player.ability1) {
+      const abilityName = player.ability1.trim();
+      abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+    }
+    if (player.ability2) {
+      const abilityName = player.ability2.trim();
+      abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+    }
+    if (player.hidden_ability) {
+      const abilityName = player.hidden_ability.trim();
+      abilityDivs.push(
+        `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
+      );
+    }
     const abilitiesHtml = abilityDivs.join('');
 
     // Build stats HTML for base pokemon
@@ -429,9 +442,32 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       .join('');
 
     // Get key moves from speciesInfoMap
-    const keyMovesHtml = info && info.description ? `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${info.description}</pre>` : '';
+    let keyMovesHtml = '';
+    if (info && info.description) {
+      const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
+      const moveLines = info.description
+        .split('\n')
+        .map((line) => {
+          const trimmedLine = line.trim();
+          // A move line is one that is not a comment (like 'Note:') and not empty.
+          if (trimmedLine.length > 0 && !trimmedLine.toLowerCase().startsWith('note:') && !trimmedLine.toLowerCase().startsWith('key moves:')) {
+            // Extract the move name, which is everything before the first parenthesis.
+            const parenIndex = line.indexOf('(');
+            const moveName = (parenIndex !== -1 ? line.substring(0, parenIndex) : line).trim();
+            if (moveName) {
+              const url = `https://pokemondb.net/move/${formatMoveForUrl(moveName)}`;
+              const link = `<a class="move-link" href="${url}" target="_blank" rel="noopener noreferrer">${moveName}</a>`;
+              return line.replace(moveName, link);
+            }
+          }
+          return line; // Keep original line if it's a comment, empty, or not a move.
+        })
+        .join('\n');
+      keyMovesHtml = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${moveLines}</pre>`;
+    }
 
     infoEl.innerHTML = `
+      <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
       <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
       <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
         ${abilitiesHtml}
@@ -528,18 +564,22 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           .join('');
 
         // Get abilities and create vertically stacked divs
-        let abilitiesHtml = '';
-        const abilityDivs = [];
+        const evoAbilityDivs = [];
         if (evo.info.ability1) {
-          abilityDivs.push(`<div>${evo.info.ability1.trim()}</div>`);
+          const abilityName = evo.info.ability1.trim();
+          evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (evo.info.ability2) {
-          abilityDivs.push(`<div>${evo.info.ability2.trim()}</div>`);
+          const abilityName = evo.info.ability2.trim();
+          evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (evo.info.hidden_ability) {
-          abilityDivs.push(`<div>${evo.info.hidden_ability.trim()} (H)</div>`);
+          const abilityName = evo.info.hidden_ability.trim();
+          evoAbilityDivs.push(
+            `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
+          );
         }
-        abilitiesHtml = abilityDivs.join('');
+        const abilitiesHtml = evoAbilityDivs.join('');
 
         // Generate stats bar graph
         const stats = [
@@ -577,7 +617,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
             <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: center;">
               ${abilitiesHtml}
             </div>
-            <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
               ${statsHtml}
             </div>
           </div>
