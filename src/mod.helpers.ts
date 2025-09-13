@@ -28,6 +28,7 @@ export function getSerializableCtx(ctx: Ctx) {
     clientIdIncrementer: ctx.clientIdIncrementer,
     biddingTimeLimit: ctx.biddingTimeLimit,
     playerSelectionTimeLimit: ctx.playerSelectionTimeLimit,
+    totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     currentTimeLimit: ctx.currentTimeLimit,
   };
 }
@@ -99,6 +100,7 @@ export async function updateClients(
     currentlySelectingTeam: ctx.currentlySelectingTeam,
     isPaused: ctx.isPaused,
     flashbangedClientId: ctx.flashbangedClientId,
+    totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     selectedPlayerId: ctx.selectedPlayerId,
     message: message,
   };
@@ -141,11 +143,18 @@ function recordDraft(ctx: Ctx) {
 function isDraftComplete(ctx: Ctx) {
   const rosterSizes = getRosterCounts(ctx);
   const availablePlayersCount = getUndraftedCount(ctx) || 0;
+  const totalDrafted = Object.values(rosterSizes).reduce((sum, count) => sum + count, 0);
+
+  // The auction should only end based on this count if a valid, positive number was provided.
+  const limitReached = typeof ctx.totalPokemonAuctioned === 'number' && ctx.totalPokemonAuctioned > 0 && totalDrafted >= ctx.totalPokemonAuctioned;
+
   return (
     // all teams have no remaining funds or full roster or disconnected
     Object.values(ctx.clientMap).every((client) => client.remainingFunds <= 0 || !client.connected) ||
     // or there aren't any more available players
-    availablePlayersCount == 0
+    availablePlayersCount == 0 ||
+    // or the total number of auctioned pokemon has been reached
+    limitReached
   );
 }
 

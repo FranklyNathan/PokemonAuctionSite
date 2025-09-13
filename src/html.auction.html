@@ -157,8 +157,8 @@
             style="
               position: relative;
               width: 100%;
-              flex: 2;
-              max-height: 10rem;
+              flex: 1;
+              max-height: 6rem;
               overflow: hidden;
               border: 1px solid black;
               border-radius: 0;
@@ -180,9 +180,13 @@
               "
             ></div>
           </div>
-          <div style="display: flex; justify-content: flex-end; padding-top: 0.5rem; gap: 0.5rem">
-            <sl-button id="dark-mode-toggle" variant="neutral" size="small" style="--sl-spacing-x-small: 0.25rem;"></sl-button>
-            <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.5rem;">
+            <div id="draft-counter" style="color: var(--sl-color-neutral-600);"></div>
+            <div style="display: flex; justify-content: center; gap: 0.5rem; width: 100%;">
+              <sl-button id="download-results-button" variant="neutral" size="small" style="--sl-color-neutral-foreground: white;">Download Results</sl-button>
+              <sl-button id="dark-mode-toggle" variant="neutral" size="small" style="width: 3rem; --sl-spacing-x-small: 0.25rem;"></sl-button>
+              <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
+            </div>
           </div>
           <!-- right side section -->
         </div>
@@ -304,6 +308,8 @@
       timer: null, // CountDownTimer
       currentTimeLimit: null,
       biddingTimeLimit: null, // number
+      totalPokemonAuctioned: 0,
+      draftedPokemonCount: 0,
       playerSelectionTimeLimit: null, // number
       maxRosterSize: null, // number   // this is the target for a string replace server side
       extraPlayerStatsFields: [], // holds IDs of extra fields that were added to the players data
@@ -392,7 +398,7 @@
     // module imports
     import { CountDownTimer } from '/clientModules/CountDownTimer.js';
     import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
-    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon } from '/clientModules/html.js';
+    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
     import { loadPlayersData } from '/clientModules/playersTable.js';
 
     // --- Helper Functions ---
@@ -463,6 +469,35 @@
       if (ctx.ws) {
         ctx.ws.send(JSON.stringify({ type: 'toggle_pause', stateId: ctx.stateId }));
       }
+    });
+
+    // Download results button listener
+    const downloadButton = document.getElementById('download-results-button');
+    downloadButton.addEventListener('click', () => {
+      const draftedPlayers = ctx.playersTableData.filter((p) => p.pickedBy);
+
+      if (draftedPlayers.length === 0) {
+        toast('Info', 'No players have been drafted yet.', 'primary');
+        return;
+      }
+
+      const csvData = draftedPlayers.map((p) => ({
+        Player: p.name,
+        'Drafted By': p.pickedBy,
+        Cost: p.cost,
+      }));
+
+      const csvString = Papa.unparse(csvData);
+
+      const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'draft-results.csv');
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
   </script>
 </html>

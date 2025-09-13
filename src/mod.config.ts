@@ -56,6 +56,7 @@ export interface ServerMessage {
   isPaused?: boolean;
   flashbangedClientId?: ClientId;
   currentlySelectingTeam?: ClientId;
+  totalPokemonAuctioned?: number;
   selectedPlayerId?: PlayerId;
   currentAlarmTime?: number; // target timestamp when alarm will run out in milliseconds elapsed since the UNIX epoch
   currentTimeLimit?: number; // original total time duration of the current alarm in ms
@@ -101,6 +102,7 @@ export interface Ctx {
   clientIdIncrementer: number; // what ID to use for the next incoming client
   biddingTimeLimit: number; // length of time in milliseconds for the Bidding state
   playerSelectionTimeLimit: number; // length of time in milliseconds for the Player Selection state
+  totalPokemonAuctioned: number;
   currentTimeLimit?: number;
   _setAlarm: Function;
   setAlarm: Function;

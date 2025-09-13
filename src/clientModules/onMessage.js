@@ -19,6 +19,7 @@ import {
   showFlashbangOverlay,
   hideFlashbangOverlay,
   updateTeamCard,
+  updateDraftCounter,
 } from './html.js';
 
 /*
@@ -67,6 +68,10 @@ function recordDraft(ctx) {
   console.log(`[Debug] Attempting to add mini-sprite for player '${selectedPlayer.name}' to winner card for client ID: ${ctx.highestBidder}`);
   // Add the mini sprite to the winning team's card
   addPlayerIconToTeamCard(ctx.highestBidder, selectedPlayer.name);
+
+  // Increment the draft count and update the UI
+  ctx.draftedPokemonCount++;
+  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
 
   // update the table row
   const row = ctx.playersTable.getRowNode(selectedPlayer.type + selectedPlayer.name);
@@ -166,6 +171,15 @@ function handleServerUpdate(msg, ctx) {
       // If I am not flashbanged (or it just cleared), hide the overlay.
       hideFlashbangOverlay();
     }
+  }
+  // Always trust the server's value for totalPokemonAuctioned.
+  // The previous check (msg.totalPokemonAuctioned !== ctx.totalPokemonAuctioned) could fail
+  // if the server sent 0 initially and the client's default is also 0, preventing the
+  // correct value from ever being set.
+  if (msg.hasOwnProperty('totalPokemonAuctioned') && typeof msg.totalPokemonAuctioned === 'number') {
+    ctx.totalPokemonAuctioned = msg.totalPokemonAuctioned;
+    // Initialize the counter display
+    updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
   }
 
   // Handle pause state

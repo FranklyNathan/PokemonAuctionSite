@@ -1,3 +1,10 @@
+export function updateDraftCounter(count, total) {
+  const counterEl = document.getElementById('draft-counter');
+  if (counterEl) {
+    counterEl.innerHTML = `Drafted: ${count} / ${total}`;
+  }
+}
+
 export function toast(title, message, variant) {
   const icon = variant == 'success' ? 'info-circle' : 'exclamation-triangle';
   const alert = Object.assign(document.createElement('sl-alert'), {

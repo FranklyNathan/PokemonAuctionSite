@@ -58,14 +58,23 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
 export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response | undefined> {
   const playerSelectionTimeLimit = form.get('playerSelectionTimeLimit');
   const biddingTimeLimit = form.get('biddingTimeLimit');
+  const totalPokemonAuctioned = form.get('totalPokemonAuctioned');
   if (
-    !(typeof playerSelectionTimeLimit == 'string' && isValidNumber(playerSelectionTimeLimit) && typeof biddingTimeLimit == 'string' && isValidNumber(biddingTimeLimit))
+    !(
+      typeof playerSelectionTimeLimit == 'string' &&
+      isValidNumber(playerSelectionTimeLimit) &&
+      typeof biddingTimeLimit == 'string' &&
+      isValidNumber(biddingTimeLimit) &&
+      typeof totalPokemonAuctioned == 'string' &&
+      isValidNumber(totalPokemonAuctioned)
+    )
   ) {
-    return new Response('Got invalid values for the Player Selection Time Limit, Bidding Time Limit, or both!', { status: 400 });
+    return new Response('Got invalid values for one of the time limits or total Pokémon auctioned!', { status: 400 });
   }
 
   ctx.playerSelectionTimeLimit = +playerSelectionTimeLimit * SECONDS;
   ctx.biddingTimeLimit = +biddingTimeLimit * SECONDS;
+  ctx.totalPokemonAuctioned = +totalPokemonAuctioned;
 
   // this logic started as supporting not specifying specific teams and just letting a certain number of people join
   let numTeams = 100; // default number of teams
