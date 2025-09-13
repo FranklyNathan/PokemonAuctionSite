@@ -191,12 +191,10 @@ export function hideSelectedPlayerCard(teamName) {
 
 export function disableRaiseButtons() {
   document.getElementById('raise1').setAttribute('disabled', '1');
-  document.getElementById('raise2').setAttribute('disabled', '1');
   document.getElementById('raise5').setAttribute('disabled', '1');
   document.getElementById('raise10').setAttribute('disabled', '1');
   document.getElementById('raise').setAttribute('disabled', '1');
   document.getElementById('raise1').classList.remove('hover');
-  document.getElementById('raise2').classList.remove('hover');
   document.getElementById('raise5').classList.remove('hover');
   document.getElementById('raise10').classList.remove('hover');
   document.getElementById('raise').classList.remove('hover');
@@ -204,12 +202,10 @@ export function disableRaiseButtons() {
 
 export function enableRaiseButtons() {
   document.getElementById('raise1').removeAttribute('disabled');
-  document.getElementById('raise2').removeAttribute('disabled');
   document.getElementById('raise5').removeAttribute('disabled');
   document.getElementById('raise10').removeAttribute('disabled');
   document.getElementById('raise').removeAttribute('disabled');
   document.getElementById('raise1').classList.add('hover');
-  document.getElementById('raise2').classList.add('hover');
   document.getElementById('raise5').classList.add('hover');
   document.getElementById('raise10').classList.add('hover');
   document.getElementById('raise').classList.add('hover');
@@ -235,9 +231,16 @@ export function updateCurrentlySelectingTeam(ctx, previouslySelectingTeam) {
 }
 
 export function addPlayerIconToTeamCard(clientId, playerName) {
-  const iconContainer = document.getElementById(`team${clientId}trc`);
+  // Find the parent participant-el component first.
+  const teamCard = document.getElementById(`team${clientId}`);
+  const iconContainer = teamCard?.querySelector(`#team${clientId}trc`);
   console.log(`[Debug] addPlayerIconToTeamCard called for clientId: ${clientId}, playerName: ${playerName}`);
   if (iconContainer) {
+    // Stop adding icons once the limit of 12 is reached.
+    if (iconContainer.childElementCount >= 12) {
+      console.log(`[Debug] Max sprites (12) reached for client ${clientId}. Not adding more.`);
+      return;
+    }
     console.log(`[Debug] Found icon container 'team${clientId}trc'. Appending icon.`);
     const iconName = playerName.toLowerCase();
     const iconPath = `/MiniIcons/${iconName}.png`;

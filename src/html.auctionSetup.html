@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auction Setup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
     <link rel="stylesheet" href="/style.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/input/input.js"></script>
@@ -146,6 +147,17 @@
     // stop the "flash-of-undefined-components" by waiting until all components are registered.
     await Promise.allSettled([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-input')]);
     // Add the `ready` class so the UI fades in.
+
+    // --- Dark Mode Logic ---
+    // Check for saved theme in localStorage on page load and apply it.
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('sl-theme-dark');
+    } else {
+      document.documentElement.classList.remove('sl-theme-dark');
+    }
+    // --- End Dark Mode Logic ---
+
     document.body.classList.add('ready');
 
     document.getElementById('custom-auction').addEventListener('click', (e) => {

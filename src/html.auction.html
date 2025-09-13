@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auction</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
     <link rel="stylesheet" href="/style.css" />
     <!-- shoelace components -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/alert/alert.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tooltip/tooltip.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/radio/radio.js"></script>
     <script
       type="module"
@@ -121,18 +121,18 @@
                 style="
                   display: flex;
                   width: 100%;
-                  justify-content: space-evenly;
+                  justify-content: center;
+                  gap: 2px;
                   border: 1px solid black;
                   border-radius: 0;
                   padding-top: 1rem;
                   padding-bottom: 1rem;
-                  background: white;
+                  background-color: var(--container-bg-color);
                 "
               >
-                <sl-button id="raise1" disabled value="1" class="bet fixed-bet" style="width: 4rem"> $1 </sl-button>
-                <sl-button id="raise2" disabled value="2" class="bet fixed-bet" style="width: 4rem"> $2 </sl-button>
-                <sl-button id="raise5" disabled value="5" class="bet fixed-bet" style="width: 4rem"> $5 </sl-button>
-                <sl-button id="raise10" disabled value="10" class="bet fixed-bet" style="width: 4rem"> $10 </sl-button>
+                <sl-button id="raise1" disabled value="1" class="bet fixed-bet" style="width: 5.5rem"> ▲ $1 </sl-button>
+                <sl-button id="raise5" disabled value="5" class="bet fixed-bet" style="width: 5.5rem"> ▲ $5 </sl-button>
+                <sl-button id="raise10" disabled value="10" class="bet fixed-bet" style="width: 5.5rem"> ▲ $10 </sl-button>
               </div>
               <div style="display: flex; margin-top: 2rem; justify-content: center; gap: 1rem">
                 <sl-input
@@ -175,7 +175,8 @@
               "
             ></div>
           </div>
-          <div style="display: flex; justify-content: flex-end; padding-top: 0.5rem">
+          <div style="display: flex; justify-content: flex-end; padding-top: 0.5rem; gap: 0.5rem">
+            <sl-button id="dark-mode-toggle" variant="neutral" size="small" style="--sl-spacing-x-small: 0.25rem;"></sl-button>
             <sl-button id="pause-button" variant="neutral" size="small" style="min-width: 5rem">Pause</sl-button>
           </div>
           <!-- right side section -->
@@ -219,6 +220,12 @@
         .done {
           background-color: var(--sl-color-sky-200);
         }
+        #main-content {
+          border-bottom: 3px solid var(--sl-color-neutral-400);
+        }
+        :host-context(.sl-theme-dark) #main-content {
+          border-bottom-color: black;
+        }
       </style>
       <div style="position: relative">
         <div style="position: absolute; left: 0.2rem; font-size: smaller; color: gray; cursor: default">
@@ -226,7 +233,9 @@
             <slot name="draft-position"></slot>
           </sl-tooltip>
         </div>
-        <div id="top-right" style="position: absolute; right: 0.2rem; top: 0.2rem; cursor: default"></div>
+        <div id="top-right" style="position: absolute; right: 0.2rem; top: 0.2rem; cursor: default">
+          <slot name="top-right"></slot>
+        </div>
         <div style="position: absolute; bottom: 0.3rem; left: 0.2rem; font-size: smaller; font-weight: bold; color: gray; cursor: default">
           <slot name="lower-left-content">
             <sl-tooltip content="Disconnected" hoist style="--sl-tooltip-arrow-size: 0"> D </sl-tooltip>
@@ -249,7 +258,6 @@
             height: 4rem;
             border-radius: 0;
             border: 1px solid black;
-            border-bottom: 3px solid gray;
           "
         >
           <div><slot name="participant-name"></slot></div>
@@ -382,6 +390,35 @@
     import { setTimerTime, initBidButtonListeners } from '/clientModules/html.js';
     import { loadPlayersData } from '/clientModules/playersTable.js';
 
+    // --- Dark Mode Logic ---
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const htmlEl = document.documentElement;
+
+    function applyTheme(theme) {
+      const tableWrapper = document.getElementById('players-table-wrapper');
+      if (theme === 'dark') {
+        htmlEl.classList.add('sl-theme-dark');
+        if (tableWrapper) tableWrapper.classList.add('ag-theme-balham-dark');
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.2rem; vertical-align: middle;">';
+      } else {
+        htmlEl.classList.remove('sl-theme-dark');
+        if (tableWrapper) tableWrapper.classList.remove('ag-theme-balham-dark');
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.2rem; vertical-align: middle;">';
+      }
+    }
+
+    // Check for saved theme in localStorage on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
+
+    // Add event listener to the toggle button
+    darkModeToggle.addEventListener('click', () => {
+      const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      applyTheme(newTheme);
+    });
+    // --- End Dark Mode Logic ---
+
     ctx.timer = new CountDownTimer();
     // set the timer to update the UI on each "tick"
     ctx.timer.onTick((remaining, parsed, displayDuration) => {
@@ -400,6 +437,7 @@
       customElements.whenDefined('sl-radio-group'),
       customElements.whenDefined('sl-progress-bar'),
     ]);
+
     // Add the `ready` class so the UI fades in.
     document.body.classList.add('ready');
     // team selection needs the sl-dialog component to be defined
@@ -407,6 +445,7 @@
     initBidButtonListeners(ctx);
     ctx.speciesInfoMap = await fetchAndParsePokemonInfo(); // Load species info
     await loadPlayersData(ctx); // Load player data
+
     document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
     document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());
 

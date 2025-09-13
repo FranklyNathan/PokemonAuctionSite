@@ -1,7 +1,5 @@
 name,type
-Abra,Psychic
 Applin,Grass
-Archen,Rock/Flying
 Aron,Steel/Rock
 Bagon,Dragon
 Beldum,Steel/Psychic
@@ -17,10 +15,8 @@ Cubone,Ground
 Cutiefly,Bug/Fairy
 Dewpider,Water/Bug
 Diglett,Ground
-Drifloon,Ghost/Flying
 Drilbur,Ground
 Electrike,Electric
-Elekid,Electric
 Exeggcute,Grass/Psychic
 Fennekin,Fire
 Flabebe,Fairy
@@ -87,7 +83,6 @@ Torchic,Fire
 Trapinch,Ground
 Treecko,Grass
 Trubbish,Poison
-Tyrogue,Fighting
 Venipede,Bug/Poison
 Voltorb,Electric/Grass
 Vulpix,Ice/Fairy

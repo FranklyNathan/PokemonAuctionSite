@@ -48,6 +48,7 @@ ctx: {
  * Called when moving out of the bidding phase.
  */
 function recordDraft(ctx) {
+  console.log(`[Debug] recordDraft called. highestBidder: ${ctx.highestBidder}, selectedPlayerId: ${ctx.selectedPlayerId}, currentBid: ${ctx.currentBid}`);
   if (!ctx.playersTableData || ctx.playersTableData.length === 0) {
     console.error('recordDraft called before playersTableData was loaded. Aborting.');
     return;
