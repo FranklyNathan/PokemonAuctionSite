@@ -2,6 +2,7 @@ import { isValidNumber } from './mod.helpers';
 import { createPlayersTable, insertPlayers } from './mod.storage';
 import { Ctx, SECONDS } from './mod.config';
 import Papa from 'papaparse';
+import defaultPokCsv from '../Pok.csv';
 
 export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Response | void> {
   let playerRows: any[];
@@ -94,16 +95,23 @@ export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response |
     ctx.draftOrder.push(clientId);
   }
 
-  const file = form.get('csvInput');
-  if (!(file instanceof File)) {
-    return new Response('Invalid CSV file!', { status: 400 });
-  }
-  // 1048 kb max
-  if (file.size > 1048576) {
-    return new Response('Too many players provided! Max size of CSV is 1048 kb', { status: 400 });
+  let csvText: string;
+  const useDefaultCsv = form.get('useDefaultCsv') === 'true';
+
+  if (useDefaultCsv) {
+    csvText = defaultPokCsv;
+  } else {
+    const file = form.get('csvInput');
+    if (!(file instanceof File) || file.size === 0) {
+      return new Response('Invalid CSV file! Please upload a file or use the default.', { status: 400 });
+    }
+    // 1048 kb max
+    if (file.size > 1048576) {
+      return new Response('Too many players provided! Max size of CSV is 1048 kb', { status: 400 });
+    }
+    csvText = await file.text();
   }
 
-  const csvText = await file.text();
   const res = await initPlayers(ctx, csvText);
   if (res instanceof Response) {
     // error returned as Response

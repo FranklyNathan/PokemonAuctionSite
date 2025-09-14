@@ -78,17 +78,17 @@ function recordDraft(ctx) {
   row.setData(selectedPlayer);
   ctx.playersTable.refreshClientSideRowModel(); // refresh the filtering so if a user is filtered on draft status it shows new draft
 
+  // celebrate if this is the highest bidder and they just drafted a player
+  if (ctx.highestBidder == ctx.myClientId) {
+    fireConfetti();
+  }
+
   // clear the highest bidder and highest bid
   clearHighestBidder();
   // Also reset the context's bid state to ensure the next bid update is processed correctly.
   ctx.currentBid = 0;
   ctx.highestBidder = undefined;
   console.log('[Debug] Cleared local bid context after recording draft.');
-
-  // celebrate if this is the highest bidder and they just drafted a player
-  if (ctx.highestBidder == ctx.myClientId) {
-    fireConfetti();
-  }
 }
 
 function isTeamDoneDrafting(ctx, team) {
@@ -99,9 +99,17 @@ function updateTimer(ctx, currentTimeLimit) {
   console.log(`[Debug] updateTimer called with currentTimeLimit: ${currentTimeLimit}.`);
 }
 
-function startOrResumeTimer(ctx, targetTimestamp, totalDuration) {
-  console.log(`[Debug] startOrResumeTimer called. targetTimestamp: ${targetTimestamp}, totalDuration: ${totalDuration}`);
-  let remainingTime = targetTimestamp - Date.now();
+function startOrResumeTimer(ctx, targetTimestamp, totalDuration, isNewBid = false) {
+  console.log(`[Debug] startOrResumeTimer called. targetTimestamp: ${targetTimestamp}, totalDuration: ${totalDuration}, isNewBid: ${isNewBid}`);
+  let remainingTime;
+
+  if (isNewBid) {
+    // If it's a new bid, always start the timer with the full duration.
+    remainingTime = totalDuration;
+  } else {
+    // Otherwise, calculate remaining time for syncing clients joining mid-timer.
+    remainingTime = targetTimestamp - Date.now();
+  }
 
   // Prevent the timer from starting with more time than the total limit due to clock drift.
   if (remainingTime > totalDuration) {
@@ -121,6 +129,7 @@ function startOrResumeTimer(ctx, targetTimestamp, totalDuration) {
 }
 
 function handleServerUpdate(msg, ctx) {
+  let isNewBid = false;
   let handledPauseChange = false; // Flag to prevent double-updating the timer on resume.
   if (!msg.hasOwnProperty('stateId')) {
     toast('Invalid message!', 'A message from the server is missing the `stateId` field', 'danger');
@@ -133,6 +142,14 @@ function handleServerUpdate(msg, ctx) {
   // This is crucial because we need the `ctx` from the end of the bidding phase
   // to correctly record who won.
   const draftJustCompleted = ctx.stateId === 'bidding' && ctx.highestBidder !== undefined;
+
+  // Determine if a new player is being auctioned BEFORE updating the context.
+  const isNewPlayer = msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId;
+
+  // A "fresh start" for the timer should only happen for a new bid or a new player round,
+  // but NOT when a client is just joining/refreshing. We use `performedInitialUpdate` to differentiate.
+  // This must be calculated BEFORE `performedInitialUpdate` is changed.
+  const isNewPlayerForTimerReset = isNewPlayer && ctx.performedInitialUpdate;
 
   // Case 1: A new auction round is starting (bidding -> bidding).
   if (
@@ -154,6 +171,10 @@ function handleServerUpdate(msg, ctx) {
     jiggleCurrentBid();
   }
   if (isValidNumber(msg.highestBidder) && msg.highestBidder != ctx.highestBidder) {
+    // Only consider it a "new bid" for timer reset purposes if this is not the initial update.
+    if (ctx.performedInitialUpdate) {
+      isNewBid = true;
+    }
     console.log(`[Debug] Updating highestBidder from ${ctx.highestBidder} to ${msg.highestBidder}`);
     ctx.highestBidder = msg.highestBidder;
     updateHighestBidder(ctx);
@@ -203,26 +224,22 @@ function handleServerUpdate(msg, ctx) {
       pauseButton.innerHTML = '<sl-icon name="pause-fill" label="Pause" style="font-size: 1.4rem; height: 1.4rem; width: 1.4rem;"></sl-icon>';
       timeEl.classList.remove('paused');
       enableRaiseButtons(); // Re-enable buttons on resume.
-      // Also update the time limit from the message, so we don't trigger the generic update below.
-      if (isValidNumber(msg.currentTimeLimit)) {
-        ctx.currentTimeLimit = +msg.currentTimeLimit;
-      }
 
-      // When un-pausing, restart the timer with the remaining time from the server.
-      if (isValidNumber(msg.remainingTimeOnResume)) {
-        console.log(`[Client Timer] Resume message received. The generic timer update will handle syncing the clock.`);
-      } else {
-        // This case should ideally not be hit if the server is behaving correctly.
-        // If it is, it means we resumed but didn't get the remaining time.
-        // We will have to wait for the next generic timer update.
-        console.warn('[Client Timer] Resume message received without remainingTimeOnResume. Timer may be out of sync.');
+      // This block handles resuming from a pause. We only need to check for remainingTimeOnResume
+      // if this is an actual state change, not the initial page load.
+      if (ctx.performedInitialUpdate) {
+        // Also update the time limit from the message, so we don't trigger the generic update below.
+        if (isValidNumber(msg.currentTimeLimit)) {
+          ctx.currentTimeLimit = +msg.currentTimeLimit;
+        }
+        // When un-pausing, restart the timer with the remaining time from the server.
+        if (isValidNumber(msg.remainingTimeOnResume)) {
+          console.log(`[Client Timer] Resume message received. The generic timer update will handle syncing the clock.`);
+        } else {
+          console.warn('[Client Timer] Resume message received without remainingTimeOnResume. Timer may be out of sync.');
+        }
       }
     }
-  } else if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
-    // This is the generic timer update. It runs on every applicable server message.
-    // It ensures the client timer is always synced with the server's alarm time.
-    console.log('[Debug] Generic timer update condition met. Calling startOrResumeTimer.');
-    startOrResumeTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit);
   }
 
   // update the UI if there was a state change or we haven't performed the initial UI update
@@ -230,7 +247,7 @@ function handleServerUpdate(msg, ctx) {
     msg.stateId != ctx.stateId ||
     !ctx.performedInitialUpdate ||
     // If the player being auctioned changes (e.g., a new round starts), we must re-run the state change logic to update the UI.
-    (msg.selectedPlayerId !== undefined && msg.selectedPlayerId !== ctx.selectedPlayerId)
+    isNewPlayer
   ) {
     // if a player rejoins in the middle of the bidding phase, the `msg.stateId != ctx.stateId`
     console.log(`[Client onMessage] State change detected. Old: ${ctx.stateId}, New: ${msg.stateId}. Entering state-change UI block.`);
@@ -273,6 +290,13 @@ function handleServerUpdate(msg, ctx) {
     ctx.stateId = msg.stateId;
   } else {
     console.log(`[Client onMessage] No state change. Old: ${ctx.stateId}, New: ${msg.stateId}.`);
+  }
+
+  // This timer update logic is placed *after* the state change block to ensure
+  // that ctx.currentTimeLimit has been updated from the message before the timer starts.
+  if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
+    console.log('[Debug] Generic timer update condition met. Calling startOrResumeTimer.');
+    startOrResumeTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit, isNewBid || isNewPlayerForTimerReset);
   }
 
   // This logic runs on EVERY update to ensure button state is correct, even without a state change.

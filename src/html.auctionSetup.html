@@ -38,6 +38,7 @@
       enctype="multipart/form-data"
       style="display: flex; flex-direction: column; align-items: center; padding-bottom: 2rem"
     >
+      <input id="useDefaultCsv" name="useDefaultCsv" type="hidden" value="false" />
       <div
         style="
           background-color: var(--container-bg-color);
@@ -132,9 +133,12 @@
           required
           style="opacity: 0; height: 0; max-height: 0; margin-bottom: -1rem"
         />
-        <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
-          Upload Pokemon CSV
-        </sl-button>
+        <div style="display: flex; gap: 1rem">
+          <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
+            Upload Custom CSV
+          </sl-button>
+          <sl-button id="defaultCsvButton" size="small"> Use Default CSV </sl-button>
+        </div>
         <div id="csvFileName" style="height: 1rem"></div>
       </div>
 
@@ -248,6 +252,15 @@
     const csvSelectEl = document.getElementById('csvSelect');
     const csvInputEl = document.getElementById('csvInput');
     const csvFileNameEl = document.getElementById('csvFileName');
+    const defaultCsvButtonEl = document.getElementById('defaultCsvButton');
+    const useDefaultCsvEl = document.getElementById('useDefaultCsv');
+
+    defaultCsvButtonEl.addEventListener('click', () => {
+      csvInputEl.removeAttribute('required');
+      csvInputEl.value = ''; // Clear any selected file
+      csvFileNameEl.innerHTML = '📄 Pok.csv (Default)';
+      useDefaultCsvEl.value = 'true';
+    });
 
     csvSelectEl.addEventListener(
       'click',
@@ -260,6 +273,8 @@
     csvInputEl.addEventListener('change', () => {
       if (csvInputEl.files && csvInputEl.files.length > 0) {
         csvFileNameEl.innerHTML = '📄 ' + csvInputEl.files[0].name;
+        csvInputEl.setAttribute('required', ''); // re-add required if user selects a file
+        useDefaultCsvEl.value = 'false';
       } else {
         csvFileNameEl.innerHTML = '';
       }
