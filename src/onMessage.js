@@ -297,6 +297,10 @@ function handleServerUpdate(msg, ctx) {
   if (isValidNumber(msg.currentAlarmTime) && isValidNumber(msg.currentTimeLimit)) {
     console.log('[Debug] Generic timer update condition met. Calling startOrResumeTimer.');
     startOrResumeTimer(ctx, +msg.currentAlarmTime, +msg.currentTimeLimit, isNewBid || isNewPlayerForTimerReset);
+  } else if (ctx.stateId === 'bidding' && ctx.currentBid === 0) {
+    // If we are in bidding state with no bid and no alarm, it means we are waiting for the first bid.
+    ctx.timer.stop();
+    resetTimerTime('Waiting for first bid...');
   }
 
   // This logic runs on EVERY update to ensure button state is correct, even without a state change.

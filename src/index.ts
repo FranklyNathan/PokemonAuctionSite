@@ -75,6 +75,7 @@ export class Auction implements DurableObject {
           serverState: State.PreAuction,
           clientIdIncrementer: 0,
           isPaused: false,
+          flashbangsEnabled: false, // default to disabled
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
           _setAlarm: this.storage.setAlarm.bind(this.storage),

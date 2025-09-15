@@ -106,7 +106,7 @@ export function showTeamDisconnected(team) {
   shadow.getElementById('main-content').setAttribute('class', cls2);
 }
 
-export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws, stateId, highestBidder) {
+export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws, stateId, highestBidder, flashbangsEnabled) {
   const teamCardEl = document.getElementById(`team${team.clientId}`);
   const shadow = teamCardEl.shadowRoot;
   // Get containers for both top-left and top-right actions.
@@ -142,16 +142,23 @@ export function updateTeamCard(team, isDone, myClientId, flashbangedClientId, ws
     shadow.getElementById('main-content').setAttribute('class', cls);
 
     // Add flashbang icon if it's not my team and we are in the bidding state.
-    const shouldShowFlashbang = team.clientId !== myClientId && stateId === 'bidding';
+    const isOpponentInBidding = team.clientId !== myClientId && stateId === 'bidding';
 
-    if (shouldShowFlashbang) {
-      const flashbangIconHtml = `<img src="/generic/Flashbang.png" alt="Flashbang" title="Flashbang ($5)" style="height: 16px; cursor: pointer;">`;
-      topLeftActionContainer.innerHTML = flashbangIconHtml;
-      const flashbangIcon = topLeftActionContainer.querySelector('img');
-      flashbangIcon.addEventListener('click', () => {
-        console.log(`[Client Action] Sending flashbang to ${team.clientId}`);
-        ws.send(JSON.stringify({ type: 'flashbang', stateId: stateId, targetClientId: team.clientId }));
-      });
+    if (isOpponentInBidding && flashbangsEnabled) {
+      // Get roster counts by counting the drafted player icons.
+      const myRosterCount = document.getElementById(`team${myClientId}trc`)?.childElementCount || 0;
+      const targetRosterCount = topRightContainer.childElementCount;
+
+      // Only show the flashbang option if the target has more drafted Pokémon.
+      if (myRosterCount < targetRosterCount) {
+        const flashbangIconHtml = `<img src="/generic/Flashbang.png" alt="Flashbang" title="Flashbang ($1)" style="height: 16px; cursor: pointer;">`;
+        topLeftActionContainer.innerHTML = flashbangIconHtml;
+        const flashbangIcon = topLeftActionContainer.querySelector('img');
+        flashbangIcon.addEventListener('click', () => {
+          console.log(`[Client Action] Sending flashbang to ${team.clientId}`);
+          ws.send(JSON.stringify({ type: 'flashbang', stateId: stateId, targetClientId: team.clientId }));
+        });
+      }
     }
   }
 }
@@ -262,9 +269,9 @@ export function enableRaiseButtons() {
 
 export function showFlashbangOverlay() {
   const messages = [
-    "Uh Oh! You've been flashbanged!",
-    'You idiot!  You\'ve been flashbanged!',
-    'Somebody flashbanged you! Maybe they have a crush!',
+    "Uh Oh! You've been flashbanged! Wait for a bid to be placed to get back into the action.",
+    'You doofus!  You\'ve been flashbanged! All your friends are having fun without you!',
+    'Ooh! Somebody flashbanged you! Maybe they have a crush!',
   ];
   const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
@@ -276,25 +283,6 @@ export function showFlashbangOverlay() {
 export function hideFlashbangOverlay() {
   const overlay = document.getElementById('flashbang-overlay');
   overlay.style.display = 'none';
-}
-
-export function updateCurrentlySelectingTeam(ctx, previouslySelectingTeam) {
-  if (ctx.currentlySelectingTeam != previouslySelectingTeam) {
-    // rotate the currently selecting team's card to the start of the teams section.
-    // get a static array of teams to iterate over (childNodes returns a "live" NodeList)
-    const teams = Array.from(document.getElementById('teamsSection').childNodes);
-    for (const team of teams) {
-      // if the front team is the currently selecting team, we are done
-      if (+team?.id?.replace('team', '') == ctx.currentlySelectingTeam) break;
-      // move the front team to the back
-      team.remove();
-      document.getElementById('teamsSection').insertAdjacentElement('beforeEnd', team);
-    }
-  }
-
-  // add an indicator that this team is selecting
-  document.getElementById(`team${ctx.currentlySelectingTeam}`).shadowRoot.getElementById('top-right').innerHTML =
-    '<sl-badge variant="primary">Selecting</sl-badge>';
 }
 
 export function addPlayerIconToTeamCard(clientId, playerName) {
@@ -442,7 +430,6 @@ function getStatColor(statValue) {
  * @param {Array<object>} allPlayers - The full list of player data from pok.csv.
  */
 export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
-  console.log('[Evo Debug] displayPlayerAuctionInfo called for player:', player, 'with allPlayers count:', allPlayers?.length);
   const infoEl = document.getElementById('species-info-text');
   const infoContainer = document.getElementById('evolution-info-container');
   infoContainer.innerHTML = ''; // Clear previous content
@@ -532,23 +519,26 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     // Only display the info text block if there is actual info to show besides the name.
     const hasInfoContent = abilitiesHtml.trim() !== '' || statsHtml.trim() !== '' || keyMovesHtml.trim() !== '';
 
+    let otherInfoHtml = '';
     if (hasInfoContent) {
-      infoEl.innerHTML = `
-        <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
-        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+      otherInfoHtml = `
         <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
           ${abilitiesHtml}
         </div>
         <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
           ${statsHtml}
         </div>
-        <div style="font-size: 0.9rem;">
-          ${keyMovesHtml}
-        </div>
+        <div style="font-size: 0.9rem;">${keyMovesHtml}</div>
       `;
-      infoEl.style.display = 'block';
     }
 
+    // Always display the name, and add other info if it exists.
+    infoEl.innerHTML = `
+      <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
+      <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+      ${otherInfoHtml}
+    `;
+    infoEl.style.display = 'block';
     // Add type icons below the base pokemon's image
     const imageTypesContainer = document.getElementById('pokemon-image-types');
     if (player.type) {
@@ -566,7 +556,6 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
 
     // Build and display evolution chain based on CSV order
     const evolutions = [];
-    console.log('[Evo Debug] Starting to look for evolution chain from pok.csv structure...');
 
     // 1. Find the index of the base form for the selected Pokémon's family.
     const playerIndex = allPlayers.findIndex((p) => p.name === player.name);
@@ -575,7 +564,6 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       for (let i = playerIndex; i >= 0; i--) {
         if (allPlayers[i].stage === 'base') {
           baseIndex = i;
-          console.log(`[Evo Debug] Found base form '${allPlayers[i].name}' at index ${i}.`);
           break;
         }
       }

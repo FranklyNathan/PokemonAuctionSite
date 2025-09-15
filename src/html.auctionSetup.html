@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      .sl-theme-dark sl-button[variant='neutral']::part(label) {
+        color: white;
+      }
+
+      .control-button {
+        --sl-spacing-x-small: 0; /* remove horizontal padding */
+      }
+
+      .control-button::part(base) {
+        width: 3rem;
+        height: 1rem;
+        justify-content: center;
+      }
+    </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/input/input.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/switch/switch.js"></script>
   </head>
 
   <body style="padding: 1rem">
@@ -26,9 +42,9 @@
       <p>This is an auction style draft app for Pokemon speedruns.</p>
       <p>Use the form to enter all your drafters and the available funds for each.</p>
       <p>
-        Upload a CSV file (with at least "name" and "type" headers) of the pokemon available to draft.
+        Upload a CSV file (or use the default) of the pokemon available to draft.
       </p>
-      <p>Once you've set up the auction, send the link to your league mates so they can join your auction!</p>
+      <p>Once you've set up the auction, send the link to your mates so they can join your auction!</p>
       <sl-button id="custom-auction" slot="footer" variant="primary">Got it!</sl-button>
     </sl-dialog>
     <form
@@ -38,6 +54,7 @@
       enctype="multipart/form-data"
       style="display: flex; flex-direction: column; align-items: center; padding-bottom: 2rem"
     >
+      <input id="resourceMode" name="resourceMode" type="hidden" value="false" />
       <input id="useDefaultCsv" name="useDefaultCsv" type="hidden" value="false" />
       <div
         style="
@@ -63,7 +80,7 @@
             required
             inputmode="decimal"
             pattern="[0-9]+"
-            style="padding: 1rem"
+            style="padding: 1rem; min-width: 15rem"
             class="label-no-move-input"
             size="small"
           ></sl-input>
@@ -121,6 +138,9 @@
             class="label-no-move-input"
             size="small"
           ></sl-input>
+          <div style="padding: 1rem;">
+            <sl-switch name="flashbangsEnabled">Flashbangs</sl-switch>
+          </div>
         </div>
       </div>
 
@@ -133,17 +153,22 @@
           required
           style="opacity: 0; height: 0; max-height: 0; margin-bottom: -1rem"
         />
-        <div style="display: flex; gap: 1rem">
-          <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
-            Upload Custom CSV
-          </sl-button>
-          <sl-button id="defaultCsvButton" size="small"> Use Default CSV </sl-button>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
+          <div style="display: flex; gap: 1rem">
+            <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
+              Upload Custom CSV
+            </sl-button>
+            <sl-button id="defaultCsvButton" size="small"> Use Default CSV </sl-button>
+          </div>
+          <sl-button type="submit" id="formSubmit" style="width: 100%"> Create Auction! </sl-button>
         </div>
         <div id="csvFileName" style="height: 1rem"></div>
       </div>
 
-      <sl-button type="submit" id="formSubmit" style="align-self: center; margin-top: 3rem"> Create Auction! </sl-button>
+      <sl-button id="resourceModeButton" style="align-self: center; margin-top: 3rem; width: 20rem"> Resource Mode </sl-button>
     </form>
+
+    <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" style="position: fixed; bottom: 1rem; right: 1rem;"></sl-button>
   </body>
 
   <script type="module">
@@ -152,13 +177,28 @@
     // Add the `ready` class so the UI fades in.
 
     // --- Dark Mode Logic ---
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const htmlEl = document.documentElement;
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.add('sl-theme-dark');
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+      } else {
+        htmlEl.classList.remove('sl-theme-dark');
+        darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+      }
+    }
+
     // Check for saved theme in localStorage on page load and apply it.
     const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('sl-theme-dark');
-    } else {
-      document.documentElement.classList.remove('sl-theme-dark');
-    }
+    applyTheme(savedTheme);
+
+    darkModeToggle.addEventListener('click', () => {
+      const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      applyTheme(newTheme);
+    });
     // --- End Dark Mode Logic ---
 
     document.body.classList.add('ready');
@@ -224,9 +264,14 @@
     // custom form validation
     // dynamically adding/removing inputs screws with the built in validation
     /////////////////////////
-    formEl.addEventListener('submit', () => {
+    formEl.addEventListener('submit', (event) => {
       // Prevent the default form submission initially
       event.preventDefault();
+
+      if (document.getElementById('resourceMode').value === 'true') {
+        formEl.submit();
+        return;
+      }
 
       let valid = true;
       for (const input of document.querySelectorAll('.requiredConfig')) {
@@ -254,7 +299,16 @@
     const csvFileNameEl = document.getElementById('csvFileName');
     const defaultCsvButtonEl = document.getElementById('defaultCsvButton');
     const useDefaultCsvEl = document.getElementById('useDefaultCsv');
+    const resourceModeButtonEl = document.getElementById('resourceModeButton');
+    const resourceModeEl = document.getElementById('resourceMode');
 
+    resourceModeButtonEl.addEventListener('click', () => {
+      resourceModeEl.value = 'true';
+      useDefaultCsvEl.value = 'true'; // Resource mode always uses the default CSV
+      // Bypasses validation via the submit handler
+      formEl.requestSubmit();
+    });
+    
     defaultCsvButtonEl.addEventListener('click', () => {
       csvInputEl.removeAttribute('required');
       csvInputEl.value = ''; // Clear any selected file

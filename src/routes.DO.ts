@@ -135,6 +135,9 @@ export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {
   // state
   const stateStr = `stateId: '${ctx.serverState}'`;
   auctionHtmlStr = auctionHtmlStr.replace("stateId: 'pre_auction'", stateStr);
+  // flashbangs enabled
+  const flashbangsEnabledStr = `flashbangsEnabled: ${ctx.flashbangsEnabled}`;
+  auctionHtmlStr = auctionHtmlStr.replace('flashbangsEnabled: false', flashbangsEnabledStr);
 
   return new Response(auctionHtmlStr, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
 }

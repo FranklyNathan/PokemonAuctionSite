@@ -46,6 +46,7 @@ Manectric,Electric,evo,Static,Lightning Rod,Minus,70,75,60,105,60,105,Level 26
 Mega Manectric,Electric,mega,Intimidate,,,70,75,80,135,80,135,Manectite
 Exeggcute,Grass/Psychic,base,Chlorophyll,,Harvest,60,40,80,60,45,40,
 Exeggutor,Grass/Psychic,evo,Chlorophyll,,Harvest,95,95,85,125,75,55,Leaf Stone
+Exeggutor-Alola,Grass/Dragon,evo,Frisk,,Harvest,95,105,85,125,75,45,Sun Stone
 Fennekin,Fire,base,Blaze,,Magician,40,45,40,62,60,60,
 Braixen,Fire,evo,Blaze,,Magician,59,59,58,90,70,73,Level 16
 Delphox,Fire/Psychic,evo,Blaze,,Magician,75,69,72,114,100,104,Level 36
@@ -114,6 +115,7 @@ Mega Mawile,Steel/Fairy,mega,Huge Power,,,50,105,125,55,95,50,Mawilite
 Minccino,Normal,base,Cute Charm,Technician,Skill Link,55,50,40,40,40,75,
 Cinccino,Normal,evo,Cute Charm,Technician,Skill Link,75,95,60,65,60,115,Shiny Stone
 Minior,Rock/Flying,base,Shields Down,,,60,60,100,60,100,60,
+Minior-Core,Rock/Flying,evo,Shields Down,,,60,100,60,100,60,120,Shields Down
 Morelull,Grass/Fairy,base,Illuminate,Effect Spore,Rain Dish,40,35,55,65,75,15,
 Shiinotic,Grass/Fairy,evo,Illuminate,Effect Spore,Rain Dish,60,45,80,90,100,30,Level 24
 Mudbray,Ground,base,Own Tempo,Stamina,Inner Focus,70,100,70,45,55,45,
@@ -161,6 +163,11 @@ Mega Gallade,Psychic/Fighting,mega,Inner Focus,,,68,165,95,65,115,110,Galladite
 Rockruff,Rock,base,Keen Eye,Vital Spirit,Steadfast,45,65,40,30,40,60,
 Lycanroc,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25
 Rotom,Electric/Ghost,base,Levitate,,,50,50,77,95,77,91,
+Rotom-Heat,Electric/Fire,evo,Levitate,,,50,65,107,105,107,86,Catalog
+Rotom-Wash,Electric/Water,evo,Levitate,,,50,65,107,105,107,86,Catalog
+Rotom-Mow,Electric/Grass,evo,Levitate,,,50,65,107,105,107,86,Catalog
+Rotom-Frost,Electric/Ice,evo,Levitate,,,50,65,107,105,107,86,Catalog
+Rotom-Fan,Electric/Flying,evo,Levitate,,,50,65,107,105,107,86,Catalog
 Rowlet,Grass/Flying,base,Overgrow,,Long Reach,68,55,55,50,50,42,
 Dartrix,Grass/Flying,evo,Overgrow,,Long Reach,78,75,75,70,70,52,Level 17
 Decidueye,Grass/Ghost,evo,Overgrow,,Long Reach,78,107,75,100,100,70,Level 34 at night
@@ -176,9 +183,9 @@ Scatterbug,Bug,base,Shield Dust,Compound Eyes,Friend Guard,38,35,40,27,25,35,
 Spewpa,Bug,evo,Shed Skin,,Friend Guard,45,22,60,27,30,29,Level 9
 Vivillon,Bug/Flying,evo,Shield Dust,Compound Eyes,Friend Guard,80,52,50,90,50,89,Level 12
 Scyther,Bug/Flying,base,Swarm,Technician,Steadfast,70,110,80,55,80,105,
+Kleavor,Bug/Rock,evo,Swarm,Sheer Force,Sharpness,70,135,95,45,70,85,King's Rock
 Scizor,Bug/Steel,evo,Swarm,Technician,Light Metal,70,130,100,55,80,65,Metal Coat
 Mega Scizor,Bug/Steel,mega,Technician,,,70,150,140,65,100,75,Scizorite
-Kleavor,Bug/Rock,evo,Swarm,Sheer Force,Sharpness,70,135,95,45,70,85,King's Rock
 Shellder,Water,base,Shell Armor,Skill Link,Overcoat,30,65,100,45,25,40,
 Cloyster,Water/Ice,evo,Shell Armor,Skill Link,Overcoat,50,95,180,85,45,70,Water Stone
 Shinx,Electric,base,Rivalry,Intimidate,Guts,45,65,34,40,34,45,
@@ -244,6 +251,7 @@ Ninetales-Alola,Ice/Fairy,evo,Snow Cloak,,Snow Warning,73,67,75,81,100,109,Ice S
 Wingull,Water/Flying,base,Keen Eye,Hydration,Rain Dish,40,30,30,55,30,85,
 Pelipper,Water/Flying,evo,Keen Eye,Drizzle,Rain Dish,60,50,100,95,70,65,Level 25
 Wishiwashi,Water,base,Schooling,,,45,20,20,25,25,40,
+Wishiwashi-School,Water,evo,Schooling,,,45,140,130,140,135,30,Schooling Level 20
 Wooper,Poison/Ground,base,Poison Point,Water Absorb,Unaware,55,45,45,25,25,15,
 Clodsire,Poison/Ground,evo,Poison Point,Water Absorb,Unaware,130,75,60,45,100,20,Level 20
 Zigzagoon,Dark/Normal,base,Pickup,Gluttony,Quick Feet,38,30,41,30,41,60,

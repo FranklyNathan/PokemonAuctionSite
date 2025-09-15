@@ -185,8 +185,6 @@ const cols = [
           const trimmedType = type.trim();
           // Construct the path to the icon in your assets folder
           const iconPath = `/TypeIcons/${trimmedType}IC_SV.png`;
-          // Log the path to the browser's developer console to help debug 404s
-          console.log('Requesting type icon from:', iconPath);
           // Return an img tag for each type
           return `<img src="${iconPath}" alt="${trimmedType}" title="${trimmedType}" style="height: 16px; vertical-align: middle;">`;
         })
@@ -197,14 +195,14 @@ const cols = [
   {
     field: 'pickedBy',
     headerName: 'Drafted By',
-    minWidth: 200,
+    minWidth: 130,
     filter: 'agTextColumnFilter',
     floatingFilter: true,
   },
   {
     field: 'cost',
     headerName: 'Cost',
-    minWidth: 100,
+    minWidth: 90,
     valueFormatter: (params) => (params.value ? '$' + params.value : ''),
     filter: 'agNumberColumnFilter',
     floatingFilter: true,
@@ -214,8 +212,7 @@ const cols = [
 /////////////////////////////
 // pre-results specific functions
 /////////////////////////////
-
-export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
+export function createPlayersTable(playersTableWrapperEl, ctx, playerFields, onPlayerSelected) {
   const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // add any custom columns to the table
   const currentFields = new Set(tableCols.map((c) => c.field));
@@ -240,18 +237,25 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields) {
     columnDefs: tableCols,
     rowSelection: 'single',
     floatingFiltersHeight: 40,
-    getRowId: (params) => params.data.type + params.data.name,
+    getRowId: (params) => params.data.playerId,
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },
     onRowClicked: (event) => {
-      // After the auction, allow users to click rows to see player info.
-      if (ctx.stateId === 'auction_over') {
-        console.log('[Client] Auction over. Displaying player info for:', event.data.name);
-        // This is a client-side only action to view player details.
-        // We need to find the full player object from the map to pass to the display function.
+      // After the auction, or in resource mode, allow users to click rows to see player info.
+      console.log('[Debug] onRowClicked triggered. isResourceMode:', ctx.isResourceMode, 'stateId:', ctx.stateId);
+      if (ctx.isResourceMode || ctx.stateId === 'auction_over') {
+        console.log(`[Debug] Condition met. Displaying player info for: ${event.data.name}`);
+        // This is a client-side only action to view player details. We need to find the full player object from the map.
         const fullPlayerData = ctx.playerMap.get(event.data.player_id);
-        playerSelected(fullPlayerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
+        if (fullPlayerData) {
+          console.log('[Debug] Found full player data, calling onPlayerSelected:', fullPlayerData);
+          onPlayerSelected(fullPlayerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
+        } else {
+          console.error('[Debug] Could not find full player data in playerMap for player_id:', event.data.player_id);
+        }
+      } else {
+        console.log('[Debug] Condition not met, not displaying player info.');
       }
     },
   };
@@ -363,7 +367,7 @@ function createResultsTable(playersTableWrapperEl, playersData) {
     columnDefs: cols,
     rowSelection: 'single',
     floatingFiltersHeight: 40,
-    getRowId: (params) => params.data.type + params.data.name,
+    getRowId: (params) => params.data.playerId,
     autoSizeStrategy: {
       type: 'fitGridWidth',
     },

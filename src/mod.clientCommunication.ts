@@ -85,6 +85,9 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
       }
       break;
     case 'flashbang':
+      if (!ctx.flashbangsEnabled) {
+        return sendError(ctx, `Flashbangs are disabled for this auction.`, clientId);
+      }
       if (ctx.serverState !== State.Bidding) {
         return sendError(ctx, `Flashbanging is only allowed during the bidding phase!`, clientId);
       }
@@ -97,9 +100,15 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
       if (ctx.flashbangedClientId != null) {
         return sendError(ctx, `Another player is already flashbanged.`, clientId);
       }
-      const flashbangCost = 5;
+      const flashbangCost = 1;
       if (ctx.clientMap[clientId].remainingFunds < flashbangCost) {
         return sendError(ctx, `You do not have enough funds to flashbang ($${flashbangCost} required).`, clientId);
+      }
+      // Ensure the target has more drafted players than the sender.
+      const bangerRosterCount = rosterCounts[clientId] || 0;
+      const targetRosterCount = rosterCounts[msg.targetClientId] || 0;
+      if (bangerRosterCount >= targetRosterCount) {
+        return sendError(ctx, `You can only flashbang a player with more drafted Pokémon than you.`, clientId);
       }
       break;
   }
@@ -202,7 +211,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       return; // Exit after sending the bid update.
     case ClientMessageType.Flashbang:
       if (msg.targetClientId === undefined) return sendError(ctx, 'Invalid target for flashbang.', clientId);
-      const flashbangCost = 5;
+      const flashbangCost = 1;
       ctx.clientMap[clientId].remainingFunds -= flashbangCost;
       ctx.flashbangedClientId = msg.targetClientId;
       console.log(`[Server] Client ${clientId} flashbanged client ${msg.targetClientId} for $${flashbangCost}.`);

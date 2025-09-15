@@ -24,6 +24,7 @@ export function getSerializableCtx(ctx: Ctx) {
     highestBidder: ctx.highestBidder,
     currentBid: ctx.currentBid,
     isPaused: ctx.isPaused,
+    flashbangsEnabled: ctx.flashbangsEnabled,
     remainingTimeOnPause: ctx.remainingTimeOnPause,
     clientIdIncrementer: ctx.clientIdIncrementer,
     biddingTimeLimit: ctx.biddingTimeLimit,
@@ -68,14 +69,8 @@ function startNewAuctionRound(ctx: Ctx) {
   if (randomPlayer) {
     console.log(`[Server] Selected player ID: ${randomPlayer.player_id}. Setting alarm.`);
     ctx.selectedPlayerId = randomPlayer.player_id;
-
-    // Since the bid is $0 at the start of a round, we apply the double-time rule.
-    let newTimeLimit = ctx.biddingTimeLimit;
-    if (ctx.currentBid < 10) {
-      newTimeLimit = ctx.biddingTimeLimit * 2;
-      console.log(`[Server] New round starting with bid at $0. Doubling timer to ${newTimeLimit}ms.`);
-    }
-    ctx.setAlarm(newTimeLimit);
+    // Do not set an alarm here. The timer will start when the first bid is placed.
+    console.log('[Server] New round started. Waiting for the first bid to start the timer.');
   } else {
     // If no player is found (e.g., all base pokemon are drafted), end the draft.
     console.log('[Server] No more undrafted base-form Pokémon. Ending draft.');
@@ -98,6 +93,7 @@ export async function updateClients(
     highestBidder: ctx.highestBidder,
     currentlySelectingTeam: ctx.currentlySelectingTeam,
     isPaused: ctx.isPaused,
+    flashbangsEnabled: ctx.flashbangsEnabled,
     flashbangedClientId: ctx.flashbangedClientId,
     totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     selectedPlayerId: ctx.selectedPlayerId,

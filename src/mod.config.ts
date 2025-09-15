@@ -55,6 +55,7 @@ export interface ServerMessage {
   currentBid?: number;
   highestBidder?: ClientId;
   isPaused?: boolean;
+  flashbangsEnabled?: boolean;
   flashbangedClientId?: ClientId;
   currentlySelectingTeam?: ClientId;
   totalPokemonAuctioned?: number;
@@ -95,6 +96,7 @@ export interface Ctx {
   serverState: State;
   currentlySelectingTeam?: ClientId;
   selectedPlayerId?: PlayerId;
+  flashbangsEnabled: boolean;
   isPaused: boolean;
   remainingTimeOnPause?: number;
   highestBidder?: ClientId;

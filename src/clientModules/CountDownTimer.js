@@ -26,7 +26,6 @@ export class CountDownTimer {
   }
 
   start(duration, totalDuration) {
-    console.log(`[Debug] CountDownTimer.start called with duration: ${duration}, totalDuration: ${totalDuration}.`);
     // Always allow starting, even if a previous timer was considered running.
     this.stop(); // Ensure any existing timeout is cleared before starting a new one.
     this.running = true;
@@ -39,7 +38,6 @@ export class CountDownTimer {
     // If the duration is not positive, don't start the timer loop.
     // Just run the tick functions once with 0 to signal completion.
     if (duration <= 0) {
-      console.log('[Debug] Timer duration is <= 0. Calling tick functions with 0 to signal completion and stopping.');
       that.tickFns.forEach((fn) => fn(0, that.parse(0), displayDuration));
       return;
     }
@@ -57,13 +55,11 @@ export class CountDownTimer {
       }
 
       // call each registered function
-      console.log(`[Debug] Timer tick. Remaining diff: ${diff}. Calling ${that.tickFns.length} tick functions.`);
       that.tickFns.forEach((fn) => fn(diff, that.parse(diff), displayDuration));
     })();
   }
 
   stop() {
-    console.log('[Debug] CountDownTimer.stop called.');
     if (this.timeoutId != undefined) {
       clearTimeout(this.timeoutId);
     }

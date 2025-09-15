@@ -47,7 +47,6 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
   });
 
   try {
-    console.log('[Debug] Attempting to insert processed player rows:', JSON.stringify(processedPlayerRows.slice(0, 2), null, 2)); // Log first 2 for brevity
     await createPlayersTable(ctx);
     await insertPlayers(ctx, processedPlayerRows);
   } catch (e) {
@@ -57,6 +56,21 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
 }
 
 export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response | undefined> {
+  const resourceMode = form.get('resourceMode') === 'true';
+
+  if (resourceMode) {
+    ctx.stateId = 'auction_over'; // This state enables clicking players for info
+    ctx.isResourceMode = true;
+    await ctx.storage.put('isResourceMode', true);
+    ctx.totalPokemonAuctioned = 0;
+    ctx.biddingTimeLimit = 0;
+
+    const res = await initPlayers(ctx, defaultPokCsv);
+    if (res instanceof Response) {
+      return res;
+    }
+    return; // Skip the rest of the setup
+  }
   const biddingTimeLimit = form.get('biddingTimeLimit');
   const totalPokemonAuctioned = form.get('totalPokemonAuctioned');
   if (
@@ -72,6 +86,7 @@ export async function setupAuction(ctx: Ctx, form: FormData): Promise<Response |
 
   ctx.biddingTimeLimit = +biddingTimeLimit * SECONDS;
   ctx.totalPokemonAuctioned = +totalPokemonAuctioned;
+  ctx.flashbangsEnabled = form.get('flashbangsEnabled') === 'on';
 
   // this logic started as supporting not specifying specific teams and just letting a certain number of people join
   let numTeams = 100; // default number of teams

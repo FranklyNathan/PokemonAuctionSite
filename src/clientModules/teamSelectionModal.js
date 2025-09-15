@@ -67,6 +67,12 @@ function connect(clientId, ctx) {
 }
 
 export function initTeamSelection(ctx) {
+  // In resource mode (or if no teams are configured for any other reason),
+  // there are no teams to select, so we should not show the dialog.
+  if (ctx.isResourceMode || Object.keys(ctx.teams).length === 0) {
+    return;
+  }
+
   const dialogContentEl = document.getElementById('dialogContent');
   const teamSelectionDialogEl = document.getElementById('teamSelectionDialog');
 
@@ -119,7 +125,7 @@ export function initTeamSelection(ctx) {
     });
 
   // check if all players are already connected
-  let allTeamsConnected = Object.values(ctx.teams).every((t) => t.connected);
+  let allTeamsConnected = Object.keys(ctx.teams).length > 0 && Object.values(ctx.teams).every((t) => t.connected);
   if (allTeamsConnected) {
     showNoTeamsDialog();
     return;
