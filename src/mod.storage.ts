@@ -66,6 +66,20 @@ export function getTeamRosterCount(ctx: Ctx, clientId: ClientId): number {
     .count?.valueOf() as number;
 }
 
+export function getTeamRoster(ctx: Ctx, clientId: ClientId): any[] {
+  const results = ctx.sql
+    .exec(`SELECT player_data FROM players WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') = ${clientId}`)
+    .toArray();
+
+  if (results.length > 0) {
+    // The player_data is a JSON string, so we need to parse it.
+    return results.map((row) => {
+      return JSON.parse(row.player_data as string);
+    });
+  }
+  return [];
+}
+
 export function getPlayerDraftedById(ctx: Ctx, playerId: number): Array<number | null> {
   return ctx.sql
     .exec(`SELECT JSON_EXTRACT(player_data, '$.drafted_by_id') as drafted_by_id FROM players WHERE player_id = ${playerId}`)

@@ -1,9 +1,9 @@
 import { Ctx, ClientId, ServerMessageType, State, Player } from './mod.config';
 import { updateClients, isValidNumber } from './mod.helpers';
-import { setupAuction, initPlayers } from './mod.auctionSetup';
+import { setupAuction } from './mod.auctionSetup';
 
 import auctionHtml from './html.auction.html';
-import { getPlayersJsonString, getResultsJsonString } from './mod.storage';
+import { getPlayersJsonString, getResultsJsonString, getTeamRoster } from './mod.storage';
 
 async function setupWebSocket(ctx: Ctx, state: DurableObjectState, ws: WebSocket, clientId: ClientId) {
   if (ctx.clientMap[clientId] == undefined) {
@@ -121,8 +121,10 @@ export async function handleAuction(req: Request, ctx: Ctx): Promise<Response> {
     ctx.draftOrder.map((clientId, idx) => {
       // Create a new inner object without the key to be removed
       const { ws: _, ...newClient } = ctx.clientMap[clientId];
-      (newClient as any).draftPosition = idx; // add the draft position to the team
-      return [clientId, newClient];
+      const teamWithDetails: any = { ...newClient };
+      teamWithDetails.draftPosition = idx; // add the draft position to the team
+      teamWithDetails.roster = getTeamRoster(ctx, clientId); // Add the full roster
+      return [clientId, teamWithDetails];
     }),
   );
 

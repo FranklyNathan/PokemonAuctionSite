@@ -63,6 +63,12 @@ function recordDraft(ctx) {
   selectedPlayer.pickedBy = ctx.teams[ctx.highestBidder].teamName;
   selectedPlayer.cost = ctx.currentBid;
 
+  // Add the drafted player to the team's roster in the client-side context.
+  if (!ctx.teams[ctx.highestBidder].roster) {
+    ctx.teams[ctx.highestBidder].roster = [];
+  }
+  ctx.teams[ctx.highestBidder].roster.push(selectedPlayer);
+
   addDraftLog(ctx.teams[ctx.highestBidder].teamName, ctx.currentBid, selectedPlayer.name);
   console.log(`[Debug] Attempting to add mini-sprite for player '${selectedPlayer.name}' to winner card for client ID: ${ctx.highestBidder}`);
   // Add the mini sprite to the winning team's card

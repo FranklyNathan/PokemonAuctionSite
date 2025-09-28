@@ -187,7 +187,7 @@ export function addDraftLog(teamName, cost, playerName) {
     'afterBegin',
     `<div class="draft-item new-draft" style="display: flex; font-family: inherit; padding: 0 0.4rem">
       <span style="display: inline-block; flex: 3; font-family: inherit">${teamName}</span>
-      <span style="display: inline-block; flex: 1; font-family: inherit">$${cost}</span>
+      <span style="display: inline-block; flex: 1.5; font-family: inherit; text-align: center;">$${cost}</span>
       <span style="display: inline-block; flex: 4; font-family: inherit">${playerName}</span>
     </div>`,
   );
@@ -248,24 +248,24 @@ export function hideSelectedPlayerCard(teamName) {
 }
 
 export function disableRaiseButtons() {
-  document.getElementById('raise1').setAttribute('disabled', '1');
-  document.getElementById('raise5').setAttribute('disabled', '1');
-  document.getElementById('raise10').setAttribute('disabled', '1');
+  document.getElementById('raise100').setAttribute('disabled', '1');
+  document.getElementById('raise500').setAttribute('disabled', '1');
+  document.getElementById('raise1000').setAttribute('disabled', '1');
   document.getElementById('raise').setAttribute('disabled', '1');
-  document.getElementById('raise1').classList.remove('hover');
-  document.getElementById('raise5').classList.remove('hover');
-  document.getElementById('raise10').classList.remove('hover');
+  document.getElementById('raise100').classList.remove('hover');
+  document.getElementById('raise500').classList.remove('hover');
+  document.getElementById('raise1000').classList.remove('hover');
   document.getElementById('raise').classList.remove('hover');
 }
 
 export function enableRaiseButtons() {
-  document.getElementById('raise1').removeAttribute('disabled');
-  document.getElementById('raise5').removeAttribute('disabled');
-  document.getElementById('raise10').removeAttribute('disabled');
+  document.getElementById('raise100').removeAttribute('disabled');
+  document.getElementById('raise500').removeAttribute('disabled');
+  document.getElementById('raise1000').removeAttribute('disabled');
   document.getElementById('raise').removeAttribute('disabled');
-  document.getElementById('raise1').classList.add('hover');
-  document.getElementById('raise5').classList.add('hover');
-  document.getElementById('raise10').classList.add('hover');
+  document.getElementById('raise100').classList.add('hover');
+  document.getElementById('raise500').classList.add('hover');
+  document.getElementById('raise1000').classList.add('hover');
   document.getElementById('raise').classList.add('hover');
 }
 

@@ -154,9 +154,9 @@
                   background-color: var(--container-bg-color);
                 "
               >
-                <sl-button id="raise1" disabled value="1" class="bet fixed-bet" style="width: 5.5rem"> ▲ $1 </sl-button>
-                <sl-button id="raise5" disabled value="5" class="bet fixed-bet" style="width: 5.5rem"> ▲ $5 </sl-button>
-                <sl-button id="raise10" disabled value="10" class="bet fixed-bet" style="width: 5.5rem"> ▲ $10 </sl-button>
+                <sl-button id="raise100" disabled value="100" class="bet fixed-bet" style="width: 5.5rem"> ▲ $100 </sl-button>
+                <sl-button id="raise500" disabled value="500" class="bet fixed-bet" style="width: 5.5rem"> ▲ $500 </sl-button>
+                <sl-button id="raise1000" disabled value="1000" class="bet fixed-bet" style="width: 5.5rem"> ▲ $1000 </sl-button>
               </div>
               <div style="display: flex; margin-top: 2rem; justify-content: center; gap: 1rem">
                 <sl-input
@@ -308,7 +308,7 @@
     // module imports
     import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
     import { CountDownTimer } from '/clientModules/CountDownTimer.js';
-    import { playerSelected } from '/clientModules/clientActions.js';
+    import { addPlayerIconToTeamCard } from '/clientModules/html.js';
     import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
     import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
     import { loadPlayersData, setupResourceModeKeyboardNav } from '/clientModules/playersTable.js';
@@ -323,6 +323,7 @@
       //   connected: boolean;
       //   ready: boolean;  // team has selected they are ready to start the auction
       //   rosterCount: number;
+      //   roster: Player[];
       // }
       // the actual teams map is injected into this HTML by the server, replacing the string replace target below
       teams: {}, // this is the target for a string replace server side
@@ -427,6 +428,20 @@
       return speciesInfoMap;
     }
 
+    /**
+     * Populates the drafted player icons on each team card based on the initial data.
+     * This is necessary for clients who join or refresh mid-auction.
+     */
+    function populateInitialDraftIcons(ctx) {
+      console.log('[Init] Populating initial draft icons for all teams.');
+      for (const team of Object.values(ctx.teams)) {
+        if (team.roster && Array.isArray(team.roster)) {
+          console.log(`[Init] Found ${team.roster.length} players for team ${team.teamName}.`);
+          team.roster.forEach((player) => addPlayerIconToTeamCard(team.clientId, player.name));
+        }
+      }
+    }
+
     async function main() {
       setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
 
@@ -520,6 +535,9 @@
       // Now that data is loaded, initialize the interactive components like the team selection dialog.
       initTeamSelection(ctx);
       initBidButtonListeners(ctx);
+
+      // Populate icons for players who were already drafted before this client joined.
+      populateInitialDraftIcons(ctx);
 
       document.getElementById('refreshButton').addEventListener('click', (e) => location.reload());
       document.getElementById('refreshButton2').addEventListener('click', (e) => location.reload());

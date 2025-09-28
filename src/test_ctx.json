@@ -4,8 +4,8 @@
       "clientId": 0,
       "ws": null,
       "teamName": "Fisher",
-      "initialFunds": 200,
-      "remainingFunds": 200,
+      "initialFunds": 20000,
+      "remainingFunds": 20000,
       "ready": false,
       "connected": false
     },
