@@ -399,8 +399,9 @@ export function setupResourceModeKeyboardNav(ctx) {
 
 function createResultsTable(playersTableWrapperEl, playersData) {
   console.log('[Debug] createResultsTable: Starting table creation.');
+  const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // we are in the post auction, add column indicating drafted or keeper
-  cols.push({
+  tableCols.push({
     field: 'keeper',
     headerName: 'Keeper',
     cellDataType: 'boolean',
@@ -417,7 +418,7 @@ function createResultsTable(playersTableWrapperEl, playersData) {
 
   const playerTableOptions = {
     rowData: playersData,
-    columnDefs: cols,
+    columnDefs: tableCols,
     rowSelection: 'single',
     floatingFiltersHeight: 40,
     getRowId: (params) => params.data.playerId,

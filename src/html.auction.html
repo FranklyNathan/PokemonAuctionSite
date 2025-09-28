@@ -66,8 +66,8 @@
 
   <body>
     <div style="display: flex; flex-direction: column; height: 100%; padding: 1rem; overflow-x: auto; overflow-y: hidden">
-      <!-- Top section with teams -->
-      <div id="teams-section-wrapper" style="width: 100%; display: flex; background-color: var(--container-bg-color); border: 1px solid black; padding: 0.2rem">
+      <!-- Top section with teams. flex-shrink: 0 prevents this container from shrinking when its content changes. -->
+      <div id="teams-section-wrapper" style="width: 100%; display: flex; background-color: var(--container-bg-color); border: 1px solid black; padding: 0.2rem; flex-shrink: 0;">
         <div
           id="teamsSection"
           style="

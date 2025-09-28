@@ -186,9 +186,9 @@ export function addDraftLog(teamName, cost, playerName) {
   log.insertAdjacentHTML(
     'afterBegin',
     `<div class="draft-item new-draft" style="display: flex; font-family: inherit; padding: 0 0.4rem">
-      <span style="display: inline-block; flex: 3; font-family: inherit">${teamName}</span>
-      <span style="display: inline-block; flex: 2; font-family: inherit; text-align: center;">$${cost}</span>
-      <span style="display: inline-block; flex: 3; font-family: inherit">${playerName}</span>
+      <span style="display: inline-block; flex: 2; font-family: inherit; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${teamName}</span>
+      <span style="display: inline-block; flex: 1; font-family: inherit; text-align: left; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">$${cost}</span>
+      <span style="display: inline-block; flex: 2; font-family: inherit; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${playerName}</span>
     </div>`,
   );
   // remove the `new-draft` class (green background) so the color fades out
