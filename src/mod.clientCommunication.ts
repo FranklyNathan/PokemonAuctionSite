@@ -204,13 +204,9 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       if (ctx.currentBid < 1500) {
         newTimeLimit = ctx.biddingTimeLimit * 2;
         console.log(`[Server] Bid is under $1500. Doubling timer to ${newTimeLimit}ms.`);
-      } else if (ctx.currentBid > 4000) {
-        newTimeLimit = ctx.biddingTimeLimit / 1.5;
-        console.log(`[Server] Bid is over $4000. Halving timer to ${newTimeLimit}ms.`);
       } else {
-        console.log(`[Server] Bid is between $1500 and $4000. Using standard timer of ${newTimeLimit}ms.`);
+        console.log(`[Server] Bid is over  $1500. Using standard timer of ${newTimeLimit}ms.`);
       }
-      console.log(`[Server] Setting alarm for ${newTimeLimit}ms.`);
       ctx.setAlarm(newTimeLimit);
       await updateClients(ctx, true, true);
       return; // Exit after sending the bid update.

@@ -96,7 +96,7 @@
               <img id="pokemon-image" src="" alt="" style="display: none; max-height: 80%; max-width: 100%; object-fit: contain;" />
               <div id="pokemon-image-types" style="display: flex; gap: 0.2rem;"></div>
             </div>
-            <div id="evolution-info-container" style="display: none; flex: 2; text-align: left; overflow: auto; font-size: 0.9rem; margin: 0; gap: 0.5rem; flex-direction: column;"></div>
+            <div id="evolution-info-container" style="display: none; width: 450px; text-align: left; overflow: auto; font-size: 0.9rem; margin: 0; gap: 0.5rem; flex-direction: column; flex-shrink: 0;"></div>
           </div>
           <!-- Player list -->
           <div id="players-table-wrapper" style="height: 100%; width: 100%" class="ag-theme-balham"></div>
@@ -227,6 +227,12 @@
         All teams have already connected to this auction. If someone took your spot, call them and give them an earful.
         <sl-button id="refreshButton2" slot="footer" variant="primary">Reload</sl-button>
       </div>
+    </sl-dialog>
+
+    <sl-dialog id="bidConfirmationDialog" label="Confirm High Bid">
+      <div id="bidConfirmationMessage"></div>
+      <sl-button id="confirmBidButton" slot="footer" variant="primary">Confirm</sl-button>
+      <sl-button id="cancelBidButton" slot="footer">Cancel</sl-button>
     </sl-dialog>
 
     <div id="flashbang-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.95); color: white; justify-content: center; align-items: center; z-index: 9999; font-size: 2rem; text-align: center;"></div>

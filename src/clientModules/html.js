@@ -349,6 +349,51 @@ export function isValidNumber(s) {
   return !isNaN(+s) && !isNaN(parseFloat(s));
 }
 
+function sendBid(ctx, bid, originalEventTarget) {
+  ctx.ws.send(
+    JSON.stringify({
+      type: 'bid',
+      stateId: ctx.stateId,
+      bid: bid,
+      selectedPlayerId: ctx.selectedPlayerId,
+      message: 'Player selected',
+    }),
+  );
+
+  // Optimistically disable buttons to prevent double-bidding or race conditions.
+  console.log('[Client Bid] Optimistically disabling buttons after sending bid.');
+  disableRaiseButtons();
+
+  // remove focus from the button so keyboard doesn't trigger an accidental bid
+  if (originalEventTarget) originalEventTarget.blur();
+}
+
+function handleBid(ctx, bid, originalEventTarget) {
+  // Show confirmation if the bid raises the current value by more than 3000.
+  if (bid - ctx.currentBid > 2400) {
+    console.log(`[Client Bid] Bid raise > 2400 (${bid - ctx.currentBid}). Showing confirmation dialog.`);
+    const dialog = document.getElementById('bidConfirmationDialog');
+    const confirmBtn = document.getElementById('confirmBidButton');
+    const cancelBtn = document.getElementById('cancelBidButton');
+    const messageEl = document.getElementById('bidConfirmationMessage');
+
+    messageEl.textContent = `Whoa, that's a big raise! You want to bid $${bid}?`;
+
+    const onConfirm = () => {
+      sendBid(ctx, bid, originalEventTarget);
+      dialog.hide();
+    };
+
+    // Use { once: true } to automatically remove the listeners after they're invoked.
+    confirmBtn.addEventListener('click', onConfirm, { once: true });
+    cancelBtn.addEventListener('click', () => dialog.hide(), { once: true });
+
+    dialog.show();
+  } else {
+    sendBid(ctx, bid, originalEventTarget);
+  }
+}
+
 export function initBidButtonListeners(ctx) {
   function onClick(e) {
     if (ctx.isPaused) return; // Do not allow bidding when paused
@@ -361,22 +406,7 @@ export function initBidButtonListeners(ctx) {
       bid = ctx.currentBid + bid;
     }
 
-    ctx.ws.send(
-      JSON.stringify({
-        type: 'bid',
-        stateId: ctx.stateId,
-        bid: bid,
-        selectedPlayerId: ctx.selectedPlayerId,
-        message: 'Player selected',
-      }),
-    );
-
-    // Optimistically disable buttons to prevent double-bidding or race conditions.
-    console.log('[Client Bid] Optimistically disabling buttons after sending bid.');
-    disableRaiseButtons();
-
-    // remove focus from the button so keyboard doesn't trigger an accidental bid
-    e.target.blur();
+    handleBid(ctx, bid, e.target);
   }
   document.querySelectorAll('sl-button.fixed-bet').forEach((el) => el.addEventListener('click', onClick));
 
@@ -385,29 +415,15 @@ export function initBidButtonListeners(ctx) {
     if (ctx.isPaused) return; // Do not allow bidding when paused
     if (e.target.hasAttribute('disabled')) return;
     const raiseInputEl = document.getElementById('raise-input');
-    if (ctx.selectedPlayerId == undefined || e.target.value == undefined || raiseInputEl == undefined) return;
+    if (ctx.selectedPlayerId == undefined || raiseInputEl == undefined) return;
     const bid = raiseInputEl.value;
     if (!isValidNumber(bid)) return;
     if (+bid % 100 !== 0) {
       toast('Invalid Bid', 'Bid must be a multiple of 100.', 'warning');
       return;
     }
-    ctx.ws.send(
-      JSON.stringify({
-        type: 'bid',
-        stateId: ctx.stateId,
-        bid: +bid,
-        selectedPlayerId: ctx.selectedPlayerId,
-        message: 'Player selected',
-      }),
-    );
 
-    // Optimistically disable buttons to prevent double-bidding or race conditions.
-    console.log('[Client Bid] Optimistically disabling buttons after sending custom bid.');
-    disableRaiseButtons();
-
-    // remove focus from the button so keyboard doesn't trigger an accidental bid
-    e.target.blur();
+    handleBid(ctx, +bid, e.target);
   });
 }
 
