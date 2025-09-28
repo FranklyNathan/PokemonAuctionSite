@@ -58,6 +58,11 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         return sendError(ctx, `The bid must be greater than zero! Got ${msg.bid}`, clientId);
       }
 
+      // bid must be a multiple of 100
+      if (msg.bid % 100 !== 0) {
+        return sendError(ctx, `Bid must be a multiple of 100. Got ${msg.bid}`, clientId);
+      }
+
       // the bid cannot be greater than the teams remaining funds in any state
       if (msg.bid > ctx.clientMap[clientId].remainingFunds) {
         return sendError(

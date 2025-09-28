@@ -105,13 +105,12 @@
         <div id="right-panel" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; height: 100%">
           <div
             style="
-              flex: 6;
+              flex: 5;
               flex-shrink: 0;
               position: relative;
               background-color: var(--container-bg-color);
               border: 1px solid black;
-              padding-top: 4rem;
-              padding-bottom: 1rem;
+              padding: 4rem 0 1rem 0;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
@@ -146,25 +145,21 @@
                   display: flex;
                   width: 100%;
                   justify-content: center;
-                  gap: 2px;
-                  border: 1px solid black;
+                  gap: 1rem;
                   border-radius: 0;
                   padding-top: 1rem;
                   padding-bottom: 1rem;
                   background-color: var(--container-bg-color);
+                  align-items: center;
                 "
               >
                 <sl-button id="raise100" disabled value="100" class="bet fixed-bet" style="width: 5.5rem"> ▲ $100 </sl-button>
-                <sl-button id="raise500" disabled value="500" class="bet fixed-bet" style="width: 5.5rem"> ▲ $500 </sl-button>
-                <sl-button id="raise1000" disabled value="1000" class="bet fixed-bet" style="width: 5.5rem"> ▲ $1000 </sl-button>
-              </div>
-              <div style="display: flex; margin-top: 2rem; justify-content: center; gap: 1rem">
                 <sl-input
                   id="raise-input"
                   type="number"
                   style="width: 7rem; box-shadow: var(--input-shadow-color) 0.15rem 0.15rem"
-                  min="1"
-                  step="1"
+                  min="100"
+                  step="100"
                   inputmode="decimal"
                 ></sl-input>
                 <sl-button id="raise" disabled class="bet"> Custom Bid </sl-button>
@@ -176,8 +171,8 @@
             style="
               position: relative;
               width: 100%;
-              flex: 1;
-              max-height: 6rem;
+              flex: 2;
+              max-height: 10rem;
               overflow: hidden;
               border: 1px solid black;
               border-radius: 0;
@@ -189,7 +184,7 @@
               style="
                 display: flex;
                 flex-direction: column;
-                max-height: 5rem;
+                max-height: 9rem;
                 padding: 0.4rem 0;
                 gap: 0.5rem;
                 width: 100%;
