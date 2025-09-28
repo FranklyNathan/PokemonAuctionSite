@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Battles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <style>
+        body {
+            font-family: monospace, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .sl-theme-dark body {
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+        }
+        h1 {
+            color: #444;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .sl-theme-dark h1 {
+            color: #ccc;
+        }
+        .sl-theme-dark pre {
+            background-color: #1e1e1e;
+            border: 1px solid #444;
+        }
+        .trainer-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ccc;
+        }
+        .sl-theme-dark .trainer-section {
+            border-bottom-color: #444;
+        }
+        .pokemon-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+        .pokemon-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .sl-theme-dark .pokemon-container span {
+            color: #f0f0f0;
+        }
+        .pokemon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .move-link {
+            color: inherit;
+            text-decoration: none;
+        }
+        .control-button {
+          --sl-spacing-x-small: 0; /* remove horizontal padding */
+        }
+
+        .control-button::part(base) {
+          width: 3rem;
+          height: 1rem;
+          justify-content: center;
+        }
+        .sl-theme-dark sl-button[variant='neutral']::part(label) {
+          color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Boss Battles</h1>
+        <sl-button onclick="window.location.href='/'">
+            <sl-icon slot="prefix" name="house-fill"></sl-icon>
+            Home
+        </sl-button>
+    </div>
+    <pre id="boss-battles-content">Loading...</pre>
+
+    <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" style="position: fixed; bottom: 1rem; right: 1rem;"></sl-button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAndDisplayBosses();
+        });
+
+        const trainerTypeColors = {
+            'ROXANNE': '#B8A038',   // Rock
+            'BRAWLY': '#C03028',    // Fighting
+            'WATTSON': '#F8D030',   // Electric
+            'FLANNERY': '#F08030',  // Fire
+            'NORMAN': '#A8A875',    // Normal
+            'WINONA': '#A890F0',    // Flying
+            'TATE&LIZA': '#705898', // Psychic
+            'JUAN': '#6890F0',      // Water
+            'JUAN&WALCE': '#6890F0', // Water
+            'SIDNEY': '#705848',    // Dark
+            'PHOEBE': '#705898',    // Ghost
+            'GLACIA': '#98D8D8',    // Ice
+            'DRAKE': '#7038F8',     // Dragon
+            'STEVEN': '#B8B8D0',    // Steel
+            'SPENSER': '#78C850',   // Grass
+            'LUCY': '#A040A0',      // Poison
+            'TUCKER': '#EE99AC',    // Fairy
+            'BRANDON': '#E0C068',   // Ground
+        };
+
+        async function fetchAndDisplayBosses() {
+            try {
+                const response = await fetch('/assets/gyms.txt');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text(); // Note: 'Name:' is intentionally not in this list so we can read it for the color.
+                const prefixesToIgnore = ['Class:', 'Pic:', 'Gender:', 'Music:', 'Double Battle:', 'IVs:', 'AI:', 'Mugshot:'];
+                const contentEl = document.getElementById('boss-battles-content');
+                contentEl.innerHTML = ''; // Clear "Loading..." and remove <pre> styling
+
+                const trainerSections = text.split('=== TRAINER_').slice(1); // Split by trainer, discard anything before the first
+
+                trainerSections.forEach(section => {
+                    const trainerContainer = document.createElement('div');
+                    trainerContainer.className = 'trainer-section';
+
+                    const pokemonRow = document.createElement('div');
+                    pokemonRow.className = 'pokemon-row';
+
+                    const lines = section.split('\n');
+
+                    // Find the 'Name:' line to get the key for the color map.
+                    const nameLine = lines.find(line => line.trim().startsWith('Name:'));
+                    if (nameLine) {
+                        const trainerNameForKey = nameLine.split(':')[1].trim();
+                        if (trainerTypeColors[trainerNameForKey]) {
+                            const color = trainerTypeColors[trainerNameForKey];
+                            trainerContainer.style.borderBottomColor = color;
+                        }
+                    }
+
+                    let trainerIdLine = lines[0].trim().replace(/_/g, ' ').replace(/===/g, '').trim();
+                    if (trainerIdLine.startsWith('JUAN')) {
+                        trainerIdLine = trainerIdLine.replace('JUAN', 'Juan and Wallace');
+                    } else {
+                        // Convert all-caps names to title case, handling multiple words.
+                        trainerIdLine = trainerIdLine
+                            .split(' ')
+                            .map(word => {
+                                if (/^[A-Z&]+$/.test(word)) { // Check if the word is all-caps
+                                    if (word.toLowerCase() === 'and') return 'and';
+                                    return word.charAt(0) + word.slice(1).toLowerCase();
+                                }
+                                return word; // Keep numbers or other parts as they are
+                            }).join(' ');
+                    }
+
+                    const trainerHeader = document.createElement('h2');
+                    trainerHeader.textContent = trainerIdLine;
+                    trainerContainer.appendChild(trainerHeader);
+
+                    let currentPokemonCard = null;
+
+                    function renderPokemonCard() {
+                        if (currentPokemonCard) {
+                            pokemonRow.appendChild(currentPokemonCard);
+                            currentPokemonCard = null;
+                        }
+                    }
+
+                    for (const line of lines.slice(1)) {
+                        const trimmedLine = line.trim();
+
+                        if (trimmedLine === '' || trimmedLine.startsWith('Name:') || prefixesToIgnore.some(p => trimmedLine.startsWith(p))) {
+                            if (trimmedLine === '') renderPokemonCard(); // Blank line signals end of a pokemon
+                            continue;
+                        }
+
+                        const nonPokemonPrefixes = ['Name:', 'Items:', 'Level:', 'Nature:', 'Ability:', '-'];
+                        const isPokemonLine = trimmedLine.length > 0 && !nonPokemonPrefixes.some(p => trimmedLine.startsWith(p));
+
+                        if (isPokemonLine) {
+                            renderPokemonCard(); // Render previous card before starting a new one
+                            currentPokemonCard = document.createElement('div');
+                            currentPokemonCard.className = 'pokemon-card';
+
+                            const [pokemonNamePart, itemPart] = trimmedLine.split('@');
+                            const pokemonName = pokemonNamePart.trim();
+
+                            const imageName = pokemonName
+                                .toLowerCase()
+                                .replace(/ /g, '-')
+                                .replace(/[.'’]/g, '')
+                                .replace(/♀/g, '-f')
+                                .replace(/♂/g, '-m')
+                                .replace(/-hisui$/, '-hisuian')
+                                .replace(/-galar$/, '-galarian')
+                                .replace(/-alola$/, '-alolan');
+
+                            const imageUrl = `https://img.pokemondb.net/sprites/home/normal/${imageName}.png`;
+                            let content = `<img src="${imageUrl}" alt="${pokemonName}" title="${pokemonName}" style="width: 90px; height: 90px;">`;
+                            if (itemPart) {
+                                content += `<span>${itemPart.trim()}</span>`;
+                            } else {
+                                content += `<span>&nbsp;</span>`;
+                            }
+                            currentPokemonCard.innerHTML = content;
+                        } else if (currentPokemonCard) {
+                            const infoEl = document.createElement('div');
+                            if (trimmedLine.startsWith('-')) {
+                                const moveName = trimmedLine.substring(1).trim();
+                                const moveUrlName = moveName.toLowerCase().replace(/ /g, '-');
+                                const url = `https://pokemondb.net/move/${moveUrlName}`;
+                                infoEl.innerHTML = `- <a href="${url}" target="_blank" rel="noopener noreferrer" class="move-link">${moveName}</a>`;
+                            } else if (trimmedLine.startsWith('Ability:')) {
+                                const abilityName = trimmedLine.split(':')[1].trim();
+                                const abilityUrlName = abilityName.toLowerCase().replace(/ /g, '-');
+                                const url = `https://pokemondb.net/ability/${abilityUrlName}`;
+                                infoEl.innerHTML = `Ability: <a href="${url}" target="_blank" rel="noopener noreferrer" class="move-link">${abilityName}</a>`;
+                            } else {
+                                infoEl.textContent = trimmedLine;
+                            }
+                            currentPokemonCard.appendChild(infoEl);
+                        } else { // Trainer-level info
+                            const trainerInfoEl = document.createElement('div');
+                            trainerInfoEl.textContent = trimmedLine;
+                            trainerContainer.appendChild(trainerInfoEl);
+                        }
+                    }
+                    renderPokemonCard(); // Render the last pokemon card for the trainer
+                    trainerContainer.appendChild(pokemonRow);
+                    contentEl.appendChild(trainerContainer);
+                });
+            } catch (error) {
+                document.getElementById('boss-battles-content').textContent = `Error loading boss battles: ${error.message}`;
+                console.error('Failed to fetch and display boss battles:', error);
+            }
+        }
+    </script>
+
+    <script>
+        // --- Dark Mode Logic ---
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const htmlEl = document.documentElement;
+
+        function applyTheme(theme) {
+        if (theme === 'dark') {
+            htmlEl.classList.add('sl-theme-dark');
+            darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+        } else {
+            htmlEl.classList.remove('sl-theme-dark');
+            darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+        }
+        }
+
+        // Check for saved theme in localStorage on page load and apply it.
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        darkModeToggle.addEventListener('click', () => {
+            const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+    </script>
+</body>
+</html>

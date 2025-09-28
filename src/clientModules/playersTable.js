@@ -162,7 +162,7 @@ const cols = [
       return `
         <span style="display: flex; align-items: center; height: 100%;">
           <div style="width: 32px; display: flex; justify-content: center; align-items: center; margin-right: 8px; flex-shrink: 0;">
-            <img src="${iconPath}" alt="${pokemonName}" title="${pokemonName}" style="max-height: 24px; max-width: 24px;">
+            <img src="${iconPath}" alt="${pokemonName}" title="${pokemonName}" style="max-height: 24px; max-width: 24px;" loading="lazy" decoding="async">
           </div>
           <span>${pokemonName}</span>
         </span>
@@ -216,8 +216,15 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields, onP
   const tableCols = [...cols]; // Create a local copy to avoid modifying the global `cols` array.
   // add any custom columns to the table
   const currentFields = new Set(tableCols.map((c) => c.field));
-  currentFields.add('playerId').add('player_id').add('keeper').add('stage').add('evolution_method').add('drafted_by_id'); // don't add these to the table
-  // find the extra stats fields that were added and save them to the Ctx
+  currentFields
+    .add('playerId')
+    .add('player_id')
+    .add('keeper')
+    .add('stage')
+    .add('evolution_method')
+    .add('drafted_by_id')
+    .add('hp')
+    .add('attack').add('defense').add('sp_attack').add('sp_defense').add('speed');  // find the extra stats fields that were added and save them to the Ctx
   ctx.extraPlayerStatsFields = playerFields.filter((fieldId) => !currentFields.has(fieldId));
   // add extra stats fields to the table
   ctx.extraPlayerStatsFields.forEach((fieldId) => {
@@ -338,6 +345,52 @@ export async function loadPlayersData(ctx) {
   // create the players table
   const playerFields = basePokemon.length > 0 ? Object.keys(basePokemon[0]) : [];
   ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields, playerSelected);
+}
+
+export function setupResourceModeKeyboardNav(ctx) {
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
+      return;
+    }
+    event.preventDefault();
+
+    const gridApi = ctx.playersTable;
+    if (!gridApi) return;
+
+    const selectedNodes = gridApi.getSelectedNodes();
+    const totalRows = gridApi.getDisplayedRowCount();
+    let currentIndex = -1;
+
+    if (selectedNodes.length > 0) {
+      currentIndex = selectedNodes[0].rowIndex;
+    }
+
+    let nextIndex;
+    if (event.key === 'ArrowDown') {
+      nextIndex = currentIndex < totalRows - 1 ? currentIndex + 1 : totalRows - 1;
+    } else {
+      // ArrowUp
+      nextIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    }
+
+    // If no row was selected, start from the top on ArrowDown or bottom on ArrowUp
+    if (currentIndex === -1) {
+      nextIndex = event.key === 'ArrowDown' ? 0 : totalRows - 1;
+    }
+
+    const nextNode = gridApi.getDisplayedRowAtIndex(nextIndex);
+    if (nextNode) {
+      gridApi.deselectAll();
+      nextNode.setSelected(true, true);
+      gridApi.ensureNodeVisible(nextNode, 'middle');
+
+      // Trigger the player info update, just like onRowClicked
+      const fullPlayerData = ctx.playerMap.get(nextNode.data.player_id);
+      if (fullPlayerData) {
+        playerSelected(fullPlayerData, ctx.speciesInfoMap, ctx.allPlayersUnsorted);
+      }
+    }
+  });
 }
 
 /////////////////////////////

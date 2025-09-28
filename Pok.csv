@@ -1,8 +1,8 @@
 name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp_attack,sp_defense,speed,evolution_method
 Applin,Grass/Dragon,base,Ripen,Gluttony,Bulletproof,40,40,80,40,40,20,
-Flapple,Grass/Dragon,evo,Ripen,Gluttony,Hustle,70,110,80,95,60,70,+Fortree
-Appletun,Grass/Dragon,evo,Ripen,Gluttony,Thick Fat,110,85,80,100,80,30,+Lavaridge
-Dipplin,Grass/Dragon,evo,Supersweet Syrup,Gluttony,Sticky Hold,80,80,110,95,80,40,+Rustboro
+Flapple,Grass/Dragon,evo,Ripen,Gluttony,Hustle,70,110,80,95,60,70,Level up in Fortree
+Appletun,Grass/Dragon,evo,Ripen,Gluttony,Thick Fat,110,85,80,100,80,30,Level up in Lavaridge
+Dipplin,Grass/Dragon,evo,Supersweet Syrup,Gluttony,Sticky Hold,80,80,110,95,80,40,Level up in Rustboro
 Hydrapple,Grass/Dragon,evo,Supersweet Syrup,Regenerator,Sticky Hold,106,80,110,120,80,44,Level 42
 Aron,Steel/Rock,base,Sturdy,Rock Head,Heavy Metal,50,70,100,40,40,30,
 Lairon,Steel/Rock,evo,Sturdy,Rock Head,Heavy Metal,60,90,140,50,50,40,Level 32
@@ -15,10 +15,10 @@ Mega Salamence,Dragon/Flying,mega,Aerilate,,,95,145,130,120,90,120,Salamencite
 Buizel,Water,base,Swift Swim,,Water Veil,55,65,35,60,30,85,
 Floatzel,Water,evo,Swift Swim,,Water Veil,85,105,55,85,50,115,Level 26
 Buneary,Normal,base,Run Away,Klutz,Limber,55,66,44,44,56,85,
-Lopunny,Normal,evo,Cute Charm,Klutz,Limber,65,76,84,54,96,105,Level 20
+Lopunny,Normal,evo,Cute Charm,Klutz,Limber,65,76,84,54,96,105,Soothe Bell
 Mega Lopunny,Normal/Fighting,mega,Scrappy,,,65,136,94,54,96,135,Lopunnite
 Bunnelby,Normal,base,Pickup,Cheek Pouch,Huge Power,38,36,38,32,36,57,
-Diggersby,Normal/Ground,evo,Pickup,Cheek Pouch,Huge Power,85,56,77,50,77,78,Soothe Bell
+Diggersby,Normal/Ground,evo,Pickup,Cheek Pouch,Huge Power,85,56,77,50,77,78,Level 20
 Cacnea,Grass,base,Sand Veil,,Water Absorb,50,85,40,85,40,35,
 Cacturne,Grass/Dark,evo,Sand Veil,,Water Absorb,70,115,60,115,60,55,Level 32
 Carvanha,Water/Dark,base,Rough Skin,,Speed Boost,45,90,20,65,20,65,
@@ -31,8 +31,12 @@ Chinchou,Water/Electric,base,Volt Absorb,Illuminate,Water Absorb,75,38,38,56,56,
 Lanturn,Water/Electric,evo,Volt Absorb,Illuminate,Water Absorb,125,58,58,76,76,67,Level 27
 Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,
 Crawdaunt,Water/Dark,evo,Hyper Cutter,Shell Armor,Adaptability,63,120,85,90,55,55,Level 30
+Corsola,Water/Rock,base,Hustle,Natural Cure,Regenerator,65,55,95,65,95,35,on death
+Corsola-Galar,Ghost,evo,Weak Armor,,Cursed Body,60,55,100,65,100,30,on death
+Cursola,Ghost,evo,Weak Armor,,Perish Body,60,95,50,145,130,30,Level 38
 Cubone,Ground,base,Rock Head,Lightning Rod,Battle Armor,50,50,95,40,50,35,
-Marowak,Ground,evo,Rock Head,Lightning Rod,Battle Armor,60,80,110,50,80,45,Level 28
+Marowak,Ground,evo,Rock Head,Lightning Rod,Battle Armor,60,80,110,50,80,45,Level 28 at day
+Marowak-Alola,Fire/Ghost,evo,Cursed Body,Lightning Rod,Rock Head,60,80,110,50,80,45,Level 28 at night
 Cutiefly,Bug/Fairy,base,Honey Gather,Shield Dust,Sweet Veil,40,45,40,55,40,84,
 Ribombee,Bug/Fairy,evo,Honey Gather,Shield Dust,Sweet Veil,60,55,60,95,70,124,Level 25
 Dewpider,Water/Bug,base,Water Bubble,,Water Absorb,38,40,52,40,72,27,
@@ -64,7 +68,7 @@ Crocalor,Fire,evo,Blaze,,Unaware,81,55,78,90,58,49,Level 16
 Skeledirge,Fire/Ghost,evo,Blaze,,Unaware,104,75,100,110,75,66,Level 36
 Geodude,Rock/Ground,base,Rock Head,Sturdy,Sand Veil,40,80,100,30,30,20,
 Graveler,Rock/Ground,evo,Rock Head,Sturdy,Sand Veil,55,95,115,45,45,35,Level 25
-Golem,Rock/Ground,evo,Rock Head,Sturdy,Sand Veil,80,120,130,55,65,45,Trade
+Golem,Rock/Ground,evo,Rock Head,Sturdy,Sand Veil,80,120,130,55,65,45,Link Cable
 Gible,Dragon/Ground,base,Sand Veil,,Rough Skin,58,70,45,40,45,42,
 Gabite,Dragon/Ground,evo,Sand Veil,,Rough Skin,68,90,65,50,55,82,Level 24
 Garchomp,Dragon/Ground,evo,Sand Veil,,Rough Skin,108,130,95,80,85,102,Level 48
@@ -74,6 +78,8 @@ Gliscor,Ground/Flying,evo,Hyper Cutter,Sand Veil,Poison Heal,75,95,125,45,75,95,
 Goomy,Dragon,base,Sap Sipper,Hydration,Gooey,45,50,35,55,75,40,
 Sliggoo,Dragon,evo,Sap Sipper,Hydration,Gooey,68,75,53,83,113,60,Level 40
 Goodra,Dragon,evo,Sap Sipper,Hydration,Gooey,90,100,70,110,150,80,Level 50 in rain
+Sliggoo-Hisui,Steel/Dragon,evo,Sap Sipper,Shell Armor,Gooey,58,75,83,83,113,40,Metal Coat
+Goodra-Hisui,Steel/Dragon,evo,Sap Sipper,Shell Armor,Gooey,80,100,100,110,150,60,Level 50 in Rain
 Greavard,Ghost,base,Pickup,,Fluffy,50,61,60,30,55,34,
 Houndstone,Ghost,evo,Sand Rush,,Fluffy,72,101,100,50,97,68,Level 30 at night
 Growlithe,Fire,base,Intimidate,Flash Fire,Justified,55,70,45,70,50,60,
@@ -136,7 +142,6 @@ Oddish,Grass/Poison,base,Chlorophyll,,Run Away,45,50,55,75,65,30,
 Gloom,Grass/Poison,evo,Chlorophyll,,Stench,60,65,70,85,75,40,Level 21
 Vileplume,Grass/Poison,evo,Chlorophyll,,Effect Spore,75,80,85,110,90,50,Leaf Stone
 Bellossom,Grass,evo,Chlorophyll,,Healer,75,80,95,90,100,50,Sun Stone
-Oricorio,Fire/Flying,base,Dancer,,,75,70,70,98,70,93,
 Pancham,Fighting,base,Iron Fist,Mold Breaker,Scrappy,67,82,62,46,48,43,
 Pangoro,Fighting/Dark,evo,Iron Fist,Mold Breaker,Scrappy,95,124,78,69,71,58,Level 32
 Pikipek,Normal/Flying,base,Keen Eye,Skill Link,Pickup,35,75,30,30,30,65,
@@ -158,10 +163,11 @@ Ralts,Psychic/Fairy,base,Synchronize,Trace,Telepathy,28,25,25,45,35,40,
 Kirlia,Psychic/Fairy,evo,Synchronize,Trace,Telepathy,38,35,35,65,55,50,Level 20
 Gardevoir,Psychic/Fairy,evo,Synchronize,Trace,Telepathy,68,65,65,125,115,80,Level 30
 Mega Gardevoir,Psychic/Fairy,mega,Pixilate,,,68,85,65,165,135,100,Gardevoirite
-Gallade,Psychic/Fighting,evo,Steadfast,Sharpness,Justified,68,125,65,65,115,80,Dawn Stone (male)
+Gallade,Psychic/Fighting,evo,Steadfast,Sharpness,Justified,68,125,65,65,115,80,Dawn Stone
 Mega Gallade,Psychic/Fighting,mega,Inner Focus,,,68,165,95,65,115,110,Galladite
 Rockruff,Rock,base,Keen Eye,Vital Spirit,Steadfast,45,65,40,30,40,60,
-Lycanroc,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25
+Lycanroc-Midday,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25 at day
+Lycanroc-Midnight,Rock,evo,Keen Eye,Vital Spirit,No Guard,85,115,75,55,75,82,Level 25 at night
 Rotom,Electric/Ghost,base,Levitate,,,50,50,77,95,77,91,
 Rotom-Heat,Electric/Fire,evo,Levitate,,,50,65,107,105,107,86,Catalog
 Rotom-Wash,Electric/Water,evo,Levitate,,,50,65,107,105,107,86,Catalog
@@ -206,7 +212,7 @@ Slowking-Galar,Poison/Psychic,evo,Curious Medicine,Own Tempo,Regenerator,95,65,8
 Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,
 Glalie,Ice,evo,Inner Focus,Ice Body,Moody,80,80,80,80,80,80,Level 42
 Mega Glalie,Ice,mega,Refrigerate,,,80,120,80,120,80,100,Glalitite
-Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,80,70,110,Dawn Stone (female)
+Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,80,70,110,Dawn Stone
 Solosis,Psychic,base,Overcoat,Magic Guard,Regenerator,45,30,40,105,50,20,
 Duosion,Psychic,evo,Overcoat,Magic Guard,Regenerator,65,40,50,125,60,30,Level 32
 Reuniclus,Psychic,evo,Overcoat,Magic Guard,Regenerator,110,65,75,125,85,30,Level 41

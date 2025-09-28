@@ -311,7 +311,7 @@
     import { playerSelected } from '/clientModules/clientActions.js';
     import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
     import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
-    import { loadPlayersData } from '/clientModules/playersTable.js';
+    import { loadPlayersData, setupResourceModeKeyboardNav } from '/clientModules/playersTable.js';
 
     const SECONDS = 1000;
     const ctx = {
@@ -513,6 +513,7 @@
         document.getElementById('teams-section-wrapper').style.display = 'none';
         document.getElementById('right-panel').style.display = 'none';
         document.querySelector('div[style*="width: 75%; display: flex;"]').style.width = '100%'; // Make player list full width
+        setupResourceModeKeyboardNav(ctx);
         return; // End script execution here for resource mode
       }
 

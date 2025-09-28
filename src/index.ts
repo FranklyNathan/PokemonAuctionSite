@@ -2,7 +2,9 @@ import { State, SECONDS, Ctx, ServerMessageType, ClientMessageType } from './mod
 import { transitionState, updateClients, getSerializableCtx, unserializeCtx } from './mod.helpers';
 import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
+import bossBattlesHtml from '../assets/boss-battles.html';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
+import gymsText from '../assets/gyms.txt';
 import auctionSetupHtml from './html.auctionSetup.html';
 import speciesInfoText from '../assets/speciesinfo.txt';
 import resultsHtml from './html.results.html';
@@ -250,6 +252,12 @@ export default {
         return await handleModule(request, path);
       } else if (path[0] == 'assets' && path[1] == 'icons') {
         return await handleIcon(request, path);
+      } else if (path[0] === 'assets' && path[1] === 'boss-battles.html') {
+        console.log(`[Worker Fetch] Matched /assets/boss-battles.html route.`);
+        return new Response(bossBattlesHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'assets' && path[1] === 'gyms.txt') {
+        console.log(`[Worker Fetch] Matched /assets/gyms.txt route.`);
+        return new Response(gymsText, { headers: { 'Content-Type': 'text/plain' } });
       } else if (path[0] == 'vendor') {
         return await handleVendor(request, path);
       } else if (path[0] && /^[0-9a-f]{64,64}$/.test(path[0])) {

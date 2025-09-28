@@ -39,12 +39,10 @@
         Welcome!
         <img src="/images/Froakie.png" alt="Froakie" style="height: 2.5rem" />
       </div>
-      <p>This is an auction style draft app for Pokemon speedruns.</p>
-      <p>Use the form to enter all your drafters and the available funds for each.</p>
-      <p>
-        Upload a CSV file (or use the default) of the pokemon available to draft.
-      </p>
-      <p>Once you've set up the auction, send the link to your mates so they can join your auction!</p>
+      <p>This is an auction style draft app for Pokemon Emerald speedruns.</p>
+      <p>First, click Use Default CSV.</p>
+      <p>Then, click Resouce Mode to browse the pool or Create Auction to draft.</p>
+      <p>Alternatively, click Boss Battles view all enemy lineups</p>
       <sl-button id="custom-auction" slot="footer" variant="primary">Got it!</sl-button>
     </sl-dialog>
     <form
@@ -165,7 +163,10 @@
         <div id="csvFileName" style="height: 1rem"></div>
       </div>
 
-      <sl-button id="resourceModeButton" style="align-self: center; margin-top: 3rem; width: 20rem"> Resource Mode </sl-button>
+      <div style="display: flex; gap: 1rem; align-items: center; margin-top: 3rem;">
+        <sl-button onclick="window.location.href='/assets/boss-battles.html'" style="width: 10rem"> Boss Battles </sl-button>
+        <sl-button id="resourceModeButton" style="width: 10rem"> Resource Mode </sl-button>
+      </div>
     </form>
 
     <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" style="position: fixed; bottom: 1rem; right: 1rem;"></sl-button>

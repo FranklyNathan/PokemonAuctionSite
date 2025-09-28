@@ -204,6 +204,8 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
   pokemonImageEl.src = imagePath;
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';
+  pokemonImageEl.loading = 'lazy';
+  pokemonImageEl.decoding = 'async';
   displayPlayerAuctionInfo(playerData, speciesInfoMap, allPlayers);
   const card = document.getElementById('player');
 
@@ -677,7 +679,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 140px;">
             <div style="flex-shrink: 0; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
               <img src="${imagePath}" alt="${evo.name}" title="${evo.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;"
-                   onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')" />
+                   loading="lazy" decoding="async" onerror="this.onerror=null; this.style.display='none'; console.error('[Evo Debug] Failed to load image at path: ${imagePath}')" />
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 0.1rem;">${typeImagesHtml}</div>
             <div style="font-size: 0.8rem; display: flex; flex-direction: column; align-items: center;">

@@ -1,0 +1,3892 @@
+=== TRAINER_ROXANNE_1 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Geodude
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Tackle
+- Defense Curl
+- Rock Throw
+- Rock Tomb
+
+Growlithe-Hisui
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Flame Wheel
+- Rock Tomb
+- Howl
+
+Nosepass @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Block
+- Harden
+- Tackle
+- Rock Tomb
+
+=== TRAINER_ROXANNE_2 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Geodude
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Magnitude
+- Defense Curl
+- Rock Throw
+- Rock Tomb
+
+Relicanth
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Water Gun
+- Rock Tomb
+- Flail
+- Yawn
+
+Growlithe-Hisui
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Flame Wheel
+- Rock Tomb
+- Howl
+
+Nosepass @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Block
+- Rock Throw
+- Thunder Wave
+- Rock Tomb
+
+=== TRAINER_ROXANNE_3 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Bulldoze
+- Stealth Rock
+- Defense Curl
+- Rock Tomb
+
+Relicanth
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Dive
+- Rock Tomb
+- Flail
+- Ancient Power
+
+Growlithe-Hisui
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Flame Wheel
+- Rock Tomb
+- Howl
+- Fire Fang
+
+Nosepass @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Rock Slide
+- Spark
+- Block
+- Rock Tomb
+
+=== TRAINER_ROXANNE_4 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Bulldoze
+- Stealth Rock
+- Defense Curl
+- Rock Tomb
+
+Relicanth
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Dive
+- Rock Tomb
+- Flail
+- Ancient Power
+
+Arcanine-Hisui
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Bite
+- Rock Tomb
+- Howl
+- Fire Fang
+
+Probopass @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Magnet Bomb
+- Spark
+- Iron Defense
+- Rock Tomb
+
+=== TRAINER_ROXANNE_5 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Bulldoze
+- Stealth Rock
+- Self Destruct
+- Rock Tomb
+
+Relicanth
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Dive
+- Rock Tomb
+- Flail
+- Ancient Power
+
+Arcanine-Hisui
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Bite
+- Rock Tomb
+- Howl
+- Fire Fang
+
+Probopass @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Magnet Bomb
+- Discharge
+- Tri Attack
+- Rock Tomb
+
+=== TRAINER_ROXANNE_6 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Bulldoze
+- Stealth Rock
+- Self Destruct
+- Rock Tomb
+
+Relicanth
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Dive
+- Rock Tomb
+- Flail
+- Ancient Power
+
+Kleavor
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Swarm
+- Double Hit
+- Fury Cutter
+- Slash
+- Rock Tomb
+
+Arcanine-Hisui
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Crunch
+- Rock Tomb
+- Howl
+- Fire Fang
+
+Probopass @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Magnet Bomb
+- Discharge
+- Earth Power
+- Rock Tomb
+
+=== TRAINER_ROXANNE_7 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Golem
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Earthquake
+- Stealth Rock
+- Self Destruct
+- Rock Tomb
+
+Relicanth
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Dive
+- Rock Tomb
+- Flail
+- Head Smash
+
+Kleavor
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Swarm
+- Swords Dance
+- Fury Cutter
+- Slash
+- Rock Tomb
+
+Arcanine-Hisui
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Crunch
+- Rock Tomb
+- Take Down
+- Fire Fang
+
+Probopass @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Magnet Bomb
+- Zap Cannon
+- Earth Power
+- Rock Tomb
+
+=== TRAINER_ROXANNE_8 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Golem
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Rock Head
+- Earthquake
+- Stealth Rock
+- Explosion
+- Rock Tomb
+
+Relicanth
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Rock Head
+- Hydro Pump
+- Rock Tomb
+- Flail
+- Head Smash
+
+Kleavor
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Swarm
+- Swords Dance
+- X Scissor
+- Slash
+- Rock Tomb
+
+Arcanine-Hisui
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Crunch
+- Rock Tomb
+- Extreme Speed
+- Flare Blitz
+
+Probopass @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+Ability: Sturdy
+- Magnet Bomb
+- Zap Cannon
+- Earth Power
+- Rock Tomb
+
+=== TRAINER_BRAWLY_1 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Meditite
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- Focus Punch
+- Light Screen
+- Reflect
+- Bulk Up
+
+Farfetch'd-Galar
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Fury Cutter
+- Peck
+- Rock Smash
+- Sand Attack
+
+Makuhita @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Thick Fat
+- Arm Thrust
+- Sand Attack
+- Reversal
+- Bulk Up
+
+=== TRAINER_BRAWLY_2 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machop
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Karate Chop
+- Low Kick
+- Bullet Punch
+- Bulk Up
+
+Meditite
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- Focus Punch
+- Light Screen
+- Reflect
+- Bulk Up
+
+Farfetch'd-Galar
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Peck
+- Rock Smash
+- Sand Attack
+
+Makuhita @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Strength
+- Vital Throw
+- Reversal
+- Bulk Up
+
+=== TRAINER_BRAWLY_3 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machop
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Karate Chop
+- Low Kick
+- Bullet Punch
+- Bulk Up
+
+Meditite
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- Force Palm
+- Confusion
+- Reflect
+- Bulk Up
+
+Farfetch'd-Galar
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Peck
+- Rock Smash
+- Sand Attack
+
+Hariyama @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Strength
+- Vital Throw
+- Brine
+- Bulk Up
+
+=== TRAINER_BRAWLY_4 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machoke
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Vital Throw
+- Low Kick
+- Bullet Punch
+- Bulk Up
+
+Meditite
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- High Jump Kick
+- Confusion
+- Reflect
+- Bulk Up
+
+Farfetch'd-Galar
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Fury Cutter
+- Rock Smash
+- Sand Attack
+
+Hariyama @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Smelling Salts
+- Vital Throw
+- Knock Off
+- Bulk Up
+
+=== TRAINER_BRAWLY_5 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machoke
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Vital Throw
+- Low Kick
+- Bullet Punch
+- Bulk Up
+
+Meditite
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- High Jump Kick
+- Confusion
+- Reflect
+- Bulk Up
+
+Sirfetch'd @ Leek
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Fury Cutter
+- Rock Smash
+- Iron Defense
+
+Hariyama @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Smelling Salts
+- Vital Throw
+- Knock Off
+- Bulk Up
+
+=== TRAINER_BRAWLY_6 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machoke
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Submission
+- Low Kick
+- Dual Chop
+- Bulk Up
+
+Meditite
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- High Jump Kick
+- Confusion
+- Reflect
+- Bulk Up
+
+Combusken
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Blaze
+- Bulk Up
+- Double Kick
+- Flame Charge
+- Peck
+
+Sirfetch'd @ Leek
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Fury Cutter
+- Rock Smash
+- Iron Defense
+
+Hariyama @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Smelling Salts
+- Vital Throw
+- Knock Off
+- Bulk Up
+
+=== TRAINER_BRAWLY_7 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machamp
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Submission
+- Strength
+- Dual Chop
+- Bulk Up
+
+Medicham
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- High Jump Kick
+- Zen Headbutt
+- Reflect
+- Bulk Up
+
+Blaziken
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Blaze
+- Bulk Up
+- Double Kick
+- Blaze Kick
+- Focus Energy
+
+Sirfetch'd @ Leek
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Fury Cutter
+- Brick Break
+- Iron Defense
+
+Hariyama @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Smelling Salts
+- Vital Throw
+- Knock Off
+- Bulk Up
+
+=== TRAINER_BRAWLY_8 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Machamp
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Submission
+- Strength
+- Dual Chop
+- Bulk Up
+
+Medicham
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pure Power
+- High Jump Kick
+- Zen Headbutt
+- Reflect
+- Bulk Up
+
+Blaziken
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Blaze
+- Bulk Up
+- Double Kick
+- Blaze Kick
+- Focus Energy
+
+Sirfetch'd @ Leek
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Brutal Swing
+- Fury Cutter
+- Brick Break
+- Leaf Blade
+
+Hariyama @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Smelling Salts
+- Close Combat
+- Knock Off
+- Bulk Up
+
+=== TRAINER_WATTSON_1 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Voltorb-Hisui
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Lax
+Ability: Soundproof
+- Shock Wave
+- Bullet Seed
+- Stun Spore
+- Charge
+
+Magnemite
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Supersonic
+- Shock Wave
+- Thunder Wave
+- Magnet Bomb
+
+Electrike @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Quick Attack
+- Thunder Wave
+- Shock Wave
+- Howl
+
+=== TRAINER_WATTSON_2 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Geodude-Alola
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rollout
+- Spark
+- Defense Curl
+- Shock Wave
+
+Voltorb-Hisui
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Lax
+Ability: Soundproof
+- Shock Wave
+- Bullet Seed
+- Stun Spore
+- Charge
+
+Magnemite
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Supersonic
+- Shock Wave
+- Thunder Wave
+- Magnet Bomb
+
+Electrike @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Quick Attack
+- Thunder Wave
+- Shock Wave
+- Howl
+
+=== TRAINER_WATTSON_3 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler-Alola
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rollout
+- Thunderpunch
+- Stealth Rock
+- Shock Wave
+
+Voltorb-Hisui
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Lax
+Ability: Soundproof
+- Shock Wave
+- Bullet Seed
+- Stun Spore
+- Charge
+
+Magneton
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Supersonic
+- Shock Wave
+- Thunder Wave
+- Magnet Bomb
+
+Manectric @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Thunder Wave
+- Shock Wave
+- Howl
+
+=== TRAINER_WATTSON_4 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler-Alola
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rollout
+- Thunderpunch
+- Stealth Rock
+- Shock Wave
+
+Electrode-Hisui
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Lax
+Ability: Soundproof
+- Shock Wave
+- Bullet Seed
+- Stun Spore
+- Self Destruct
+
+Magneton
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Tri Attack
+- Shock Wave
+- Thunder Wave
+- Mirror Shot
+
+Manectric @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Thunder Wave
+- Shock Wave
+- Bite
+
+=== TRAINER_WATTSON_5 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler-Alola
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rollout
+- Thunderpunch
+- Stealth Rock
+- Shock Wave
+
+Electrode-Hisui
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Lax
+Ability: Soundproof
+- Shock Wave
+- Bullet Seed
+- Stun Spore
+- Self Destruct
+
+Magneton
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Tri Attack
+- Shock Wave
+- Thunder Wave
+- Mirror Shot
+
+Manectric @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Discharge
+- Shock Wave
+- Bite
+
+=== TRAINER_WATTSON_6 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Graveler-Alola
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rock Blast
+- Thunderpunch
+- Stealth Rock
+- Shock Wave
+
+Electrode-Hisui
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Soundproof
+- Shock Wave
+- Discharge
+- Energy Ball
+- Self Destruct
+
+Magneton
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Tri Attack
+- Shock Wave
+- Thunder Wave
+- Flash Cannon
+
+Raichu-Alola
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Surge Surfer
+- Psychic
+- Shock Wave
+- Surf
+- Quick Attack
+
+Manectric @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Discharge
+- Shock Wave
+- Bite
+
+=== TRAINER_WATTSON_7 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Golem-Alola
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Rock Blast
+- Explosion
+- Stealth Rock
+- Shock Wave
+
+Electrode-Hisui
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Soundproof
+- Shock Wave
+- Discharge
+- Energy Ball
+- Explosion
+
+Magnezone
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Tri Attack
+- Shock Wave
+- Thunder Wave
+- Flash Cannon
+
+Raichu-Alola
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Surge Surfer
+- Psychic
+- Shock Wave
+- Surf
+- Quick Attack
+
+Manectric @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Wild Charge
+- Shock Wave
+- Bite
+
+=== TRAINER_WATTSON_8 ===
+Name: WATTSON
+Class: Leader
+Pic: Leader Wattson
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Golem-Alola
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Stone Edge
+- Explosion
+- Stealth Rock
+- Shock Wave
+
+Electrode-Hisui
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Soundproof
+- Shock Wave
+- Discharge
+- Energy Ball
+- Explosion
+
+Magnezone
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Magnet Pull
+- Zap Cannon
+- Shock Wave
+- Thunder Wave
+- Flash Cannon
+
+Raichu-Alola
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Surge Surfer
+- Psychic
+- Shock Wave
+- Surf
+- Nuzzle
+
+Manectric @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Rash
+Ability: Static
+- Fire Fang
+- Wild Charge
+- Shock Wave
+- Bite
+
+=== TRAINER_FLANNERY_1 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Slugma
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Solid Rock
+- Yawn
+- Smog
+- Ember
+- Rock Throw
+
+Numel
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Solid Rock
+- Overheat
+- Tackle
+- Growl
+- Attract
+
+Torkoal @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Smog
+- Withdraw
+- Attract
+
+=== TRAINER_FLANNERY_2 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Slugma
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Yawn
+- Smog
+- Incinerate
+- Rock Throw
+
+Numel
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Solid Rock
+- Overheat
+- Tackle
+- Magnitude
+- Attract
+
+Torkoal @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Smog
+- Withdraw
+- Attract
+
+=== TRAINER_FLANNERY_3 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Slugma
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Incinerate
+- Smog
+- Yawn
+- Sunny Day
+
+Numel
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Solid Rock
+- Overheat
+- Sunny Day
+- Magnitude
+- Attract
+
+Torkoal @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Smog
+- Sunny Day
+- Attract
+
+=== TRAINER_FLANNERY_4 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Marowak-Alola
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Cursed Body
+- Overheat
+- Shadow Bone
+- Will O Wisp
+- Sunny Day
+
+Slugma
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Overheat
+- Smog
+- Light Screen
+- Sunny Day
+
+Camerupt
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Magma Armor
+- Overheat
+- Earth Power
+- Sunny Day
+- Attract
+
+Torkoal @ White Herb
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Sunny Day
+- Body Slam
+- Attract
+
+=== TRAINER_FLANNERY_5 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Marowak-Alola @ Thick Club
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Cursed Body
+- Overheat
+- Shadow Bone
+- Will O Wisp
+- Sunny Day
+
+Slugma
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Overheat
+- Ancient Power
+- Light Screen
+- Sunny Day
+
+Camerupt
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Magma Armor
+- Overheat
+- Earth Power
+- Take Down
+- Attract
+
+Torkoal @ White Herb
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Sunny Day
+- Body Slam
+- Attract
+
+=== TRAINER_FLANNERY_6 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Marowak-Alola @ Thick Club
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Cursed Body
+- Overheat
+- Shadow Bone
+- Thrash
+- Sunny Day
+
+Slugma
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Overheat
+- Ancient Power
+- Light Screen
+- Sunny Day
+
+Ninetales
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Flash Fire
+- Overheat
+- Feint Attack
+- Hex
+- Will O Wisp
+
+Camerupt
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Magma Armor
+- Overheat
+- Earth Power
+- Take Down
+- Attract
+
+Torkoal @ White Herb
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Sunny Day
+- Body Slam
+- Attract
+
+=== TRAINER_FLANNERY_7 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Marowak-Alola @ Thick Club
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Cursed Body
+- Overheat
+- Shadow Bone
+- Stomping Tantrum
+- Sunny Day
+
+Magcargo
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Overheat
+- Rock Slide
+- Incinerate
+- Sunny Day
+
+Ninetales
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Flash Fire
+- Overheat
+- Flamethrower
+- Hex
+- Attract
+
+Camerupt
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Magma Armor
+- Overheat
+- Earth Power
+- Take Down
+- Rock Slide
+
+Torkoal @ White Herb
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Sunny Day
+- Body Slam
+- Attract
+
+=== TRAINER_FLANNERY_8 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Marowak-Alola @ Thick Club
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Cursed Body
+- Overheat
+- Shadow Bone
+- Stomping Tantrum
+- Bone Rush
+
+Magcargo
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: Flame Body
+- Overheat
+- Rock Slide
+- Earth Power
+- Sunny Day
+
+Ninetales
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Flash Fire
+- Overheat
+- Flamethrower
+- Hex
+- Attract
+
+Camerupt
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Magma Armor
+- Overheat
+- Earthquake
+- Eruption
+- Rock Slide
+
+Torkoal @ White Herb
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quiet
+Ability: White Smoke
+- Overheat
+- Explosion
+- Heat Wave
+- Attract
+
+=== TRAINER_NORMAN_1 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Zorua-Hisui
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Illusion
+- Pursuit
+- Facade
+- Fake Tears
+
+Zigzagoon-Galar
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Snarl
+- Lick
+- Facade
+- Sand Attack
+
+Slakoth @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Truant
+- Slack Off
+- Scratch
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_2 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Own Tempo
+- Teeter Dance
+- Psybeam
+- Facade
+
+Zorua-Hisui
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Illusion
+- Pursuit
+- Facade
+- Fake Tears
+
+Zigzagoon-Galar
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Snarl
+- Lick
+- Facade
+- Pin Missile
+
+Slakoth @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Vital Spirit
+- Slack Off
+- Scratch
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_3 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Own Tempo
+- Teeter Dance
+- Psybeam
+- Facade
+- Encore
+
+Zorua-Hisui
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Illusion
+- Pursuit
+- Facade
+- Fake Tears
+- Feint Attack
+
+Linoone-Galar
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Snarl
+- Lick
+- Facade
+- Hone Claws
+
+Vigoroth @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Vital Spirit
+- Fury Swipes
+- Uproar
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_4 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Own Tempo
+- Teeter Dance
+- Psybeam
+- Facade
+- Encore
+
+Zorua-Hisui
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Illusion
+- Pursuit
+- Facade
+- Foul Play
+- Feint Attack
+
+Linoone-Galar
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Snarl
+- Lick
+- Facade
+- Hone Claws
+
+Vigoroth @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Vital Spirit
+- Slash
+- Uproar
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_5 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Teeter Dance
+- Sucker Punch
+- Facade
+- Encore
+
+Zoroark-Hisui
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Illusion
+- Shadow Ball
+- Facade
+- Agility
+- Nasty Plot
+
+Linoone-Galar
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Night Slash
+- Snarl
+- Facade
+- Headbutt
+
+Slaking @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Truant
+- Counter
+- Covet
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_6 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Teeter Dance
+- Sucker Punch
+- Facade
+- Encore
+
+Zoroark-Hisui
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Illusion
+- Shadow Ball
+- Facade
+- Night Slash
+- Nasty Plot
+
+Loudred
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Soundproof
+- Bite
+- Facade
+- Screech
+- Uproar
+
+Linoone-Galar
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Quick Feet
+- Night Slash
+- Snarl
+- Facade
+- Headbutt
+
+Slaking @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Truant
+- Counter
+- Covet
+- Facade
+- Feint Attack
+
+=== TRAINER_NORMAN_7 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Teeter Dance
+- Sucker Punch
+- Facade
+- Encore
+
+Zoroark-Hisui
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Illusion
+- Shadow Ball
+- Facade
+- Night Slash
+- Nasty Plot
+
+Exploud
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Soundproof
+- Crunch
+- Facade
+- Hyper Voice
+- Thunder Fang
+
+Obstagoon
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Night Slash
+- Obstruct
+- Facade
+- Submission
+
+Slaking @ Kings Rock
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Truant
+- Counter
+- Fling
+- Facade
+- Covet
+
+=== TRAINER_NORMAN_8 ===
+Name: NORMAN
+Class: Leader
+Pic: Leader Norman
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Spinda
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Teeter Dance
+- Sucker Punch
+- Facade
+- Flail
+
+Zoroark-Hisui
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Illusion
+- Shadow Ball
+- Facade
+- Night Daze
+- Nasty Plot
+
+Exploud
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Quirky
+Ability: Soundproof
+- Crunch
+- Facade
+- Boomburst
+- Thunder Fang
+
+Obstagoon
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Night Slash
+- Obstruct
+- Facade
+- Submission
+
+Slaking @ Kings Rock
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Truant
+- Hammer Arm
+- Fling
+- Facade
+- Covet
+
+=== TRAINER_WINONA_1 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Swablu
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Cloud Nine
+- Disarming Voice
+- Sing
+- Fury Attack
+- Aerial Ace
+
+Wingull
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Hydration
+- Water Gun
+- Supersonic
+- Quick Attack
+- Aerial Ace
+
+Taillow @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Quick Attack
+- Aerial Ace
+- Focus Energy
+- Double Team
+
+=== TRAINER_WINONA_2 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Swablu
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Cloud Nine
+- Disarming Voice
+- Sing
+- Round
+- Aerial Ace
+
+Wingull
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Hydration
+- Water Pulse
+- Supersonic
+- Quick Attack
+- Aerial Ace
+
+Taillow @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Quick Attack
+- Aerial Ace
+- Focus Energy
+- Double Team
+
+=== TRAINER_WINONA_3 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Swablu
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Natural Cure
+- Disarming Voice
+- Hyper Voice
+- Round
+- Aerial Ace
+
+Skarmory
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Swift
+- Sand Attack
+- Steel Wing
+- Aerial Ace
+
+Pelipper
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Keen Eye
+- Water Pulse
+- Supersonic
+- Brine
+- Aerial Ace
+
+Swellow @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Quick Attack
+- Aerial Ace
+- Pluck
+- Double Team
+
+=== TRAINER_WINONA_4 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Swablu
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Natural Cure
+- Disarming Voice
+- Hyper Voice
+- Round
+- Aerial Ace
+
+Skarmory
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Spikes
+- Sand Attack
+- Steel Wing
+- Aerial Ace
+
+Pelipper @ Deep Sea Tooth
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Keen Eye
+- Water Pulse
+- Fling
+- Brine
+- Aerial Ace
+
+Swellow @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Quick Attack
+- Aerial Ace
+- Pluck
+- Steel Wing
+
+=== TRAINER_WINONA_5 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Swablu
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Natural Cure
+- Disarming Voice
+- Hyper Voice
+- Perish Song
+- Aerial Ace
+
+Skarmory
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Spikes
+- Sand Attack
+- Steel Wing
+- Aerial Ace
+
+Pelipper @ Deep Sea Tooth
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Keen Eye
+- Water Pulse
+- Fling
+- Brine
+- Aerial Ace
+
+Swellow
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Guts
+- Quick Attack
+- Aerial Ace
+- Pluck
+- Double Team
+
+=== TRAINER_WINONA_6 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Tropius
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Chlorophyll
+- Sunny Day
+- Aerial Ace
+- Solar Beam
+- Synthesis
+
+Braviary-Hisui
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Sheer Force
+- Air Slash
+- Esper Wing
+- Roost
+- Aerial Ace
+
+Pelipper @ Deep Sea Tooth
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Keen Eye
+- Surf
+- Fling
+- Protect
+- Aerial Ace
+
+Skarmory
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Sand Attack
+- Fly
+- Steel Wing
+- Aerial Ace
+
+Altaria @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Natural Cure
+- Earthquake
+- Dragon Breath
+- Dragon Dance
+- Aerial Ace
+
+=== TRAINER_WINONA_7 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Tropius
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Chlorophyll
+- Sunny Day
+- Aerial Ace
+- Solar Beam
+- Synthesis
+
+Braviary-Hisui
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Sheer Force
+- Air Slash
+- Esper Wing
+- Tailwind
+- Aerial Ace
+
+Pelipper @ Deep Sea Tooth
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Natural Cure
+- Surf
+- Fling
+- Tailwind
+- Aerial Ace
+
+Skarmory
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Night Slash
+- Fly
+- Steel Wing
+- Aerial Ace
+
+Altaria @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Natural Cure
+- Earthquake
+- Dragon Pulse
+- Dragon Dance
+- Aerial Ace
+
+=== TRAINER_WINONA_8 ===
+Name: WINONA
+Class: Leader
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer / Risky
+
+Tropius
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Chlorophyll
+- Sunny Day
+- Aerial Ace
+- Solar Beam
+- Leaf Storm
+
+Braviary-Hisui
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Sheer Force
+- Air Slash
+- Esper Wing
+- Tailwind
+- Aerial Ace
+
+Pelipper @ Deep Sea Tooth
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Keen Eye
+- Hydro Pump
+- Fling
+- Tailwind
+- Aerial Ace
+
+Skarmory
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Keen Eye
+- Night Slash
+- Fly
+- Steel Wing
+- Aerial Ace
+
+Altaria @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Natural Cure
+- Earthquake
+- Dragon Pulse
+- Moonblast
+- Aerial Ace
+
+=== TRAINER_TATE_AND_LIZA_1 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Lunatone @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Confusion
+- Rock Throw
+- Calm Mind
+- Safeguard
+
+Solrock @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psywave
+- Fire Spin
+- Calm Mind
+- Harden
+
+=== TRAINER_TATE_AND_LIZA_2 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Lunatone @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Confusion
+- Rock Slide
+- Calm Mind
+- Safeguard
+
+Solrock @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psywave
+- Fire Spin
+- Calm Mind
+- Rock Throw
+
+=== TRAINER_TATE_AND_LIZA_3 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Natu
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Stored Power
+- Ominous Wind
+- Calm Mind
+- Night Shade
+
+Baltoy
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Psybeam
+- Ancient Power
+- Calm Mind
+- Rapid Spin
+
+Lunatone @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Confusion
+- Rock Slide
+- Calm Mind
+- Hypnosis
+
+Solrock @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psywave
+- Fire Spin
+- Calm Mind
+- Rock Throw
+
+=== TRAINER_TATE_AND_LIZA_4 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Xatu
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Stored Power
+- Ominous Wind
+- Calm Mind
+- Air Slash
+
+Baltoy
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Psybeam
+- Ancient Power
+- Calm Mind
+- Rapid Spin
+
+Lunatone @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Cosmic Power
+- Power Gem
+- Calm Mind
+- Hypnosis
+
+Solrock @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Cosmic Power
+- Fire Spin
+- Calm Mind
+- Rock Slide
+
+=== TRAINER_TATE_AND_LIZA_5 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Xatu
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Stored Power
+- Ominous Wind
+- Calm Mind
+- Air Slash
+
+Baltoy
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Psybeam
+- Ancient Power
+- Calm Mind
+- Rapid Spin
+
+Lunatone @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Cosmic Power
+- Power Gem
+- Calm Mind
+- Hypnosis
+
+Solrock @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Cosmic Power
+- Rock Slide
+- Calm Mind
+- Fire Spin
+
+=== TRAINER_TATE_AND_LIZA_6 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Xatu
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Psychic
+- Ominous Wind
+- Calm Mind
+- Air Slash
+
+Baltoy
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Psybeam
+- Ancient Power
+- Calm Mind
+- Self Destruct
+
+Lunatone @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psychic
+- Power Gem
+- Calm Mind
+- Hypnosis
+
+Solrock @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Sunny Day
+- Solar Beam
+- Psychic
+- Fire Spin
+
+=== TRAINER_TATE_AND_LIZA_7 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Claydol
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Earthquake
+- Ancient Power
+- Psychic
+- Light Screen
+
+Xatu
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Psychic
+- Sunny Day
+- Air Slash
+- Calm Mind
+
+Slowbro-Galar
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+Ability: Quick Draw
+- Shell Side Arm
+- Calm Mind
+- Yawn
+- Psychic
+
+Slowking-Galar
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+Ability: Own Tempo
+- Eerie Spell
+- Calm Mind
+- Power Gem
+- Sludge Bomb
+
+Lunatone @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psychic
+- Power Gem
+- Calm Mind
+- Hypnosis
+
+Solrock @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Sunny Day
+- Solar Beam
+- Psychic
+- Flamethrower
+
+=== TRAINER_TATE_AND_LIZA_8 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Claydol
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Levitate
+- Earthquake
+- Ancient Power
+- Psychic
+- Light Screen
+
+Xatu
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Psychic
+- Tailwind
+- Air Slash
+- Calm Mind
+
+Slowbro-Galar
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+Ability: Quick Draw
+- Shell Side Arm
+- Calm Mind
+- Heal Pulse
+- Psychic
+
+Slowking-Galar
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+Ability: Own Tempo
+- Eerie Spell
+- Calm Mind
+- Power Gem
+- Sludge Bomb
+
+Lunatone @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Psychic
+- Power Gem
+- Calm Mind
+- Moonblast
+
+Solrock @ Sitrus Berry
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Levitate
+- Sunny Day
+- Solar Beam
+- Psychic
+- Flamethrower
+
+=== TRAINER_JUAN_1 ===
+Name: JUAN&WALCE
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wiglett
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Sand Attack
+- Wrap
+- Water Pulse
+- Mud Slap
+
+Feebas
+Level: 11
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Oblivious
+- Splash
+- Water Pulse
+- Flail
+
+Wailmer @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Whirlpool
+- Growl
+- Rollout
+- Water Pulse
+
+Horsea @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Swift Swim
+- Water Pulse
+- Smokescreen
+- Leer
+- Twister
+
+=== TRAINER_JUAN_2 ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wiglett
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Wrap
+- Water Pulse
+- Mud Slap
+
+Barboach
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Mud Bomb
+- Water Pulse
+- Mud Slap
+- Flail
+
+Wailmer @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Whirlpool
+- Defense Curl
+- Rollout
+- Water Pulse
+
+Horsea @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Swift Swim
+- Water Pulse
+- Smokescreen
+- Leer
+- Twister
+
+=== TRAINER_JUAN_3 ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wiglett
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Wrap
+- Water Pulse
+- Mud Slap
+
+Wailmer @ Oran Berry
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Whirlpool
+- Defense Curl
+- Rollout
+- Water Pulse
+
+Barboach
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Mud Bomb
+- Water Pulse
+- Mud Slap
+- Flail
+
+Seadra @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Poison Point
+- Water Pulse
+- Smokescreen
+- Aurora Beam
+- Twister
+
+=== TRAINER_JUAN_4 ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wiglett
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Wrap
+- Water Pulse
+- Mud Slap
+
+Wailmer @ Oran Berry
+Level: 25
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Whirlpool
+- Defense Curl
+- Rollout
+- Water Pulse
+
+Seadra
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Poison Point
+- Water Pulse
+- Smokescreen
+- Aurora Beam
+- Twister
+
+Milotic @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Marvel Scale
+- Disarming Voice
+- Water Pulse
+- Dragon Tail
+- Captivate
+
+=== TRAINER_JUAN_5 ===
+Name: JUAN
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wugtrio
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Wrap
+- Water Pulse
+- Triple Dive
+
+Whiscash
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Mud Bomb
+- Water Pulse
+- Mud Slap
+- Thrash
+
+Seadra @ Sitrus Berry
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Poison Point
+- Water Pulse
+- Smokescreen
+- Aurora Beam
+- Twister
+
+Milotic @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Oblivious
+- Disarming Voice
+- Water Pulse
+- Icy Wind
+- Captivate
+
+=== TRAINER_JUAN_6 ===
+Name: JUAN&WALCE
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wugtrio
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Wrap
+- Water Pulse
+- Triple Dive
+
+Wailmer
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Water Spout
+- Defense Curl
+- Rollout
+- Water Pulse
+
+Whiscash
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Mud Bomb
+- Water Pulse
+- Muddy Water
+- Thrash
+
+Milotic @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Marvel Scale
+- Disarming Voice
+- Water Pulse
+- Icy Wind
+- Ice Beam
+
+Kingdra @ Chesto Berry
+Level: 34
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Swift Swim
+- Water Pulse
+- Dragon Pulse
+- Double Team
+- Rest
+
+=== TRAINER_JUAN_7 ===
+Name: JUAN&WALCE
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wugtrio
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Gooey
+- Rain Dance
+- Throat Chop
+- Water Pulse
+- Triple Dive
+
+Wailord
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Water Spout
+- Heavy Slam
+- Noble Roar
+- Water Pulse
+
+Whiscash
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Earthquake
+- Water Pulse
+- Muddy Water
+- Rain Dance
+
+Gyarados
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Ice Fang
+- Water Pulse
+- Crunch
+- Dragon Rage
+
+Milotic @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Marvel Scale
+- Disarming Voice
+- Water Pulse
+- Icy Wind
+- Ice Beam
+
+Kingdra @ Chesto Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Swift Swim
+- Water Pulse
+- Dragon Pulse
+- Double Team
+- Rest
+
+=== TRAINER_JUAN_8 ===
+Name: JUAN&WALCE
+Class: Leader
+Pic: Leader Juan
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
+Double Battle: Yes
+AI: Basic Trainer
+
+Wugtrio
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Gooey
+- Triple Dive
+- Rain Dance
+- Throat Chop
+- Water Pulse
+
+Wailord
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Water Veil
+- Water Spout
+- Heavy Slam
+- Blizzard
+- Water Pulse
+
+Whiscash
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Oblivious
+- Rain Dance
+- Water Pulse
+- Dragon Dance
+- Earthquake
+
+Gyarados
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Crunch
+- Ice Fang
+- Water Pulse
+- Dragon Dance
+
+Milotic @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+Ability: Marvel Scale
+- Water Pulse
+- Ice Beam
+- Recover
+- Icy Wind
+
+Kingdra @ Chesto Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Swift Swim
+- Water Pulse
+- Double Team
+- Dragon Pulse
+- Rest
+
+=== TRAINER_SIDNEY ===
+Name: SIDNEY
+Class: Elite Four
+Pic: Elite Four Sidney
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer / Force Setup First Turn
+Mugshot: Purple
+
+Cacturne
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sand Veil
+- Leech Seed
+- Feint Attack
+- Needle Arm
+- Spiky Shield
+
+Samurott-Hisui
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Torrent
+- Night Slash
+- Aqua Tail
+- Megahorn
+- Aerial Ace
+
+Shiftry
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Chlorophyll
+- Leaf Tornado
+- Double Team
+- Swagger
+- Hurricane
+
+Crawdaunt
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Hyper Cutter
+- Crabhammer
+- Swords Dance
+- Night Slash
+- Facade
+
+Absol @ Sitrus Berry
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Super Luck
+- Aerial Ace
+- Rock Slide
+- Swords Dance
+- Night Slash
+
+=== TRAINER_SPENSER ===
+Name: SPENSER
+Class: Palace Maven
+Pic: Palace Maven Spenser
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+
+Toedscruel
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Mycelium Might
+- Spore
+- Giga Drain
+- Earth Power
+- Wrap
+
+Decidueye-Hisui
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Overgrow
+- Leaf Blade
+- Pluck
+- Feather Dance
+- Triple Arrows
+
+Sceptile
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Overgrow
+- Leaf Blade
+- X Scissor
+- Agility
+- Dual Chop
+
+Ludicolo
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Own Tempo
+- Giga Drain
+- Hydro Pump
+- Fake Out
+- Astonish
+
+Breloom @ Sitrus Berry
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Technician
+- Mach Punch
+- Bullet Seed
+- Bulk Up
+- Spore
+
+=== TRAINER_PHOEBE ===
+Name: PHOEBE
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Green
+
+Dusclops
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pressure
+- Shadow Punch
+- Confuse Ray
+- Will O Wisp
+- Payback
+
+Typhlosion-Hisui
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Blaze
+- Shadow Ball
+- Eruption
+- Smokescreen
+- Flamethrower
+
+Sableye
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Keen Eye
+- Shadow Ball
+- Double Team
+- Night Shade
+- Feint Attack
+
+Banette
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Cursed Body
+- Shadow Ball
+- Spite
+- Will O Wisp
+- Feint Attack
+
+Dusknoir @ Sitrus Berry
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Brave
+Ability: Pressure
+- Hex
+- Ice Punch
+- Fire Punch
+- Thunder Punch
+
+=== TRAINER_LUCY ===
+Name: LUCY
+Class: Pike Queen
+Pic: Pike Queen Lucy
+Gender: Female
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+
+Seviper @ Salac Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Shed Skin
+- Coil
+- Belch
+- Giga Drain
+- Crunch
+
+Overqwil
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Poison Point
+- Sludge Bomb
+- Pin Missile
+- Crunch
+- Brine
+
+Sneasler
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pressure
+- Dire Claw
+- Taunt
+- Slash
+- Agility
+
+Dustox
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Compound Eyes
+- Sludge Bomb
+- Bug Buzz
+- Giga Drain
+- Sleep Powder
+
+Crobat @ Sitrus Berry
+Level: 51
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Inner Focus
+- Cross Poison
+- Aerial Ace
+- Leech Life
+- Haze
+
+=== TRAINER_GLACIA ===
+Name: GLACIA
+Class: Elite Four
+Pic: Elite Four Glacia
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+
+Sandslash-Alola
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Snow Cloak
+- Icicle Crash
+- Metal Claw
+- Hail
+- Icy Wind
+
+Ninetales-Alola
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Snow Warning
+- Ice Beam
+- Safeguard
+- Dazzling Gleam
+- Ice Shard
+
+Froslass
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Snow Cloak
+- Draining Kiss
+- Shadow Ball
+- Hail
+- Blizzard
+
+Glalie
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Inner Focus
+- Crunch
+- Explosion
+- Hail
+- Freeze Dry
+
+Walrein @ Sitrus Berry
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Thick Fat
+- Surf
+- Body Slam
+- Ice Beam
+- Freeze Dry
+
+=== TRAINER_TUCKER ===
+Name: TUCKER
+Class: Dome Ace
+Pic: Dome Ace Tucker
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Pink
+
+Wigglytuff
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Cute Charm
+- Sing
+- Hyper Voice
+- Dazzling Gleam
+- Attract
+
+Azumarill
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Thick Fat
+- Play Rough
+- Aqua Tail
+- Brick Break
+- Double Edge
+
+Rapidash-Galar
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Pastel Veil
+- Psycho Cut
+- Stomp
+- Megahorn
+- Dazzling Gleam
+
+Mawile
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Play Rough
+- Crunch
+- Iron Head
+- Attract
+
+Gardevoir @ Sitrus Berry
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Synchronize
+- Moonblast
+- Psychic
+- Draining Kiss
+- Calm Mind
+
+=== TRAINER_DRAKE ===
+Name: DRAKE
+Class: Elite Four
+Pic: Elite Four Drake
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+Exeggutor-Alola @ Sitrus Berry
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Relaxed
+Ability: Harvest
+- Leaf Storm
+- Dragon Hammer
+- Sludge Bomb
+- Seed Bomb
+
+Altaria
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Natural Cure
+- Double Edge
+- Dragon Breath
+- Dragon Dance
+- Aerial Ace
+
+Kingdra
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sniper
+- Smokescreen
+- Dragon Pulse
+- Octazooka
+- Ice Beam
+
+Flygon
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Levitate
+- Flamethrower
+- Crunch
+- Dragon Breath
+- Earthquake
+
+Salamence @ Sitrus Berry
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Intimidate
+- Flamethrower
+- Dragon Claw
+- Rock Slide
+- Crunch
+
+=== TRAINER_BRANDON ===
+Name: BRANDON
+Class: Pyramid King
+Pic: Pyramid King Brandon
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+
+Dugtrio-Alola
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Tangling Hair
+- Earthquake
+- Tri Attack
+- Dig
+- Iron Head
+
+Swampert
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Relaxed
+Ability: Torrent
+- Earthquake
+- Muddy Water
+- Protect
+- Mud Shot
+
+Flygon
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Levitate
+- Sandstorm
+- Rock Slide
+- Dragon Claw
+- Earthquake
+
+Rhyperior
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Solid Rock
+- Stone Edge
+- Megahorn
+- Earthquake
+- Hammer Arm
+
+Regirock @ Sitrus Berry
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+Ability: Clear Body
+- Stone Edge
+- Hammer Arm
+- Ancientpower
+- Explosion
+
+=== TRAINER_STEVEN ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Yellow
+
+Skarmory
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Sturdy
+- Toxic
+- Fly
+- Spikes
+- Steel Wing
+
+Goodra-Hisui
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Hydration
+- Muddy Water
+- Iron Tail
+- Rain Dance
+- Dragon Breath
+
+Aggron
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Hardy
+Ability: Sturdy
+- Thunder
+- Earthquake
+- Stone Edge
+- Iron Tail
+
+Cradily
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Sassy
+Ability: Storm Drain
+- Giga Drain
+- Ancient Power
+- Recover
+- Confuse Ray
+
+Armaldo
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Swift Swim
+- Aerial Ace
+- Rock Blast
+- X Scissor
+- Crush Claw
+
+Metagross @ Metagrossite
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+Ability: Clear Body
+- Hammer Arm
+- Psychic
+- Meteor Mash
+- Hyper Beam
