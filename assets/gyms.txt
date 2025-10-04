@@ -3393,66 +3393,66 @@ Ability: Super Luck
 - Swords Dance
 - Night Slash
 
-=== TRAINER_SPENSER ===
-Name: SPENSER
-Class: Palace Maven
-Pic: Palace Maven Spenser
+=== TRAINER_BRANDON ===
+Name: BRANDON
+Class: Elite Four
+Pic: Pyramid King Brandon
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Green
+Mugshot: Yellow
 
-Toedscruel
+Dugtrio-Alola
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Modest
-Ability: Mycelium Might
-- Spore
-- Giga Drain
-- Earth Power
-- Wrap
+Nature: Adamant
+Ability: Tangling Hair
+- Earthquake
+- Tri Attack
+- Dig
+- Iron Head
 
-Decidueye-Hisui
+Swampert
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Adamant
-Ability: Overgrow
-- Leaf Blade
-- Pluck
-- Feather Dance
-- Triple Arrows
+Nature: Relaxed
+Ability: Torrent
+- Earthquake
+- Muddy Water
+- Protect
+- Mud Shot
 
-Sceptile
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Adamant
-Ability: Overgrow
-- Leaf Blade
-- X Scissor
-- Agility
-- Dual Chop
-
-Ludicolo
+Flygon
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Modest
-Ability: Own Tempo
-- Giga Drain
-- Hydro Pump
-- Fake Out
-- Astonish
+Nature: Adamant
+Ability: Levitate
+- Sandstorm
+- Rock Slide
+- Dragon Claw
+- Earthquake
 
-Breloom @ Sitrus Berry
-Level: 49
+Rhyperior
+Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
-Ability: Technician
-- Mach Punch
-- Bullet Seed
-- Bulk Up
-- Spore
+Ability: Solid Rock
+- Stone Edge
+- Megahorn
+- Earthquake
+- Hammer Arm
+
+Regirock @ Sitrus Berry
+Level: 49
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+Ability: Clear Body
+- Stone Edge
+- Hammer Arm
+- Ancientpower
+- Explosion
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -3517,7 +3517,7 @@ Ability: Pressure
 
 === TRAINER_LUCY ===
 Name: LUCY
-Class: Pike Queen
+Class: Elite Four
 Pic: Pike Queen Lucy
 Gender: Female
 Music: Male
@@ -3537,7 +3537,7 @@ Ability: Shed Skin
 - Crunch
 
 Overqwil
-Level: 49
+Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
 Ability: Poison Point
@@ -3546,15 +3546,15 @@ Ability: Poison Point
 - Crunch
 - Brine
 
-Sneasler
-Level: 50
+Swalot
+Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Adamant
-Ability: Pressure
-- Dire Claw
-- Taunt
-- Slash
-- Agility
+Nature: Sassy
+Ability: Liquid Ooze
+- Sludge Bomb
+- Pain Split
+- Encore
+- Shadow Ball
 
 Dustox
 Level: 49
@@ -3639,7 +3639,7 @@ Ability: Thick Fat
 
 === TRAINER_TUCKER ===
 Name: TUCKER
-Class: Dome Ace
+Class: Elite Four
 Pic: Dome Ace Tucker
 Gender: Male
 Music: Male
@@ -3759,66 +3759,66 @@ Ability: Intimidate
 - Rock Slide
 - Crunch
 
-=== TRAINER_BRANDON ===
-Name: BRANDON
-Class: Pyramid King
-Pic: Pyramid King Brandon
+=== TRAINER_SPENSER ===
+Name: SPENSER
+Class: Palace Maven
+Pic: Palace Maven Spenser
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Yellow
+Mugshot: Green
 
-Dugtrio-Alola
+Toedscruel
+Level: 52
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+Ability: Mycelium Might
+- Spore
+- Giga Drain
+- Earth Power
+- Wrap
+
+Decidueye-Hisui
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
-Ability: Tangling Hair
-- Earthquake
-- Tri Attack
-- Dig
-- Iron Head
+Ability: Overgrow
+- Leaf Blade
+- Pluck
+- Feather Dance
+- Triple Arrows
 
-Swampert
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Relaxed
-Ability: Torrent
-- Earthquake
-- Muddy Water
-- Protect
-- Mud Shot
-
-Flygon
+Sceptile
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
-Ability: Levitate
-- Sandstorm
-- Rock Slide
-- Dragon Claw
-- Earthquake
+Ability: Overgrow
+- Leaf Blade
+- X Scissor
+- Agility
+- Dual Chop
 
-Rhyperior
+Ludicolo
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Adamant
-Ability: Solid Rock
-- Stone Edge
-- Megahorn
-- Earthquake
-- Hammer Arm
+Nature: Modest
+Ability: Own Tempo
+- Giga Drain
+- Hydro Pump
+- Ice Beam
+- Astonish
 
-Regirock @ Sitrus Berry
+Breloom @ Sitrus Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Careful
-Ability: Clear Body
-- Stone Edge
-- Hammer Arm
-- Ancientpower
-- Explosion
+Nature: Adamant
+Ability: Technician
+- Mach Punch
+- Bullet Seed
+- Bulk Up
+- Spore
 
 === TRAINER_STEVEN ===
 Name: STEVEN

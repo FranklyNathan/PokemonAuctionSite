@@ -109,6 +109,16 @@ Key Moves:
   Spiky Shield (36)
   Hammer Arm (MR)
 
+Chewtle
+Key Moves:
+   Protect (14)
+   Rock Tomb (22)
+   Waterfall (HM)
+   Earthquake (TM)
+   Iron Tail (TM)
+   Jaw Lock (39)
+   Liquidation (48)
+
 Chinchou
 Key Moves:
    Bubble Beam (20)
@@ -151,6 +161,12 @@ Key Moves:
    Moongeist Beam (53)
    Moonblast (MR)
    Moonlight (MR)
+
+Cranidos
+Key Moves:
+   Rock Tomb (TM)
+   Earthquake (TM)
+   Zen Headbutt (43)
 
 Cubone
 Key Moves:
@@ -221,8 +237,10 @@ Exeggcute
 Key Moves:
    Bullet Seed (TM)
    Leech Seed (11)
+   Trick Room (TM)
    Psychic (TM)
    Giga Drain (TM)
+   Flamethrower (TM)
    Calm Mind (TM)
    Sludge Bomb (TM)
 
@@ -315,6 +333,15 @@ Key Moves:
    X-Scissor (TM)
    Thunderbolt (33)
 
+Hatenna
+Key Moves:
+   Confusion (1)
+   Trick Room (TM)
+   Psybeam (20)
+   Calm Mind (TM)
+   Psychic (TM)
+   Dazzling Gleam (30)
+
 Hawlucha
 Key Moves:
    Hone Claws (1)
@@ -359,6 +386,15 @@ Key Moves:
    Sky Uppercut (35)
    Dragon Dance (53*)
    X-Scissor (TM)
+
+Joltik
+Key Moves:
+   Electroweb (15)
+   Bug Bite (18)
+   Sticky Web (MR)
+   Signal Beam (34)
+   Thunderbolt (TM)
+   Thunder (TM)
 
 Litten
 Key Moves:
@@ -448,8 +484,17 @@ Key Moves:
    High Horsepower (24)
    Earthquake (TM/47)
 
+Murkrow
+Key Moves:
+   Wing Attack (15)
+   Assurance (25)
+   Fly (HM)
+   Sucker Punch (MR)
+   Night Slash (MR)
+
 Mudkip
 Key Moves:
+   Water Gun (4)
    Mud Bomb (22)
    Ice Beam (TM)
    Protect (32)
@@ -619,6 +664,14 @@ Key Moves:
    Bulk Up (TM)
    Earthquake (54)
 
+Sandshrew
+Key Moves:
+   Ice Ball (7)
+   Metal Claw (14)
+   Icicle Spear (Evo)
+   Earthquake (TM)
+   Brick Break (TM)
+
 Scatterbug
 Key Moves:
    Protect (9)
@@ -634,6 +687,15 @@ Key Moves:
    X-Scizor (TM/40/41)
    Swords Dance (44*)
    Brick Break (TM)
+
+Sewaddle
+Key Moves:
+   Bug Bite (8)
+   Protect (Evo)
+   X-Scissor (TM)
+   Aerial Ace (TM)
+   Sticky Web (31*)
+   Leaf Blade (36)
 
 Shellder
 Key Moves:
@@ -682,6 +744,7 @@ Key Moves:
    Surf (HM)
    Slack Off (33)
    Sludge Bomb (TM)
+   Flamethrower (TM)
    Calm Mind (TM)
 
 Sneasel
@@ -703,6 +766,7 @@ Key Moves:
 Solosis
 Key Moves:
    Charm (19)
+   Trick Room (TM)
    Recover (24)
    Psychic (39)
    Calm Mind (TM)
@@ -718,6 +782,7 @@ Key Moves:
 Spoink
 Key Moves:
    Psybeam (14)
+   Trick Room (TM)
    Zen Headbutt (26)
    Shock Wave (TM)
    Dazzling Gleam (TM)
