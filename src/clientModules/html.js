@@ -401,6 +401,18 @@ export function initBidButtonListeners(ctx) {
     if (e.target.hasAttribute('disabled')) return;
 
     let bid = +e.target.value;
+
+    // If this is a $100 raise, check if the bid jumped recently.
+    if (bid === 100 && ctx.stateId === 'bidding') {
+      const timeSinceLastBid = Date.now() - ctx.lastBidUpdateTime;
+      const bidIncrease = ctx.currentBid - ctx.previousBid;
+      if (timeSinceLastBid < 1000 && bidIncrease >= 200) {
+        toast('Warning', 'Woah! The bid increased before your raise registered.', 'warning');
+        console.log('[Client Bid] Bid blocked due to rapid increase.');
+        return;
+      }
+    }
+
     // if we are in the bidding phase these buttons are a raise on the existing bid
     if (ctx.stateId == 'bidding') {
       bid = ctx.currentBid + bid;

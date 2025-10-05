@@ -171,6 +171,8 @@ function handleServerUpdate(msg, ctx) {
 
   // Always update bid and bidder info first, as this is critical feedback.
   if (typeof msg.currentBid == 'number' && msg.currentBid != ctx.currentBid) {
+    ctx.previousBid = ctx.currentBid; // store the old bid
+    ctx.lastBidUpdateTime = Date.now(); // store the update time
     ctx.currentBid = msg.currentBid;
     updateCurrentBid(ctx);
     jiggleCurrentBid();
@@ -218,6 +220,7 @@ function handleServerUpdate(msg, ctx) {
     handledPauseChange = true;
     ctx.isPaused = msg.isPaused;
     const pauseButton = document.getElementById('pause-button');
+    ctx.isPaused = msg.isPaused;    
     const timeEl = document.getElementById('time');
     if (ctx.isPaused) {
       console.log('[Debug] Pausing client timer.');

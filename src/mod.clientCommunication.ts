@@ -167,6 +167,10 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
         const alarmTime = await ctx.getAlarm();
         if (alarmTime) {
           ctx.remainingTimeOnPause = alarmTime - Date.now();
+          // If pausing with 3 seconds or less, add 3 seconds.
+          if (ctx.remainingTimeOnPause <= 4000) {
+            ctx.remainingTimeOnPause += 4000;
+          }
         }
         await ctx.deleteAlarm();
         await ctx.storeCtx(); // Persist the pause state and remaining time immediately.
