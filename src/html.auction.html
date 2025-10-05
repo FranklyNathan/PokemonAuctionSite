@@ -45,11 +45,15 @@
       display: none;
     }
 
+    #tierlistDialog::part(body) {
+      padding: 0;
+    }
+
     .sl-theme-dark sl-button[variant='neutral']::part(label) {
       color: white;
     }
 
-    .sl-theme-dark .download-icon {
+    .sl-theme-dark .invert-in-dark-mode {
       filter: invert(1);
     }
 
@@ -197,8 +201,11 @@
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.5rem;">
             <div id="draft-counter" style="color: var(--sl-color-neutral-600);"></div>
             <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; width: 100%;">
+              <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
+                <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
+              </sl-button>
               <sl-button id="download-results-button" class="control-button" variant="neutral" title="Download Results">
-                <img class="download-icon" src="/generic/Download.png" alt="Download Results" style="height: 1.4rem; position: relative; top: 5px;" />
+                <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Download Results" style="height: 1.4rem; position: relative; top: 5px;" />
               </sl-button>
               <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
               <sl-button id="pause-button" class="control-button" variant="neutral" title="Pause/Resume Timer">
@@ -233,6 +240,10 @@
       <div id="bidConfirmationMessage"></div>
       <sl-button id="confirmBidButton" slot="footer" variant="primary">Confirm</sl-button>
       <sl-button id="cancelBidButton" slot="footer">Cancel</sl-button>
+    </sl-dialog>
+
+    <sl-dialog id="tierlistDialog" style="--width: 60vw; --height: 80vh;">
+      <img src="/tierlist.png" alt="Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
     </sl-dialog>
 
     <div id="flashbang-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.95); color: white; justify-content: center; align-items: center; z-index: 9999; font-size: 2rem; text-align: center;"></div>
@@ -580,6 +591,12 @@
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+      });
+
+      // Tierlist button listener
+      const tierlistButton = document.getElementById('tierlist-button');
+      tierlistButton.addEventListener('click', () => {
+        document.getElementById('tierlistDialog').show();
       });
     }
 

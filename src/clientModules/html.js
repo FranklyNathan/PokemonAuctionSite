@@ -407,7 +407,7 @@ export function initBidButtonListeners(ctx) {
       const timeSinceLastBid = Date.now() - ctx.lastBidUpdateTime;
       const bidIncrease = ctx.currentBid - ctx.previousBid;
       if (timeSinceLastBid < 1000 && bidIncrease >= 200) {
-        toast('Warning', 'Woah! The bid increased before your raise registered.', 'warning');
+        toast('Warning', 'Whoa! The bid increased before your raise registered.', 'warning');
         console.log('[Client Bid] Bid blocked due to rapid increase.');
         return;
       }
