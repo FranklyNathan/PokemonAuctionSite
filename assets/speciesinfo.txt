@@ -9,8 +9,13 @@ Key Moves:
 Applin
 Key Moves:
    Leech Seed (MR)
-   Dragon Dance (MR*)
    Giga Drain (TM)
+   Dragon Dance (24*)
+   Grav Apple (32*)
+   Dragon Rush (44*)
+   Apple Acid (28**)
+   Syrup Bomb (28***)
+   Fickle Beam (Evo***)
 
 Archen
 Key Moves:
@@ -28,6 +33,7 @@ Key Moves:
    Iron Head (22)
    Rock Slide (25)
    Hone Claws (TM)
+   Earthquake (TM)
 
 Azurill
 Key Moves:
@@ -113,6 +119,7 @@ Chewtle
 Key Moves:
    Protect (14)
    Rock Tomb (22)
+   Razor Shell (MR)
    Waterfall (HM)
    Earthquake (TM)
    Iron Tail (TM)
@@ -173,8 +180,6 @@ Key Moves:
    Bonemerang (21)
    Shadow Bone (27*)
    Overheat (TM*)
-Note:
-   Thief Thick Club from Flannery’s Marowak
 
 Cutiefly
 Key Moves:
@@ -295,6 +300,7 @@ Key Moves:
 Gligar
 Key Moves:
    Knock Off (10)
+   Fury Cutter (16)
    Acrobatics (22)
    Hone Claws (TM)
    Ice Fang (MR)
@@ -326,6 +332,7 @@ Key Moves:
    Flame Wheel (21)
    Flamethrower (TM)
    Overheat (TM)
+   Thunder Fang (MR)
 
 Grubbin
 Key Moves:
@@ -391,7 +398,7 @@ Joltik
 Key Moves:
    Electroweb (15)
    Bug Bite (18)
-   Sticky Web (MR)
+   Sticky Web (Evo.)
    Signal Beam (34)
    Thunderbolt (TM)
    Thunder (TM)
@@ -402,6 +409,7 @@ Key Moves:
    Double Kick (16)
    Earthquake (TM)
    Darkest Lariat (34)
+   Bulk Up (TM/MR)
    Flare Blitz (55)
 
 Litwick
@@ -409,8 +417,10 @@ Key Moves:
    Will-o-Wisp (16)
    Flame Burst (20)
    Hex (28)
-   Dark Pulse (TM)
    Overheat (TM)
+   Dark Pulse (TM)
+   Shadow Ball (TM)
+   Flamethrower (TM)
 
 Magnemite
 Key Moves:
@@ -446,6 +456,7 @@ Key Moves:
 Mawile
 Key Moves:
    Fairy Wind (1)
+   Crunch (29)
    Iron Head (45)
    Play Rough (49)
 
@@ -489,8 +500,8 @@ Key Moves:
    Wing Attack (15)
    Assurance (25)
    Fly (HM)
+   Night Slash (55/MR)
    Sucker Punch (MR)
-   Night Slash (MR)
 
 Mudkip
 Key Moves:
@@ -561,7 +572,8 @@ Poliwag
 Key Moves:
    Water Gun (5)
    Rain Dance (18)
-   Dynamic Punch (32)   
+   Dynamic Punch (32)  
+   Waterfall (HM) 
 
 Popplio
 Key Moves:
@@ -601,6 +613,7 @@ Key Moves:
    Accelerock (25)
    Bulk Up (TM)
    Stealth Rock (29)
+   Brick Break (TM)
    
 Rolycoly
 Key Moves:
@@ -668,7 +681,7 @@ Sandshrew
 Key Moves:
    Ice Ball (7)
    Metal Claw (14)
-   Icicle Spear (Evo)
+   Icicle Spear (Evo.)
    Earthquake (TM)
    Brick Break (TM)
 
@@ -691,7 +704,7 @@ Key Moves:
 Sewaddle
 Key Moves:
    Bug Bite (8)
-   Protect (Evo)
+   Protect (Evo.)
    X-Scissor (TM)
    Aerial Ace (TM)
    Sticky Web (31*)
@@ -709,9 +722,11 @@ Shinx
 Key Moves:
    Spark (13)
    Thunderbolt (TM)
+   Facade (TM)
 
 Shroomish
 Key Moves:
+   Leech Seed (8)
    Mach Punch (23)
    Fury Cutter (MT)
    Force Palm (28)
@@ -747,14 +762,6 @@ Key Moves:
    Flamethrower (TM)
    Calm Mind (TM)
 
-Sneasel
-Key Moves:
-   Poison Jab (24)
-   Dire Claw (28)
-   Brick Break (30)
-   Hone Claws (TM)
-   X-Scissor (TM)
-
 Snorunt
 Key Moves:
    Ice Shard (10)
@@ -771,6 +778,16 @@ Key Moves:
    Psychic (39)
    Calm Mind (TM)
 
+Shuppet
+Key Moves:
+   Knock Off (1)
+   Will O Wisp (16)
+   Shadow Ball (30)
+   Phantom Force (MR)
+   Sucker Punch (40)
+   Psychic (TM)
+   Dazzling Gleam (TM)
+
 Spheal
 Key Moves:
    Water Gun (1)
@@ -786,15 +803,6 @@ Key Moves:
    Zen Headbutt (26)
    Shock Wave (TM)
    Dazzling Gleam (TM)
-
-Sprigatito
-Key Moves:
-   Hone Claws (10)
-   Seed Bomb (17)
-   U Turn (24)
-   Flower Trick (36)
-   Night Slash (38)
-   Play Rough (42)
 
 Surskit
 Key Moves:
@@ -814,10 +822,9 @@ Key Moves:
 Teddiursa
 Key Moves:
    Bulk Up (TM)
-   Play Rough (29)
    Facade (TM)
-   Earth Power (31*)
-   High Horsepower (48)
+   Earthquake (TM)
+   Play Rough (MR)
 
 Tentacool
 Key Moves:
@@ -875,6 +882,13 @@ Key Moves:
    Sludge Bomb (29)
    Thunderbolt (TM)
 
+Turtwig
+Key Moves:
+   Razor Leaf (13)
+   Leech Seed (32)
+   Earthquake (32)
+   Wood Hammer (MR)
+
 Tyrogue
 Key Moves:
    High Jump Kick (29*)
@@ -897,8 +911,8 @@ Vulpix
 Key Moves:
    Ice Shard (10)
    Icy Wind (15)
-   Dazzling Gleam (32)
-   Ice Beam (36/TM)
+   Dazzling Gleam (Evo.)
+   Ice Beam (36/TM/MR)
    Dark Pulse (TM)
    Blizzard (TM)
    Calm Mind (TM)
@@ -991,28 +1005,12 @@ Key Moves:
    Dragon Rush (55)
    Earthquake (TM)
 
-Turtwig
-Key Moves:
-   Razor Leaf (13)
-   Leech Seed (32)
-   Earthquake (32)
-   Wood Hammer (MR)
-
 Oddish
 Key Moves:
    Mega Drain (19)
    Sludge Bomb (TM)
    Giga Drain (TM)
-
-Shuppet
-Key Moves:
-   Knock Off (1)
-   Will O Wisp (16)
-   Shadow Ball (30)
-   Phantom Force (MR)
-   Sucker Punch (40)
-   Psychic (TM)
-   Dazzling Gleam (TM)
+   Quiver Dance (MR*)
 
 Oricorio
 Key Moves:
@@ -1026,3 +1024,20 @@ Key Moves:
    Hone Claws (12)
    Breaking Swipe (24)
    Iron Tail (TM)
+
+Sneasel
+Key Moves:
+   Poison Jab (24)
+   Dire Claw (28)
+   Brick Break (30)
+   Hone Claws (TM)
+   X-Scissor (TM)
+
+Sprigatito
+Key Moves:
+   Hone Claws (10)
+   Seed Bomb (17)
+   U Turn (24)
+   Flower Trick (36)
+   Night Slash (38)
+   Play Rough (42)
