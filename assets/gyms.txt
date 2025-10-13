@@ -3656,7 +3656,7 @@ Ability: Cute Charm
 - Sing
 - Hyper Voice
 - Dazzling Gleam
-- Attract
+- Light Screen
 
 Azumarill
 Level: 52

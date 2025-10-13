@@ -204,6 +204,9 @@
               <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
                 <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
               </sl-button>
+              <sl-button id="boss-battles-button" class="control-button" variant="neutral" title="View Boss Battles">
+                <img class="invert-in-dark-mode" src="/generic/Sword.png" alt="View Boss Battles" style="height: 1.4rem; position: relative; top: 5px;" />
+              </sl-button>
               <sl-button id="download-results-button" class="control-button" variant="neutral" title="Download Results">
                 <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Download Results" style="height: 1.4rem; position: relative; top: 5px;" />
               </sl-button>
@@ -597,6 +600,12 @@
       const tierlistButton = document.getElementById('tierlist-button');
       tierlistButton.addEventListener('click', () => {
         document.getElementById('tierlistDialog').show();
+      });
+
+      // Boss Battles button listener
+      const bossBattlesButton = document.getElementById('boss-battles-button');
+      bossBattlesButton.addEventListener('click', () => {
+        window.open('/assets/boss-battles.html', '_blank');
       });
     }
 

@@ -32,6 +32,7 @@ Leavanny,Bug/Grass,evo,Swarm,Chlorophyll,Overcoat,75,103,80,70,80,92,Soothe Bell
 Chespin,Grass,base,Overgrow,,Bulletproof,56,61,65,48,45,38,
 Quilladin,Grass,evo,Overgrow,,Bulletproof,61,78,95,56,58,57,Level 16
 Chesnaught,Grass/Fighting,evo,Overgrow,,Bulletproof,88,107,122,74,75,64,Level 36
+Mega Chesnaught,Grass/Fighting,mega,Overgrow,,Bulletproof,88,137,172,74,115,44,Chesnaughtite
 Chinchou,Water/Electric,base,Volt Absorb,Illuminate,Water Absorb,75,38,38,56,56,67,
 Lanturn,Water/Electric,evo,Volt Absorb,Illuminate,Water Absorb,125,58,58,76,76,67,Level 27
 Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,
@@ -48,8 +49,9 @@ Dewpider,Water/Bug,base,Water Bubble,,Water Absorb,38,40,52,40,72,27,
 Araquanid,Water/Bug,evo,Water Bubble,,Water Absorb,68,70,92,50,132,42,Level 22
 Diglett,Ground,base,Sand Veil,Arena Trap,Sand Force,10,55,25,35,45,95,
 Dugtrio,Ground,evo,Sand Veil,Arena Trap,Sand Force,35,100,50,50,70,120,Level 26
-Drilbur,Ground,base,Sand Rush,Sand Force,Mold Breaker,60,85,40,30,45,68,
+Drilbur,Ground,base,Sand Rush,Sand Force,Mold Breaker,110,165,100,65,65,103,
 Excadrill,Ground/Steel,evo,Sand Rush,Sand Force,Mold Breaker,110,135,60,50,65,88,Level 31
+Mega Excadrill,Ground/Steel,evo,Sand Rush,Sand Force,Mold Breaker,110,165,100,65,65,103,Excadrite
 Electrike,Electric,base,Static,Lightning Rod,Minus,40,45,40,65,40,65,
 Manectric,Electric,evo,Static,Lightning Rod,Minus,70,75,60,105,60,105,Level 26
 Mega Manectric,Electric,mega,Intimidate,,,70,75,80,135,80,135,Manectite
@@ -59,6 +61,7 @@ Exeggutor-Alola,Grass/Dragon,evo,Frisk,,Harvest,95,105,85,125,75,45,Sun Stone
 Fennekin,Fire,base,Blaze,,Magician,40,45,40,62,60,60,
 Braixen,Fire,evo,Blaze,,Magician,59,59,58,90,70,73,Level 16
 Delphox,Fire/Psychic,evo,Blaze,,Magician,75,69,72,114,100,104,Level 36
+Mega Delphox,Fire/Psychic,mega,Blaze,,Magician,75,69,72,159,125,134,Delphoxite
 Flabebe,Fairy,base,Flower Veil,,Symbiosis,44,38,39,61,79,42, 
 Floette,Fairy,evo,Flower Veil,,Symbiosis,54,45,47,75,98,52,Level 19
 Florges,Fairy,evo,Flower Veil,,Symbiosis,78,65,68,112,154,75,Shiny Stone
@@ -68,6 +71,7 @@ Talonflame,Fire/Flying,evo,Flame Body,,Gale Wings,78,81,71,74,69,126,Level 35
 Froakie,Water,base,Torrent,,Protean,41,56,40,62,44,71,
 Frogadier,Water,evo,Torrent,,Protean,54,63,52,83,56,97,Level 16
 Greninja,Water/Dark,evo,Torrent,,Protean,72,95,67,103,71,122,Level 36
+Mega Greninja,Water/Dark,mega,Torrent,,Protean,72,125,77,133,81,142,Greninjite
 Fuecoco,Fire,base,Blaze,,Unaware,67,45,59,63,40,36,
 Crocalor,Fire,evo,Blaze,,Unaware,81,55,78,90,58,49,Level 16
 Skeledirge,Fire/Ghost,evo,Blaze,,Unaware,104,75,100,110,75,66,Level 36
@@ -114,6 +118,7 @@ Hatterene,Psychic/Fairy,evo,Healer,Anticipation,Magic Bounce,57,90,95,136,103,29
 Litwick,Ghost/Fire,base,Flash Fire,Flame Body,Infiltrator,50,30,55,65,55,20,
 Lampent,Ghost/Fire,evo,Flash Fire,Flame Body,Infiltrator,60,40,60,95,60,55,Level 41 (Whipped Dream)
 Chandelure,Ghost/Fire,evo,Flash Fire,Flame Body,Infiltrator,60,55,90,145,90,80,Dusk Stone
+Mega Chandelure,Ghost/Fire,mega,Flash Fire,Flame Body,Infiltrator,60,75,110,175,110,90,Chandelurite
 Magnemite,Electric/Steel,base,Magnet Pull,Sturdy,Analytic,25,35,70,95,55,45,
 Magneton,Electric/Steel,evo,Magnet Pull,Sturdy,Analytic,50,60,95,120,70,70,Level 30
 Magnezone,Electric/Steel,evo,Magnet Pull,Sturdy,Analytic,70,70,115,130,90,60,Thunder Stone
@@ -198,7 +203,7 @@ Sandile,Ground/Dark,base,Intimidate,Moxie,Anger Point,50,72,35,35,35,65,
 Krokorok,Ground/Dark,evo,Intimidate,Moxie,Anger Point,60,82,45,45,45,74,Level 29 (Whipped Dream)
 Krookodile,Ground/Dark,evo,Intimidate,Moxie,Anger Point,95,117,80,65,70,92,Level 40
 Sandshrew,Ice/Steel,base,Snow Cloak,,Slush Rush,50,75,90,10,35,40,
-Sandslash-Alola,Ice/Steel,evo,Snow Cloak,,Slush Rush,75,100,120,25,65,65,Ice Stone
+Sandslash-Alola,Ice/Steel,evo,Snow Cloak,,Slush Rush,75,100,120,25,65,65,Level 22
 Scatterbug,Bug,base,Shield Dust,Compound Eyes,Friend Guard,38,35,40,27,25,35,
 Spewpa,Bug,evo,Shed Skin,,Friend Guard,45,22,60,27,30,29,Level 9
 Vivillon,Bug/Flying,evo,Shield Dust,Compound Eyes,Friend Guard,80,52,50,90,50,89,Level 12
@@ -220,9 +225,13 @@ Skiddo,Grass,base,Sap Sipper,,Grass Pelt,66,65,48,62,57,52,
 Gogoat,Grass,evo,Sap Sipper,,Grass Pelt,123,100,62,97,81,68,Level 32
 Skrelp,Poison/Water,base,Poison Point,Poison Touch,Adaptability,50,60,60,60,60,30,
 Dragalge,Poison/Dragon,evo,Poison Point,Poison Touch,Adaptability,65,75,90,97,123,44,Dragon Scale
+Mega Dragalge,Poison/Dragon,mega,Poison Point,Poison Touch,Adaptability,65,85,105,132,163,44,Dragalgite
 Slowpoke,Psychic,base,Gluttony,Own Tempo,Regenerator,90,65,65,40,40,15,
 Slowbro-Galar,Poison/Psychic,evo,Quick Draw,Own Tempo,Regenerator,95,100,95,100,70,30,Level 37
 Slowking-Galar,Poison/Psychic,evo,Curious Medicine,Own Tempo,Regenerator,95,65,80,110,110,30,King's Rock
+Smoliv,Grass/Normal,base,Early Bird,,Harvest,41,35,45,58,51,30,
+Dolliv,Grass/Normal,evo,Early Bird,,Harvest,52,53,60,78,78,33,Level 25 (Whipped Dream)
+Arboliva,Grass/Normal,evo,Seed Sower,,Harvest,78,69,90,125,109,39,Level 35
 Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,
 Glalie,Ice,evo,Inner Focus,Ice Body,Moody,80,80,80,80,80,80,Level 42
 Mega Glalie,Ice,mega,Refrigerate,,,80,120,80,120,80,100,Glalitite
@@ -237,6 +246,7 @@ Spoink,Psychic,base,Thick Fat,Own Tempo,Gluttony,60,25,35,70,80,60,
 Grumpig,Psychic,evo,Thick Fat,Own Tempo,Gluttony,80,45,65,90,110,80,Level 32
 Staryu,Water,base,Illuminate,Natural Cure,Analytic,30,45,55,70,55,85,
 Starmie,Water/Psychic,evo,Illuminate,Natural Cure,Analytic,60,75,85,100,85,115,Water Stone
+Mega Starmie,Water/Psychic,mega,Illuminate,Natural Cure,Analytic,60,140,105,130,105,120,Starmite
 Surskit,Bug/Water,base,Swift Swim,,Rain Dish,40,30,32,50,52,65,
 Masquerain,Bug/Flying,evo,Intimidate,,Unnerve,70,60,62,100,82,80,Level 22
 Teddiursa,Normal,base,Pickup,Quick Feet,Honey Gather,60,80,50,50,50,40,
@@ -251,6 +261,10 @@ Torchic,Fire,base,Blaze,,Speed Boost,45,60,40,70,50,45,
 Combusken,Fire/Fighting,evo,Blaze,,Speed Boost,60,85,60,85,60,55,Level 16
 Blaziken,Fire/Fighting,evo,Blaze,,Speed Boost,80,120,70,110,70,80,Level 36
 Mega Blaziken,Fire/Fighting,mega,Speed Boost,,,80,160,80,130,80,100,Blazikenite
+Totodile,Water,base,Torrent,,Sheer Force,50,65,64,44,48,43,
+Croconaw,Water,evo,Torrent,,Sheer Force,65,80,80,59,63,58,Level 18
+Feraligatr,Water,evo,Torrent,,Sheer Force,85,105,100,79,83,78,Level 30
+Mega Feraligatr,Water,mega,Torrent,,Sheer Force,85,160,125,89,93,78,Feraligatrite
 Trapinch,Ground,base,Hyper Cutter,Arena Trap,Sheer Force,45,100,45,45,45,10,
 Vibrava,Ground/Dragon,evo,Levitate,,,50,70,50,50,50,70,Level 35 (Whipped Dream)
 Flygon,Ground/Dragon,evo,Levitate,,,80,100,80,80,80,100,Level 45
@@ -266,6 +280,7 @@ Torterra,Grass/Ground,evo,Overgrow,,Shell Armor,95,109,105,75,85,56,Level 32
 Venipede,Bug/Poison,base,Poison Point,Swarm,Speed Boost,30,45,59,30,39,57, 
 Whirlipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,40,55,99,40,79,47,Level 22
 Scolipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,60,100,89,55,69,112,Level 30
+Mega Scolipede,Bug/Poison,mega,Poison Point,Swarm,Speed Boost,60,140,149,75,99,62,Scolipedite
 Vulpix,Ice,base,Snow Cloak,,Snow Warning,38,41,40,50,65,65,
 Ninetales-Alola,Ice/Fairy,evo,Snow Cloak,,Snow Warning,73,67,75,81,100,109,Ice Stone
 Wingull,Water/Flying,base,Keen Eye,Hydration,Rain Dish,40,30,30,55,30,85,

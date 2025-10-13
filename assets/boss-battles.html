@@ -132,7 +132,7 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text(); // Note: 'Name:' is intentionally not in this list so we can read it for the color.
-                const prefixesToIgnore = ['Class:', 'Pic:', 'Gender:', 'Music:', 'Double Battle:', 'IVs:', 'AI:', 'Mugshot:'];
+                const prefixesToIgnore = ['Class:', 'Pic:', 'Gender:', 'Music:', 'Double Battle:', 'IVs:', 'Nature:', 'AI:', 'Mugshot:'];
                 const contentEl = document.getElementById('boss-battles-content');
                 contentEl.innerHTML = ''; // Clear "Loading..." and remove <pre> styling
 
@@ -194,7 +194,7 @@
                             continue;
                         }
 
-                        const nonPokemonPrefixes = ['Name:', 'Items:', 'Level:', 'Nature:', 'Ability:', '-'];
+                        const nonPokemonPrefixes = ['Name:', 'Items:', 'Level:', 'Ability:', '-'];
                         const isPokemonLine = trimmedLine.length > 0 && !nonPokemonPrefixes.some(p => trimmedLine.startsWith(p));
 
                         if (isPokemonLine) {

@@ -66,7 +66,7 @@ Buizel
 Key Moves:
    Water Gun (15)
    Aqua Jet (24)
-   Water Pulse (TM)
+   Waterfall (HM)
    Brick Break (TM)
    Ice Fang (MR)
 
@@ -219,6 +219,7 @@ Key Moves:
 
 Drilbur
 Key Moves:
+   Rapid Spin (5)
    Dig (19)
    Hone Claws (22)
    Rock Slide (29)
@@ -253,9 +254,11 @@ Fennekin
 Key Moves:
    Flame Charge (14)
    Psybeam (18)
+   Calm Mind (TM)
    Flamethrower (45/TM)
    Dazzling Gleam (TM)
    Shadow Ball (TM)
+   Overheat (TM)
 
 Flabebe
 Key Moves:
@@ -278,6 +281,7 @@ Key Moves:
    Water Pulse (14)
    Fling (28)
    Dark Pulse (TM)
+   Ice Beam (TM)
    Surf (HM)
 
 Fuecoco
@@ -421,6 +425,7 @@ Key Moves:
    Dark Pulse (TM)
    Shadow Ball (TM)
    Flamethrower (TM)
+   Calm Mind (TM)
 
 Magnemite
 Key Moves:
@@ -689,6 +694,7 @@ Scatterbug
 Key Moves:
    Protect (9)
    Bug Bite (15)
+   Sleep Powder (MR)
    Gust (17)
    Quiver Dance (45)
    Hurricane (50)
@@ -750,6 +756,7 @@ Key Moves:
    Sludge Bomb (TM)
    Thunderbolt (TM)
    Surf (HM)
+   Dragon Pulse (53)
 
 Slowpoke
 Key Moves:
@@ -761,6 +768,15 @@ Key Moves:
    Sludge Bomb (TM)
    Flamethrower (TM)
    Calm Mind (TM)
+
+Smoliv
+Key Moves:
+   Growth (7)
+   Razor Leaf (10)
+   Mega Drain (20)
+   Giga Drain (TM)
+   Dazzling Gleam (TM)
+   Reflect (TM)
 
 Snorunt
 Key Moves:
@@ -859,6 +875,18 @@ Key Moves:
    Brick Break (TM)
    Sky Uppercut (57)
 
+Totodile
+Key Moves:
+   Water Gun (6)
+   Ice Fang (21)
+   Crunch (30)
+   Waterfall (HM)
+   Dragon Claw (TM)
+   Earthquake (TM)
+   Brick Break (TM)
+   Iron Tail (TM)
+   Hone Claws (TM)
+
 Trapinch
 Key Moves:
    Bulldoze (8)
@@ -898,8 +926,9 @@ Key Moves:
 Venipede
 Key Moves:
    Protect (15)
-   Bug Bite (23)
+   Bug Bite (22)
    Venoshock (28)
+   X-Scissor (TM)
 
 Voltorb
 Key Moves:
@@ -965,6 +994,9 @@ Key Moves:
    Surf (HM)
    Psychic (TM)
    Ice Beam (TM)
+   Dazzling Gleam (TM)
+   Thunderbolt (TM)
+   Thunder (TM)
 
 Helioptile
 Key Moves:

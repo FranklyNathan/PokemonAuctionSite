@@ -156,6 +156,7 @@ function handleServerUpdate(msg, ctx) {
   // This must be calculated BEFORE `performedInitialUpdate` is changed.
   const isNewPlayerForTimerReset = isNewPlayer && ctx.performedInitialUpdate;
 
+
   // Case 1: A new auction round is starting (bidding -> bidding).
   if (
     draftJustCompleted &&
@@ -167,6 +168,11 @@ function handleServerUpdate(msg, ctx) {
     // Case 2: The auction is ending (bidding -> auction_over/post_auction).
     // The highest bidder from the just-ended bidding phase won the player.
     recordDraft(ctx);
+  }
+  
+  if (isNewPlayer) {
+    console.log('[Debug] New player detected. Storing newPlayerTime.');
+    ctx.newPlayerTime = Date.now();
   }
 
   // Always update bid and bidder info first, as this is critical feedback.

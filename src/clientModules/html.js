@@ -400,6 +400,14 @@ export function initBidButtonListeners(ctx) {
     if (ctx.selectedPlayerId == undefined || e.target.value == undefined) return;
     if (e.target.hasAttribute('disabled')) return;
 
+    // Prevent accidental high bids at the very start of a round.
+    const timeSinceNewPlayer = Date.now() - ctx.newPlayerTime;
+    if (ctx.currentBid === 0 && +e.target.value >= 1500 && timeSinceNewPlayer < 1500) {
+      toast('Warning', 'Bid blocked in case of accident.', 'warning');
+      console.log('[Client Bid] High bid blocked in case of accident.');
+      return;
+    }
+
     let bid = +e.target.value;
 
     // If this is a $100 raise, check if the bid jumped recently.
@@ -427,6 +435,14 @@ export function initBidButtonListeners(ctx) {
     if (ctx.isPaused) return; // Do not allow bidding when paused
     if (e.target.hasAttribute('disabled')) return;
     const raiseInputEl = document.getElementById('raise-input');
+
+    // Prevent accidental high bids at the very start of a round.
+    const timeSinceNewPlayer = Date.now() - ctx.newPlayerTime;
+    if (ctx.currentBid === 0 && +raiseInputEl.value >= 1500 && timeSinceNewPlayer < 2000) {
+      toast('Warning', 'Bid blocked in case of accident.', 'warning');
+      console.log('[Client Bid] Bid blocked due to being a high initial bid placed too quickly.');
+      return;
+    }
     if (ctx.selectedPlayerId == undefined || raiseInputEl == undefined) return;
     const bid = raiseInputEl.value;
     if (!isValidNumber(bid)) return;

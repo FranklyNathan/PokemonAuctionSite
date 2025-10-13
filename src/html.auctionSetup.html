@@ -181,6 +181,9 @@
     </sl-dialog>
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
+      <sl-button id="drive-button" class="control-button" variant="neutral" title="Open Google Drive Folder">
+        <img src="/generic/Drive.png" alt="Open Google Drive" style="height: 1.4rem; position: relative; top: 5px;" />
+      </sl-button>
       <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
         <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
       </sl-button>
@@ -223,6 +226,11 @@
     const tierlistButton = document.getElementById('tierlist-button');
     tierlistButton.addEventListener('click', () => {
       document.getElementById('tierlistDialog').show();
+    });
+
+    // Drive button listener
+    document.getElementById('drive-button').addEventListener('click', () => {
+      window.open('https://drive.google.com/drive/folders/1yY2AyLuR07CZCNowcPN22HTWS1184ZOx?usp=sharing', '_blank');
     });
 
     document.body.classList.add('ready');
