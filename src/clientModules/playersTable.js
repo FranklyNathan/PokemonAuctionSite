@@ -207,6 +207,13 @@ const cols = [
     filter: 'agNumberColumnFilter',
     floatingFilter: true,
   },
+  {
+    field: 'mega',
+    headerName: 'Mega',
+    minWidth: 100,
+    filter: 'agTextColumnFilter',
+    floatingFilter: true,
+  },
 ];
 
 /////////////////////////////
@@ -222,6 +229,7 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields, onP
     .add('keeper')
     .add('stage')
     .add('evolution_method')
+    .add('mega')
     .add('drafted_by_id')
     .add('hp')
     .add('attack').add('defense').add('sp_attack').add('sp_defense').add('speed');  // find the extra stats fields that were added and save them to the Ctx
@@ -318,6 +326,7 @@ export async function loadPlayersData(ctx) {
       name: row.name,
       type: row.type,
       // Use null for drafted_by_id if it's not a valid number.
+      mega: row.mega,
       pickedBy: draftedByName,
       cost: cost,
       keeper: row.keeper || draftedById != null,

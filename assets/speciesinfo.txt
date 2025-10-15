@@ -743,10 +743,10 @@ Skiddo
 Key Moves:
    Leech Seed (12)
    Razor Leaf (13)
-   Bulk Up (34/TM)
    Bulldoze (26)
    Seed Bomb (30)
    Aerial Ace (32/TM)
+   Bulk Up (34/TM)
    Brick Break (TM)
 
 Skrelp
@@ -783,8 +783,9 @@ Key Moves:
    Ice Shard (10)
    Icy Wind (14)   
    Ice Beam (TM)
-   Freeze Dry (42*)
-   Shadow Ball (42*)
+   Captivate (41)
+   Shadow Ball (42/TM)
+   Draining Kiss (MR)
 
 Solosis
 Key Moves:
@@ -849,6 +850,7 @@ Key Moves:
    Surf (HM)
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
+   Ice Beam (TM)
 
 Tinkatink
 Key Moves:
