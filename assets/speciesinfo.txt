@@ -10,12 +10,15 @@ Applin
 Key Moves:
    Leech Seed (MR)
    Giga Drain (TM)
+   Wing Attack (Evo.*)
+   Headbutt (Evo.**)
+   Double Hit (Evo.***)
    Dragon Dance (24*)
    Grav Apple (32*)
    Dragon Rush (44*)
    Apple Acid (28**)
    Syrup Bomb (28***)
-   Fickle Beam (Evo***)
+   Fickle Beam (Evo.***)
 
 Archen
 Key Moves:
@@ -198,7 +201,7 @@ Key Moves:
 
 Dewpider
 Key Moves:
-   Spider Web (8)
+   Bug Bite (13)
    Bubble Beam (16)
    Water Pulse (TM)
    Leech Life (33)
@@ -266,6 +269,7 @@ Key Moves:
    Wish (20)
    Calm Mind (TM)
    Moonblast (MR)
+   Petal Dance (MR)
 
 Fletchling
 Key Moves:
@@ -274,12 +278,14 @@ Key Moves:
    Hone Claws (TM)
    Flame Charge (39)
    Flare Blitz (MR)
+   Brave Bird (MR)
 
 Froakie
 Key Moves:
    Lick (10)
    Water Pulse (14)
    Fling (28)
+   Extrasensory (49)
    Dark Pulse (TM)
    Ice Beam (TM)
    Surf (HM)
@@ -293,6 +299,7 @@ Key Moves:
 
 Geodude
 Key Moves:
+   Rock Throw (16)
    Bulldoze (22)
    Earthquake (40)
 
@@ -341,6 +348,7 @@ Key Moves:
 Grubbin
 Key Moves:
    Bug Bite (13)
+   Spark (16)
    X-Scissor (TM)
    Thunderbolt (33)
 
@@ -385,10 +393,12 @@ Houndour
 Key Moves:
    Ember (1)
    Bite (16)
+   Nasty Plot (MR)   
+   Thunder Fang (MR)
+   Inferno (MR)
    Overheat (TM)
    Flamethrower (TM/50)
    Dark Pulse (TM)
-   Nasty Plot (MR)   
 
 Jangmo-o
 Key Moves:
@@ -460,10 +470,10 @@ Key Moves:
 
 Mawile
 Key Moves:
-   Fairy Wind (1)
+   Iron Head (MR/45)
+   Play Rough (MR/49)
    Crunch (29)
-   Iron Head (45)
-   Play Rough (49)
+   Sucker Punch (37)
 
 Mime Jr
 Key Moves:
@@ -489,6 +499,7 @@ Key Moves:
 Morelull
 Key Moves:
    Moonlight (11)
+   Mega Drain (15)
    Giga Drain (31)
    Strength Sap (35)
    Dazzling Gleam (TM)
@@ -512,11 +523,12 @@ Mudkip
 Key Moves:
    Water Gun (4)
    Mud Bomb (22)
-   Ice Beam (TM)
+   Rock Slide (28)
    Protect (32)
+   Ice Beam (TM)
    Surf (HM)
    Waterfall (HM)
-   Earthquake (51)
+   Earthquake (51/TM)
    Hammer Arm (MR)
 
 Munchlax
@@ -591,6 +603,7 @@ Key Moves:
 
 Porygon
 Key Moves:
+   Psybeam (7)
    Recover (18)
    Ice Beam (TM)
    Discharge (40)
@@ -649,6 +662,9 @@ Key Moves:
 
 Rowlet
 Key Moves:
+   Razor Leaf (14)
+   Ominous Wind (16)
+   Pluck (24)
    Giga Drain (TM)
    Spirit Shackle (34*)
    Leaf Blade (44)
@@ -727,7 +743,7 @@ Key Moves:
 Shinx
 Key Moves:
    Spark (13)
-   Thunderbolt (TM)
+   Thunder Fang (TM)
    Facade (TM)
 
 Shroomish
@@ -817,9 +833,11 @@ Spoink
 Key Moves:
    Psybeam (14)
    Trick Room (TM)
-   Zen Headbutt (26)
    Shock Wave (TM)
    Dazzling Gleam (TM)
+   Psychic (52/TM)
+   Calm Mind (TM)
+   Belch (MR)
 
 Surskit
 Key Moves:
@@ -908,6 +926,7 @@ Key Moves:
 
 Trubbish
 Key Moves:
+   Toxic Spikes (7)
    Sludge (18)
    Sludge Bomb (29)
    Thunderbolt (TM)

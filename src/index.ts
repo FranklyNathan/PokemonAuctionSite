@@ -110,7 +110,11 @@ export class Auction implements DurableObject {
     try {
       if (route == 'websocket') {
         return await handleWebsocket(request, path, this.ctx, this.state);
-      } else if (path[1] == 'results') {
+      } else if (path[1] === 'results') {
+        // Inject a cache-busting favicon link into the results page.
+        const modifiedResultsHtml = resultsHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
+        // post-auction page with just the players table
+        return new Response(modifiedResultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
         // post-auction page with just the players table
         return new Response(resultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction') {
@@ -121,7 +125,9 @@ export class Auction implements DurableObject {
         return await handleResultsData(request, this.ctx);
       } else {
         console.log(`[Durable Object] Path did not match a specific DO route. Treating as request for main auction HTML.`);
-        return await handleAuction(request, this.ctx);
+        const auctionHtml = await handleAuction(request, this.ctx);
+        const auctionHtmlText = await auctionHtml.text();
+        return new Response(auctionHtmlText.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`), auctionHtml);
       }
     } catch (e) {
       console.error(`[Durable Object Fetch] Error on path ${url.pathname}:`, e);
@@ -224,7 +230,9 @@ export default {
     try {
       if (!path[0] && request.method.toLowerCase() == 'get') {
         // User is setting up a new auction
-        return new Response(auctionSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+        // Inject a cache-busting favicon link into the setup page.
+        const modifiedSetupHtml = auctionSetupHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
+        return new Response(modifiedSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
       } 
       
@@ -263,8 +271,8 @@ export default {
       } else if (path[0] && /^[0-9a-f]{64,64}$/.test(path[0])) {
         return await handleDO(request, env, path);
       } else if (path[0] === 'favicon.ico') {
-        // Browsers automatically request this. Return nothing to avoid 404s in logs.
-        return new Response(null, { status: 204 });
+        // The getAssetFromKV doesn't handle root-level assets well. We'll serve it manually.
+        return await handleModule(request, ['assets', 'favicon.ico']);
       }
       // If no API route matched, it's a 404 for the API.
       console.log(`[Worker Fetch] 4. No API route matched for path: ${url.pathname}`);
