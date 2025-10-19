@@ -9,8 +9,8 @@ import confettiMod from './clientModules/confetti.js';
 import onMessageMod from './clientModules/onMessage.js';
 import htmlMod from './clientModules/html.js';
 import clientActionsMod from './clientModules/clientActions.js';
-import exclamationTriangle from '../assets/icons/exclamation-triangle.svg';
-import infoCircle from '../assets/icons/info-circle.svg';
+import exclamationTriangle from '../assets/generic/exclamation-triangle.svg';
+import infoCircle from '../assets/generic/info-circle.svg';
 
 import agGrid from '../node_modules/ag-grid-community/dist/ag-grid-community.min.js';
 import confetti from '../node_modules/canvas-confetti/dist/confetti.browser.js';

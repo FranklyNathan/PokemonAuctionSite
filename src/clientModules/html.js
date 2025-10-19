@@ -200,7 +200,7 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
   console.log('[Debug] speciesInfoMap available:', speciesInfoMap instanceof Map && speciesInfoMap.size > 0);
   document.getElementById('waiting-msg').innerHTML = '';
   const pokemonImageEl = document.getElementById('pokemon-image');
-  const imagePath = `/images/${encodeURIComponent(playerData.name)}.png`;
+  const imagePath = `/baseforms/${encodeURIComponent(playerData.name)}.png`;
   pokemonImageEl.src = imagePath;
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';

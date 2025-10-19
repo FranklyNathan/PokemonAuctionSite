@@ -94,11 +94,13 @@ Key Moves:
    Needle Arm (16)
    Spiky Shield (32)
    Sucker Punch (35)
+   Giga Drain (TM)
 
 Carvanha
 Key Moves:
    Aqua Jet (11)
    Ice Fang (25)
+   Poison Fang (34)
    Crunch (40)
    Waterfall (HM)
 
@@ -180,9 +182,12 @@ Key Moves:
 
 Cubone
 Key Moves:
+   Bone Club (7)
    Bonemerang (21)
-   Shadow Bone (27*)
-   Overheat (TM*)
+   Earthquake (TM)
+   Shadow Bone (MR**)
+   Overheat (TM**)
+   Flare Blitz (53**)
 
 Cutiefly
 Key Moves:
@@ -206,6 +211,7 @@ Key Moves:
    Water Pulse (TM)
    Leech Life (33)
    Surf (HM)
+   Mirror Coat (50)
 
 Diglett
 Key Moves:
@@ -260,7 +266,8 @@ Key Moves:
    Calm Mind (TM)
    Flamethrower (45/TM)
    Dazzling Gleam (TM)
-   Shadow Ball (TM)
+   Shadow Ball (MR/TM)
+   Psychic (TM)
    Overheat (TM)
 
 Flabebe
@@ -274,6 +281,7 @@ Key Moves:
 Fletchling
 Key Moves:
    Peck (10)
+   Aerial Ace (TM)
    Overheat (TM)
    Hone Claws (TM)
    Flame Charge (39)
@@ -293,6 +301,7 @@ Key Moves:
 Fuecoco
 Key Moves:
    Incinerate (15)
+   Snarl (24)
    Overheat (TM)
    Torch Song (36)
    Shadow Ball (38)
@@ -301,7 +310,7 @@ Geodude
 Key Moves:
    Rock Throw (16)
    Bulldoze (22)
-   Earthquake (40)
+   Earthquake (40/TM)
 
 Gimmighoul
 Key Moves:
@@ -507,9 +516,10 @@ Key Moves:
 
 Mudbray
 Key Moves:
+   Bulldoze (10)
    Double Kick (15)
    High Horsepower (24)
-   Earthquake (TM/47)
+   Earthquake (47/TM)
 
 Murkrow
 Key Moves:
@@ -538,9 +548,11 @@ Key Moves:
 
 Nincada
 Key Moves:
-   Fury Cutter (20)   
-   Shadow Ball (33)
-   Baton Pass (35)
+   Fury Cutter (Evo.)   
+   Shadow Ball (33**)
+   Baton Pass (35*)
+   Swords Dance (41*)
+   X Scissor (47*/TM)
 
 Noibat
 Key Moves:
@@ -559,7 +571,9 @@ Key Moves:
    Magnitude (12)
    Lava Plume (22)
    Overheat (TM)
-   Rock Slide (33)
+   Rock Slide (Evo.)
+   Earthquake (46/TM)
+   Eruption (MR)
 
 Pancham
 Key Moves:
@@ -613,10 +627,15 @@ Ralts
 Key Moves:
    Draining Kiss (23)
    Calm Mind (26/TM)
-   Psychic (30/TM)
-   Dazzling Gleam (TM)
-   Thunderbolt (TM)
-   Moonblast (MR)
+   Psychic (30*/TM)
+   Dazzling Gleam (TM*)
+   Thunderbolt (TM*)
+   Moonblast (MR*)
+   Psycho Cut (31**)
+   Bulk Up (TM**)
+   Close Combat (MR/53**)
+   Leaf Blade (MR**)
+   Night Slash (MR**)
 
 Riolu
 Key Moves:
@@ -678,7 +697,7 @@ Key Moves:
    Faint Attack (19)
    Knock Off (26)
    Hone Claws (TM)
-   Shadow Ball (39)
+   Shadow Ball (39/TM)
 
 Salandit
 Key Moves:
@@ -688,6 +707,7 @@ Key Moves:
    Toxic (29)
    Overheat (TM)
    Sludge Bomb (TM)
+   Flamethrower (44/TM)
    Encore (MR)
 
 Sandile
@@ -696,7 +716,7 @@ Key Moves:
    Crunch (28)
    Dig (32/TM)
    Bulk Up (TM)
-   Earthquake (54)
+   Earthquake (54/TM)
 
 Sandshrew
 Key Moves:
@@ -764,6 +784,7 @@ Key Moves:
    Aerial Ace (32/TM)
    Bulk Up (34/TM)
    Brick Break (TM)
+   Earthquake (MR/TM)
 
 Skrelp
 Key Moves:
@@ -799,23 +820,23 @@ Key Moves:
    Ice Shard (10)
    Icy Wind (14)   
    Ice Beam (TM)
-   Captivate (41)
-   Shadow Ball (42/TM)
-   Draining Kiss (MR)
+   Captivate (41**)
+   Shadow Ball (42**/TM)
+   Draining Kiss (MR**)
 
 Solosis
 Key Moves:
    Charm (19)
    Trick Room (TM)
    Recover (24)
-   Psychic (39)
+   Psychic (39/TM)
    Calm Mind (TM)
 
 Shuppet
 Key Moves:
    Knock Off (1)
    Will O Wisp (16)
-   Shadow Ball (30)
+   Shadow Ball (30/TM)
    Phantom Force (MR)
    Sucker Punch (40)
    Psychic (TM)
@@ -828,6 +849,7 @@ Key Moves:
    Water Pulse (TM)
    Surf (HM)
    Ice Beam (TM)
+   Earthquake (TM)
 
 Spoink
 Key Moves:
@@ -856,9 +878,11 @@ Key Moves:
 
 Teddiursa
 Key Moves:
+   Fury Swipes (8)
    Bulk Up (TM)
    Facade (TM)
    Earthquake (TM)
+   Headlong Rush (Evo.)
    Play Rough (MR)
 
 Tentacool
@@ -872,9 +896,12 @@ Key Moves:
 
 Tinkatink
 Key Moves:
+   Metal Claw (8)
+   Draining Kiss (17)
    Brutal Swing (24)
    Play Rough (35)
-   Gigaton Hammer (38)
+   Gigaton Hammer (Evo.)
+   Skitter Smack (47)
    Knock Off (52)
 
 Togepi
@@ -893,6 +920,9 @@ Key Moves:
    Flame Charge (20)
    Blaze Kick (36)
    Brick Break (TM)
+   Hone Claws (TM)
+   Brave Bird (50)
+   High Jump Kick (MR)
    Sky Uppercut (57)
 
 Totodile
@@ -914,6 +944,7 @@ Key Moves:
    Earthquake (33/TM)
    Hone Claws (TM)
    Dragon Rush (47)
+   Dragon Dance (MR)
 
 Treecko
 Key Moves:
@@ -936,6 +967,7 @@ Key Moves:
    Razor Leaf (13)
    Leech Seed (32)
    Earthquake (32)
+   Crunch (45)
    Wood Hammer (MR)
 
 Tyrogue
@@ -950,6 +982,7 @@ Key Moves:
    Bug Bite (22)
    Venoshock (28)
    X-Scissor (TM)
+   Megahorn (MR)
 
 Voltorb
 Key Moves:
@@ -991,15 +1024,16 @@ Key Moves:
    Poison Jab (24)
    Water Pulse (TM)
    Surf (HM)
-   Earthquake (48)
+   Earthquake (48/TM)
 
 Zigzagoon
 Key Moves:
    Snarl (9)
    Night Slash (20)
    Facade (TM)
-   Obstruct (35)
    Bulk Up (TM)
+   Hone Claws (TM/MR)
+   Obstruct (35)
 
 Zubat
 Key Moves:
