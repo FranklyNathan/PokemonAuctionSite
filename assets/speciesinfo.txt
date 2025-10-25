@@ -112,6 +112,13 @@ Key Moves:
    Overheat (TM)
    Giga Drain (TM)
 
+Cetoddle
+Key Moves:
+   Ice Shard (12)
+   Avalanche (27)
+   Bounce (31)
+   Ice Spinner (44)
+
 Chespin
 Key Moves:
   Leech Seed (15)
@@ -285,6 +292,7 @@ Key Moves:
    Overheat (TM)
    Hone Claws (TM)
    Flame Charge (39)
+   Fly (HM)
    Flare Blitz (MR)
    Brave Bird (MR)
 
@@ -310,7 +318,10 @@ Geodude
 Key Moves:
    Rock Throw (16)
    Bulldoze (22)
+   Stealth Rock (30)
    Earthquake (40/TM)
+   Heavy Slam (MR)
+   Stone Edge (54)
 
 Gimmighoul
 Key Moves:
@@ -322,10 +333,11 @@ Key Moves:
    Knock Off (10)
    Fury Cutter (16)
    Acrobatics (22)
-   Hone Claws (TM)
+   Steel Wing (TM)
    Ice Fang (MR)
    Thunder Fang (MR)
    U-turn (30)
+   Hone Claws (TM)
    X-Scissor (TM)
    Brick Break (TM)
    Earthquake (TM)
@@ -343,9 +355,11 @@ Key Moves:
 Greavard
 Key Moves:
    Dig (16)
+   Rest (24/TM)
    Crunch (28)
    Play Rough (32)
    Last Respects (Evo.)
+   Charm (51)
 
 Growlithe
 Key Moves:
@@ -525,6 +539,7 @@ Murkrow
 Key Moves:
    Wing Attack (15)
    Assurance (25)
+   Steel Wing (TM)
    Fly (HM)
    Night Slash (55/MR)
    Sucker Punch (MR)
@@ -577,7 +592,11 @@ Key Moves:
 
 Pancham
 Key Moves:
+   Karate Chop (12)
    Bulk Up (TM)
+   Bullet Punch (Evo.)
+   Brick Break (TM)
+   Earthquake (TM)
    Crunch (42)
    Sky Uppercut (52)
 
@@ -597,6 +616,8 @@ Key Moves:
 Pikipek
 Key Moves:
    Pluck (15)
+   Steel Wing (TM)
+   Facade (TM)
    Beak Blast (28)
 
 Poliwag
@@ -738,10 +759,14 @@ Key Moves:
    
 Scyther
 Key Moves:
+   Wing Attack (21)
    Steel Wing (TM)
-   X-Scizor (TM/40/41)
-   Swords Dance (44*)
+   Stone Axe (Evo.*)
+   X-Scizor (TM/40*/41**)
+   Swords Dance (44*/57**)
    Brick Break (TM)
+   Night Slash (45**)
+   Iron Head (50**)
 
 Sewaddle
 Key Moves:
@@ -749,6 +774,7 @@ Key Moves:
    Protect (Evo.)
    X-Scissor (TM)
    Aerial Ace (TM)
+   Steel Wing (TM)
    Sticky Web (31*)
    Leaf Blade (36)
 
@@ -918,6 +944,7 @@ Key Moves:
    Double Kick (16)
    Bulk Up (31/TM)
    Flame Charge (20)
+   Overheat (TM)
    Blaze Kick (36)
    Brick Break (TM)
    Hone Claws (TM)
@@ -1035,11 +1062,26 @@ Key Moves:
    Hone Claws (TM/MR)
    Obstruct (35)
 
+Zorua
+Key Moves:
+   Pursuit (5)
+   Thief (TM)
+   Calm Mind (TM)
+   Shadow Ball (TM)
+   Flamethrower (TM)
+   Night Daze (MR)
+   U-Turn (MR)
+   Nasty Plot (54)
+
 Zubat
 Key Moves:
    Wing Attack (13)
    Air Cutter (19)
+   Steel Wing (TM)
    Poison Fang (27)
+   Cross Poison (Evo.)
+   Fly (HM)
+   Venoshock (43)
 
 Staryu
 Key Moves:
@@ -1061,13 +1103,6 @@ Key Moves:
    Thunderbolt (TM)
    Eerie Impulse (MR)
    Dark Pulse (TM)
-
-Cetoddle
-Key Moves:
-   Ice Shard (12)
-   Avalanche (27)
-   Bounce (31)
-   Ice Spinner (44)
 
 Tadbulb
 Key Moves:
@@ -1105,12 +1140,6 @@ Key Moves:
    Feather Dance (20)
    Calm Mind (TM)
    Revelation Dance (40)
-
-Duraludon
-Key Moves:
-   Hone Claws (12)
-   Breaking Swipe (24)
-   Iron Tail (TM)
 
 Sneasel
 Key Moves:

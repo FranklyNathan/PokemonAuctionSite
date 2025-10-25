@@ -1,8 +1,8 @@
 name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp_attack,sp_defense,speed,evolution_method,mega
 Applin,Grass/Dragon,base,Ripen,Gluttony,Bulletproof,40,40,80,40,40,20,,
-Flapple,Grass/Dragon,evo,Ripen,Gluttony,Hustle,70,110,80,95,60,70,Level up in Fortree,
-Appletun,Grass/Dragon,evo,Ripen,Gluttony,Thick Fat,110,85,80,100,80,30,Level up in Lavaridge,
-Dipplin,Grass/Dragon,evo,Supersweet Syrup,Gluttony,Sticky Hold,80,80,110,95,80,40,Level up in Rustboro,
+Flapple,Grass/Dragon,evo,Ripen,Gluttony,Hustle,70,110,80,95,60,70,Level up in Fortree Gym,
+Appletun,Grass/Dragon,evo,Ripen,Gluttony,Thick Fat,110,85,80,100,80,30,Level up in Lavaridge Gym,
+Dipplin,Grass/Dragon,evo,Supersweet Syrup,Gluttony,Sticky Hold,80,80,110,95,80,40,Level up in Rustboro Gym,
 Hydrapple,Grass/Dragon,evo,Supersweet Syrup,Regenerator,Sticky Hold,106,80,110,120,80,44,Level 42,
 Aron,Steel/Rock,base,Sturdy,Rock Head,Heavy Metal,50,70,100,40,40,30,,Stage 2
 Lairon,Steel/Rock,evo,Sturdy,Rock Head,Heavy Metal,60,90,140,50,50,40,Level 32,Stage 2
@@ -294,6 +294,8 @@ Zigzagoon,Dark/Normal,base,Pickup,Gluttony,Quick Feet,38,30,41,30,41,60,,
 Linoone-Galar,Dark/Normal,evo,Pickup,Gluttony,Quick Feet,78,70,61,50,61,100,Level 20,
 Obstagoon,Dark/Normal,evo,Reckless,Guts,Defiant,93,90,101,60,81,95,Level 35,
 Zubat,Poison/Flying,base,Inner Focus,,Infiltrator,40,45,35,30,40,55,,
+Zorua,Dark,base,Illusion,,,40,65,40,80,40,65,,
+Zoroark,Dark,evo,Illusion,,,60,105,60,120,60,105,Level 30,
 Golbat,Poison/Flying,evo,Inner Focus,,Infiltrator,75,80,70,65,75,90,Level 22,
 Crobat,Poison/Flying,evo,Inner Focus,,Infiltrator,85,90,80,70,80,130,Soothe Bell,
 Egg,,base,,,,,,,,,,,
