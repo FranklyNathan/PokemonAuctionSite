@@ -13,6 +13,7 @@ Key Moves:
    Wing Attack (Evo.*)
    Headbutt (Evo.**)
    Double Hit (Evo.***)
+   Acrobatics (MR*)
    Dragon Dance (24*)
    Grav Apple (32*)
    Dragon Rush (44*)
@@ -40,16 +41,20 @@ Key Moves:
 
 Azurill
 Key Moves:
-   Aqua Tail (20)
-   Play Rough (23)
+   Charm (10)
+   Aqua Tail (21)
+   Play Rough (25)
+   Brick Break (TM)
 
 Bagon
 Key Moves:
    Dragon Breath (13)
    Dragon Claw (29)
-   Hone Claws (TM)
    Protect (30)
-   Double Edge (Tutor)
+   Hone Claws (TM)
+   Earthquake (TM)
+   Fly (HM)
+   Double Edge (MT)
 
 Beldum
 Key Moves:
@@ -58,10 +63,20 @@ Key Moves:
    Zen Headbutt (32)
    Meteor Mash (44)
 
+Bonsly
+Key Moves:
+   Rock Throw (12)
+   Rock Tomb (26/TM)
+   Rock Slide (33)
+   Counter (36)
+   Sucker Punch (40)
+
 Budew
 Key Moves:
    Growth (4)
-   Giga Drain (29)
+   Leech Seed (MR)
+   Giga Drain (25)
+   Toxic Spikes (28)
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
 
@@ -75,7 +90,9 @@ Key Moves:
 
 Buneary
 Key Moves:
+   Quick Attack (16)
    Jump Kick (23)
+   Bounce (MR)
    Facade (TM)
    Dizzy Punch (36)
    Charm (46)
@@ -85,16 +102,16 @@ Key Moves:
    Take Down (15)
    Mud Shot (18)
    Bulk Up (TM)
-   Dig (37)
-   Earthquake (57)
+   Dig (TM/37)
+   Earthquake (TM/57)
 
 Cacnea
 Key Moves:
    Leech Seed (10)
    Needle Arm (16)
    Spiky Shield (32)
-   Sucker Punch (35)
    Giga Drain (TM)
+   Sucker Punch (35)
 
 Carvanha
 Key Moves:
@@ -111,6 +128,14 @@ Key Moves:
    Zen Headbutt (28)
    Overheat (TM)
    Giga Drain (TM)
+
+Chingling
+Key Moves:
+   Confusion (10)
+   Psychic (TM)
+   Shadow Ball (TM)
+   Dazzling Gleam (TM)
+   Calm Mind (TM)
 
 Cetoddle
 Key Moves:
@@ -147,6 +172,12 @@ Key Moves:
    Thunderbolt (TM)
    Ice Beam (TM)
    Discharge (37)
+
+Cleffa
+Key Moves:
+   Charm (1)
+   Moonblast (46*)
+   Dazzling Gleam (TM)
 
 Combee
 Key Moves:
@@ -323,6 +354,14 @@ Key Moves:
    Heavy Slam (MR)
    Stone Edge (54)
 
+Gible
+Key Moves:
+   Dragon Rage (7)
+   Dual Chop (24)
+   Hone Claws (TM)
+   Dragon Rush (55)
+   Earthquake (TM)
+
 Gimmighoul
 Key Moves:
    Thunderbolt (TM)
@@ -375,6 +414,12 @@ Key Moves:
    X-Scissor (TM)
    Thunderbolt (33)
 
+Happiny
+Key Moves:
+   Charm (1)
+   Toxic (TM)
+   Double Edge (MR/MT)
+
 Hatenna
 Key Moves:
    Confusion (1)
@@ -423,6 +468,13 @@ Key Moves:
    Flamethrower (TM/50)
    Dark Pulse (TM)
 
+Igglybuff
+Key Moves:
+   Charm (1)
+   Defense Curl (3)
+   Rollout (20)
+   Play Rough (MR)
+
 Jangmo-o
 Key Moves:
    Protect (13)
@@ -437,6 +489,7 @@ Key Moves:
    Bug Bite (18)
    Sticky Web (Evo.)
    Signal Beam (34)
+   Giga Drain (TM)
    Thunderbolt (TM)
    Thunder (TM)
 
@@ -467,6 +520,18 @@ Key Moves:
    Flash Cannon (33)
    Discharge (43)
 
+Magby
+Key Moves:
+   Fire Spin (15)
+   Flame Burst (22)
+   Fire Punch (29)
+   Overheat (TM)
+   Flamethrower (49/TM)
+   Earthquake (TM)
+   Thunderbolt (TM)
+   Psychic (TM)
+   Thunder Punch (MR)
+
 Makuhita
 Key Moves:
    Knock Off (19)
@@ -490,6 +555,13 @@ Key Moves:
    Discharge (40)
    Fire Punch (MR)
    Dragon Pulse (MR)
+
+Mantyke
+Key Moves:
+   Bubblebeam (7)
+   Water Pulse (19/TM)
+   Surf (HM)
+   Air Slash (36)
 
 Mawile
 Key Moves:
@@ -558,8 +630,14 @@ Key Moves:
 
 Munchlax
 Key Moves:
+   Last Resort (MR*)
    Body Slam (25)
+   Surf (HM)
    Rest (TM)
+   Earthquake (TM)
+   Crunch (49)
+   Heavy Slam (50)
+   High Horsepower (57)
 
 Nincada
 Key Moves:
@@ -605,6 +683,9 @@ Key Moves:
    Bite (10)
    Snarl (18)
    Crunch (40)
+
+Pichu
+Key Moves:
 
 Pichu
 Key Moves:
@@ -661,9 +742,17 @@ Key Moves:
 Riolu
 Key Moves:
    Force Palm (15)
-   Aura Sphere (30)
+   Aura Sphere (Evo.)
+   Power Up Punch (MR)
+   Bone Rush (29)
+   Bulk Up (TM)
+   Water Pulse (TM)
    Dark Pulse (TM)
-   Calm Mind (42)
+   Psychic (TM)
+   Shadow Ball (TM)
+   Earthquake (TM)
+   Iron Tail (TM)
+   Calm Mind (42/TM)
 
 Rockruff
 Key Moves:
@@ -753,6 +842,7 @@ Key Moves:
    Bug Bite (15)
    Sleep Powder (MR)
    Gust (17)
+   Bug Buzz (35)
    Quiver Dance (45)
    Hurricane (50)
    Powder (55)
@@ -828,8 +918,10 @@ Key Moves:
    Eerie Spell (29*)
    Surf (HM)
    Slack Off (33)
+   Psychic (36/TM)
    Sludge Bomb (TM)
    Flamethrower (TM)
+   Ice Beam (TM)
    Calm Mind (TM)
 
 Smoliv
@@ -841,11 +933,24 @@ Key Moves:
    Dazzling Gleam (TM)
    Reflect (TM)
 
+Smoochum
+Key Moves:
+   Powder Snow (11)
+   Confusion (15)
+   Draining Kiss (MR)
+   Perish Song (MR/55)
+   Calm Mind (TM)
+   Psychic (TM)
+   Ice Beam (TM)
+
 Snorunt
 Key Moves:
    Ice Shard (10)
-   Icy Wind (14)   
+   Icy Wind (14)
    Ice Beam (TM)
+   Thunderbolt (TM)
+   Psychic (TM)
+   Thunder (TM)
    Captivate (41**)
    Shadow Ball (42**/TM)
    Draining Kiss (MR**)
@@ -932,6 +1037,9 @@ Key Moves:
 
 Togepi
 Key Moves:
+
+Togepi
+Key Moves:
    Yawn (13)
    Encore (17)
    Wish (29)
@@ -951,6 +1059,14 @@ Key Moves:
    Brave Bird (50)
    High Jump Kick (MR)
    Sky Uppercut (57)
+
+Toxel
+Key Moves:
+   Nuzzle (1)
+   Acid (1)
+   Venoshock (20*)
+   Sludge Bomb (TM)
+   Thunderbolt (TM)
 
 Totodile
 Key Moves:
@@ -999,7 +1115,9 @@ Key Moves:
 
 Tyrogue
 Key Moves:
+   Close Combat (MR)
    High Jump Kick (29*)
+   Brick Break (MR*)
    Vacuum Wave (26**)
    Rolling Kick (20***)
 
@@ -1035,6 +1153,13 @@ Key Moves:
    Protect (25)
    Surf (HM)
    Ice Beam (TM)
+
+Wynaut
+Key Moves:
+   Counter (15)
+   Mirror Coat (15)
+   Destiny Bond (15)
+   Charm (MR)
 
 Wishiwashi
 Key Moves:
@@ -1094,6 +1219,7 @@ Key Moves:
    Dazzling Gleam (TM)
    Thunderbolt (TM)
    Thunder (TM)
+   Waterfall (HM)
 
 Helioptile
 Key Moves:
@@ -1118,14 +1244,6 @@ Key Moves:
    Bulk Up (TM)
    Wicked Blow (Evo.)
    Surging Strikes (Evo.)
-
-Gible
-Key Moves:
-   Dragon Rage (7)
-   Dual Chop (24)
-   Hone Claws (TM)
-   Dragon Rush (55)
-   Earthquake (TM)
 
 Oddish
 Key Moves:

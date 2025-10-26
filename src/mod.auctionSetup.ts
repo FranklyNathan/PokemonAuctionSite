@@ -12,8 +12,9 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
     const parseRes = Papa.parse(data, { header: true, skipEmptyLines: true, dynamicTyping: true });
     headers = parseRes.meta.fields || [];
     playerRows = parseRes.data as any[];
-    if (!(headers.includes('name') && headers.includes('type'))) {
-      return new Response("CSV file did not have 'name' and 'type' headers!", { status: 400 });
+    // Check for essential headers. 'is_baby' is now also expected.
+    if (!(headers.includes('name') && headers.includes('type') && headers.includes('is_baby'))) {
+      return new Response("CSV file did not have 'name', 'type', and 'is_baby' headers!", { status: 400 });
     }
   } else {
     // Data is pre-parsed from the test auction

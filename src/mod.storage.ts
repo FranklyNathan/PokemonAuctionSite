@@ -101,6 +101,7 @@ export function getRandomUndraftedPlayer(ctx: Ctx): { player_id: number } | null
       `SELECT player_id FROM players
         WHERE JSON_EXTRACT(player_data, '$.drafted_by_id') IS NULL
         AND JSON_EXTRACT(player_data, '$.stage') = 'base'
+        AND JSON_EXTRACT(player_data, '$.is_baby') IS NOT TRUE
         ORDER BY RANDOM() LIMIT 1`,
     )
     .toArray();

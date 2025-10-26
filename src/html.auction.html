@@ -574,15 +574,15 @@
         }
       });
 
-      // Load all necessary data (like the playerMap) before initializing UI that depends on it.
-      ctx.speciesInfoMap = await fetchAndParsePokemonInfo();
-      await loadPlayersData(ctx);
-
       // If there are no teams, we can assume we are in resource mode.
       // This is a fallback in case the server-side injection of `isResourceMode` fails.
       if (Object.keys(ctx.teams).length === 0) {
         ctx.isResourceMode = true;
       }
+
+      // Load all necessary data (like the playerMap) before initializing UI that depends on it.
+      ctx.speciesInfoMap = await fetchAndParsePokemonInfo();
+      await loadPlayersData(ctx);
 
       // If in resource mode, hide irrelevant UI and skip websocket/team setup.
       if (ctx.isResourceMode) {

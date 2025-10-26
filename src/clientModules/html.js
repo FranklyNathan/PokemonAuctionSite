@@ -199,8 +199,11 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
   console.log('[Debug] updateSelectedPlayerCard called for player:', playerData);
   console.log('[Debug] speciesInfoMap available:', speciesInfoMap instanceof Map && speciesInfoMap.size > 0);
   document.getElementById('waiting-msg').innerHTML = '';
+  // Standardize name for image files: replace problematic characters but preserve case.
+  const imageName = playerData.name.replace(/\. /g, '_').replace(/ /g, '_');
+
   const pokemonImageEl = document.getElementById('pokemon-image');
-  const imagePath = `/baseforms/${encodeURIComponent(playerData.name)}.png`;
+  const imagePath = `/baseforms/${imageName}.png`;
   pokemonImageEl.src = imagePath;
   pokemonImageEl.alt = playerData.name;
   pokemonImageEl.style.display = 'block';
@@ -221,11 +224,22 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
     .join('');
 
   card.removeAttribute('hidden');
+  // Mini-icons have a different naming convention: lowercase, with hyphens instead of spaces/periods.
+  const miniIconName = playerData.name
+    .toLowerCase()
+    .replace(/\. /g, '-')
+    .replace(/ /g, '-')
+    .replace(/[^a-z0-9-]/g, ''); // Sanitize to match file names like 'mime-jr'
+
   let cardInner = `
     <div slot="header" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; overflow: hidden;">
       <div style="display: flex; align-items: center; gap: 0.5rem; min-width: 0;">
         <div style="width: 24px; display: flex; justify-content: center; align-items: center; flex-shrink: 0;">
-          <img src="/MiniIcons/${playerData.name.toLowerCase()}.png" alt="${playerData.name}" style="max-height: 24px; max-width: 24px; vertical-align: middle;">
+          <img src="/MiniIcons/${miniIconName}.png" alt="${
+            playerData.name
+          }" style="max-height: 24px; max-width: 24px; vertical-align: middle;"
+            onerror="this.onerror=null; this.src='/MiniIcons/egg.png';"
+          >
         </div>
         <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${playerData.name}</strong>
       </div>
@@ -291,7 +305,12 @@ export function addPlayerIconToTeamCard(clientId, playerName) {
       return;
     }
     console.log(`[Debug] Found icon container 'team${clientId}trc'. Appending icon.`);
-    const iconName = playerName.toLowerCase();
+    // Mini-icons have a different naming convention: lowercase, with hyphens instead of spaces/periods.
+    const iconName = playerName
+      .toLowerCase()
+      .replace(/\. /g, '-')
+      .replace(/ /g, '-')
+      .replace(/[^a-z0-9-]/g, ''); // Sanitize to match file names like 'mime-jr'
     const iconPath = `/MiniIcons/${iconName}.png`;
     iconContainer.insertAdjacentHTML(
       'beforeend',
@@ -655,7 +674,8 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           imageName = `${parts[1]}-Mega`;
           console.log(`[Mega Debug] Transformed name to: '${imageName}'.`);
         }
-        imageName = imageName.replace(/[^a-zA-Z0-9-]/g, '');
+        // Standardize name for image files: replace problematic characters but preserve case.
+        imageName = imageName.replace(/\. /g, '_').replace(/ /g, '_');
         const imagePath = `/evolutions/${imageName}.png`;
         console.log(`[Evo Debug] Rendering evolution '${evo.name}'. Image path: '${imagePath}'`);
 

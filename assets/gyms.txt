@@ -1,423 +1,3 @@
-=== TRAINER_VIOLA_1 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Potion
-Double Battle: No
-AI: Basic Trainer
-
-Surskit
-Level: 12
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swift Swim
-- Bubble
-- Quick Attack
-- Bug Bite
-- Sticky Web
-
-Nincada
-Level: 12
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Compound Eyes
-- Absorb
-- Fury Swipes
-- Bug Bite
-- Mud Slap
-
-Beautifly @ Oran Berry
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Absorb
-- Gust
-- Bug Bite
-- Whirlwind
-
-=== TRAINER_VIOLA_2 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Super Potion / Super Potion
-Double Battle: No
-AI: Basic Trainer
-
-Surskit
-Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swift Swim
-- Bubble Beam
-- Quick Attack
-- Bug Bite
-- Sticky Web
-
-Volbeat
-Level: 17
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Confuse Ray
-- Double Team
-- Quick Attack
-
-Nincada
-Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Compound Eyes
-- Metal Claw
-- Fury Swipes
-- Bug Bite
-- Mud Slap
-
-Beautifly @ Oran Berry
-Level: 19
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Mega Drain
-- Gust
-- Bug Bite
-- Whirlwind
-
-=== TRAINER_VIOLA_3 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Super Potion / Super Potion
-Double Battle: No
-AI: Basic Trainer
-
-Surskit
-Level: 21
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swift Swim
-- Bubble Beam
-- Quick Attack
-- Bug Bite
-- Sticky Web
-
-Volbeat
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Confuse Ray
-- Double Team
-- Aerial Ace
-
-Ninjask
-Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Metal Claw
-- Fury Cutter
-- Bug Bite
-- Double Team
-
-Beautifly @ Sitrus Berry
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Mega Drain
-- Gust
-- Bug Bite
-- Whirlwind
-
-=== TRAINER_VIOLA_4 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Masquerain
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Bubble Beam
-- Quiver Dance
-- Silver Wind
-- Air Cutter
-
-Volbeat
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Confuse Ray
-- Double Team
-- Aerial Ace
-
-Ninjask
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Dig
-- Fury Cutter
-- Bug Bite
-- Aerial Ace
-
-Beautifly @ Sitrus Berry
-Level: 29
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Giga Drain
-- Air Cutter
-- Leech Life
-- Psychic
-
-=== TRAINER_VIOLA_5 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Masquerain
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Bubble Beam
-- Quiver Dance
-- Bug Buzz
-- Air Cutter
-
-Volbeat
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Confuse Ray
-- Zen Headbutt
-- Aerial Ace
-
-Ninjask
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Dig
-- Fury Cutter
-- Bug Bite
-- Aerial Ace
-
-Beautifly @ Sitrus Berry
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Giga Drain
-- Air Cutter
-- Leech Life
-- Psychic
-
-=== TRAINER_VIOLA_6 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Masquerain
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Surf
-- Quiver Dance
-- Bug Buzz
-- Air Cutter
-
-Volbeat
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Confuse Ray
-- Zen Headbutt
-- Aerial Ace
-
-Ninjask
-Level: 31
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Dig
-- Fury Cutter
-- Bug Bite
-- Aerial Ace
-
-Kleavor
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Double Hit
-- Fury Cutter
-- Slash
-- Rock Slide
-
-Beautifly @ Sitrus Berry
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Giga Drain
-- Air Cutter
-- Leech Life
-- Quiver Dance
-
-=== TRAINER_VIOLA_7 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Masquerain
-Level: 39
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Surf
-- Quiver Dance
-- Bug Buzz
-- Air Cutter
-
-Volbeat
-Level: 40
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Play Rough
-- Zen Headbutt
-- Aerial Ace
-
-Ninjask
-Level: 39
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Dig
-- Night Slash
-- Bug Bite
-- Aerial Ace
-
-Kleavor
-Level: 41
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Swords Dance
-- Fury Cutter
-- Slash
-- Rock Slide
-
-Beautifly @ Sitrus Berry
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Giga Drain
-- Air Cutter
-- Leech Life
-- Quiver Dance
-
-=== TRAINER_VIOLA_8 ===
-Name: VIOLA
-Class: Leader
-Pic: Leader Viola
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Masquerain
-Level: 44
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Surf
-- Quiver Dance
-- Bug Buzz
-- Air Cutter
-
-Volbeat
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Bug Bite
-- Play Rough
-- Zen Headbutt
-- Aerial Ace
-
-Ninjask
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Speed Boost
-- Dig
-- Night Slash
-- Bug Bite
-- Aerial Ace
-
-Kleavor
-Level: 46
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Swords Dance
-- X Scissor
-- Slash
-- Rock Slide
-
-Beautifly @ Sitrus Berry
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Swarm
-- Giga Drain
-- Air Cutter
-- Leech Life
-- Quiver Dance
-
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
 Class: Leader
@@ -835,6 +415,426 @@ Ability: Sturdy
 - Zap Cannon
 - Earth Power
 - Rock Tomb
+
+=== TRAINER_VIOLA_1 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Surskit
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swift Swim
+- Bubble
+- Quick Attack
+- Bug Bite
+- Sticky Web
+
+Nincada
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Compound Eyes
+- Metal Claw
+- Fury Swipes
+- Bug Bite
+- Mud Slap
+
+Beautifly @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Mega Drain
+- Gust
+- Bug Bite
+- Whirlwind
+
+=== TRAINER_VIOLA_2 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Surskit
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swift Swim
+- Bubble Beam
+- Quick Attack
+- Bug Bite
+- Sticky Web
+
+Volbeat
+Level: 17
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Confuse Ray
+- Double Team
+- Quick Attack
+
+Nincada
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Compound Eyes
+- Metal Claw
+- Feint Attack
+- Bug Bite
+- Mud Slap
+
+Beautifly @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Mega Drain
+- Gust
+- Bug Bite
+- Whirlwind
+
+=== TRAINER_VIOLA_3 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Surskit
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swift Swim
+- Bubble Beam
+- Quick Attack
+- Bug Bite
+- Sticky Web
+
+Volbeat
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Confuse Ray
+- Double Team
+- Aerial Ace
+
+Ninjask
+Level: 22
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Metal Claw
+- Fury Cutter
+- Bug Bite
+- Double Team
+
+Beautifly @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Mega Drain
+- Gust
+- Bug Bite
+- Whirlwind
+
+=== TRAINER_VIOLA_4 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Masquerain
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Intimidate
+- Bubble Beam
+- Quiver Dance
+- Silver Wind
+- Air Cutter
+
+Volbeat
+Level: 26
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Confuse Ray
+- Double Team
+- Aerial Ace
+
+Ninjask
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Dig
+- Fury Cutter
+- Bug Bite
+- Aerial Ace
+
+Beautifly @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Giga Drain
+- Air Cutter
+- Leech Life
+- Psychic
+
+=== TRAINER_VIOLA_5 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Masquerain
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Intimidate
+- Bubble Beam
+- Quiver Dance
+- Bug Buzz
+- Air Cutter
+
+Volbeat
+Level: 28
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Confuse Ray
+- Zen Headbutt
+- Aerial Ace
+
+Ninjask
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Dig
+- Fury Cutter
+- Bug Bite
+- Aerial Ace
+
+Beautifly @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Giga Drain
+- Air Cutter
+- Leech Life
+- Psychic
+
+=== TRAINER_VIOLA_6 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Masquerain
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Intimidate
+- Surf
+- Quiver Dance
+- Bug Buzz
+- Air Cutter
+
+Volbeat
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Confuse Ray
+- Zen Headbutt
+- Aerial Ace
+
+Ninjask
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Dig
+- Fury Cutter
+- Bug Bite
+- Aerial Ace
+
+Kleavor
+Level: 33
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Double Hit
+- Fury Cutter
+- Slash
+- Rock Slide
+
+Beautifly @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Giga Drain
+- Air Cutter
+- Leech Life
+- Quiver Dance
+
+=== TRAINER_VIOLA_7 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Masquerain
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Intimidate
+- Surf
+- Quiver Dance
+- Bug Buzz
+- Air Cutter
+
+Volbeat
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Play Rough
+- Zen Headbutt
+- Aerial Ace
+
+Ninjask
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Dig
+- Night Slash
+- Bug Bite
+- Aerial Ace
+
+Kleavor
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Swords Dance
+- Fury Cutter
+- Slash
+- Rock Slide
+
+Beautifly @ Sitrus Berry
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Giga Drain
+- Air Cutter
+- Leech Life
+- Quiver Dance
+
+=== TRAINER_VIOLA_8 ===
+Name: VIOLA
+Class: Leader
+Pic: Leader Viola
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Masquerain
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Intimidate
+- Surf
+- Quiver Dance
+- Bug Buzz
+- Air Cutter
+
+Volbeat
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Bug Bite
+- Play Rough
+- Zen Headbutt
+- Aerial Ace
+
+Ninjask
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Speed Boost
+- Dig
+- Night Slash
+- Bug Bite
+- Aerial Ace
+
+Kleavor
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Swords Dance
+- X Scissor
+- Slash
+- Rock Slide
+
+Beautifly @ Sitrus Berry
+Level: 48
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swarm
+- Giga Drain
+- Air Cutter
+- Leech Life
+- Quiver Dance
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -3779,8 +3779,18 @@ Nature: Serious
 Ability: Inner Focus
 - Poison Fang
 - Acrobatics
-- Haze
+- Steel Wing
 - Mean Look
+
+Lanturn
+Level: 46
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Water Absorb
+- Surf
+- Thunderbolt
+- Charge
+- Take Down
 
 Walrein
 Level: 47
@@ -3790,7 +3800,7 @@ Ability: Thick Fat
 - Surf
 - Ice Fang
 - Rest
-- Snore
+- Sleep Talk
 
 Sharpedo @ Sharpedonite
 Level: 48
@@ -3802,7 +3812,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE ===
+=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
@@ -3829,7 +3839,7 @@ Nature: Serious
 Ability: Inner Focus
 - Poison Fang
 - Acrobatics
-- Haze
+- Steel Wing
 - Mean Look
 
 Aggron
@@ -3841,6 +3851,16 @@ Ability: Sturdy
 - Rock Slide
 - Iron Defense
 - Double Edge
+
+Torkoal
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Drought
+- Earthquake
+- Heat Wave
+- Smokescreen
+- Yawn
 
 Camerupt @ Cameruptite
 Level: 48

@@ -157,7 +157,12 @@ const cols = [
         return '';
       }
       const pokemonName = params.value;
-      const iconName = pokemonName.toLowerCase();
+      // Mini-icons have a different naming convention: lowercase, with hyphens instead of spaces/periods.
+      const iconName = pokemonName
+        .toLowerCase()
+        .replace(/\. /g, '-')
+        .replace(/ /g, '-')
+        .replace(/[^a-z0-9-]/g, ''); // Sanitize to match file names like 'mime-jr'
       const iconPath = `/MiniIcons/${iconName}.png`;
       return `
         <span style="display: flex; align-items: center; height: 100%;">
@@ -279,6 +284,7 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields, onP
 }
 
 export async function loadPlayersData(ctx) {
+  console.log('[Debug] loadPlayersData: Starting to load and process player data.');
   const playerRows = await getPlayersJson('players-data');
 
   const playersTableWrapperEl = document.getElementById('players-table-wrapper');
@@ -347,12 +353,20 @@ export async function loadPlayersData(ctx) {
   // Create a pristine, unsorted copy for evolution lookups.
   ctx.allPlayersUnsorted = processedPlayerRows;
 
-  // For the visible table, only show auctionable (base) Pokémon.
-  const basePokemon = processedPlayerRows.filter(p => p.stage === 'base');
-  ctx.playersTableData = basePokemon;
+  // Determine which Pokémon to display in the table based on the mode.
+  let tableData;
+  if (ctx.isResourceMode) {
+    // In resource mode, show all 'base' stage Pokémon, including babies.
+    tableData = processedPlayerRows.filter(p => p.stage === 'base');
+  } else {
+    // In a regular auction, show only non-baby base Pokémon.
+    tableData = processedPlayerRows.filter(p => p.stage === 'base' && !p.is_baby);
+  }
+
+  ctx.playersTableData = tableData;
 
   // create the players table
-  const playerFields = basePokemon.length > 0 ? Object.keys(basePokemon[0]) : [];
+  const playerFields = tableData.length > 0 ? Object.keys(tableData[0]) : [];
   ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields, playerSelected);
 }
 
