@@ -48,7 +48,9 @@ Key Moves:
 
 Bagon
 Key Moves:
+   Bite (10)
    Dragon Breath (13)
+   Headbutt (17)
    Dragon Claw (29)
    Protect (30)
    Hone Claws (TM)
@@ -104,6 +106,19 @@ Key Moves:
    Bulk Up (TM)
    Dig (TM/37)
    Earthquake (TM/57)
+
+Castform
+Key Moves:
+   Water Gun (10)
+   Ember (10)
+   Powder Snow (10)
+   Weather Ball (25)
+   Blizzard (35/TM)
+   Hydro Pump (35/TM)
+   Fire Blast (35/TM)
+   Solar Beam (TM)
+   Thunder (TM)
+   Hurricane (45)
 
 Cacnea
 Key Moves:
@@ -187,15 +202,17 @@ Key Moves:
    
 Corphish
 Key Moves:
+   Protect (17)
    Knock Off (23)
    Hone Claws (TM)
    X-Scissor (TM)
-   Razor Shell (31)
+   Razor Shell (32)
    Waterfall (HM)
    Swords Dance (37)
 
 Corsola
 Key Moves:
+   Recover (8)
    Bubblebeam (10)
    Ancientpower (17)
    Surf (HM)
@@ -319,6 +336,7 @@ Key Moves:
 Fletchling
 Key Moves:
    Peck (10)
+   Steel Wing (TM)
    Aerial Ace (TM)
    Overheat (TM)
    Hone Claws (TM)
@@ -402,9 +420,12 @@ Key Moves:
 
 Growlithe
 Key Moves:
-   Flame Wheel (21)
-   Flamethrower (TM)
+   Bite (1)
+   Flame Wheel (17)
+   Fire Fang (21)
    Overheat (TM)
+   Dig (TM)
+   Flamethrower (TM)
    Thunder Fang (MR)
 
 Grubbin
@@ -500,6 +521,7 @@ Key Moves:
    Earthquake (TM)
    Darkest Lariat (34)
    Bulk Up (TM/MR)
+   Overheat (TM)
    Flare Blitz (55)
 
 Litwick
@@ -550,6 +572,8 @@ Key Moves:
 
 Mareep
 Key Moves:
+   Thundershock (8)
+   Milk Drink (11)
    Thunder Punch (30)
    Dazzling Gleam (TM)
    Discharge (40)
@@ -567,6 +591,7 @@ Mawile
 Key Moves:
    Iron Head (MR/45)
    Play Rough (MR/49)
+   Rock Tomb (TM)
    Crunch (29)
    Sucker Punch (37)
 
@@ -697,7 +722,10 @@ Key Moves:
 Pikipek
 Key Moves:
    Pluck (15)
+   Rock Blast (MR)
+   Bullet Seed (TM)
    Steel Wing (TM)
+   Aerial Ace (TM)
    Facade (TM)
    Beak Blast (28)
 
@@ -796,9 +824,11 @@ Key Moves:
    Pluck (24)
    Giga Drain (TM)
    Spirit Shackle (34*)
-   Leaf Blade (44)
+   Thousand Arros (34**)
    U-turn (MR)
    Leaf Storm (MR)
+   Leaf Blade (44)
+   Brave Bird (55)
 
 Sableye
 Key Moves:
@@ -885,6 +915,7 @@ Key Moves:
 Shroomish
 Key Moves:
    Leech Seed (8)
+   Bullet Seed (TM)
    Mach Punch (23)
    Fury Cutter (MT)
    Force Palm (28)
@@ -893,6 +924,7 @@ Key Moves:
 
 Skiddo
 Key Moves:
+   Milk Drink (11)
    Leech Seed (12)
    Razor Leaf (13)
    Bulldoze (26)
@@ -995,10 +1027,11 @@ Key Moves:
 Surskit
 Key Moves:
    Air Cutter (22)
+   Bug Buzz (MR/42)
+   Quiver Dance (MR/52)
    Water Pulse (TM)
+   Surf (HM)
    Ice Beam (TM)
-   Bug Buzz (42)
-   Quiver Dance (52)
 
 Swinub
 Key Moves:
@@ -1079,6 +1112,7 @@ Key Moves:
    Brick Break (TM)
    Iron Tail (TM)
    Hone Claws (TM)
+   Surf (HM)
 
 Trapinch
 Key Moves:
@@ -1124,10 +1158,12 @@ Key Moves:
 Venipede
 Key Moves:
    Protect (15)
+   Poison Tail (15)
    Bug Bite (22)
    Venoshock (28)
-   X-Scissor (TM)
    Megahorn (MR)
+   X-Scissor (TM)
+   Earthquake (TM)
 
 Voltorb
 Key Moves:
@@ -1219,6 +1255,7 @@ Key Moves:
    Dazzling Gleam (TM)
    Thunderbolt (TM)
    Thunder (TM)
+   Rest (TM)
    Waterfall (HM)
 
 Helioptile
@@ -1250,7 +1287,7 @@ Key Moves:
    Mega Drain (19)
    Sludge Bomb (TM)
    Giga Drain (TM)
-   Quiver Dance (MR*)
+   Quiver Dance (MR**)
 
 Oricorio
 Key Moves:
