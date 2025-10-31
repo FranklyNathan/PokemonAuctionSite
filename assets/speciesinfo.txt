@@ -314,6 +314,15 @@ Key Moves:
    Calm Mind (TM)
    Sludge Bomb (TM)
 
+Feebas
+Key Moves:
+   Water Pulse (Evo.)
+   Aqua Ring (17)
+   Captivate (21)
+   Ice Beam (TM)
+   Surf (HM)
+   Hydro Pump (44)
+
 Fennekin
 Key Moves:
    Flame Charge (14)
@@ -324,6 +333,15 @@ Key Moves:
    Shadow Ball (MR/TM)
    Psychic (TM)
    Overheat (TM)
+
+Fidough
+Key Moves:
+   Play Rough (18)
+   Work Up (22)
+   Baton Pass (26)
+   Dig (TM)
+   Charm (42)
+   Crunch (47)
 
 Flabebe
 Key Moves:
@@ -340,8 +358,9 @@ Key Moves:
    Aerial Ace (TM)
    Overheat (TM)
    Hone Claws (TM)
-   Flame Charge (39)
    Fly (HM)
+   Flame Charge (39)
+   Acrobatics (44)
    Flare Blitz (MR)
    Brave Bird (MR)
 
@@ -393,21 +412,33 @@ Key Moves:
    Steel Wing (TM)
    Ice Fang (MR)
    Thunder Fang (MR)
+   Poison Jab (MR)
    U-turn (30)
    Hone Claws (TM)
    X-Scissor (TM)
    Brick Break (TM)
    Earthquake (TM)
+   Swords Dance (50)
    Sky Uppercut (55)
 
 Goomy
 Key Moves:
    Protect (9)
+   Dragon Breath (18)
    Rain Dance (25)
    Water Pulse (25*/TM)
    Thunderbolt (TM)
    Ice Beam (TM)
    Iron Head (49)
+
+Gossifleur
+Key Moves:
+   Leafage (1)
+   Razor Leaf (12)
+   Lear Tornado (23)
+   Giga Drain (TM)
+   Light Screen (TM)
+   Leaf Storm (46)
 
 Greavard
 Key Moves:
@@ -432,6 +463,7 @@ Grubbin
 Key Moves:
    Bug Bite (13)
    Spark (16)
+   Acrobatics (19)
    X-Scissor (TM)
    Thunderbolt (33)
 
@@ -460,18 +492,32 @@ Key Moves:
    Flying Press (28)
    High Jump Kick (44)
 
+Helioptile
+Key Moves:
+   Mud Slap (13)
+   Parabolic Charge (25)
+   Surf (HM)
+   Thunderbolt (TM)
+   Eerie Impulse (MR)
+   Dark Pulse (TM)
+
 Honedge
 Key Moves:
    Swords Dance (1)
-   Autotomize (18)
    Shadow Sneak (20)
-   King's Shield (42)
+   Aerial Ace (22)
+   Slash (29)
+   Iron Head (MR)
+   Kings Shield (MR)
    Sacred Sword (MR)
-   Night Slash (MR)
+   Night Slash (MR/35*)
+   Shadow Ball (TM)
 
 Horsea
 Key Moves:
    Water Gun (13)
+   Hydro Pump (MR*)
+   Bubble Beam (21)
    Surf (HM)
    Waterfall (HM)
    Ice Beam (TM)
@@ -500,9 +546,13 @@ Jangmo-o
 Key Moves:
    Protect (13)
    Dragon Tail (17)
-   Sky Uppercut (35)
-   Dragon Dance (53*)
+   Sky Uppercut (Evo.)
+   Work Up (29)
+   Rock Tomb (TM)
    X-Scissor (TM)
+   Dragon Claw (TM)
+   Earthquake (TM)
+   Dragon Dance (53*/59)
 
 Joltik
 Key Moves:
@@ -514,8 +564,17 @@ Key Moves:
    Thunderbolt (TM)
    Thunder (TM)
 
+Kubfu
+Key Moves:
+   Rock Smash (1)
+   Brick Break (24)
+   Bulk Up (TM)
+   Wicked Blow (Evo.)
+   Surging Strikes (Evo.)
+
 Litten
 Key Moves:
+   Work Up (8)
    Fire Fang (14)
    Double Kick (16)
    Earthquake (TM)
@@ -693,6 +752,20 @@ Key Moves:
    Earthquake (46/TM)
    Eruption (MR)
 
+Oddish
+Key Moves:
+   Mega Drain (19)
+   Sludge Bomb (TM)
+   Giga Drain (TM)
+   Quiver Dance (MR**)
+
+Oricorio
+Key Moves:
+   Air Cutter (13)
+   Feather Dance (20)
+   Calm Mind (TM)
+   Revelation Dance (40)
+
 Pancham
 Key Moves:
    Karate Chop (12)
@@ -708,9 +781,6 @@ Key Moves:
    Bite (10)
    Snarl (18)
    Crunch (40)
-
-Pichu
-Key Moves:
 
 Pichu
 Key Moves:
@@ -749,6 +819,7 @@ Porygon
 Key Moves:
    Psybeam (7)
    Recover (18)
+   Zap Cannon (MR*)
    Ice Beam (TM)
    Discharge (40)
    Nasty Plot (MR)
@@ -860,7 +931,6 @@ Key Moves:
 
 Sandshrew
 Key Moves:
-   Ice Ball (7)
    Metal Claw (14)
    Icicle Spear (Evo.)
    Earthquake (TM)
@@ -1005,10 +1075,19 @@ Key Moves:
    Psychic (TM)
    Dazzling Gleam (TM)
 
+Sneasel
+Key Moves:
+   Poison Jab (24)
+   Dire Claw (28)
+   Brick Break (30)
+   Hone Claws (TM)
+   X-Scissor (TM)
+
 Spheal
 Key Moves:
    Water Gun (1)
    Encore (9)
+   Aurora Beam (21)
    Water Pulse (TM)
    Surf (HM)
    Ice Beam (TM)
@@ -1023,6 +1102,29 @@ Key Moves:
    Psychic (52/TM)
    Calm Mind (TM)
    Belch (MR)
+
+Sprigatito
+Key Moves:
+   Hone Claws (10)
+   Seed Bomb (17)
+   U Turn (24)
+   Flower Trick (36)
+   Night Slash (38)
+   Play Rough (42)
+
+Staryu
+Key Moves:
+   Rapid Spin (7)
+   Bubble Beam (18)
+   Water Pulse (TM)
+   Surf (HM)
+   Psychic (TM)
+   Ice Beam (TM)
+   Dazzling Gleam (TM)
+   Thunderbolt (TM)
+   Thunder (TM)
+   Rest (TM)
+   Waterfall (HM)
 
 Surskit
 Key Moves:
@@ -1039,6 +1141,13 @@ Key Moves:
    Ice Beam (TM)
    Earthquake (46)
    Ancient Power (MR)
+
+Tadbulb
+Key Moves:
+   Spark (21)
+   Mud Shot (24)
+   Water Pulse (TM)
+   Discharge (32)
 
 Teddiursa
 Key Moves:
@@ -1067,9 +1176,6 @@ Key Moves:
    Gigaton Hammer (Evo.)
    Skitter Smack (47)
    Knock Off (52)
-
-Togepi
-Key Moves:
 
 Togepi
 Key Moves:
@@ -1119,7 +1225,6 @@ Key Moves:
    Bulldoze (8)
    Dig (22)
    Earthquake (33/TM)
-   Hone Claws (TM)
    Dragon Rush (47)
    Dragon Dance (MR)
 
@@ -1154,6 +1259,18 @@ Key Moves:
    Brick Break (MR*)
    Vacuum Wave (26**)
    Rolling Kick (20***)
+
+Vanillite
+Key Moves:
+   Icicle Spear (1)
+   Icy Wind (13)
+   Avalanche (19)
+   Mirror Shot (26)
+   Ice Beam (36/TM)
+   Blizzard (59/TM)
+   Water Pulse (TM)
+   Freeze Dry (MR)
+   Weather Ball (MR)
 
 Venipede
 Key Moves:
@@ -1243,72 +1360,3 @@ Key Moves:
    Cross Poison (Evo.)
    Fly (HM)
    Venoshock (43)
-
-Staryu
-Key Moves:
-   Rapid Spin (7)
-   Bubble Beam (18)
-   Water Pulse (TM)
-   Surf (HM)
-   Psychic (TM)
-   Ice Beam (TM)
-   Dazzling Gleam (TM)
-   Thunderbolt (TM)
-   Thunder (TM)
-   Rest (TM)
-   Waterfall (HM)
-
-Helioptile
-Key Moves:
-   Mud Slap (13)
-   Parabolic Charge (25)
-   Surf (HM)
-   Thunderbolt (TM)
-   Eerie Impulse (MR)
-   Dark Pulse (TM)
-
-Tadbulb
-Key Moves:
-   Spark (21)
-   Mud Shot (24)
-   Water Pulse (TM)
-   Discharge (32)
-
-Kubfu
-Key Moves:
-   Rock Smash (1)
-   Brick Break (24)
-   Bulk Up (TM)
-   Wicked Blow (Evo.)
-   Surging Strikes (Evo.)
-
-Oddish
-Key Moves:
-   Mega Drain (19)
-   Sludge Bomb (TM)
-   Giga Drain (TM)
-   Quiver Dance (MR**)
-
-Oricorio
-Key Moves:
-   Air Cutter (13)
-   Feather Dance (20)
-   Calm Mind (TM)
-   Revelation Dance (40)
-
-Sneasel
-Key Moves:
-   Poison Jab (24)
-   Dire Claw (28)
-   Brick Break (30)
-   Hone Claws (TM)
-   X-Scissor (TM)
-
-Sprigatito
-Key Moves:
-   Hone Claws (10)
-   Seed Bomb (17)
-   U Turn (24)
-   Flower Trick (36)
-   Night Slash (38)
-   Play Rough (42)
