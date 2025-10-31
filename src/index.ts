@@ -2,6 +2,7 @@ import { State, SECONDS, Ctx, ServerMessageType, ClientMessageType } from './mod
 import { transitionState, updateClients, getSerializableCtx, unserializeCtx } from './mod.helpers';
 import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
+import homeHtml from './html.home.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import gymsText from '../assets/gyms.txt';
@@ -228,7 +229,11 @@ export default {
     let path = url.pathname.slice(1).split('/');
     console.log(`[Worker Fetch] 2. Entering API router for path: ${url.pathname}`);
     try {
-      if (!path[0] && request.method.toLowerCase() == 'get') {
+      if (path[0] === '' && request.method.toLowerCase() == 'get') {
+        // User is at the home page
+        const modifiedHomeHtml = homeHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
+        return new Response(modifiedHomeHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'setup' && request.method.toLowerCase() == 'get') {
         // User is setting up a new auction
         // Inject a cache-busting favicon link into the setup page.
         const modifiedSetupHtml = auctionSetupHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);

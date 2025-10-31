@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="sl-theme-dark">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -74,16 +74,6 @@
     <div style="display: flex; width: 100%; justify-content: center">
       <h1 style="background-color: var(--container-bg-color); padding: 0.5rem 1rem; border: 1px solid black">Auction Setup</h1>
     </div>
-    <sl-dialog id="welcome-dialog" open>
-      <div slot="label" style="display: flex; align-items: center; gap: 1rem">
-        Welcome!
-        <img src="/baseforms/Froakie.png" alt="Froakie" style="height: 2.5rem" />
-      </div>
-      <p>This is an auction style draft app for Pokemon Emerald speedruns.</p>
-      <p>Select Resouce Mode to browse the pool or Create Auction to draft.</p>
-      <p>Alternatively, select Boss Battles view all enemy lineups</p>
-      <sl-button id="custom-auction" slot="footer" variant="primary">Got it!</sl-button>
-    </sl-dialog>
     <form
       id="form"
       method="post"
@@ -198,11 +188,6 @@
         </div>
         <div id="csvFileName" style="height: 1rem"></div>
       </div>
-
-      <div style="display: flex; gap: 1rem; align-items: center; margin-top: 3rem;">
-        <sl-button onclick="window.location.href='/assets/boss-battles.html'" style="width: 10rem"> Boss Battles </sl-button>
-        <sl-button id="resourceModeButton" style="width: 10rem"> Resource Mode </sl-button>
-      </div>
     </form>
 
     <sl-dialog id="tierlistDialog" label="Tierlist" style="--width: 60vw; --height: 80vh;">
@@ -253,8 +238,9 @@
       }
     }
 
-    // Check for saved theme in localStorage on page load and apply it.
-    const savedTheme = localStorage.getItem('theme') || 'light';
+  // Check for saved theme in localStorage on page load and apply it.
+  // Default to dark mode across the site.
+  const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
     darkModeToggle.addEventListener('click', () => {
@@ -286,11 +272,6 @@
     });
 
     document.body.classList.add('ready');
-
-    document.getElementById('custom-auction').addEventListener('click', (e) => {
-      document.getElementById('welcome-dialog')?.hide();
-      document.getElementById('defaultCsvButton').click();
-    });
 
     const numTeamsEl = document.getElementById('numTeams');
     const defaultFundsEl = document.getElementById('defaultFunds');
@@ -385,14 +366,6 @@
     const defaultCsvButtonEl = document.getElementById('defaultCsvButton');
     const useDefaultCsvEl = document.getElementById('useDefaultCsv');
     const resourceModeButtonEl = document.getElementById('resourceModeButton');
-    const resourceModeEl = document.getElementById('resourceMode');
-
-    resourceModeButtonEl.addEventListener('click', () => {
-      resourceModeEl.value = 'true';
-      useDefaultCsvEl.value = 'true'; // Resource mode always uses the default CSV
-      // Bypasses validation via the submit handler
-      formEl.requestSubmit();
-    });
     
     defaultCsvButtonEl.addEventListener('click', () => {
       csvInputEl.removeAttribute('required');
@@ -400,6 +373,8 @@
       csvFileNameEl.innerHTML = '📄 Pok.csv (Default)';
       useDefaultCsvEl.value = 'true';
     });
+
+    defaultCsvButtonEl.click();
 
     csvSelectEl.addEventListener(
       'click',
