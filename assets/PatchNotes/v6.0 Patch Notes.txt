@@ -1,0 +1,60 @@
+10/12/2025
+
+The patch you've all been waiting for! The big six oh! New Megas are (mostly) here!
+
+Mega Evolutions added:
+Chesnaught
+Delphox
+Greninja
+Starmie
+Feraligatr
+Dragalge
+Excadrill
+Chandelure
+Scoliopede
+
+
+//...Kind of. There's no sprites yet for these pokemon, so at the moment, they just transform into themselves visually. However, their stats and types update, which is what matters for gameplay. Currently, all of them mega with the Aggronite (there's no need for me to spend time adding individual mega stones for each when eventually the devs upstream will do it for me). It's a janky implementation but it gets the core of what we need in, now we just wait for the sprites to follow.
+//I'm really happy to have these join. Chandelure, Excadrill, Greninja and Delphox are all insane offensive threats that may be S tier picks. They all have great matchups into the hardest Elite Four fights. This is the section of the game I thought was too hard and wanted to bring down, and having four new threats to sweep these fights will make it much easier to draft powerful late game compositions.
+//Check out their stats and the updated tier list on the auction website!
+//The player's pc now has 10 Aggronites and 20 of every powerful TM to assist with testing.
+
+
+Enemy Trainer Pokémon Natures Removed
+//Or, more specifically, they've been replaced with neutral natures like +Speed -Speed. This is an enormous change. Currently, almost every enemy Pokemon is either Adamant (+Attack -SpAtk) or Modest (+SpAtk -Attack). As a result, this is effectively a 10% damage nerf on all enemy trainers.
+//There are a few dials I can turn that effect the difficulty of every enemy trainer. Up until this point, I've been reluctant to use them. I'd rather the game start extremely hard and slowly lower it down to what feels right. It's more work to turn the dial up than it is to turn it down. That said, I feel comfortable at this point saying that the game would be more fun if it were a tad easier, so this is the first (and potentially last) dial I'll turn. 
+
+
+New Key Item: Portable PC
+//The player can now access the PC at any time from the bag. Attempting to use the item while in the Elite Four will cause a "Time and place for everything..." message. Gym statues no longer need to serve as PCs, so that functionality has been removed. This is another one of the big pieces of jank that I'm glad to have ironed out.
+
+
+New Menu Option: Heal
+//Now, when you press A on a Pokémon in the party menu, below "Summary" and "Item" you have an option to heal. This option heals status conditions to compliment the Med Kit.
+
+
+New Feature: Green!
+//Pokémon that can evolve via a purchasable item now appear green in the party menu. For example, Eevee changes to green after you've defeated 4 gyms, while Graveler changes to green after you've defeated 5. Now, you no longer need to know when Pokémon evolve. Either they do it automatically via level or they'll light up to queue you to go to Slateport.
+
+
+Tucker's Wigglytuff: Attract > Light Screen
+//There's so many Pokémon with Brick Break in their notable moves, I wanted to make it so that the screen breaking functionality of the move was actually relevant. Of all the elite four fights to add this too, Wigglytuff is a fitting lead to set a screen, and there's enough Attract spam in the game as is.
+
+
+Go Goggles no longer needed to enter the desert
+//And the cutscene to give the player the Go Goggles has been removed. Opens a slightly faster route to the Move Relearner.
+
+
+Sandshrew Alola Evolution: Ice Stone > Level 22
+//Regular Sandshrew evolves at 22. This Alolan form is competing with Trubbish for worst in the game with the Ice Stone evolution, so this change at least makes it passable.
+
+
+Pool Change: Smoliv Added
+Abillity Change: Seed Sower now sets Leech Seed
+//Smoliv is so smol, and for that we love him. However, he is also so stink! His only abiity is Seed Sower, which sets grassy terrain when attacked. This is useless in our game where terrain is disabled. However, I've changed Seed Sower so that now each time Arboliva is attacked, it sets leech seed. This gives Arboliva a super unique strength. It's now the best pivot pokemon in the game, able to set seeds and switch back out. It can also set up a sweep with Growth, Reflect and Giga Drain, because despite being slow, it will set seeds on every Pokémon that comes in and hits it first.
+//I usually don't like changing any vanilla mechanics like this, but the ability is literally called Seed Sower, the old version doesn't work, and this makes it really cool. So there!
+
+
+Pool Change: Totodile Added
+//The king is back for his new mega evolution. He learns Dragon Claw by TM, so he can make use of that new Dragon typing. He's also been buffed since he was last in the game now that Waterfall can come before the Elite Four. With 160 base attack and Hone Claws, he may be a high tier end game threat.
+

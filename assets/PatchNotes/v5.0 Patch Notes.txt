@@ -1,0 +1,32 @@
+4/26/2025
+
+The big five zero! ...is tiny tweaks and bugfixes
+
+Rotom Catalogs given 4>3
+/The problem with Rotom is that Wash is so good that you never need to switch off of it until the Elite 4. The only reason to even let it change at all is because I think the mechanic is neat, otherwise I'd just give one.
+
+
+Norman 5 Slaking Yawn > Covet
+Norman 6 Slaking Fling > Covet (now holds Sitrus Berry)
+/Slaking was spamming Yawn if it didn't see a kill, which made it pretty weak. This is a buff to make sure it doesn't die without ever actually attacking.
+
+
+-Lavaridge's Herb Shop now only sells evolution items once you have at least 3 badges.
+-You can no longer access the evolution stones in the Petalburg mart earlier than intended.
+-You can no longer access the Petalburg gym earlier than intended.
+/One possible route through the game is to pass straight through Rustboro, hop the ledge to the north, cut through Meteor Falls, pass through Fallarbor Town (stopping at the move relearner), getting the Secret Power TM, and doing Lavaridge as your first gym. We hadn't explored this route at all until this week. I might end up nixing this option altogether, but for the time being I think it's neat and am going to let it ride. These changes stop you from making it game breaking by giving you pre gym 1-2 access to evolution items, Surf, etc. Now, it's a significant time loss with niche uses like getting Lopunny early.
+
+-Kubfu no longer always has three 31 IVs
+/Legendary Pokémon privilege revoked.
+
+-Decidueye now uses the correct learnset.
+
+-Stealing opponent Pokémon items now lets you keep them after the fight.
+
+-Applin now only evolves in the Lavaridge/Fortree gyms, not in the towns themselves.
+
+-Mom's text is tweaked to tell you that she gives you an egg.
+
+-I have a note to myself that I changed "FP." I no longer remember what it refers to. Oh well!
+
+

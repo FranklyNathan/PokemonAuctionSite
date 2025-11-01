@@ -1,0 +1,13 @@
+2/15/2025
+
+A quick patch addressing the bugs we've found while grinding this weekend:
+
+-Rare Candies now no longer cause a Pokémon not to attempt to learn a move if it would also evolve the same level.
+-Fixed a typo in Night Lycanroc's learnset prevent it from learning Counter
+-Gastly starts with Hypnosis instead of Spite (rearranged order)
+-Gengarite is now for sale in Ever Grande (I'd forgotten to add it)
+-Goodra Hisui learns Iron Head (Instead of just Sliggoo)
+
+Special Events:
+-Buyer's Remorse is now mandatory
+-Trade Time now allows for one Pokémon to have trade protection.

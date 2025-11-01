@@ -4,6 +4,44 @@ import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import homeHtml from './html.home.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
+import v1_7 from '../assets/PatchNotes/v1.7 Patch Notes.txt';
+import v1_8 from '../assets/PatchNotes/v1.8 Patch Notes.txt';
+import v1_9 from '../assets/PatchNotes/v1.9 Patch Notes.txt';
+import v2_0 from '../assets/PatchNotes/v2.0 Patch Notes.txt';
+import v2_1 from '../assets/PatchNotes/v2.1 Patch Notes.txt';
+import v2_2 from '../assets/PatchNotes/v2.2 Patch Notes.txt';
+import v2_3 from '../assets/PatchNotes/v2.3 Patch Notes.txt';
+import v2_4 from '../assets/PatchNotes/v2.4 Patch Notes.txt';
+import v2_5 from '../assets/PatchNotes/v2.5 Patch Notes.txt';
+import v2_6 from '../assets/PatchNotes/v2.6 Patch Notes.txt';
+import v2_7 from '../assets/PatchNotes/v2.7 Patch Notes.txt';
+import v2_8 from '../assets/PatchNotes/v2.8 Patch Notes.txt';
+import v2_9 from '../assets/PatchNotes/v2.9 Patch Notes.txt';
+import v3_0 from '../assets/PatchNotes/v3.0 Patch Notes.txt';
+import v4_0 from '../assets/PatchNotes/v4.0 Patch Notes.txt';
+import v4_1 from '../assets/PatchNotes/v4.1 Patch Notes.txt';
+import v4_2 from '../assets/PatchNotes/v4.2 Patch Notes.txt';
+import v4_3 from '../assets/PatchNotes/v4.3 Patch Notes.txt';
+import v4_4 from '../assets/PatchNotes/v4.4 Patch Notes.txt';
+import v4_5 from '../assets/PatchNotes/v4.5 Patch Notes.txt';
+import v4_6 from '../assets/PatchNotes/v4.6 Patch Notes.txt';
+import v4_7 from '../assets/PatchNotes/v4.7 Patch Notes.txt';
+import v4_8 from '../assets/PatchNotes/v4.8 Patch Notes.txt';
+import v4_9 from '../assets/PatchNotes/v4.9 Patch Notes.txt';
+import v5_0 from '../assets/PatchNotes/v5.0 Patch Notes.txt';
+import v5_1 from '../assets/PatchNotes/v5.1 Patch Notes.txt';
+import v5_2 from '../assets/PatchNotes/v5.2 Patch Notes.txt';
+import v5_3 from '../assets/PatchNotes/v5.3 Patch Notes.txt';
+import v5_4 from '../assets/PatchNotes/v5.4 Patch Notes.txt';
+import v5_5 from '../assets/PatchNotes/v5.5 Patch Notes.txt';
+import v5_7 from '../assets/PatchNotes/v5.7 Patch Notes.txt';
+import v5_8 from '../assets/PatchNotes/v5.8 Patch Notes.txt';
+import v5_9 from '../assets/PatchNotes/v5.9 Patch Notes.txt';
+import v6_0 from '../assets/PatchNotes/v6.0 Patch Notes.txt';
+import v6_1 from '../assets/PatchNotes/v6.1 Patch Notes.txt';
+import v6_2 from '../assets/PatchNotes/v6.2 Patch Notes.txt';
+import v6_3 from '../assets/PatchNotes/v6.3 Patch Notes.txt';
+import patchNotesHtml from './html.patchNotes.html';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import gymsText from '../assets/gyms.txt';
 import auctionSetupHtml from './html.auctionSetup.html';
@@ -247,6 +285,55 @@ export default {
         return await handleModule(request, ['clientModules', path[path.length -1]]);
       }
 
+      // Serve patch notes text files directly from bundled assets to avoid static-KV mismatches on deploy
+      if (path[0] === 'assets' && path[1] === 'PatchNotes' && path[2]) {
+        const filename = decodeURIComponent(path[2]);
+        const map: Record<string, string> = {
+          'v1.7 Patch Notes.txt': v1_7,
+          'v1.8 Patch Notes.txt': v1_8,
+          'v1.9 Patch Notes.txt': v1_9,
+          'v2.0 Patch Notes.txt': v2_0,
+          'v2.1 Patch Notes.txt': v2_1,
+          'v2.2 Patch Notes.txt': v2_2,
+          'v2.3 Patch Notes.txt': v2_3,
+          'v2.4 Patch Notes.txt': v2_4,
+          'v2.5 Patch Notes.txt': v2_5,
+          'v2.6 Patch Notes.txt': v2_6,
+          'v2.7 Patch Notes.txt': v2_7,
+          'v2.8 Patch Notes.txt': v2_8,
+          'v2.9 Patch Notes.txt': v2_9,
+          'v3.0 Patch Notes.txt': v3_0,
+          'v4.0 Patch Notes.txt': v4_0,
+          'v4.1 Patch Notes.txt': v4_1,
+          'v4.2 Patch Notes.txt': v4_2,
+          'v4.3 Patch Notes.txt': v4_3,
+          'v4.4 Patch Notes.txt': v4_4,
+          'v4.5 Patch Notes.txt': v4_5,
+          'v4.6 Patch Notes.txt': v4_6,
+          'v4.7 Patch Notes.txt': v4_7,
+          'v4.8 Patch Notes.txt': v4_8,
+          'v4.9 Patch Notes.txt': v4_9,
+          'v5.0 Patch Notes.txt': v5_0,
+          'v5.1 Patch Notes.txt': v5_1,
+          'v5.2 Patch Notes.txt': v5_2,
+          'v5.3 Patch Notes.txt': v5_3,
+          'v5.4 Patch Notes.txt': v5_4,
+          'v5.5 Patch Notes.txt': v5_5,
+          'v5.7 Patch Notes.txt': v5_7,
+          'v5.8 Patch Notes.txt': v5_8,
+          'v5.9 Patch Notes.txt': v5_9,
+          'v6.0 Patch Notes.txt': v6_0,
+          'v6.1 Patch Notes.txt': v6_1,
+          'v6.2 Patch Notes.txt': v6_2,
+          'v6.3 Patch Notes.txt': v6_3,
+        };
+        const content = map[filename];
+        if (content !== undefined) {
+          return new Response(content, { headers: { 'Content-Type': 'text/plain;charset=UTF-8' } });
+        }
+        return new Response('404 Not Found', { status: 404 });
+      }
+
       if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
         const response = await handleNewAuctionWorker(request, env, path.slice(1));
         // If the handler returned an error, let's log it before returning it.
@@ -268,6 +355,15 @@ export default {
       } else if (path[0] === 'assets' && path[1] === 'boss-battles.html') {
         console.log(`[Worker Fetch] Matched /assets/boss-battles.html route.`);
         return new Response(bossBattlesHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (decodeURIComponent(path[0]) === 'patch notes' && request.method.toLowerCase() == 'get') {
+        // Legacy URL with a space — redirect to the canonical no-separator URL
+        return Response.redirect('/patchnotes', 302);
+      } else if (path[0] === 'patch-notes' && request.method.toLowerCase() == 'get') {
+        // Older dash-based URL — redirect to canonical no-separator URL
+        return Response.redirect('/patchnotes', 302);
+      } else if (path[0] === 'patchnotes' && request.method.toLowerCase() == 'get') {
+        const modifiedPatchHtml = patchNotesHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
+        return new Response(modifiedPatchHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] === 'assets' && path[1] === 'gyms.txt') {
         console.log(`[Worker Fetch] Matched /assets/gyms.txt route.`);
         return new Response(gymsText, { headers: { 'Content-Type': 'text/plain' } });

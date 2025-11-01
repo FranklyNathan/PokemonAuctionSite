@@ -1,0 +1,49 @@
+10/24/2025
+
+New Title Screen Logo: Emerald Blitz
+//Woohoo! We've got a name now.
+
+
+New Gym Leader: Viola!
+//She's a 50/50 with Roxanne. Bug is currently the only type not represented by a boss battle. Rock is represented excessively with both Tate&Liza and Stephen using majority-rock teams. Rock is weak to Water and Ground, which is part of why they're the best types in the game. Bug is weak to Rock and Flying, and its absence is part of why these two types are two of the worst in the game. In short, this change will help with balance.
+//Viola is the first gym leader from X/Y. She's thematically logical here because she's a first gym leader like Roxanne. She also came out in the same era as OR/AS, which is what a lot of the game's changes are based on, so she feels more at home to me here than other trainers from, say, Johto or Sinnoh.
+
+
+New Gym Leaders: Archie and Maxie!?
+//Archie is a 50/50 with Juan&Wallace8, while Maxie is a 50/50 with Flannery8. Note that this means they'll appear in just 1/16 runs. Their teams are headed with Mega Sharpedo and Mega Camerupt respectively.
+
+
+Extra Double Battle Hyper Potions Removed
+//Juan&Wallace and Tate&Liza 6-8 all had 4 hyper potions, just like Tate&Liza do in vanilla Emerald. It's just too tedious to need to work through Milotic's health bar 5 times. This makes the game shorter and makes these difficult fights slightly easier.
+
+
+Tate&Liza 4 Xatu > Natu
+Winona 3 Pelipper > Wingull
+//I know Tate&Liza4 is probably pound for pound the hardest gym fight in the game. Xatu has a very early evolution since it's a Johto Pokémon, and it means you're fighting a double battle into 3 "boss" Pokémon (compare this to Juan&Wallace, for example, who lead with Wailmer and Wiglett). After looking at how other vanilla games address this problem, there are several examples where they handle this by just not evolving the leading Pokémon (Gardenia's level 20 Turtwig, Jasmine's level 30 Magnemite). I'm going to follow their lead and wait to evolve the Natu until the 5th fight.
+
+Spenser Toedscruel > Roserade
+//Roserade was previously reserved for Wally. I'd forgotten that when Wally was removed, Roserade opened up again. I'm excited about this, I like adding the gen 4 Hoenn evolutions to the game, and putting this in the Elite Four is very fitting alongside Dusknoir, Rhyperior and Froslass.
+
+
+Tucker Rapidash Stomp>Bounce
+//I've done about a dozen patches now without checking in much on Shedinja. It's important that the husk is never good enough to actually be "strong" into the elite 4, just something that's borderline usable. After going through all of the trainers, Tucker is the only one Shedinja was a bit too strong into (Bounce is flying type).
+
+
+Rain Dance Price 5000 > 3000
+//After labbing this a bit more, it's not as good as I thought. It's not bad, but it's definitely not in the same tier as Protect and the high damage TMs.
+
+
+Gym Leaders Check Your Levels
+//...and won't start the fight if you have something in your party below the level cap.
+
+
+New Pool: Zorua
+//I learned that the AI actually does work with Illusion! If you send Zorua out, the AI is tricked into thinking you sent out its Illusioned Pokémon. Then, if it attacks it with a move and doesn't get the super effective notification it was expecting, it deduces that your Pokémon is Zorua. It's actually nuts. Anyway, this is neat and unique Pokémon who only wasn't in the pool because I thought the AI wouldn't work with its gimmick.
+
+
+Night-only Evolutions Removed (Ursaluna, Obstagoon, Houndstone)
+//There are no longer Pokémon that evolve only during a certain time of day unless the time-based evolution is a split path (Cubone, Rockruff, Dartrix).
+
+Updated the Clock Set Code
+//Now, pressing up or down instantly jumps the clock 12 hours ahead. It feels so slick! For reference, 8pm to 6am is night, so you can simply press up/down from the default noon to switch to midnight and be good to go.
+

@@ -1,0 +1,88 @@
+2/14/2025
+
+Level Curve Adjustments:
+
+One of the main design problems I've been grappling with is the ugly level cap curve. It's currently 14, 19, 24, 29, 31, 33, 42, 46, 55, 59. As you can see, the level cap goes up by just 4 over the course of two gyms and then goes up 9 all at once. The reason it's so large is because, normally, there are a series of Team Aqua/Magma quests between those two gyms. But, now that they're removed, it leaves this giant gap in the level caps. Instead of getting evolutions gradually, the player tends to get very few between gyms 4 and 6 and then everything evolves all at once for 7.
+
+I'd previously been considering filling that gap with some other fight, but I've decided instead on just tweaking the level caps to allow for a smoother curve:
+Gym 5's level cap has moved from 31 to 32. All of Norman's Pokémon are now 1 level higher.
+Gym 6's level cap has been moved from 33 to 35. All of Winona's Pokémon are now 2 levels higher.
+
+These changes are ultimately nerfs to these two leaders; all it does is give you access to more evolutions than previously.
+
+
+Regional Form Held Items:
+All Regional form Pokémon on gym leader and E4 teams now hold items. Note that no existing held items were changed.
+* = New
+Growlithe: Rocky Helmet
+Farfetch'd: Black Belt*
+Electrode: Thunder Stone
+Graveller: Air Balloon
+Marowak: Spell Tag*
+Linoone: Eviolite
+Zoroark: Silk Scarf*
+Decidueye: Focus Sash*
+Raichu: Mystical Water*
+Samurott: Scope Lens*
+
+Persian: Assault Vest*
+Typhlosion: Charcoal*
+Sandslash: Never-Melt Ice*
+Ninetales: Snowball*
+Exegguctor: Sitrus Berry
+Goodra: Damp Rock*
+
+Generally, these changes are not significant balance adjustments. Before, it was bugging me that I'd given half of the new regional Pokémon items but not the other half. Now, everybody has something.
+
+
+Event Changes:
+Race to the Death! has been tweaked:
+All players receive the next Pokémon listed for auction for free. During the race, the first player to beat Roxanne may keep the Pokemon. For all other players, the Pokemon is considered fainted and can no longer be used.
+
+New Event: Second Chance!
+As the winner of the previous auction, choose one Pokémon on any team and refund half its cost. If that Pokémon faints, all other players are now allowed to use it on their team. (When refunding, round the new cost up to the nearest 100. You can't choose a Pokémon obtained in a 2-for-1.)
+
+Additionally, I've changed the bot so that events can't repeat.
+
+
+Gym Balances:
+
+Brawly's Machop now knows Bullet Punch instead of Siesmic Toss
+/Brawly is currently the easiest gym, and Seismic Toss was effectively a blank move. Now, Brawly has a weak counter to Fairy types, giving him slightly fewer hard counters.
+
+The AI is now slightly more encouraged to choose Stealth Rock turn 1.
+/This is a buff to both Wattson's Graveller and Steven's Skarmory, which will now use Stealth Rocks if they can't hit you for big damage (instead of just clicking Rollout and dying). This is also a nerf to Shedinja, who will have a harder time coming in on the two fights it was formerly most useful into.
+
+
+Juan&Wallace Changes:
+After some more testing, this gym is a bit too easy. It's getting some small buffs
+-Juan&Wallace's weaker Pokémon have had their levels increased by 1 or 2.
+-Juan&Wallace now has access to 2 Hyper Potion and 2 Full Restore.
+/Previously, this gym had just 2 Hyper Potions, left over from when it was a single battle. Tate&Liza have 4 Hyper Potions, for comparison. Wallace brought his Full Restores from the Elite 4.
+-Ludicolo Astonish > Double Team
+/Ludicolo had Astonish specifically to counter Shedinja, but sometimes its clicking it stupidly against regular Pokémon. The Stealth Rock AI change is a massive nerf to Shedinja, so I'm fine giving it a bit more of a niche in this fight.
+
+
+Moveset Changes
+I tried to go through each learnset and make sure that Pokémon will, at level 15, have kept their better moves from level 1-5 (instead of forgetting them for newer, less useful moves). This didn't change much, but it did change:
+-Mime Jr. now starting with Confusion
+-Scyther now starting with Quick Attack
+
+Nasty Plot removed from Riolu
+Swords Dance and Power Up Punch both removed from Lucario
+
+
+Anti-Sweep Changes:
+Setting up with stat-boosting moves and sweeping is not a problem in a vacuum, but it is a problem if it 1) significantly reduces risk in a fight and 2) saves a significant amount of time. After some testing, boost-and-sweep strategies are still mindlessly doing both of these things against the Elite 4. By having to work around these new changes, the goal is that set up sweeping involves having to answer the opponent's lead before you can set up, making it slower and less rewarding to actually get the sweep.
+
+If the AI has Psych Up, Roar, Whirlwind or Haze, and your Pokémon has boosted any stat, it's very incentivized to use the move, and no longer has a random chance to not use it. This makes it harder to set up on Phoebe's Dusclops (Haze) and Steven's Skarmory (Whirlwind).
+
+Some additional late-game boss Pokemon now have new moves to stop sweeps (by dropping speed or copying stats):
+Tate&Liza's Claydol now has Bulldoze (replacing Earthquake).
+Glacia's Sandslash now knows Icy Wind (Replacing Icicle Spear).
+Drake's Exeggutor now knows Psych Up (Replacing Sunny Day).
+Steven's Aggron now has Bulldoze (Replacing Earthquake).
+
+
+Steven Transition:
+Before, Steven's E4 fight transition used Wallace's face. Oops. Now, it uses a fun unused battle transition from the base game.

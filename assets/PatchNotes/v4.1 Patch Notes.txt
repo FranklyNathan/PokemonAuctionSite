@@ -1,0 +1,23 @@
+3/18/2025
+
+
+Removed Gym Items:
+Regional variants of Pokémon no longer hold items. For example, Norman's Linoone no longer holds an Eviolite and Wattson's geodude no longer holds an Air Balloon. There are some exceptions (Winona's Sirfetch'd and Flannery's Marowak still hold a Leek and Thick Club starting at gym 4, respectively), but in general, they're all gone.
+
+//Previously, I liked the idea of using Thief to reward players for stealing items from enemy Pokémon. Now that gym leaders come in a random order, I don't like how much RNG is involved with the Thief mechanic (getting the Eviolite gym 1 is huge, while getting it gym 7 is useless). I've also been trying to reduce difficulty and the number of knowledge checks, and this change contributes to both goals.
+
+//For a full list of teams, download this browser extension: https://www.smogon.com/forums/threads/pokepaste-image-fix.3733096/ 
+//Then, follow this link: https://pokepast.es/dd8e8f7d5f10ff53
+
+
+Rotom Catalog:
+A new key item, the Rotom Catalog, has been added to the Lavaridge Herb Shop for $3000. This item can be used infinitely and lets you choose to change your Rotom to one of its five possible forms. Each time Rotom swaps forms, it changes types and learns either Overheat, Air Slash, Leaf Storm, Blizzard or Hydro Pump. Rotom Heat has been removed from the draft pool, replaced by regular Rotom.
+
+//Rotom's base stat total before transforming is 440, increasing to 520 post-transform. This change will make Rotom scale more evenly. It's weaker for the first 3 gyms, where it no longer has the massive 520 BST (though, being an unevolved Pokémon, it's still strong here--and even better against Juan&Wallace now that its lost its fire typing). On the flip side, it's now one of the strongest Pokémon in the game after gym 4, able to change types to gain a good matchup into every gym. Walk into the flying gym? Become a fridge and learn Blizzard. Next is Flannery? Become a washing machine and learn Hydro Pump. Rotom is now able to actually make use of its gimmick, which I'm really excited for. (And for Applin enthusiasts, Applin still becomes Appletun in the same way, meaning that that evolution line is now delayed to gym 4). 
+
+
+Gimmighoul:
+Somebody wake up Kieth, because everybody's favorite coin counter has joined the pool! The homie evolves when leveled up while your Coin Case has 999 or more coins in it. His only useful move learned through level up is Shadow Ball at 35, but it can also learn the Thunderbolt TM that you're 2/3rds of the way to purchasing already when it evolves.
+
+
+...And I also fixed a million bugs. I'll see everybody this Sunday at noon for our first race on the new patch!!

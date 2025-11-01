@@ -1,0 +1,47 @@
+2/21/2025
+
+Bunny Hopping:
+While bunny hopping on the Acro Bike, you can now ascend ledges.
+This allows for many significant time saves and early items: 
+-Faster path through Route 103 (skips 2 Spinning trainer)
+-Faster path into Petalburg Woods (skips 1 spinner)
+-Faster path through Petalburg Woods (skips 2 spinners, also allows for pre-Roxanne Miracle Seed)
+-Early $5000 on Route 115 (North of Rustburo, hop the ledge to pick up a PP Up to sell. Early money is especially valuable for getting TMs)
+-Granite Cave Shortcut (No longer need to descend into the dark floors to reach Steven)
+-Entering Lavaridge instantly (No longer need to take the lift and descend Mt. Chimney to reach Flannery)
+-Faster access to the Route 118 Sitrus Berries (Now only have to dodge the spinner once instead of 3 times)
+-Alternate route to Lillycove (Using the bike to head east instead of north to Lillycove is a crazy route opened up by this change, but I can't figure out a situation you'd ever use it. At the moment, you can't enter Fortree from the East, since the Steven cutscene needs to be triggered by talking to him from the other side. Even if you could, though, this new route is more densely packed with trainers than the old one, and it's a longer way around. It'd be cool if there were two competing paths with pros or cons, so I'll think on this.)
+
+You can no longer bike indoors.
+/Bunny hopping would allow skipping the 4th and 6th gym puzzles, so I've removed the ability to bike indoors. I didn't like biking indoors anyway. It looked wrong, and the only time I saw people doing it was when they didn't dismount after Cycling Road and repeatedly crashed into the walls of Wattson's gym before giving up and getting off.
+
+Flash is no longer appended to the menu list if your Pokémon doesn't know it.
+/Now, we never need to use Flash in the race.
+
+In all, I'm pretty pleased with bunny hopping. It opens up a lot of funky paths and cuts down the time spent moving from gym to gym. It feels very race-like to pull out the bike and hop a ledge to skip a trainer and take a shortcut.
+
+
+Cleanse Tag:
+Instead of receiving a Repel, the player now starts the game with a Cleanse Tag. The Cleanse Tag has been changed to be a togglable "on/off" item which, when on, prevents all wild encounters.
+/The old system was gross, it was just a low priority for me to fix. Before, once you used a Repel, you could never turn it off. There are some situations you'd want to get into a wild battle, like triggering a Flame/Toxic Orb safely, which were impossible due to the janky system. Repels are back to working like normal.
+Also, the player now starts with the Rarest Candy and Cleanse Tag in their bag, instead of receiving them from Birch (so you can turn the Cleanse Tag on from your room).
+
+
+(Small) Balance Changes:
+Brawly's Makuhita Knock Off > Strength
+/Giving both of Brawley's strongest Pokémon relatively high base power Dark moves was too much of a nerf to Psychic. I'm still not satisfied with this fight and would expect more changes moving forward.
+
+Lillycove Rivals's Swellow Agility > Fly
+/The rival's Pokémon don't have items or natures, so the team is still tame even with being over the level cap. The Swellow has 125 base speed, so this gives it a non-useless move.
+(This fight was also bugged on 2.5 and didn't work at all. It's fixed now.)
+
+Zigzagoon Ability: Pickup > Quick Feet.
+/I've been gradually swapping useless abilities with relevant hidden abilities when available. Pickup is functionally useless, so this will make getting the "bad" ability on Zigzagoon slightly less bad.
+
+Drifloon Ability: Aftermath > Flare Boost
+/I bet that Soosk could be pessimistic enough to say that Drifloon doing chip damage after it dies is more useful than having a real ability, frankly!
+
+Mudbray/Mudsdale now learn Strength at level 20
+/A generation 8 learnset change that I'm bringing here. I really like the idea of using Strength to get access to boulder-blocked items (like the Fire Stone in Fiery Path and the Focus Sash + Never-Melt Ice in Shoal Cave), but at the moment, you have to go out of your way to get strength just to go out of your way to get these items. By learning Strength through level up, Mudsdale teams won't need to pick up the HM and can actually consider these detours.
+
+Finally, I've commented out every instance of Pokémon learning Bide, Odor Sleuth and Sweet Scent. I don't think there's ever a reason to learn these moves, especially now that evasiveness as a stat caps out at +1. Congratulations on shaving 4 seconds off your run!

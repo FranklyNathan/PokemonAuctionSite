@@ -1,0 +1,87 @@
+10/30/2025
+
+
+Ability Capsule Price 5000 > 3000
+Ability Patch Price 10000 > 5000
+//I expect to continue tweaking prices as we get a better feel for the game's new money system. I'd previously wanted the Ability Capsule to be fairly expensive since I was worried it'd otherwise be optimal to always swap your Pokémon to their better ability. Hitting the 50/50 should feel meaningful (I want it to at least feel good if you roll the ability you wanted). That said, money is scarce enough to guarantee that you aren't just buying these willy nilly regardless.
+
+Sunny Day Price 1000 > 3000
+//Sunny day is to Juan&Wallace what Rain Dance is to Flannery, so it makes sense that they cost the same. This makes it so that Hail/Sandstorm are available from the start at 1000 and the better weather (Rain Dance and Sunny Day) is available after gym 4 at 3000.
+
+
+Move Rework: Milk Drink
+-Now, when Milk Drink is used outside of battle, the Pokémon it's used on levels up, ignoring the current level cap.
+-A Pokemon species can only use Milk Drink outside of battle once ever. For example, Skiddo can use it once, then once it evolves to Gogoat, it can use it once again.
+-Skiddo and Mareep both now learn Milk Drink at level 11.
+//Milk Drink is a neat move. It's one of the only non-HMs that can be appended to the party menu; you can use Milk Drink out of battle to heal your Pokémon. Of course, that's useless since we can heal whenever we want. I've wanted to rework this move for a while in the style of Run n Bun's neatest mechanic, but the code under the hood was a nightmare since I mangled the Rare Candy to make our Forever Rare Candy work. Anyway, I did it!
+//In case the application isn't clear, you can use this before gym 1 on a Mudkip to evolve it into Marshtomp and have a level 16 before you're otherwise able to. Similarly, you can use it on a Marshtomp at level 35 before gym 6 to get a Swampert one gym early (or, god forbid, Gardevoir for gym 4). Of course, you've got limited uses, so pick wisely!
+//Mareep is a slightly better milker than Skiddo since you get three uses out of the sheep but just two from Skiddo.
+//You might be wondering why Miltank didn't join the pool in the patch that adds Milk Drink. Well, Miltank has the same BST as Alakazam. That's why.
+
+
+Added to the Pool: Castform!
+Forecast Rework:
+When Castform (whose only ability is Forecast) enters the battle, it either sets sun, rain, or hail. The weather set is determined by the first move in Castform's move list: if the first move is water, Forecast sets rain (the effect of drizzle), if fire, it sets sun (the effect of Drought), if ice, it sets hail (the effect of Snow Warning). Any other type of move in the first slot sets no weather. Then, forecast continues as normal and changes Castform's form.
+//So neat! So strong! Castform now sets whatever weather you want for the gym you're about to face... It's kind of broken. But it's also insanely cool, so it's in. It plays very similar to Rotom in that you can pick your form and counter whatever fight you're about to face. Say hello to the new top tier!
+//I'm willing to make this *significant* change because this is how Forecast always should have worked in the first place, similar to how Seed Sower makes more sense setting Leech Seed. This isn't setting a precedent of me tweaking abilities to buff or nerf Pokémon; it's about making it work as it should have if GameFreak was cool.
+
+Added to the Pool: Gossifleur
+//Continuing with the supportive Grass types, Gossifleur the Run-n-Bun MVP is here to Cotton Down all over the opponent. I should have added this in the previous patch that added all the on-the-fence viable Pokémon. It's a nice boost of early game power, albeit a bit boring moveset wise with only Grass attacks.
+
+Added to the Pool: Jangmo-o
+//Read the Whipped Dream section for context.
+
+Added to the Pool: Feebas
+Added to the Pool: Fidough
+//We'll give them a shot per Soosk's request
+
+
+Removed from the Pool: Gligar
+//This is the saddest day. Gliscor just has no weaknesses: it's the best Pokémon through the gym phase, it's strong into the Elite 4 and Steven, it's tanky, it a top 3 ability in the game, it can't be statused, it has the widest move pool in the game with access to 3 moves with 100+ Base Power by gym 5 (two of which are STAB), and has access to multiple stat boosting moves. I spent all week trying to think of ways to nerf Gliscor in a way that didn't feel arbitrary or nerf 10 other things collaterally. In the end I picked up the game and ran it with Gligar, save stating before each gym. Even though Gligar is probably a Pokémon I've labbed more than any other, I still was massively underestimating how good it was. It more or less solos 8 out of the 9 possible gym matchups. I'd also never considered giving it Facade, which with poison heal has 140 base power with no drawback. This really goes to show how little I know about the game and what's optimal. I want Gligar in the pool, but the only way to have it be remotely fair would be to push the Razor Fang back to the 8th gym, delete moves from its learnset, or something similarly random and extreme.
+//Razor Fang has been removed from the shop.
+
+Noibat Evolution Change: Razor Fang > Soothe Bell
+//This isn't without precedent. Crobat and Noivern share the exact same BST and stat spread (I got curious while typing this and it turns out Zubat and Noibat share the same BST and stat spread also, that's a fun callback GameFreak)! Anyway, you get Crobat with a Soothe Bell, so yeah.
+
+Soothe Bell Available for Gym 4 > 5
+//After beating gym 4, in other words. It's pushed back to the same time as you get all of the other Evolution items like Stones, Metal Coat, King's Rock, etc. Although it's a bummer to nerf a bunch of bad Pokémon (since all of the friendship Pokémon are pretty weak), it's more streamlined to have them all together, and Noivern firing off Hurricanes at gym 4 is too much. Zubat, Sewaddle and Buneary are now a bit weaker.
+
+
+And finally...
+Item Rework: Whipped Dream
+//I actually reworked this item twice over the course of this patch. I'd already typed up patch notes for the original rework, and rather than delete them out entirely, I figure I'll leave them below to preserve my thought process for how I arrived for where it's at. You can skip to the bottom for the actual change.
+
+--------------------------------------------------------------
+
+REWORK THAT NEVER WAS STARTS HERE:
+
+-Previously, the Whipped Dream evolved any Pokémon whose evolution had a BST below 380
+-Now, the Whipped Dream evolves any Pokémon who 1) has a BST below 300, 2) evolves via level, and 3) is part of a 3-Pokemon evolution line
+-Previously, the Whipped Dream evolved Hatenna, Solosis, Trapinch, Smoliv, Litwik and Sandile
+-After this, the Whipped Dream evolves Hatenna, Solosis, Trapinch, Smoliv, Litwik, Sandile, Spheal and Horsea
+//Philosophy Rambling 1: At first glance, I think this probably seems convoluted. I'm taking a very simple evolution requirement and changing it to something that requires 3 boxes to be checked. That said, I think this is actually much more logical. Why do we want this item in the first place? Well, 1) because certain Pokémon are useless for a long time in the early game, and 2) because certain Pokémon never get to use their middle stage, going straight from their base form to a middle stage and then instantly evolving again via item (Horsea, Litwik). Each condition above directly addresses this. The first requirement, a BST below 300, targets Pokémon who are blanks early. The third requirement, a 3-Pokemon line, addresses the middle stage problem. While it seems convoluted, it's much more pointed at addressing the reason the item needs to exist in the first place.
+//Philosophy Rambling 2: I also think that from an outsider's perspective, this could seem needlessly pedantic. Why not just make an item that evolves whatever Pokémon I decide it should evolve, or more simply, just lower the evolution level of bad Pokémon? While I don't particularly care what the rule is, it's essential that there is one in the first place. It cannot be that we arbitrarily decide which Pokémon are bad enough to warrant evolution changes on a case-by-case basis. There will always be a worst tier of Pokémon in the draft, and we can always buff them up by lowering their evolution levels. The existence of a rule makes it cut and dry; it is not subjective. You either meet the rule or you don't. Yes, I bent the rule to get Horsea in, but this is still the rule that all other Pokémon will have to play by.
+//Everybody knows that Horsea sucks. I don't actually mind that Horsea sucks (I like having some upper tier and some lower tier water types), but I do mind that Seadra never exists, being instantly skipped over for Kindgra once you evolve Horsea. I don't like this (feeling your Pokémon gradually scale in power is fun), and the original Whipped Dream implementation was always a slight failure for this reason. This new system gets Horsea in, and skyrockets our boy up the tier list.
+//Miraculously, Spheal is the only other Pokémon that ends up getting caught by this new rule (dozens of Pokémon are *just* cut out, with Horsea sitting at 295 BST while Gooomy, Jangmo-o, Bagon, Larvitar, Geodude, Poliwag, and more are at 300 exactly). I don't want a massive list of Pokémon evolving with a new item, so this worked out perfectly. As for Spheal, it really didn't need the buff, but I don't mind it either. I like Spheal and I like Sealio, and I like that Sealio will get more time to shine.
+
+--------------------------------------------------------------
+
+REWORK THAT NEVER WAS ENDS HERE
+
+Okay! Now that you've read my great logic above, scrap it! Here's the actual new system:
+
+
+Item Rework: Whipped Dream
+-Previously, the Whipped Dream evolved any Pokémon whose evolution had a BST below 380
+-Now, the Whipped Dream evolves any Pokémon who 1) evolves after level 30, and 2) is the first Pokémon in a 3-Pokemon evolution line
+-Previously, the Whipped Dream evolved Hatenna, Solosis, Trapinch, Litwik, Smoliv and Sandile
+-After this, the Whipped Dream evolves Hatenna, Solosis, Trapinch, Litwik, Spheal, Horsea, Aron, Goomy, and Jangmo-o (new!)
+//I feel dumb for this. This is a much simpler system (it avoids the BST calculation entirely, which was a headache to code), and it ends up with a still more accurate list of Pokémon to what I wanted to buff. It cuts out Smoliv and Sandile, who didn't need the buff in the first place since they evolved for gym 4. In their place, it gets in Honedge, who's the final Pokémon alongside Litwik and Horsea who were skipping their middle evolution (so long C- tier!). It also allows me to add Jangmo-o, a returning face who's no longer quite so weak. Goomy is also a nice inclusion; it makes it so there's actually a choice now between which path you go, instead of Metal Coat being the only viable option. Aron didn't really need it, but I don't mind buffing a Hoenn classic.
+
+
+And that's that! I'll see you all Sunday for a smoking hot race!
+
+
+
+
+

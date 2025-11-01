@@ -1,0 +1,119 @@
+4/30/2025
+
+Not bad! This patch is one big change, several small changes around it, and a lot of comments.
+
+
+Purchasable items consolidated:
+The following items are now available for purchase at the Slateport Market. At each badge threshold, the items below are added to the merchant's stock:
+
+1 Badge:
+Flame Orb
+Toxic Orb
+
+2 Badge:
+Mawilite
+Sablenite	
+
+3 Badge:
+Dragon Scale
+Kings Rock
+Metal Coat
+Razor Claw
+Razor Fang
+
+4 Badge:
+Fire Stone
+Thunder Stone
+Water Stone
+Leaf Stone
+Ice Stone
+Moon Stone
+Sun Stone
+Dawn Stone
+Dusk Stone
+
+5 Badge:
+Linking Cord
+
+6 Badge:
+Cameruptite
+Glalitite
+Houndoominite
+Lopunnite
+Lucarionnite
+Manectite
+Scizorite
+Sharpedonite
+
+4 Badge:
+Hone Claws
+Hail
+Rain Dance
+Sandstorm
+Sunny Day
+
+5 Badge:
+Thunderbolt
+Ice Beam
+Flamethrower
+Psychic
+Solar Beam 
+
+6 Badge:
+Shadow Ball
+Dark Pulse
+Dazzling Gleam
+X Scissor
+
+7 Badge:
+Dragon Claw
+Earthquake
+Iron Tail
+
+//Among items, the notable changes here are the Flame/Toxic orb being moved up 2 gyms, the Mawilite/Sablenite delayed 1, and the stage 1 Mega Stones being made available after gym 6.
+
+//The current distribution of items is too knowledge-checky and too random. Even if I like the idea of using them, it doesn't make sense to spread the evolution items across 5 different locations, and there's no inherent reason why the Herb Shop, for instance, should be selling a Metal Coat. Now, they're all consolidated into one. This will make keeping track of items and evolutions more straightforward.
+
+//I like preserving the vanilla Emerald knowledge of knowing where the Ice Beam or Giga Drain TMs are. That said, it's too tedious to go on an adventure to the Abandoned Ship every run. (This is very similar to my change to Tate&Liza's gym puzzle, which, while fun and skillful, is too tedious for weekly runs). My compromise with items is this: if you'd get the TM by talking to an NPC, it remains with the NPC (Sludge Bomb, Giga Drain, Hidden Power, etc.). If it's sitting on the ground, or if it's available for purchase already in the Game Corner, it's for sale at Slateport.
+
+//This is yet another buff to the player that will make the game easier. Rain Dance early will nerf back-half Flannery fights. Easy Earthquake, Shadow Ball and Game Corner TMs will give the player stronger moves without hoops to jump through. Some TMs are also available earlier than before, like Dragon Claw, which was formerly on top of a Waterfall but is now available before gym 8. And above all, it will make runs faster.
+
+//I feel like I should make a comment about the Mega Stones, since this is the biggest actual balance change of the patch. I like making some available before gym 7/8, since these gyms are a pretty big difficulty spike across the cast, and megas are cool. My main problem with making them available early had always been figuring out a system for deciding which. I didn't want the player to need to memorize which evolutions were available early and which weren't. By splitting it into Non-evolving / Stage 1 / Stage 2, there's a simple rule to remember when you get your mega stone. All of which is to say, good luck hatching that Riolu!
+
+All TMs now cost 1000 each
+//For now, I don't want money management to be part of accessing TMs. This may change in the future.
+
+The TM Salesman now appears after you've earned 4 badges.
+//It's no longer tied to getting the Secret Power TM. This also means that Hone Claws is delayed 1 gym compared to before.
+
+
+New Fly Locations:
+Flying to Route 104 will place you in front of the Berry Shop
+//Time save on a shop you're sure to return to at least once during the run.
+Flying to Slateport now puts you straight into the Market
+//Time save on a shop you'll be visiting after you earn every badge now.
+
+
+Pool Changes:
+Hawlucha added
+//I'm going to try to add some non-evolving Pokémon to the pool for some early game might. Hawlucha will smoke down the first few gyms (so long as you don't get Wattson--we wouldn't want to add an early game counter to him!) Hawlucha's early moveset is cracked, and this is a new top tier. (I have a billion requirements for what non-evolving Pokémon need in order to qualify for the pool. This is one of the only ones that fulfills them all, so I'm starting here.)
+
+Sprigatito added:
+Soosk attempted to add the cat maid and then take it back. Nice try Sooski, but decisions like this are written in blood.
+
+Tadbulb removed
+//It had its run. Unfortunately, we have too many bad electric types to add a terrible one. Goodbye, belly man.
+
+
+Bike Hopping QoL:
+Now, the player can hop ledges just by popping a wheely (you don't have to actually start hopping).
+
+Steven gives the Mega Ring:
+//This makes more sense, since he has a mega and all.
+
+Fortree bug fixed:
+//The same bug that Dewford had, which allowed for the player to get the same gym twice, also existed in Fortree. This never affected any actual runs, but it's fixed now.
+
+
+
+

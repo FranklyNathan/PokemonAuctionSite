@@ -1,0 +1,56 @@
+4/21/2025
+
+I have been known to like eggs.
+
+
+Egg Added:
+Each player now begins their run with an egg. It's given by mom when you watch the TV so that Sooski can't cheat and run up the step counter in his room while waiting to start. All eggs have been changed to hatch at level 15 after 1280 steps. The egg can contain any of the 19 baby Pokémon in existence: Pichu, Cleffa, Igglybuff, Togepi, Tyrogue, Smoochum, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr, Happiny, Munchlax, Riolu, Mantyke or Toxel. Good luck!
+
+/It is time to embrace the roulette. Will you get Riolu? Or will you get Chingling?
+/Flame Body and Steam Engine (Fletchinder, Litwick, Rolycoly) cuts the step requirement to 640.
+
+Friendship Evolution Change:
+All friendship evolutions now occur when leveled up while inside your secret base.
+
+/Previously, all friendship evolutions had been changed to levels. Each evolved at a different level, either at 10, 20, or 30. I never liked this since it was inherently arbitrary. Now, there's a consistent solution to all friendship: chill fat in your base. I also have nostalgia for the Secret Base mechanic, and I think it's funny to force people to make bases in their runs.
+
+/This effectively sets all Friendship evolutions to before gym 4, when the TM becomes available. In the pool, this effects Buneary (3>4) and Golbat (5>4)
+/Of course, the majority of Pokémon who evolve with friendship are the babies who will be hatching from your egg. Now, instead of needing to ask the level, you know that you need to spend some quality time in your crib.
+/Eevee still evolves with stones, not friendship
+/Fun fact: The only Pokémon in our pool who can't learn Secret Power is Combee. That's too bad, Combee!
+/Secret Power works like any other HM: you don't need to teach the move, you just have to have the TM in your bag. This means that the above fun fact doesn't matter at all.
+
+
+Pool Changes:
+Honedge added
+/I'd forgotten that Honedge evolves into Doublade at level 35, meaning that the Dusk Stone being moved forward now gives Aegislash before gym 6. While small, this is enough of a buff that I feel comfortable adding the sword back in.
+
+All baby Pokémon removed (8 total)
+/No double babies!
+
+Rookidee removed
+/End of an era. With all of the changes recently, the pool has ended up disproportionately heavy on flying and steel. Luckily, Justin will never read this to have to find out.
+
+Jangmo-o removed
+/See above, but with dragon. This rounds us out at even 100 in the pool.
+
+
+Gym Changes:
+Norman 3 Vigoroth Focus Energy/Slash > Uproar/Fury Swipes
+Norman 3 Vigoroth Focus Energy > Uproar
+/Focus Energy was not the nerf I thought it was since Slash critical hits are so devastating at this point in the game. Instead, Vigoroth has Uproar now. This is a special move (not physical), so it won't do as much damage. It also locks Vigoroth into the move and confuses it, allowing counterplay by pivoting to a ghost type.
+/Fury Swipes replaces Slash so that it's not doing quite so much damage at gym 3. It keeps Slash for gym 4.
+
+Brawly 6-8 H.Lilligant > Combusken/Blaziken
+/H.Lilligant can't learn Bulk Up, which has always bugged me. Blaziken isn't in the game at all, and this is Emerald, so here he is.
+
+Brawly 8 Hariyama Heavy Slam > Smelling Salts
+Brawly 7-8 Machamp Cross Chop > Strength
+Brawly 7 Sirfetch'd Leaf Blade > Iron Defense
+/Limits 100% Leaf Blade crit to Brawly 8
+
+
+Kubfu now evolves into Urshifu Rapid Strike (Fighting/Water) when leveled up in the Bagon room of Meteor Falls.
+Kubfu now evolves into Urshifu Single Strike (Fighting/Dark) when leveled up on the top floor of Sky Pillar.
+
+/The Bagon room is locked behind a waterfall, meaning that you need the 8th badge to access it. Sky Pillar, on the other hand, is now locked until you defeat Wally in Victory Road. This means that the player gains access to Rapid Strike, the weaker of the two options, slightly earlier than Single Strike (before the Wally battle instead of after it). Climbing Sky Pillar is a significant time sink, since you'll need to swap to the Mach Bike in Mauville and complete the cracked ground maneuvering. Kubfu evolves in these locations regardless of its current level.

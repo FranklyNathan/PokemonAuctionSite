@@ -1,0 +1,26 @@
+2/7/2025
+
+It is so tragic that this patch fell on v2.0. It's very tiny and only releasing now because we're running tomorrow. 
+
+Shellder Added:
+Currently, the Water Stone only realistically evolves Poliwhirl, which isn't particularly significant when you're guaranteed Politoed for Flannery now that the King's Rock is sold in Lavaridge's Herb Shop. Shellder gives a powerful incentive to draft a Pokémon holding a Water Stone. It also introduces another Ice Type, which was one of the rarer types in the game. Regardless of if you draft Water Stone, Shellder still has value as a Roxanne counter with Winona/Drake value. It's had Shell Smash removed from its learnset to prevent sweeps.
+
+
+Rare Candy Glitch Fix:
+Chat GPT has helped me to fix a glitch in infinite Rare Candy that was sometimes causing graphical bugs. (This may also make the overworld corruption glitches less common, I'm not sure. Before, it was possible for Rare Candies to really mess things up, so this could have been causing lots of problems.)
+
+
+Shedinja Balance:
+After testing, we learned that the AI is too dumb to hit Shedinja with moves like Confuse Ray and Leech Seed to kill it. Electrode now has Rollout to hit it (and no longer has Self Destruct...), Spinda has Sucker Punch, and Ludicolo has Astonish. The new list of Pokémon Shedinja walls is:
+
+Wattson’s Magneton (it can theoretically kill it with Confuse Ray but doesn't seem to ever click it)
+Tate&Liza’s Lunatone
+Tate&Liza’s Raichu
+Juan&Wallace’s Whiscash
+Juan&Wallace’s Milotic
+Juan&Wallace’s Kingdra
+Glacia’s Walrein
+Drake’s Exeggcutor
+Drake’s Kingdra
+Steven’s Goodra
+Steven’s Mega Metagross

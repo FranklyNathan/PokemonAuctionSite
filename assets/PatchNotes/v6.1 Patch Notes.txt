@@ -1,0 +1,23 @@
+10/17/2025
+
+Cleaning up bits and bobs from 6.0
+
+Mega Froslass Added
+//I forgot her! She's crazy too, 140SpAtk and 120Speed is enough to outspeed and one shot all of Drake. Additionally, she has Draining Kiss via the Move Relearner, making her the only Mega besides Gardevoir to be able to heal back up. Without access to Calm Mind, though, she's still not quite that level of powerful (keep in mind, though, that you get access to her Mega Stone after badge 6).
+
+
+Mega Stones for Mawile and Sableye moved to gym 7
+//Now, Mawile and Sableye's mega stones come at the same time as the other Stage 1 stones like Manectric and Sharpedo. Matt and I realized last night that Mawile has access to Play Rough and Iron Head via the move relearned, meaning that she can learn both moves before the first gym (this has always been the case, but it used to be a much bigger hassle to get up there before trainers were turned off). It'd  be broken if Mawile retained the early game mega with such strong moves, so the two stones have been pushed back to the same time as the others. 
+
+
+Top Tier TM Bracket (Hone Claws, Earthquake) Cost 7500 > 10000
+//Raising the price of these TMs again. They're so much stronger than the others that it makes sense; there needs to be some opportunity cost of picking them up. Also a Gliscor nerf, who needs both (Gliscor now costs 3000 for the Razor Fang, 20000 for these two TMs, and 10000 more for Poison Heal's Ability Patch, meaning you have to spend $33,000 to facilitate it... over half of your money). Rain Dance has been dropped to the 5000 category.
+
+Ability Patch Cost 5000 > 10000
+//These abilities aren't coin flips and aren't available in the vanilla games, so it makes sense for them to be more costly. A lot of the relevant hidden abilities deserve the high opportunity cost (Poison Heal, Guts, Protean). Combined with the TM price raise, and 10 new Megas (each stone still costs 10,000), this should make it a much harder decision when planning how to spend your money.
+
+
+Steven's Aggron Stone Edge > Dragon Claw
+//This thing knows Dragon Claw in both Ruby/Sapphire and ORAS. I took it off for Stone Edge to give it STAB, but there's enough rock in the game as is. Between Roxanne, Tate&Liza Solrock/Lunatone, Flannery's Magcargo, Wattson's Graveler/Golem, and Steven having 3 rock types, the player is guarenteed to face ample rock damage. I'm nerfing the Aggron and falling back to ORAS's rock-moveless Aggron to make the fight a bit easier.
+
+

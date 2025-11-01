@@ -1,0 +1,18 @@
+3/29/2025
+
+The tiniest patch there ever was. But tomorrow will be the biggest race there ever was, so I want these tweaks in.
+
+Added to the pool:
+Archen
+//Archen now evolves with the Razor Fang. All held evolution-items evolve two Pokémon, besides the Razor Fang, which previously only evolved Sneasel. Now, it evolves two. Archen is much stronger than when it was last in the pool, since it was previously held back by its late evolution level. It also now has Hone Claws access, and Archeops is one of the best answers into late Brawly.
+
+
+Small Tweaks:
+Lilycove Rival's Sceptile has had Night Slash and Aerial Ace replaced with Pursuit and Detect
+//Removes excessive coverage moves to make the moveset more closely resemble the vanilla game. This is similar to what I've been doing across the board with the gym and elite 4 battles.
+
+Toxic/Flame Orb cost lowered (4000 > 1000)
+//I've been reluctant to change item prices, since it feels like a slippery slope. It's extremely silly, though, that it costs so much for what's effectively a convenience item to stop you from having to grind against wild Pokémon to gain status.
+
+Cleanse Tag cost lowered (5000 > 1000)
+//Makes it so that selling it at the Elite 4 is no longer meaningful.

@@ -107,8 +107,14 @@
       <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
         <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" style="height: 1.4rem; position: relative; top: 5px;" />
       </sl-button>
+      <sl-button id="youtube-button" class="control-button" variant="neutral" title="Open YouTube Channel">
+        <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" style="height: 1.7rem; position: relative; top: 4px;" />
+      </sl-button>
       <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
         <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
+      </sl-button>
+      <sl-button id="patchnotes-button" class="control-button" variant="neutral" title="View Patch Notes" onclick="window.location.href='/patchnotes'">
+        <img class="invert-in-dark-mode" src="/generic/pencil.png" alt="Patch Notes" style="height: 1.4rem; position: relative; top: 5px;" />
       </sl-button>
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
@@ -153,6 +159,14 @@
       document.getElementById('github-button').addEventListener('click', () => {
         window.open('https://github.com/FranklyNathan/EmeraldBlitz', '_blank');
       });
+
+      // YouTube button listener
+      const ytBtn = document.getElementById('youtube-button');
+      if (ytBtn) {
+        ytBtn.addEventListener('click', () => {
+          window.open('https://www.youtube.com/@PkmnEmeraldBlitz', '_blank');
+        });
+      }
 
       // Tierlist button is present but will need a dialog added to this page if it's intended to work here.
       // For now, it does nothing.

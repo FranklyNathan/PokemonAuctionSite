@@ -1,0 +1,33 @@
+3/22/2025
+
+A tiny patch before our race tomorrow...
+
+Evolution from Party Menu:
+Now, if a Pokémon has met its evolution requirements, it can evolve from the menu. This is relevant for Pokémon who evolve at or before level 15 but previously had to wait until after gym 1 for the level cap to increase. Now, the following Pokémon can evolve before facing the first gym...
+
+Azurill > Marill
+Scatterbug > Spewpa > Vivillon
+Pikipek > Trumbeak
+Mareep > Flaaffy
+Shinx > Luxio 
+Mime Jr. > Mr. Mime
+Eevee > Leafeon (in Petalburg Woods)
+
+There are also quality of life applications for this feature (like evolving a Pokémon that needs to gain a level even after you've accidentally hit the level cap), but these are the ones that will affect game balance.
+
+
+Optional Gym Trainers:
+All mandatory gym trainers have had their movement patterns or vision altered to be optional. Usually, this means mandatory static trainers now spin. In the Petalburg gym, all of the doors start open, so you can walk straight to Norman without facing trainers.
+
+//Since gym trainers don't scale and are always level ~10, they're even more irrelevant than they were on the old base. It was too RNG-dependent that getting Mossdeep or Petalburg first meant you had 3 fights against trainers (when your team is level 15 and the fights still take multiple turns), whereas starting with Sootopolis or Dewford meant you got no fights. Now, if you're moving well, you won't fight any gym trainers. This also shaves a minute or two off of the total game time, which I'm always looking to do.
+
+
+Small Tweaks:
+Stantler is removed from the pool.
+//I thought that Stantler getting access to Psyshield Bash and his new evolution method would be a buff. As it turns out, needing to use the same move 20 times to evolve is awful. Stantler only gets this move after gym 3, so it's now evolving even later than it was before, unless you spend several minutes fighting random trainers to evolve into a still-bottom-tier Pokémon. This is worse than Trubbish now, so it's been removed.
+
+Rotom Catalog is now in the Lilycove Department Store:
+I knew that changing Rotom forms on a whim would be good. I had Rotom as 3rd best in the game in my previous tier list. As it turns out, it's even better than I'd thought. Being relevant in every fight in the game is just nuts. This pushes form changing back 2/3 gyms, but I've still moved it to 2nd best in the game.
+
+Weather Institute Gift:
+Instead of giving you a Castform holding the Mystic Water, the researcher now simply hands you the Mystic Water. Saved you five seconds.

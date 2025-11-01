@@ -1,0 +1,58 @@
+4/14/2025
+
+Evolution Stones moved up:
+Evolution stones (Fire Stone, Ice Stone, etc.) are now for sale in the Petalburg Mart after you've beaten 4 gyms.
+/The main reason for this change is to make Eeveelutions come earlier. I like our Eeveelution mechanic, but at the moment, they come so late that many players don't get a chance to use them. This also allows for several formerly weak Pokémon to shine, including some who weren't in the pool at all but have now been added.
+
+
+Boss Changes:
+Winona Rebalance:
+Winona 1-5 now has a Taillow/Swellow instead of a Tropius.
+/Winona has been difficult to balance because her team doesn't scale naturally for the early fights. Swablu doesn't evolve late, so she has no logical boss for her earlier iterations. By giving her the Swellow that she has in Ruby and Sapphire, her team now scales more smoothly. This is a significant nerf to Winona early.
+
+Flannery Rebalance:
+Flannery Arcanine 5-8 Play Rough removed
+/It learns this in generation 8, but not gen 9. I switched to gen 9 learnsets for Hisui Pokémon but forgot to update this learnset. All of which is to say, Arcanine Hisui shouldn't be able to learn Play Rough. Obviously this is a huge nerf, and it will make fighting types much better into Roxanne.
+
+Brawly Rebalance:
+Brawly 6 Sirfetch'd Leaf Blade > Iron Defense
+Brawly 6-8 Machoke/Machamp Bullet Punch removed
+/In general, Brawly has crazy coverage with his Pokémon. Machoke/Machamp don't actually learn Bullet Punch, this is just left over from Bullet Punch as a buff to early Brawly so that he didn't get swept by a single fairy. This makes fairy types better into late Brawlys.
+
+Spenser Tweak:
+Decidueye U Turn > Feather Dance
+Decidueye Brave Bird > Pluck
+/The AI doesn't seem to know how to click U Turn. It shouldn't have ever had Brave Bird; this is another move left over from when bosses were too difficult that got overlooked during the nerfs.
+
+
+Bug Fixes:
+Fixed a 1/64 Dewford bug that could cause you to refight your first gym.
+/The bug that ended Chad's run. It's pretty incredible that none of us ever ran into this before; it's been in the game since the gym randomization was first implemented. In the process of searching for this, I also fixed some hype men...
+
+Gym 2's hype man now heals your party.
+Gym 5's hype man now always shows up.
+
+
+Pool Changes:
+Added:
+Capsakid
+Cetoddle
+Helioptile
+Staryu
+Tadbulb (Chad's 1st place prize)
+/These are all Pokémon who weren't in the pool because their first form was too weak to rely on for six gyms before getting to evolve. Now that they evolve earlier, we have new friends.
+
+Removed:
+Darumaka
+Swinub
+/Darumaka is overpowered with Gorilla Tactics as its ability, which I hadn't realized when I made the Ability Patch change that reset all Pokémon abilities to vanilla. Now that Darumaka evolves even sooner, it's too good.
+/Swinub is pretty weak, but he was here because we were short on ice. Cetoddle gives us a new ice type, so the Nub is gone.
+
+
+Item Pool Changes:
+Evolution Stones removed
+/This prevents the problem of two people getting the same evolution stone trying to get the same Eeveelution before leaving their room. Now that evolution stones are available earlier, it's less important to give these out early.
+
+Eject Button removed
+Air Balloon removed
+/People don't seem to use these items. In the interest of making items more straightforward, I've taken them out. They might come back in at some point, but for the time being I've cut them and dropped the chance for items to appear by 10% (40%>30%) to compensate.

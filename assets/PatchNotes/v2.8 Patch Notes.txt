@@ -1,0 +1,44 @@
+2/28/2025
+
+It's game time tomorrow, and we've got some last second tweaks to the pool!
+
+Additions:
+Mudkip
+Torchic
+Buneary
+Spewpa
+
+Removals:
+Totodile
+Chimchar
+Magikarp
+Crabrawler
+
+Introductions:
+
+Mudkip:
+The Hoenn starter trio hadn't joined the game previously because of Mudkip's insane power level. Mudkip is excellent into gyms 1, 3, 4 and 5, and good enough to bring to all of the others too. In the Elite 4, it can mega evolve with a learnset of Surf / Earthquake / Ice Beam / Hammer Arm, one of the best movesets conceivable for the final gauntlet. However, after testing, being slow is a bit of a death knell in the end game, and Swampert comes out being just "good" into the elite 4 but not overpowered. With this in mind, Mudkip seems to be balanced enough to exist in the pool. In all, I still think that Mudkip is the best Pokémon in the game. But, it's not by a huge margin, and it's definitely much weaker than Gyarados, who shows that even with boosts capped at +1, Dragon Dance is enough to catapult you to broken.
+
+Torchic:
+Riding Mudkip's coattails to return to Hoenn. It's replacing Chimchar, filling the same role with a mega-evolution twist for the end game. Funnily, it's by far the best Hoenn starter in the Elite 4 with its Bulked-Up High Jump Kicks.
+
+Buneary:
+We've been short on normal types, and I'd always wanted Buneary for its mega evolution. Mega Lopunny gains the fighting type, one of the best types into the elite 4 (super effecting Sydney, Glacia, and Steven). I previously hadn't added it because I didn't think it had access to a good fighting move. Yesterday, Soosk let me know that Jump Kick was massively buffed in later generations to 100 base power 95% accuracy, making Lop a powerhouse Elite 4 pick. In general, I want Pokémon that are good into the Elite 4, since that's such a difficult part of the game. Buneary evolves at the early level of 20, so it'll have use into Wattson/Flannery/Norman and into Elite 4, the two toughest stretches of the game. This patch also gets more Megas into the game, which I think is neat.
+
+Spewpa:
+A dark horse addition, Vivillon has some crazy Elite 4 gimmicks going for it that no other Pokémon bring to the table. For starters, it'll be the only Compound Eyes Pokémon in the game, giving it 100% accurate Stun Spores and Hurricanes. Additionally, it has Quiver Dance (the best move in the game) and Draining Kiss. But most interestingly, it gets Powder at level 55, a move with +1 priority. If you use Powder and the opponent uses a Fire-type move, the move "explodes" in their face and they take 25%, dealing no damage. Since Phoebe's Typhlosion and Drake's Exeggutor will only ever use fire moves against Vivillon, this means that she has a guaranteed kill against them if she can get in safely.
+
+
+Eulogies:
+
+Totodile:
+The croc was originally added because it got Ice Fang by level up and evolved early, putting it in a uniquely powerful position against Winona compared to other Water types. Now that Ice Beam is accessible, though, that reasoning isn't as compelling. Apart from this, Totodile's learnset and typing are super boring.
+
+Chimchar:
+Almost a direct copy of Torchic. I'm not against having more starters, but for the time being it feels weird to have 3 trios and just Chimchar when he's a strictly worse Torchic.
+
+Crabrawler:
+I hadn't realized quite how weak this was until I played with it. I thought it would be a cheap, lower-power-level counter to Roxanne and Winona. It was that, but it's so slow and late to evolve that it can't do anything in any other fight, ever. 
+
+Magikarp:
+After discovering the power of Dragon Dance Mega Gyarados, this was the best Pokémon in the game, and it wasn't even close. Once it comes online for gym 4, it's one of the best Pokémon in the game for every gym between 4 and 8, then single-handedly sweeps the entire Elite 4 and Champion. When mulling over how much it'd be worth in draft, I came to the conclusion that the answer was in the ballpark of ~$12,000, which is obviously ridiculous. Really, the only question was if it was getting removed or if I was deleting Dragon Dance from its learnset. I'm sticking with the decision not to remove any moves from any Pokémon and instead just cutting the Karp outright.

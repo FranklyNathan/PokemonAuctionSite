@@ -1,0 +1,162 @@
+<!doctype html>
+<html class="sl-theme-dark">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patch Notes — Emerald Blitz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body { padding: 1rem; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+      .topbar { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1rem }
+      .page-title { font-size:1.5rem; font-weight:700 }
+  /* center the vertical stack on the page */
+  .patch-container { display:flex; justify-content:center; width:100%; padding-bottom:3.5rem; }
+  .patch-list { display:flex; flex-direction:column; gap:0.5rem; max-width:900px; width:100%; }
+  .patch-bar { display:flex; align-items:center; justify-content:space-between; background:var(--sl-color-neutral-800); color:var(--sl-color-neutral-0); padding:0.6rem 0.8rem; border-radius:6px }
+  .patch-bar { cursor: pointer; }
+  .patch-date { font-weight:600; color: var(--sl-color-neutral-300); }
+      .patch-content { background:var(--sl-color-neutral-50); color:var(--sl-color-neutral-900); padding:0.8rem; border-radius:6px; white-space:pre-wrap; font-family: Consolas, 'Courier New', monospace; display:none }
+      .patch-meta { font-weight:600 }
+      .controls { display:flex; gap:0.5rem }
+  .sl-theme-dark .patch-bar { background: #1f2933; color: #ffffff; }
+      .sl-theme-dark .patch-content { background: #071014; color: #dfeffb }
+      .sl-theme-dark .patch-date { color: #cfe7ff }
+    </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="page-title">Patch Notes</div>
+      <div style="display:flex; gap:0.5rem; align-items:center">
+        <sl-button size="small" variant="primary" onclick="window.location.href='/'">Back</sl-button>
+      </div>
+    </div>
+
+  <div class="patch-container"><div id="patch-list" class="patch-list"></div></div>
+
+    <script>
+      // Ordered newest -> oldest
+      const patches = [
+        'v6.3 Patch Notes.txt','v6.2 Patch Notes.txt','v6.1 Patch Notes.txt','v6.0 Patch Notes.txt',
+        'v5.9 Patch Notes.txt','v5.8 Patch Notes.txt','v5.7 Patch Notes.txt','v5.5 Patch Notes.txt','v5.4 Patch Notes.txt','v5.3 Patch Notes.txt','v5.2 Patch Notes.txt','v5.1 Patch Notes.txt','v5.0 Patch Notes.txt',
+        'v4.9 Patch Notes.txt','v4.8 Patch Notes.txt','v4.7 Patch Notes.txt','v4.6 Patch Notes.txt','v4.5 Patch Notes.txt','v4.4 Patch Notes.txt','v4.3 Patch Notes.txt','v4.2 Patch Notes.txt','v4.1 Patch Notes.txt','v4.0 Patch Notes.txt',
+        'v3.0 Patch Notes.txt',
+        'v2.9 Patch Notes.txt','v2.8 Patch Notes.txt','v2.7 Patch Notes.txt','v2.6 Patch Notes.txt','v2.5 Patch Notes.txt','v2.4 Patch Notes.txt','v2.3 Patch Notes.txt','v2.2 Patch Notes.txt','v2.1 Patch Notes.txt','v2.0 Patch Notes.txt',
+        'v1.9 Patch Notes.txt','v1.8 Patch Notes.txt','v1.7 Patch Notes.txt'
+      ];
+
+      const listEl = document.getElementById('patch-list');
+
+      function makePatchEl(filename) {
+        const shortName = filename.replace(' Patch Notes.txt','');
+        const container = document.createElement('div');
+        const bar = document.createElement('div');
+        bar.className = 'patch-bar';
+
+  const left = document.createElement('div');
+  left.className = 'patch-meta';
+  left.textContent = `Version ${shortName.replace(/^v/, '')} Patch Notes`;
+
+  // Date element (top-right). We'll fetch the first line (release date) and place it here.
+  const dateEl = document.createElement('div');
+  dateEl.className = 'patch-date';
+  dateEl.textContent = '';
+
+  (async () => {
+    try {
+      const fetchUrl = `/assets/PatchNotes/${encodeURIComponent(filename)}`;
+      const res = await fetch(fetchUrl);
+      if (!res.ok) {
+        dateEl.textContent = 'date unavailable';
+        return;
+      }
+      const txt = await res.text();
+      const firstLine = txt.split(/\r?\n/)[0] || '';
+      const dateLine = firstLine.trim();
+      dateEl.textContent = dateLine || 'date unavailable';
+    } catch (e) {
+      dateEl.textContent = 'date unavailable';
+      console.debug('Error fetching patch date for', filename, e);
+    }
+  })();
+
+  const controls = document.createElement('div');
+  controls.className = 'controls';
+  // place date in the controls area (top-right)
+  controls.appendChild(dateEl);
+
+        const content = document.createElement('div');
+        content.className = 'patch-content';
+        content.textContent = ''; // will fill on expand
+
+        let loaded = false;
+
+        // Toggle function used for both click and keyboard activation
+        const toggle = async () => {
+      if (content.style.display === 'none' || content.style.display === '') {
+        // expand
+            content.style.display = 'block';
+            if (!loaded) {
+              try {
+                const fetchUrl = `/assets/PatchNotes/${encodeURIComponent(filename)}`;
+                console.debug('Fetching patch notes:', fetchUrl);
+                const res = await fetch(fetchUrl);
+                if (!res.ok) {
+                  const body = await res.text().catch(() => '<no body>');
+                  const msg = `Error loading patch notes.\nURL: ${fetchUrl}\nStatus: ${res.status} ${res.statusText}\nBody:\n${body}`;
+                  console.error(msg);
+                  content.textContent = msg;
+                } else {
+                  const txt = await res.text();
+                  content.textContent = txt;
+                }
+              } catch (e) {
+                const msg = `Exception while fetching patch notes: ${e && e.message ? e.message : e}`;
+                console.error(msg, e);
+                content.textContent = msg;
+              }
+              loaded = true;
+            }
+          } else {
+            // collapse
+            content.style.display = 'none';
+          }
+        };
+
+        // Make the whole bar clickable and keyboard accessible
+        bar.setAttribute('role', 'button');
+        bar.setAttribute('tabindex', '0');
+        bar.addEventListener('click', (e) => {
+          // Ignore clicks from interactive elements inside controls (if any future links)
+          if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || (e.target.closest && e.target.closest('a')))) return;
+          toggle();
+        });
+        bar.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+          }
+        });
+
+  // toggle button removed; date is shown in controls
+        bar.appendChild(left);
+        bar.appendChild(controls);
+        container.appendChild(bar);
+        container.appendChild(content);
+        return container;
+      }
+
+      for (const p of patches) {
+        const el = makePatchEl(p);
+        listEl.appendChild(el);
+      }
+    </script>
+    <script>
+      // Make page visible (matches home page behavior which sets body.ready)
+      document.body.classList.add('ready');
+    </script>
+  </body>
+</html>

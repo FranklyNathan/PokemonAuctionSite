@@ -1,0 +1,18 @@
+2/13/2025
+
+AI Changes:
+By some strange coincidence, a lot of weird AI quirks converged on Wattson to make him do really dumb things. I fixed them.
+
+The AI is now disincentivized to use Rollout against Water, Rock or Ground type Pokémon. For Wattson, this means that Graveller and Electrode will no longer use Rollout even if they could hit you with a better move. It also means that if you lead Volt Absorb Chinchou or something similar against the Graveller, it'll set up Stealth Rocks instead of doing 2 damage with Rollout and dying.
+
+The AI is now heavily disincentivized to use a move that would paralyze against an electric type (Score -10 to -30). This will stop Manectric from breaking and spamming Thunder Wave against Electric-type Pokémon.
+
+
+Spawn Location:
+The spawn location has been updated from the truck to the player's bedroom. This had been on my to-do list for a while, but I was nervous about it since the player would need to spawn into different bedrooms and set different flags depending on gender. But now that it's working, we can fundamentally change how the race starts for the better.
+
+Now, instead of starting when we hit New Game, the race will start when you exit the bedroom. This means that in the time after draft but before we race, you can rearrange the PC, withdraw items, check Natures and IVs, and set the clock. (To allow for this, you now obtain all of the Pokemon by interacting with your Gamecube, instead of in the Birch cutscene).
+
+
+PC Wallpaper:
+Did you know that there are 32 PC Wallpapers in Emerald, 16 of which are hidden by default? The PC always starts by just cycling through the same 3. I changed it so that it picks through the base 16 (and Whiscash) randomly. Booyah!

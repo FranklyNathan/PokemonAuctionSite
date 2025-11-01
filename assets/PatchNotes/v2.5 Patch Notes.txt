@@ -1,0 +1,141 @@
+2/17/2025
+
+Everybody who played yesterday is a superstar! I feel like my brain has expanded three sizes. I feel like I have got the balance solutions. Of all the patches I've released so far, this is the one I'm the most excited about. These notes will have much more commentary than past notes because they're more about balance philosophy than brand new features, so lock in. Do not be surprised if, while reading these patch notes, you think "Wow." Do not be surprised if you find yourself thinking "Oh jeez." And do not be surprised if, dazed and confused, you find yourself thinking "I cannot believe Nathan has nerfed Ralts like this."
+
+
+Stat Boosting:
+In vanilla Pokémon games, each stat can be changed to +6 or to -6 through moves like Swords Dance and Calm Mind. Now, however, the game will cap all stat stages at +1.
+
+People who've heard me waffle about sweeps know that I've wanted to remove all stat-boosting moves for some time, but that I wasn't willing to remove Bulk Up and Calm Mind TMs. The 2nd and 7th gyms each have teams built around these boosting moves and give them as TMs when defeated; I think removing them would be too much of a departure from base Emerald. This change, however, is a solution that I think is even better. You can still boost, and some Pokémon can still sweep at +1 (x1.5 the boosted stat), but they will be far, far rarer. It was never a problem that Mega Gallade could Bulk Up once and sweep Glacia; the end-game fighting type should be strong into the Ice boss. The problem was Sylveon sitting in front of a Pokémon it's weak to, setting up 3 Charms and 6 Calm Minds, and then proceeding to sweep a matchup it shouldn't even be good into. Now, sweeps will be determined by if your Pokémon has a good matchup into the opposing fight, and not if you're able to find an opposing Pokémon weak enough to let you set up +6 boosts.
+
+Note that the AI plays under these same constraints and also cannot boost over +1. This will nerf pesky Nasty Plotters like Norman's Zoroark and Glacia's Ninetales. Using one of these moves will work just the same as if you previously used them at +5; you'll boost one stage instead of two. Of course, if you've been hit by an intimidate and brought to -1 Attack, a Swords Dance will bring you back up two stages to +1.
+
+All Pokémon who have lost stat-boosting moves in the past for balance patches have now had their moves restored. This is a notable buff to Dragon Dance / Quiver Dancing Pokémon like Flygon, Ribombee and Kommo-o, who can be menacing even with just one boost. And uh, probably don't go for Belly Drum any more.
+
+
+Boss Trainer Changes:
+E4 Anti-Sweep Swaps:
+Phoebe's Dusclops: Haze  > Payback
+Drake's Exeggutor: Psych Up > Flamethrower
+Stevens Skarmory: Whirlwind > Night Slash
+
+Because Elite 4 members no longer need to balance their leads around trying to prevent sweeps, their leads' anti-sweep moves are no longer necessary. In their place, these Pokemon get some improved coverage.
+
+Gym Leader Buffs:
+Brawly's Makuhita: Arm Thrust > Knock Off
+
+Juan&Wallace's Wailord Dive/Bounce > Blizzard/Double Edge (Now matches Wallace's E4 set)
+Juan&Wallace's Whiscash Amnesia > Dragon Dance
+Juan&Wallace's Milotic Dragon Tail > Ice Beam
+
+As we improve at the game and discover new strategies, it's becoming increasingly obvious that the double-battle gyms are too easy. These fights are very weak to leaving one Pokémon alive that you've Charmed/Snarled/Paralyzed/Leech Seeded and then 2v1ing the rest of the fight while the crippled Pokémon is unable to contribute. These changes will make it harder to isolate one of Juan&Wallace's leads with this strategy and just generally raise the difficulty of what's currently a cakewalk of a gym battle. I may continue to buff this gym in the future; I don't like the 8th and final gym leader being one of the weakest.
+
+Brawly is probably the only gym easier than Juan&Wallace at the moment. Giving some Dark coverage to his Makuhita will stop it from getting walled quite so easily by fighting resists, and Arm Thrust was always worse than Vital Throw unless it hit 5 times.
+
+Also, while I'm here, Winona's Altaria has been changed from a neutral nature to Adamant (+Atk, -SpAtk). This was the one gym leader nature that hadn't been optimized, because in my initial assessment of the game, I thought Altaria was the strongest boss Pokémon of any gym leader. It still might be, but it has way more counters now that Ice Beam is available as a TM at the Game Corner, so I'm going to buff it back in line with all other gym leaders.
+
+I'll add finally that I did consider replacing Wattson's Manectric's Fire Fang with Quick Attack, restoring its set to how it is in base Emerald. However, I then remembered that I'm not a little googoo gaga baby, and decided not to make any changes to this toddler-difficulty-level fight.
+
+
+Special Event Changes:
+Special events as we knew them are no longer. However, this short experiment did produce some really cool changes for the game that I never would have thought up without them. Namely, Eevee. The Freevee event is now permanent. All players begin the game with Eevee (replacing Ditto as the Pokémon who starts in your party). But, if two players' Eevees evolve into the same Pokémon, both are considered fainted and can no longer be used. 
+
+This one was clearly the most interesting special event, and now that Sylveon can't set up quite so many Calm Minds after the boosting nerf, I'm even more excited to continue playing with it. There is so much strategy here I'm not even sure where to begin. Suffice to say, once Frazz and I don't die at the first gym next run, things are going to get interesting.
+
+There is still one event, though. Trade time will remain. It will have a 1% chance of happening each time "Next Pokémon" button is pressed, and it won't be able to occur at all until at least 25 Pokémon have been sold. In a 6-player draft, this gives the event a 33% chance of happening once all draft and a 5.5% chance of it happening twice. In other words, in 2/3 drafts, we'll never see this event at all. It will truly be Special.
+
+There are some miscellaneous changes associated with balancing Eevee for this change:
+-Eevee now evolves to Sylveon with Shiny Stone (and not by learning a Fairy move).
+(Note that while all Eeveelutions can evolve from Stones, Leafeon and Glaceon can evolve if leveled up in Petalburg Woods and Shoal Cave, respectively. These evolution methods are based on how they evolve in the official games, and they've always existed. Obviously, Leafeon in Petalburg is particularly relevant now that everybody starts with one.)
+-Eevee now starts with Baby-Doll Eyes, a move that had previously been deleted because it instantly evolved it into Sylveon.
+-Quick Powder is no longer sold in Lavaridge, as Ditto has exited the game.
+
+And, importantly, We'll now be drafting 11x the number of players, not 13x. Our skill has improved at the game, and 13 was always a bit too big. We're dropping it by one to 12, and then by one more to account for our new Eevee. This will make the game harder. To help account for this...
+
+
+Pool Changes:
+As of yesterday, I feel like we finally have enough runs under out belt to make a preliminary tier list. After reassessing every Pokémon in the bottom tiers, it's time for the first (and probably final) significant change to the pool.
+
+Pokémon Removed from the Auction Pool:
+Archen
+Weedle
+Seedot
+Pidgey
+Murkrow
+Paras
+Deerling
+Larvitar
+Gastly
+Nickit
+Eevee
+
+If we're drafting fewer Pokémon, we don't want duds coming up. In general, these were the Pokémon that seem to have almost no use (or, worse, who seem to have a use at a glance but fail at what you'd assume they'd be good for). Looking at the draft history, these Pokémon are going for less and less every draft, and they're mostly trap picks causing people to waste their money. Removing them will increase the power of the average Pokémon in the pool. (Notably, I haven't completely removed the existence of bad Pokémon. That wasn't the goal. But 15% of the pool being outright bad was too much, and now it's more like 5%.
+
+But that's not all! In their place, we've got some new friends to try! Booyah!
+
+New to the Pool:
+Tentacool
+Stunfisk
+Crabrawler
+Houndour
+Bunnelby
+Skiddo
+
+Let's do some introductions:
+
+Stunfisk
+A lot of people are drafting with a focus on the early gyms, and Stunfisk has been added to give a definitive early game pick. This is the only Pokémon in existence who learns Mud Shot before level 15, a special attacking Ground move that one shots all 3 of Roxanne's Pokémon. Not only that, but it's also extremely good into Wattson's Electric types and Flannery's low-special-defense Torkoal. Stunfisk doesn't evolve, so it has great stats early but falls off later. If you want to get to Norman, this is one of the best picks.
+
+Crabrawler
+Alongside Stunfisk, added as another non-water-type Pokémon with a good matchup into Roxanne since it knows Bubble. After losing to Roxanne twice, you see, I'm loading the pool up with early game answers to make sure I never lose again. (It's also tanky enough to take two hits from Winona's now-Adamant Altaria and one shot with Ice Punch).
+
+Bunnelby
+Rather than nerf Wattson, we're adding more Wattson counters to the pool. Bunnelby joins Azurill as a menace that needs to win the 50/50 for Huge Power to function. But, once you get it, it's a great check to Wattson, evolving at level 20 and hitting with Soft Sand Bulldoze. As a normal type, it's also good into Flannery's Marowak and Norman's Zoroark.
+
+Skiddo
+Definitely the weakest new Pokémon, but it's here to replace Deerling. Previously, Deerling was better. Now that the level caps have changed, though, Skiddo's 32 squeaks in to Norman, whereas Deerling is still sitting unevolved until Winona. That's enough of a reason to swap these two Pokémon who are otherwise nearly identical.
+
+Tentacool
+Poison types generally aren't good, and this is one of the few Pokémon that will be able to make use of the free Sludge Bomb TM after Norman. It's another Roxanne counter.
+
+Houndour
+Houndour wasn't here before because the pool was too heavy on Darks. Now that Murkrow and Nickit are gone, I've got space. Houndour's learnset is awful, and it relies almost entirely on TMs. That said, Dark/Fire is an excellent type into the Elite 4, and this dog can mega evolve. It's a new E4 counter in a game that just lost a lot of E4 counters. It's also evolved for Wattson and knows Ember (or Flamethrower if you can somehow cobble together the cash by that point?) to hit Magneton and Electrode for super-effective damage.
+
+Some buffs were also made to Pokémon who were weak but I didn't want to remove:
+
+Mega Stones are no longer consumed on use. The Mawile and Sableye mega stones purchasable at Slateport are now forever, significantly boosting the power of this Granite-Cave duo. (These are now the only two mega stones available for purchase early--Scizor's has been removed.)
+
+Sliggoo now evolves into Goodra if leveled up in the rain, regardless of its current level. This gives you access to Goodra for the 6th gym, as you can encounter your first rain on the way to Fortree. Does this make Goomy good? Probably not, but it's something.
+
+And, finally, I've removed some items from the pool. The Dusk and Absorb Bulb have been cut. 
+
+Cubone previously evolved with the Dusk Stone, but in Alola, it evolves when it hits 28 at night. I don't know why I changed this originally, but regardless, now your Cubone will evolve into regular Marowak at 28 during the day and Alolan Marowak at night. With that change, and with Murkrow gone, the Dusk Stone only evolves Litwick and Honedge to their final forms, and you have access to Lilycove's department store by that point. The Absorb Bulb, which counters water-type attacks, is no longer particularly useful now that Wallace has been replaced with Steven. The removal of these items means that all other items will occur slightly more frequently, so we're a tad more likely to see the good stuff like Ability Capsules and Leftovers.
+
+
+Evolution Moves:
+I'm really pumped about this one! In modern Pokemon learnsets, some Pokemon have "Evolution Moves," moves that are learned on level up regardless of what level the Pokemon is evolving at. For example, Leafeon has an evolution move of Razor Leaf, and it will attempt to learn it whether you evolve it at level 20 or at level 60.
+
+My solution up to this point has just been to put the move on whatever level the Pokemon would normally evolve (Sceptile gets its evolution move of Dual Chop at 36, for instance). However, this is leading to problems when certain Pokemon have multiple windows to evolve. Namely, it's a problem with Eeveelutions, who with our new Freevee will be evolving at all sorts of different levels. My solution up until this point has just been to list the move multiple times in the learnset, so you're sure to hit it eventually, but this is extremely awkward if you need a water move for your Vaporeon now and you missed the window in this level cap.
+
+All of which is to say, I've added them. Evolution moves are now fully functional. My old janky solution of listing the move several times is no longer. Booyah!
+
+
+New Rival Battle:
+Regardless of which Pokeball you select when picking your starter, your rival will now always start with Treecko. In all rival fights, your rival now uses their team from Omega Ruby / Alpha Sapphire. This is a huge buff. In the route 119 battle before Winona, all of their Pokémon are now 2 levels stronger. But in Lilycove, when guarding the Department Store, the levels are now 5 higher, going from a level 34 Grovyle to a level 39 Sceptile (4 levels above the level cap if you've skipped Winona)!
+
+In the current tier list, the bottom tier Pokémon have one glaring thing in common: they're almost all either Bug, Poison or Flying type. This is in large part because Hoenn has no grass gym leader, a type that all three of these stinkers super effect. Adding Decidueye to Winona helped mitigate this a bit, but not by much. This Lilycove Rival fight is another indirect buff to these types. Access to the evolution stones (more important now than ever now that we have Eevee) are newly locked behind a level 39 grass-type Sceptile. If you want these stones for the 6th gym, you'll now need a counter to what is one of the most menacing Pokémon in the game relative to your current strength. While skipping Fortree and heading straight for Lilycove would have otherwise been a no-brainer, it's now a risk you need to weigh.
+
+(I should note here that Glaceon and Crabominable can also be evolved by leveling up in Shoal Cave's lowtide ice room, similar to their evolution methods in the official games. That is to say, if you're scared of your rival, you can technically surf all the way to Timbuktu to get these evolutions safely and for free, while picking up a Never Melt Ice in the process. I'm not sure if there's ever a world where you do this. I mostly just like that there's a reason for me to type out Shoal Cave.)
+
+The full Lilycove team is a level 37 Swellow, Magcargo and Wailord, with the aforementioned Sceptile in the back.
+
+
+TM Changes:
+Currently, the Shadow Ball exists on top of Mt. Pyre. I liked that there was theoretically a reason to enter Mt. Pyre, so I'd left it as the only way to access the move. However, I learned yesterday that getting to the TM involves climbing all the way to the 6th floor of the inner section, dodging no fewer than 10 spinners in tight corridors where you need to walk past each 2-3 times in the process. That's impossible to go for in a run. So, I've moved Shadow Ball to the Game Corner, replacing Double Team. It costs 30,000, the same as Ice Beam/ Flamethrower / Thunderbolt / Psychic. I've moved the Double Team TM to Lilycove's department store 4th floor where it lives with Protect / Safeguard / Screens. Beyond balance, these moves fit more logically in these spots anyway. Shadow Ball is with the other high-power SpAtk moves, and Double Team is with the other defensive TMs.
+
+Notably, Earthquake is still in the same boat as Shadow Ball was, being too out of the way to ever seek out. However, I think Ground types are good enough as is, so this TM will stay inaccessible.
+
+And, finally, Exeggutor Alola can now learn Giga Drain. Because for some reason it couldn't in the base Emerald Speedchoice EX.
+
+
+That's all! If you read all of this, you rock! I am so excited to play with these changes, and I'll see you in the first weekend of March!

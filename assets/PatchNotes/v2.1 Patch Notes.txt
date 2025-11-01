@@ -1,0 +1,51 @@
+2/9/2025
+
+Oh! Oh yeah! Now this is what I'm talking about!
+
+Special Events:
+New bot technology has unlocked all new features for our races, baby. Not only does the auction bot now show key information for each Pokémon that pops up, we've also got a brand new system: Special Events. Special Events each have a 1% chance of occurring each time the Next Pokémon button is pressed and can only occur once 16 Pokémon have been sold. Here are the possible Special Events so far:
+
+A Race to the Death!
+As the winner of the previous auction, you may choose another player's Pokemon. That Pokemon is now also on your team. During the race, the player to beat Roxanne first may keep the Pokemon. The losing player's Pokemon is considered fainted and can no longer be used. (The copied Pokemon costs you its full price. You can't copy Pokemon obtained in a 2-for-1.)
+
+Trade Time!
+As the winner of the previous auction, swap one of your Pokémon for another player's. Then, that player may swap one of their Pokémon for one of yours. (Pokémon involved in the first trade cannot be swapped in the second. Held items are not swapped.)
+
+One of a Kind!
+All players without an Eevee get one now, for free! During the race, if two players' Eevees evolve into the same Pokémon, both are considered fainted and can no longer be used. (During the race, you must reveal what you evolve your Eevee into when you evolve it.)
+
+Something's Not Quite Right!
+All players choose one of their Pokémon to inspect. The were actually Ditto in disguise! Awkward! Delete them and replace them with Ditto.
+
+Buyer's Remorse!
+As the winner of the previous auction, you may sell one of your Pokemon back to the auctioneer for a full refund. (You do not return any held items. You can't sell Pokémon obtained in a 2-for-1.)
+
+
+Dragon Scale:
+The Dragon Scale and Quick Powder have been added to the Lavaridge Herb Shop. 
+
+Seadra's evolution to Kingdra has been changed from level 40 to leveling up while holding a Dragon Scale. This allows Seadra to become Kingdra at level 33, one gym earlier than was previously possible.
+
+Skrelp has been added to the pool. It evolves to Dragalge when leveled up while holding a Dragon Scale.
+
+
+Decidueye Hisui:
+Dartrix can now evolve into Decidueye Hisui when leveled up while holding a King's Rock. Decidueye Hisui also now learns Aura Sphere at level 30. (Previously, when both Decidueyes were obtained via level up, there was no reason to ever choose the Hisuian variant. Now, there's a choice: do you want power against the 5th gym or against the 7th?
+
+
+Item Pool Tweaks:
+The King's Rock is no longer in the draft item pool; you'll have to wait for your Slowking and Decidueye until Lavaridge. While not a change, the Dragon Scale has notably not been added to the item pool. The Shiny Stone, which used to be 3x more likely than the average item to appear in the draft, is now just 2x more likely. 
+
+
+Bug Fixes:
+Beak Blast is now fixed, and Toucannon will finish the attack even if it's hit while charging up. 
+
+Combee can now evolve regardless of if its a male or female (a change that had previously been made to all gender-specific evolutions like Kirlia and Salandit).
+
+Rotom Heat can now learn TMs besides Overheat. As far as I know, this bug luckily never came up for anyone.
+
+
+Miscellaneous Changes:
+Mawile now starts with Fairy Wind instead of Sweet Scent (it still learns both moves, but I flipped their order so that Mawile will not have forgotten Fairy Wind by level 15). This gives Mawile access to a Fairy move so that it's slightly less weak.
+
+Gallade has lost Swords Dance.

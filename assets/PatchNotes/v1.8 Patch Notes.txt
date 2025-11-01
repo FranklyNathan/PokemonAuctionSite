@@ -1,0 +1,24 @@
+﻿1/18/2025
+
+
+Unfortunately, I got sick Thursday night and haven’t been able to do much with the game. I felt a bit better tonight, so I made some changes ahead of tomorrow’s run:
+
+
+The Game Corner’s powerful TMs now cost 1,500 coins (or ¥30,000), down from 4,000 coins (¥80,000) each
+TMs for Psychic, Flamethrower, Ice Beam and Thunderbolt are now available for much less than they cost in the vanilla game. As it was, Game Corner TMs were so expensive that they effectively didn’t exist. We don’t end up with  ¥80,000 until we’ve obtained every gym badge, at which point we could buy four mega stones for the cost of one Psychic TM (in addition to having to buy and trade the Harbor Mail to get the Coin Case in the first place). This change makes it so that you can access these moves earlier, though you still won’t have enough to buy one by the time you reach Mauville unless you’re selling Mega Stones.
+
+
+As a small QoL change, you also now buy coins in 500/1500 denominations instead of 50/500, speeding up the process of converting your cash to coins.
+
+Because the Ice Beam TM is now accessible, Porygon now holds the Shadow Ball TM instead. 
+
+
+Flabebe is back in the pool
+This explanation is very insignificant but shows how small changes in one area of the game have knock-on effects. Flabebe was originally in the pool weeks ago with the idea that it would be 1) a powerful Fairy type to take to the Elite 4 and 2) another Shiny Stone evolution to reward you for drafting a synergistic duo. However, once I tested and realized it only got Moonblast through the move relearner, or if you kept it as a Floette until level 46, I removed her from the pool. One of the main reasons Pokemon get removed is because I’m worried that they’re “bait” picks; i.e., Pokemon people would buy to fulfill an obvious role that they can’t actually fulfill. If Florges couldn’t learn a Fairy move with more than 40 Base Power, it wasn’t doing anything against Drake’s dragons. Sure, you could keep her unevolved until level 46, but that means having a useless Pokemon on your team until the 8th gym. It also meant it was useless to draft Flabebe alongside a Shiny Stone, the intended synergy, since you couldn’t use the Shiny Stone to evolve early if you ever wanted to learn a useful move.
+
+
+However, now that the player can fly to the move relearner upon reaching Ever Grande, Florges is back. With this change, you can now evolve it asap and still get Moonblast for the Elite Four, so everything is peachy.
+
+
+Politoed now has a 50/50 for Drizzle
+Drizzle is the toad’s hidden ability (inaccessible in game), but I’ve swapped it with Damp as one of its two main abilities. The only Pokemon currently in the pool with Drizzle is Pelipper. Drizzle is insanely good against Flannery to counter Drought Torkoal, and you can get Politoed by that split if you draft a Larvitar with a King’s Rock. This gives a reason to evolve for Politoed in a game where Poliwrath is otherwise clearly better.

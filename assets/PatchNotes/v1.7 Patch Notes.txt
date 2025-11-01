@@ -1,0 +1,71 @@
+﻿1/13/2025
+
+
+Hi! Thank you to everybody who played on Saturday. I was very tired from work and from winning so hard, so I’m sorry that I was low energy, but it really was so cool to have everybody playing.
+
+
+I’ve made some new changes.They’re getting much more fine tuned than earlier patches, so I decided I’d type them out like this to explain my thought processes. Enjoy!
+
+
+Trainers in gyms 4 and 7 no longer spin.
+Gym 7 bugged me for both of our runs so far. If you do the puzzle optimally in vanilla Emerald, you’re only required to do 3 battles. However, when they’re spinning, you’re likely to face 6+ regardless of how well you maneuver. So far, people have been going through the gym the first time just to clear out the trainers, then going in again to fight the leaders (and often encountering even more trainers the 2nd time though). I want the game to reward you for being good at the puzzle, and the spinning currently takes away from that. In short, the puzzle just makes more sense if the trainers are stationary.
+
+
+Gym 4 is similar. The whole gimmick is that the trainers are submerged. They can’t both spin and be submerged, and I’d rather keep with the original spirit of the gym.
+
+
+Quality of life
+You no longer have to fight the Zigzagoon after choosing your Ducklett, the game just cuts to black (similar to the Wally tutorial). You’ve now got running shoes as soon as you hop out of the truck, and mom’s running shoes cutscene is removed.
+
+
+Steven is the new champion
+The Elite 4 has been the most difficult portion of the game to balance so far, and this goes a long way to help. For starters, having the 8th gym and the champion both using the same type is hard to balance the pool around; it makes some types so much better inherently than others. Secondly, the Elite Four is just too hard relative to the rest of the game. At the moment, the only “good” Pokemon into Wallace are Pokemon that can set up a bunch of boosts. And finally, I really don’t like that the run would regularly come down to dodging a 10% freeze chance from Wailord’s Blizzard.
+
+
+Steven’s team is more diverse and weaker than Wallace’s. Steven as a trainer is also cooler than Wallace, and he makes more sense as Hoenn’s champion. He also can use his Omega Ruby/Alpha Sapphire team, which has a Mega Metagross, giving the game an epic final boss Pokemon that Wallace doesn’t really have.
+
+
+The 8th gym is now a double battle against Juan and Wallace
+Well, I couldn’t just leave Wallace out. This gym was actually another battle that had been annoying me–it was way easier than the 6th and 7th gyms (and obviously way easier than the E4), which didn’t make much sense for a final gym battle. Double battles allow a lot of opportunity for interesting strategy, and there obviously weren’t many of them, so I’m pretty happy with this.
+
+
+The level cap now raises from 55 to 59 after beating Drake
+Pretty straightforward, see what I said above about the Elite Four being too hard. This change will make Pokemon less reliant on setting up multiple Bulk Up/Calm Mind/Quiver Dance to be able to win since they’ll start on more even footing.
+
+
+Elite Four anti-setup movesets
+Phoebe’s Dusclops now knows Haze, a move that resets the stats of the opposing Pokemon, and Steven’s Skarmory knows Whirlwind, which forces a switch out. None of the Elite Four’s openers know Protect, a move that the AI loves to spam to its own demise. I want to weaken the power of set up moves without taking them out of the game entirely.
+
+
+“Fixing” the Slateport bug
+Is what I spent all weekend wrestling with. In short, the bug only happens if you open the menu while in the Slateport Pokecenter after setting the flag to remove Team Aqua from the museum. Opening the menu in any other building or just using the Pokecenter regularly can’t cause the bug. I recruited some nerds from the Emerald disassembly discord to help me with troubleshooting and in the end we gave up (it can’t even be fixed by deleting out the Aqua grunts manually). The easy fix is to make it so that the flag to hide Team Aqua just never gets triggered, so that’s what I’ve done. I guess there will be a line at the Museum forever.
+
+
+Thief-able items
+Because the Museum is now blocked off forever, you can no longer get the Thief TM from the Aqua Grunt inside. Funnily, I’d been thinking of doing this anyway, since this makes it so that I can give gym leaders better items that are only accessible to pure evil Pokemon with Thief (Salandit and Nickit).
+
+
+So far, relevant thief-able items include a Rocky Helmet on Roxanne’s Growlithe (makes the opponent take damage for hitting it with physical moves), Eviolite on Norman’s Linoone (makes a non-fully-evolved Pokemon take half damage), and King’s Rock on Winona’s Decidueye (adds flinch chance to moves and evolves Scyther or Slowpoke, if you didn’t draft Larvitar).
+
+
+While I’m mentioning gym leader items, I also took the Leek off of Brawly’s Farfetch’d. I’m not sure that it was overpowered before, but I’m fine letting the first two gyms be relatively weak. The point of Farfetch’d was more the improved type coverage anyway.
+
+
+Pool changes
+Now that Brawley has a dark-type move in Farfetch’d’s Brutal Swing and Norman has ghost coverage from Zoroark and (Galarian) Linoone, ghost type Pokemon don’t have the polarizing matchups they once did. I originally made ghost very scarce for this reason (and the early ghosts that did exist were weak), but now it’s pretty much just another type. I added Gastly and Drifloon.
+
+
+Combee is now in the pool so that there’s another Honey Gatherer for Teddiursa besides Cutiefly (and this one doesn’t have to win a 50/50 for the ability). To add more incentive to get Honey, Munchlax can now evolve early, evolving instantly if it ever holds Honey (just like Ursaring). And also just like Ursaring, Munchlax can still evolve at its normal level of 30 honeyless.
+
+
+We’re at 105 total now, up 8 from Saturday. This will make it so that in the future, if everybody plays again and BQiao isn’t a pathetic bum, we’ll still have enough Pokemon to play!
+
+
+New inclusions include Poliwag, Seedot, Solosis, Gligar (evolves at 30), Mime Jr. (evolving into Mr. Mime Galar), and the aforementioned Gastly, Drifloon and Combee. Snorunt now holds its mega stone, Mareep a choice scarf, Totodile a water stone, and Venipede a magnet.
+
+
+Small stuff
+Turns out Speedchoice (the base game I’m building from) changed TM09 from Bullet Seed to Sweet Scent. I put that back to how it should be. The game was also counting after midnight and before noon as “night” for the purpose of evolutions (which I why I didn’t get Lunala in Saturday’s run despite evolving it at 10pm in-game time). I have no idea why the game was doing that, since the game literally has a variable to check if it’s night or not, but now it’s fixed.
+
+
+That’s all for now! I’m going to take a break from tinkering this week, but maybe I’ll add some more fun before we play again.

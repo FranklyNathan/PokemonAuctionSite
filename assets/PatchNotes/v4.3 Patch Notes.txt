@@ -1,0 +1,55 @@
+3/27/2025
+
+I had a blast with this most recent run! The game is moving in the right direction. I like increasing 2-for-1 odds to force players to use Pokemon they wouldn't otherwise draft. I also learned a lot in terms of where to take the game moving forward. This race, I played with just 10 Pokémon (9 really, if you discount my Pancham that couldn't evolve) since Justin nuked my Eevee like an evil dweeb. I liked playing with fewer Pokemon. The game is more fun by nudging the boss battles to be easier in exchange for limiting the number of Pokémon each player drafts. Having fewer Pokémon makes the game feel less overwhelming since you're managing fewer of them. It also makes each Pokémon feel more significant, like it's really you and your squad, as opposed to you and whatever tools you need to do the current job. Expect changes moving forward to continue lowering the difficulty in exchange for slightly reducing the total number of Pokémon drafted from 11 per person to 10.5 (or even 10).
+
+
+Berries for Sale:
+The Pretty Petal Flower Shop now sells all of the basic berries (Oran, Pecha, Rawst, etc.) for 200 each. After defeating Wally in Victory Road, it begins selling Sitrus and Lum berries for 400.
+
+//I'd originally avoided purchasable berries because managing berries was a skill. Knowing where all of the Oran berries were and using them wisely rewarded master gamers. However, MFrazz pointed out that if we were playing optimally, the last player remaining (who now has no time pressure since everybody else is out) could stop and farm Sitrus berries until they entered the Elite 4. I don't want the player to ever be incentivized to wait days to finish their run, so here we are. This change also will make the Elite 4 easier, which is the reason I'd been considering it for so long in the first place. In short, it makes the game easier while disincentivizing slow play, which I like. It even gives you a reason to enter the building, and I like incorporating more of vanilla Emerald into the game.
+
+
+Boss Nerfs:
+The 5th wave of boss nerfs are in. As far as gym nerfs, the main ones were early Flannery, whose Slugma now no longer knows Overheat until gym 4. Additionally, Flannery 3's Torkoal no longer holds a White Herb (Flannery 8 also lost Castform, who I realized is just setup fodder since you're guaranteed to have Calm Mind and Bulk Up by that point).
+
+The most significant nerfs, though, are to the Elite 4. The new E4 members were overtuned, and they hadn't undergone the same wave of nerfs that the gym leaders have over the previous few patches. Off the top of my head, Lucy's Crobat has had Brave Bird replaced by Aerial Ace and lost U Turn, Overqwil's whole moveset has been swapped out, Tucker's Azumarill had Knock Off replaced with Double Edge, and Brandon's Regirock is no longer Sturdy. There are dozens of changes here but those are some of the big ones.
+
+
+Rotom Catalog:
+Instead of being a key item, the Rotom Catalog is now a consumable regular item (like a Potion) that swaps your Rotom form. Talking to the NPC in the lower right house of Fortree City gifts the player 4 Catalogs.
+
+//Switching before every fight (for each of the 9 major fights after you gain access to the Catalog) was too strong. Rotom is still S Tier with this change, but now you'll have to be more strategic about when you use your form changes.
+
+
+Evolution Changes:
+Applin now evolves into Appletun when leveled up in Lavaridge
+//This is a buff. With the new changes, you're never using Rotom to evolve the apple. This matches Flapple's location-based evolution condition, giving you 1/4 odds of evolving Applin inside of gym 1 (or even higher when considering Honey for Dipplin, the best option).
+
+Pancham no longer requires a dark-type in your party
+//Haters have been asking for this. Ultimately, since I liked increasing 2-for-1 odds, I think it's too likely that this comes along as an awkward addition to a top tier in a 2-for-1 and it ends up being an unevolved lump. I like the idea of draft synergies, but I'm willing to let this go in favor of 50%+ 2-for-1 odds.
+
+Sneasel evolves via Razor Claw
+//It's sold in Lavaridge alongside all of the other held evolution items.
+
+
+Pool Changes:
+Removed:
+Pawniard
+//While I like Supreme Overlord, this is the same thing as Cosmog. We don't need two Cosmog, and I like Cosmog more.
+
+Added:
+Poochyena
+//I'm taking a dark out, so I'll add one in. Mightyena learns Snarl on Evolution at the early level of 18 (in addition to having Intimidate) so it's much more useful here than it was in the vanilla Emerald. Unfortunately, it doesn't get Play Rough until level 56.
+
+//In general, I'm going to limit the number of niche Pokémon only useful for one point in the game in favor of Pokémon with broader use cases, since they'll be more relevant if we're cutting the total number of Pokémon drafted.
+
+
+Misc. Changes:
+Snow Warning summons hail, not Snow
+//Get this generation 9 nonsense outta here.
+
+Shiny Stone is no longer 2x more likely than other items to appear in auction
+//I actually changed this for last auction but forgot to list it. It's not so important that it needs extra presence, and this will make it more worth bidding for when it does pop up.
+
+Berry Juice is out of the pool
+//It was always a weaker item, but with berries purchasable, it's time to go. Fewer Pokémon also means fewer items, so this trims one of the most underwhelming possibilities.

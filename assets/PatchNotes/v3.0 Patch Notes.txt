@@ -1,0 +1,98 @@
+3/7/2025
+
+Oh! Oh! Oh yeah! The big 3.0! Here we go!
+
+Fixed Abilities:
+Previously, all enemy Pokémon randomly chose between their potential non-hidden abilities when loaded into the fight. How consequential! For instance, Roxanne's Geodude could have Rock Head (useless) or Sturdy (useful). Now, every enemy Pokémon has its ability set in stone. I'm not going to type out the abilities for all 100+ Pokémon this applies for here, but know that if a Pokémon was waffling between two abilities, it now always has the better of the two. If a Pokémon could have Sturdy or Thick Fat, it now always has it.
+
+There are some exceptions where an enemy Pokémon now has a hidden ability that it couldn't have had previously. Those Pokémon are...
+Tate & Liza's Xatu: Magic Bounce
+Phoebe's Banette: Cursed Body
+Steven's Cradily: Storm Drain
+Steven's Armaldo: Swift Swim
+
+
+Reworked Elite 4:
+The big 3.0 change you've all been waiting for. Now, each time you enter the room of an Elite 4 trainer, the game flips a coin. Heads, and you get the same old Sidney/Phoebe/Glacia/Drake as before. Flip tails, however, and you get an all new trainer! Let's meet our new friends:
+
+Room 1 (Alternate to Sidney)
+Spenser:
+Vileplume
+Shiftry
+Bellossom
+Ludicolo
+Breloom (Technician)
+
+Room 2 (Alternate to Phoebe)
+Lucy:
+Seviper
+Tentacruel
+Dustox
+Slowking Galar
+Crobat
+
+Room 3 (Alternate to Glacia)
+Tucker:
+Wigglytuff
+Azumarill
+Mawile
+Rapidash Galar
+Gardevoir
+
+Room 4 (Alternate to Drake)
+Brandon:
+Golem
+Dugtrio Alola
+Rhyperior
+Flygon
+Regirock
+
+(Steven is still always the champion)
+
+This is a big change, and it wouldn't surprise me if people don't like it at a glance. That said, this change addresses many problems I have with balancing the game:
+
+1. Type Representation
+For those keeping track, now that the E4 has added a Grass, Poison, Fairy and Ground trainer, the race's bosses have every type represented (besides stinky, stinky bug). To me, this makes the game feel more complete. Types that were previously weak, like Steel and Poison, are stronger now that they have the potential to counter a Fairy boss. 
+
+2. Draft Strategy
+As we lab the game and improve, I haven't liked how optimal draft strategy for the Elite 4 is about finding a 2- or 3-Pokemon combo that can sweep all 5 endgame trainers. For example, the combo of Darmanitan+Excadrill or Gardevoir+Blaziken, both highlighted on my top secret draft board, sweep the entire Elite 4. One issue I've continuously been grappling with is how to make sure the game is as resistant as possible to being "solved." The auction-style draft does a lot for this, since we don't see every Pokémon every draft (so you can't rely on drafting the same E4 counters every run), and the random IVs and Natures do as well (since you can't rely on your Pokemon being at the same strength each weekend). But even with this, I don't like that my draft board is so systematic in trying to build an end-game team. By introducing uncertainty about what the Elite 4 will be, the game becomes more about bringing your 6 strongest homies with the most coverage and less about assembling an Exodia that can sweep each opponent. Now, you have real, difficult decisions to make about who on your roster comes with you to the final gauntlet.
+
+3. Sacking Strategy
+Similar to above, I don't like that at Wally you can say "I'll sack Dragalge here since its typing makes it useless into the Elite 4, and I only need 6 Pokémon after this point." Again, it's too straightforward. Now, Dragalge has use as a Sludge Bomber into Tucker, and you'll have to consider if you have an alternate answer to him, or if you're willing to risk having a bad matchup there. It makes both the draft and the end game less cut-and-dry, and decision making becomes more complex.
+
+4. It's easier
+While at a glance you might look at this and say "now I have to prepare for twice as many trainers!? The end game was already too hard!," one of the main reasons I like this change is because it actually makes the game easier. Hoenn's Dark-Ghost-Ice-Dragon Elite 4 is one of the most difficult combinations you can concoct; every fight but Sidney is tough with relatively few counters. Types like Ground and Grass are comparatively weak, and the Pokemon they have are too (while Gardevoir may be Sooski's GOAT, she's decidedly less menacing that Glacia's Walrein; Regirock is not as menacing as Salamence, etc.). In testing, I think that Lucy (Poison) is harder than Phoebe (Ghost), but that the other three new trainers are all a bit easier than their counterparts. While these new trainers require that you strive for more type coverage, on the whole, they're weakening the power level of the Elite 4.
+
+5. They're Neat
+These trainers are all "Frontier Brains" in the base game, bosses of post-game facilities in the Battle Frontier. I have a lot of nostalgia for these goobers, and I like the opportunity to get them into the race. In this way, the change makes the game feel more "Emerald" to me, even though I'm making a significant change from the base game. They also fit neatly thematically with these 4 types; Grass-Poison-Fairy-Ground are all definitely the types that these trainers would use were they official E4 members. I didn't have to force anything.
+
+6. Suspense
+The dramatic 50/50 of walking into the room and seeing which sprite is awaiting you adds suspense to the E4, since when you enter, you'll be nervously chanting for whichever matchup you hope appears next. I cannot wait for Soosk to bemoan getting the most difficult possible lineup--how giga ass!
+
+
+
+Juan & Wallace's Ludicolo>Gyarados:
+This slot was originally Gyarados, removed to help weaken what I thought was an overpowered fight. I now suspect it was never overpowered in the first place and am putting it back. (I also need the Ludicolo gone so that Spenser can use it to round out his Elite 4 squad... and it was a bit of a shame that you never got to face a Pokémon as iconic as Gyarados). Its moveset is Dragon Dance, Ice Fang, Waterfall, Crunch. This change makes Electric types slightly better and Grass slightly worse as a gym 8 counter.
+
+
+Leaf Stone added to the Pool:
+The Leaf Stone can now pop up in the draft. This can unlock you an early Exeggutor, Electrode, or Leafeon (one gym before you'd get it otherwise by leveling in Petalburg Woods). These are all otherwise pretty mediocre Pokémon, so I figured it made sense.
+
+
+Surviving Poison:
+Now, when your Poisoned Pokemon falls to 1HP outside of battle, the Poison will fade away. This is a change from later Pokemon games that I should have brought back several patches ago, but better late than never.
+
+
+Gliscor Loses Poison Heal:
+Those of you following my smoking hot video content know that Gligar has recently ascended to #1 on my tier list. It sweeps gyms 2, 3, 5, 6, Wally and Steven. Gliscor's Poison Heal is traditionally a Hidden ability which I moved to a regular one, which I'm now reverting. The best Pokémon in the game doesn't need an artificial buff. This removes the sweep on Norman and Wally, which rely on the recovery to have enough health to finish the job. It still may need more changes, but this at least brings it back to the realm of "the same tier as the rest of the strongest Pokémon."
+
+
+Steven's Skarmory Arial Ace > Fly:
+This stops Fury Cutter sweeps against Steven since Skarmory can stop it from stacking. We know that Flygon and Gliscor had confirmed sweeps here, and some others potentially did as well...
+
+
+Fury Cutter Tutor:
+The Zigzagoon Galar line and Venipede line can now all learn Fury Cutter by tutor. These Pokémon should clearly have access to the move, they just don't because they were released after the tutor had been cut from the mainline games.
+
+
+And that's a wrap! I'll see you all tomorrow bright and early to get smoked down! See you then!

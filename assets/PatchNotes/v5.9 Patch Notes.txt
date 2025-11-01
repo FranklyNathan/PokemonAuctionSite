@@ -1,0 +1,89 @@
+10/3/2025
+
+Also, this is the final patch before Legends ZA leaks! We'll know all about the new Megas, their types and their stats next week. We're in the end game now...
+
+
+Boss Balance Changes:
+Spenser / Brandon Swap
+//Spenser is now the alternate to Drake in room 4 of the Elite 4, while Brandon is the alternate to Sidney. I looked recently and observed that Grass is weak to Flying, Ice, Poison and Bug. In other words, the four worst types in the game. This made it clear that Spenser needed to be occupy the slot of the meaningful battle. It's not like Water needed to be any stronger, and that's Brandon's main weakness. This is such an obvious change and one I'm frustrated I didn't see earlier; it buffs the weakest types in the game and nerfs the strongest. 
+
+Lucy's Sneasler > Swalot
+//Replacing Sneasler with a Hoenn homey who doesn't get any love. I think I'd originally gone with Sneasler because it's a better fit for Lucy's vibe, but Dire Claw is cringe for the same reason we cut Sneasel from the pool in the first place, and more Hoenn Pokémon makes the game feel more Hoenn.
+
+
+-New Key Item: Med Kit
+You start with it. When you use it, all Pokémon in your party reset to full health and all PP is restored (status effects are not removed)
+//Another change in the line of small time saves. It's a waste of time to make the player Fly to Lavaridge to buy healing items, and it's a waste of time to sit and use them one at a time after every Elite Four fight. Now, you press one button and you're good to go. (It even automatically registers after you enter Sidney's chamber in the Elite Four, so you can just hit Select to heal, since you don't need Flygon to be registered at that point.)
+//This is also technically a small buff to the player, since they now have 1000 or so extra money to work with that they don't have to spend on healing items. It also saves you from running out of PP in the Elite Four and forgetting to use Leppa Berries.
+
+
+New Item: Whipped Dream
+The Whipped Dream evolves any Pokémon whose evolution has a BST below 380. It costs 1000 and can be purchased once the player has 2 badges. Notably, it allows the following Pokémon to evolve earlier than before:
+Litwick > Lampent (41) (7th>3rd)
+Trapinch > Vibrava (35) (6th>3rd)
+Solosis > Duosion (32) (6th>3rd)
+Hattrem > Hattena (32) (6th>3rd) (New to the pool)
+Sandile > Krokorok (29) (4th>3rd)
+
+//Many of these middle evolutions were outrageously underpowered. Vibrava, for instance, has a 340 BST. 340! For reference, that's tied with Clamperl and 5 less than Mantyke (not Mantine, Mantyke)! Lampent, meanwhile, was effectively a blank since you had access to a Dusk Stone 2 gyms before you could even evolve Litwick into it. This item will help smooth over some of these more egregious transitions without meaningfully changing balance (Duosion for gym 3 still isn't actually good--it still has awful stats. It's just not a total blank like Solosis.)
+//My fans know that I'd considered putting this item after 3 badges instead in exchange for it evolving Pokémon below 450 BST, which would add in dinks like Seadra and Doublade. My main concern is that it makes the item evolve way more Pokémon, which I'm uneasy about. That may still happen some day with a tweaked implementation (either as the same item or another), we'll see.
+
+
+Evolution Item Timing Adjustments:
+-Whipped Dream
+Badge 2
+
+-Soothe Bell
+Badge 2 > Badge 3
+//The Soothe Bell still evolves Bunneary, Golbat, Swadloon, Chansey (attainable via egg). Previously, the Soothe Bell needed to be early to evolve the babies, and these lines benefited because it didn't make much of a difference either way. That said, the 535 BST Crobat clearly makes more sense for a post-gym-3 evolution than post-gym-2. If you were playing the original game the "normal" way, this would still be an extremely early Crobat.
+
+-Dragon Scale, Metal Coat, Razor Fang, King's Rock 
+Badge 3 > Badge 4
+//Looking at the full list here, it doesn't make sense to have these items in a different "tier" than the elemental stones. Gligar and Slowking are the two best item evolution Pokémon in the game, so they shouldn't be so early. Some inoffensive options like Sliggoo Hisui get caught in the cross fire, but that's fine.
+//Link Cable is still after Badge 5
+
+
+Evolution Changes:
+All babies now evolve at level 20*
+//It's too much of a problem to have the same item that evolves Igglybuff into Jigglypuff also evolving Golbat into Crobat. Now, the Soothe Bell is just for the non-baby friendship evolutions, and all babies evolve the same way. It also helps even the field for egg options; you no longer need to worry about getting screwed by a Smoochum that doesn't evolve until 30. 
+*Besides Azumarill, which is 10 because it's so exceptionally weak, and Marill evolves at level 18
+*Mime Jr. evolves into Galarian Mr. Mime during the day and OG at night
+
+
+TM Changes:
+Trick Room TM Added
+//I'm interested to see if this is a viable strategy. I love the idea of drafting around a specific strategy (like picking a bunch of slow Pokémon), and Trick Room is a TM OR/AS. It costs just 1000 so it's available from the start.
+
+Four TMs Removed:
+-Snatch>Trick Room
+-Roar>Dark Pulse
+-Torment>X-Scissor
+-Frustration>Dazzling Gleam
+//Previously, I'd added these attacking TMs as 51/52/53, because I still wasn't sure if I'd eventually expand to 100 or not. Now, I feel confident that 50 is the right number, and that having more TMs than that would be overwhelming and unnecessary. I also feel like 50 just feels right. That means cutting down on some of the useless ones to make room. (And there are still a couple more near-blanks if we ever want to add another.)
+
+TM price Tier Changes:
+1000/2000/3000/4000/5000 > 1000/2000/3000/5000/7500
+//The decisions feel a bit too easy at the moment. The player also no longer has to worry about buying healing items now that we have a Med Kit, so they have more money than before and don't have to worry about accidentally screwing themselves.
+
+
+QoL Improvements:
+-The Weather Institute NPC now gives you just the Mystic Water--not the Castform
+-The Cleanse Tag now starts the game turned on automatically
+
+Bug Fixes:
+-The fossil is no longer under your bed.
+-The Fire Stone in Fiery Path has been removed. Because Flygon can hop Strength boulders, this was accessible with just one badge.
+
+
+New to the Pool:
+Chewtle
+Sewaddle
+Joltik
+Sandshrew Alola
+Murkrow
+Hattena
+
+//Haters hate how I put the pool changes on the bottom to force you to scroll through all the scrumptious, scrumptious notes
+//Unless there ends up being a huge shift in how the game fundamentally works, this squad represents the final group of Pokemon who could realistically join the pool. Many have skirted on the border of joining for a while, and I'm treating this as a bit of a test run to see who can cut the mustard.
+//Chewtle is clearly the best of the bunch, he's the only friend I haven't dropped into C-Tier. I'd previously been hesitant about having too many water types, but Water really is the most important type by far, and Chewtle is fairly unique in that it's both a physical attacker and has the now-rare rock typing. In many ways this is just a better Omanyte: it's got the 4x resist to fire and the big damage / slow speed, only this guy evolves lickety split at 22.
+//Joltik and Sewaddle are interesting in that they're the first members of the crew who can set Sticky Web. Sewaddle needs to delay to level 31 for it, while Joltik gets it via Move Relearner but doesn't evolve until 36. My theory is that Sticky Web actually isn't very good (3/4 of Drakes Pokemon in the back are unaffected by it, and most of Steven's team is slow anyway), but we'll see. Sewaddle comes online early with some powerful utility moves like Bug Bite and Protect, but it has a hellish type combo that gives it six weaknesses with two 4x weaknesses, so it can only come to half of the gyms.

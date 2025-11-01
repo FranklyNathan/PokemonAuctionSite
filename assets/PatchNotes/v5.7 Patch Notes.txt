@@ -1,0 +1,224 @@
+9/20/2025
+
+
+WHAM! ZAP! WHAM! We're back! We're back! And, we're better than ever!
+
+We took a brief break, but with the Legends ZA megas revealed, Pokémon stock is through the roof. Here's the deal: now that I've started my new job, when I think about playing Pokémon on a Sunday, I think "This is just too much, I'm so tired and I don't have the energy to lock in on Pokémon for my whole day." This is a shame, because I really believe we have something special with this game, draft is fun, and I want a game to play with y'all. This is the core tenant that's going to drive all changes on the coming patch(s): the game needs to be shorter. If the game is faster, it doesn't need to require as much of a time commitment, and it's more feasible for us to draft it on a random week-night instead of having to devote a whole Sunday to it.
+
+And I really do believe there's that level of time to be saved. Reflecting on it, while the game takes about 2-2.5 hours of gameplay to finish, there's only really 45 minutes of consequential gameplay.
+
+While some of the notes below may see inconsequential (this will only save 10 seconds!), when you add them all up, this update is going to shave an enormous amount of time off the game.
+
+So without further ado, the notes:
+
+---------------------------------------------------------------------------------
+
+
+The Acro Bike has been replaced with a ridable Flygon given to you by Professor Birch at the start of the game. Compared to the Acro bike, it has many slick new capabilities:
+
+-Can hold B to move at 1.5x speed
+-Can move over calm water (Deep, dark-blue water, like ocean water, cannot be crossed--Flygon gets scared. It can, however, cross light blue calm water like the water in Petalburg City, Route 104 beneath Rustboro, and Sootopolis City)
+-Can hop over Rock Smash Rocks, Cuttable Trees, and Strength Boulders
+-Can climb muddy slopes (like the Mach Bike)
+-Can instantly Fly without opening the menu by pressing L
+-No longer "bonks" when it hits a wall, locking the player out of movement for a half second
+-Comes automatically registered (you don't have to go into your bag to register it to the select button)
+
+//I wanted a change that gave the game its own distinct feel, something where if you were watching somebody play, you'd know at a glance that they were playing a unique game and not vanilla Emerald. Replacing the bike with Flygon is perfect for this, since it fits the theme of playing fast while also being so cool (you're zipping around on a dragon!) It also fits thematically with my constant goal of making changes feel "Emerald-y," since Flygon one of Hoenn's most iconic Pokémon.
+
+Because of these changes, Fly is no longer appended on the Party Menu. No more flying on Eevee. (Part of this patch's other main goal is cleaning up the jank and making this like a "real" game.)
+
+
+The notebook on the player's desk now allows you to choose exactly what Pokémon you drafted, instead of receiving all possible draftable Pokémon in the PC from the start.
+//Speaking of removing jank, this is a big one. I'd always really wanted to do this, but the amount of time it would take compared to what it's actually accomplishing just never made sense. I finally set aside a day to do it, and I'm really happy with it. It always felt weird to have 100 Pokémon in the PC at all times. Now, it will truly be just you and your homies on a quest to win it all.
+
+
+Steven, Wally, and Rival's plot points are removed. These include...
+
+-Steven's required letter delivery at Granite Cave
+-Steven's player greeting on Route 118 after Surfing across
+-Steven giving the player the Go-Goggles (the Kecleon blocking Winona's gym has been removed)
+-Wally battle in front of the Mauville gym
+-Wally battle in Victory Road
+-Rival battle on Route 119 (after the Weather Institute)
+-Rival battle on in Lillycove (outside the mall)
+
+//Previously, the Steven plot points served as the under-the-hood duct tape that kept the game from crashing; they set all of the flags for the game's upcoming segment, like removing all of the Team Aqua and Magma grunts, telling the game that the player has finished "required" (but removed) story events, etc. Now, all of those flags are set up front at Birch's lab (literally over 200 flags all at once). This will help make the game more robust, as there's no longer random flags scattered all over in random files; they're all in one centralized location. If I ever want to add any sequence skips, they can be added now without breaking anything.
+
+//That said, I am a bit sad to cut these guys. They do feel very "Emerald-y" to me, and I always thought Wally's Victory Road fight was especially fun. That said, currently I'm not excited to play the game because it's too long. If it's between not playing at all and cutting the game down to its bare minimum, it's time for bare minimum. At the end of the day, most of the gameplay is fights, and the only boss fight that can really stand to be cut is pretty obvious. Goodbye, Wall Man.
+
+//I also need a note here on how this affects difficulty. Wally was one of the main wipe-points and a fight that stopped you from being able to sack aggressively into gym 8. His removal allows you to play more aggressively in the late game and saves time. Because of this cut, the plan is to play with just 10 Pokémon, instead of the 11 we played with previously.
+
+//The Max Revive is now given by the 8th gym leader after being defeated.
+
+
+Money Rework:
+Items now sell for 0
+Players no longer gain money for defeating non-gym leaders
+
+//A long time coming. It's always been silly that we have an in-game resource system that we can't make use of because it's so trivial to amass tons of it. In previous iterations of the game, money has effectively been worthless as a balancing mechanic because of the dozens of quick-to-grab Nuggets and vitamins peppered across Hoenn. Now, however, each player has access to the same, fixed amount of money.
+
+Players now start with 1250
+
+The reward you get for beating each gym is...
+Gym 1: 3750
+Gym 2: 4750
+Gym 3: 6000
+Gym 4: 7250
+Gym 5: 8000
+Gym 6: 8750
+Gym 7: 10250
+Gym 8: 12000
+//Now that all players have a fixed total amount of money of 62000, all purchasable items have an opportunity cost. 
+
+Berry costs divided by 10
+Potion costs significantly reduced
+Healing powder/root cost significantly reduced
+//To compensate for the inability to grind money. Players shouldn't have to feel bad about buying healing items that are necessary to finish the game.
+
+
+TM Rework:
+TMs are now single use
+TMs can no longer be picked up on the ground or obtained from NPCs
+TMs are not available for purchase until after gym 4
+After gym 4, all previously purchasable TMs are available at once
+TMs can no longer be purchased from Lilycove's department store
+
+//I didn't like how in the late game, players were carrying around 30+ TMs, the majority of which were extremely strong moves. A massive part of the game was just about micro-managing your Pokémon's learnsets before Wally and between Elite Four battles, putting Rest on Pokémon with Chesto Berries, optimizing coverage, etc. Now that money is fixed and TMs not reusable, players will no longer have the luxury (torture) of swapping moves on and off between every major boss fight. Want to forget Rest? It'll be 2000 to ever learn it again. I prefer this because it makes your choices matter more, and it gives you more of them. The player now has to decide how to spend their money, and buying out all of the Slateport NPC is no longer a foregone conclusion.
+
+//To be clear, this means that you no longer can pick up TMs like Ice Beam or receive TMs from NPCs like Wattson's Thunderbolt or Dewford NPC's Sludge Bomb. Now that TMs are limited, I needed to stop players (Sooski) from being incentivized to go on side quests for extra TMs. I want to make the game faster, not slower.
+
+//One thing I also like about this is that it makes it valuable if a Pokémon actually learns good TM moves by level up. Previously, a Pokémon learning Ice Beam of Earthquake by level up was completely irrelevant since you were TMing it on anyway. Now that they cost resources, a Pokémon learning these moves naturally is important.
+
+Full list of purchasable TMs after gym 4:
+1000
+	DOUBLE_TEAM
+	HAIL
+	SAFEGUARD
+	SANDSTORM
+	SKILL SWAP
+	SUNNY DAY
+	THIEF
+	TOXIC
+2000
+	LIGHT SCREEN
+	RETURN
+	REFLECT
+	REST
+	SOLAR BEAM
+	STEEL WING
+3000
+	BLIZZARD
+	BRICK BREAK
+	DARK PULSE
+	DAZZLING GLEAM
+	DIG
+	DRAGON CLAW
+	FIRE BLAST
+	GIGA DRAIN
+	HYPER BEAM
+	IRON TAIL
+	SHADOW BALL
+	THUNDER
+	X-SCISSOR
+4000
+	FLAMETHROWER
+	ICE BEAM
+	SLUDGE BOMB
+	THUNDERBOLT
+	PSYCHIC
+	PROTECT
+5000
+	EARTHQUAKE
+	HONE_CLAWS
+	RAIN_DANCE
+//Note that while TMs are no longer reusable, you can buy multiples of any given TM.
+//Mega stones still cost 10,000. All evolution items cost 3000.
+
+X-Scissor returns
+//This was originally removed because we didn't like how it felt to end up with a bag full of so many TMs by the end of the game. Now that TMs are single use, bugs can have their TM back.
+
+
+Enemy trainer vision range reduced to 0
+//A tiny, 1-line change that may ultimately be one of the single biggest change of the patch. In short, trainers can no longer see you. If you talk to them, you can fight them, but they can no longer spot you and initiate a battle. This means that you no longer need to path to dodge trainer battles.
+//I went back and forth with this last year, but again, with my new tenant of always cutting time down where possible, it becomes a no-brainer. Dodging trainers can be satisfying, but accidentally hitting them is a big time loss (and disproportionately one for our more novice players who are less experienced in how to path). Pretty much everyone loses a couple of minutes to random trainers at some point, not to mention time lost in waiting or pathing around them. This will speed things up.
+
+
+Universal Fly after beating Fortree City Gym
+//Speaking of speeding things up... Now, after gym 6, players are able to fly to any location on the map*. No longer does the player need to make the long treks to Lilycove and Falarbor, or Surf to Mossdeep and Sootopolis. Dive and Waterfall are no longer necessary.
+//*Besides Ever Grande, which you can't fly to until you defeat all 8 gyms. This stops the player from buying the stage-2 mega stones until the Elite Four, as the area is otherwise locked behind a waterfall which requires 8 badges to ascend.
+
+
+Ability Capsules and Patches available for purchase for $5000 each after gym 2
+//Because of all these smoking hot changes, I haven't had time to mention the smoking hot new website. The only significant gameplay change that's going along with our draft platform swap is the removal of items in the draft. I've always been very on the fence about items in the draft. On the one hand, they do add variety and help to make decisions that would otherwise be straightforward more interesting (I don't want this Pokémon, but I do want its item, etc.). On the other hand, they ruin the ability to make stats from the draft (how much is this Pokémon worth on average) and, above all, they don't matter that much. Items usually boil down to "tack an additional 100-300 onto your bid to also grab this type-boosting item." I don't even like held items themselves all that much; they're more time spent in menus doing things that make you feel dumb if you forget to equip them. Except, of course, ability-swapping items.
+//I went back and forth on where to price these and ultimately settled on a lot. I don't want players wasting time in menus optimizing all of their Pokémon's abilities, especially when that swapping will have to place during the actual race now and not in the bedroom. For this reason, I almost didn't make them available at all, but there are too many Pokémon whose styles completely depend on a certain ability, and it feels to bad to draft something that's reliant on a coin flip. All of which is to say, they cost a lot to make sure that if you're flipping an ability, it's because you really need it, and doing so is a sizable investment.
+
+
+Friendship evolutions now happen with Soothe Bell
+//I still really like the Secret Base mechanic, but it's one of those things that's cute in premise but not actually fun in gameplay. Making a secret base every run is a chore. The Soothe Bell is available in the Slateport market after defeating gym 2 for 1000. This is a buff to friendship evolution Pokemon, since they now can evolve before gym 3, one gym earlier than before.
+
+
+Pokenav calls have been disabled
+//This is long overdue. They don't happen often, but there are several calls which did nothing but slow the player down at 500 step intervals.
+
+
+New move text has been shortened
+//The "1... 2... poof!" text box and three others have been removed. It will speed up the process of learning and forgetting moves. This seems small, but you watch it literally 100 times a run. 
+
+
+Waterfall is now given by Juan and Wallace alongside Water Pulse
+//This cuts the sequence outside the 8th gym where Wallace gives you Waterfall, which never actually made sense because the player is being congratulated for summoning a Rayquaza they aren't actually finding. There's 2 gym leaders here anyway, so it makes sense that they give 2 moves. This will (sometimes) make the game easier, because you now have access to an 80BP water move potentially before Surf. HMs are also particularly useful because they're reusable, compared to the now one-time-use TMs.
+
+
+Flannery and Winona gyms expedited:
+-You can now ride Flygon in Winona's gym, allowing you to hop the ledge and skip the spinning doors puzzle
+-Flannery's first sand pit now warps you straight to her
+//Time save. These were the last two gyms that had their puzzles fully in tact (besides Juan and Wallace, but that's where I draw the line). Similar to when I nixed Tate and Liza so long ago, Flannery and Winona's puzzles are fun the first few times, but not the hundredth. It's time they die. And as for why Flygon is allowed to stay out in gym 6, Winona is the flying leader after all, so it makes sense that you're allowed to fly in her gym.
+
+
+Eggs now hatch 20x faster than previously
+//Now that eggs are drafted, it feels less important to me to have that suspense. Before, it was a good discussion point 10 minutes in where people gradually started sharing what eggs they got, but without that, you might as well know before gym 1.
+
+
+Random Fossil Removed
+//I've not liked how fossils have played out. They often feel like dead weight, Pokémon you have to waste time leveling but that don't do much in the fights. I also don't like how some trivialize Flannery while others are useless against her. We've spent many nights mulling this over in discord and ultimately haven't come up with a good formula for keeping them in. Some day, maybe.
+
+
+Give All option added to the menu
+//Now, the berry menu includes an option to give all Pokémon who aren't currently holding a berry the berry you're hovering. It's super convenient.
+
+
+Pokémon that previously evolved with "use X move 20 times" now evolve by learning the move
+//Needing to grind against wild Zigzagoon to evolve Primeape is too tedious. 
+
+
+Small stuff:
+-8th gym leve cap raised from 46 to 48
+-All accessible Rare Candies on the ground have been replaced with Full Restores 
+-Mom no longer gives the player an egg (eggs are now drafted like other Pokémon)
+-Birch cutscene on Route 110 is removed
+-Removed ability to swap bikes at Mauville (Flygon has the functionality of both)
+-Gamecube no longer nukes your boxes (no longer needed with the new notebook system)
+-Mega evolution doesn't require mega bracelet, and the player is no longer given it (it was basically a key item that didn't do anything besides give a text box explaining you'd received it).
+
+
+Trainer Changes:
+-Champion Steven now has 2 Full Restores instead of 4
+-Battle Frontier members now have 2 Full Restores (they previously had no healing items, oops)
+-Spencer Vileplume > Sceptile
+-Brandon Clodsire > Swampert
+-Tucker Azumarill Huge Power > Thick Fat
+//This last one is a big nerf, literally cutting its attack stat in half. I feel like Tucker is harder than he needs to be.
+
+
+Pool Changes:
+Hawlucha Removed
+Kubfu Removed
+Oricorio Removed
+Sprigatito Removed
+//After testing, I've not liked the non-evolvers. They feel too stompy early, in a way that isn't strategic but just involves spamming your strongest STAB attack. As for Kubfu and Sprigatito, I did say we were cleaning out the jank.
+
+Pool Changes:
+Corsola Added
+//You didn't think we were doing the biggest patch in history without a new smoking hot entrance, did you? Corsola comes with a neat trick: when it dies, after the battle, it transforms into Galarian Corsola, back with full HP. This version of Corsola can evolve into Cursola, so it should be an interesting Pokémon to play with. As a Water type, you can play more aggressively with it since it has a 2nd life. At some point, you'll need it to die so that it can evolve into its much stronger final evolution.
+

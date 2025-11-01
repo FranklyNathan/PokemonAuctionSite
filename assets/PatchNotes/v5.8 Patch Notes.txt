@@ -1,0 +1,21 @@
+9/27/2025
+
+The main change with this patch is a merge with the upstream emerald expansion branch, giving dozens of bug fixes and new move animations. Additionally, I've added some big quality of life changes. It really feels like everything is coming together.
+
+Balance Adjustments:
+-TMs that cost 1000 (most notably, Thief) are now available for purchase at Slateport as soon as you arrive. The full suite of TMs still becomes available once you beat gym 4. 
+-Bullet Seed has been removed as an NPC gift and added as a 1000-cost TM
+
+QoL improvements:
+-TM previews in Slateport
+//Now, when the player attempts to buy a TM in Slateport, the game will display your Pokémon's mini icons in the description text box to show you which Pokémon can learn which moves! Booyah!
+
+-Fast Rare Candy Improved
+//Now, when you use a Rare Candy, when the candied Pokemon learns a move or hits the cap, the game no longer takes you out of the party menu and bag to the bag. So smooth!
+-Surf is now given by force after beating the Petalburg Gym (you no longer need to talk to Wally's Dad)
+
+-A new salesman NPC has been added to the Slateport market. He sells you mega stones. They're still available at the same points as before, this just cleans things up a bit by giving them their own spot
+
+-Removed the text before entering a room in Norman's gym
+-Shortened Briney's text
+-Removed all invisible Kecleon from Route 120

@@ -1,0 +1,35 @@
+3/31/2025
+
+Expedited Intro:
+Woohoo! I've cut all of the junk out of the intro. You no longer need to visit your rival's house at all, no longer need to fight the Route 103 rival battle, and no longer need to visit Birch's lab twice. Once you save Birch from the Zigzagoon, you're all set to bike straight to Rustboro.
+
+Gym Leader Tweaks:
+Tate and Liza 1 and 2's Lunatone has lost Hypnosis for Safeguard
+Norman 1 and 2's Slakoth has lost Yawn for Scratch
+Norman 2's Spinda has lost Hypnosis
+Brawly 5 and 6's Hariyama has lost Heavy Slam for Smelling Salts
+//Early gym leaders don't usually rely on status-heavy teams. Generally, I think these moves were actually making the fights easier, since you could roll up with a Chesto berry on every Pokémon. Because of this, I've made sure to replace each move with something very weak (or in Spinda's case, not at all) in order to avoid raising the difficulty.
+
+
+Wally Victory Road Nerfs:
+Altaria Moonblast > Safeguard
+Roserade Sludge Bomb > Synthesis
+Gallade Bulk Up > Swords Dance
+//All changes that swap moves to what Wally has in Omega Ruby/Alpha Sapphire. Notably, the Roserade is now very weak, as it has no moves that can use its high special attack stat. It's now Adamant.
+
+
+Evolution Changes:
+Map-Based Thunder/Leaf/Ice Stone Alternate Evolutions Removed
+//Starting next race, we'll no longer be able to nuke one another's Eeveelutions; it's first come, first serve. Leafeon was going to be a huge headache since it's now available about 60 seconds into the race, and the map-based evolutions were always a bit jank. This also removes the New Mauville and Shoal Cave evolutions for consistency (not that they were relevant).
+
+Porygon2 Evolves with Link Cable
+//Overdue, this should have happened on v4.0. Porygon still evolves into Porygon2 at level 20.
+
+
+Bug Fixes:
+Bike Obtained at Birch's Lab
+//Prevents you from leaving Birch to get murdered by a Zigzagoon while you hop the ledge and race ahead to Petalburg.
+
+Honey Gather Fixed
+//Nice.
+

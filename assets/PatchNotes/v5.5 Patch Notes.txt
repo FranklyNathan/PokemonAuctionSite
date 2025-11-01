@@ -1,0 +1,11 @@
+6/20/2025
+/These notes are a bit weird. After last run, I did some updates before we took a break for about a month. Over that time I also synced the base with the upstream emerald expansion GitHub in order to get the day/night cycle. That process involved updating over 100 files and was about 3 weeks ago. All of which is to say, I think these are all the changes, but I may have forgotten some...
+
+Day/Night Overworld Cycle Added
+//Purely visual. The overworld dims at night to let you know at a glance what time it is.
+
+Moves in Battle Show Type Effectiveness
+//Before you select a move, it now shows you via a symbol if it will be not very effective, neutral, or super effective.
+
+Winona 2-3 Nerfed
+//She's lost the Steel Wing that was previously added in order to make sure the Fossil is able to pull its weight in the fight. Otherwise, this fight can be too far above the difficulty curve early on with such high BP moves and early evolutions.

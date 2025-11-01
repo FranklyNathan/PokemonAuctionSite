@@ -1,0 +1,120 @@
+3/16/2025
+
+And just like that, our game has a new base. The project is now built on top of an actively maintained repo, meaning that all of the little (and big) bugs from our previous runs are a thing of the past. No more random map corruption and no more crashing. This also means that the game will regularly get updated with new features (and new Pokémon) as the people at Emerald Expansion continue improving it. Booyah!
+
+Because the game has been ported to a new base, every change I ever made to the previous game had to be done again. It's hard to even do a patch notes for this since there are so many changes, both in terms of what I did (and didn't) bring over, and in all of the new stuff that has fallen into my lap from features implemented in the new base. And, finally, as if this wasn't significant enough, by far the largest change in the game's history comes this patch. This patch notes could be longer than all of the previous patch notes combined, so I'm going to focus less on commentary than usual in order to keep things concise.
+
+
+Randomized Gyms:
+Now, whenever you walk into a gym, you'll randomly be warped to one of any of the eight gyms. Each gym leader now has 8 potential parties depending on the current level cap when you face them. For example, if you face Norman as the 5th gym leader, he'll have his same team as before. But if you face him as the 1st, his ace will be a level 15 Slakoth. As the last leader, his Slaking is all the way up to level 46.
+
+This change was very ambitious on the coding side of things and I'm proud I've got it working. Notably, part of its implementation requires that players be locked in gyms once they enter. To compensate, gym statues at the entrance function as PCs (they even have funny text), and the hype man heals your team to full. On beating the gym, you're warped back to outside of the gym's entrance.
+
+//Obviously this change could get an essay. It's changed the total number of gym fights from 8 to 64 and will completely change how every aspect of the race is played. In short, I want a game that's going to be fresh even after I've played in 100 times. This is the kind of change that will keep things completely unique from race to race and stop the game from ever feeling solved. While I know it will be overwhelming, I also hope that it will de-emphasize having perfect knowledge of enemy teams. It should make the game less about labbing guaranteed comps to beat the game and more about having solid fundamentals and the ability to adapt.
+
+
+Gym Leader Ability Nerfs:
+Gym Leader Pokémon now all have the same abilities that they do in base Emerald. Notable changes include...
+Roxanne's Geodude Sturdy -> Rock Head
+Brawly's Makuhita Thick Fat -> Guts
+Brawly's Machop No Guard -> Guts
+Wattson's Voltorb Static -> Soundproof
+Wattson's Magneton Sturdy -> Magnet Pull
+Flannery's Torkoal Drought -> White Smoke
+Flannery's Camerupt Solid Rock -> Magma Armor
+Winona's Pelipper Drizzle -> Keen Eye
+Winona's Skarmory Sturdy -> Keen Eye
+Juan&Wallace's Kingdra Sniper -> Swift Swim
+Wally's Magnezone Sturdy -> Magnet Pull
+
+//In the first months of the game, all enemy Pokémon had their abilities randomly generated when the battle started due to the quirky way Emerald Speedchoice (the old base) handled fights. Eventually, I changed this so that enemy Pokémon had fixed abilities, and in doing so, gave each Pokémon the stronger of its possible abilities. I didn't think much of it at the time; these Pokemon always had the potential to have these abilities, now they just had them always. Today, while scrolling through the vanilla Emerald teams, I realized just how much of a buff I'd made here over the vanilla game. Almost every strong ability in our game isn't in vanilla. I want the game to still feel like Emerald, and it's jarring that I'd inadvertently flipped almost every enemy Pokémon's ability. As you can see, this is a significant set of nerfs. They'll apply to all 8 iterations of the fight.
+
+//Additionally, most of you reading this have been awesome and helped bugtest the new base. While it isn't technically a change, know that I've also applied even more sweeping nerfs to the new gyms. They should, on average, now be slightly weaker than they were prior to this patch. It wasn't my intention to increase the difficulty of the game whatsoever with this patch, and I will continue adjusting until I'm confident I haven't.
+
+
+New Cool Expansion-Base Stuff:
+-Your Pokémon follow you!
+-Held evolution items like the King's Rock and Metal Coat are now "Use" items (they work like a Water Stone from the menu)
+-Trade Evolutions (Alakazam, Golem and Electabuzz) now evolve with the Linking Cord, a new item purchasable in Lilycove with evolution stones
+-Moves that were broken on the old base now work. Notable examples include Fling, Uproar, Heat Crash and Heavy Slam
+-Poison mechanics have been updated to the newest generation, meaning it no longer deals damage out of combat
+-Because Slateport is no longer at risk of implosion, the Thief TM is accessible in the Slateport Museum
+-The Escape Rope is a key item
+-Each Elite 4 member (including the Factory Brains) now have custom intros that slide their sprite across the screen, just like original E4 members did
+-Pressing L on a move while in battle brings up a menu to show its type, accuracy, power, etc.
+-In battle, Pokémon types are displayed via small icons next to their HP bars
+-There are dozens of new battle mechanics updated to how they work in newer generations. The most significant change is Mega Pokémon speed stats being recalculated the turn that they mega evolve, 
+
+
+New Gym Leader Teams:
+Now that Hisui and generation 9 Pokémon have been added, new Pokémon like Overqwil and Wugtrio have been added to enemy boss trainer teams. There are too many changes to type out, but you can check the documentation to see all of the new teams.
+
+
+Pokémon Abilities:
+The Ability Patch is in, an item that switches your Pokémon's ability to its Hidden Ability. This item is different from the Ability Capsule, which flips your ability from one possibility to the other. Previously, I had moved many hidden abilities to be regular abilities in order to make them accessible. Now, all abilities have been reset to vanilla. If you want your Politoed to have Drizzle, you use an Ability Patch, not a Capsule. This makes it so that the common internet resources like Bulbapedia now match our game's info. It also gives access to several previously inaccessible abilities, like Adaptability Crawdaunt and Technician Breloom.
+
+
+Pool Changes:
+Added:
+Mankey
+Wooper Paldaen
+Fuecoco
+Sneasel Hisui
+Pawniard
+Tinkatink
+Greavard
+
+Removed:
+Wooper
+Stunfisk
+Farfetch'd
+
+
+Item Pool Changes:
+Added:
+Ability Patch
+Big Root
+
+Removed:
+Leek
+Thick Club
+
+
+Evolution Changes:
+I know, I know, I saved this note until the end to keep you reading. Many of you have been texting me at all hours of the night to ask about how Applin evolves. After all, he's picked up another TWO smoking hot forms. Well, here's your answer:
+	Applin [Honey] > Dipplin
+	Applin [Level Any w/ Rotom Heat] > Appletun
+	Applin [Level Any in Fortree]> Flapple
+	Dipplin [Level 42] > Hydrapple
+
+	Pancham[Level 32 w/ Dark in party] > Pangoro
+	Sneasel [Level 28] > Sneasler
+	Primeape [Rage Fist 20 times] > Annihilape
+	Stantler [Psyshield Bash 20 times] > Annihilape
+	Bisharp [King's Rock] > Kingambit
+
+//Keep in mind that Winona's gym counts as Fortree, so you can theoretically get Flapple very early if you roll Winona's gym sooner than later.
+//Stantler now learns Psyshield Bash at level 21, a significant buff.
+//If it isn't listed, it evolves in the same way as it used to.
+
+
+Total Deaths Variable:
+There's a variable that some moves/abilities reference which checks how many Pokémon have died that battle and power up your Pokémon depending on the number. Those moves and abilities are traditionally useless in a Nuzlocke, since your Pokémon aren't all dying each battle. I've altered it, however, so that the total deaths variable never resets and it tracks your total deaths across the entire game. Houndstone's Last Respects and Kingambit's Supreme Overlord gain tons of power depending on how many friends die along the way. I'm really excited about this one, it's such a neat mechanic for a Nuzlocke that opens up lots of strategy--is it valuable to draft extra cheap Pokémon as sacks to buff your Houndstone's damage?
+
+
+Small Time Saves:
+As a part of this port, I needed to transfer over every element of Emerald Speedchoice, which is code that I didn't write myself. In the process, I made several changes to further cut down on useless time loss. Some changes include: Wally's catching tutorial has been removed, Gym leaders no longer register you in your Pokenav, Norman no longer calls you on your way to Dewford, you no longer need to run out of gyms, and all battle text takes 12 frames to print (instead of 16).
+
+
+Removals:
+Spinning Trainers
+//I was never in love with the randomly twirling trainers. I thought that the dodging element was fun, but they also slowed the game down through extra fights and made it look pretty janky. I didn't mind including the spinners when they were a built in feature, but I also don't like them enough to code them back in from scratch. However, some individual trainers who are usually required have been individually set to spin in order to become avoidable. Ultimately, this will shave another few minutes off of our runs.
+
+Sleeping Bag
+//There's no longer a key item to advance the clock. Instead, any time your character goes to sleep, time advances to morning/day/night (whichever is next). The fastest way to do this is to fly home and talk to mom, who has you take a nap when she heals your party.
+
+The Shadow Ball TM is no longer in the Game Corner
+//I made this change a few months ago but soured on it after. It's too arbitrary that I've moved just this one TM to be accessible. I want to avoid changing the map and item locations in the vanilla game wherever possible to make sure knowledge from vanilla Emerald transfers over.
+
+Three Ever Grande City Clerks
+//Now there's only one, as in the base game. She sells you mega stones. Type-boosting gems are gone. I liked that these gave you something to spend your money on, but again, I didn't like adding a new clerk with new items who didn't exist in base Emerald.

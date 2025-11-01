@@ -1,0 +1,51 @@
+5/10/2025
+
+Shinies!
+All Pokémon given to the player now have a 1% chance to be shiny.
+Shiny Pokémon no longer play a sparkle animation when sent into battle.
+/Long have we waited! I finally found a fix for this. I also removed the special animation that plays each time shines are sent out, so there's no time loss for playing with a shiny. Pokemon even have separate shiny sprites when they follow behind you in the overworld!
+
+
+New Fly Location: Route 123
+/Once the player has visited Lilycove City, they're now able to fly to the berry farmer house on Route 123. This makes it so that after visiting Lilycove, you don't need to fly all the way to Mauville before running to Fortree. It saves about 20 seconds.
+
+
+X Scissor TM removed
+/There's a lot of TMs in your bag by the time you reach the Elite 4, as many have pointed out. Of the three I added, Dark Pulse and Dazzling Gleam I feel are essential, but X Scissor isn't. This trims it down a bit, I guess.
+
+
+Earlier Sitrus Berries
+Sitrus and Lum Berries are now available for purchase after beating gym 8, instead of after beating Wally.
+
+
+Pool Changes
+Oricorio added
+/Another new non-evolving flying type for your early game needs. Oricorio is similar to Rotom in that it has 4 forms with different types. You gain access to all 4 right away by receiving the Red/Yellow/Purple/Pink Nectar from the bottom right NPC in the Pretty Petal Flower Shop. You're given one of each, so you can switch forms up to four times. Unfortunately, Oricorio doesn't gain a way to use a move of its 4 possible types until it gets Revelation Dance at level 40, so the only purpose to switching types between gyms 1-6 is to change your defensive spread. Still, it's a 98 base Special Attack Pokémon with Air Cutter off the bat, so it's strong early, and it gets Feather Dance + Captivate by level up. I'm not sure that this will stay in the pool, but I want to try it out since its a weirdo.
+
+Drifloon removed
+Shuppet added
+/Drifloon is a bit redundant now that Oricorio exists as a Ghost/Flying counter for Brawly. Even though it evolves 3 gyms later, Banette is potentially more interesting now that its Mega Stone is for sale after gym 6. Banette is the king of TMs, learning Shadow Ball, Dark Pulse, Dazzling Gleam, Psychic, Thunderbolt and Calm Mind... Too bad it's a physical attacker.
+
+Razor Fang removed
+Eject Button added
++1 Ability Capsule
++1 Ability Patch
+/Razor Fang being available from the start is too good when Gligar is already S Tier without it. Noibat has also surged up the tiers in recent runs now that visiting the move relearner before gym 4 has become standard.
+/I fixed the Eject Button so now it's single use.
+/Ability Capsules and Patches are now 4x more likely than the average item to appear, up from 3x
+
+
+Boss Changes
+Tate&Liza 1 Solrock [Rock Throw] > [Harden]
+/A nerf to stop you from getting double targeted by Rock Throw. This ends up giving Solrock and Lunatone some nice symmetry, since now the only move they share now is Calm Mind.
+
+Flannery 6 Vulpix > Ninetales
+/A buff. Flannery 5-8 are heavily nerfed now that the player has access to Rain Dance. She may as well have Ninetales here, since you have access to evolution stones before this point.
+
+
+Small Changes
+Shedinja no longer requires a Pokeball to evolve from Nincada
+/This was too much of a feelsbad for a game where there's no other reason to ever buy a Pokeball.
+
+Receiving an item now flashes its image and description on the screen
+/I haven't done a full run to test this, so this might break things. Just messing around with it, it seems to work. Let me know.

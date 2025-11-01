@@ -1,0 +1,41 @@
+4/18/2025
+
+A big deal patch for big deal gamers.
+
+
+Deaths are (Actually) Permanent:
+Pokémon Center and gym hype men no longer revive fainted Pokémon. Rare Candies no longer revive fainted Pokémon. Depositing Pokemon in the PC no longer revives fainted Pokemon. You can no longer purchase or pick up revival items.
+/Previously, we played with the rule that once your Pokémon was dead, you were no longer allowed to use it. Now, we don't need the rule; when a Pokémon dies, you can't keep using it even if you wanted to. Unless you use...
+
+
+A New Max Revive:
+The only obtainable revival item is a single Max Revive given by Wally after defeating him in Victory Road.
+/I wanted a way to make the Elite 4 easier without nerfing the fights themselves. If I'm not going to weaken the fights, the remaining option is to give the player more resources. There are many ways to do this, but I like the decision tree presented by giving a single revive. The player is rewarded for keeping a full team going into the Elite 4, since they can hold it in their bag and revive a Pokémon mid-E4 attempt. However, if they've lost their ace, they can also burn it immediately to get their boy back.
+
+
+Instant Box Wipe:
+Talking to the GameCube in your room releases all Pokémon in boxes 1-13 of your PC.
+/As we all know, keeping Soosk from cheating is exhausting. Knowing that at any moment, if we all stop watching his stream for just a second, he will sprint to his PC, withdraw the Mudkip he didn't pay for, and begin destroying enemy trainers is a constant source of anxiety. But no longer. Now, before leaving your room to start the run, each player will move their purchased Pokemon to box 14, then wipe their PC of all Pokémon that they didn't draft.
+
+
+Pool Changes:
+Beldum removed
+Cosmog removed
+Ghimighoul removed
+Honedge removed
+
+/These Pokemon are all useless before the late game. Up until this point, I've been adamant about balancing the game around how it should be in its final state, not as it should be now. These Pokémon are fine for the pool if you assume players are all experienced and making it far. Right now, however, most players do not make it far. Checking the draft history, most of the time, these Pokémon are getting picked by players who never make it far enough to use them, essentially sabotaging their runs.
+
+
+Tate&Liza Fixes:
+-Lunatone 4-5 Psychic>Cosmic Power
+-Solrock 4-5 Psychic>Cosmic Power
+-Tate&Liza 5 is now a double battle (Bug fix)
+-The teleporter in the top right of the first room now warps you instantly to the gym leaders.
+/Gym 7's puzzle is now skippable. This puzzle is oddly satisfying and I like doing it. However, I've done it over 100 times. I do not want to keep doing it. It takes way longer than any of the other gyms' puzzles, and cutting it will shave over a minute off of our runs' times. 
+
+
+Teeny fixes:
+You can't get multiple Mystic Water (the researcher is back to just giving you a Castform)
+Victory Road's Roselia trainer pivots
+Honey Gather works (don't worry about it)

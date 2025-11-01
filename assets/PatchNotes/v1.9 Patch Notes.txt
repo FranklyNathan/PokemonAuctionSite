@@ -1,0 +1,167 @@
+﻿1/25/2025
+
+
+WARNING: This patch is smoking hot. Read at your own risk.
+
+
+Held Item Changes:
+Now that we’ve got a slick new draft app, the world is our oyster. Now, each Pokemon has a 40% chance of holding a random item from the item pool (as opposed to Pokemon being paired with fixed items before). This also means that 1-of items like Choice Scarf and Dragon Fang, which you could previously only get one of at most, can now potentially come up for sale multiple times. In the 15% chance for a 2-for-1 auction, both Pokemon have an independent 40% chance to hold an item. 
+
+
+The item pool has also changed slightly. Here’s the full list of items in the pool:
+Dawn Stone (New!)
+Dusk Stone
+Fire Stone
+Water Stone
+Shiny Stone (3 entries in list, 3x more likely to appear)
+
+
+Metal Coat
+Kings Rock
+Razor Fang (New!)
+
+
+Ability Capsule (4 entries in list, 4x more likely to appear)
+Absorb Bulb
+Air Balloon
+Berry Juice (New!)
+Black Belt
+Bright Powder
+Choice Scarf
+Dragon Fang
+Flame Orb
+Focus Sash
+Eject Button
+Hard Stone
+Leftovers
+Leek
+Magnet
+Never-Melt Ice
+Poison Barb
+Sharp Beak (New!)
+Shell Bell
+Silver Powder
+Toxic Orb
+Thick Club
+Twisted Spoon
+Spell Tag
+
+
+Why change how held items are determined? It comes down to trying to make the auctions as interesting as possible. One thing I like about auctions as compared to snake-style draft is how much harder it is for them to be “solved.” In a snake-style draft, the meta would eventually establish a #1 best overall pick, and then a #2 best pick, etc. It might take us a while to determine, but there is an objective single Pokemon that offers the most value. In auctions, though, there are more variables at play to complicate things:
+
+
+Firstly, you don’t know which Pokemon in the pool will actually be available (I might know I need a ground type, but Swinub is significantly less valuable if it’s the first Pokemon in the draft and the pool is still full of Drilburs and Woopers than if Swinub is toward the end of the draft). The uncertainty of what is and isn’t going to come complicates evaluating Pokemon worth.
+
+
+Another variable is money management. You might have decided that Ralts is worth 3000, but if you currently have the most money in the game, you might evaluate Ralts as being worth slightly less to you in that moment, since you want to keep your money lead to be able to scoop up more Pokemon later in the draft. Jostling for position in money complicates evaluations.
+
+
+What I’ve realized is that we want as many variables like this as possible to keep auctions interesting. Giving random items complicates things–instead of always assessing Munchlax’s value in terms of Munchlax+Ability Capsule, you now have to independently assess Pokemon+Item combinations every time they appear. And since there’s no longer a fixed number of each item in the pool, you also have to consider if that item might pop up again in the future.
+
+
+Finally, it’s also cleaner in game. Now, when you start the game, instead of having to take items off of Pokemon, you can go into item storage of your PC and withdraw everything that you won in auction. Since before, I favored pairing Pokemon with items that they themselves couldn’t make use of in order to incentivize drafting synergies, it made things awkward when you first withdrew your party. You always had to start by taking every item off of every Pokemon you drafted, a slow and tedious process. This is a faster, cleaner system.
+
+
+
+
+Mega Stone Changes:
+Since certain Pokemon are no longer guaranteed to have certain items, Mega Stones are no longer able to be drafted (it’s too awkward to have Archen holding a Sableite–most of the time you’d just end up selling that, since a Sableite on its own really isn’t enough to incentivize you to pay more for Sableye anyway). Obviously, this is a nerf to Pokemon that previously came with their mega stones
+
+
+To offset this slightly, I’ve made it so that the frontmost open-air shopkeeper in Slateport now sells the Mega Stones for Sableye, Mawile, Beedrill and Scizor. These are the “early game” Megas for Pokemon which, without their stones, are underwhelming. 
+
+
+The price of Mega Stones across the board has been cut in half, from ¥20,000 to ¥10,000. Money is much scarcer now that 1) most runs want to spend ¥30,000 (if not ¥60,000) on the Game Corner TMs (Ice Beam, Flamethrower, Thunderbolt and Psychic), 2) you no longer have any Mega Stones you can sell for ¥10,000 from the start, and 3) some runs will spend an additional ¥3,000 held evolution items (read below). While still expensive, this reduced cost of Mega Stones makes it at least a consideration to buy one early at Slateport.
+
+
+Lastly, the Mega Bracelet is now given by Roxanne, not Birch, since you can’t obtain a Mega Stone before beating Roxanne anymore.
+
+
+
+
+Held Evolution Item Changes:
+The Razor Fang, Metal Coat and King’s Rock are now available in Lavaridge’s Herb Shop for ¥3,000. This reduces the importance of grabbing one of these items in the draft (which is now harder to guarantee than before). That said, drafting one does still give you access to powerful evolutions 2 gyms earlier, so there is an incentive.
+
+
+Noibat and Gligar now evolve with the Razor Fang (as opposed to the Moon Stone and level 30, respectively). This is a slight buff to Gligar, who can now get to Gliscor before Flannery, instead of immediately after. As a reminder, the two Metal Coat evolutions are Goomy and Scyther, and the King’s Rock evolutions are Poliwhirl, Slowpoke and Scyther. The Moon Stones you could previously obtain in draft for evolving Noibat have been replaced with a Razor Fang in the item pool.
+
+
+
+
+Glitch “Fixing:”
+Unfortunately, while I fixed one flavor of the Slateport bug last patch, it turns out that there are more in different locations. We also confirmed last week that this glitch is present in the Speechoice base I’m building my hack on top of, so it’s not even my fault! The one saving grace this glitch has is that things reset to normal if you can reload the map. Now, every Pokemon can Fly while out of combat, meaning that you’ll always have a way to get out of this glitch with only a few seconds of time loss. I guess now we can just call it a skill issue (much like Justin getting trapped in Brawly’s gym–owned!)
+
+
+Last run, we discovered that Heat Crash and Heavy Slam (moves which calculate damage based on Pokemon weight) don’t work. I’ve changed them to both just be 80 base power moves with no special effects, the same change I made to Fling earlier when it had the same issue.
+
+
+
+
+Pool Changes:
+There’s only a couple, but they’re both really powerful additions.
+
+
+First up is Sandile, a Ground/Dark type with a 50/50 for Moxie (which boosts your Attack stat after every KO, allowing for sweep potential). This thing’s type combination is crazy, making it powerful against Wattson, Flannery, Tate&Liza, Sidney, Phoebe and Steven. I was intentionally avoiding the really powerful ground types like this (Gible is another in the same boat), but I’m going to give this a try. The balancing factor for this goober is that it doesn’t get a ground move more powerful than Mud Slap until level 32 (when it gets Dig just one level late to counter Norman’s Slaking), so it's more of a late game pick.
+
+
+And the other addition is… *drum roll* Nincada. Yup, this bad boy evolves into two pokemon at the same time when it reaches level 20, and one of them, Shedinja, is traditionally banned in nuzlockes. I’ve been eyeing Nincada for a few patches, since I knew that as I diversified enemy learnsets, Shedinja was getting weaker. In base Emerald, Shedinja almost completely walls Wattson, Norman, Juan and Wallace. Now, however, its uses are much fewer and farther between. Here’s the full list of boss Pokemon that can’t hit it:
+
+
+Wattson’s Electrode
+Tate&Liza’s Lunatone
+Tate&Liza’s Raichu
+Juan&Wallace’s Whiscash
+Juan&Wallace’s Milotic
+Juan&Wallace’s Kingdra
+Glacia’s Walrein
+Drake’s Exeggcutor
+Drake’s Kingdra
+Steven’s Goodra
+Steven’s Mega Metagross
+
+
+Now, keep in mind that against the double-battle gym leaders, it’ll be much harder to actually use Shedinja, since your opponent has two Pokemon out and both need to be unable to hit Shedinja for it to come into the fight. Both double battles feature 3 Pokemon that can hit Shedinja (3/5 and 3/6), so it’s not simple to get it in. Against Glacia, while it can wall Walrein, it dies to Hail, so you’ll still need to play around stalling out Hail to get Shedinja in. And finally, while it can wall Steven’s most powerful Pokemon, Steven can also set up Stealth Rocks, meaning that to get Shedinja in safely, you’ll need a Defog or Rapid Spin user.
+
+
+All of which is to say, Nincada is definitely strong (just evolving into 2 pokemon for 1 purchase is strong enough as is), but the Shedinja’s worth is fairly limited and requires a lot of really specific (and sometimes slow) strategy.
+
+
+
+
+Balance Changes:
+Somewhat unsurprisingly, Wallace and Juan were too powerful in my first draft of making them a double battle. I do want this battle to be formidable (if not the most difficult gym outright), but in v1.8, they were way over the top. For starters, I’ve changed Wallace’s Gyarados to a Ludicolo. I like trying to get as many grass-types into boss battles as possible, since the general lack of grass makes already-weak types like Poison, Bug and Flying even weaker. Gyarados with Earthquake, Arial Ace and Waterfall was a much bigger threat than the Ludicolo, though, so this will make the fight feel more manageable. Also, their team’s movesets have been nerfed across the board, giving them fewer Ice moves to make your Grass Pokemon more potent in the fight.
+
+
+As an aside, one reason that I want this fight to be hard is because players with more than 6 pokemon still alive are able to play particularly aggressively into it. After this battle, there’s no point in having more than 6 Pokemon, since that’s the most you can bring into the Elite 4. Because of this, you can play quickly and recklessly into this fight, sacking Pokemon that you don’t plan on bringing to Ever Grande to gain time advantage. The harder this fight is, the more it rewards players who make it to this point with extra Pokemon to spare.
+
+
+Next, I’ve taken another pass at removing setup moves from learnsets to nerf sweep potential. Each of the pokemon below have had the move erased from their entire line (pre-evolutions included). Removed moves include:
+
+
+Mr. Rime Baton Pass
+Masquerain Baton Pass
+Ninjask Baton Pass
+Flapple Dragon Dance
+Kommo-o Dragon Dance
+Ribombee Quiver Dance
+Slowking Nasty Plot
+Shiftry Nasty Plot
+Salazzle Nasty Plot
+
+
+Another reason I was initially shying away from adding Nincada is Ninjask, which itself is also a headache. It has guaranteed Speed Boost in addition to Swords Dance, Double Team and Baton Pass, making it a sweeping god that can set up tons of boosts and pass them to your Pokemon in the back. Once I went to check the pool, though, I realized that Masquerain can already do this with Quiver Dance+Baton Pass, and Mr. Rime can do it with the disgusting moveset of Calm Mind, Rapid Spin (boosts speed), Slack Off (heals) and Baton Pass. While these three Pokemon all still have some of the best sweeping potential in the game, I’ve taken Baton Pass off of them so that, at least now, you can’t pass their buffs.
+
+
+All of which is to say, I’m not trying to take sweeping out of the game altogether. I just want to keep chipping away at the best sweep strategies in search of a balance where they’re good but not overcentralizing.
+
+
+
+
+Tiny Miscellaneous Changes:
+Soosk taught me last run that in addition to Salandit and Nickit’s Thief, Fennekin can also steal items if it 50/50s the Magician ability. I’ve swapped some Thief-able items around:
+
+
+Wattson's Electrode is now holding a Thunder Stone. Steal it for an early Raichu, Jolteon, Magnezone or Vikavolt. Winona's Decidueye is no longer holding a King's Rock, as it's now purchasable in Lavaridge. I will continue adding more as I think of good or interesting pairings.
+
+
+And finally, Pikachu now evolves into Raichu Alola with a Sun Stone, not a Water Stone. (The Water Stone recently became available through auction, but getting Raichu Alola before gym 3 is a bit much, so I’m swapping the stone for something that you can’t get until the Lilycove Department Store. Sun Stone makes more sense than Water for this evolution anyway.)

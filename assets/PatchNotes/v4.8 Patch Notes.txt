@@ -1,0 +1,53 @@
+4/19/2025
+
+I'm really happy with how the game is coming along. The evolution stones coming before gym 5 along with the addition of so many stone evolutions has made the game feel about trying to "hold on" until this mid-game power spike, which is exciting and suspenseful. As the past several patches have been doing, I want to keep nudging the game toward being easier in order to emphasize the race aspect. This patch features a slew of changes geared toward making the game a bit more manageable.
+
+
+New TMs for sale in Lilycove:
+TM 51: Dazzling Gleam
+TM 52: Dark Pulse
+TM 53: X Scissor
+
+/I've been on the fence on adding TMs for some time. When I realized today that there was no Bug TM in Emerald (and obviously no Fairy, as the type didn't exist yet), I decided that this is an actual design flaw that needs to be fixed. Each type should have some sort of coverage option via TM. Additionally, after moving the evolution stones out of Lilycove, we needed a new reason to reward players for doing the optional rival fight, and these are more than sufficient. These TMs are a massive paradigm shift in balance; almost every Pokémon in the game learns at least one of these three moves. I'm happy with this, though. As you all know, I've been making changes to make the game easier, and giving the player coverage options for types that previously lacked TMs is a way to give more tools for tackling the hard late game fights.
+
+
+The Moon Stone in Meteor Falls is now a Stardust:
+/This stone is the odd one out; it's the only one you can pick up before the others become purchasable in Petalburg. I don't like that the best Eeveelution is also the one that you can get early. I also don't like that you're only able to get it because of the Acro Bike allowing you to get to a mid game area way before intended. Now, the Eeveelution race will always be a race to Petalburg, not to Meteor Falls.
+
+
+Boss Nerfs:
+Tate&Liza 2-3 Solrock Rock Slide > Rock Throw
+Norman 4-5 Vigoroth Reversal > Focus Energy
+Wattson 7 Magnezone Zap Cannon > Tri Attack
+Flannery 7-8 Camerupt Attract > Rock Slide
+
+Phoebe Banette Sucker Punch > Feint Attack
+Lucy Sneasler Brick Break > Taunt
+Lucy Overqwil Barb Barrage > Sludge Bomb
+
+All gym 7 leaders have had their weakest Pokémon dropped 1 level
+Gym 7 double-battle leaders have had their weakest Pokémon dropped 2 levels
+/Tapping down some of the more menacing fights.
+
+
+Pool changes:
+Gible added
+Kubfu added
+Abra removed
+Elekid removed
+
+/Cutting two of the weakest early-through-mid game Pokémon for two absolute juggernauts. This change continues the trend of leaning into drafting just 10 Pokémon per race by strengthening the average quality of Pokémon. Gible is an Earthquaking ground type who goes to 170 base attack once he mega evolves, and that's before Hone Claws. Kubfu is Soosk's prize, a legendary Pokémon who can become Fighting Water or Fighting Dark depending on what your team needs for the Elite 4.
+
+
+Zubat evolution level 40>30
+/This is a friendship evolution in the vanilla game, so 40 was always arbitrary. Given how weak this is in the pool, I'm going to give 30 a try.
+
+
+Trainer Changes:
+Gyarados trainer on Route 124 now spins
+Tropius trainer in Fortree Gym's vision is now 1 tile shorter
+/Effectively removes two of the more threatening random trainers. I think that the Gyarados trainer was the only remaining mandator non-rival or boss trainer, so you can theoretically do the game now without any random trainer fights.
+
+
+99 Max Revives added to PC
+/To make test runs easier. You can even sell them for quick cash. If you use one in a race, I will find you!

@@ -1,0 +1,40 @@
+5/13/2025
+
+The final patch before our race this weekend. This fixes some bugs, removes honey, and tweaks the final two fights.
+
+
+Honey Evolutions Removed
+Applin>Dipplin [Level in Rustboro gym]
+Ursaring>Usaluna [Level 48 at night]
+
+Pool Changes:
+Combee removed
+
+/Haters hate honey.
+
+
+Boss Changes:
+Drake's Exeggutor [Flamethrower] > [Seed Bomb]
+/Previously this guy had Leaf Storm / Dragon Hammer / Sludge Bomb / Flamethrower. The first two moves are just its type (Grass/Dragon), but the final two were to protect against sweeps. Sludge Bomb stops fairies from setting up and Flamethrower stops ice types. However, at this point, there are only 3 ice-type lines who aren't part water (and therefore weak to grass): Snorunt, Vulpix and Glaceon. None of these are very good anyway, so I don't need to worry about countering them with Flamethrower (technically Masquerain is also in this group of Drake Sweepers countered by Flamethrower, but that's fine too). This helps to give Ice at least some niche over water into Drake.
+
+Brandon's Dugtrio [Sucker Punch] > [Dig]
+/A nerf that fits more thematically with Dugtrio anyway.
+
+Brandon's Flygon [Dragon Rush] > [Dragon Claw]
+Brandon's Flygon [Flamethrower] > [Sandstorm]
+Brandon's Flygon [Crunch] > [Rock Slide]
+/Differentiating this from Drake's Flygon
+
+
+Steven's Goodra Hisui [Power Whip] > [Iron Tail]
+/Turns out Goodra Hisui doesn't actually learn Power Whip. Oops! Sorry Sooski, guess all those wipes were due to an oversight!
+
+Steven's Armaldo [Ancient Power] > [Rock Blast]
+/Gives some more differentation between it and Cradily, which still has Ancient Power.
+
+Steven's Metagross [Shadow Ball] > [Hyper Beam]
+/Gives the player two moves to play around baiting out. It actually has Hyper Beam in Ruby/Sapphire, which I like. I don't know why I ever took this off. (Notably, this also removes its Shedinja out.)
+
+
+Fixed a bug in Slateport's market
+Fixed a bug where the male player didn't get notified they received the egg

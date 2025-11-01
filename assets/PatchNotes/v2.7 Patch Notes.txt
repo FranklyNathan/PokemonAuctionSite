@@ -1,0 +1,93 @@
+2/25/2025
+They just keep coming!
+
+
+Final Wally Fight Added:
+The player now needs to enter Victory Road. It's been shortened such that the first ladder instantly exits you out the other side. However, your short trek through now requires you face Wally:
+
+	 lvl = 46,
+	 species = Altaria,
+	 nature = sassy,
+	 helditem = none,
+	 moves = {aerial ace, perish song, dragon pulse, moonblast}
+
+	 lvl = 46,
+	 species = Delcatty,
+	 nature = adamant,
+	 helditem = none,
+	 moves = {sing, assist, charm, play rough}
+
+	 lvl = 46,
+	 species = Roserade,
+	 nature = modest,
+	 helditem = none,
+	 moves = {sludge bomb, leech seed, petal blizzard, toxic}
+
+	 lvl = 46,
+	 species = Magnezone,
+	 nature = modest,
+	 helditem = none,
+	 moves = {supersonic, discharge, tri attack, flash cannon}
+
+	 lvl = 48,
+	 species = Gallade,
+	 nature = adamant,
+	 helditem = galladite,
+	 moves = {psycho cut, close combat, aerial ace, bulk up}
+
+/Like the Elite 4 team changes, Wally's team is based on his team in Omega Ruby and Alpha Sapphire, boasting the new evolutions for his Magneton and Roselia. This gives another chance for a Mega Pokémon on an enemy team in Gallade, which I think is neat. 
+
+/As much as I want to keep the game as short and fast as possible, when balancing the game, I increasingly find myself wanting more fights. With only so many types represented in end game boss teams, some types end up being bad before their lines can hit their final form. Adding another late game fight helps to make Pokémon good because they're good, not because they happen to have a good couple of type matchups. For example, this fight's menace of a Mega Gallade is countered best by these pokemon, most of which are mid- or low-tier picks: Chandelure, Sableye, Aegislash, Alolan Marowak, Gliscor, Noivern, Talonflame, Vespiquen, Masquerain and Mudsdale. And finally, skipping this fight was inconsistent with the game's design, which otherwise hasn't cut any non-Team Aqua/Magma fights.
+
+New Level Cap:
+Wally's fight has a level cap of 48. The progression is now 46>48>55>59.
+
+Fly Anywhere Delayed:
+Since we can't have the player flying over Victory Road anymore, you now gain universal Fly once you enter the Pokémon League's Pokecenter (instead of when you climb the waterfall to Ever Grande City.
+
+
+HM Rework:
+HMs no longer need to be learned:
+All HMs can now be used in the overworld without needing to have a Pokémon that knows the move. So long as you have the HM item in your bag and its corresponding badge, you can use it.
+
+Ducklett Removed:
+Without HMs, Ducklett is no longer needed. Now, when you start the Birch cutscene, you'll no longer be prompted to select a Pokémon. Instead, the game fades to black when you press A on Birch's bag. (I've also sped up this process, cut a couple of dialogue lines and removed the Yes/No prompt at the end of Birch's speech.)
+
+QoL Surf:
+Now, if you have Surf in your bag, you can simply walk at the water to begin surfing. You no longer need to use a menu or load text boxes to start surfing. (This is maximum slick.)
+
+
+Obstruct added:
+This is an Obstagoon-exclusive move that previously didn't function (it literally popped up a message that said "This move isn't finished yet!") Obstruct is a protect that, if the opponent makes contact with it, lowers their defense stat by 2 stages. It's insanely good and gives Obstagoon the ability to kill anything that attacks with contact-making moves (notably, Steven's Skarmory and Metagross).
+
+
+Elite Four Changes:
+Ninetales Nasty Plot > Calm Mind
+Walrein Sheer Cold > Freeze Dry
+Exeggutor Sassy>Relaxed (Neutral Nature > +Def -Speed)
+
+/Walrein seemingly never used Sheer Cold, so this is a way to give it a bit more damage against exactly Gyarados.Gyarados can still sweep this fight, but now it at least gets hairy if it misses the range on Glalie or gets crit/frozen by Freeze Dry.
+
+
+Accessible Hidden Abilities:
+Ninetales' ability is now a 50/50 for Snow Warning instead of 100% for Cloak.
+/Moving the hidden ability to a chance for a 50/50. Setting Hail on entrance with Blizzard is super strong, so this is worth an ability capsule.
+
+Fletchling's line is now a 50/50 for Gale Wings
+/Gale Wings increases the priority of all Flying moves by +1. This isn't as crazy as it might seem, since this Pokémon is fast enough to usually move first anyway, but it's there.
+
+
+Evolution Move Bugfix:
+In v2.6, if a Pokémon was trying to learn an Evo move at the same time as a level-up move, it skipped the evo move and never attempted to learn it. Now, it will learn both.
+
+
+Bike Movement Fix:
+This is a weird one. In the base game, if you're biking North or South and press the left or right button on the D-pad, your character won't change directions. This was changed in the DS games, but it's like this in all of the GameBoy games. When running or walking, the game always reads the most recent input, it's just the bike that's different. Anyway, it's changed now to work like in the DS games, which will make bike movement slightly more fluid if you're feeling like going fast.
+
+
+Smoother Opening:
+Instead of talking to the GameCube to receive your Pokémon, you now get them automatically when you set your clock. (This is cleaner design wise, since now mom will stop you from leaving your room if you haven't received your Pokemon. You can also only receive them once, whereas before you could talk to the GameCube multiple times.)
+
+
+Dewford Gym Spinner Moved:
+Previously, if you were a dolt, there was a chance for one of Brawly's gym trainers to spin and walk such that they cut off access to the rest of the gym and soft locked you. I've moved him so this is no longer possible.

@@ -1,0 +1,92 @@
+5/7/2025
+
+Dusty Fossil
+Each player can now check under their bed to receive a random fossil Pokémon from the following pool: Omanyte, Kabuto, Lileep, Anorith, Cranidos, Shieldon, Tirtouga, Archen, Tyrunt and Amaura.
+/Obviously this is very similar to the eggs. I actually like this one even more than the eggs, since this guarantees everyone a rock type and is something you can plan around in draft (unlike eggs, which come in all different types). Some of these Pokemon are pretty neat, too. Some Stealth Rocks, some --Tyrunt is even a Dragon, for 4x Fire resist. I also like having an evolution between gyms 6 and 7 (they all evolve between levels 37 and 40), since those Pokemon had mostly all been removed from the pool. But best of all, having Pokémon be given means we can shorten the draft even further. 
+
+
+Total Pokémon drafted per person: 8
+/I have always liked saying 8 if I want to. I will do it now. Eight! With Eevee, Egg, and Fossil, the draft is officially short as woah. It will never go below this number, because then I think it's too short. But this will be a nice sweet spot.
+
+
+Winona Buffs
+/Haters are complaining that Winona is too weak. Now that every player is guarenteed a rock-type fossil Pokemon, she's even worse than she used to be. Her Taillow/Swellow boss now knows Steel Wing in all fights, which can super effect the fossils. Previously, she had a Taillow/Swellow boss gyms 1-3, Pelipper 4-5, and Altaria 6-8. Now, Taillow/Swellow are the boss from 1-5. Finally, the Swablu knows Hyper Voice at gyms 3 and 4, a 90BP move, instead of Sing. None of these buffs are significant, but it's better than nothing.
+
+
+Steps to hatch an Egg 1280 > 1000
+/Currently, if you skip Dewford Gym and go straight to Mauville without optimal pathing, you hit 1000 steps right as you enter Mauville. I'd been playing so that at this point I biked the final 300 steps to get the egg before gym 2. I'm realizing, though, that this is really the only option, since you don't want to wait until gym 4 to get the egg Pokemon. If everyone has to get it hatched before gym 2, I may as well adjust the steps necessary so that you can do it without having to waste time just biking back and forth.
+
+
+Pool Changes
+
+Cetoddle removed
+Capsakid removed
+Voltorb removed
+Archen removed
+Sneasel Hisui removed
+Sprigatito removed
+Diglett Alola removed
+Growlithe Hisui removed
+Rolycoly removed
+Turtwig added
+Diglett added
+Growlithe added
+Oddish added
+
+Commentary:
+
+Cetoddle removed
+Capsakid removed
+Voltorb removed
+/These evolution stone Pokémon are very weak. Cetoddle and Capsakid have almost no fights in the game they're useful into. Voltorb is good into Juan&Wallace once it evolves, but it's useless into every other fight, and it only evolves after gym 4. All three of these Pokémon were definitely C- tier, potentially worse than Trubb.
+
+Oddish added
+/The above cuts remove 2 grass types, so we need something to fill that gap. Oddish isn't particularly useful either, but it's a Leaf Stone evolution like the above two with a key middle stage in Gloom, so it will scale better in gyms 3 and 4. It also has a split evolution path, which is fun. Finally, we have no Grass/Poison type now that Budew is relegated to Egg status, so I wanted to fill that.
+
+Sprigatito removed
+Sneasel Hisui removed
+/The people who read my patch notes will already know my problem with these two. Even if they aren't the best Pokémon in the game, they're broken in a way that never would have existed in generation 3. 100% critical hit moves and 130 base Attack pokemon with the best move in the game at gym 4 is silly. Sorry Soosk. (Kubfu is also an anachronism, but I'm willing to let it ride since it fills a more interesting role.)
+
+Turtwig added
+/Sprigatito is another grass dead, so here's a different grass starter to fill the void. Everybody loves Turtwig.
+
+Diglett Alola removed
+Diglett added
+/We're a bit high on steel in the pool relative to how rare a type it is. This also doubles as a buff into Wattson, where the steel typing hurts it. These Pokémon are hilariously similar; they have the same learnset bar one move.
+
+Growlithe Hisui removed
+Growlithe added
+/Now that every player starts with a fossil, everybody is guaranteed a rock type. Rock wasn't particularly useful in the first place, and now that we'll be drafting fewer Pokémon than ever before, I'm thinning out as many rocks as possible.
+
+Rolycoly removed
+/Goodbye Rock.
+
+Archen removed
+/Archen now lives under your bed 10% of the time. Also, it now evolves by level, not Razor Claw, like all of the other fossils.
+
+
+The TM Salesman in Slateport now appears after you've beaten gym 4 > 5
+/This pushes back the weather TMs and Hone Claws to after gym 5, at the same threshold where you gain access to Ice Beam and friends. The weather TMs are actually good (especially Rain Dance), and you can't usually get them until after gym 5.
+
+TM Prices Reset to Vanilla
+/This system might change at some point. For now, power TMs are back at 3000 and all weather TMs are set at 2000.
+
+Evolution Items Prices Normalized
+/All "trade" evolution items (Metal Coat, King's Rock, etc.) now cost 2100. This makes them cheaper. I didn't like how they were all different prices, even though they did the same thing.
+
+Razor Claw removed from Slateport
+/Nobody evolves with this anymore, frankly.
+
+
+Terrain Moves Removed
+/Pokémon can no longer learn Terrain moves (Grassy, Electric, Misty, etc.). I don't think they fit in Emerald, and I don't like their design. I only hadn't done this before because I thought they didn't matter, but it's becoming increasingly clear that they were actually strong.
+
+
+Starting Moves Redistributed:
+Cleffa starts with Charm
+Igglybuff starts with Charm
+/All Pokémon in the draft already have their starting moves edited such that they'd have their optimal learnsets for level 15. I never did this with the "new" babies we gained access to via eggs. Above are the only two changes.
+
+
+Those Two Trainers Rotate Clockwise:
+I would tell you which trainers, but deep inside, you already know.

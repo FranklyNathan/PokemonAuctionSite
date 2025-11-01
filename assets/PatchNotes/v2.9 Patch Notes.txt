@@ -1,0 +1,47 @@
+3/4/2025
+
+While it has a lot of small tweaks, this patch is not nearly as significant as the past few were. While I was unhappy with how much I stunk during our last run, I'm very happy with how the game's balance is coming along, and I'm excited to let the meta continue to develop without any huge shake ups.
+
+I'll also add here that in general, the previous wave of patches made the game more difficult. Capping boosts at +1, reducing the number of Pokémon drafted from 13 to 11+Eevee, adding Wally's final fight back in, and buffing the Lillycove Rival all made things tougher. For this patch, I'm focused on giving the player more tools to deal with a tougher game. In line with how the previous patches buffed the pool by removing some of the weakest Pokémon and adding more strong picks, I'm aiming for a difficult game that rewards skilled players for knowing how to use their tools to navigate it.
+
+
+TM01 Focus Punch > Hone Claws:
+I've been resistant to updating any TMs to the new generations, as I feel like the original 50 TMs are a core part of Emerald. However, several things came together to make it clear that changing TM01 to Hone Claws was the right choice:
+
+1. One of the only situations in which I'm willing to make a significant change to base Emerald is to mirror a change made in Omega Ruby and Alpha Sapphire, as I see these games as Game Freak updating their vision for how Hoenn was "meant to be." In OR/AS, the Slateport market TM salesman sells the Hone Claws TM. I'm copying this change and that same NPC now sells TM01 Hone Claws, in addition to Hidden Power and Secret Power. (This NPC is interesting, and something I never knew about Emerald. They only appear once you've obtained the Secret Power TM from the NPC north of the desert. Because of this, it's inaccessibly until after the 3rd gym. You'll also have to go through the Fiery Path and dodge some trainers, unless you wait until after gym 4 and cut through the desert.)
+
+2. Hone Claws is TM01 in OR/AS and Focus Punch is TM01 in Emerald. I'm not randomly adding an arbitrary TM; this is an actual change from OR/AS to this specific TM.
+
+3. The Focus Punch TM is useless and not tied to any in-game event. Unlike other useless TMs like Roar which are tied to specific NPCs with TM-themed dialogue, the Focus Punch TM is just sitting on the ground. Focus Punch is completely worthless, tied to no events, and removing it changes nothing.
+
+ 4. Hone Claws helps improve the game's balance. At the moment, tons of high-tier Pokémon get Bulk Up and Calm Mind to boost with, while many low-tier get nothing. Hone Claws makes the ability to boost to +1 more universal, and it buffs a ton of underpowered Pokémon, including (but not limited to) Gligar/Gliscor, Sceptile, Sableye, Aron/Lairon/Aggron, Corphish/Crawdaunt, Bagon/Shelgon/Salamence, Metang/Metagross, Talonflame, and Rookidee/Corvisquire/Corviknight.
+
+/There is a chance that someday I add the full 100 TMs from OR/AS and update the gym leaders to give their OR/AS TMs (Volt Switch from Wattson, Roost from Winona). It's the kind of thing I'd consider once I change the base to Emerald Expansion, as that already has support for the full 100 TMs. For anytime soon, though, this is the only TM change I'd expect.
+
+
+Hidden Power:
+The Hidden Power now displays its type on the summary screen. The Hidden Power TM is sold by the same NPC who sells Hone Claws, so there's a good chance you pick this up too while you're there. Hidden Power is basically unusable without this change, so this makes it something worth trying out if you get lucky.
+
+
+Fairy Feather:
+Introduced in generation 9, the Fairy Feather is Fairy's type-boosting item. This item wasn't in our base since it's so new, and I wasn't focused on adding it since Fairy is already so good. That said, I thought it was weird that we had type-boosting items for every item but Fairy, so that's remedied. It's now available in the item pool during draft, like all other otherwise unobtainable type-boosting items.
+
+
+Toxic/Flame Orb in Lavaridge:
+These items are out of the draft pool and into the Lavaridge Herb Shop. Previously, I'd liked the idea of playing with a permanently poisoned Pokémon by depositing and withdrawing your other Pokémon from the PC to heal without using Nurse Joy. That said, it's is more of a neat concept than something that's actually fun to do. By making the orbs purchasable, Guts Pokémon can be poisoned or burned whenever you need, and you don't need to rely on Koffings and playing the rest of the game without Nurse Joy to do it. (This also is a meaningful buff to Gligar and Shroomish, our Poison Heal Pokémon.)
+
+
+Juan's Ludicolo: Double Team > Astonish
+Part of the never-ending Shedinja adjustments. Previously, I'd determined that Shedinja is never worth bringing to the Elite 4, and nearly useless into Wattson because of Stealth Rocks, meaning I was okay with it being dominant into gym 8. Now, though, we have Wally, which Shedinja is also excellent into, invincible into the Magneton and Roserade. I didn't actually realize that Shedinja walled 5/6 of Juan/Wallace's Pokémon, however. I hadn't meant to make it that good into the final gym in the first place, so Ludicolo at least now has the ability to hit it.
+
+
+Escape Rope:
+Like the Rare Candy, using an Escape Rope no longer consumes the item. This way, the player should always have an Escape Rope in case the game corrupts while in a cave and you can't fly. 
+
+
+Small Fixes:
+-Pokémon and Items in the PC are properly alphabetized
+-You can no longer use an Escape Rope to skip the Wally fight in Victory Road.
+-Speed Boost/Moxie/Moody now cap out at 1 boost.
+-Treecko is in the PC and Seedot is out (fixed on race day).
+-The Rare Candy sells for $5000, as it does in base Emerald. This had been changed to $50 to stop players from selling their Rarest Candy before challenging the Elite 4. Now that we need it for the final champion level cap, though, this is no longer an issue.
