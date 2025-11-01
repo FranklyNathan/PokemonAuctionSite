@@ -90,14 +90,15 @@
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h1>Boss Battles</h1>
-        <sl-button onclick="window.location.href='/'">
-            <sl-icon slot="prefix" name="house-fill"></sl-icon>
-            Home
-        </sl-button>
     </div>
     <pre id="boss-battles-content">Loading...</pre>
 
-    <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" style="position: fixed; bottom: 1rem; right: 1rem;"></sl-button>
+        <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
+            <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+                <img class="invert-in-dark-mode" src="/generic/home.png" alt="Home" style="height: 1.4rem; position: relative; top: 4px;" />
+            </sl-button>
+            <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
+        </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -265,15 +266,16 @@
         function applyTheme(theme) {
         if (theme === 'dark') {
             htmlEl.classList.add('sl-theme-dark');
-            darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
         } else {
             htmlEl.classList.remove('sl-theme-dark');
-            darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
         }
         }
 
-        // Check for saved theme in localStorage on page load and apply it.
-        const savedTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme in localStorage on page load and apply it.
+    // Default to dark so the site is consistent across pages when no preference is stored.
+    const savedTheme = localStorage.getItem('theme') || 'dark';
         applyTheme(savedTheme);
 
         darkModeToggle.addEventListener('click', () => {

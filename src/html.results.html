@@ -53,7 +53,7 @@
     console.log('[Debug] sl-button and sl-icon components are defined.');
     // --- Dark Mode Logic ---
     // Check for saved theme in localStorage on page load and apply it.
-    const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
     const tableWrapper = document.getElementById('players-table-wrapper');
     if (savedTheme === 'dark') {
       document.documentElement.classList.add('sl-theme-dark');

@@ -520,18 +520,18 @@
           if (tableWrapper) {
             tableWrapper.classList.add('ag-theme-balham-dark');
           }
-          darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
           if (tableWrapper) {
             tableWrapper.classList.remove('ag-theme-balham-dark');
           }
-          darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
         }
       }
 
       // Check for saved theme in localStorage on page load
-      const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme') || 'dark';
       applyTheme(savedTheme);
 
       // Add event listener to the toggle button

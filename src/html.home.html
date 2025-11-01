@@ -30,6 +30,8 @@
         box-sizing: border-box;
         border-radius: 0.125rem;
         margin: 1.25rem 0;
+        /* reserve final height so the element doesn't grow when text appears */
+        min-height: calc(1.2rem + 1.6rem); /* text line-height + vertical padding */
         display: flex;
         align-items: center;
         justify-content: flex-start; /* start left-aligned */
@@ -49,7 +51,12 @@
         white-space: pre; /* preserve spaces if any */
         overflow: hidden;
         display: inline-block;
+        /* reserve height when empty so layout doesn't shift */
+        min-height: 1.2rem;
         text-align: left; /* left-align while typing */
+        /* start hidden until the rest of the page (buttons) is ready to avoid popping */
+        opacity: 0;
+        transition: opacity 180ms ease;
       }
 
       /* NOTE: removed inner wrapper - text types left-aligned directly in the terminal */
@@ -60,6 +67,14 @@
         width: 0.5ch;
         line-height: 1;
         animation: blink 1s steps(1, end) infinite;
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+
+      /* Reveal the welcome text and caret only when the page is marked ready */
+      body.ready #welcome-text,
+      body.ready #welcome-caret {
+        opacity: 1;
       }
 
       @keyframes blink {
@@ -83,9 +98,45 @@
         width: 15rem;
         margin-bottom: 1rem;
       }
+      /* Make the tierlist dialog match the auction page's appearance */
+      #tierlistDialog::part(body) {
+        height: 100%;
+        padding: 0;
+      }
+
+      #tierlistDialog sl-tab-panel::part(base) {
+        padding: 0;
+      }
+
+      #tierlistDialog sl-tab-group {
+        margin-top: 0;
+      }
+
+      /* Make the tabs only as tall as their content */
+      #tierlistDialog sl-tab::part(base) {
+        padding: var(--sl-spacing-2x-small) var(--sl-spacing-medium);
+      }
+
+      #tierlistDialog::part(header) {
+        padding: 0; /* Remove padding to make it thinner */
+        justify-content: flex-end; /* Push the content (the 'X' button) to the far right */
+        border-bottom: none; /* Remove the line under the header */
+      }
+
+      #tierlistDialog::part(title) {
+        display: none; /* Hide the title text */
+      }
+
+      #tierlistDialog::part(header-actions) {
+        justify-content: flex-end; /* Push the 'X' button to the far right */
+      }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-group/tab-group.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab/tab.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-panel/tab-panel.js"></script>
   </head>
   <body>
     <div class="welcome-terminal"><span id="welcome-text"></span><span id="welcome-caret" aria-hidden="true">█</span></div>
@@ -108,7 +159,7 @@
         <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" style="height: 1.4rem; position: relative; top: 5px;" />
       </sl-button>
       <sl-button id="youtube-button" class="control-button" variant="neutral" title="Open YouTube Channel">
-        <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" style="height: 1.7rem; position: relative; top: 4px;" />
+        <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" style="height: 1.6rem; position: relative; top: 6px;" />
       </sl-button>
       <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
         <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
@@ -119,8 +170,26 @@
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
 
+    <!-- Tierlist dialog for home page -->
+  <sl-dialog id="tierlistDialog" label="Tierlist" style="--width: 60vw; --height: 80vh; display: none;">
+      <sl-tab-group>
+        <sl-tab slot="nav" panel="full-game" active>Full Game Tiers</sl-tab>
+        <sl-tab slot="nav" panel="gym-1-5">Gym 1-5 Tiers</sl-tab>
+
+        <sl-tab-panel name="full-game" active style="height: 100%;">
+          <img src="/tierlist.png" alt="Full Game Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
+        </sl-tab-panel>
+        <sl-tab-panel name="gym-1-5" style="height: 100%;">
+          <img src="/earlytiers.png" alt="Gym 1-5 Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
+        </sl-tab-panel>
+      </sl-tab-group>
+    </sl-dialog>
+
     <script type="module">
-      await customElements.whenDefined('sl-button');
+      const slReady = customElements.whenDefined('sl-button');
+      // expose promise so other scripts can wait for shoelace components
+      window.slButtonsReadyPromise = slReady;
+      await slReady;
 
       // --- Dark Mode Logic ---
       const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -128,16 +197,20 @@
 
       function applyTheme(theme) {
         if (theme === 'dark') {
-          htmlEl.classList.add('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
-        } else {
-          htmlEl.classList.remove('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
-        }
+            htmlEl.classList.add('sl-theme-dark');
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          } else {
+            htmlEl.classList.remove('sl-theme-dark');
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          }
       }
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
       applyTheme(savedTheme);
+      // Persist the chosen default so other pages load with the same initial theme
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', savedTheme);
+      }
 
       darkModeToggle.addEventListener('click', () => {
         const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
@@ -168,8 +241,25 @@
         });
       }
 
-      // Tierlist button is present but will need a dialog added to this page if it's intended to work here.
-      // For now, it does nothing.
+      // Ensure dialog/tab components are ready before wiring the tierlist button
+      await Promise.allSettled([
+        customElements.whenDefined('sl-dialog'),
+        customElements.whenDefined('sl-tab-group'),
+        customElements.whenDefined('sl-tab'),
+        customElements.whenDefined('sl-tab-panel')
+      ]);
+
+      // Tierlist button listener
+      const tierlistButton = document.getElementById('tierlist-button');
+      const tierlistDialog = document.getElementById('tierlistDialog');
+      // Remove the temporary 'display: none' set in the markup now that the
+      // dialog component is defined so the upgraded element can control visibility
+      if (tierlistDialog) tierlistDialog.style.display = '';
+      if (tierlistButton && tierlistDialog) {
+        tierlistButton.addEventListener('click', () => {
+          tierlistDialog.show();
+        });
+      }
     </script>
     <script>
       // Terminal-style typewriter welcome text (left-aligned)
@@ -178,8 +268,8 @@
         const el = document.getElementById('welcome-text');
         const caret = document.getElementById('welcome-caret');
 
-        // make page visible immediately so typing is visible
-        document.body.classList.add('ready');
+        // NOTE: don't make page visible here. Visibility is enabled only after
+        // shoelace components are defined so the buttons don't pop in after text.
 
         if (!el) return;
 
@@ -201,9 +291,28 @@
           }
         }
 
-        // start typing shortly after load so the rest of the page paints
-        setTimeout(step, 120);
+        function startTyping() {
+          // start typing shortly after ready so the rest of the page paints
+          setTimeout(step, 120);
+        }
+
+        // Start typing only once the page is marked ready (shoelace components defined)
+        if (document.body.classList.contains('ready')) {
+          startTyping();
+        } else if (window.slButtonsReadyPromise) {
+          window.slButtonsReadyPromise.then(() => startTyping());
+        } else {
+          // Fallback to DOMContentLoaded
+          document.addEventListener('DOMContentLoaded', () => startTyping());
+        }
       })();
+
+      // Wait for shoelace to be ready, then make the page visible so nothing pops in.
+      if (window.slButtonsReadyPromise) {
+        window.slButtonsReadyPromise.then(() => document.body.classList.add('ready'));
+      } else {
+        document.body.classList.add('ready');
+      }
     </script>
   </body>
 </html>

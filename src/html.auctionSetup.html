@@ -190,30 +190,10 @@
       </div>
     </form>
 
-    <sl-dialog id="tierlistDialog" label="Tierlist" style="--width: 60vw; --height: 80vh;">
-      <sl-tab-group>
-        <sl-tab slot="nav" panel="full-game" active>Full Game Tiers</sl-tab>
-        <sl-tab slot="nav" panel="gym-1-5">Gym 1-5 Tiers</sl-tab>
-
-        <sl-tab-panel name="full-game" active style="height: 100%;">
-          <img src="/tierlist.png" alt="Full Game Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
-        </sl-tab-panel>
-        <sl-tab-panel name="gym-1-5" style="height: 100%;">
-          <img src="/earlytiers.png" alt="Gym 1-5 Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
-        </sl-tab-panel>
-      </sl-tab-group>
-    </sl-dialog>
+    <!-- Tierlist dialog removed from auction setup page to hide tiers control on this page -->
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <sl-button id="drive-button" class="control-button" variant="neutral" title="Open Google Drive Folder">
-        <img src="/generic/Drive.png" alt="Open Google Drive" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
-        <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
-        <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
+      <!-- Keep only the dark mode toggle on the auction setup page -->
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
   </body>
@@ -229,13 +209,13 @@
 
     function applyTheme(theme, isInitial = false) {
       const tableWrapper = document.getElementById('players-table-wrapper');
-      if (theme === 'dark') {
-        htmlEl.classList.add('sl-theme-dark');
-        darkModeToggle.innerHTML = '<img src="/MiniIcons/solrock.png" alt="Light Mode" style="height: 1.4rem; position: relative; top: 6px;">';
-      } else {
-        htmlEl.classList.remove('sl-theme-dark');
-        darkModeToggle.innerHTML = '<img src="/MiniIcons/lunatone.png" alt="Dark Mode" style="height: 1.4rem; position: relative; top: 6px;">';
-      }
+  if (theme === 'dark') {
+    htmlEl.classList.add('sl-theme-dark');
+  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+  } else {
+    htmlEl.classList.remove('sl-theme-dark');
+  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+  }
     }
 
   // Check for saved theme in localStorage on page load and apply it.
@@ -250,26 +230,8 @@
     });
     // --- End Dark Mode Logic ---
 
-    // Tierlist button listener
-    const tierlistButton = document.getElementById('tierlist-button');
-    const tierlistDialog = document.getElementById('tierlistDialog');
-
-    tierlistButton.addEventListener('click', () => {
-      tierlistDialog.show();
-    });
-
-    // The dialog can be closed by pressing Escape or clicking the close button in the header.
-    // Shoelace dialogs have a close button by default in the header if `no-header` is not present.
-
-    // Drive button listener
-    document.getElementById('drive-button').addEventListener('click', () => {
-      window.open('https://drive.google.com/drive/folders/1yY2AyLuR07CZCNowcPN22HTWS1184ZOx?usp=sharing', '_blank');
-    });
-
-    // GitHub button listener
-    document.getElementById('github-button').addEventListener('click', () => {
-      window.open('https://github.com/FranklyNathan/EmeraldBlitz', '_blank');
-    });
+    // Drive/GitHub/Tier controls removed from this page; corresponding listeners omitted to
+    // avoid console errors. Home page still contains these controls and their listeners.
 
     document.body.classList.add('ready');
 
