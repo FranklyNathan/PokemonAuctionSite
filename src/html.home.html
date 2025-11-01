@@ -22,11 +22,11 @@
       /* Inline terminal-style welcome message (placed in page flow) */
       .welcome-terminal {
         font-family: Consolas, 'Courier New', monospace;
-        background: #002b36; /* deep terminal-like blue */
-        color: #cfe8ff;
+        background: #e0f2fe; /* light blue for light mode */
+        color: #075985; /* dark blue text for light mode */
         padding: 0.8rem 1.2rem;
         border: 1px solid black;
-  width: min(54%, 34ch); /* slightly narrower */
+        width: min(50%, 31ch); /* even narrower */
         box-sizing: border-box;
         border-radius: 0.125rem;
         margin: 1.25rem 0;
@@ -41,8 +41,8 @@
 
       /* allow dark-theme override */
       .sl-theme-dark .welcome-terminal {
-        background: #001018;
-        color: #bfe7ff;
+        background: #002b36; /* deep terminal-like blue */
+        color: #cfe8ff; /* light blue text */
       }
 
       #welcome-text {
@@ -130,6 +130,62 @@
       #tierlistDialog::part(header-actions) {
         justify-content: flex-end; /* Push the 'X' button to the far right */
       }
+
+      /* --- Home page Flygon silhouette background ---
+         Fixed, non-interactive, low-opacity silhouette that fades in.
+         Positioned so the left side sits off-screen and it doesn't affect layout. */
+      .home-bg-silhouette {
+        position: fixed;
+        top: 50%;
+        left: -20vw; /* push left so a large portion hangs off the page */
+        transform: translateY(-50%);
+        width: 90vw; /* large: roughly half the page width */
+        height: auto;
+        max-height: 120vh;
+        /* We're using an <img src=> in the markup so no background-image here. */
+        /* Make it a one-color silhouette (black) */
+        filter: brightness(0) saturate(100%);
+        /* Start invisible; animation will bring it to a low opacity */
+        opacity: 0;
+        pointer-events: none; /* don't intercept clicks */
+        z-index: -1; /* keep it behind interactive UI */
+        will-change: opacity;
+        mix-blend-mode: multiply;
+        object-fit: contain;
+        /* Set final opacity directly. Animation will only run on initial load. */
+        opacity: 0.05;
+      }
+
+      /* Only run the fade-in animation on the initial page load */
+      body.initial-load .home-bg-silhouette {
+        opacity: 0; /* Start invisible for the animation */
+        animation: flygonFadeIn 3.6s ease forwards;
+        animation-delay: 3.2s;
+      }
+
+      /* In dark mode, keep the silhouette dark (black) but slightly more visible than
+         in light mode so it reads against a dark background. Do NOT invert to white. */
+      .sl-theme-dark .home-bg-silhouette {
+        mix-blend-mode: normal;
+        opacity: 0.15;
+      }
+
+      /* Dark mode animation override for initial load */
+      .sl-theme-dark body.initial-load .home-bg-silhouette {
+        opacity: 0;
+        animation-name: flygonFadeInDark;
+      }
+
+      @keyframes flygonFadeIn {
+        from { opacity: 0; }
+        to { opacity: 0.05; }
+      }
+
+      @keyframes flygonFadeInDark {
+        from { opacity: 0; }
+        /* slightly more visible on dark backgrounds */
+        to { opacity: 0.12; }
+      }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
@@ -138,7 +194,9 @@
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab/tab.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-panel/tab-panel.js"></script>
   </head>
-  <body>
+  <body class="initial-load">
+  <!-- Decorative, non-interactive Flygon silhouette background (use <img src=> so the file is fetched directly) -->
+  <img class="home-bg-silhouette" src="/evolutions/Flygon.png" alt="" aria-hidden="true" />
     <div class="welcome-terminal"><span id="welcome-text"></span><span id="welcome-caret" aria-hidden="true">█</span></div>
     <div style="display: flex; flex-direction: column; align-items: center;">
       <sl-button class="main-button" size="large" onclick="window.location.href='/setup'">Auction Setup</sl-button>
@@ -213,6 +271,8 @@
       }
 
       darkModeToggle.addEventListener('click', () => {
+        // Immediately remove the initial-load class to prevent re-animation
+        document.body.classList.remove('initial-load');
         const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
         localStorage.setItem('theme', newTheme);
         applyTheme(newTheme);
@@ -303,6 +363,10 @@
           window.slButtonsReadyPromise.then(() => startTyping());
         } else {
           // Fallback to DOMContentLoaded
+        // Also remove the initial-load class after the animation is guaranteed to be over
+        setTimeout(() => {
+          document.body.classList.remove('initial-load');
+        }, 6800);
           document.addEventListener('DOMContentLoaded', () => startTyping());
         }
       })();
@@ -311,6 +375,10 @@
       if (window.slButtonsReadyPromise) {
         window.slButtonsReadyPromise.then(() => document.body.classList.add('ready'));
       } else {
+        // Also remove the initial-load class after the animation is guaranteed to be over
+        setTimeout(() => {
+          document.body.classList.remove('initial-load');
+        }, 6800);
         document.body.classList.add('ready');
       }
     </script>

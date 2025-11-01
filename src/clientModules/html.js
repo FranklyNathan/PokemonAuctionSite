@@ -595,9 +595,11 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
 
     // Always display the name, and add other info if it exists.
     infoEl.innerHTML = `
-      <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
-      <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
-      ${otherInfoHtml}
+      <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
+        <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
+        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+        ${otherInfoHtml}
+      </div>
     `;
     infoEl.style.display = 'block';
     // Add type icons below the base pokemon's image
