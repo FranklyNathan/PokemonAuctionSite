@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="sl-theme-dark">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        padding: 1rem;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .page-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .content-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 3.5rem;
+      }
+      .content-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 900px;
+        width: 100%;
+      }
+      .toc {
+        background: var(--sl-color-neutral-100);
+        border: 1px solid var(--sl-color-neutral-300);
+        padding: 1rem 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+      }
+      .sl-theme-dark .toc {
+        background: #071014; /* A very dark blue, matching other content blocks */
+        border-color: var(--sl-color-neutral-600);
+      }
+      .toc h2 {
+        margin-top: 0;
+      }
+      .toc ul {
+        padding-left: 20px;
+      }
+      section {
+        padding-top: 1rem; /* For scroll-to offset */
+        margin-top: -1rem;
+      }
+      h2 {
+        border-bottom: 2px solid var(--sl-color-neutral-300);
+        padding-bottom: 0.5rem;
+      }
+      .sl-theme-dark h2 {
+        border-bottom-color: var(--sl-color-neutral-500);
+      }
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background-color: var(--sl-color-neutral-50);
+        border: 1px solid var(--sl-color-neutral-300);
+        padding: 15px;
+        border-radius: 5px;
+        font-family: Consolas, 'Courier New', monospace;
+      }
+      .sl-theme-dark pre {
+        background-color: #071014;
+        color: #dfeffb;
+        border-color: var(--sl-color-neutral-600);
+      }
+
+      /* Dark-mode toggle / control-button helpers */
+      .sl-theme-dark .invert-in-dark-mode {
+        filter: invert(1);
+      }
+      .sl-theme-dark sl-button[variant='neutral']::part(label) {
+        color: white;
+      }
+      .control-button {
+        --sl-spacing-x-small: 0;
+      }
+      .control-button::part(base) {
+        width: 3rem;
+        height: 1rem;
+        font-size: 1rem;
+        justify-content: center;
+      }
+    </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="page-title">Frequently Asked Questions</div>
+    </div>
+
+    <div class="content-container">
+      <div class="content-body">
+        <nav class="toc">
+          <h2>Contents</h2>
+          <ul>
+            <li><a href="#what-is-emerald-blitz">What's Emerald Blitz?</a></li>
+            <li><a href="#whats-changed">So, what's changed from vanilla Emerald?</a></li>
+            <li><a href="#how-to-play">How do I play?</a></li>
+          </ul>
+        </nav>
+
+        <section id="what-is-emerald-blitz">
+          <h2>What's Emerald Blitz?</h2>
+          <p>
+            Emerald Blitz is a revamped version of Pokémon Emerald streamlined for competitive, fast-paced draft racing.
+            Despite playing through the entire Hoenn region with a team of 10 Pokemon, from first gym to Elite Four Champion, a single playthrough takes just two hours to complete.
+            Emerald Blitz is customized with 100s of new features and quality-of-life improvements geared toward making the game as fast and possible; it's all of the good with none of the tedium.
+          </p>
+        </section>
+
+        <section id="whats-changed">
+          <h2>So, what's changed from vanilla Emerald?</h2>
+
+          <h3>Roguelike Randomization</h3>
+          <ul>
+            <li><strong>Randomized Gyms:</strong> Gyms are randomized; upon entering a gym, you'll be warped to any of Hoenns eight gyms at random. Leader teams are adjusted to your current strength.</li>
+            <li><strong>Elite... Eight!?:</strong> Battle Frontier Brains join the Elite Four for a more diverse lineup of final bosses.</li>
+          </ul>
+
+          <h3>Quality of Life Improvements</h3>
+          <ul>
+            <li><strong>Pokemon Catalog:</strong> The notebook on the player's desk now comes stocked with every Pokémon in the draft. Simply scroll through, select your Pokemon, and get racing.</li>
+            <li><strong>Permanent Repel:</strong> The Cleanse Tag now functions as a toggleable permanent repel.</li>
+            <li><strong>Portable PC:</strong> A PC in your bag, accessible from anywhere besides the Elite Four chambers.</li>
+            <li><strong>Med Kit:</strong> A key item Pokecenter in your bag, automatically registered when you enter the Elite Four.</li>
+            <li><strong>Visible IVs:</strong> When paused to view your Pokémon’s stats, press A to display their IVs.</li>
+          </ul>
+
+          <h3>Built for Speed</h3>
+          <ul>
+            <li><strong>Level Cap Candy:</strong> Instantly jumps your Pokémon to the level it next learns a move, evolves, or hits the current cap (whichever of the three comes first). The evolution animation is shortened. Asking to learn a move only asks once, not twice.</li>
+            <li><strong>Flygon Bike:</strong> Flygon replaces the bike, able to hop up ledges, move over shallow water, leap over rocks and trees, and Fly with the press of a button.</li>
+            <li><strong>Just the Good Stuff:</strong> All plot, including events involving Team Aqua and Magma, Steven, Wally, and Scott have been removed.</li>
+            <li><strong>Polite Trainers:</strong> Ordinary trainers no longer challenge any player they see. They can still be fought, however, if you interact with them.</li>
+          </ul>
+
+          <h3>Difficulty Boosts</h3>
+          <ul>
+            <li><strong>Nuzlocke Mechanics:</strong> Your Pokémon can’t overlevel the most powerful Pokémon of the next major boss trainer. You can’t use items in battle.</li>
+            <li><strong>Boosting Cap:</strong> While a Pokemon's stats can still be debuffed to -6, a Pokemon's stat stage can never be raised beyond +1. You'll need to rely on more creative strategies than Dragon Dance sweeps to take down these bosses.</li>
+            <li><strong>Updated Teams:</strong> Gym leaders use more well-rounded teams, having bolstered their rosters with new Alolan, Hisuian, and Galarian members.</li>
+            <li><strong>New Boss Fights:</strong> The champion and final battle is now Steven Stone wielding a Mega Metagross. Wallace, meanwhile, now joins Juan to make the 8th gym a double battle.</li>
+            <li><strong>Buffed Battles:</strong> All enemy trainers use perfect 31-IV Pokémon.</li>
+          </ul>
+
+          <h3>Reworked Shop</h3>
+          <ul>
+            <li><strong>Fixed Money Supply:</strong> Players are no longer able to sell items, and non-boss battles no longer award money. The player has 62,000 to spend, and every purchase has an opportunity cost.</li>
+            <li><strong>Slateport Outdoor Market:</strong> Most relevant items, including evolution stones, mega stones, power TMs, and ability-changing items are available for purchase in the Slateport outdoor market.</li>
+            <li><strong>Purchasable Berries:</strong> All easily accessible berries are available for sale in the Pretty Petal Flower Shop</li>
+          </ul>
+
+          <h3>Modern Mechanics</h3>
+          <ul>
+            <li><strong>Mega Evolution:</strong> Mega Stones are here! Click <code>Fight</code> in battle and then press Start before selecting your move to mega evolve. Mega stones are one-time-use and consumed once used.</li>
+            <li><strong>Fairy Types:</strong> Fairy Type has been added to the game. Pokémon have had their typing and learnsets updated to generation VII.</li>
+            <li><strong>Generation IX Pokémon:</strong> The auction pool includes Pokémon and items all the way up to additions from Legends ZA.</li>
+            <li><strong>Physical/Special Split:</strong> Moves calculate damage based on the split introduced in generation IV.</li>
+            <li><strong>New TMs:</strong> TMs from generation 6 including Hone Claws, Dazzling Gleam, X-Scissor, and Trick Room help even out coverage for your team.</li>
+          </ul>
+        </section>
+
+        <section id="how-to-play">
+          <h2>How do I play?</h2>
+          <p>
+            Section Coming Soon
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Bottom-right controls (home + dark mode toggle) -->
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+        <img class="invert-in-dark-mode" src="/generic/home.png" alt="Home" style="height: 1.1rem; position: relative; top: 4px;" />
+      </sl-button>
+      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" title="Toggle Light/Dark Mode"></sl-button>
+    </div>
+
+    <script type="module">
+      // Set the base path for Shoelace assets (like icons) before any components are rendered.
+      import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
+      setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+
+      // Wait for all shoelace components used on the page to be defined.
+      await Promise.all([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-icon-button')]);
+
+      // --- Dark Mode Logic ---
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const htmlEl = document.documentElement;
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          htmlEl.classList.add('sl-theme-dark');
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+        } else {
+          htmlEl.classList.remove('sl-theme-dark');
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+        }
+      }
+
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      applyTheme(savedTheme);
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', savedTheme);
+      }
+
+      darkModeToggle.addEventListener('click', () => {
+        const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+      });
+      // --- End Dark Mode Logic ---
+
+      document.body.classList.add('ready');
+    </script>
+  </body>
+</html>

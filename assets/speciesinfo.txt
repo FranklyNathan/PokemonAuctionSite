@@ -370,9 +370,9 @@ Key Moves:
    Water Pulse (14)
    Fling (28)
    Extrasensory (49)
-   Dark Pulse (TM)
    Ice Beam (TM)
    Surf (HM)
+   Night Slash (MR)
 
 Fuecoco
 Key Moves:
@@ -445,8 +445,8 @@ Key Moves:
    Dig (16)
    Rest (24/TM)
    Crunch (28)
-   Play Rough (32)
    Last Respects (Evo.)
+   Play Rough (32)
    Charm (51)
 
 Growlithe
@@ -499,7 +499,6 @@ Key Moves:
    Surf (HM)
    Thunderbolt (TM)
    Eerie Impulse (MR)
-   Dark Pulse (TM)
 
 Honedge
 Key Moves:
@@ -533,7 +532,6 @@ Key Moves:
    Inferno (MR)
    Overheat (TM)
    Flamethrower (TM/50)
-   Dark Pulse (TM)
 
 Igglybuff
 Key Moves:
@@ -552,7 +550,7 @@ Key Moves:
    X-Scissor (TM)
    Dragon Claw (TM)
    Earthquake (TM)
-   Dragon Dance (53*/59)
+   Dragon Dance (53*)
 
 Joltik
 Key Moves:
@@ -589,7 +587,6 @@ Key Moves:
    Flame Burst (20)
    Hex (28)
    Overheat (TM)
-   Dark Pulse (TM)
    Shadow Ball (TM)
    Flamethrower (TM)
    Calm Mind (TM)
@@ -831,6 +828,7 @@ Key Moves:
    Psychic (30*/TM)
    Dazzling Gleam (TM*)
    Thunderbolt (TM*)
+   Shadow Ball (TM*)
    Moonblast (MR*)
    Psycho Cut (31**)
    Bulk Up (TM**)
@@ -846,7 +844,6 @@ Key Moves:
    Bone Rush (29)
    Bulk Up (TM)
    Water Pulse (TM)
-   Dark Pulse (TM)
    Psychic (TM)
    Shadow Ball (TM)
    Earthquake (TM)
@@ -879,8 +876,8 @@ Rotom
 Key Moves:
    Shock Wave (22/TM)
    Ominous Wind (29)
+   Shadow Ball (TM)
    Thunderbolt (TM)
-   Dark Pulse (TM)
    Thunder (TM)
    Blizzard (Form)
    Air Slash (Form)
@@ -909,6 +906,7 @@ Key Moves:
    Knock Off (26)
    Hone Claws (TM)
    Shadow Ball (39/TM)
+   Foul Play (41)
 
 Salandit
 Key Moves:
@@ -1023,6 +1021,7 @@ Key Moves:
    Psychic (36/TM)
    Sludge Bomb (TM)
    Flamethrower (TM)
+   Shadow Ball (TM)
    Ice Beam (TM)
    Calm Mind (TM)
 
@@ -1034,6 +1033,7 @@ Key Moves:
    Giga Drain (TM)
    Dazzling Gleam (TM)
    Reflect (TM)
+   Protect (TM)
 
 Smoochum
 Key Moves:
@@ -1099,6 +1099,7 @@ Key Moves:
    Trick Room (TM)
    Shock Wave (TM)
    Dazzling Gleam (TM)
+   Shadow Ball (TM)
    Psychic (52/TM)
    Calm Mind (TM)
    Belch (MR)
@@ -1294,7 +1295,6 @@ Key Moves:
    Icy Wind (15)
    Dazzling Gleam (Evo.)
    Ice Beam (36/TM/MR)
-   Dark Pulse (TM)
    Blizzard (TM)
    Calm Mind (TM)
 

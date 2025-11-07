@@ -3,6 +3,8 @@ import { transitionState, updateClients, getSerializableCtx, unserializeCtx } fr
 import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import homeHtml from './html.home.html';
+import indexHtml from './html.index.html';
+import faqHtml from './html.faq.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
 import v1_7 from '../assets/PatchNotes/v1.7 Patch Notes.txt';
 import v1_8 from '../assets/PatchNotes/v1.8 Patch Notes.txt';
@@ -276,6 +278,12 @@ export default {
         // Inject a cache-busting favicon link into the setup page.
         const modifiedSetupHtml = auctionSetupHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
         return new Response(modifiedSetupHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'index' && request.method.toLowerCase() == 'get') {
+        // User is at the Blitz Index page
+        return new Response(indexHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'faq' && request.method.toLowerCase() == 'get') {
+        // User is at the FAQ page
+        return new Response(faqHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
       } 
       

@@ -187,7 +187,8 @@ const cols = [
       const types = params.value.split('/');
       const iconsHtml = types
         .map((type) => {
-          const trimmedType = type.trim();
+          let trimmedType = type.trim();
+          if (trimmedType === '???') trimmedType = 'Egg'; // Use EggIC_SV.png for ??? type
           // Construct the path to the icon in your assets folder
           const iconPath = `/TypeIcons/${trimmedType}IC_SV.png`;
           // Return an img tag for each type

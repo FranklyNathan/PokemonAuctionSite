@@ -218,7 +218,8 @@ export function updateSelectedPlayerCard(playerData, speciesInfoMap, allPlayers)
   const types = playerData.type ? playerData.type.split(/[\s,\/]+/).filter((t) => t) : [];
   const typeImagesHtml = types
     .map((type) => {
-      const trimmedType = type.trim();
+      let trimmedType = type.trim();
+      if (trimmedType === '???') trimmedType = 'Egg'; // Use EggIC_SV.png for ??? type
       return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
     })
     .join('');
@@ -305,7 +306,7 @@ export function addPlayerIconToTeamCard(clientId, playerName) {
       return;
     }
     console.log(`[Debug] Found icon container 'team${clientId}trc'. Appending icon.`);
-    // Mini-icons have a different naming convention: lowercase, with hyphens instead of spaces/periods.
+      // Mini-icons have a different naming convention: lowercase, with hyphens instead of spaces/periods.
     const iconName = playerName
       .toLowerCase()
       .replace(/\. /g, '-')
@@ -483,6 +484,38 @@ function getStatColor(statValue) {
   return '#f44336'; // red
 }
 
+const specialMechanics = {
+  Castform: `Unique Mechanic: Forecast
+\nCastform's ability now has the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
+\nWater: Rain (Drizzle)
+\nFire: Sun (Drought)
+\nIce: Hail (Snow Warning)`,
+  Mareep: `Unique Mechanic: Milk Drink
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach Pokemon species can only use Milk Drink once, meaning Mareep, Flaaffy, and Ampharos combine for three total uses.`,
+  Skiddo: `Unique Mechanic: Milk Drink
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach Pokemon species can only use Milk Drink once, meaning Skiddo and Gogoat combine for two total uses.`,
+  Smoliv: `Unique Mechanic: Seed Sower
+\nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that hits it.`,
+  Greavard: `Unique Mechanic: Last Respects
+\nEach time one of your Pokemon faints, Greavard's signature move Last Respects permanently gains 15 power on top of its base 50.
+\nThe fainted Pokémon counter does not reset between battles.`,
+  Corsola: `Unique Mechanic: On-Death Evolution
+\nWhen Corsola faints, after the battle, it will transform into Galarian Corsola and revive at full HP.`,
+  Applin: `Unique Mechanic: Gym-Based Evolution
+\nApplin evolves into different Pokemon depending on which gym you're in. Gyms are randomized in Emerald Blitz, so cross your fingers to get Fortree, Lavaridge, or Rustboro early,`,
+  Rotom: `Unique Mechanic: Rotom Catalog
+\nRotom transforms with the consumable item Rotom Catalog, available in Fortree City. You're given three Rotom Catalogs. With the ability to change forms after seeing which boss you're about to face, Rotom's versatility is unmatched.`,
+  Nincada: `Tip: Shedinja
+\nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Juan and Wallace, who have few options to hit it. If you're facing a Seadra variant of this fight, equip your Shedinja with a Pecha Berry to avoid dying to Seadra's Poison Point!
+\nTo evolve Nincada into Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
+  Zorua: `Tip: Illusion
+\nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
+  Minior: `Tip: Rollout!
+\nMinior is the most powerful Rollout user in the game. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
+};
+
 /**
  * Updates the UI to display the auctioned player's image and species info.
  * Builds and displays the evolution chain for the auctioned player.
@@ -498,6 +531,25 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
   infoContainer.style.flexDirection = 'column';
   infoContainer.style.gap = '0.5rem';
   infoEl.style.display = 'none';
+
+  // Special handling for "Egg" to prevent errors and display issues.
+  if (player && player.name === 'Egg') {
+    // Add type icons below the base pokemon's image
+    const imageTypesContainer = document.getElementById('pokemon-image-types');
+    const types = player.type.split(/[\s,\/]+/).filter((t) => t);
+    const typeImagesHtml = types.map((type) => {
+        let trimmedType = type.trim();
+        if (trimmedType === '???') trimmedType = 'Egg'; // Use EggIC_SV.png for ??? type
+        return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+    }).join('');
+    imageTypesContainer.innerHTML = typeImagesHtml;
+    infoEl.innerHTML = `<div style="direction: ltr; text-align: left; padding-left: 1.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;"><span>Egg</span></div>`;
+    infoEl.style.display = 'block';
+    infoContainer.innerHTML = '';
+    infoContainer.style.display = 'none';
+    console.log('[Debug] Special handling for Egg. Bypassing regular info display.');
+    return; // Exit early
+  }
 
   infoEl.innerHTML = ''; // Clear previous content
 
@@ -578,7 +630,11 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     }
 
     // Only display the info text block if there is actual info to show besides the name.
-    const hasInfoContent = abilitiesHtml.trim() !== '' || statsHtml.trim() !== '' || keyMovesHtml.trim() !== '';
+    const hasInfoContent =
+      abilitiesHtml.trim() !== '' ||
+      statsHtml.trim() !== '' ||
+      keyMovesHtml.trim() !== '' ||
+      specialMechanicHtml.trim() !== '';
 
     let otherInfoHtml = '';
     if (hasInfoContent) {
@@ -597,11 +653,42 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     infoEl.innerHTML = `
       <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
         <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
-        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">${player.name}</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">
+          <span>${player.name}</span>
+          ${
+            specialMechanics[player.name]
+              ? `<sl-button id="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+                   <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+                 </sl-button>`
+              : ''
+          }
+        </div>
         ${otherInfoHtml}
       </div>
     `;
     infoEl.style.display = 'block';
+
+    // Add event listener for the special mechanic button if it was rendered.
+    const specialMechanicBtn = infoEl.querySelector('#special-mechanic-btn');
+    if (specialMechanicBtn) {
+      specialMechanicBtn.addEventListener('click', () => {
+        const dialog = document.getElementById('specialMechanicDialog');
+        const contentEl = document.getElementById('specialMechanicContent');
+        const closeBtn = dialog.querySelector('sl-button[slot="footer"]'); // This is the button inside the dialog
+
+        const description = specialMechanics[player.name];
+        const lines = description.split('\n');
+        const firstLine = lines.shift(); // Get and remove the first line
+        const restOfLines = lines.join('\n');
+
+        const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
+        contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+        dialog.show();
+
+        closeBtn.addEventListener('click', () => dialog.hide(), { once: true }); // Close on internal button click
+      });
+    }
+
     // Add type icons below the base pokemon's image
     const imageTypesContainer = document.getElementById('pokemon-image-types');
     if (player.type) {
@@ -635,15 +722,15 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     // 2. Iterate forward from the base form to find all its evolutions.
     if (baseIndex !== -1) {
       for (let i = baseIndex + 1; i < allPlayers.length; i++) {
-        const nextPokemon = allPlayers[i];
-        if (nextPokemon.stage === 'base') {
-          console.log(`[Evo Debug] Reached next base form '${nextPokemon.name}'. Ending chain search.`);
+        const potentialEvo = allPlayers[i];
+        // An evolution must not be a 'base' stage. Also, if the base form is a 'Basic' pokemon (like Mawile), it has no evolutions.
+        if (potentialEvo.stage === 'base' || player.stage === 'Basic') {
+          console.log(`[Evo Debug] Reached next base form '${potentialEvo.name}' or current is 'Basic'. Ending chain search.`);
           break; // Reached the next Pokémon family
         }
-        // Any non-base Pokémon is an evolution in this family.
-        // Also, make sure we don't add the currently selected pokemon to its own evolution list.
-        if (nextPokemon.name !== player.name) {
-          evolutions.push({ name: nextPokemon.name, info: nextPokemon });
+        // Any non-base Pokémon is considered an evolution in this family.
+        if (potentialEvo.name !== player.name) {
+          evolutions.push({ name: potentialEvo.name, info: potentialEvo });
         }
       }
     }

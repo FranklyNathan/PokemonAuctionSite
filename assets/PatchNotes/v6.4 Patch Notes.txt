@@ -1,0 +1,63 @@
+11/6/2025
+
+
+Elite Four Rework:
+-All Elite Four teams are at the same level: 52, 54, 53, 53, 55 (Drake's levels)
+-Elite Four level cap is now 58 and doesn't raise before Steven
+-All of Steven's Pokémon lose one level
+-Spenser and Brandon are flipped back, such that Spenser is Sidney's alternate and Brandon Drake's
+
+//The Elite 4 is a bit harder than I’d like it to be. With this change, you're an average of ~5 levels up on every E4 fight (for perspective, we’re currently up ~8 levels on Sidney and ~2 on Drake). That said, this change has a greater change on the "meta" than any change in months. Being good into the elite 4 was hitherto the mark of a top tier Pokémon, and it matters much less now.
+//Currently, Sidney and Brandon are trivial fights, while Drake is quite hard. The game disproportionately values being good against Dragon, while being good against Dark is almost worthless. This change makes it so all 8 types are represented in the Elite 4 equally, as they’re at the same level.
+//It's funny that a change so simple under the hood is one of the most impactful changes in months on the game, but other changes that take me days don't even end up being relevant enough to include in patch notes.
+
+
+Phoebe Dusclops Payback > Earthquake
+Phoebe Dusknoir Hex > Shadow Ball
+Lucy Overqwil Brine > Aqua Tail
+Brandon Swampert Mud Shot > Rock Slide
+//Buffs to an Elite Four that just became much weaker overall
+
+
+You can now Fly from the Lilycove Department Store Rooftop:
+//Going up here to get Substitute is relevant. Besides this, though, there's no reason to ever visit Lilycove. This makes the trip a bit less of a time sink. And we all tried to do this as a kid!
+//To be clear, this means you can ride Flygon on the roof.
+//No one man should have all this power.
+
+
+Last Respects Rework:
+-Last Respects' power now prints in the summary and move preview screen
+-Last Respects power: 30+(30*playerFaintCounter) > 50+(15*playerFaintCounter)
+-Bugfixed to actually work
+//This move needed to print its power so players knew for sure how strong it was at any given point (instead of needing to do mental math on how many times you've lost Pokémon). As I implemented this feature, I learned that the move was totally bugged and was reseting constantly. Now, it works.
+//Additionally, I realized that Houndstone has Sand Rush, an ability which doubles its speed in Sandstorm. This means that previously, if you drafted Houndstone+8 Pokémon+Eevee, had everything but Houndstone faint, then Max Revived something and had it die again, Last Respects was doing 30+(30*10)=330BP STAB damage on a Pokémon with 68*2=136 speed in Sandstorm and 101 base attack. This is enough to easily sweep every singles fight in the game. This new system gives the move a maximum power of 50+(15*10)=200BP, which, while still strong, is no longer enough to one shot most late game Pokémon. 
+
+
+Dark Pulse Removed (Torment Re-added)
+//Dazzling Gleam and X-Scissor are necessary; without them Fairy and Bug don't have TMs. Dark Pulse isn't on this same level, and I want for there to be fewer TMs. TMs have in general been one of the biggest design hang ups for me, but in short, I don't like how much they homogenize Pokémon, and I don't like how much they add to the mental stack while playing. There's really only a couple of Pokémon that benefit from this move, not enough to justify its inclusion. Dark has the exact same offensive properties as Shadow Ball, and pretty much everything that learns Dark Pulse also learns that. This isn't important enough to justify adding it into the game.
+
+
+Tate&Liza 2,3,4 Balance Tweaks
+Lunatone Power Gem > Psyshock
+Lunatone Rock Slide > Rock Throw
+Solrock Rock Throw > Rock Slide
+//This removes a rock damage option on Lunatone for Tate&Liza 3 and 4. Power Gem is a powerful attack with STAB in this fight (by far Lunatone's best move), which, alongside Solrock Rock Slide, means this fight is primarily against Rock damage. This change makes Lunatone's main threat a Psychic move, more fitting for a Psychic leader.
+
+
+Sandbox Mode:
+-The Portable PC's item withdraw function has been "rebranded" as a sandbox mode
+-Menu pathing expedited with new description text
+-Now includes all Mega Stones and strong Gym TMs
+//Polishing this so it's less janky
+
+
+Bug Fixes:
+-The menu's heal command no longer works on fainted Pokémon
+-Players can no longer save the game and reboot to reflip their boss encounter
+//Neither of these mattered for our playthroughs, but I need the game to be robust.
+
+
+Upstream Merge:
+-Unique Mega Stones for each species
+//This patch again merges the game with the upstream Emerald Expansion, meaning that it changes hundreds of files worth of refactors and bug fixes. Notable to us, the game now has unique Mega Stones for each Legends ZA Mega form (each Pokémon no longer megas with the Aggronite). They're still for sale in the same spots at the same thresholds.
+

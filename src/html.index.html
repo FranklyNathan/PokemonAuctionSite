@@ -1,0 +1,704 @@
+<!doctype html>
+<html class="sl-theme-dark">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blitz Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        padding: 1rem;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .page-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .content-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 3.5rem;
+      }
+      .content-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 900px;
+        width: 100%;
+      }
+      .toc {
+        background: var(--sl-color-neutral-100);
+        border: 1px solid var(--sl-color-neutral-300);
+        padding: 1rem 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+      }
+      .sl-theme-dark .toc {
+        background: #071014; /* A very dark blue, matching other content blocks */
+        border-color: var(--sl-color-neutral-600);
+      }
+      .toc h2 {
+        margin-top: 0;
+      }
+      .toc ul {
+        padding-left: 20px;
+      }
+      section {
+        padding-top: 1rem; /* For scroll-to offset */
+        margin-top: -1rem;
+      }
+      h2 {
+        border-bottom: 2px solid var(--sl-color-neutral-300);
+        padding-bottom: 0.5rem;
+      }
+      .sl-theme-dark h2 {
+        border-bottom-color: var(--sl-color-neutral-500);
+      }
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background-color: var(--sl-color-neutral-50);
+        border: 1px solid var(--sl-color-neutral-300);
+        padding: 15px;
+        border-radius: 5px;
+        font-family: Consolas, 'Courier New', monospace;
+      }
+      .sl-theme-dark pre {
+        background-color: #071014;
+        color: #dfeffb;
+        border-color: var(--sl-color-neutral-600);
+      }
+
+      /* Dark-mode toggle / control-button helpers */
+      .sl-theme-dark .invert-in-dark-mode {
+        filter: invert(1);
+      }
+      .sl-theme-dark sl-button[variant='neutral']::part(label) {
+        color: white;
+      }
+      .control-button {
+        --sl-spacing-x-small: 0;
+      }
+      .control-button::part(base) {
+        width: 3rem;
+        height: 1rem;
+        font-size: 1rem;
+        justify-content: center;
+      }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+      .image-gallery img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid var(--sl-color-neutral-300);
+        border-radius: 4px;
+      }
+      .sl-theme-dark .image-gallery img {
+        border-color: var(--sl-color-neutral-600);
+      }
+      .image-with-caption {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .image-with-caption img {
+        margin-bottom: 0.5rem;
+      }
+      .caption {
+        font-size: 0.9em;
+        color: var(--sl-color-neutral-600);
+      }
+      .sl-theme-dark .caption { color: var(--sl-color-neutral-400); }
+
+      /* TM Chart Styles */
+      .tm-chart {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .tm-column {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--sl-color-neutral-300);
+        border-radius: 6px;
+        overflow: hidden; /* Ensures border-radius is respected by children */
+      }
+      .tm-column.stacked {
+        border: none;
+        padding: 0;
+        display: flex; /* This was missing */
+        background: none;
+        gap: 1rem;
+      }
+      .tm-header {
+        background-color: var(--sl-color-neutral-200);
+        padding: 0.5rem 0.8rem;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid var(--sl-color-neutral-300);
+      }
+      .tm-list {
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        background-color: var(--sl-color-neutral-50);
+        flex-grow: 1;
+      }
+      .sl-theme-dark .tm-column {
+        border-color: var(--sl-color-neutral-600);
+      }
+      .sl-theme-dark .tm-header {
+        background-color: #1f2933; /* A dark blue-gray */
+        border-bottom-color: var(--sl-color-neutral-600);
+      }
+      .sl-theme-dark .tm-list {
+        background-color: #071014; /* A very dark blue */
+      }
+
+      /* Type Colors */
+      .type-normal { color: #A8A878; }
+      .type-fire { color: #F08030; }
+      .type-water { color: #6890F0; }
+      .type-electric { color: #F8D030; }
+      .type-grass { color: #78C850; }
+      .type-ice { color: #98D8D8; }
+      .type-fighting { color: #C03028; }
+      .type-poison { color: #A040A0; }
+      .type-ground { color: #E0C068; }
+      .type-flying { color: #A890F0; }
+      .type-psychic { color: #F85888; }
+      .type-bug { color: #A8B820; }
+      .type-rock { color: #B8A038; }
+      .type-ghost { color: #705898; }
+      .type-dragon { color: #7038F8; }
+      .type-dark { color: #705848; }
+      .type-steel { color: #B8B8D0; }
+      .type-fairy { color: #EE99AC; }
+
+      /* Dark theme adjustments for better contrast */
+      .sl-theme-dark .type-normal { color: #C6C6A7; }
+      .sl-theme-dark .type-fire { color: #F5AC78; }
+      .sl-theme-dark .type-water { color: #9DB7F5; }
+      .sl-theme-dark .type-electric { color: #FAE078; }
+      .sl-theme-dark .type-grass { color: #A7DB8D; }
+      .sl-theme-dark .type-ice { color: #BCE6E6; }
+      .sl-theme-dark .type-fighting { color: #D67873; }
+      .sl-theme-dark .type-poison { color: #C183C1; }
+      .sl-theme-dark .type-ground { color: #EBD69D; }
+      .sl-theme-dark .type-flying { color: #C6B7F5; }
+      .sl-theme-dark .type-psychic { color: #FA92B2; }
+      .sl-theme-dark .type-bug { color: #C6D16E; }
+      .sl-theme-dark .type-rock { color: #D1C17D; }
+      .sl-theme-dark .type-ghost { color: #A292BC; }
+      .sl-theme-dark .type-dragon { color: #A27DFA; }
+      .sl-theme-dark .type-dark { color: #A29288; }
+      .sl-theme-dark .type-steel { color: #D1D1E0; }
+      .sl-theme-dark .type-fairy { color: #F4BDC9; }
+
+      .items-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .items-list li {
+        margin-bottom: 0.5rem;
+      }
+      .badge-group {
+        margin-bottom: 1.5rem;
+      }
+      .badge-group h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--sl-color-neutral-300);
+        padding-bottom: 0.3rem;
+      }
+
+      /* Items Chart Styles */
+      .items-chart {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .item-card {
+        border: 1px solid var(--sl-color-neutral-300);
+        border-radius: 6px;
+        overflow: hidden; /* Ensures border-radius is respected by children */
+        background-color: var(--sl-color-neutral-50);
+      }
+      .sl-theme-dark .item-card {
+        border-color: var(--sl-color-neutral-600);
+        background-color: #071014; /* A very dark blue */
+      }
+      .item-card .items-list {
+        padding: 0.8rem;
+        background-color: transparent; /* Remove background from list itself */
+      }
+      .sl-theme-dark .item-card .items-list {
+        background-color: transparent;
+      }
+
+      /* Dropdown for evolution items */
+      .evo-item-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .evo-item-container sl-icon-button {
+        font-size: 1rem;
+        margin-right: -0.5rem; /* Align to edge */
+      }
+      .evo-list {
+        list-style-type: none;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        font-size: 0.9em;
+        color: var(--sl-color-neutral-600);
+        display: none; /* Hidden by default */
+      }
+      .sl-theme-dark .evo-list {
+        color: var(--sl-color-neutral-400);
+      }
+      .evo-list li {
+        margin-bottom: 0.2rem;
+      }
+
+    </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="page-title">Blitz Index</div>
+    </div>
+
+    <div class="content-container">
+      <div class="content-body">
+        <p>There's a lot to keep track of in Emerald Blitz, especially when you're just starting out. Here are some handy at-a-glance references for essential information.</p>
+
+        <nav class="toc">
+          <h2>Contents</h2>
+          <ul>
+            <li><a href="#level-caps">Level Caps</a></li>
+            <li><a href="#heart-scales">Heart Scale Locations</a></li>
+            <li><a href="#type-enhancing-items">Type-enhancing items</a></li>
+            <li><a href="#key-npcs">Key NPCs</a></li>
+            <li><a href="#sitrus-berries">Sitrus Berries</a></li>
+            <li><a href="#slateport-market">Slateport Market Items</a></li>
+          </ul>
+        </nav>
+
+        <section id="level-caps">
+          <h2>Level Caps</h2>
+          <div class="tm-chart">
+            <pre style="margin: 0;">
+Gym 1: 15
+Gym 2: 19
+Gym 3: 24
+Gym 4: 29
+Gym 5: 32
+Gym 6: 35
+Gym 7: 42
+Gym 8: 48
+Elite 4: 58</pre>
+          </div>
+        </section>
+
+        <section id="heart-scales">
+          <h2>Heart Scale Locations</h2>
+          <p>Exchange Heart Scales at the Move Relearner to access powerful moves. Heart Scales can be found hidden in the following locations:</p>
+          <div class="image-gallery">
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale1.png" alt="Heart Scale Location 1" />
+              <div class="caption">Route 104</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale2.png" alt="Heart Scale Location 2" />
+              <div class="caption">Route 106</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale3.png" alt="Heart Scale Location 3" />
+              <div class="caption">Route 109</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale4.png" alt="Heart Scale Location 4" />
+              <div class="caption">Route 109</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale5.png" alt="Heart Scale Location 5" />
+              <div class="caption">Route 118</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale6.png" alt="Heart Scale Location 6" />
+              <div class="caption">Route 109</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale7.png" alt="Heart Scale Location 7" />
+              <div class="caption">Lilycove City</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale8.png" alt="Heart Scale Location 8" />
+              <div class="caption">Route 105</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/HeartScaleLocations/HeartScale9.png" alt="Heart Scale Location 9" />
+              <div class="caption">Route 115</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="type-enhancing-items">
+          <h2>Type-enhancing items</h2>
+          <p>Type-enhancing items boost damage by 20%. They can be found in the following locations:</p>
+          <div class="image-gallery">
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster1.png" alt="Miracle Seed Location" />
+              <div class="caption">Petalburg Woods</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster2.png" alt="Silk Scarf Location" />
+              <div class="caption">Dewford Town</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster3.png" alt="Soft Sand Location" />
+              <div class="caption">Route 109</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster4.png" alt="Charcoal Location" />
+              <div class="caption">Lavaridge Herb Shop</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster5.png" alt="Mystic Water Location" />
+              <div class="caption">Weather Institute</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster6.png" alt="Black Glasses Location" />
+              <div class="caption">Route 116</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/TypeBoosterLocations/TypeBooster7.png" alt="Never-melt Ice Location" />
+              <div class="caption">Shoal Cave Basement</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="key-npcs">
+          <h2>Key NPCs</h2>
+          <p>Locations of important NPCs.</p>
+          <div class="image-gallery">
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC1.png" alt="Key NPC Location 1" />
+              <div class="caption">Status Chef - Slateport Market</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC2.png" alt="Key NPC Location 2" />
+              <div class="caption">Berry Saleswoman - Route 104</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC3.png" alt="Key NPC Location 3" />
+              <div class="caption">Move Tutor - Fallarbor Town</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC4.png" alt="Key NPC Location 4" />
+              <div class="caption">Rotom Catalogs - Fortree City</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC5.png" alt="Key NPC Location 5" />
+              <div class="caption">Substitute Tutor - Lilycove City</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sitrus-berries">
+          <h2>Sitrus Berries</h2>
+          <p>Sitrus Berries can't be purchased until after beating all gyms. In the meantime, you have access to eight of them on your way to Fortree City:</p>
+          <div class="image-gallery">
+            <div class="image-with-caption">
+              <img src="/SitrusBerryLocations/Sitrus1.png" alt="Sitrus Berry Location 1" />
+              <div class="caption">Route 118</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/SitrusBerryLocations/Sitrus2.png" alt="Sitrus Berry Location 2" />
+              <div class="caption">Route 119</div>
+            </div>
+            <div class="image-with-caption">
+              <img src="/SitrusBerryLocations/Sitrus3.png" alt="Sitrus Berry Location 3" />
+              <div class="caption">Route 123</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="slateport-market">
+          <h2>Slateport Market Items</h2>
+          <p>The following items are available for purchase at the Slateport Market. At each badge threshold, the items below are added to the merchant's stock.</p>
+          
+          <h3>TMs</h3>
+          <div class="tm-chart">
+            <div class="tm-column">
+              <div class="tm-header">Badge 1 — 1000</div>
+              <div class="tm-list">
+                <span class="type-grass">Bullet Seed</span>
+                <span class="type-ice">Hail</span>
+                <span class="type-normal">Safeguard</span>
+                <span class="type-rock">Sandstorm</span>
+                <span class="type-psychic">Skill Swap</span>
+                <span class="type-steel">Steel Wing</span>
+                <span class="type-dark">Thief</span>
+                <span class="type-dark">Torment</span>
+                <span class="type-poison">Toxic</span>
+                <span class="type-psychic">Trick Room</span>
+              </div>
+            </div>
+            <div class="tm-column">
+              <div class="tm-header">Badge 4 — 2000</div>
+              <div class="tm-list">
+                <span class="type-normal">Double Team</span>
+                <span class="type-psychic">Light Screen</span>
+                <span class="type-normal">Return</span>
+                <span class="type-psychic">Reflect</span>
+                <span class="type-psychic">Rest</span>
+                <span class="type-grass">Solar Beam</span>
+              </div>
+            </div>
+            <div class="tm-column">
+              <div class="tm-header">Badge 4 — 3000</div>
+              <div class="tm-list">
+                <span class="type-ice">Blizzard</span>
+                <span class="type-fighting">Brick Break</span>
+                <span class="type-fairy">Dazzling Gleam</span>
+                <span class="type-ground">Dig</span>
+                <span class="type-dragon">Dragon Claw</span>
+                <span class="type-fire">Fire Blast</span>
+                <span class="type-grass">Giga Drain</span>
+                <span class="type-normal">Hyper Beam</span>
+                <span class="type-steel">Iron Tail</span>
+                <span class="type-water">Rain Dance</span>
+                <span class="type-fire">Sunny Day</span>
+                <span class="type-ghost">Shadow Ball</span>
+                <span class="type-electric">Thunder</span>
+                <span class="type-bug">X Scissor</span>
+              </div>
+            </div>
+            <div class="tm-column stacked">
+              <div class="tm-column">
+                <div class="tm-header">Badge 4 — 5000</div>
+                <div class="tm-list">
+                  <span class="type-fire">Flamethrower</span>
+                  <span class="type-ice">Ice Beam</span>
+                  <span class="type-poison">Sludge Bomb</span>
+                  <span class="type-electric">Thunderbolt</span>
+                  <span class="type-normal">Protect</span>
+                  <span class="type-psychic">Psychic</span>
+                </div>
+              </div>
+              <div class="tm-column">
+                <div class="tm-header">Badge 4 — 10000</div>
+                <div class="tm-list">
+                  <span class="type-ground">Earthquake</span>
+                  <span class="type-dark">Hone Claws</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Items</h3>
+          <div class="items-chart">
+            <div class="item-card">
+              <div class="tm-header">Badge 1</div>
+              <ul class="items-list"><li>Ability Capsule</li><li>Ability Patch</li></ul>
+            </div>
+            <div class="item-card">
+              <div class="tm-header">Badge 2</div>
+              <ul class="items-list">
+                <li>
+                  <div class="evo-item-container"><span>Whipped Dream</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div>
+                  <ul class="evo-list">
+                    <li>Aron &gt; Lairon</li>
+                    <li>Goomy &gt; Sliggoo</li>
+                    <li>Hatenna &gt; Hattrem</li>
+                    <li>Honedge &gt; Doublade</li>
+                    <li>Horsea &gt; Seadra</li>
+                    <li>Jangmo-o &gt; Hakamo-o</li>
+                    <li>Litwick &gt; Lampent</li>
+                    <li>Solosis &gt; Duosion</li>
+                    <li>Spheal &gt; Sealeo</li>
+                    <li>Trapinch &gt; Vibrava</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="item-card">
+              <div class="tm-header">Badge 4</div>
+              <ul class="items-list">
+                <li><div class="evo-item-container"><span>Fire Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Growlithe &gt; Arcanine</li><li>Eevee &gt; Flareon</li></ul></li>
+                <li><div class="evo-item-container"><span>Water Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Poliwhirl &gt; Poliwrath</li><li>Shellder &gt; Cloyster</li><li>Staryu &gt; Starmie</li><li>Pikachu &gt; Raichu-Alola</li><li>Eevee &gt; Vaporeon</li></ul></li>
+                <li><div class="evo-item-container"><span>Thunder Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Magneton &gt; Magnezone</li><li>Helioptile &gt; Heliolisk</li><li>Charjabug &gt; Vikavolt</li><li>Pikachu &gt; Raichu</li><li>Eevee &gt; Jolteon</li></ul></li>
+                <li><div class="evo-item-container"><span>Leaf Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Gloom &gt; Vileplume</li><li>Exeggcute &gt; Exeggutor</li><li>Eevee &gt; Leafeon</li></ul></li>
+                <li><div class="evo-item-container"><span>Ice Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Vulpix-Alola &gt; Ninetales-Alola</li><li>Eevee &gt; Glaceon</li></ul></li>
+                <li><div class="evo-item-container"><span>Moon Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Clefairy &gt; Clefable</li><li>Jigglypuff &gt; Wigglytuff</li><li>Eevee &gt; Umbreon</li></ul></li>
+                <li><div class="evo-item-container"><span>Sun Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Gloom &gt; Bellossom</li><li>Exeggcute &gt; Exeggutor-Alola</li><li>Eevee &gt; Espeon</li></ul></li>
+                <li><div class="evo-item-container"><span>Shiny Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Floette &gt; Florges</li><li>Minccino &gt; Cinccino</li><li>Togetic &gt; Togekiss</li><li>Roselia &gt; Roserade</li><li>Eevee &gt; Sylveon</li></ul></li>
+                <li><div class="evo-item-container"><span>Dawn Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Kirlia &gt; Gallade</li><li>Snorunt &gt; Froslass</li></ul></li>
+                <li><div class="evo-item-container"><span>Dusk Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Doublade &gt; Aegislash</li><li>Litwick &gt; Chandelure</li><li>Murkrow &gt; Honchkrow</li></ul></li>
+                <li><div class="evo-item-container"><span>Dragon Scale</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Seadra &gt; Kingdra</li><li>Skrelp &gt; Dragalge</li></ul></li>
+                <li><div class="evo-item-container"><span>King's Rock</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Poliwhirl &gt; Politoed</li><li>Slowpoke-Galar &gt; Slowking-Galar</li><li>Scyther &gt; Kleavor</li></ul></li>
+                <li><div class="evo-item-container"><span>Metal Coat</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Scyther &gt; Scizor</li><li>Goomy &gt; Sliggoo-Hisui</li></ul></li>
+                <li><div class="evo-item-container"><span>Soothe Bell</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Buneary &gt; Lopunny</li><li>Swadloon &gt; Leavanny</li><li>Feebas &gt; Milotic</li><li>Noibat &gt; Noivern</li><li>Chansey &gt; Blissey</li><li>Golbat &gt; Crobat</li></ul></li>
+              </ul>
+            </div>
+            <div class="item-card">
+              <div class="tm-header">Badge 5</div>
+              <ul class="items-list">
+                <li>
+                  <div class="evo-item-container"><span>Linking Cord</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div>
+                  <ul class="evo-list">
+                    <li>Graveler &gt; Golem</li>
+                    <li>Porygon2 &gt; Porygon-Z</li>
+                    <li>Electabuzz &gt; Electivire</li>
+                    <li>Magmar &gt; Magmortar</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 2rem;">Mega Stones</h3>
+          <div class="tm-chart" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="item-card">
+              <div class="tm-header">Badge 6</div>
+              <ul class="items-list">
+                <li>Cameruptite</li>
+                <li>Clefablite</li> 
+                <li>Dragalgite</li>
+                <li>Excadrillite</li>
+                <li>Froslassite</li>
+                <li>Glalitite</li>
+                <li>Houndoominite</li>
+                <li>Lopunnite</li>
+                <li>Lucarionite</li>
+                <li>Manectite</li>
+                <li>Mawilite</li>
+                <li>Sablenite</li>
+                <li>Scizorite</li>
+                <li>Sharpedonite</li>
+                <li>Starmite</li>
+              </ul>
+            </div>
+            <div class="item-card">
+              <div class="tm-header">Badge 8</div>
+              <ul class="items-list">
+                <li>Aggronite</li>
+                <li>Ampharosite</li>
+                <li>Banettite</li>
+                <li>Blazikenite</li>
+                <li>Chandelurite</li>
+                <li>Chesnaughtite</li>
+                <li>Delphoxite</li>
+                <li>Feraligatrite</li>
+                <li>Galladite</li>
+                <li>Garchompite</li>
+                <li>Gardevoirite</li>
+                <li>Greninjite</li>
+                <li>Metagrossite</li>
+                <li>Salamencite</li>
+                <li>Sceptilite</li>
+                <li>Scoliopedite</li>
+                <li>Swampertite</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Bottom-right controls (home + dark mode toggle) -->
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+        <img class="invert-in-dark-mode" src="/generic/home.png" alt="Home" style="height: 1.1rem; position: relative; top: 4px;" />
+      </sl-button>
+      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" title="Toggle Light/Dark Mode"></sl-button>
+    </div>
+
+    <script type="module">
+      // Set the base path for Shoelace assets (like icons) before any components are rendered.
+      import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
+      setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+
+      // Wait for all shoelace components used on the page to be defined.
+      await Promise.all([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-icon-button')]);
+
+      // --- Dark Mode Logic ---
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const htmlEl = document.documentElement;
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          htmlEl.classList.add('sl-theme-dark');
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+        } else {
+          htmlEl.classList.remove('sl-theme-dark');
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+        }
+      }
+
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      applyTheme(savedTheme);
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', savedTheme);
+      }
+
+      darkModeToggle.addEventListener('click', () => {
+        const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+      });
+      // --- End Dark Mode Logic ---
+
+      document.body.classList.add('ready');
+
+      // --- Evolution Item Dropdown Logic ---
+      const evoItemContainers = document.querySelectorAll('.evo-item-container');
+      evoItemContainers.forEach(container => {
+        const button = container.querySelector('sl-icon-button');
+        const evoList = container.nextElementSibling;
+
+        if (button && evoList) {
+          button.addEventListener('click', () => {
+            const isVisible = evoList.style.display === 'block';
+            evoList.style.display = isVisible ? 'none' : 'block';
+            button.name = isVisible ? 'chevron-down' : 'chevron-up';
+          });
+        }
+
+        // Force a re-render of the icon by briefly changing its name.
+        // This helps fix an issue where icons might not appear on initial load.
+        if (button) {
+          const originalName = button.name;
+          button.name = 'dot'; // A temporary, non-existent icon name
+          requestAnimationFrame(() => {
+            button.name = originalName;
+          });
+        }
+      });
+
+    </script>
+  </body>
+</html>
