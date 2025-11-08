@@ -492,10 +492,10 @@ const specialMechanics = {
 \nIce: Hail (Snow Warning)`,
   Mareep: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
-\nEach Pokemon species can only use Milk Drink once, meaning Mareep, Flaaffy, and Ampharos combine for three total uses.`,
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
   Skiddo: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
-\nEach Pokemon species can only use Milk Drink once, meaning Skiddo and Gogoat combine for two total uses.`,
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
   Smoliv: `Unique Mechanic: Seed Sower
 \nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that hits it.`,
   Greavard: `Unique Mechanic: Last Respects
@@ -514,6 +514,9 @@ const specialMechanics = {
 \nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
   Minior: `Tip: Rollout!
 \nMinior is the most powerful Rollout user in the game. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
+  Meowth: `Tip: Pay Day
+\nMeowth's signature move Pay Day is the only way in the game to earn extra money.
+\nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,
 };
 
 /**

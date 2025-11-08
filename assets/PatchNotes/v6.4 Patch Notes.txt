@@ -44,11 +44,22 @@ Solrock Rock Throw > Rock Slide
 //This removes a rock damage option on Lunatone for Tate&Liza 3 and 4. Power Gem is a powerful attack with STAB in this fight (by far Lunatone's best move), which, alongside Solrock Rock Slide, means this fight is primarily against Rock damage. This change makes Lunatone's main threat a Psychic move, more fitting for a Psychic leader.
 
 
+Milk Drink Change
+-Now works once per line, not once per Pokémon
+//In other words, Mareep gets one Milk Drink all game, not three. Matt pointed out that the optimal way to use this with the new E4 system would be to skip using Mareep entirely and then set your best Pokémon to 61 for the Elite Four. That's not in the spirit of the move, so it's tweaked to remove the option.
+
+
 Sandbox Mode:
 -The Portable PC's item withdraw function has been "rebranded" as a sandbox mode
 -Menu pathing expedited with new description text
 -Now includes all Mega Stones and strong Gym TMs
 //Polishing this so it's less janky
+
+
+Pool Addition: Meowth Galar
+-Equipped with Pay Day, Meowth is here to bring in some extra funds.
+-Each use of Pay Day earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000. This is buffed over vanilla Pokemon from 5x to 20x.
+-Pay Day only earns money when used in a gym battle.
 
 
 Bug Fixes:
@@ -60,4 +71,3 @@ Bug Fixes:
 Upstream Merge:
 -Unique Mega Stones for each species
 //This patch again merges the game with the upstream Emerald Expansion, meaning that it changes hundreds of files worth of refactors and bug fixes. Notable to us, the game now has unique Mega Stones for each Legends ZA Mega form (each Pokémon no longer megas with the Aggronite). They're still for sale in the same spots at the same thresholds.
-

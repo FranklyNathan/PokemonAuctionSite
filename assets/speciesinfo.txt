@@ -264,6 +264,7 @@ Key Moves:
    Bug Bite (13)
    Bubble Beam (16)
    Water Pulse (TM)
+   Waterfall (HM)
    Leech Life (33)
    Surf (HM)
    Mirror Coat (50)
@@ -319,8 +320,11 @@ Key Moves:
    Water Pulse (Evo.)
    Aqua Ring (17)
    Captivate (21)
+   Recover (27)
    Ice Beam (TM)
+   Blizzard (TM)
    Surf (HM)
+   Coil (41)
    Hydro Pump (44)
 
 Fennekin
@@ -331,7 +335,7 @@ Key Moves:
    Flamethrower (45/TM)
    Dazzling Gleam (TM)
    Shadow Ball (MR/TM)
-   Psychic (TM)
+   Psychic (57/TM)
    Overheat (TM)
 
 Fidough
@@ -369,8 +373,9 @@ Key Moves:
    Lick (10)
    Water Pulse (14)
    Fling (28)
-   Extrasensory (49)
    Ice Beam (TM)
+   Aerial Ace (TM)
+   Extrasensory (49)
    Surf (HM)
    Night Slash (MR)
 
@@ -434,6 +439,7 @@ Key Moves:
 Gossifleur
 Key Moves:
    Leafage (1)
+   Rapid Spin (4)
    Razor Leaf (12)
    Lear Tornado (23)
    Giga Drain (TM)
@@ -476,6 +482,7 @@ Key Moves:
 Hatenna
 Key Moves:
    Confusion (1)
+   Life Dew (5)
    Trick Room (TM)
    Psybeam (20)
    Calm Mind (TM)
@@ -621,6 +628,7 @@ Mankey
 Key Moves:
    Karate Chop (8)
    Bulk Up (TM)
+   Rest (TM)
    Rage Fist (35)
    Close Combat (39)
    Earthquake (TM)
@@ -650,6 +658,17 @@ Key Moves:
    Rock Tomb (TM)
    Crunch (29)
    Sucker Punch (37)
+
+Meowth
+Key Moves:
+   Fake Out (1)
+   Hone Claws (4)
+   Pay Day (12)
+   Metal Claw (16)
+   Iron Head (Evo.)
+   Aerial Ace (TM)
+   Brick Break (TM)
+   X-Scissor (TM)
 
 Mime Jr
 Key Moves:
@@ -857,6 +876,8 @@ Key Moves:
    Bulk Up (TM)
    Stealth Rock (29)
    Brick Break (TM)
+   Crunch (40)
+   Stone Edge (48)
    
 Rolycoly
 Key Moves:
@@ -929,6 +950,7 @@ Key Moves:
 
 Sandshrew
 Key Moves:
+   Rapid Spin (9)
    Metal Claw (14)
    Icicle Spear (Evo.)
    Earthquake (TM)
@@ -987,6 +1009,7 @@ Key Moves:
    Mach Punch (23)
    Fury Cutter (MT)
    Force Palm (28)
+   Facade (TM)
    Sky Uppercut (39)
    Seed Bomb (44)
 
@@ -1231,8 +1254,10 @@ Key Moves:
 
 Treecko
 Key Moves:
+   Mega Drain (13)
    Leaf Blade (23)
    Dual Chop (36)
+   Giga Drain (TM)
    Hone Claws (TM)
    Detect (39)
    X-Scissor (TM/45)
@@ -1321,6 +1346,7 @@ Key Moves:
    Dive (30)
    Surf (HM)
    Ice Beam (TM)
+   Earthquake (TM)
 
 Wooper
 Key Moves:
