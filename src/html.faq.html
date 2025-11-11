@@ -96,6 +96,10 @@
         font-size: 1rem;
         justify-content: center;
       }
+      /* Add a small gap between list items */
+      li {
+        margin-bottom: 0.5rem;
+      }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
@@ -114,13 +118,14 @@
             <li><a href="#what-is-emerald-blitz">What's Emerald Blitz?</a></li>
             <li><a href="#how-to-play">How do I play?</a></li>
             <li><a href="#whats-changed">So, what's changed from vanilla Emerald?</a></li>
+            <li><a href="#what-are-the-rules">What are the rules?</a></li>
           </ul>
         </nav>
 
         <section id="what-is-emerald-blitz">
           <h2>What's Emerald Blitz?</h2>
           <p>
-            Emerald Blitz is a revamped version of Pokémon Emerald streamlined for competitive, fast-paced draft racing.
+            Emerald Blitz is a revamped version of Pokémon Emerald streamlined for competitive, fast-paced draft racing against friends.
             Despite playing through the entire Hoenn region with a team of 10 Pokemon, from first gym to Elite Four Champion, a single playthrough takes just two hours to complete.
             Emerald Blitz is customized with 100s of new features and quality-of-life improvements geared toward making the game as fast and possible; it's all of the good with none of the tedium.
           </p>
@@ -129,7 +134,7 @@
         <section id="how-to-play">
           <h2>How do I play?</h2>
           <ol>
-            <li>Download the patch from Google Drive <a href="https://drive.google.com/drive/folders/1yY2AyLuR07CZCNowcPN22HTWS1184ZOx?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>.</li>
+            <li>Download the patch from <a href="https://drive.google.com/drive/folders/1yY2AyLuR07CZCNowcPN22HTWS1184ZOx?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive</a>.</li>
             <li>Apply the patch online using this <a href="https://www.marcrobledo.com/RomPatcher.js/" target="_blank" rel="noopener noreferrer">ROM Patcher</a>.</li>
             <li>Download a GBA emulator like <a href="https://mgba.io/downloads.html" target="_blank" rel="noopener noreferrer">mGBA</a>.</li>
           </ol>
@@ -160,16 +165,16 @@
           <ul>
             <li><strong>Level Cap Candy:</strong> Instantly jumps your Pokémon to the level it next learns a move, evolves, or hits the current cap (whichever of the three comes first). The evolution animation is shortened. Asking to learn a move only asks once, not twice.</li>
             <li><strong>Flygon Bike:</strong> Flygon replaces the bike, able to hop up ledges, move over shallow water, leap over rocks and trees, and Fly with the press of a button.</li>
-            <li><strong>Just the Good Stuff:</strong> All plot, including events involving Team Aqua and Magma, Steven, Wally, and Scott have been removed.</li>
+            <li><strong>Just the Good Stuff:</strong> All plot, including all events involving Team Aqua and Magma, Steven, Wally, and Scott have been removed.</li>
             <li><strong>Polite Trainers:</strong> Ordinary trainers no longer challenge any player they see. They can still be fought, however, if you interact with them.</li>
           </ul>
 
           <h3>Difficulty Boosts</h3>
           <ul>
             <li><strong>Nuzlocke Mechanics:</strong> Your Pokémon can’t overlevel the most powerful Pokémon of the next major boss trainer. You can’t use items in battle.</li>
-            <li><strong>Boosting Cap:</strong> While a Pokemon's stats can still be debuffed to -6, a Pokemon's stat stage can never be raised beyond +1. You'll need to rely on more creative strategies than Dragon Dance sweeps to take down these bosses.</li>
+            <li><strong>Stat Boosting Cap:</strong> While a Pokemon's stats can still be debuffed to -6, a Pokemon's stat stage can never be raised beyond +1. You'll need to rely on more creative strategies than Dragon Dance sweeps to take down these bosses.</li>
             <li><strong>Updated Teams:</strong> Gym leaders use more well-rounded teams, having bolstered their rosters with new Alolan, Hisuian, and Galarian members.</li>
-            <li><strong>New Boss Fights:</strong> The champion and final battle is now Steven Stone wielding a Mega Metagross. Wallace, meanwhile, now joins Juan to make the 8th gym a double battle.</li>
+            <li><strong>New Boss Fights:</strong> The Elite Four champion is now Steven Stone wielding a Mega Metagross. Wallace, meanwhile, now joins Juan to make the 8th gym a double battle. Additionally, Viola is vacationing from Kalos to give Hoenn some bug representation.</li>
             <li><strong>Buffed Battles:</strong> All enemy trainers use perfect 31-IV Pokémon.</li>
           </ul>
 
@@ -190,15 +195,32 @@
           </ul>
         </section>
 
+        <section id="what-are-the-rules">
+          <h2>What are the rules?</h2>
+          <ul>
+            <li>This is a nuzlocke:
+              <ul>
+                <li>If a Pokemon faints, it’s dead forever.</li>
+                <li>You can't use items in battle.</li>
+                <li>Battles are played on set mode (you don’t get the option to switch when you KO an opponent’s Pokemon).</li>
+              </ul>
+            </li>
+            <li>Besides your starter Eevee, you can only use Pokemon you purchased at auction. They’re all in your notebook at the start of the game. You can’t catch Pokemon.</li>
+            <li>The first player to beat the game wins.</li>
+            <li>Pokemon can't level up beyond the level of the next gym leader’s ace (level caps are implemented in game, so you can’t accidentally overlevel).</li>
+            <li>The race begins when players leave their rooms. Any actions you take in your starting room, like withdrawing your party and hatching eggs, can be done before the race begins.</li>
+            <li>Only one player per each race can use any given Eeveelution. In other words, once a player evolves their Eevee into Umbreon, no other players can use Umbreon.</li>
+          </ul>
+        </section>
+
       </div>
     </div>
-
-    <!-- Bottom-right controls (home + dark mode toggle) -->
-    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
-        <img class="invert-in-dark-mode" src="/generic/home.png" alt="Home" style="height: 1.1rem; position: relative; top: 4px;" />
-      </sl-button>
-      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" title="Toggle Light/Dark Mode"></sl-button>
+    
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; height: 4rem; align-items: center;">
+        <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+            <img class="invert-in-dark-mode" src="/generic/home.png" alt="Home" style="height: 1.4rem; position: relative; top: 4px;" />
+        </sl-button>
+        <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
 
     <script type="module">

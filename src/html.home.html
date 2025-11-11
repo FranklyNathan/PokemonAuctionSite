@@ -213,7 +213,10 @@
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
       <sl-button id="drive-button" class="control-button" variant="neutral" title="Open Google Drive Folder">
-        <img src="/generic/Drive.png" alt="Open Google Drive" style="height: 1.4rem; position: relative; top: 5px;" />
+        <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Open Google Drive" style="height: 1.3rem; position: relative; top: 5px;" />
+      </sl-button>
+      <sl-button id="discord-button" class="control-button" variant="neutral" title="Join the Discord">
+        <img class="invert-in-dark-mode" src="/generic/Discord.png" alt="Discord" style="height: 1.3rem; position: relative; top: 5px;" />
       </sl-button>
       <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
         <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" style="height: 1.4rem; position: relative; top: 5px;" />
@@ -294,6 +297,14 @@
       document.getElementById('github-button').addEventListener('click', () => {
         window.open('https://github.com/FranklyNathan/EmeraldBlitz', '_blank');
       });
+
+      // Discord button listener
+      const discordBtn = document.getElementById('discord-button');
+      if (discordBtn) {
+        discordBtn.addEventListener('click', () => {
+          window.open('https://discord.gg/CsUSZ5UhzW', '_blank');
+        });
+      }
 
       // YouTube button listener
       const ytBtn = document.getElementById('youtube-button');

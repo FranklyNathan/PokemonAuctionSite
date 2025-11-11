@@ -8,7 +8,6 @@ Key Moves:
 
 Applin
 Key Moves:
-   Leech Seed (MR)
    Giga Drain (TM)
    Wing Attack (Evo.*)
    Headbutt (Evo.**)
@@ -18,6 +17,7 @@ Key Moves:
    Grav Apple (32*)
    Dragon Rush (44*)
    Apple Acid (28**)
+   Leech Seed (MR*/**)
    Syrup Bomb (28***)
    Fickle Beam (Evo.***)
 
@@ -76,15 +76,16 @@ Key Moves:
 Budew
 Key Moves:
    Growth (4)
-   Leech Seed (MR)
    Giga Drain (25)
    Toxic Spikes (28)
+   Leech Seed (MR)
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
 
 Buizel
 Key Moves:
    Water Gun (15)
+   Taunt (TM)
    Aqua Jet (24)
    Waterfall (HM)
    Brick Break (TM)
@@ -94,8 +95,8 @@ Buneary
 Key Moves:
    Quick Attack (16)
    Jump Kick (23)
-   Bounce (MR)
    Facade (TM)
+   Bounce (MR)
    Dizzy Punch (36)
    Charm (46)
 
@@ -171,10 +172,11 @@ Chewtle
 Key Moves:
    Protect (14)
    Rock Tomb (22)
-   Razor Shell (MR)
    Waterfall (HM)
    Earthquake (TM)
    Iron Tail (TM)
+   Razor Shell (MR)
+   Crunch (MR)
    Jaw Lock (39)
    Liquidation (48)
 
@@ -285,6 +287,7 @@ Key Moves:
 Drilbur
 Key Moves:
    Rapid Spin (5)
+   Metal Claw (15)
    Dig (19)
    Hone Claws (22)
    Rock Slide (29)
@@ -359,6 +362,7 @@ Fletchling
 Key Moves:
    Peck (10)
    Steel Wing (TM)
+   Taunt (TM)
    Aerial Ace (TM)
    Overheat (TM)
    Hone Claws (TM)
@@ -372,6 +376,7 @@ Froakie
 Key Moves:
    Lick (10)
    Water Pulse (14)
+   Taunt (TM)
    Fling (28)
    Ice Beam (TM)
    Aerial Ace (TM)
@@ -384,8 +389,9 @@ Key Moves:
    Incinerate (15)
    Snarl (24)
    Overheat (TM)
+   Flamethrower (32)
    Torch Song (36)
-   Shadow Ball (38)
+   Shadow Ball (38/TM)
 
 Geodude
 Key Moves:
@@ -441,7 +447,7 @@ Key Moves:
    Leafage (1)
    Rapid Spin (4)
    Razor Leaf (12)
-   Lear Tornado (23)
+   Leaf Tornado (23)
    Giga Drain (TM)
    Light Screen (TM)
    Leaf Storm (46)
@@ -503,9 +509,9 @@ Helioptile
 Key Moves:
    Mud Slap (13)
    Parabolic Charge (25)
-   Surf (HM)
    Thunderbolt (TM)
    Eerie Impulse (MR)
+   Surf (HM)
 
 Honedge
 Key Moves:
@@ -534,11 +540,11 @@ Houndour
 Key Moves:
    Ember (1)
    Bite (16)
+   Flamethrower (TM/50)
    Nasty Plot (MR)   
    Thunder Fang (MR)
    Inferno (MR)
    Overheat (TM)
-   Flamethrower (TM/50)
 
 Igglybuff
 Key Moves:
@@ -582,6 +588,7 @@ Key Moves:
    Work Up (8)
    Fire Fang (14)
    Double Kick (16)
+   Taunt (TM)
    Earthquake (TM)
    Darkest Lariat (34)
    Bulk Up (TM/MR)
@@ -591,6 +598,7 @@ Key Moves:
 Litwick
 Key Moves:
    Will-o-Wisp (16)
+   Taunt (TM)
    Flame Burst (20)
    Hex (28)
    Overheat (TM)
@@ -600,6 +608,7 @@ Key Moves:
 
 Magnemite
 Key Moves:
+   Thunder Shock (5)
    Mirror Shot (23)
    Thunderbolt (TM)
    Flash Cannon (33)
@@ -665,6 +674,7 @@ Key Moves:
    Hone Claws (4)
    Pay Day (12)
    Metal Claw (16)
+   Taunt (20)
    Iron Head (Evo.)
    Aerial Ace (TM)
    Brick Break (TM)
@@ -711,6 +721,7 @@ Murkrow
 Key Moves:
    Wing Attack (15)
    Assurance (25)
+   Taunt (31/TM)
    Steel Wing (TM)
    Fly (HM)
    Night Slash (55/MR)
@@ -796,6 +807,7 @@ Poochyena
 Key Moves:
    Bite (10)
    Snarl (18)
+   Taunt (TM)
    Crunch (40)
 
 Pichu
@@ -808,12 +820,12 @@ Key Moves:
 Pikipek
 Key Moves:
    Pluck (15)
-   Rock Blast (MR)
    Bullet Seed (TM)
    Steel Wing (TM)
+   Beak Blast (28)
+   Rock Blast (MR)
    Aerial Ace (TM)
    Facade (TM)
-   Beak Blast (28)
 
 Poliwag
 Key Moves:
@@ -826,6 +838,7 @@ Popplio
 Key Moves:
    Disarming Voice (8)
    Aqua Jet (14)
+   Bubble Beam (24)
    Water Pulse (TM)
    Surf (HM)
    Ice Beam (TM)
@@ -835,8 +848,8 @@ Porygon
 Key Moves:
    Psybeam (7)
    Recover (18)
-   Zap Cannon (MR*)
    Ice Beam (TM)
+   Zap Cannon (MR*)
    Discharge (40)
    Nasty Plot (MR)
 
@@ -873,19 +886,23 @@ Rockruff
 Key Moves:
    Rock Tomb (TM)
    Accelerock (25)
-   Bulk Up (TM)
+   Taunt (TM/MR**)
    Stealth Rock (29)
    Brick Break (TM)
+   Bulk Up (TM)
    Crunch (40)
    Stone Edge (48)
    
 Rolycoly
 Key Moves:
-   Rock Tomb (TM)
+   Rapid Spin (5)
+   Smack Down (10)
    Ancient Power (20)
    Incinerate (27)
+   Rock Tomb (TM)
    Overheat (TM)
-   Stealth Rocks
+   Stealth Rock (37)
+   Heat Crash (45)
 
 Rookidee
 Key Moves:
@@ -900,6 +917,7 @@ Key Moves:
    Shadow Ball (TM)
    Thunderbolt (TM)
    Thunder (TM)
+   Discharge (MR)
    Blizzard (Form)
    Air Slash (Form)
    Overheat (Form)
@@ -924,6 +942,7 @@ Key Moves:
    Detect (14)
    Shadow Sneak (16)
    Faint Attack (19)
+   Taunt (TM)
    Knock Off (26)
    Hone Claws (TM)
    Shadow Ball (39/TM)
@@ -933,6 +952,7 @@ Salandit
 Key Moves:
    Thief (1)
    Dragon Rage (13)
+   Taunt (TM)
    Flame Burst (24)
    Toxic (29)
    Overheat (TM)
@@ -960,8 +980,8 @@ Scatterbug
 Key Moves:
    Protect (9)
    Bug Bite (15)
-   Sleep Powder (MR)
    Gust (17)
+   Sleep Powder (MR)
    Bug Buzz (35)
    Quiver Dance (45)
    Hurricane (50)
@@ -990,11 +1010,11 @@ Key Moves:
 
 Shellder
 Key Moves:
-   Shell Smash (MR)
    Icicle Spear (13)
    Protect (16)
-   Surf (HM)
    Ice Beam (TM)
+   Shell Smash (MR)
+   Surf (HM)
 
 Shinx
 Key Moves:
@@ -1062,11 +1082,11 @@ Smoochum
 Key Moves:
    Powder Snow (11)
    Confusion (15)
+   Psychic (TM)
+   Ice Beam (TM)
    Draining Kiss (MR)
    Perish Song (MR/55)
    Calm Mind (TM)
-   Psychic (TM)
-   Ice Beam (TM)
 
 Snorunt
 Key Moves:
@@ -1093,10 +1113,10 @@ Key Moves:
    Knock Off (1)
    Will O Wisp (16)
    Shadow Ball (30/TM)
-   Phantom Force (MR)
-   Sucker Punch (40)
    Psychic (TM)
    Dazzling Gleam (TM)
+   Phantom Force (MR)
+   Sucker Punch (40)
 
 Sneasel
 Key Moves:
@@ -1213,14 +1233,14 @@ Key Moves:
 Torchic
 Key Moves:
    Double Kick (16)
-   Bulk Up (31/TM)
    Flame Charge (20)
-   Overheat (TM)
+   Bulk Up (31/TM)
    Blaze Kick (36)
    Brick Break (TM)
    Hone Claws (TM)
-   Brave Bird (50)
    High Jump Kick (MR)
+   Overheat (TM)
+   Brave Bird (50)
    Sky Uppercut (57)
 
 Toxel
@@ -1259,9 +1279,9 @@ Key Moves:
    Dual Chop (36)
    Giga Drain (TM)
    Hone Claws (TM)
-   Detect (39)
-   X-Scissor (TM/45)
    Leaf Storm (MR)
+   Detect (39)
+   X-Scissor (45/TM)
 
 Trubbish
 Key Moves:
@@ -1280,11 +1300,11 @@ Key Moves:
 
 Tyrogue
 Key Moves:
-   Close Combat (MR)
    High Jump Kick (29*)
    Brick Break (MR*)
    Vacuum Wave (26**)
    Rolling Kick (20***)
+   Close Combat (MR)
 
 Vanillite
 Key Moves:
@@ -1304,9 +1324,9 @@ Key Moves:
    Poison Tail (15)
    Bug Bite (22)
    Venoshock (28)
-   Megahorn (MR)
    X-Scissor (TM)
    Earthquake (TM)
+   Megahorn (MR)
 
 Voltorb
 Key Moves:
@@ -1360,6 +1380,7 @@ Key Moves:
 Zigzagoon
 Key Moves:
    Snarl (9)
+   Taunt (TM)
    Night Slash (20)
    Facade (TM)
    Bulk Up (TM)
@@ -1369,6 +1390,7 @@ Key Moves:
 Zorua
 Key Moves:
    Pursuit (5)
+   Taunt (25/TM)
    Thief (TM)
    Calm Mind (TM)
    Shadow Ball (TM)

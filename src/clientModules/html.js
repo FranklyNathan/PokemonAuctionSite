@@ -497,7 +497,7 @@ const specialMechanics = {
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
   Smoliv: `Unique Mechanic: Seed Sower
-\nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that hits it.`,
+\nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that attacks it and makes contact.`,
   Greavard: `Unique Mechanic: Last Respects
 \nEach time one of your Pokemon faints, Greavard's signature move Last Respects permanently gains 15 power on top of its base 50.
 \nThe fainted Pokémon counter does not reset between battles.`,
@@ -517,6 +517,16 @@ const specialMechanics = {
   Meowth: `Tip: Pay Day
 \nMeowth's signature move Pay Day is the only way in the game to earn extra money.
 \nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,
+  Sableye: `Tip: Early Mega Evolution
+\nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
+  Mawile: `Tip: Early Mega Evolution
+\nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
+  Mankey: `Tip: Rage Fist
+\nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
+\nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
+  Egg: `Tip: Baby Pokemon!
+\nEggs can hatch into any baby Pokemon. The full list includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.`,
+
 };
 
 /**

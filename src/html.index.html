@@ -123,7 +123,7 @@
         font-size: 0.9em;
         color: var(--sl-color-neutral-600);
       }
-      .sl-theme-dark .caption { color: var(--sl-color-neutral-400); }
+      .sl-theme-dark .caption { color: var(--sl-color-neutral-600); }
 
       /* TM Chart Styles */
       .tm-chart {
@@ -274,7 +274,7 @@
         display: none; /* Hidden by default */
       }
       .sl-theme-dark .evo-list {
-        color: var(--sl-color-neutral-400);
+        color: var(--sl-color-neutral-900);
       }
       .evo-list li {
         margin-bottom: 0.2rem;
@@ -297,6 +297,7 @@
         <nav class="toc">
           <h2>Contents</h2>
           <ul>
+            <li><a href="#reworked-items">Reworked Items</a></li>
             <li><a href="#level-caps">Level Caps</a></li>
             <li><a href="#heart-scales">Heart Scale Locations</a></li>
             <li><a href="#type-enhancing-items">Type-enhancing items</a></li>
@@ -305,6 +306,36 @@
             <li><a href="#slateport-market">Slateport Market Items</a></li>
           </ul>
         </nav>
+
+        <section id="reworked-items">
+          <h2>New and Reworked Items</h2>
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 1rem;">
+              <strong>Birch's Flygon</strong>
+              <p style="margin-top: 0.2rem;">Replaces the bike, able to hop up ledges, move over shallow water, leap over rocks and trees, accelerate to 1.5x speed by holding B, and Fly with the press of the L button. Comes registered (press Select to mount).</p>
+            </li>
+            <li style="margin-bottom: 1rem;">
+              <strong>Cleanse Tag</strong>
+              <p style="margin-top: 0.2rem;">Now functions as a permanent, togglable repel. Comes turned on.</p>
+            </li>
+            <li style="margin-bottom: 1rem;">
+              <strong>Med Kit</strong>
+              <p style="margin-top: 0.2rem;">Key item which heals all Pokémon in your party to full health and restores PP. Does not heal status (so as not to interfere with Guts, Quick Feet, Poison Heal, etc.). To heal status, use the new "Heal" command in the menu.</p>
+            </li>
+            <li style="margin-bottom: 1rem;">
+              <strong>Portable PC</strong>
+              <p style="margin-top: 0.2rem;">Gives access to the PC anywhere, anytime... besides in the Elite Four.</p>
+            </li>
+            <li style="margin-bottom: 1rem;">
+              <strong>Rotom Catalog</strong>
+              <p style="margin-top: 0.2rem;">A consumable item that changes Rotom's form. You're gifted three by an NPC in the Fortree City furniture store.</p>
+            </li>
+            <li style="margin-bottom: 1rem;">
+              <strong>Whipped Dream</strong>
+              <p style="margin-top: 0.2rem;">A universal evolution item for any Pokémon who 1) evolves after level 30, and 2) is the first Pokémon in a 3-Pokemon evolution line. This allows Pokémon who would otherwise be unusable or whose middle evolutions would be skipped entirely to join the game, including: Aron, Goomy, Hatenna, Horsea, Jangmo-o, Litwik, Solosis, Spheal, and Trapinch. Purchasable in the Slateport Market after badge 2.</p>
+            </li>
+          </ul>
+        </section>
 
         <section id="level-caps">
           <h2>Level Caps</h2>
@@ -453,7 +484,7 @@ Elite 4: 58</pre>
           <h3>TMs</h3>
           <div class="tm-chart">
             <div class="tm-column">
-              <div class="tm-header">Badge 1 — 1000</div>
+              <div class="tm-header">Game Start — 1000</div>
               <div class="tm-list">
                 <span class="type-grass">Bullet Seed</span>
                 <span class="type-ice">Hail</span>
@@ -522,7 +553,7 @@ Elite 4: 58</pre>
           <h3 style="margin-top: 2rem;">Items</h3>
           <div class="items-chart">
             <div class="item-card">
-              <div class="tm-header">Badge 1</div>
+              <div class="tm-header">Game Start</div>
               <ul class="items-list"><li>Ability Capsule</li><li>Ability Patch</li></ul>
             </div>
             <div class="item-card">
@@ -581,7 +612,14 @@ Elite 4: 58</pre>
           </div>
 
           <h3 style="margin-top: 2rem;">Mega Stones</h3>
-          <div class="tm-chart" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="tm-chart" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="item-card">
+              <div class="tm-header">Game Start</div>
+              <ul class="items-list">
+                <li>Mawilite</li>
+                <li>Sablenite</li>
+              </ul>
+            </div>
             <div class="item-card">
               <div class="tm-header">Badge 6</div>
               <ul class="items-list">
@@ -595,8 +633,6 @@ Elite 4: 58</pre>
                 <li>Lopunnite</li>
                 <li>Lucarionite</li>
                 <li>Manectite</li>
-                <li>Mawilite</li>
-                <li>Sablenite</li>
                 <li>Scizorite</li>
                 <li>Sharpedonite</li>
                 <li>Starmite</li>
