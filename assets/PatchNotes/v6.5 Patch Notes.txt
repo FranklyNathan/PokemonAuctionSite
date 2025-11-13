@@ -1,0 +1,68 @@
+11/12/25
+
+Sitrus Berries Purchasable after Gym 6
+//Ultimately, I decided to go back on this. I don't want it to be optimal to plant a berry and wait for it to grow if you're the last player left in the race. Even if it's incredibly obscure, I don't want "optimal" play to ever involve waiting hours doing nothing. Notably, they're purchasable *after* 6, so you still need to pick them on your way to Fortree City.
+
+
+Winona Swablu Sing > Roost (All fights)
+Winona 3 Swablu Hyper Voice > Roost 
+Winona Wingull Supersonic > Roost (All fights)
+Winona Pelipper Brine > Roost (All fights)
+//Status Winona is gone. This is the only fight in Emerald Blitz that has *more* status than in vanilla Emerald, so I can at least make it a bit less prevalent here.
+
+Wattson 7/8 Manectric Bite > Crunch
+Norman 5/6 Slaking Covet > Brick Break
+Norman 7/8 Slaking Covet > Earthquake
+Tate&Liza 7 Lunatone Hypnosis > Moonblast
+//Slight damage buffs to late game gyms to offset purchasable Sitrus Berries.
+
+Phoebe Dusknoir Shadow Ball > Shadow Punch
+Brandon Flygon Sandstorm > Giga Drain
+Glacia Ninetales Safeguard > Calm Mind
+//This is a significant buff. Safeguard was essentially a turn-waste for Ninetales. Now that we've got so many levels up on the elite four, it feels like we can fill out their sets with more powerful moves again.
+
+
+Move Relearner Delay:
+Now, the Move Relearner will not allow you to relearn moves until you've obtained four badges.
+//The main change of the patch. Matt and I realized last weekend that Rotom can learn Discharge via the Move Relearner, meaning that you could be using an 80BP move on a Pokémon that's already broken in the early game. This was the straw that broke the camel's back for pre-first-gym access to the Move Relearner. He now tells you to come back after you've got four badges. This is a significant nerf to Rotom, Mawile (Play Rough, Iron Head), Chewtle (Razor Shell, Crunch) and Pikipek (Rock Blast).
+
+
+Mawile & Sableye Mega Stones available from the start
+//These two stones were originally pushed back to the 6th gym because Mawile was too strong using Play Rough and Iron Head while mega'd so early. Notably, these stones aren't actually purchasable until after the 3rd gym (you've earned 9,750 after gym 2), so they're a tad weaker than they were in their previous iteration.
+
+
+Slateport TM Saleswoman no longer sells TMs until you get 1 badge
+//As I messed with the above routes, I realized that the "safest" route through the early game is to head up through Fallarbor and then loop down to Slateport all before the first gym. You have enough money to buy a Thief or Steel Wing TM and six Oran berries, and then you go and buy the rest of the Oran berries after beating the first gym. I don't like this (the starting money is meant to be for berries, not for becoming more powerful), so this shuts it down.
+
+Slateport TM Saleswoman sells Taunt for 1000
+//It was an oversight that this wasn't in her TM list in the first place.
+
+
+Primeape Evolution Method Change:
+Use Rage Fist 20 Times > Level 48
+//Pushes back Primeape's evolution 2 gyms and removes the extremely tedious process of whiffing 20 Rage Fists against Lass Tiana's level 3 Zigzagoon. Consistent with the Ursaring > Ursaluna's evolution change of coming for the final gym.
+
+Rage Fist Max Power 350 > 150
+//Annihilape had guaranteed sweeps into almost every late game fight with Charm+Reflect support from Eevee. By using Bulk Up and Rest+Chesto Berry, Annihilape could easily hit 350 base power on this move and proceed to one shot everything. Similar to how boosting moves are capped, this move now will be too.
+//There's no question that Mankey has been a top-of-S-tier Pokémon for a dozen patches now. It goes to show how we're not labbing the game enough to really understand what's strong; even something as blatantly broken as this was skating by.
+
+
+Seed Sower Nerf:
+Seed Sower now only triggers when the damaging move makes physical contact
+//This ability was too good when combined with Protect and Reflect. It's still insane, but it's not going to be walling fights that should counter it like Glacia anymore.
+
+
+Forecast Nerf:
+Forecast now only triggers its weather setting functionality if Castform is level 20 or higher (its form change functionality still happens at all levels)
+//I'm really happy with this. Castform's ability is fun to play with, but it's too strong early when 70BST STAB weather-boosted WaterGun/Ember/PowerSnow is sweeping early gyms. This keeps everything that makes Castform cool but forces him to wait until gym 3 to do it (or 2 if you've got Milk Drink). And there's precedent for this too, since Wishiwashi needs to wait until level 20 to start Schooling.
+
+
+Pool Addition: Rolycoly
+//The return of the king. The pool is low on rock types, and this is by far the most viable one who's not currently in (shout out to Cranidos and Tyrunt not learning any physical rock-type attacks until level a billion).
+
+Pool Addition: Timburr
+//As we approach release, I want for the pool to be as large as possible. The larger the pool, the more diversity there will be between runs, and the less you can count on holding out for a specific pick you're hoping to see. Unfortunately, we're really lacking for Pokemon that aren't currently in the game which also don't break some core design philosophy. Timburr works though. It's a slow Guts Pokémon similar to Ursaring. It evolves with the Linking Cord.
+
+Pool Addition: Swinub
+//That's right, I saved the best for last! He's back, baby! Justin has been calling my home phone nightly begging for this addition, and I just couldn't tell him no any longer. With the Whipped Dream, Swinub evolves into Piloswine before gym 3. And now that the Move Relearner is inaccessible until after gym 4, this evolution line finally has a reasonable 2-2-4 gym distribution. Get ready for everybody's favorite Wattson counter of old to be back with a vengeance!
+//This brings the pool to 111 (114 with eggs), the largest it's ever been.

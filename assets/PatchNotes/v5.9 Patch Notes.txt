@@ -40,7 +40,7 @@ Badge 2 > Badge 3
 -Dragon Scale, Metal Coat, Razor Fang, King's Rock 
 Badge 3 > Badge 4
 //Looking at the full list here, it doesn't make sense to have these items in a different "tier" than the elemental stones. Gligar and Slowking are the two best item evolution Pokémon in the game, so they shouldn't be so early. Some inoffensive options like Sliggoo Hisui get caught in the cross fire, but that's fine.
-//Link Cable is still after Badge 5
+//Linking Cord is still after Badge 5
 
 
 Evolution Changes:

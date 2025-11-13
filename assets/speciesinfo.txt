@@ -630,17 +630,21 @@ Makuhita
 Key Moves:
    Knock Off (19)
    Vital Throw (22)
+   Brick Break (TM)
+   Earthquake (TM)
    Surf (HM)
+   Bulk Up (TM)
    Close Combat (46)
 
 Mankey
 Key Moves:
    Karate Chop (8)
-   Bulk Up (TM)
    Rest (TM)
+   Earthquake (TM)
+   Bulk Up (TM)
    Rage Fist (35)
    Close Combat (39)
-   Earthquake (TM)
+   Stomping Tantrum (48)
    Outrage (53)
 
 Mareep
@@ -715,6 +719,8 @@ Key Moves:
    Bulldoze (10)
    Double Kick (15)
    High Horsepower (24)
+   Rock Tomb (TM)
+   Heavy Slam (34)
    Earthquake (47/TM)
 
 Murkrow
@@ -1006,6 +1012,7 @@ Key Moves:
    Aerial Ace (TM)
    Steel Wing (TM)
    Sticky Web (31*)
+   Struggle Bug (MR)
    Leaf Blade (36)
 
 Shellder
@@ -1181,10 +1188,13 @@ Key Moves:
 
 Swinub
 Key Moves:
+   Powder Snow (8)
+   Mud Slap (11)
    Mud Bomb (18)
-   Ice Beam (TM)
-   Earthquake (46)
+   Ice Fang (24)
    Ancient Power (MR)
+   Dig (TM)
+   Earthquake (46/TM)
 
 Tadbulb
 Key Moves:
@@ -1210,6 +1220,19 @@ Key Moves:
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
    Ice Beam (TM)
+
+Timburr
+Key Moves:
+   Low Kick (12)
+   Wake-Up Slap (20)
+   Bulk Up (29/TM)
+   Rock Slide (33)
+   Earthquake (TM)
+   Rock Tomb (TM)
+   Facade (TM)
+   Hammer Arm (45)
+   Stone Edge (49)
+
 
 Tinkatink
 Key Moves:
@@ -1373,7 +1396,7 @@ Key Moves:
    Mud Shot (1)
    Toxic Spikes (12)
    Poison Jab (24)
-   Water Pulse (TM)
+   Dig (TM)
    Surf (HM)
    Earthquake (48/TM)
 

@@ -22,7 +22,7 @@ Evolution Changes:
 Map-Based Thunder/Leaf/Ice Stone Alternate Evolutions Removed
 //Starting next race, we'll no longer be able to nuke one another's Eeveelutions; it's first come, first serve. Leafeon was going to be a huge headache since it's now available about 60 seconds into the race, and the map-based evolutions were always a bit jank. This also removes the New Mauville and Shoal Cave evolutions for consistency (not that they were relevant).
 
-Porygon2 Evolves with Link Cable
+Porygon2 Evolves with Linking Cord
 //Overdue, this should have happened on v4.0. Porygon still evolves into Porygon2 at level 20.
 
 

@@ -1614,7 +1614,7 @@ Ability: Static
 - Fire Fang
 - Wild Charge
 - Shock Wave
-- Bite
+- Crunch
 
 === TRAINER_WATTSON_8 ===
 Name: WATTSON
@@ -1674,7 +1674,7 @@ Ability: Static
 - Fire Fang
 - Wild Charge
 - Shock Wave
-- Bite
+- Crunch
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -1927,7 +1927,7 @@ Ability: Flame Body
 - Sunny Day
 
 Ninetales
-Level: 30
+Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Flash Fire
@@ -2309,7 +2309,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
 - Counter
-- Covet
+- Brick Break
 - Facade
 - Feint Attack
 
@@ -2369,7 +2369,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
 - Counter
-- Covet
+- Brick Break
 - Facade
 - Feint Attack
 
@@ -2431,7 +2431,7 @@ Ability: Truant
 - Counter
 - Fling
 - Facade
-- Covet
+- Earthquake
 
 === TRAINER_NORMAN_8 ===
 Name: NORMAN
@@ -2491,7 +2491,7 @@ Ability: Truant
 - Hammer Arm
 - Fling
 - Facade
-- Covet
+- Earthquake
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -2509,7 +2509,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Sing
+- Roost
 - Fury Attack
 - Aerial Ace
 
@@ -2519,7 +2519,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hydration
 - Water Gun
-- Supersonic
+- Roost
 - Quick Attack
 - Aerial Ace
 
@@ -2549,7 +2549,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Sing
+- Roost
 - Swift
 - Aerial Ace
 
@@ -2559,7 +2559,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hydration
 - Water Pulse
-- Supersonic
+- Roost
 - Quick Attack
 - Aerial Ace
 
@@ -2589,7 +2589,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Hyper Voice
+- Roost
 - Swift
 - Aerial Ace
 
@@ -2609,7 +2609,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
 - Water Pulse
-- Supersonic
+- Roost
 - Quick Attack
 - Aerial Ace
 
@@ -2639,8 +2639,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
+- Roost
 - Hyper Voice
-- Swift
 - Aerial Ace
 
 Skarmory
@@ -2659,8 +2659,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
 - Water Pulse
+- Roost
 - Fling
-- Brine
 - Aerial Ace
 
 Swellow @ Sitrus Berry
@@ -2709,8 +2709,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
 - Water Pulse
+- Roost
 - Fling
-- Brine
 - Aerial Ace
 
 Swellow
@@ -3221,7 +3221,7 @@ Ability: Levitate
 - Psychic
 - Power Gem
 - Calm Mind
-- Hypnosis
+- Moonblast
 
 Solrock @ Sitrus Berry
 Level: 42
@@ -3472,7 +3472,7 @@ Ability: Gooey
 - Water Pulse
 - Mud Slap
 
-Wailmer @ Oran Berry
+Wailmer
 Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -3482,7 +3482,7 @@ Ability: Water Veil
 - Rollout
 - Water Pulse
 
-Seadra
+Seadra @ Oran Berry
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -4050,7 +4050,7 @@ Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pressure
-- Shadow Ball
+- Shadow Punch
 - Ice Punch
 - Fire Punch
 - Thunder Punch
@@ -4097,7 +4097,7 @@ Ability: Liquid Ooze
 - Shadow Ball
 
 Dustox
-Level: 43
+Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Compound Eyes
@@ -4143,7 +4143,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Snow Warning
 - Ice Beam
-- Safeguard
+- Calm Mind
 - Dazzling Gleam
 - Ice Shard
 
@@ -4335,10 +4335,10 @@ Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
-- Sandstorm
 - Rock Slide
 - Dragon Claw
 - Earthquake
+- Giga Drain
 
 Rhyperior
 Level: 53

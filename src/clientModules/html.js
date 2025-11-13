@@ -486,7 +486,7 @@ function getStatColor(statValue) {
 
 const specialMechanics = {
   Castform: `Unique Mechanic: Forecast
-\nCastform's ability now has the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
+\nStarting at level 20, Castform's ability gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
 \nWater: Rain (Drizzle)
 \nFire: Sun (Drought)
 \nIce: Hail (Snow Warning)`,
@@ -524,9 +524,10 @@ const specialMechanics = {
   Mankey: `Tip: Rage Fist
 \nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
 \nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
-  Egg: `Tip: Baby Pokemon!
-\nEggs can hatch into any baby Pokemon. The full list includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.`,
-
+  Egg: `Tip: Baby Pokemon
+\nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
+\nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.
+\nAll baby Pokemon have had their evolution methods changed to level 20.`,
 };
 
 /**
@@ -556,10 +557,36 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
     }).join('');
     imageTypesContainer.innerHTML = typeImagesHtml;
-    infoEl.innerHTML = `<div style="direction: ltr; text-align: left; padding-left: 1.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;"><span>Egg</span></div>`;
+    infoEl.innerHTML = `<div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">
+          <span>Egg</span>
+          <sl-button id="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+            <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+          </sl-button>
+        </div>
+      </div>
+    `;
     infoEl.style.display = 'block';
     infoContainer.innerHTML = '';
     infoContainer.style.display = 'none';
+    // Add event listener for the special mechanic button for the Egg.
+    const specialMechanicBtn = infoEl.querySelector('#special-mechanic-btn');
+    if (specialMechanicBtn) {
+      specialMechanicBtn.addEventListener('click', () => {
+        const dialog = document.getElementById('specialMechanicDialog');
+        const contentEl = document.getElementById('specialMechanicContent');
+        const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
+
+        const description = specialMechanics[player.name];
+        const lines = description.split('\n');
+        const firstLine = lines.shift();
+        const restOfLines = lines.join('\n');
+        const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
+        contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+        dialog.show();
+        closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
+      });
+    }
     console.log('[Debug] Special handling for Egg. Bypassing regular info display.');
     return; // Exit early
   }
