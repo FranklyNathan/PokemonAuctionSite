@@ -24,6 +24,7 @@ Key Moves:
 Archen
 Key Moves:
    Pluck (15)
+   Taunt (TM)
    Ancient Power (22)
    Rock Slide (25)
    Acrobatics (28)
@@ -56,7 +57,7 @@ Key Moves:
    Hone Claws (TM)
    Earthquake (TM)
    Fly (HM)
-   Double Edge (MT)
+   Facade (TM)
 
 Beldum
 Key Moves:
@@ -64,6 +65,18 @@ Key Moves:
    Hone Claws (TM)
    Zen Headbutt (32)
    Meteor Mash (44)
+
+Blipbug
+Key Moves:
+   Struggle Bug (1)
+   Confusion (Evo.)
+   Light Screen (Evo.)
+   Reflect (Evo.)
+   Bug Buzz (MR)
+   Giga Drain (TM)
+   Mirror Coat (32)
+   Psychic (36)
+   Calm Mind (44/TM)
 
 Bonsly
 Key Moves:
@@ -87,9 +100,9 @@ Key Moves:
    Water Gun (15)
    Taunt (TM)
    Aqua Jet (24)
-   Waterfall (HM)
    Brick Break (TM)
    Ice Fang (MR)
+   Waterfall (HM)
 
 Buneary
 Key Moves:
@@ -113,6 +126,7 @@ Key Moves:
    Water Gun (10)
    Ember (10)
    Powder Snow (10)
+   Headbutt (15)
    Weather Ball (25)
    Blizzard (35/TM)
    Hydro Pump (35/TM)
@@ -172,11 +186,11 @@ Chewtle
 Key Moves:
    Protect (14)
    Rock Tomb (22)
-   Waterfall (HM)
    Earthquake (TM)
    Iron Tail (TM)
    Razor Shell (MR)
    Crunch (MR)
+   Waterfall (HM)
    Jaw Lock (39)
    Liquidation (48)
 
@@ -184,10 +198,10 @@ Chinchou
 Key Moves:
    Bubble Beam (20)
    Spark (23)
-   Water Pulse (TM)
-   Surf (HM)
    Thunderbolt (TM)
    Ice Beam (TM)
+   Surf (HM)
+   Water Pulse (TM)
    Discharge (37)
 
 Cleffa
@@ -217,10 +231,10 @@ Key Moves:
    Recover (8)
    Bubblebeam (10)
    Ancientpower (17)
-   Surf (HM)
    Shadow Ball (TM)
    Ice Beam (TM)
    Giga Drain (TM)
+   Surf (HM)
    Strength Sap (35)
    Calm Mind (TM)
 
@@ -265,10 +279,10 @@ Dewpider
 Key Moves:
    Bug Bite (13)
    Bubble Beam (16)
-   Water Pulse (TM)
-   Waterfall (HM)
    Leech Life (33)
    Surf (HM)
+   Water Pulse (TM)
+   Waterfall (HM)
    Mirror Coat (50)
 
 Diglett
@@ -291,7 +305,7 @@ Key Moves:
    Dig (19)
    Hone Claws (22)
    Rock Slide (29)
-   Earthquake (36)
+   Earthquake (36/TM)
    X-Scissor (TM)
 
 Electrike
@@ -309,8 +323,8 @@ Key Moves:
 
 Exeggcute
 Key Moves:
-   Bullet Seed (TM)
    Leech Seed (11)
+   Bullet Seed (TM)
    Trick Room (TM)
    Psychic (TM)
    Giga Drain (TM)
@@ -334,12 +348,12 @@ Fennekin
 Key Moves:
    Flame Charge (14)
    Psybeam (18)
-   Calm Mind (TM)
    Flamethrower (45/TM)
    Dazzling Gleam (TM)
    Shadow Ball (MR/TM)
    Psychic (57/TM)
    Overheat (TM)
+   Calm Mind (TM)
 
 Fidough
 Key Moves:
@@ -354,9 +368,10 @@ Flabebe
 Key Moves:
    Fairy Wind (6)
    Wish (20)
-   Calm Mind (TM)
+   Giga Drain (TM)
    Moonblast (MR)
    Petal Dance (MR)
+   Calm Mind (TM)
 
 Fletchling
 Key Moves:
@@ -379,9 +394,9 @@ Key Moves:
    Taunt (TM)
    Fling (28)
    Ice Beam (TM)
+   Surf (HM)
    Aerial Ace (TM)
    Extrasensory (49)
-   Surf (HM)
    Night Slash (MR)
 
 Fuecoco
@@ -407,8 +422,8 @@ Key Moves:
    Dragon Rage (7)
    Dual Chop (24)
    Hone Claws (TM)
-   Dragon Rush (55)
    Earthquake (TM)
+   Dragon Rush (55)
 
 Gimmighoul
 Key Moves:
@@ -491,9 +506,9 @@ Key Moves:
    Life Dew (5)
    Trick Room (TM)
    Psybeam (20)
-   Calm Mind (TM)
-   Psychic (TM)
    Dazzling Gleam (30)
+   Psychic (TM)
+   Calm Mind (TM)
 
 Hawlucha
 Key Moves:
@@ -530,9 +545,9 @@ Key Moves:
    Water Gun (13)
    Hydro Pump (MR*)
    Bubble Beam (21)
+   Ice Beam (TM)
    Surf (HM)
    Waterfall (HM)
-   Ice Beam (TM)
    Dragon Pulse (45)
    Dragon Dance (52)
 
@@ -704,6 +719,8 @@ Key Moves:
    Rollout (8)
    Ancient Power (17)
    Stealth Rock (24)
+   Power Gem (38)
+   Explosion (MT)
 
 Morelull
 Key Moves:
@@ -740,6 +757,7 @@ Key Moves:
    Rock Slide (28)
    Protect (32)
    Ice Beam (TM)
+   Dig (TM)
    Surf (HM)
    Waterfall (HM)
    Earthquake (51/TM)
@@ -749,9 +767,9 @@ Munchlax
 Key Moves:
    Last Resort (MR*)
    Body Slam (25)
-   Surf (HM)
    Rest (TM)
    Earthquake (TM)
+   Surf (HM)
    Crunch (49)
    Heavy Slam (50)
    High Horsepower (57)
@@ -837,7 +855,10 @@ Poliwag
 Key Moves:
    Water Gun (5)
    Rain Dance (18)
-   Dynamic Punch (32)  
+   Dynamic Punch (32*)  
+   Brick Break (TM*)
+   Ice Beam (TM)
+   Surf (HM)
    Waterfall (HM) 
 
 Popplio
@@ -845,9 +866,9 @@ Key Moves:
    Disarming Voice (8)
    Aqua Jet (14)
    Bubble Beam (24)
-   Water Pulse (TM)
-   Surf (HM)
    Ice Beam (TM)
+   Surf (HM)
+   Water Pulse (TM)
    Moonblast (44)
 
 Porygon
@@ -995,8 +1016,9 @@ Key Moves:
    
 Scyther
 Key Moves:
-   Wing Attack (21)
    Steel Wing (TM)
+   Wing Attack (21)
+   Fury Cutter (25)
    Stone Axe (Evo.*)
    X-Scizor (TM/40*/41**)
    Swords Dance (44*/57**)
@@ -1022,19 +1044,22 @@ Key Moves:
    Ice Beam (TM)
    Shell Smash (MR)
    Surf (HM)
+   Waterfall (HM)
+   Icicle Crash (50)
 
 Shinx
 Key Moves:
    Spark (13)
-   Thunder Fang (TM)
+   Thief (TM)
+   Thunder Fang (35)
    Facade (TM)
+   Crunch (42)
 
 Shroomish
 Key Moves:
    Leech Seed (8)
    Bullet Seed (TM)
    Mach Punch (23)
-   Fury Cutter (MT)
    Force Palm (28)
    Facade (TM)
    Sky Uppercut (39)
@@ -1119,7 +1144,7 @@ Shuppet
 Key Moves:
    Knock Off (1)
    Will O Wisp (16)
-   Shadow Ball (30/TM)
+   Shadow Ball (30)
    Psychic (TM)
    Dazzling Gleam (TM)
    Phantom Force (MR)
@@ -1138,10 +1163,10 @@ Key Moves:
    Water Gun (1)
    Encore (9)
    Aurora Beam (21)
-   Water Pulse (TM)
-   Surf (HM)
    Ice Beam (TM)
    Earthquake (TM)
+   Surf (HM)
+   Water Pulse (TM)
 
 Spoink
 Key Moves:
@@ -1168,13 +1193,14 @@ Key Moves:
    Rapid Spin (7)
    Bubble Beam (18)
    Water Pulse (TM)
-   Surf (HM)
    Psychic (TM)
    Ice Beam (TM)
    Dazzling Gleam (TM)
    Thunderbolt (TM)
    Thunder (TM)
    Rest (TM)
+   Surf (HM)
+   Bulk Up (TM)
    Waterfall (HM)
 
 Surskit
@@ -1182,9 +1208,9 @@ Key Moves:
    Air Cutter (22)
    Bug Buzz (MR/42)
    Quiver Dance (MR/52)
-   Water Pulse (TM)
-   Surf (HM)
    Ice Beam (TM)
+   Surf (HM)
+   Water Pulse (TM)
 
 Swinub
 Key Moves:
@@ -1215,11 +1241,11 @@ Key Moves:
 Tentacool
 Key Moves:
    Toxic Spikes (13)
-   Water Pulse (16/TM)
-   Surf (HM)
+   Water Pulse (16)
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
    Ice Beam (TM)
+   Surf (HM)
 
 Timburr
 Key Moves:
@@ -1279,13 +1305,13 @@ Key Moves:
    Water Gun (6)
    Ice Fang (21)
    Crunch (30)
-   Waterfall (HM)
    Dragon Claw (TM)
    Earthquake (TM)
    Brick Break (TM)
    Iron Tail (TM)
    Hone Claws (TM)
    Surf (HM)
+   Waterfall (HM)
 
 Trapinch
 Key Moves:
@@ -1299,9 +1325,9 @@ Treecko
 Key Moves:
    Mega Drain (13)
    Leaf Blade (23)
-   Dual Chop (36)
    Giga Drain (TM)
    Hone Claws (TM)
+   Dual Chop (36)
    Leaf Storm (MR)
    Detect (39)
    X-Scissor (45/TM)
@@ -1316,10 +1342,11 @@ Key Moves:
 Turtwig
 Key Moves:
    Razor Leaf (13)
+   Curse (17)
    Leech Seed (32)
    Earthquake (32)
-   Crunch (45)
    Wood Hammer (MR)
+   Crunch (45)
 
 Tyrogue
 Key Moves:
@@ -1344,12 +1371,13 @@ Key Moves:
 Venipede
 Key Moves:
    Protect (15)
-   Poison Tail (15)
+   Poison Tail (19)
    Bug Bite (22)
    Venoshock (28)
+   Fury Cutter (MT)
+   Megahorn (MR)
    X-Scissor (TM)
    Earthquake (TM)
-   Megahorn (MR)
 
 Voltorb
 Key Moves:
@@ -1362,7 +1390,7 @@ Key Moves:
    Ice Shard (10)
    Icy Wind (15)
    Dazzling Gleam (Evo.)
-   Ice Beam (36/TM/MR)
+   Ice Beam (MR)
    Blizzard (TM)
    Calm Mind (TM)
 
@@ -1370,10 +1398,10 @@ Wingull
 Key Moves:
    Water Pulse (15)
    Air Cutter (22)
-   Shock Wave (TM)
    Protect (25)
-   Surf (HM)
    Ice Beam (TM)
+   Surf (HM)
+   Shock Wave (TM)
 
 Wynaut
 Key Moves:
@@ -1387,9 +1415,9 @@ Key Moves:
    Brine (14)
    Aqua Ring (17)
    Dive (30)
-   Surf (HM)
    Ice Beam (TM)
    Earthquake (TM)
+   Surf (HM)
 
 Wooper
 Key Moves:
@@ -1403,12 +1431,13 @@ Key Moves:
 Zigzagoon
 Key Moves:
    Snarl (9)
+   Headbutt (12)
    Taunt (TM)
-   Night Slash (20)
+   Night Slash (Evo.)
+   Hone Claws (MR*)
+   Obstruct (Evo.)
    Facade (TM)
    Bulk Up (TM)
-   Hone Claws (TM/MR)
-   Obstruct (35)
 
 Zorua
 Key Moves:

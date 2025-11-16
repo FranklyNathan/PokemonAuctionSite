@@ -486,7 +486,7 @@ function getStatColor(statValue) {
 
 const specialMechanics = {
   Castform: `Unique Mechanic: Forecast
-\nStarting at level 20, Castform's ability gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
+\nStarting at level 20, Forecast gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
 \nWater: Rain (Drizzle)
 \nFire: Sun (Drought)
 \nIce: Hail (Snow Warning)`,
@@ -513,7 +513,7 @@ const specialMechanics = {
   Zorua: `Tip: Illusion
 \nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
   Minior: `Tip: Rollout!
-\nMinior is the most powerful Rollout user in the game. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
+\nMinior is the king of early game sweeps. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
   Meowth: `Tip: Pay Day
 \nMeowth's signature move Pay Day is the only way in the game to earn extra money.
 \nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,

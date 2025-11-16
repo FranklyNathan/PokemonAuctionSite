@@ -4,6 +4,8 @@ Flapple,Grass/Dragon,evo,Ripen,Gluttony,Hustle,70,110,80,95,60,70,Level up in Fo
 Appletun,Grass/Dragon,evo,Ripen,Gluttony,Thick Fat,110,85,80,100,80,30,Level up in Lavaridge Gym,
 Dipplin,Grass/Dragon,evo,Supersweet Syrup,Gluttony,Sticky Hold,80,80,110,95,80,40,Level up in Rustboro Gym,
 Hydrapple,Grass/Dragon,evo,Supersweet Syrup,Regenerator,Sticky Hold,106,80,110,120,80,44,Level 42,
+Archen,Rock/Flying,base,Defeatist,,,55,112,45,74,45,70,,
+Archeops,Rock/Flying,evo,Defeatist,,,75,140,65,112,65,110,Level 37,
 Aron,Steel/Rock,base,Sturdy,Rock Head,Heavy Metal,50,70,100,40,40,30,,Stage 2
 Lairon,Steel/Rock,evo,Sturdy,Rock Head,Heavy Metal,60,90,140,50,50,40,Level 32 (Whipped Dream),Stage 2
 Aggron,Steel/Rock,evo,Sturdy,Rock Head,Heavy Metal,70,110,180,60,60,50,Level 42,Stage 2
@@ -92,7 +94,7 @@ Garchomp,Dragon/Ground,evo,Sand Veil,,Rough Skin,108,130,95,80,85,102,Level 48,S
 Mega Garchomp,Dragon/Ground,mega,Sand Force,,,108,170,115,120,95,92,Garchompite,Stage 2
 Goomy,Dragon,base,Sap Sipper,Hydration,Gooey,45,50,35,55,75,40,,
 Sliggoo,Dragon,evo,Sap Sipper,Hydration,Gooey,68,75,53,83,113,60,Level 40 (Whipped Dream),
-Goodra,Dragon,evo,Sap Sipper,Hydration,Gooey,90,100,70,110,150,80,Level 50 in rain,
+Goodra,Dragon,evo,Sap Sipper,Hydration,Gooey,90,100,70,110,150,80,Level 50 in Rain,
 Sliggoo-Hisui,Steel/Dragon,evo,Sap Sipper,Shell Armor,Gooey,58,75,83,83,113,40,Metal Coat,
 Goodra-Hisui,Steel/Dragon,evo,Sap Sipper,Shell Armor,Gooey,80,100,100,110,150,60,Level 50 in Rain,
 Gossifleur,Grass,base,Cotton Down,Regenerator,Effect Spore,40,40,60,40,60,10,,
@@ -200,7 +202,7 @@ Rockruff,Rock,base,Keen Eye,Vital Spirit,Steadfast,45,65,40,30,40,60,,
 Lycanroc-Midday,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25 at day,
 Lycanroc-Midnight,Rock,evo,Keen Eye,Vital Spirit,No Guard,85,115,75,55,75,82,Level 25 at night,
 Rolycoly,Rock,base,Steam Engine,Heatproof,Flash Fire,30,40,50,40,50,30,,,
-Carkol,Rock/Fire,evo,Steam Engine,Flame Body,Flash Fire,80,60,90,60,70,50,Level 24,
+Carkol,Rock/Fire,evo,Steam Engine,Flame Body,Flash Fire,80,60,90,60,70,50,Level 18,
 Coalossal,Rock/Fire,evo,Steam Engine,Flame Body,Flash Fire,110,80,120,80,90,30,Level 34,
 Rotom,Electric/Ghost,base,Levitate,,,50,50,77,95,77,91,,
 Rotom-Heat,Electric/Fire,evo,Levitate,,,50,65,107,105,107,86,Catalog,

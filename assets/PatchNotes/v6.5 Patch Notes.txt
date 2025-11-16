@@ -1,4 +1,8 @@
-11/12/25
+11/12/2025
+
+Megas Revert after 3 Turns
+//Since the dawn of time, Mega Evolution has been overpowered. Since the Elite Four change, mega sweeps have been especially prevalent in the late game, and they needed to be toned down so that Swampert isn't picking up 20 kills across the final five fights. After much brainstorming, mega evolution functioning just like Dynamax is the move. This system is nice because it keeps megas feeling powerful while restricting their ability to single-handedly take down a fight. It also nerfs Steven's Metagross, the Pokémon around which so much of the tier list revolves, a small bonus.
+
 
 Sitrus Berries Purchasable after Gym 6
 //Ultimately, I decided to go back on this. I don't want it to be optimal to plant a berry and wait for it to grow if you're the last player left in the race. Even if it's incredibly obscure, I don't want "optimal" play to ever involve waiting hours doing nothing. Notably, they're purchasable *after* 6, so you still need to pick them on your way to Fortree City.
