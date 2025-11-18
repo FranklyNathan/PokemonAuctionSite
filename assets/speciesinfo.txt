@@ -387,6 +387,14 @@ Key Moves:
    Flare Blitz (MR)
    Brave Bird (MR)
 
+Frigibax
+Key Moves:
+   Dragon Tail (1)
+   Icy Wind (6)
+   Bite (24)
+   Ice Fang (29)
+   Glaive Rush (Evo.)
+
 Froakie
 Key Moves:
    Lick (10)
@@ -895,6 +903,20 @@ Key Moves:
    Leaf Blade (MR**)
    Night Slash (MR**)
 
+Remoraid
+Key Moves:
+   Water Gun (1)
+   Psybeam (10)
+   Aurora Beam (14)
+   Bullet Seed (TM)
+   Octazooka (Evo.)
+   Flamethrower (TM)
+   Psychic (TM)
+   Sludge Bomb (TM)
+   Signal Beam (34)
+   Surf (HM)
+   Ice Beam (40/TM)
+
 Riolu
 Key Moves:
    Force Palm (15)
@@ -1029,6 +1051,7 @@ Key Moves:
 Sewaddle
 Key Moves:
    Bug Bite (8)
+   Razor Leaf (15)
    Protect (Evo.)
    X-Scissor (TM)
    Aerial Ace (TM)
@@ -1324,8 +1347,8 @@ Key Moves:
 Treecko
 Key Moves:
    Mega Drain (13)
+   Giga Drain (21*/TM)
    Leaf Blade (23)
-   Giga Drain (TM)
    Hone Claws (TM)
    Dual Chop (36)
    Leaf Storm (MR)
