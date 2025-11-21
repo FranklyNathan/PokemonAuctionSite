@@ -72,6 +72,15 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         );
       }
 
+      // bid must be for the currently active player
+      if (msg.selectedPlayerId != ctx.selectedPlayerId) {
+          return sendError(
+              ctx,
+              `pokemon ${msg.selectedPlayerId} is not the currently active pokemon`,
+              clientId,
+          );
+      }
+
       // validate by state
       if (ctx.serverState == State.Bidding) {
         // validate a bid in the bidding state
