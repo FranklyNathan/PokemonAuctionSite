@@ -524,6 +524,8 @@ const specialMechanics = {
   Mankey: `Tip: Rage Fist
 \nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
 \nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
+  Treecko: `Tip: Delayed Evolution
+\nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
   Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.

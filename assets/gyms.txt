@@ -321,7 +321,7 @@ Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Rock Head
-- Dive
+- Waterfall
 - Rock Tomb
 - Flail
 - Head Smash
@@ -343,7 +343,7 @@ Nature: Serious
 Ability: Intimidate
 - Crunch
 - Rock Tomb
-- Take Down
+- Play Rough
 - Fire Fang
 
 Probopass @ Sitrus Berry
@@ -403,7 +403,7 @@ Nature: Serious
 Ability: Intimidate
 - Crunch
 - Rock Tomb
-- Extreme Speed
+- Play Rough
 - Flare Blitz
 
 Probopass @ Sitrus Berry
@@ -603,7 +603,7 @@ Nature: Serious
 Ability: Swarm
 - Giga Drain
 - Air Cutter
-- Leech Life
+- Bug Bite
 - Psychic
 
 === TRAINER_VIOLA_5 ===
@@ -1341,7 +1341,7 @@ Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Static
-- Quick Attack
+- Fire Fang
 - Thunder Wave
 - Shock Wave
 - Howl
@@ -1930,7 +1930,7 @@ Ninetales
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Flash Fire
+Ability: Drought
 - Overheat
 - Feint Attack
 - Hex
@@ -1977,7 +1977,7 @@ Ability: Cursed Body
 - Sunny Day
 
 Magcargo
-Level: 40
+Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Flame Body
@@ -1987,10 +1987,10 @@ Ability: Flame Body
 - Sunny Day
 
 Ninetales
-Level: 39
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Flash Fire
+Ability: Drought
 - Overheat
 - Flamethrower
 - Hex
@@ -2050,7 +2050,7 @@ Ninetales
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Flash Fire
+Ability: Drought
 - Overheat
 - Flamethrower
 - Hex
@@ -2157,9 +2157,9 @@ Slakoth @ Oran Berry
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Vital Spirit
+Ability: Truant
 - Slack Off
-- Scratch
+- Play Rough
 - Facade
 - Feint Attack
 
@@ -2821,7 +2821,7 @@ Ability: Natural Cure
 - Surf
 - Fling
 - Tailwind
-- Aerial Ace
+- Hurricane
 
 Skarmory
 Level: 41
@@ -2871,7 +2871,7 @@ Ability: Sheer Force
 - Air Slash
 - Esper Wing
 - Tailwind
-- Aerial Ace
+- Shadow Ball
 
 Pelipper @ Deep Sea Tooth
 Level: 46
@@ -2881,7 +2881,7 @@ Ability: Keen Eye
 - Hydro Pump
 - Fling
 - Tailwind
-- Aerial Ace
+- Hurricane
 
 Skarmory
 Level: 44
@@ -4424,6 +4424,7 @@ Ability: Swift Swim
 Metagross @ Metagrossite
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Shiny: Yes
 Nature: Serious
 Ability: Clear Body
 - Hammer Arm

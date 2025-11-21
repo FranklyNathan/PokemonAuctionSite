@@ -1,0 +1,38 @@
+11/19/25
+
+Total Pokémon Drafted Reduced 9 per person > 8 per person
+//MFrazz and I both did our runs last weekend with 2 Pokémon relaxing in the box that we never once used. There are some notable benefits to a smaller draft size. First, it means we see fewer Pokémon in the draft, meaning you can't hedge as heavily on seeing your favorites (I'm worried that runs will begin to become to same-y if you can count on seeing 3/4 of your favorites each time). Second, it means you spend less time in menus leveling up Pokémon, teaching moves, and withdrawing stuff from the PC. Keep in mind that we play with 9 Pokémon total including Eevee, meaning you're "allowed" three deaths before the elite four.
+
+
+Max Revive Removed
+//It was nice to have, but ultimately, this flies too in the face of the game being a nuzlocke. I did like a lot of the design advantages it provided, like allowing us to draft fewer Pokémon since it effectively served as our 11th. That said, I don't like how the meta has developed to the point where you bring this to the E4 as a bandaid to mistakes. Maybe some day it will return repurposed, but I doubt it.
+
+
+Move Tutors Delayed
+Move Tutors are now accessible once you obtain 4 badges
+//This delays access to Move Tutors (Rollout, Metronome, Fury Cutter, etc.) until you gain access to the Move Relearner and the full purchasable TM list. In practice, the only thing this is relevant to is Fury Cutter for Scyther. Scyther learns Fury Cutter by level up at 25 anyway, so it's just stopping him from one-move sweeping the first three gyms.
+
+
+Linking Cord Delayed Badge 5 > 6
+//This makes it so that all Slateport items (TMs, Evo Items, Mega Stones) and new move access (Move Tutors, Relearners) only become available after badge 2, 4, 6, and 8. This feels nice and clean to me, since you can always know that if you just beat an odd number gym, you haven't gained access to anything new.
+
+
+Gym Nerfs:
+Viola 4 Beautifly Leech Life > Bug Bite
+//Nerfing this gym slightly since it's been overperforming. Beautifly will keep Leech Life for gym 5, at which point you've had the TM and evolution stone power spike.
+
+
+Gym Buffs:
+Norman 2 Slakoth Scratch > Play Rough
+//This fight is super weak because Slakoth is such an underwhelming boss with Truant. Play Rough isn't stronger than STAB Facade, but it at least gives Slakoth some coverage against Fighting to make it more than trivial.
+
+Flannery 6/7/8 Ninetales Flash Fire > Drought
+//Late game Flannery fights are easy to sweep since her Pokémon are so slow. Giving her a Drought Pokemon gives her way to counter Surf spam, or at least stop the fight from being over in 5 turns.
+
+Roxanne 8 Relicanth Hydro Pump > Waterfall
+Roxanne 7/8 Arcanine TakeDown/ExtremeSpeed > Play Rough
+Wattson 2 Electrike Quick Attack > Fire Fang
+Winona 7/8 Pelipper Aerial Ace > Hurricane
+Winona 8 Braviary Aerial Ace > Shadow Ball
+//There's a bit too much variance right now between the "hard" gyms and the "easy" ones. I've tried to go through the gym fights that I consider to be trivial and buff them to have some sort of increased threat. In general, all of these fights remain weak, but they at least now have something more you need to watch out for.
+

@@ -67,6 +67,10 @@ Pool Addition: Rolycoly
 Pool Addition: Timburr
 //As we approach release, I want for the pool to be as large as possible. The larger the pool, the more diversity there will be between runs, and the less you can count on holding out for a specific pick you're hoping to see. Unfortunately, we're really lacking for Pokemon that aren't currently in the game which also don't break some core design philosophy. Timburr works though. It's a slow Guts Pokémon similar to Ursaring. It evolves with the Linking Cord.
 
+Pool Addition: Archen
+//He's back! Even with the late evolution level, Acrobatics for gym 4 is enough of a spike for Archen to have a niche (especially with Gligar being gone, we were depressingly short on Acrobatics users). Rock and Flying are two of the types most under-represented, and Archeops is decent enough into the Elite Four now that Spenser is stronger. 
+
 Pool Addition: Swinub
 //That's right, I saved the best for last! He's back, baby! Justin has been calling my home phone nightly begging for this addition, and I just couldn't tell him no any longer. With the Whipped Dream, Swinub evolves into Piloswine before gym 3. And now that the Move Relearner is inaccessible until after gym 4, this evolution line finally has a reasonable 2-2-4 gym distribution. Get ready for everybody's favorite Wattson counter of old to be back with a vengeance!
 //This brings the pool to 111 (114 with eggs), the largest it's ever been.
+

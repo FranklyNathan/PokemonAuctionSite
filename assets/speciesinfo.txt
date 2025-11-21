@@ -1030,11 +1030,12 @@ Key Moves:
    Protect (9)
    Bug Bite (15)
    Gust (17)
+   Draining Kiss (25)
    Sleep Powder (MR)
+   Giga Drain (TM)
    Bug Buzz (35)
    Quiver Dance (45)
    Hurricane (50)
-   Powder (55)
    
 Scyther
 Key Moves:
