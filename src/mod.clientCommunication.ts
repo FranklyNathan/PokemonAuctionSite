@@ -214,11 +214,11 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       ctx.deleteAlarm();
 
       let newTimeLimit = ctx.biddingTimeLimit;
-      if (ctx.currentBid < 1500) {
+      if (ctx.currentBid < 600) {
         newTimeLimit = ctx.biddingTimeLimit * 2;
-        console.log(`[Server] Bid is under $1500. Doubling timer to ${newTimeLimit}ms.`);
+        console.log(`[Server] Bid is under $600. Doubling timer to ${newTimeLimit}ms.`);
       } else {
-        console.log(`[Server] Bid is over  $1500. Using standard timer of ${newTimeLimit}ms.`);
+        console.log(`[Server] Bid is over  $600. Using standard timer of ${newTimeLimit}ms.`);
       }
       ctx.setAlarm(newTimeLimit);
       await updateClients(ctx, true, true);

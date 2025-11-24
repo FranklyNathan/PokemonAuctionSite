@@ -36,3 +36,5 @@ Winona 7/8 Pelipper Aerial Ace > Hurricane
 Winona 8 Braviary Aerial Ace > Shadow Ball
 //There's a bit too much variance right now between the "hard" gyms and the "easy" ones. I've tried to go through the gym fights that I consider to be trivial and buff them to have some sort of increased threat. In general, all of these fights remain weak, but they at least now have something more you need to watch out for.
 
+The Hall of Fame win screen now prints "Emerald Blitz Version X.X"
+//So that screenshots of winning teams can now be tied to the game and patch :)

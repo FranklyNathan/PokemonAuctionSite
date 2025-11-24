@@ -422,7 +422,7 @@ export function initBidButtonListeners(ctx) {
 
     // Prevent accidental high bids at the very start of a round.
     const timeSinceNewPlayer = Date.now() - ctx.newPlayerTime;
-    if (ctx.currentBid === 0 && +e.target.value >= 1500 && timeSinceNewPlayer < 1500) {
+    if (ctx.currentBid === 0 && +e.target.value >= 1500 && timeSinceNewPlayer < 1000) {
       toast('Warning', 'Bid blocked in case of accident.', 'warning');
       console.log('[Client Bid] High bid blocked in case of accident.');
       return;
@@ -458,7 +458,7 @@ export function initBidButtonListeners(ctx) {
 
     // Prevent accidental high bids at the very start of a round.
     const timeSinceNewPlayer = Date.now() - ctx.newPlayerTime;
-    if (ctx.currentBid === 0 && +raiseInputEl.value >= 1500 && timeSinceNewPlayer < 2000) {
+    if (ctx.currentBid === 0 && +raiseInputEl.value >= 1500 && timeSinceNewPlayer < 1000) {
       toast('Warning', 'Bid blocked in case of accident.', 'warning');
       console.log('[Client Bid] Bid blocked due to being a high initial bid placed too quickly.');
       return;

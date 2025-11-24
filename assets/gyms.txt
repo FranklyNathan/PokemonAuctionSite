@@ -1736,6 +1736,16 @@ Ability: Flame Body
 - Incinerate
 - Rock Throw
 
+Vulpix
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Flash Fire
+- Will O Wisp
+- Feint Attack
+- Tail Whip
+- Fire Spin
+
 Numel
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -1775,6 +1785,16 @@ Ability: Flame Body
 - Smog
 - Yawn
 - Sunny Day
+
+Vulpix
+Level: 21
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Flash Fire
+- Will O Wisp
+- Feint Attack
+- Tail Whip
+- Fire Spin
 
 Numel
 Level: 23
@@ -2509,7 +2529,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Roost
+- Dragonbreath
 - Fury Attack
 - Aerial Ace
 
@@ -2519,19 +2539,19 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hydration
 - Water Gun
-- Roost
+- Supersonic
 - Quick Attack
 - Aerial Ace
 
-Taillow @ Oran Berry
+Tropius @ Oran Berry
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Guts
-- Quick Attack
+Ability: Chlorophyll
+- Razor Leaf
 - Aerial Ace
-- Focus Energy
-- Double Team
+- Sunny Day
+- Whirlwind
 
 === TRAINER_WINONA_2 ===
 Name: WINONA
@@ -2544,27 +2564,27 @@ Double Battle: No
 AI: Basic Trainer / Risky
 
 Swablu
-Level: 18
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Roost
+- Dragonbreath
 - Swift
 - Aerial Ace
 
 Wingull
-Level: 18
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Hydration
 - Water Pulse
-- Roost
+- Supersonic
 - Quick Attack
 - Aerial Ace
 
-Taillow @ Oran Berry
-Level: 19
+Taillow
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
@@ -2572,6 +2592,16 @@ Ability: Guts
 - Aerial Ace
 - Focus Energy
 - Double Team
+
+Tropius @ Oran Berry
+Level: 19
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Chlorophyll
+- Razor Leaf
+- Aerial Ace
+- Sunny Day
+- Whirlwind
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
@@ -2589,32 +2619,22 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Roost
+- Dragonbreath
 - Swift
-- Aerial Ace
-
-Skarmory
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Keen Eye
-- Swift
-- Sand Attack
-- Steel Wing
 - Aerial Ace
 
 Wingull
-Level: 23
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
 - Water Pulse
-- Roost
+- Supersonic
 - Quick Attack
 - Aerial Ace
 
-Swellow @ Sitrus Berry
-Level: 24
+Swellow
+Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
@@ -2622,6 +2642,16 @@ Ability: Guts
 - Aerial Ace
 - Pluck
 - Double Team
+
+Tropius @ Sitrus Berry
+Level: 24
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Chlorophyll
+- Leaf Tornado
+- Aerial Ace
+- Sunny Day
+- Stomp
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
@@ -2639,32 +2669,22 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Natural Cure
 - Disarming Voice
-- Roost
+- Dragonbreath
 - Hyper Voice
 - Aerial Ace
 
-Skarmory
+Pelipper @ Deep Sea Tooth
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
-- Spikes
-- Sand Attack
-- Steel Wing
-- Aerial Ace
-
-Pelipper @ Deep Sea Tooth
-Level: 28
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Keen Eye
 - Water Pulse
-- Roost
+- Brine
 - Fling
 - Aerial Ace
 
-Swellow @ Sitrus Berry
-Level: 29
+Swellow
+Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
@@ -2672,6 +2692,16 @@ Ability: Guts
 - Aerial Ace
 - Pluck
 - Steel Wing
+
+Tropius @ Sitrus Berry
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Chlorophyll
+- Leaf Tornado
+- Aerial Ace
+- Dragon Dance
+- Body Slam
 
 === TRAINER_WINONA_5 ===
 Name: WINONA
@@ -2693,18 +2723,8 @@ Ability: Natural Cure
 - Perish Song
 - Aerial Ace
 
-Skarmory
-Level: 30
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Keen Eye
-- Spikes
-- Sand Attack
-- Steel Wing
-- Aerial Ace
-
 Pelipper @ Deep Sea Tooth
-Level: 31
+Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
@@ -2714,7 +2734,7 @@ Ability: Keen Eye
 - Aerial Ace
 
 Swellow
-Level: 32
+Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
@@ -2722,6 +2742,16 @@ Ability: Guts
 - Aerial Ace
 - Pluck
 - Double Team
+
+Tropius @ Sitrus Berry
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Chlorophyll
+- Leaf Storm
+- Aerial Ace
+- Dragon Dance
+- Body Slam
 
 === TRAINER_WINONA_6 ===
 Name: WINONA
@@ -3142,6 +3172,16 @@ Ability: Levitate
 - Ancient Power
 - Calm Mind
 - Self Destruct
+
+Slowpoke-Galar
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Own Tempo
+- Psychic
+- Calm Mind
+- Water Gun
+- Amnesia
 
 Lunatone @ Sitrus Berry
 Level: 35
@@ -4424,7 +4464,6 @@ Ability: Swift Swim
 Metagross @ Metagrossite
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Shiny: Yes
 Nature: Serious
 Ability: Clear Body
 - Hammer Arm

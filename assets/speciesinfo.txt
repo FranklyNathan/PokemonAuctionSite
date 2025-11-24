@@ -46,6 +46,8 @@ Key Moves:
    Aqua Tail (21)
    Play Rough (25)
    Brick Break (TM)
+   Dig (TM)
+   Iron Tail (TM)
 
 Bagon
 Key Moves:
@@ -584,7 +586,7 @@ Key Moves:
    Work Up (29)
    Rock Tomb (TM)
    X-Scissor (TM)
-   Dragon Claw (TM)
+   Dragon Claw (TM/43)
    Earthquake (TM)
    Dragon Dance (53*)
 
@@ -1191,6 +1193,7 @@ Key Moves:
    Earthquake (TM)
    Surf (HM)
    Water Pulse (TM)
+   Crunch (MR)
 
 Spoink
 Key Moves:
@@ -1340,9 +1343,14 @@ Key Moves:
 Trapinch
 Key Moves:
    Bulldoze (8)
-   Dig (22)
+   Rock Slide (15)
+   Dig (19)
+   Crunch (22*)
+   Screech (22**)
+   Bug Buzz (29)
    Earthquake (33/TM)
-   Dragon Rush (47)
+   Dragon Claw (Evo.)
+   Flamethrower (TM)
    Dragon Dance (MR)
 
 Treecko
