@@ -1,5 +1,6 @@
 import { State, SECONDS, Ctx, ServerMessageType, ClientMessageType } from './mod.config';
 import { transitionState, updateClients, getSerializableCtx, unserializeCtx } from './mod.helpers';
+import { createPlayersTable } from './mod.storage';
 import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import homeHtml from './html.home.html';
@@ -121,6 +122,7 @@ export class Auction implements DurableObject {
           serverState: State.PreAuction,
           clientIdIncrementer: 0,
           isPaused: false,
+          isResourceDex: false, // default to false
           flashbangsEnabled: false, // default to disabled
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
@@ -157,10 +159,30 @@ export class Auction implements DurableObject {
       } else if (path[1] === 'results') {
         // Inject a cache-busting favicon link into the results page.
         const modifiedResultsHtml = resultsHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
-        // post-auction page with just the players table
         return new Response(modifiedResultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
-        // post-auction page with just the players table
-        return new Response(resultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'resource-dex-init') {
+        console.log('[Durable Object] Initializing as Resource Dex.');
+        this.ctx.isResourceDex = true;
+        await createPlayersTable(this.ctx); // Create the table on first initialization.
+
+        // Create a synthetic request to trigger player data loading for the Resource Dex.
+        // This mimics the form submission from the home page's "Resource Dex" button.
+        const syntheticFormData = new FormData();
+        syntheticFormData.append('resourceMode', 'true');
+        syntheticFormData.append('useDefaultCsv', 'true');
+
+        const syntheticLoadRequest = new Request(url.origin + '/new-auction', {
+          method: 'POST',
+          body: syntheticFormData,
+        });
+        await handleNewAuctionDO(syntheticLoadRequest, this.ctx, url);
+        await this.ctx.storeCtx();
+        // After initialization, serve the main auction HTML.
+        // Adjust the request URL to what handleAuction expects for the main page.
+        const auctionRequest = new Request(url.origin + '/', request);
+        const auctionHtmlResponse = await handleAuction(auctionRequest, this.ctx);
+        const auctionHtmlText = await auctionHtmlResponse.text();
+        return new Response(auctionHtmlText.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`), auctionHtmlResponse);
       } else if (path[0] == 'new-auction') {
         return await handleNewAuctionDO(request, this.ctx, url);
       } else if (path[1] == 'players-data') {
@@ -385,6 +407,18 @@ export default {
         return await handleVendor(request, path);
       } else if (path[0] && /^[0-9a-f]{64,64}$/.test(path[0])) {
         return await handleDO(request, env, path);
+      } else if (path[0] === 'resource-dex') {
+        console.log('[Worker Fetch] Routing to Resource Dex DO.');
+        const resourceDexId = env.AUCTION.idFromName('RESOURCE_DEX_V1');
+        const stub = env.AUCTION.get(resourceDexId);
+        
+        // If it's just '/resource-dex', it's the initial page load.
+        // We use a special path to trigger one-time initialization.
+        if (path.length === 1) {
+          return await stub.fetch(request.url.replace('/resource-dex', '/resource-dex-init'));
+        }
+        // For other paths like '/resource-dex/players-data', forward the request as is.
+        return await stub.fetch(request);
       } else if (path[0] === 'favicon.ico') {
         // The getAssetFromKV doesn't handle root-level assets well. We'll serve it manually.
         return await handleModule(request, ['assets', 'favicon.ico']);

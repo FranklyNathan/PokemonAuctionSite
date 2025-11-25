@@ -201,15 +201,10 @@
     <div style="display: flex; flex-direction: column; align-items: center;">
       <sl-button class="main-button" size="large" onclick="window.location.href='/setup'">Auction Setup</sl-button>
       <sl-button class="main-button" size="large" onclick="window.location.href='/faq'">FAQ</sl-button>
-      <sl-button id="resource-mode-btn" class="main-button" size="large">Resource Dex</sl-button>
+      <sl-button class="main-button" size="large" onclick="window.location.href='/resource-dex'">Resource Dex</sl-button>
       <sl-button class="main-button" size="large" onclick="window.location.href='/index'">Blitz Info</sl-button>
       <sl-button class="main-button" size="large" onclick="window.open('/assets/boss-battles.html', '_blank')">Boss Battles</sl-button>
     </div>
-
-    <form id="resource-mode-form" method="post" action="new-auction" enctype="multipart/form-data" style="display: none;">
-      <input name="resourceMode" value="true" />
-      <input name="useDefaultCsv" value="true" />
-    </form>
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
       <sl-button id="drive-button" class="control-button" variant="neutral" title="Open Google Drive Folder">
@@ -283,10 +278,6 @@
         applyTheme(newTheme);
       });
       // --- End Dark Mode Logic ---
-
-      document.getElementById('resource-mode-btn').addEventListener('click', () => {
-        document.getElementById('resource-mode-form').submit();
-      });
 
       // Drive button listener
       document.getElementById('drive-button').addEventListener('click', () => {

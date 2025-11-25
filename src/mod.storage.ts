@@ -1,9 +1,13 @@
 import { ClientId, Ctx } from './mod.config';
 
 export async function createPlayersTable(ctx: Ctx) {
-  await ctx.sql.exec('DROP TABLE IF EXISTS players;');
+  // For a regular auction, we always want a fresh start.
+  if (!ctx.isResourceDex) {
+    await ctx.sql.exec('DROP TABLE IF EXISTS players;');
+  }
+  // For any auction (including the Resource Dex on its first run), create the table if it's not there.
   await ctx.sql.exec(`
-    CREATE TABLE players(
+    CREATE TABLE IF NOT EXISTS players(
       player_id INTEGER PRIMARY KEY,
       player_data JSON
     );
@@ -118,10 +122,21 @@ export function getPlayersJsonString(ctx: Ctx) {
   // This query constructs a JSON array string. The previous json_group_array approach was
   // too resource-intensive. GROUP_CONCAT is more reliable in this environment.
   // We construct a JSON object for each player and then concatenate them into a single string.
-  return ctx.sql.exec(`
-    SELECT '[' || GROUP_CONCAT(json_object('player_id', player_id, 'player_data', json(player_data))) || ']' as players
-    FROM players
-  `).one().players?.toString();
+  console.log('[getPlayersJsonString] Executing query to get all players as a JSON string.');
+  try {
+    const result = ctx.sql.exec(`
+      SELECT '[' || GROUP_CONCAT(json_object('player_id', player_id, 'player_data', json(player_data))) || ']' as players
+      FROM players
+    `).one();
+
+    console.log(`[getPlayersJsonString] Query successful. Result from DB: ${JSON.stringify(result)}`);
+    // If there are no players, `GROUP_CONCAT` returns NULL, so `result.players` will be null.
+    // In this case, we should return an empty JSON array '[]'.
+    return result.players?.toString() ?? '[]';
+  } catch (e) {
+    console.error('[getPlayersJsonString] CRITICAL: SQL query failed.', e);
+    throw e; // Re-throw the error to be caught by the route handler.
+  }
 }
 
 export function getResultsJsonString(ctx: Ctx) {
