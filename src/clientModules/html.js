@@ -530,6 +530,10 @@ const specialMechanics = {
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.
 \nAll baby Pokemon have had their evolution methods changed to level 20 (besides Azruill, who evolves at 10).`,
+  Eevee: `Tip: The most important Pokemon of all!
+\nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
+\nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
+\nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
 };
 
 /**
@@ -649,23 +653,45 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     // Get key moves from speciesInfoMap
     let keyMovesHtml = '';
     if (info && info.description) {
-      const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
       const moveLines = info.description
         .split('\n')
         .map((line) => {
-          const trimmedLine = line.trim();
-          // A move line is one that is not a comment (like 'Note:') and not empty.
+          let processedLine = line;
+          let leadingSpaces = '';
+          // Match optional leading whitespace, then the color prefix
+          const colorMatch = line.match(/^\s*(Yellow|Blue|Red|Green|Purple|Orange|Brown|Black|White|Gray|Pink|LightBlue):/i);
+          let colorStyle = '';
+          if (colorMatch) {
+            let color = colorMatch[1].toLowerCase();
+            // Map specific keywords to custom color values
+            const colorMap = {
+              black: 'lightgray', // Render black as light gray
+              blue: 'cyan', // Render blue as cyan
+              green: 'lightgreen', // A lighter shade of green
+              purple: 'plum', // A lighter shade of purple
+              red: 'orangered', // A more orange-red
+            };
+            const finalColor = colorMap[color] || color;
+            colorStyle = `style="color: ${finalColor};"`;
+            leadingSpaces = line.match(/^\s*/)[0];
+            processedLine = line.replace(colorMatch[0], '').trim();
+          }
+
+          const trimmedLine = processedLine.trim();
           if (trimmedLine.length > 0 && !trimmedLine.toLowerCase().startsWith('note:') && !trimmedLine.toLowerCase().startsWith('key moves:')) {
-            // Extract the move name, which is everything before the first parenthesis.
-            const parenIndex = line.indexOf('(');
-            const moveName = (parenIndex !== -1 ? line.substring(0, parenIndex) : line).trim();
+            const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
+            const parenIndex = processedLine.indexOf('(');
+            const moveName = (parenIndex !== -1 ? processedLine.substring(0, parenIndex) : processedLine).trim();
+
             if (moveName) {
               const url = `https://pokemondb.net/move/${formatMoveForUrl(moveName)}`;
               const link = `<a class="move-link" href="${url}" target="_blank" rel="noopener noreferrer">${moveName}</a>`;
-              return line.replace(moveName, link);
+              processedLine = processedLine.replace(moveName, link);
             }
           }
-          return line; // Keep original line if it's a comment, empty, or not a move.
+
+          // Wrap the processed line in a span with the color style if a color was found
+          return colorStyle ? `<span ${colorStyle}>${leadingSpaces}${processedLine}</span>` : processedLine;
         })
         .join('\n');
       keyMovesHtml = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${moveLines}</pre>`;
