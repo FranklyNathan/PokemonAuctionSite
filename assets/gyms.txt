@@ -870,7 +870,7 @@ Makuhita @ Oran Berry
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Thick Fat
+Ability: Guts
 - Arm Thrust
 - Sand Attack
 - Reversal
@@ -1793,7 +1793,7 @@ Nature: Serious
 Ability: Flash Fire
 - Will O Wisp
 - Feint Attack
-- Tail Whip
+- Overheat
 - Fire Spin
 
 Numel
@@ -2111,9 +2111,10 @@ Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Illusion
-- Pursuit
+- Shadow Sneak
 - Facade
-- Fake Tears
+- Leer
+- Torment
 
 Zigzagoon-Galar
 Level: 12
@@ -2153,15 +2154,17 @@ Ability: Own Tempo
 - Teeter Dance
 - Psybeam
 - Facade
+- Encore
 
 Zorua-Hisui
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Illusion
-- Pursuit
+- Shadow Sneak
 - Facade
-- Fake Tears
+- Leer
+- Torment
 
 Zigzagoon-Galar
 Level: 17
@@ -2208,10 +2211,10 @@ Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Illusion
-- Pursuit
+- Shadow Sneak
 - Facade
-- Fake Tears
-- Feint Attack
+- Leer
+- Torment
 
 Linoone-Galar
 Level: 23
@@ -2258,10 +2261,10 @@ Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Illusion
-- Pursuit
+- Shadow Sneak
 - Facade
-- Foul Play
-- Feint Attack
+- Curse
+- Torment
 
 Linoone-Galar
 Level: 26
@@ -2310,7 +2313,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Agility
+- Curse
 - Nasty Plot
 
 Linoone-Galar
@@ -2360,7 +2363,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Night Slash
+- Curse
 - Nasty Plot
 
 Loudred
@@ -2420,7 +2423,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Night Slash
+- Psychic
 - Nasty Plot
 
 Exploud
@@ -2480,7 +2483,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Ball
 - Facade
-- Night Daze
+- Psychic
 - Nasty Plot
 
 Exploud
@@ -2537,7 +2540,7 @@ Wingull
 Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Hydration
+Ability: Keen Eye
 - Water Gun
 - Supersonic
 - Quick Attack
@@ -2577,7 +2580,7 @@ Wingull
 Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Hydration
+Ability: Keen Eye
 - Water Pulse
 - Supersonic
 - Quick Attack
@@ -2847,7 +2850,7 @@ Pelipper @ Deep Sea Tooth
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Natural Cure
+Ability: Keen Eye
 - Surf
 - Fling
 - Tailwind
@@ -4072,8 +4075,8 @@ Nature: Serious
 Ability: Keen Eye
 - Shadow Ball
 - Double Team
-- Night Shade
-- Feint Attack
+- Foul Play
+- Thief
 
 Banette
 Level: 53
@@ -4408,7 +4411,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Mon Choices
 Mugshot: Yellow
 
 Skarmory
@@ -4416,8 +4419,8 @@ Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
-- Toxic
-- Fly
+- Drill Peck
+- Rock Slide
 - Spikes
 - Steel Wing
 
@@ -4456,7 +4459,7 @@ Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Swift Swim
-- Aerial Ace
+- Aqua Jet
 - Rock Blast
 - X Scissor
 - Crush Claw

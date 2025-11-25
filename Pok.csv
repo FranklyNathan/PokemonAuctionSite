@@ -14,6 +14,10 @@ Bagon,Dragon,base,Rock Head,,Sheer Force,45,75,60,40,30,50,,Stage 2
 Shelgon,Dragon,evo,Rock Head,,Overcoat,65,95,100,60,50,50,Level 30,Stage 2
 Salamence,Dragon/Flying,evo,Intimidate,,Moxie,95,135,80,110,80,100,Level 50,Stage 2
 Mega Salamence,Dragon/Flying,mega,Aerilate,,,95,145,130,120,90,120,Salamencite,Stage 2
+Beldum,Steel/Psychic,base,Clear Body,,Light Metal,40,55,80,35,60,30,,Stage 2
+Metang,Steel/Psychic,evo,Clear Body,,Light Metal,60,75,100,55,80,50,Level 20,Stage 2
+Metagross,Steel/Psychic,evo,Clear Body,,Light Metal,80,135,130,95,90,70,Level 45,Stage 2
+Mega Metagross,Steel/Psychic,mega,Tough Claws,,,80,145,150,105,110,110,Metagrossite,Stage 2
 Buizel,Water,base,Swift Swim,,Water Veil,55,65,35,60,30,85,,
 Floatzel,Water,evo,Swift Swim,,Water Veil,85,105,55,85,50,115,Level 26,
 Buneary,Normal,base,Run Away,Klutz,Limber,55,66,44,44,56,85,,Stage 1
@@ -255,7 +259,7 @@ Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,,Stage 1
 Glalie,Ice,evo,Inner Focus,Ice Body,Moody,80,80,80,80,80,80,Level 42,Stage 1
 Mega Glalie,Ice,mega,Refrigerate,,,80,120,80,120,80,100,Glalitite,Stage 1
 Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,80,70,110,Dawn Stone,Stage 1
-Mega Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,140,100,120,Dawn Stone,Stage 1
+Mega Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,140,100,120,Frosslassite,Stage 1
 Solosis,Psychic,base,Overcoat,Magic Guard,Regenerator,45,30,40,105,50,20,,
 Duosion,Psychic,evo,Overcoat,Magic Guard,Regenerator,65,40,50,125,60,30,Level 32 (Whipped Dream),
 Reuniclus,Psychic,evo,Overcoat,Magic Guard,Regenerator,110,65,75,125,85,30,Level 41,
@@ -303,6 +307,8 @@ Garbodor,Poison,evo,Stench,Weak Armor,Aftermath,80,95,82,60,82,75,Level 36,
 Turtwig,Grass,base,Overgrow,,Shell Armor,55,68,64,45,55,31,,
 Grotle,Grass,evo,Overgrow,,Shell Armor,75,89,85,55,65,36,Level 18,
 Torterra,Grass/Ground,evo,Overgrow,,Shell Armor,95,109,105,75,85,56,Level 32,
+Tyrunt,Rock/Dragon,base,Strong Jaw,,Sturdy,58,89,77,45,45,48,,
+Tyrantrum,Rock/Dragon,evo,Strong Jaw,,Rock Head,82,121,119,69,59,71,Level 39,
 Venipede,Bug/Poison,base,Poison Point,Swarm,Speed Boost,30,45,59,30,39,57,,Stage 2
 Whirlipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,40,55,99,40,79,47,Level 22,Stage 2
 Scolipede,Bug/Poison,evo,Poison Point,Swarm,Speed Boost,60,100,89,55,69,112,Level 30,Stage 2
@@ -380,3 +386,12 @@ Hitmonchan,Fighting,evo,Keen Eye,Iron Fist,Inner Focus,50,105,79,35,110,76,Level
 Hitmontop,Fighting,evo,Intimidate,Technician,Steadfast,50,95,95,35,110,70,Level 20,,TRUE
 Wynaut,Psychic,base,Shadow Tag,,Telepathy,95,23,48,23,48,23,,,TRUE
 Wobbuffet,Psychic,evo,Shadow Tag,,Telepathy,190,33,58,33,58,33,Level 20,,TRUE
+Eevee,Normal,base,Run Away,Adaptability,Anticipation,55,55,50,45,65,55,,,TRUE
+Vaporeon,Water,evo,Water Absorb,,Hydration,130,65,60,110,95,65,Water Stone,,TRUE
+Jolteon,Electric,evo,Volt Absorb,,Quick Feet,65,65,60,110,95,130,Thunder Stone,,TRUE
+Flareon,Fire,evo,Flash Fire,,Guts,65,130,60,95,110,65,Fire Stone,,TRUE
+Espeon,Psychic,evo,Synchronize,,Magic Bounce,65,65,60,130,95,110,Sun Stone,,TRUE
+Umbreon,Dark,evo,Synchronize,,Inner Focus,95,65,110,60,130,65,Moon Stone,,TRUE
+Leafeon,Grass,evo,Leaf Guard,,Chlorophyll,65,110,130,60,65,95,Leaf Stone,,TRUE
+Glaceon,Ice,evo,Snow Cloak,,Ice Body,65,60,110,130,95,65,Ice Stone,,TRUE
+Sylveon,Fairy,evo,Cute Charm,,Pixilate,95,65,65,110,130,60,Shiny Stone,,TRUE

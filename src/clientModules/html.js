@@ -529,7 +529,7 @@ const specialMechanics = {
   Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.
-\nAll baby Pokemon have had their evolution methods changed to level 20.`,
+\nAll baby Pokemon have had their evolution methods changed to level 20 (besides Azruill, who evolves at 10).`,
 };
 
 /**

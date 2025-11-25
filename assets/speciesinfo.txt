@@ -16,8 +16,8 @@ Key Moves:
    Dragon Dance (24*)
    Grav Apple (32*)
    Dragon Rush (44*)
-   Apple Acid (28**)
    Leech Seed (MR*/**)
+   Apple Acid (28**)
    Syrup Bomb (28***)
    Fickle Beam (Evo.***)
 
@@ -29,6 +29,7 @@ Key Moves:
    Rock Slide (25)
    Acrobatics (28)
    Hone Claws (TM)
+   Earthquake (TM)
    Crunch (35)
    U-Turn (45)
 
@@ -60,11 +61,16 @@ Key Moves:
    Earthquake (TM)
    Fly (HM)
    Facade (TM)
+   Steel Wing (TM)
 
 Beldum
 Key Moves:
+   Take Down (1)
+   Metal Claw (Evo.)
    Bullet Punch (29)
    Hone Claws (TM)
+   Brick Break (TM)
+   Earthquake (TM)
    Zen Headbutt (32)
    Meteor Mash (44)
 
@@ -310,6 +316,14 @@ Key Moves:
    Earthquake (36/TM)
    X-Scissor (TM)
 
+Eevee
+Key Moves:
+   Tail Whip (1)
+   Baby-Doll Eyes (9)
+   Quick Attack (13)
+   Bite (17)
+   Charm (29)
+
 Electrike
 Key Moves:
    Thunder Fang (19)
@@ -465,6 +479,8 @@ Key Moves:
    Water Pulse (25*/TM)
    Thunderbolt (TM)
    Ice Beam (TM)
+   Surf (HM)
+   Earthquake (TM)
    Iron Head (49)
 
 Gossifleur
@@ -587,8 +603,9 @@ Key Moves:
    Rock Tomb (TM)
    X-Scissor (TM)
    Dragon Claw (TM/43)
-   Earthquake (TM)
    Dragon Dance (53*)
+   Earthquake (TM)
+   Flamethrower (TM)
 
 Joltik
 Key Moves:
@@ -664,6 +681,7 @@ Key Moves:
 Mankey
 Key Moves:
    Karate Chop (8)
+   Cross Chop (22)
    Rest (TM)
    Earthquake (TM)
    Bulk Up (TM)
@@ -719,9 +737,12 @@ Key Moves:
 
 Minccino
 Key Moves:
+   Double Slap (13)
    Encore (15)
+   Bullet Seed (TM/MR*)
    Tail Slap (25)
    Charm (27)
+   Rock Blast (MR)
 
 Minior
 Key Moves:
@@ -1347,6 +1368,7 @@ Key Moves:
    Dig (19)
    Crunch (22*)
    Screech (22**)
+   Steel Wing (TM)
    Bug Buzz (29)
    Earthquake (33/TM)
    Dragon Claw (Evo.)
@@ -1387,6 +1409,19 @@ Key Moves:
    Vacuum Wave (26**)
    Rolling Kick (20***)
    Close Combat (MR)
+
+Tyrunt
+Key Moves:
+   Stealth Rock (15)
+   Bite (17)
+   Charm (20)
+   Hone Claws (TM)
+   Crunch (34)
+   Rock Tomb (TM)
+   Dragon Claw (37/TM)
+   Rock Slide (Evo.)
+   Earthquake (47/TM)
+   Head Smash (58/MR)
 
 Vanillite
 Key Moves:
