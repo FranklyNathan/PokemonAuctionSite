@@ -233,6 +233,7 @@ Key Moves:
    Razor Shell (32)
    Waterfall (HM)
    Swords Dance (37)
+   Crunch (43)
 
 Corsola
 Key Moves:
@@ -326,8 +327,8 @@ Key Moves:
    Iron Tail (TM)
    Shadow Ball (TM)
    Calm Mind (TM)
+   Rest (TM)
    Blue: Water Pulse (MR)
-   Blue: Rest (TM)
    Blue: Ice Beam (TM)
    Blue: Surf (HM)
    Yellow: Thunderbolt (TM)
@@ -342,6 +343,8 @@ Key Moves:
    Black: Thief (TM)
    Black: Moonlight (33)
    Green: Razor Leaf (Evo.)
+   Green: Swords Dance (29)
+   Green: X-Scissor (TM)
    Green: Giga Drain (MR)
    Green: Leaf Blade (45)
    LightBlue: Ice Beam (TM)
@@ -472,6 +475,7 @@ Key Moves:
    Dual Chop (24)
    Hone Claws (TM)
    Earthquake (TM)
+   Crunch (Evo.)
    Dragon Rush (55)
 
 Gimmighoul
@@ -542,8 +546,9 @@ Key Moves:
    Bug Bite (13)
    Spark (16)
    Acrobatics (19)
-   X-Scissor (TM)
-   Thunderbolt (33)
+   Thunderbolt (Evo.)
+   Bug Buzz (31)
+   Thunder (TM)
 
 Happiny
 Key Moves:
@@ -576,6 +581,7 @@ Key Moves:
    Mud Slap (13)
    Parabolic Charge (25)
    Thunderbolt (TM)
+   Thunder (TM)
    Eerie Impulse (MR)
    Surf (HM)
 
@@ -636,8 +642,8 @@ Joltik
 Key Moves:
    Electroweb (15)
    Bug Bite (18)
-   Sticky Web (Evo.)
    Signal Beam (34)
+   Sticky Web (Evo.)
    Giga Drain (TM)
    Thunderbolt (TM)
    Thunder (TM)
@@ -734,10 +740,11 @@ Key Moves:
 
 Mawile
 Key Moves:
+   Bite (9)
+   Crunch (29)
    Iron Head (MR/45)
    Play Rough (MR/49)
    Rock Tomb (TM)
-   Crunch (29)
    Sucker Punch (37)
 
 Meowth
@@ -832,11 +839,14 @@ Key Moves:
 
 Nincada
 Key Moves:
-   Fury Cutter (Evo.)   
-   Shadow Ball (33**)
+   Fury Cutter (Evo.)  
+   Screech (Evo.)
+   Aerial Ace (TM) 
+   Bug Bite (MR*)
    Baton Pass (35*)
    Swords Dance (41*)
-   X Scissor (47*/TM)
+   X-Scissor (47*/TM)
+   Shadow Ball (33**)
 
 Noibat
 Key Moves:
@@ -1090,10 +1100,10 @@ Key Moves:
    Steel Wing (TM)
    Wing Attack (21)
    Fury Cutter (25)
-   Stone Axe (Evo.*)
-   X-Scizor (TM/40*/41**)
-   Swords Dance (44*/57**)
+   X-Scissor (TM/41)
+   Swords Dance (57)
    Brick Break (TM)
+   Stone Axe (Evo.*)
    Night Slash (45**)
    Iron Head (50**)
 
@@ -1102,7 +1112,7 @@ Key Moves:
    Bug Bite (8)
    Razor Leaf (15)
    Protect (Evo.)
-   X-Scissor (TM)
+   X-Scissor (TM/39)
    Aerial Ace (TM)
    Steel Wing (TM)
    Sticky Web (31*)
@@ -1221,14 +1231,6 @@ Key Moves:
    Dazzling Gleam (TM)
    Phantom Force (MR)
    Sucker Punch (40)
-
-Sneasel
-Key Moves:
-   Poison Jab (24)
-   Dire Claw (28)
-   Brick Break (30)
-   Hone Claws (TM)
-   X-Scissor (TM)
 
 Spheal
 Key Moves:

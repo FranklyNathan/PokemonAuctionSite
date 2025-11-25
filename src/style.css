@@ -163,3 +163,17 @@ sl-progress-bar.paused::part(base) {
 .new-draft {
     background-color: var(--sl-color-blue-400);
 }
+
+/* Styles specific to the resource dex page */
+.resource-dex #player-and-evolutions-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.resource-dex #player-info-container {
+  flex: 0 0 30%; /* Don't grow, don't shrink, start at 30% width */
+}
+
+.resource-dex #evolution-info-container {
+  flex: 1 1 auto; /* Grow and shrink as needed, taking up remaining space */
+}

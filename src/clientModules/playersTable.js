@@ -369,6 +369,10 @@ export async function loadPlayersData(ctx) {
   // create the players table
   const playerFields = tableData.length > 0 ? Object.keys(tableData[0]) : [];
   ctx.playersTable = createPlayersTable(playersTableWrapperEl, ctx, playerFields, playerSelected);
+
+  if (ctx.isResourceMode) {
+    document.body.classList.add('resource-dex');
+  }
 }
 
 export function setupResourceModeKeyboardNav(ctx) {
