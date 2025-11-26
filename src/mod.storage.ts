@@ -1,8 +1,8 @@
 import { ClientId, Ctx } from './mod.config';
 
 export async function createPlayersTable(ctx: Ctx) {
-  // For a regular auction, we always want a fresh start.
-  if (!ctx.isResourceDex) {
+  // For a regular auction or the resource dex, we always want a fresh start.
+  if (!ctx.isResourceDex || ctx.isResourceDex) {
     await ctx.sql.exec('DROP TABLE IF EXISTS players;');
   }
   // For any auction (including the Resource Dex on its first run), create the table if it's not there.

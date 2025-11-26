@@ -1,0 +1,90 @@
+11/27/2025
+
+//We're getting pretty fine tuned. Release is approaching!
+
+
+Steven Skarmory:
+Toxic > Rock Slide
+Fly > Drill Peck
+Trainer AI is now heavily disincentivized to use Spikes if one layer is already up
+//As the meta develops, one of my biggest concerns is the capacity for the game to be "solved" with guaranteed sweep setups. Steven, more than any other fight, gives me worry. He is the only fight in the game that all players are guaranteed to face if they're going to win, so labbing for him is particularly relevant. You can lab a perfect sweep into Juan&Wallace 8, Sidney, Tucker, and Drake, but come run time, you might not face any of them.
+//Steven's position as the game's final fight also makes him particularly problematic for sweeps. If you know that your Blaziken can 1v6 the fight, you can now play the prior Elite 4 fights in such a way that you sacrifice pokemon recklessly in order to guarantee safe lines. The entire Elite Four becomes easier if you can sweep Steven, not just Steven himself.
+//Now, sweeps aren't necessarily a bad thing. It's satisfying to plan something out and execute it. That said, I do think it's lame to have a list of Pokémon in the tier list each asterisked with: "This is an A tier fellow because if you have it on your team going into Steven, you win." Sweeps are fun to find, but once you discover and execute them, they're not very satisfying in subsequent playthroughs.
+//As I sat down this week to start labbing fights for the first time in months (really labbing them, reseting not to try to win but to figure out all of the variations of lines to find guaranteed victories), it became clear that there are several Pokémon with sweeps into Steven. This has happened before (its one of the big reasons why stat stages are capped at +1, which cut out 99% of the sweeps that existed once upon a time), and it had me a bit concerned. I've always known that eventually, we may need to introduce one final layer of randomness. Say, Steven has 4 potential teams--similar, but slightly different, specifically to prevent against guaranteed sweeps like this. (Blaziken couldn't sweep Steven if the Goodra was a Claydol 50% of the time, for example.) I lined this change up and tested it, and while I don't dislike it, I realized that what needs to happen first is a change to the "baseline" fight to make it as resistant to sweeps as possible. The game will always have sweeps. But before I start messing with new mechanics, the baseline fight needs to be as robust as possible at stopping them.
+//Which brings me to the changes above. Toxic was originally designed to stop sweeps (and it still does do decently at that job against some Pokémon), but it's opening up weaknesses against Pokémon holding Pecha Berries. By holding a berry, Pokémon are essentially gaining a free turn to set up at the cost of their item slot, which is enabling sweeps that wouldn't exist otherwise on pokemon like Kommo-o. It is a bummer that removing Toxic takes away the trade off of a mega stone versus a Pecha Berry, but the net result of this change is making the Skarmory harder to set up on.
+//I know some of you will panic that Skarmory has Rock Slide now, but this slot is really a blank. All of the relevant fire and electric types outspeed Skarmory anyway, and it will still always start by setting Spikes, so none of the previous counters are any weaker.
+//Fly was originally added to stop Gliscor Fury Cutter sweeps. Gliscor is gone now, and (knock on wood) I don't think there are any other threats that can Fury Cutter sweep without taking way too much damage from Drill Peck. Drill Peck does slightly more damage than Fly, which is relevant for softening things up for Metagross.
+//Finally, the biggest change of all is a tweak to the Spikes AI to stop Skarmory from setting multiple layers. I like Spikes in this fight; it punishes trying to PP stall the Metagross and, essentially, it stops Shedinja from walling half of the fight. That said, Skarmory is way too focused on setting the 2nd layer, which has a much smaller reward than the first layer (increasing damage to incoming Pokémon from 12.5% to 16.67%), often doing so when it could otherwise Drill Peck the foe low enough that they can no longer sweep.
+
+Steven Armaldo:
+Aerial Ace > Aqua Jet
+All trainers now prioritize fast kills when choosing which Pokémon to switch in
+//We're really Run&Bun now. Well, not really, but the game does look for fast kills now when it decides which Pokemon to send in next. This is the final piece of the puzzle. Even with the above changes, some fire types still swept Steven. Aqua Jet Armaldo, however, in combination with the hit the sweeper is taking while setting up against Skarmory, is enough to force fire types to switch out or die. Armaldo's Bug typing actually stops it from being weak to Ground and Fighting, and its Rock typing protects it from Fire, so it ends up resisting all of the common sweep types for this fight. Now it serves the additional purpose of stopping low HP Pokémon from continuing to sweep through Steven's slow Pokémon.
+//Overall, I'm satisfied with these changes. It's making me confident that rather than implement a fundamental systems change for how randomness in fights work, I can address sweeps in a case-by-case basis as they appear. Most of Steven's Pokémon still have "blank" slots that could be replaced to counter specific strategies, so I'm cautiously optimistic that we'll be able to stick with this fight and tweak it as needed.
+
+
+Winona 1-5 Rework
+//This fight has been tricky to get right. It's hard to balance for Skarmory and Tropius, which both have spots on her vanilla team but are extremely strong for gyms 1-2. The big changes of this rework include Tropius being her boss for gyms 1-5 (before Altaria takes over), no Pokémon having Roost, and Skarmory no longer being on the team until gym 6. The Tropius lead frees up space for Taillow to join the team so that she has the correct number of Pokémon (four) for the early fights.
+
+Flannery 2/3 Vulpix Added
+//Flannery was using one fewer Pokémon than the other leaders at this phase. This Vulpix is by far the weakest Pokémon on her team, but it keeps her total at the industry standard (Flannery is the other awkward team to design for since Marowak doesn't have an Alolan pre-evolution and Overheat is so centralizing).
+
+Tate & Liza 6 Slowpoke-Galar Added
+Tate & Liza 6 Baltoy > Claydol
+//Same situation as above where these two were down a member compared to Juan&Wallace at this stage. This iteration of Tate&Liza is particularly easy, so this buff helps even the curve.
+
+Phoebe Sableye Night Shade > Foul Play
+Phoebe Sableye Feint Attack > Thief
+//This is probably the single weakest Pokémon in the Elite Four. Foul Play gives it a chance to catch players off guard, and Thief feels more thematic than Feint Attack.
+
+
+TM Price Changes:
+Return removed
+Blizzard/Thunder/FireBlast 3000 > 5000
+Solar Beam 2000 > 3000
+Earthquake/HoneClaws 10000 > 8000
+
+//Return incentivizes players to sit around and grind to max Friendship if they don't have to worry about speed (say, if they're the last player remaining), which I don't like. It's never better than Strength if you aren't grinding it, and you have infinite Strength since its an HM. Based on runs these past few months, nobody will be missing this.
+//It's becoming clear that Thunder is a better TM than Thunderbolt since you're mainly buying them to counter Juan&Wallace, and they set the rain for you to give you 100% accurate Thunders. The other two come up with it to keep it consistent.
+//Solar Beam is too out of place sitting with Rest, Light Screen and Double Team. This feels bad since you never buy it at 2000 anyway, but oh well.
+//Earthquake and Hone Claws prices have been tinkered with more than anything else. They feel a bit too high to me at 10,000, and this helps offset the cost raise to Thunder and Blizzard to keep things at about a net neutral.
+
+
+Whipped Dream Cost 1000 > 2000
+//Updating to the price of US/UM, which is the game we use for learnsets and evolution stone prices. I like having a slightly larger opportunity cost to the early evolution (not that it's significant either way).
+
+
+Shell Bell Removed
+//Soosk has called in a tactical nuke on the Shell Bell, previously able to be farmed infinitely. Target eliminated.
+
+
+Baby Evolution Change: 20 > 10
+Cleffa
+Igglybuff
+Pichu
+Baby Evolution Change: 20 > 30
+Elekid
+Magby
+Munchlax
+Riolu
+Smoochum
+Toxel
+//I know the egg brigade is not going to be happy with this, but these Pokémon are too strong for gym 3. Snorlax has the same BST as Haxorus and Hydrapple; this is not a gym 3 Pokémon. I wanted the simplicity of all eggs evolving at the same level, but the gulf in power between Igglybuff and Toxel is too much. This change buffs the bottom end by making them available one gym earlier and nerfs the top end by pushing them two gyms back. Of the nerfs, Elekid, Magby, Smoochum and Toxel evolve at level 30 in the official series anyway, so this is returning them to their "actual" evolution methods.
+
+
+Pool Addition: Beldum
+//This thing will probably still be as underwhelming as it was when it was previously in the pool, but it has its power spike for the 3rd gym, which is enough of a boon that I think it has a niche for itself. In general, as we've labbed the game, more and more Pokémon have moved out of C tier and into the upper tiers after proving their worth. Because of this, I feel more comfortable adding in some more C Tiers who have actual niches.
+
+Pool Addition: Tyrunt
+//Speaking of niches, this baby T-Rex here has Stealth Rock at level 15, and Strong Jaw Bite for early Tate&Lizas. It won't be doing much for the mid game while it waits for its level 39 evolution, but I think this is enough to give it a shot.
+
+
+Trainer Payout Bugfix
+//Fixed a bug where certain gym leaders (Archie, Maxie, Roxanne) weren't paying out money.
+Briney Bugfix
+//Fixed a long-standing bug where talking with Briney while riding Flygon broke the camera.
+
+
+Sandbox Mode Expanded
+//I've adjusted the save structure to expand the player PC to hold up to 250 items. It now holds a more complete set of TMs and evolution items. It's also got mints for every nature so that Sooski can cheat more easily.
+

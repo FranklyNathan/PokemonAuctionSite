@@ -528,8 +528,7 @@ const specialMechanics = {
 \nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
   Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
-\nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.
-\nAll baby Pokemon have had their evolution methods changed to level 20 (besides Azruill, who evolves at 10).`,
+\nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
   Eevee: `Tip: The most important Pokemon of all!
 \nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
 \nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
@@ -665,11 +664,12 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
             let color = colorMatch[1].toLowerCase();
             // Map specific keywords to custom color values
             const colorMap = {
-              black: 'lightgray', // Render black as light gray
-              blue: 'cyan', // Render blue as cyan
-              green: 'lightgreen', // A lighter shade of green
+              black: 'lightgray',
+              blue: '#6890F0',
+              green: '#78C850',
               purple: 'plum', // A lighter shade of purple
-              red: 'orangered', // A more orange-red
+              red: '#F08030',
+              yellow: '#F8D030',
             };
             const finalColor = colorMap[color] || color;
             colorStyle = `style="color: ${finalColor};"`;

@@ -47,6 +47,7 @@ import v6_3 from '../assets/PatchNotes/v6.3 Patch Notes.txt';
 import v6_4 from '../assets/PatchNotes/v6.4 Patch Notes.txt';
 import v6_5 from '../assets/PatchNotes/v6.5 Patch Notes.txt';
 import v6_6 from '../assets/PatchNotes/v6.6 Patch Notes.txt';
+import v6_7 from '../assets/PatchNotes/v6.7 Patch Notes.txt';
 import patchNotesHtml from './html.patchNotes.html';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import gymsText from '../assets/gyms.txt';
@@ -160,29 +161,6 @@ export class Auction implements DurableObject {
         // Inject a cache-busting favicon link into the results page.
         const modifiedResultsHtml = resultsHtml.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`);
         return new Response(modifiedResultsHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
-      } else if (path[0] === 'resource-dex-init') {
-        console.log('[Durable Object] Initializing as Resource Dex.');
-        this.ctx.isResourceDex = true;
-        await createPlayersTable(this.ctx); // Create the table on first initialization.
-
-        // Create a synthetic request to trigger player data loading for the Resource Dex.
-        // This mimics the form submission from the home page's "Resource Dex" button.
-        const syntheticFormData = new FormData();
-        syntheticFormData.append('resourceMode', 'true');
-        syntheticFormData.append('useDefaultCsv', 'true');
-
-        const syntheticLoadRequest = new Request(url.origin + '/new-auction', {
-          method: 'POST',
-          body: syntheticFormData,
-        });
-        await handleNewAuctionDO(syntheticLoadRequest, this.ctx, url);
-        await this.ctx.storeCtx();
-        // After initialization, serve the main auction HTML.
-        // Adjust the request URL to what handleAuction expects for the main page.
-        const auctionRequest = new Request(url.origin + '/', request);
-        const auctionHtmlResponse = await handleAuction(auctionRequest, this.ctx);
-        const auctionHtmlText = await auctionHtmlResponse.text();
-        return new Response(auctionHtmlText.replace('</head>', `<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">\n</head>`), auctionHtmlResponse);
       } else if (path[0] == 'new-auction') {
         return await handleNewAuctionDO(request, this.ctx, url);
       } else if (path[1] == 'players-data') {
@@ -190,6 +168,24 @@ export class Auction implements DurableObject {
       } else if (path[1] == 'results-data') {
         return await handleResultsData(request, this.ctx);
       } else {
+        // This is a request for the main auction page. If it's for the resource dex, we need to re-initialize it.
+        if (this.ctx.isResourceDex) {
+          console.log('[Durable Object] Re-initializing Resource Dex.');
+          await createPlayersTable(this.ctx); // Clear and create the table.
+
+          // Create a synthetic request to trigger player data loading.
+          const syntheticFormData = new FormData();
+          syntheticFormData.append('resourceMode', 'true');
+          syntheticFormData.append('useDefaultCsv', 'true');
+
+          const syntheticLoadRequest = new Request(url.origin + '/new-auction', {
+            method: 'POST',
+            body: syntheticFormData,
+          });
+          await handleNewAuctionDO(syntheticLoadRequest, this.ctx, url);
+          await this.ctx.storeCtx();
+        }
+
         console.log(`[Durable Object] Path did not match a specific DO route. Treating as request for main auction HTML.`);
         const auctionHtml = await handleAuction(request, this.ctx);
         const auctionHtmlText = await auctionHtml.text();
@@ -362,6 +358,7 @@ export default {
           'v6.4 Patch Notes.txt': v6_4,
           'v6.5 Patch Notes.txt': v6_5,
           'v6.6 Patch Notes.txt': v6_6,
+          'v6.7 Patch Notes.txt': v6_7,
         };
         const content = map[filename];
         if (content !== undefined) {
@@ -412,11 +409,17 @@ export default {
         const resourceDexId = env.AUCTION.idFromName('RESOURCE_DEX_V1');
         const stub = env.AUCTION.get(resourceDexId);
         
-        // If it's just '/resource-dex', it's the initial page load.
-        // We use a special path to trigger one-time initialization.
-        if (path.length === 1) {
-          return await stub.fetch(request.url.replace('/resource-dex', '/resource-dex-init'));
-        }
+        // The constructor of the DO will set `isResourceDex` to true if it's being created.
+        // We need to ensure this property is set on the context for our logic to work.
+        // The DO's fetch handler will now handle re-initialization on every load of the main page.
+        // We can simply forward the request.
+        // The DO's constructor will only run once, but we need to tell it it's the resource dex.
+        // We can do this by checking if the DO already exists in storage.
+        // A better approach is to have the DO's fetch handler manage this.
+        // The DO's constructor sets up the context. We can check if `isResourceDex` is already set.
+        // The logic inside the DO's fetch handler will now correctly re-initialize the data.
+        // So, we can just forward the request.
+
         // For other paths like '/resource-dex/players-data', forward the request as is.
         return await stub.fetch(request);
       } else if (path[0] === 'favicon.ico') {

@@ -1,5 +1,6 @@
 6/20/2025
-/These notes are a bit weird. After last run, I did some updates before we took a break for about a month. Over that time I also synced the base with the upstream emerald expansion GitHub in order to get the day/night cycle. That process involved updating over 100 files and was about 3 weeks ago. All of which is to say, I think these are all the changes, but I may have forgotten some...
+
+//These notes are brief and a bit weird. After last run, I did some updates before we took a break for about a month. Over that time, I also synced the base with the upstream emerald expansion GitHub in order to get the day/night cycle. That process involved updating over 100 files and was about 3 weeks ago. All of which is to say, I think these are all the changes, but I may have forgotten some...
 
 Day/Night Overworld Cycle Added
 //Purely visual. The overworld dims at night to let you know at a glance what time it is.
