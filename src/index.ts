@@ -168,22 +168,25 @@ export class Auction implements DurableObject {
       } else if (path[1] == 'results-data') {
         return await handleResultsData(request, this.ctx);
       } else {
-        // This is a request for the main auction page. If it's for the resource dex, we need to re-initialize it.
-        if (this.ctx.isResourceDex) {
-          console.log('[Durable Object] Re-initializing Resource Dex.');
-          await createPlayersTable(this.ctx); // Clear and create the table.
+        // This is a request for the main auction page.
+        // If it's for the resource dex, we need to ensure it's initialized/re-initialized.
+        if (path[0] === 'resource-dex') {
+          this.ctx.isResourceDex = true; // Ensure this is set for subsequent logic.
+          console.log('[Durable Object] Re-initializing Resource Dex data.');
+          await createPlayersTable(this.ctx); // Clear and recreate the players table.
 
-          // Create a synthetic request to trigger player data loading.
+          // Create a synthetic request to trigger the player data loading logic
+          // which is handled by `handleNewAuctionDO`.
           const syntheticFormData = new FormData();
           syntheticFormData.append('resourceMode', 'true');
           syntheticFormData.append('useDefaultCsv', 'true');
 
-          const syntheticLoadRequest = new Request(url.origin + '/new-auction', {
+          const syntheticLoadRequest = new Request(new URL(request.url).origin + '/new-auction', {
             method: 'POST',
             body: syntheticFormData,
           });
-          await handleNewAuctionDO(syntheticLoadRequest, this.ctx, url);
-          await this.ctx.storeCtx();
+          await handleNewAuctionDO(syntheticLoadRequest, this.ctx, new URL(syntheticLoadRequest.url));
+          await this.ctx.storeCtx(); // Persist the updated context.
         }
 
         console.log(`[Durable Object] Path did not match a specific DO route. Treating as request for main auction HTML.`);
