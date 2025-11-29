@@ -169,7 +169,7 @@ Swampert,Water/Ground,evo,Torrent,,Damp,100,110,90,85,90,60,Level 36,Stage 2
 Mega Swampert,Water/Ground,mega,Swift Swim,,,100,150,110,95,110,70,Swampertite,Stage 2
 Nincada,Bug/Ground,base,Compound Eyes,,Run Away,31,45,90,30,30,40,,
 Ninjask,Bug/Flying,evo,Speed Boost,,Infiltrator,61,90,45,50,50,160,Level 20,
-Shedinja,Bug/Ghost,evo,Wonder Guard,,,1,90,45,30,30,40,Level 20 with empty party slot,
+Shedinja,Bug/Ghost,evo,Wonder Guard,,,1,90,45,30,30,40,Empty party slot,
 Noibat,Flying/Dragon,base,Frisk,Infiltrator,Telepathy,40,30,35,45,40,55,,
 Noivern,Flying/Dragon,evo,Frisk,Infiltrator,Telepathy,85,70,80,97,80,123,Soothe Bell,
 Numel,Fire/Ground,base,Oblivious,Simple,Own Tempo,60,60,40,65,45,35,,Stage 1
@@ -255,6 +255,7 @@ Slowking-Galar,Poison/Psychic,evo,Curious Medicine,Own Tempo,Regenerator,95,65,8
 Smoliv,Grass/Normal,base,Early Bird,,Harvest,41,35,45,58,51,30,,
 Dolliv,Grass/Normal,evo,Early Bird,,Harvest,52,53,60,78,78,33,Level 25,
 Arboliva,Grass/Normal,evo,Seed Sower,,Harvest,78,69,90,125,109,39,Level 35,
+Smeargle,Normal,base,Own Tempo,Technician,Moody,55,20,35,20,45,75,,,Basic
 Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,,Stage 1
 Glalie,Ice,evo,Inner Focus,Ice Body,Moody,80,80,80,80,80,80,Level 42,Stage 1
 Mega Glalie,Ice,mega,Refrigerate,,,80,120,80,120,80,100,Glalitite,Stage 1
@@ -340,9 +341,10 @@ Sudowoodo,Rock,evo,Sturdy,Rock Head,Rattled,70,100,115,30,65,30,Level 20,,TRUE
 Budew,Grass/Poison,base,Natural Cure,Poison Point,Leaf Guard,40,30,35,50,70,55,,,TRUE
 Roselia,Grass/Poison,evo,Natural Cure,Poison Point,Leaf Guard,50,60,45,100,80,65,Level 20,,TRUE
 Roserade,Grass/Poison,evo,Natural Cure,Poison Point,Technician,60,70,65,125,105,90,Shiny Stone,,TRUE
-Cleffa,Fairy,base,Cute Charm,Magic Guard,Friend Guard,50,25,28,45,55,15,,,TRUE
-Clefairy,Fairy,evo,Cute Charm,Magic Guard,Friend Guard,70,45,48,60,65,35,Level 10,,TRUE
-Clefable,Fairy,evo,Cute Charm,Magic Guard,Unaware,95,70,73,95,90,60,Moon Stone,,TRUE
+Cleffa,Fairy,base,Cute Charm,Magic Guard,Friend Guard,50,25,28,45,55,15,,Stage 2,TRUE
+Clefairy,Fairy,evo,Cute Charm,Magic Guard,Friend Guard,70,45,48,60,65,35,Level 10,Stage 2,TRUE
+Clefable,Fairy,evo,Cute Charm,Magic Guard,Unaware,95,70,73,95,90,60,Moon Stone,Stage 2,TRUE
+Mega Clefable,Fairy/Flying,mega,Cute Charm,Magic Guard,Unaware,95,80,93,135,110,70,Clefablite,Stage 2,TRUE
 Chingling,Psychic,base,Levitate,,,45,30,50,65,50,45,,,TRUE
 Chimecho,Psychic,evo,Levitate,,,75,50,80,95,90,65,Level 20,,TRUE
 Elekid,Electric,base,Static,,Vital Spirit,45,63,37,65,55,95,,,TRUE
@@ -360,7 +362,7 @@ Magmortar,Fire,evo,Flame Body,,Vital Spirit,75,95,67,125,95,83,Linking Cord,,TRU
 Mantyke,Water/Flying,base,Swift Swim,Water Absorb,Water Veil,45,20,50,60,120,50,,,TRUE
 Mantine,Water/Flying,evo,Swift Swim,Water Absorb,Water Veil,85,40,70,80,140,70,Level 20,,TRUE
 Mime Jr,Psychic/Fairy,base,Soundproof,Filter,Technician,20,25,45,70,90,60,,,TRUE
-Mr. Mime,Psychic/Fairy,evo,Soundproof,Filter,Technician,40,45,65,100,120,90,Level 20,,TRUE
+Mr. Mime,Psychic/Fairy,evo,Soundproof,Filter,Technician,40,45,65,100,120,90,Level 20 at day,,TRUE
 Mr. Mime-Galar,Ice/Psychic,evo,Vital Spirit,Screen Cleaner,Ice Body,50,65,65,90,90,100,Level 20 at night,,TRUE
 Mr. Rime,Ice/Psychic,evo,Tangled Feet,Screen Cleaner,Ice Body,80,85,75,110,100,70,Level 42,,TRUE
 Munchlax,Normal,base,Pickup,Thick Fat,Gluttony,135,85,40,40,85,5,,,TRUE

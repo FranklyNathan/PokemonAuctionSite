@@ -507,9 +507,12 @@ const specialMechanics = {
 \nApplin evolves into different Pokemon depending on which gym you're in. Gyms are randomized in Emerald Blitz, so cross your fingers to get Fortree, Lavaridge, or Rustboro early,`,
   Rotom: `Unique Mechanic: Rotom Catalog
 \nRotom transforms with the consumable item Rotom Catalog, available in Fortree City. You're given three Rotom Catalogs. With the ability to change forms after seeing which boss you're about to face, Rotom's versatility is unmatched.`,
-  Nincada: `Tip: Shedinja
+  Smeargle: `Unique Mechanic: Sketch
+\nSmeargle's signature move Sketch is more potent than ever before. Now, when used from the party menu, Smeargle can choose to learn one of four moves randomly selected from the Sketch pool, a collection of the strongest moves in Emerald Blitz. Happy sketching!
+\nNotably, Sketch is the only move in the game that cannot be relearned via the Move Relearner.`,
+Nincada: `Tip: Shedinja
 \nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Juan and Wallace, who have few options to hit it. If you're facing a Seadra variant of this fight, equip your Shedinja with a Pecha Berry to avoid dying to Seadra's Poison Point!
-\nTo evolve Nincada into Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
+\nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
   Zorua: `Tip: Illusion
 \nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
   Minior: `Tip: Rollout!
@@ -812,17 +815,119 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       infoContainer.style.justifyContent = 'flex-start'; // Align to the start
       infoContainer.style.alignItems = 'flex-start'; // Align to the top
 
-      // Add an arrow from the base pokemon to the first evolution
-      const firstEvo = evolutions[0];
-      const arrowHtml = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
-          <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
-          <div style="font-size: 0.7rem; text-align: center; width: 70px;">${firstEvo.info.evolution_method || ''}</div>
-        </div>
-      `;
-      infoContainer.insertAdjacentHTML('beforeend', arrowHtml);
+      // Configuration for all form changes.
+      const formChanges = {
+        Aggron: ['Mega Aggron'],
+        Ampharos: ['Mega Ampharos'],
+        Banette: ['Mega Banette'],
+        Blaziken: ['Mega Blaziken'],
+        Camerupt: ['Mega Camerupt'],
+        Chandelure: ['Mega Chandelure'],
+        Chesnaught: ['Mega Chesnaught'],
+        Clefable: ['Mega Clefable'],
+        Delphox: ['Mega Delphox'],
+        Dragalge: ['Mega Dragalge'],
+        Excadrill: ['Mega Excadrill'],
+        Feraligatr: ['Mega Feraligatr'],
+        Froslass: ['Mega Froslass'],
+        Gallade: ['Mega Gallade'],
+        Garchomp: ['Mega Garchomp'],
+        Gardevoir: ['Mega Gardevoir'],
+        Glalie: ['Mega Glalie'],
+        Greninja: ['Mega Greninja'],
+        Houndoom: ['Mega Houndoom'],
+        Lopunny: ['Mega Lopunny'],
+        Lucario: ['Mega Lucario'],
+        Manectric: ['Mega Manectric'],
+        Mawile: ['Mega Mawile'],
+        Metagross: ['Mega Metagross'],
+        Sableye: ['Mega Sableye'],
+        Salamence: ['Mega Salamence'],
+        Sceptile: ['Mega Sceptile'],
+        Scizor: ['Mega Scizor'],
+        Scolipede: ['Mega Scolipede'],
+        Sharpedo: ['Mega Sharpedo'],
+        Starmie: ['Mega Starmie'],
+        Swampert: ['Mega Swampert'],
+        Aegislash: ['Aegislash-Blade'],
+        Castform: ['Castform-Sunny', 'Castform-Rainy', 'Castform-Snowy'],
+        Minior: ['Minior-Core'],
+        Rotom: ['Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow'],
+        Wishiwashi: ['Wishiwashi-School'],
+      };
+
+      // Configuration for special one-off arrows.
+      const specialArrows = {
+        Shedinja: 'Plus.png',
+      };
+
+      // Configuration for all split evolutions.
+      // `base` is the Pokémon that has the split.
+      // `branches` are the direct results of the split.
+      const splitEvolutions = {
+        Applin: ['Flapple', 'Appletun', 'Dipplin'],
+        Cubone: ['Marowak', 'Marowak-Alola'],
+        Dartrix: ['Decidueye', 'Decidueye-Hisui'],
+        Exeggcute: ['Exeggutor', 'Exeggutor-Alola'],
+        Eevee: ['Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon', 'Leafeon', 'Glaceon', 'Sylveon'],
+        Gloom: ['Vileplume', 'Bellossom'],
+        Goomy: ['Sliggoo', 'Sliggoo-Hisui'],
+        Kirlia: ['Gardevoir', 'Gallade'],
+        'Mime Jr': ['Mr. Mime', 'Mr. Rime'],
+        Pikachu: ['Raichu', 'Raichu-Alola'],
+        Poliwhirl: ['Poliwrath', 'Politoed'],
+        Rockruff: ['Lycanroc-Midday', 'Lycanroc-Midnight'],
+        Scyther: ['Scizor', 'Kleavor'],
+        Slowpoke: ['Slowbro-Galar', 'Slowking-Galar'],
+        Snorunt: ['Glalie', 'Froslass'],
+        Toxel: ['Toxtricity-Amped', 'Toxtricity-Low_Key'],
+        Tyrogue: ['Hitmonlee', 'Hitmonchan', 'Hitmontop'],
+      };
+      const evoNames = evolutions.map(evo => evo.name);
+      let splitBranches = [];
+      let isSplit = false;
+      let formBranches = [];
+      let isFormChange = false;
+
+      // Find if the current evolution chain contains a defined split.
+      for (const base in formChanges) {
+        const branches = formChanges[base];
+        if (branches.every(branch => evoNames.includes(branch))) {
+          isFormChange = true;
+          formBranches = branches;
+          break;
+        }
+      }
+
+      for (const base in splitEvolutions) {
+        const branches = splitEvolutions[base];
+        // Check if all defined branches for a base are present in the evolution list.
+        if (branches.every(branch => evoNames.includes(branch))) {
+          isSplit = true;
+          splitBranches = branches;
+          break;
+        }
+      }
 
       evolutions.forEach((evo, index) => {
+        // Determine which arrow to use for this specific evolution.
+        let arrowImage = 'Arrow.png'; // Default to the standard arrow.
+        if (specialArrows[evo.name]) {
+          arrowImage = specialArrows[evo.name];
+        } else if (isFormChange && formBranches.includes(evo.name)) {
+          arrowImage = 'FormArrow.png';
+        } else if (isSplit && splitBranches.includes(evo.name)) {
+          arrowImage = 'SplitArrow.png';
+        }
+
+        const arrowHtml = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
+            <img src="/generic/${arrowImage}" alt="Evolves to" style="width: 24px; height: 24px;">
+            <div style="font-size: 0.7rem; text-align: center; width: 70px;">${evo.info.evolution_method || ''}</div>
+          </div>
+        `;
+        infoContainer.insertAdjacentHTML('beforeend', arrowHtml);
+
         let imageName = evo.name;
         // Handle Mega Evolution naming convention ("Mega Pokemon" -> "Pokemon-Mega")
         if (imageName.startsWith('Mega ')) {
@@ -908,18 +1013,6 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
           </div>
         `;
         infoContainer.insertAdjacentHTML('beforeend', evolutionHtml);
-
-        // If this is not the last evolution, add an arrow and the evolution method to get to the next one.
-        if (index < evolutions.length - 1) {
-          const nextEvo = evolutions[index + 1];
-          const arrowHtml = `
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
-              <img src="/generic/Arrow.png" alt="Evolves to" style="width: 24px; height: 24px;">
-              <div style="font-size: 0.7rem; text-align: center; width: 70px;">${nextEvo.info.evolution_method || ''}</div>
-            </div>
-          `;
-          infoContainer.insertAdjacentHTML('beforeend', arrowHtml);
-        }
       });
     }
   } else {
