@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
     <link rel="stylesheet" href="/style.css" />
-    <style>
+    <style>      
       body {
         padding: 1rem;
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -280,6 +280,28 @@
         margin-bottom: 0.2rem;
       }
 
+      /* Benchmark Table */
+      .benchmark-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      .benchmark-table th, .benchmark-table td {
+        border: 1px solid var(--sl-color-neutral-300);
+        padding: 0.5rem 0.8rem;
+        text-align: left;
+      }
+      .sl-theme-dark .benchmark-table th, .sl-theme-dark .benchmark-table td {
+        border-color: var(--sl-color-neutral-600);
+      }
+      .benchmark-table th {
+        background-color: var(--sl-color-neutral-200);
+        font-weight: bold;
+      }
+      .sl-theme-dark .benchmark-table th {
+        background-color: #1f2933;
+      }
+
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
@@ -302,7 +324,7 @@
             <li><a href="#key-npcs">Key NPCs</a></li>
             <li><a href="#sitrus-berries">Sitrus Berries</a></li>
             <li><a href="#slateport-market">Slateport Market Items</a></li>
-            <li><a href="#level-caps">Level Caps</a></li>
+            <li><a href="#gym-benchmarks">Gym Benchmarks</a></li>
           </ul>
         </nav>
 
@@ -719,21 +741,29 @@
           </div>
         </section>
 
-            <section id="level-caps">
-          <h2>Level Caps</h2>
-          <p>The Rare Candy stops leveling up your Pokemon at these thresholds:</p>
-          <div class="tm-chart">
-            <pre style="margin: 0;">
-Gym 1: 15
-Gym 2: 19
-Gym 3: 24
-Gym 4: 29
-Gym 5: 32
-Gym 6: 35
-Gym 7: 42
-Gym 8: 48
-Elite 4: 58</pre>
-          </div>
+        <section id="gym-benchmarks">
+          <h2>Gym Benchmarks</h2>
+          <p>The Rare Candy stops leveling up your Pokémon at these thresholds. Defeating each gym leader also rewards you with a set amount of money.</p>
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Gym</th>
+                <th>Level Cap</th>
+                <th>Money Given</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gym 1</td><td>15</td><td>3,750</td></tr>
+              <tr><td>Gym 2</td><td>19</td><td>4,750</td></tr>
+              <tr><td>Gym 3</td><td>24</td><td>6,000</td></tr>
+              <tr><td>Gym 4</td><td>29</td><td>7,250</td></tr>
+              <tr><td>Gym 5</td><td>32</td><td>8,000</td></tr>
+              <tr><td>Gym 6</td><td>35</td><td>8,750</td></tr>
+              <tr><td>Gym 7</td><td>42</td><td>10,250</td></tr>
+              <tr><td>Gym 8</td><td>48</td><td>12,000</td></tr>
+              <tr><td>Elite 4</td><td>58</td><td>-</td></tr>
+            </tbody>
+          </table>
         </section>
         </div>
     </div>
