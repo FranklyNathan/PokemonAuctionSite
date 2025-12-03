@@ -7,7 +7,7 @@ Notebook Addition: Random!
 
 AI Switch Logic Change
 //The main change of the patch. The AI now has a 50% chance of swapping out if it's at -3 stat stages or more. This prevents Eeveelution strategies of dropping an enemy to -6 and then chilling, especially in doubles.
-//Notably, this change doesn't apply to Flannery, to stop her from swapping out after using two overheats.
+//Notably, this change doesn't apply to Flannery, to stop her from swapping out after using Overheat twice.
 
 
 Skiddo/Mareep Milk Drink Level 11 > 20
@@ -31,7 +31,7 @@ Norman 5/6/7 Slaking Counter > Earthquake
 
 
 Final NPC TM Rewards Removed
-//Obscure TMs such as Hidden Power, Return and Secret Power are no longer accessible.
+//Obscure TMs such as Hidden Power, Return and Secret Power are no longer accessible (the weekly Soosk nerf).
 
 
 Pool Addition: Smeargle

@@ -5,6 +5,7 @@ import { getAssetFromKV, NotFoundError } from '@cloudflare/kv-asset-handler';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import homeHtml from './html.home.html';
 import indexHtml from './html.index.html';
+import downloadHtml from './html.download.html';
 import faqHtml from './html.faq.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
 import v1_7 from '../assets/PatchNotes/v1.7 Patch Notes.txt';
@@ -309,6 +310,9 @@ export default {
       } else if (path[0] === 'faq' && request.method.toLowerCase() == 'get') {
         // User is at the FAQ page
         return new Response(faqHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'download' && request.method.toLowerCase() == 'get') {
+        // User is at the Download page
+        return new Response(downloadHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
       } 
       
@@ -405,6 +409,9 @@ export default {
       } else if (path[0] === 'assets' && path[1] === 'gyms.txt') {
         console.log(`[Worker Fetch] Matched /assets/gyms.txt route.`);
         return new Response(gymsText, { headers: { 'Content-Type': 'text/plain' } });
+      } else if (path[0] === 'assets' && path[1] === 'emeraldblitz.bps') {
+        console.log(`[Worker Fetch] Matched /assets/emeraldblitz.bps route.`);
+        return await handleModule(request, path);
       } else if (path[0] == 'vendor') {
         return await handleVendor(request, path);
       } else if (path[0] && /^[0-9a-f]{64,64}$/.test(path[0])) {
