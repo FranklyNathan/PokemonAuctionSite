@@ -1,0 +1,38 @@
+12/2/2025
+
+
+Notebook Addition: Random!
+//At the bottom of the notebook, below the egg option, you can now choose Random. Now, if you're playing alone, or you're playing with one other friend and can't draft, you have an in-game way to randomly generate yourself a team. Booyah!
+
+
+AI Switch Logic Change
+//The main change of the patch. The AI now has a 50% chance of swapping out if it's at -3 stat stages or more. This prevents Eeveelution strategies of dropping an enemy to -6 and then chilling, especially in doubles.
+//Notably, this change doesn't apply to Flannery, to stop her from swapping out after using two overheats.
+
+
+Skiddo/Mareep Milk Drink Level 11 > 20
+//A nerf to early unkillable Flaaffy. I'd like to keep the game with as few early juggernauts as possible, and you're never really Milk Drinking before gym 3 anyway.
+
+
+Wugtrio 5/6 Wrap > Throat Chop
+Seadra/Kingrda 3/4/5/6 Twister/DoubleTeam > Bounce
+
+//I love Shedinja. You love Shedinja. But Shedinja probably shouldn't be good. It should have some niche uses for parts of certain fights, sure, but it shouldn't be able to wall entire gym battles. Juan and Wallace were by far Shedinja's best matchup, but no longer. (After gym 6, Gyarados joins the team with Crunch to keep Shedinja honest, and before gym 3, Nincada hasn't evolved yet. Shedinja was only walling the middle fights.)
+
+
+Norman 3 Zorua Leer > Curse
+//A nerf to what I suspect to be the hardest gym fight (the AI can be tricked into killing itself with Curse--knowing this move weakens the Pokémon that has it).
+
+Norman 5/6 Zoroark Curse > Torment
+//A buff to the easier Norman fights.
+
+Norman 5/6/7 Slaking Counter > Earthquake
+//If optimized against, the Counter AI is too easy to play around when combined with Truant. This stops Slaking from being cheesed any worse than he already is with Protect.
+
+
+Final NPC TM Rewards Removed
+//Obscure TMs such as Hidden Power, Return and Secret Power are no longer accessible.
+
+
+Pool Addition: Smeargle
+//This is the worst Pokémon to ever be added to the pool. But he truly follows in Trubbish's footsteps by being funny. In fact, this good boy is much funnier than Trubbish; he can learn Milk Drink, Sheer Cold, and 30 other moves too. If you roll relevant moves for the point in the game you're at, he's going to have a lot of creative use cases. 

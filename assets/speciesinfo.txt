@@ -358,6 +358,7 @@ Key Moves:
    Purple: Dazzling Gleam (TM)
    Purple: Morning Sun (33)
    Black: Thief (TM)
+   Black: Screech (29)
    Black: Moonlight (33)
    Green: Razor Leaf (Evo.)
    Green: Swords Dance (29)
@@ -747,7 +748,7 @@ Key Moves:
 Mareep
 Key Moves:
    Thundershock (8)
-   Milk Drink (11)
+   Milk Drink (20)
    Thunder Punch (30)
    Dazzling Gleam (TM)
    Discharge (40)
@@ -1186,15 +1187,16 @@ Key Moves:
 
 Skiddo
 Key Moves:
-   Milk Drink (11)
    Leech Seed (12)
    Razor Leaf (13)
+   Milk Drink (20)
    Bulldoze (26)
    Seed Bomb (30)
    Aerial Ace (32/TM)
    Bulk Up (34/TM)
    Brick Break (TM)
    Earthquake (MR/TM)
+   Horn Leech (47)
 
 Skrelp
 Key Moves:
