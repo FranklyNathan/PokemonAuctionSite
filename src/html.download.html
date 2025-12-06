@@ -22,29 +22,21 @@
         width: 15rem;
       }
       .logo {
-        max-width: 38%;
+        max-width: 34%;
         height: auto;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
       /* Dark-mode toggle / control-button helpers */
       .sl-theme-dark .invert-in-dark-mode {
         filter: invert(1);
       }
-      .sl-theme-dark sl-button[variant='neutral']::part(label) {
-        color: white;
-      }
-      .control-button {
-        --sl-spacing-x-small: 0;
-      }
-      .control-button::part(base) {
-        width: 3rem;
-        height: 1rem;
-        justify-content: center;
-      }
       .instructions {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         max-width: 30rem;
         text-align: center;
+      }
+      .version-info {
+        margin-bottom: 0.2rem; /* Adjust this value to control the space */
       }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
@@ -58,13 +50,14 @@
   <body class="ready">
     <img src="/blitzlogo.png" alt="Emerald Blitz Logo" class="logo" />
     <sl-button id="download-patch-button" class="download-button" size="large">Download Patch</sl-button>
+    <p class="version-info">Current Release: v6.8</p>
     <p class="instructions">
       Once downloaded, apply the patch online using this <a href="https://www.marcrobledo.com/RomPatcher.js/" target="_blank" rel="noopener noreferrer">ROM Patcher</a>
     </p>
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; height: 4rem; align-items: center;">
       <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
-        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" style="height: 1.4rem; position: relative; top: 4px;" />
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
       </sl-button>
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
@@ -84,10 +77,10 @@
       function applyTheme(theme) {
         if (theme === 'dark') {
           htmlEl.classList.add('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
         }
       }
 

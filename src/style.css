@@ -38,8 +38,8 @@ sl-button.bet::part(base) {
     background-color: var(--sl-color-green-400);
 }
 sl-button.bet.hover::part(base):hover {
-    transform: scale(1.2) rotate(-1.8deg);
     color: black;
+    filter: brightness(1.3);
 }
 
 .sl-theme-dark sl-button[variant='neutral']::part(base) {
@@ -58,6 +58,75 @@ sl-button.bet::part(base):active {
     color: black;
 }
 
+/* Main action buttons styling from home.html */
+.main-button {
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+.main-button::part(base) {
+    transition: filter 0.3s ease;
+}
+.main-button:hover::part(base) {
+    filter: brightness(1.3);
+}
+
+/* Hover/transition for download buttons (pages: download, results) */
+.download-button::part(base),
+#download::part(base) {
+    transition: filter 0.3s ease;
+}
+.download-button:hover::part(base),
+#download:hover::part(base) {
+    filter: brightness(1.3);
+}
+
+/* Hover effect for small control buttons (dark-mode toggle, etc.) */
+.control-button:hover::part(base) {
+    filter: brightness(1.3);
+}
+
+/* Standardize control buttons (home, dark-mode toggle, small icons) across pages */
+.control-button {
+    --sl-spacing-x-small: 0;
+}
+.control-button::part(base) {
+    width: 3rem;
+    height: 1rem; /* standard small control button height */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* remove extra internal padding */
+    overflow: visible; /* allow larger icons to extend outside the button like before */
+}
+.control-button img {
+    height: 1.4rem !important; /* restore previous visible icon size */
+    position: static !important;
+    top: auto !important;
+    display: block !important;
+    align-self: center !important; /* center within the shoelace button flex container */
+    margin: 0 !important;
+}
+
+/* Also standardize small icons used elsewhere (download, patch icons, etc.) */
+.control-button .invert-in-dark-mode,
+.download-icon,
+.main-button img {
+    height: 1.4rem !important;
+    position: static !important;
+    top: auto !important;
+    display: block !important;
+    align-self: center !important;
+    margin: 0 !important;
+}
+
+/* Make the dark-mode toggle icons (Solrock/Lunatone) larger so they match previous size */
+#dark-mode-toggle img.invert-in-dark-mode {
+    height: 1.9rem !important;
+    position: static !important;
+    top: auto !important;
+    display: block !important;
+    align-self: center !important;
+    margin: 0 !important;
+}
 sl-dialog::part(panel) {
     border-radius: 0;
     box-shadow: var(--shadow-color) 0 0 15px;

@@ -91,15 +91,6 @@
       filter: invert(1);
     }
 
-    .control-button {
-      --sl-spacing-x-small: 0; /* remove horizontal padding */
-    }
-
-    .control-button::part(base) {
-      width: 3rem;
-      height: 1rem;
-      justify-content: center;
-    }
   </style>
 
   <body>
@@ -528,13 +519,13 @@
           if (tableWrapper) {
             tableWrapper.classList.add('ag-theme-balham-dark');
           }
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
           if (tableWrapper) {
             tableWrapper.classList.remove('ag-theme-balham-dark');
           }
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
         }
       }
 

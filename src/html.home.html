@@ -86,17 +86,15 @@
       .sl-theme-dark sl-button[variant='neutral']::part(label) {
         color: white;
       }
-      .control-button {
-        --sl-spacing-x-small: 0;
-      }
-      .control-button::part(base) {
-        width: 3rem;
-        height: 1rem;
-        justify-content: center;
-      }
       .main-button {
         width: 15rem;
         margin-bottom: 1rem;
+      }
+      .main-button::part(base) {
+        transition: filter 0.3s ease;
+      }
+      .main-button:hover::part(base) {
+        filter: brightness(1.3);
       }
       /* Make the tierlist dialog match the auction page's appearance */
       #tierlistDialog::part(body) {
@@ -206,26 +204,32 @@
       <sl-button class="main-button" size="large" onclick="window.open('/assets/boss-battles.html', '_blank')">Boss Battles</sl-button>
     </div>
 
-    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <sl-button id="download-button" class="control-button" variant="neutral" title="Download Patch">
-        <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Download Patch" style="height: 1.3rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="discord-button" class="control-button" variant="neutral" title="Join the Discord">
-        <img class="invert-in-dark-mode" src="/generic/Discord.png" alt="Discord" style="height: 1.3rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
-        <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="youtube-button" class="control-button" variant="neutral" title="Open YouTube Channel">
-        <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" style="height: 1.6rem; position: relative; top: 6px;" />
-      </sl-button>
-      <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
-        <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="patchnotes-button" class="control-button" variant="neutral" title="View Patch Notes" onclick="window.location.href='/patchnotes'">
-        <img class="invert-in-dark-mode" src="/generic/pencil.png" alt="Patch Notes" style="height: 1.4rem; position: relative; top: 5px;" />
-      </sl-button>
-      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <!-- Top row: GitHub, YouTube, Discord -->
+      <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+        <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
+          <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" />
+        </sl-button>
+        <sl-button id="youtube-button" class="control-button" variant="neutral" title="Open YouTube Channel">
+          <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" />
+        </sl-button>
+        <sl-button id="discord-button" class="control-button" variant="neutral" title="Join the Discord">
+          <img class="invert-in-dark-mode" src="/generic/Discord.png" alt="Discord" />
+        </sl-button>
+      </div>
+      <!-- Bottom row: Download, Tierlist, Patch Notes, Dark Mode -->
+      <div style="display: flex; gap: 0.5rem;">
+        <sl-button id="download-button" class="control-button" variant="neutral" title="Download Patch">
+          <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Download Patch" />
+        </sl-button>
+        <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
+          <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" />
+        </sl-button>
+        <sl-button id="patchnotes-button" class="control-button" variant="neutral" title="View Patch Notes" onclick="window.location.href='/patchnotes'">
+          <img class="invert-in-dark-mode" src="/generic/pencil.png" alt="Patch Notes" />
+        </sl-button>
+        <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
+      </div>
     </div>
 
     <!-- Tierlist dialog for home page -->
@@ -256,10 +260,10 @@
       function applyTheme(theme) {
         if (theme === 'dark') {
             htmlEl.classList.add('sl-theme-dark');
-            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
           } else {
             htmlEl.classList.remove('sl-theme-dark');
-            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+            darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
           }
       }
 

@@ -50,15 +50,6 @@
         justify-content: flex-end; /* Push the 'X' button to the far right */
       }
 
-      .control-button {
-        --sl-spacing-x-small: 0; /* remove horizontal padding */
-      }
-
-      .control-button::part(base) {
-        width: 3rem;
-        height: 1rem;
-        justify-content: center;
-      }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/input/input.js"></script>
@@ -179,21 +170,24 @@
         />
         <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
           <div style="display: flex; gap: 1rem">
-            <sl-button id="csvSelect" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
-              Upload Custom CSV
-            </sl-button>
-            <sl-button id="defaultCsvButton" size="small"> Use Default CSV </sl-button>
+              <sl-button id="csvSelect" class="main-button" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'" style="display: none;">
+                Upload Custom CSV
+              </sl-button>
+              <sl-button id="defaultCsvButton" class="main-button" size="small" style="display: none;"> Use Default CSV </sl-button>
           </div>
-          <sl-button type="submit" id="formSubmit" style="width: 100%"> Create Auction! </sl-button>
+          <sl-button type="submit" id="formSubmit" class="main-button" style="width: 100%"> Create Auction! </sl-button>
         </div>
-        <div id="csvFileName" style="height: 1rem"></div>
+        <div id="csvFileName" style="height: 0; display: none;"></div>
       </div>
     </form>
 
     <!-- Tierlist dialog removed from auction setup page to hide tiers control on this page -->
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <!-- Keep only the dark mode toggle on the auction setup page -->
+      <!-- Home button + dark mode toggle (home added to match other pages) -->
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
+      </sl-button>
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
   </body>
@@ -211,10 +205,10 @@
       const tableWrapper = document.getElementById('players-table-wrapper');
   if (theme === 'dark') {
     htmlEl.classList.add('sl-theme-dark');
-  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
   } else {
     htmlEl.classList.remove('sl-theme-dark');
-  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
   }
     }
 
@@ -230,7 +224,7 @@
     });
     // --- End Dark Mode Logic ---
 
-    // Drive/GitHub/Tier controls removed from this page; corresponding listeners omitted to
+    // GitHub/Tier controls removed from this page; corresponding listeners omitted to
     // avoid console errors. Home page still contains these controls and their listeners.
 
     document.body.classList.add('ready');

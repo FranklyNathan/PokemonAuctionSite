@@ -990,6 +990,7 @@ Key Moves:
    Thunderbolt (TM*)
    Shadow Ball (TM*)
    Moonblast (MR*)
+   Hyper Beam (TM)
    Psycho Cut (31**)
    Bulk Up (TM**)
    Close Combat (MR/53**)

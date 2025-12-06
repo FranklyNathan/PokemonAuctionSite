@@ -87,15 +87,6 @@
       .sl-theme-dark sl-button[variant='neutral']::part(label) {
         color: white;
       }
-      .control-button {
-        --sl-spacing-x-small: 0;
-      }
-      .control-button::part(base) {
-        width: 3rem;
-        height: 1rem;
-        font-size: 1rem;
-        justify-content: center;
-      }
       /* Add a small gap between list items */
       li {
         margin-bottom: 0.5rem;
@@ -246,37 +237,19 @@
             <li><strong>Seed Sower:</strong> Arboliva's signiture ability now sets Leech Seed when another Pokemon's attack makes contact with it.</li>
             <li><strong>Undead Corsola:</strong> Upon fainting, Corsola revives at the end of the battle as Galarian Corsola.</li>
             <li><strong>Applin Evolution:</strong> Applin's split evolution path is now determined by what gym you reach first: Fortree for Flapple, Lavaridge for Appletun, and Rustboro for Dipplin.</li>
-            <li><strong>...And many more!</li>
+            <li>...And many more!</li>
           </ul>
         </section>
 
         <section id="reworked-items">
           <h2>What do the new items do?</h2>
-          <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 1rem;">
-              <strong>Birch's Flygon</strong>
-              <p style="margin-top: 0.2rem;">Replaces the bike, able to hop up ledges, move over shallow water, leap over rocks and trees, accelerate to 1.5x speed by holding B, and Fly by pressing L. Comes registered (press Select to mount).</p>
-            </li>
-            <li style="margin-bottom: 1rem;">
-              <strong>Cleanse Tag</strong>
-              <p style="margin-top: 0.2rem;">Now functions as a permanent, togglable repel. Comes turned on.</p>
-            </li>
-            <li style="margin-bottom: 1rem;">
-              <strong>Med Kit</strong>
-              <p style="margin-top: 0.2rem;">Key item which heals all Pokémon in your party to full health and restores PP. Does not heal status (so as not to interfere with Guts, Quick Feet, Poison Heal, etc.). To heal status, use the new "Heal" command in the menu.</p>
-            </li>
-            <li style="margin-bottom: 1rem;">
-              <strong>Portable PC</strong>
-              <p style="margin-top: 0.2rem;">Gives access to the PC anywhere, anytime... besides in the Elite Four.</p>
-            </li>
-            <li style="margin-bottom: 1rem;">
-              <strong>Rotom Catalog</strong>
-              <p style="margin-top: 0.2rem;">A consumable item that changes Rotom's form. You're gifted three by an NPC in the Fortree City furniture store.</p>
-            </li>
-            <li style="margin-bottom: 1rem;">
-              <strong>Whipped Dream</strong>
-              <p style="margin-top: 0.2rem;">A universal evolution item for any Pokémon who 1) evolves after level 30, and 2) is the first Pokémon in a 3-Pokemon evolution line. This allows Pokémon who would otherwise be unusable or whose middle evolutions would be skipped entirely to join the game, including: Aron, Goomy, Hatenna, Horsea, Jangmo-o, Litwik, Solosis, Spheal, Swinub, and Trapinch. Purchasable in the Slateport Market after badge 2.</p>
-            </li>
+          <ul>
+            <li><strong>Birch's Flygon:</strong> Replaces the bike, able to hop up ledges, move over shallow water, leap over rocks and trees, accelerate to 1.5x speed by holding B, and Fly by pressing L. Comes registered (press Select to mount).</li>
+            <li><strong>Cleanse Tag:</strong> Now functions as a permanent, togglable repel. Comes turned on.</li>
+            <li><strong>Med Kit:</strong> Key item which heals all Pokémon in your party to full health and restores PP. Does not heal status (so as not to interfere with Guts, Quick Feet, Poison Heal, etc.). To heal status, use the new "Heal" command in the menu.</li>
+            <li><strong>Portable PC:</strong> Gives access to the PC anywhere, anytime... besides in the Elite Four.</li>
+            <li><strong>Rotom Catalog:</strong> A consumable item that changes Rotom's form. You're gifted three by an NPC in the Fortree City furniture store.</li>
+            <li><strong>Whipped Dream:</strong> A universal evolution item for any Pokémon who 1) evolves after level 30, and 2) is the first Pokémon in a 3-Pokemon evolution line. This allows Pokémon who would otherwise be unusable or whose middle evolutions would be skipped entirely to join the game, including: Aron, Goomy, Hatenna, Horsea, Jangmo-o, Litwik, Solosis, Spheal, Swinub, and Trapinch. Purchasable in the Slateport Market after badge 2.</li>
           </ul>
         </section>
 
@@ -284,9 +257,9 @@
     </div>
     
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; height: 4rem; align-items: center;">
-        <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
-            <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" style="height: 1.4rem; position: relative; top: 4px;" />
-        </sl-button>
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
+      </sl-button>
         <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
     </div>
 
@@ -305,10 +278,10 @@
       function applyTheme(theme) {
         if (theme === 'dark') {
           htmlEl.classList.add('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
         }
       }
 

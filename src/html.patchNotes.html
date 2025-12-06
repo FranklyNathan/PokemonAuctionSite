@@ -25,21 +25,6 @@
       .sl-theme-dark .patch-content { background: #071014; color: #dfeffb }
       .sl-theme-dark .patch-date { color: #cfe7ff }
 
-      /* Dark-mode toggle / control-button helpers (copied from other pages) */
-      .sl-theme-dark .invert-in-dark-mode {
-        filter: invert(1);
-      }
-      .sl-theme-dark sl-button[variant='neutral']::part(label) {
-        color: white;
-      }
-      .control-button {
-        --sl-spacing-x-small: 0;
-      }
-      .control-button::part(base) {
-        width: 3rem;
-        height: 1rem;
-        justify-content: center;
-      }
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
   </head>
@@ -54,7 +39,7 @@
     <!-- Bottom-right controls (home + dark mode toggle) -->
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
       <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
-        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" style="height: 1.1rem; position: relative; top: 4px;" />
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
       </sl-button>
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" title="Toggle Light/Dark Mode"></sl-button>
     </div>
@@ -71,10 +56,10 @@
       function applyTheme(theme) {
         if (theme === 'dark') {
           htmlEl.classList.add('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode" style="height: 1.9rem; position: relative; top: 4px;">';
+          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
         }
       }
 
