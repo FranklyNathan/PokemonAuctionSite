@@ -171,14 +171,6 @@ Key Moves:
    Overheat (TM)
    Giga Drain (TM)
 
-Chingling
-Key Moves:
-   Confusion (10)
-   Psychic (TM)
-   Shadow Ball (TM)
-   Dazzling Gleam (TM)
-   Calm Mind (TM)
-
 Cetoddle
 Key Moves:
    Ice Shard (12)
@@ -218,6 +210,34 @@ Key Moves:
    Water Pulse (TM)
    Discharge (37)
    Charge (58)
+
+Chingling
+Key Moves:
+   Confusion (10)
+   Psychic (TM)
+   Shadow Ball (TM)
+   Dazzling Gleam (TM)
+   Calm Mind (TM)
+
+Clamperl
+Key Moves:
+   Water Gun (1)
+   Water Pulse (MR)
+   Ice Fang (MR*)
+   Sucker Punch (MR*)
+   Draining Kiss (MR**)
+   Dive (26)
+   Baton Pass (29**)
+   Ice Beam (TM)
+   Blizzard (TM)
+   Psychic (TM/34**)
+   Shadow Ball (TM/34**)
+   Crunch (34*)
+   Waterfall (HM)
+   Rock Tomb (TM*)
+   Aqua Tail (39)
+   Coil (45)
+   Hydro Pump (50)
 
 Cleffa
 Key Moves:
@@ -478,6 +498,18 @@ Key Moves:
    Flamethrower (32)
    Torch Song (36)
    Shadow Ball (38/TM)
+
+Gastly
+Key Moves:
+   Night Shade (15)
+   Taunt (TM)
+   Sucker Punch (22)
+   Shadow Ball (29)
+   Shadow Punch (Evo.)
+   Dazzling Gleam (TM)
+   Thunderbolt (TM)
+   Sludge Bomb (TM)
+   Dark Pulse (44)
 
 Geodude
 Key Moves:
@@ -920,6 +952,17 @@ Key Moves:
    Earthquake (TM)
    Crunch (42)
    Sky Uppercut (52)
+
+Ponyta
+Key Moves:
+   Flame Wheel (13)
+   Flame Charge (21)
+   Flamethrower (TM)
+   Overheat (TM)
+   Megahorn (MR*)
+   Poison Jab (MR*)
+   Bounce (45)
+   Flare Blitz (49)
 
 Poochyena
 Key Moves:
