@@ -222,7 +222,7 @@ Key Moves:
 Clamperl
 Key Moves:
    Water Gun (1)
-   Water Pulse (MR)
+   Water Pulse (MR/TM)
    Ice Fang (MR*)
    Sucker Punch (MR*)
    Draining Kiss (MR**)
@@ -232,6 +232,7 @@ Key Moves:
    Blizzard (TM)
    Psychic (TM/34**)
    Shadow Ball (TM/34**)
+   Surf (HM)
    Crunch (34*)
    Waterfall (HM)
    Rock Tomb (TM*)
@@ -260,6 +261,7 @@ Key Moves:
    
 Corphish
 Key Moves:
+   Bubblebeam (14)
    Protect (17)
    Knock Off (23)
    Hone Claws (TM)
@@ -333,7 +335,10 @@ Key Moves:
 Diglett
 Key Moves:
    Bulldoze (18)
+   Thief (TM)
    Hone Claws (TM)
+   Dig (TM/35)
+   Rock Tomb (TM)
    Earthquake (47/TM)
 
 Drifloon
@@ -362,7 +367,6 @@ Key Moves:
    Charm (29)
    Iron Tail (TM)
    Shadow Ball (TM)
-   Calm Mind (TM)
    Rest (TM)
    Baton Pass (33)
    Blue: Water Pulse (MR)
@@ -377,9 +381,11 @@ Key Moves:
    Purple: Psychic (TM)
    Purple: Dazzling Gleam (TM)
    Purple: Morning Sun (33)
-   Black: Thief (TM)
+   Purple: Calm Mind (TM)
+   Black: Assurance (MR)
    Black: Screech (29)
    Black: Moonlight (33)
+   Black: Mean Look (37)
    Green: Razor Leaf (Evo.)
    Green: Swords Dance (29)
    Green: X-Scissor (TM)
@@ -389,6 +395,7 @@ Key Moves:
    LightBlue: Water Pulse (TM)
    Pink: Draining Kiss (MR)
    Pink: Moonblast (37)
+   Pink: Calm Mind (TM)
 
 Electrike
 Key Moves:
@@ -403,6 +410,7 @@ Key Moves:
    Thunder Punch (29)
    Discharge (36)
    Brick Break (TM)
+   Screech (42)
 
 Exeggcute
 Key Moves:
@@ -412,7 +420,6 @@ Key Moves:
    Psychic (TM)
    Giga Drain (TM)
    Flamethrower (TM)
-   Calm Mind (TM)
    Sludge Bomb (TM)
 
 Feebas
@@ -435,7 +442,7 @@ Key Moves:
    Dazzling Gleam (TM)
    Shadow Ball (MR/TM)
    Psychic (TM/57)
-   Calm Mind (TM)
+   Calm Mind (TM**)
    Overheat (TM)
 
 Fidough
@@ -559,7 +566,6 @@ Key Moves:
    Water Pulse (25*/TM)
    Thunderbolt (TM)
    Ice Beam (TM)
-   Surf (HM)
    Earthquake (TM)
    Iron Head (49)
 
@@ -646,7 +652,7 @@ Key Moves:
    Iron Head (MR)
    Kings Shield (MR)
    Sacred Sword (MR)
-   Night Slash (MR/35*)
+   Night Slash (MR)
    Shadow Ball (TM)
 
 Horsea
@@ -679,7 +685,6 @@ Key Moves:
    Dazzling Gleam (TM)
    Shadow Ball (TM)
    Flamethrower (TM)
-   Calm Mind (TM)
 
 Jangmo-o
 Key Moves:
@@ -774,6 +779,7 @@ Key Moves:
    Bulk Up (TM)
    Rage Fist (35)
    Close Combat (39)
+   Screech (44)
    Stomping Tantrum (48)
    Outrage (53)
 
@@ -781,11 +787,13 @@ Mareep
 Key Moves:
    Thundershock (8)
    Milk Drink (20)
-   Thunder Punch (30)
-   Dazzling Gleam (TM)
-   Discharge (40)
-   Fire Punch (MR)
+   Thunder Punch (Evo.)
    Dragon Pulse (MR)
+   Fire Punch (MR)
+   Thunder (TM)
+   Thunderbolt (TM)
+   Power Gem (35)
+   Discharge (40)
 
 Mantyke
 Key Moves:
@@ -814,7 +822,7 @@ Key Moves:
    Iron Head (Evo.)
    Aerial Ace (TM)
    Brick Break (TM)
-   X-Scissor (TM)
+   Screech (36)   
 
 Mime Jr
 Key Moves:
@@ -908,6 +916,7 @@ Key Moves:
 
 Noibat
 Key Moves:
+   Screech (1)
    Wing Attack (16)
    Air Cutter (23)
    Roost (27)
@@ -956,6 +965,7 @@ Key Moves:
 Ponyta
 Key Moves:
    Flame Wheel (13)
+   Stomp (17)
    Flame Charge (21)
    Flamethrower (TM)
    Overheat (TM)
@@ -982,7 +992,6 @@ Key Moves:
    Nasty Plot (13)
    Thunderbolt (TM)
    Psychic (TM/MR)
-   Surf (HM*)
 
 Pikipek
 Key Moves:
@@ -991,6 +1000,7 @@ Key Moves:
    Steel Wing (TM)
    Beak Blast (28)
    Rock Blast (MR)
+   Screech (30)
    Aerial Ace (TM)
    Facade (TM)
 
@@ -1208,7 +1218,6 @@ Key Moves:
    Ice Beam (TM)
    Shell Smash (MR)
    Surf (HM)
-   Waterfall (HM)
    Icicle Crash (50)
 
 Shinx
@@ -1225,6 +1234,7 @@ Key Moves:
    Bullet Seed (TM)
    Mach Punch (23)
    Force Palm (28)
+   Protect (TM)
    Facade (TM)
    Sky Uppercut (39)
    Seed Bomb (44)
@@ -1246,7 +1256,8 @@ Skrelp
 Key Moves:
    Bubble (12)
    Water Pulse (25/TM)
-   Sludge Bomb (TM)
+   Shadow Ball (Timburr)
+   Sludge Bomb (TM/38)
    Thunderbolt (TM)
    Surf (HM)
    Dragon Pulse (53)
@@ -1339,8 +1350,22 @@ Key Moves:
    Shadow Ball (42**/TM)
    Draining Kiss (MR**)
 
+Snubbull
+Key Moves:
+   Charm (1)
+   Headbutt (19)
+   Rock Smash (HM)
+   Outrage (MR)
+   Fire Fang (MR)
+   Ice Fang (MR)
+   Thunder Fang (MR)
+   Brick Break (TM)
+   Earthquake (TM)
+   Play Rough (43)
+
 Solosis
 Key Moves:
+   Hidden Power (14)
    Charm (19)
    Trick Room (TM)
    Recover (24)
@@ -1376,7 +1401,6 @@ Key Moves:
    Psybeam (14)
    Trick Room (TM)
    Shock Wave (TM)
-   Dazzling Gleam (TM)
    Shadow Ball (TM)
    Psychic (52/TM)
    Calm Mind (TM)
@@ -1412,7 +1436,6 @@ Key Moves:
    Bug Buzz (MR/42)
    Quiver Dance (MR/52)
    Ice Beam (TM)
-   Surf (HM)
    Water Pulse (TM)
 
 Swinub
@@ -1449,6 +1472,7 @@ Key Moves:
    Dazzling Gleam (TM)
    Ice Beam (TM)
    Surf (HM)
+   Screech (40)
 
 Timburr
 Key Moves:
@@ -1596,6 +1620,7 @@ Key Moves:
 
 Venipede
 Key Moves:
+   Screech (8)
    Protect (15)
    Poison Tail (19)
    Bug Bite (22)
@@ -1655,6 +1680,7 @@ Key Moves:
    Poison Jab (24)
    Dig (TM)
    Surf (HM)
+   Waterfall (HM)
    Earthquake (48/TM)
 
 Zigzagoon
@@ -1687,5 +1713,6 @@ Key Moves:
    Steel Wing (TM)
    Poison Fang (27)
    Cross Poison (Evo.)
+   Screech (MR)
    Fly (HM)
    Venoshock (43)

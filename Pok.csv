@@ -43,8 +43,8 @@ Mega Chesnaught,Grass/Fighting,mega,Overgrow,,Bulletproof,88,137,172,74,115,44,C
 Chinchou,Water/Electric,base,Volt Absorb,Illuminate,Water Absorb,75,38,38,56,56,67,,
 Lanturn,Water/Electric,evo,Volt Absorb,Illuminate,Water Absorb,125,58,58,76,76,67,Level 27,
 Clamperl,Water,base,Shell Armor,,Rattled,35,64,85,74,55,32,,
-Huntail,Water,evo,Swift Swim,,Water Veil,55,104,105,94,75,52,Level 25 (Male)
-Gorebyss,Water,evo,Swift Swim,,Hydration,55,84,105,114,75,52,Level 25 (Female)
+Huntail,Water,evo,Swift Swim,,Water Veil,55,104,105,94,75,52,Level 25 (Male),
+Gorebyss,Water,evo,Swift Swim,,Hydration,55,84,105,114,75,52,Level 25 (Female),
 Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,,
 Crawdaunt,Water/Dark,evo,Hyper Cutter,Shell Armor,Adaptability,63,120,85,90,55,55,Level 30,
 Corsola,Water/Rock,base,Hustle,Natural Cure,Regenerator,65,55,95,65,95,35,on death,
@@ -148,7 +148,7 @@ Makuhita,Fighting,base,Thick Fat,Guts,Sheer Force,72,60,30,20,30,25,,
 Hariyama,Fighting,evo,Thick Fat,Guts,Sheer Force,144,120,60,40,60,50,Level 24,
 Mankey,Fighting,base,Vital Spirit,Anger Point,Defiant,40,80,35,35,45,70,,
 Primeape,Fighting,evo,Vital Spirit,Anger Point,Defiant,65,105,60,60,70,95,Level 28,
-Annihilape,Fighting/Ghost,evo,Vital Spirit,Inner Focus,Defiant,110,115,80,50,90,90,Level 48,
+Annihilape,Fighting/Ghost,evo,Vital Spirit,Inner Focus,Defiant,110,115,80,50,90,90,Level 35,
 Mareep,Electric,base,Static,,Plus,55,40,40,65,45,35,,Stage 2
 Flaaffy,Electric,evo,Static,,Plus,70,55,55,80,60,45,Level 15,Stage 2
 Ampharos,Electric,evo,Static,,Plus,90,75,85,115,90,55,Level 30,Stage 2
@@ -188,8 +188,8 @@ Pangoro,Fighting/Dark,evo,Iron Fist,Mold Breaker,Scrappy,95,124,78,69,71,58,Leve
 Pikipek,Normal/Flying,base,Keen Eye,Skill Link,Pickup,35,75,30,30,30,65,,
 Trumbeak,Normal/Flying,evo,Keen Eye,Skill Link,Pickup,55,85,50,40,50,75,Level 14,
 Toucannon,Normal/Flying,evo,Keen Eye,Skill Link,Sheer Force,80,120,75,75,75,60,Level 28,
-Ponyta,Fire,base,Run Away,Flash Fire,Flame Body,50,85,55,65,65,90,,Stage 1
-Rapidash,Fire,evo,Run Away,Flash Fire,Flame Body,65,100,70,80,80,105,Level 40,Stage 1
+Ponyta,Fire,base,Run Away,Flash Fire,Flame Body,50,85,55,65,65,90,,
+Rapidash,Fire,evo,Run Away,Flash Fire,Flame Body,65,100,70,80,80,105,Level 40,
 Poliwag,Water,base,Water Absorb,Damp,Swift Swim,40,50,40,40,40,90,,
 Poliwhirl,Water,evo,Water Absorb,Damp,Swift Swim,65,65,65,50,50,90,Level 25,
 Poliwrath,Water/Fighting,evo,Water Absorb,Damp,Swift Swim,90,95,95,70,90,70,Water Stone,
@@ -264,12 +264,14 @@ Slowking-Galar,Poison/Psychic,evo,Curious Medicine,Own Tempo,Regenerator,95,65,8
 Smoliv,Grass/Normal,base,Early Bird,,Harvest,41,35,45,58,51,30,,
 Dolliv,Grass/Normal,evo,Early Bird,,Harvest,52,53,60,78,78,33,Level 25,
 Arboliva,Grass/Normal,evo,Seed Sower,,Harvest,78,69,90,125,109,39,Level 35,
-Smeargle,Normal,base,Own Tempo,Technician,Moody,55,20,35,20,45,75,,,Basic
+Smeargle,Normal,base,Own Tempo,Technician,Moody,55,20,35,20,45,75,,
 Snorunt,Ice,base,Inner Focus,Ice Body,Moody,50,50,50,50,50,50,,Stage 1
 Glalie,Ice,evo,Inner Focus,Ice Body,Moody,80,80,80,80,80,80,Level 42,Stage 1
 Mega Glalie,Ice,mega,Refrigerate,,,80,120,80,120,80,100,Glalitite,Stage 1
 Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,80,70,110,Dawn Stone,Stage 1
 Mega Froslass,Ice/Ghost,evo,Snow Cloak,,Cursed Body,70,80,70,140,100,120,Frosslassite,Stage 1
+Snubbull,Fairy,base,Intimidate,Run Away,Rattled,60,80,50,40,40,30,,
+Granbull,Fairy,evo,Intimidate,Quick Feet,Rattled,90,120,75,60,60,45,Level 23,
 Solosis,Psychic,base,Overcoat,Magic Guard,Regenerator,45,30,40,105,50,20,,
 Duosion,Psychic,evo,Overcoat,Magic Guard,Regenerator,65,40,50,125,60,30,Level 32 (Whipped Dream),
 Reuniclus,Psychic,evo,Overcoat,Magic Guard,Regenerator,110,65,75,125,85,30,Level 41,

@@ -1,0 +1,116 @@
+12/8/2025
+
+Ability Rework: Run Away
+Run Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold (not 1/2 like Golisopod).
+//Previously, Eevee had a flip between two abilities: Adaptability, which boosts the power of STAB moves, and Run Away, which was useless. This new Run Away gives Eevee an ability that actually functions and fits thematically. It helps the player to keep their Eevee safe from dying and allows Eevee to scale better into gyms 3 and 4. I like Eevee having as many tools as possible since it's the one Pokémon all players have access to; this change raises the skill ceiling for every run since all players have access to this mechanic if they want it. Goliscipod's Emergency Exit ability makes it one of the strongest Pokémon around in hardcore nuzlockes. We'll see if Eevee's is able to have a similar impact.
+
+
+Brawly 1 Meditite > Machop
+Brawly 1 Fafretch'd Fury Cutter > Brutal Swing
+//Stopping this fight from being quite so trivialized by the ghosts. They're still good into the fight since they're immune to his STAB, but now he can at least interact with them.
+
+Brawly 2-5 Machop/Machoke Low Kick > Foresight
+//See above.
+
+
+Primeape > Annihilape Evolution Level 48 > 35
+//Annihilape was nerfed significantly by the AI changes and anti-sweep mechanics of the previous few patches. This always made sense to be a level 35 evolution, since that's the level Primeape learns Rage Fist; I was only concerned it'd be a bit too strong. I'm feeling better now that this isn't a top tier even with the gym 6 evolution.
+
+
+Teachable Learnset Changes
+//Drama and intrigue! Now isn't this a twist! Up until this point, we've always used generation 7 for our learnsets. This is still the case, but I recently learned that while we were using generation 7 for our learnsets, we've been using generation 9 for our TM move pools. That means that if a Pokémon didn't learn a TM in generation 7 but did learn it in 9, it was able to learn the move, even though it shouldn't have been able to.
+//Stand out nerfs include Swampert Bulk Up (it isn't every day our #1 Pokémon gets nerfed!), Eevee Calm Mind, Breloom Dig (a huge nerf to the Poison Heal stall strat), and Calm Mind Exeggcutor.
+The following moves have been removed from these Pokémon's TM pools:
+
+Brick Break:
+Gabite (but not Garchomp)
+Zoroark
+Greninja
+Toxtricity
+Perrserker
+
+Bulk Up:
+Swampert
+Electivire
+
+Calm Mind:
+Wigglytuff
+Exeggcutor (Both forms)
+Togekiss
+Scizor
+Fennekin/Braixen (but not Delphox)
+All Eeveelutions besides Espeon and Sylveon
+
+Dazzling Gleam:
+Ampharos
+Mawile
+Grumpig
+
+Dig:
+Ampharos
+Breloom
+Snorlax
+Grumpig
+Cacturne
+Lycanroc
+
+Dragon Claw:
+Vibrava (Not Flygon)
+Krokorok (Not Krookodile)
+Goodra
+
+Earthquake:
+Exeggcutor (Regular form only, not Alolan)
+
+Giga Drain:
+Pangoro
+Goodra
+
+Ice Beam:
+Gardevoir/Gallade
+
+Shadow Ball:
+Cacturne
+
+Sludge Bomb:
+Zoroark
+
+Surf:
+Raichu
+Masquerain
+Goodra
+
+Psychic:
+Sylveon
+Zoroark
+
+Thief:
+Umbreon
+Feraligatr
+Blaziken
+Sceptile
+Hariyama
+Cacturne
+Crawdaunt
+Floatzel
+Dragalge
+Incineroar
+Toxtricity
+
+Waterfall:
+Slowbro/Slowking
+Cloyster
+Pelipper
+Masquerain
+
+X Scissor:
+Perrserker
+
+
+Pool Addition: Clamperl
+Pool Addition: Gastly
+Pool Addition: Ponyta
+Pool Addition: Snubbull
+//As per usual, we've saved the new faces for last.
+//Clamperl has only stalled for entry so far because I wasn't satisfied with how most other hacks handle its evolution methods. I'm not adding a Deep-Sea Scale and Tooth just for this thing, and I don't see the logic of Moon/Sun Stones or Day/Night evolutions. Gender at least makes sense thematically, but it isn't controllable. For now, though, I've decided that controlling which you get hardly matters anyway, so we'll accept our small bit of gambling. There's a world where someday we add an NPC to flip Pokémon genders and set Snorunt and Ralts to use a similar mechanic for their evolutions.
+//Ponyta will be the only Pokémon in the game who keeps the newly powerful Run Away ability into evolution. Did you know Ponyta has a 410 BST? Its an early game beast! This should have been in the pool since day 1. Its late evolution level always put me off, but I hadn't realized how strong it was into the opening gyms. It will be an interesting addition, spiking gyms 1-2 and 7-8 (the opposite of most other lines).
