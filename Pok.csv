@@ -319,6 +319,10 @@ Garbodor,Poison,evo,Stench,Weak Armor,Aftermath,80,95,82,60,82,75,Level 36,
 Turtwig,Grass,base,Overgrow,,Shell Armor,55,68,64,45,55,31,,
 Grotle,Grass,evo,Overgrow,,Shell Armor,75,89,85,55,65,36,Level 18,
 Torterra,Grass/Ground,evo,Overgrow,,Shell Armor,95,109,105,75,85,56,Level 32,
+Tynamo,Electric,base,Levitate,,,35,55,40,45,40,60,,Stage 2
+Eelektrik,Electric,evo,Levitate,,,65,85,70,75,70,40,Level 39 (Whipped Dream),Stage 2
+Eelektross,Electric,evo,Levitate,,,85,115,80,105,80,50,Thunder Stone,Stage 2
+Mega Eelektross,Electric,evo,Levitate,,,85,145,80,135,90,80,Eelektrossite,Stage 2
 Tyrunt,Rock/Dragon,base,Strong Jaw,,Sturdy,58,89,77,45,45,48,,
 Tyrantrum,Rock/Dragon,evo,Strong Jaw,,Rock Head,82,121,119,69,59,71,Level 39,
 Venipede,Bug/Poison,base,Poison Point,Swarm,Speed Boost,30,45,59,30,39,57,,Stage 2

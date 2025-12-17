@@ -931,6 +931,7 @@ Numel
 Key Moves:
    Magnitude (12)
    Lava Plume (22)
+   Curse (29)
    Overheat (TM)
    Rock Slide (Evo.)
    Earthquake (46/TM)
@@ -1492,6 +1493,7 @@ Key Moves:
    Metal Claw (8)
    Draining Kiss (17)
    Brutal Swing (24)
+   Protect (TM)
    Play Rough (35)
    Gigaton Hammer (Evo.)
    Skitter Smack (47)
@@ -1584,6 +1586,23 @@ Key Moves:
    Wood Hammer (MR)
    Crunch (45)
    Leaf Storm (57)
+
+Tynamo
+Key Moves:
+   Spark (1)
+   Charge Beam (1)
+   Crunch (Evo.)
+   Discharge (29)
+   Brick Break (TM)
+   Dragon Claw (TM)
+   Flamethrower (TM)
+   Giga Drain (TM)
+   Iron Tail (TM)
+   Hone Claws (TM)
+   Thunder (TM)
+   Thunderbolt (TM)
+   Coil (MR)
+   Waterfall (HM)
 
 Tyrogue
 Key Moves:

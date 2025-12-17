@@ -26,6 +26,7 @@ Ability: Intimidate
 - Flame Wheel
 - Rock Tomb
 - Howl
+- Leer
 
 Nosepass @ Oran Berry
 Level: 15
@@ -75,6 +76,7 @@ Ability: Intimidate
 - Flame Wheel
 - Rock Tomb
 - Howl
+- Leer
 
 Nosepass @ Oran Berry
 Level: 19
@@ -1363,7 +1365,7 @@ Nature: Serious
 Ability: Sturdy
 - Rollout
 - Thunderpunch
-- Stealth Rock
+- Charge
 - Shock Wave
 
 Voltorb-Hisui
@@ -1413,7 +1415,7 @@ Nature: Serious
 Ability: Sturdy
 - Rollout
 - Thunderpunch
-- Stealth Rock
+- Charge
 - Shock Wave
 
 Electrode-Hisui
@@ -1431,7 +1433,7 @@ Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
-- Tri Attack
+- Supersonic
 - Shock Wave
 - Thunder Wave
 - Mirror Shot
@@ -3572,7 +3574,7 @@ Nature: Serious
 Ability: Oblivious
 - Mud Bomb
 - Water Pulse
-- Mud Slap
+- Muddy Water
 - Thrash
 
 Seadra @ Sitrus Berry

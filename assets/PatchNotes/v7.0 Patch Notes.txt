@@ -1,0 +1,48 @@
+12/17/2025
+
+
+Oh! Oh! Oh yeah! Release has been amazing! It's so exciting to see so many people learning Emerald Blitz. Thanks for giving it a shot!
+For those who've looked through the game's patch notes up to this point, you know that I patch frequently with many significant changes. Over the coming months, my goal will shift to using patches for fine tuning: bugfix, cleanup, and QoL feature requests. So, thank you for everyone who's been reporting bugs and giving feedback! It's so helpful to have so many players to stress test the game. With that out of the way, here's what we've got for 7.0...
+
+
+Wonder Guard AI Improvements:
+Enemy trainers will now prioritize Leech Seed or Supersonic against Wonder Guard Pokémon if they don't have a super effective move
+//Previously, the AI wasn't using status moves that could kill Shedinja. This made it difficult to balance for Shedinja. But now that Wattson's Magneton can safely check it...
+
+
+Wattson 3/4 Graveler Stealth Rock > Charge
+Wattson 3/4 Magneton Tri-Attack > Supersonic
+//At long last, gym 3-4 Wattson is nerfed. With 3 evolved Pokémon, Wattson 3 has long been the most infamous run ender. Stealth Rocks were necessary to stop Shedinja from walling the Voltorb and Magnezone, but no longer.
+
+
+Talking to the GameCube in your room now displays the current patch
+//Now that we're public, this can help players keep track of if they're updated to the most recent version.
+
+
+Clean Up:
+Extra Double Team TM removed
+//Removed the hidden Double Team TM from Route 113
+
+Kings Rock removed
+//Removed the free NPC-gifted Mossdeep City King's Rock 
+
+Brendan Sprite Cleanup
+//Cleaned up the Flygon sprite for Brendan when moving sideways and down.
+
+
+Bugfix:
+Greninja no longer swaps ability to Battle Bond erroneously
+//Fixed a typo left over from mega evolution implementation. Thank you MarkyFresh for finding this bug!
+
+You can no longer use a Rare Candy on a fainted Pokémon
+//Removes some weird behavior. Thanks KunningKyra for the report.
+
+Whiting out with a Corsola no longer causes the game to explode
+//Corsola attempting to transform into Galarian Corsola during a white out caused silliness. Good catch, Lucas.
+
+Fixed a bug causing Sidney's E4 fight to appear even when fighting Spenser
+//...I think? I tried anyway. Thanks DJsnor for the report.
+
+
+Pool Addition: Tynamo
+//Yet another Whipped Dreamer is here. With access to the most dastardly TM/HM movepool there ever was (Giga Drain, Flamethrower and Waterfall on an electric type!?), Tynamo is as versatile as they come. Like Litwick and Honedge, Eelektrik's early Whipped Dream evolution also opens up an early evolution to the final stage. Instead of waiting to level 39, you'll be ready to go once you get the Thunder Stone at gym 5.
