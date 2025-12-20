@@ -511,7 +511,7 @@ const specialMechanics = {
 \nSmeargle's signature move Sketch is more potent than ever before. Now, when used from the party menu, Smeargle can choose to learn one of four moves randomly selected from the Sketch pool, a collection of the strongest moves in Emerald Blitz. Happy sketching!
 \nNotably, Sketch is the only move in the game that cannot be relearned via the Move Relearner.`,
 Nincada: `Tip: Shedinja
-\nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Juan and Wallace, who have few options to hit it. If you're facing a Seadra variant of this fight, equip your Shedinja with a Pecha Berry to avoid dying to Seadra's Poison Point!
+\nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Brawly, who has few options to hit it.
 \nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
   Zorua: `Tip: Illusion
 \nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,

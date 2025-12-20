@@ -226,7 +226,7 @@
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding-top: 0.5rem;">
             <div id="draft-counter" style="color: var(--sl-color-neutral-600);"></div>
             <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; width: 100%;">
-              <sl-button id="home-button" class="control-button" variant="neutral" title="Go to Home">
+              <sl-button id="home-button" class="control-button" variant="neutral" title="Go to Home" href="/">
                 <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Go to Home" style="height: 1.3rem; position: relative; top: 5px;" />
               </sl-button>
               <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
@@ -660,11 +660,6 @@
         window.open('/assets/boss-battles.html', '_blank');
       });
 
-      // Home button listener
-      const homeButton = document.getElementById('home-button');
-      homeButton.addEventListener('click', () => {
-        window.location.href = '/';
-      });
     }
 
     main();

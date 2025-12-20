@@ -410,6 +410,8 @@ Key Moves:
    Thunder Punch (29)
    Discharge (36)
    Brick Break (TM)
+   Psychic (TM)
+   Earthquake (TM)
    Screech (42)
 
 Exeggcute
@@ -476,6 +478,7 @@ Key Moves:
    Acrobatics (44)
    Flare Blitz (MR)
    Brave Bird (MR)
+   Bulk Up (TM)
 
 Frigibax
 Key Moves:
@@ -1011,6 +1014,7 @@ Key Moves:
    Rain Dance (18)
    Dynamic Punch (32*)  
    Brick Break (TM*)
+   Bulk Up (TM*)
    Ice Beam (TM)
    Surf (HM)
    Waterfall (HM) 
@@ -1265,6 +1269,7 @@ Key Moves:
 
 Slowpoke
 Key Moves:
+   Yawn (9)
    Confusion (12)
    Zen Headbutt (24)   
    Eerie Spell (29*)
@@ -1362,6 +1367,7 @@ Key Moves:
    Thunder Fang (MR)
    Brick Break (TM)
    Earthquake (TM)
+   Bulk Up (TM)
    Play Rough (43)
 
 Solosis
@@ -1611,6 +1617,7 @@ Key Moves:
    Vacuum Wave (26**)
    Rolling Kick (20***)
    Close Combat (MR)
+   Bulk Up (TM)
 
 Tyrunt
 Key Moves:
@@ -1696,6 +1703,7 @@ Wooper
 Key Moves:
    Mud Shot (1)
    Toxic Spikes (12)
+   Yawn (21)
    Poison Jab (24)
    Dig (TM)
    Surf (HM)

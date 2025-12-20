@@ -1062,7 +1062,7 @@ Sirfetch'd @ Leek
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Inner Focus
+Ability: Steadfast
 - Brutal Swing
 - Fury Cutter
 - Rock Smash
@@ -1122,7 +1122,7 @@ Sirfetch'd @ Leek
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Inner Focus
+Ability: Steadfast
 - Brutal Swing
 - Fury Cutter
 - Rock Smash
@@ -1182,7 +1182,7 @@ Sirfetch'd @ Leek
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Inner Focus
+Ability: Steadfast
 - Brutal Swing
 - Fury Cutter
 - Brick Break
@@ -1242,7 +1242,7 @@ Sirfetch'd @ Leek
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Inner Focus
+Ability: Steadfast
 - Brutal Swing
 - Fury Cutter
 - Brick Break
@@ -3857,7 +3857,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
+=== TRAINER_MAXIE ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
@@ -4430,7 +4430,7 @@ Goodra-Hisui
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Hydration
+Ability: Sap Sipper
 - Muddy Water
 - Iron Tail
 - Rain Dance

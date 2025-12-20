@@ -1,0 +1,28 @@
+12/20/25
+
+//Patches will not usually be this frequent. That said, this squashes the only run-ending bug we have, so I thought it worth prioritizing getting out ASAP.
+
+
+Game Freeze Glitch Fixed
+//It was only achievable by battling random optional overworld trainers, which is why we never encountered the issue in beta. The Match Call system has been eviscerated and the bug is fixed. Thanks The_Zinger and Jason for the help and solution!
+
+
+Pokémon can now be de-selected from the notebook in the starting room
+//HUGE shoutouts to Daan for programming this change. This is the first time anyone besides me has ever submitted code specifically for Emerald Blitz <3
+
+
+Nickname Pokemon from the Summary Screen
+//As you've all pointed out, is it really a nuzlocke without this feature?
+
+
+Vitamins (HP Up / Protein / Iron / Calcium / Zinc / Carbos) Removed
+//You can no longer pick these items up off the ground. The intention was not for players to go on expeditions looking for EVs. PP Ups still exist in their original locations.
+
+Removed the "Sell" option from shops entirely
+//Some users have reported being able to sell obscure items for money. I haven't been able to replicate this glitch, but regardless, there's no reason to have the option in the first place.
+
+Pichu Evolves @ Level 10
+//Now matches the documentation, was purely an oversight in the code.
+
+Wynaut Egg no longer obtainable in Lavaridge Town
+//The rules say that you can only use Pokémon you draft, so this wasn't really a bug. Nevertheless, it seems to have confused some people, so it's gone.

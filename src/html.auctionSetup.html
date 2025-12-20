@@ -93,7 +93,7 @@
             type="number"
             value="2"
             min="2"
-            max="100"
+            max="16"
             step="1"
             required
             inputmode="decimal"
@@ -170,14 +170,14 @@
         />
         <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
           <div style="display: flex; gap: 1rem">
-              <sl-button id="csvSelect" class="main-button" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'" style="display: none;">
+              <sl-button id="csvSelect" class="main-button" size="small" title="Upload players as a CSV file with columns: 'name' and 'type'">
                 Upload Custom CSV
               </sl-button>
-              <sl-button id="defaultCsvButton" class="main-button" size="small" style="display: none;"> Use Default CSV </sl-button>
+              <sl-button id="defaultCsvButton" class="main-button" size="small"> Use Default CSV </sl-button>
           </div>
           <sl-button type="submit" id="formSubmit" class="main-button" style="width: 100%"> Create Auction! </sl-button>
         </div>
-        <div id="csvFileName" style="height: 0; display: none;"></div>
+        <div id="csvFileName" style="height: 0;"></div>
       </div>
     </form>
 
@@ -185,7 +185,7 @@
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
       <!-- Home button + dark mode toggle (home added to match other pages) -->
-      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" onclick="window.location.href='/'">
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
         <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
       </sl-button>
       <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
