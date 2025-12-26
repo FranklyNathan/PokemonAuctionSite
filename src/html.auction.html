@@ -595,6 +595,16 @@
       // Add listener for 'Enter' key on the custom bid input
       const raiseInput = document.getElementById('raise-input');
       const raiseButton = document.getElementById('raise');
+
+      raiseButton.addEventListener('click', (e) => {
+        const val = parseInt(raiseInput.value, 10);
+        if (ctx.currentBid !== null && val <= ctx.currentBid) {
+          toast('Error', 'Bid must be higher than the current bid!', 'danger');
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      });
+
       raiseInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
           event.preventDefault(); // prevent any default form submission
@@ -654,15 +664,36 @@
           return;
         }
 
+        // Prepare metadata
+        const now = new Date().toLocaleString();
+        const totalSold = draftedPlayers.length;
+
+        // Prepare Team Summary
+        const teams = Object.values(ctx.teams);
+        const teamSummaryData = teams.map((team) => {
+          const teamDrafts = draftedPlayers.filter((p) => p.pickedBy === team.teamName);
+          const spent = teamDrafts.reduce((sum, p) => sum + (Number(p.cost) || 0), 0);
+          const starting = Number(team.remainingFunds) || 0;
+          const remaining = starting - spent;
+          return {
+            'Player': team.teamName,
+            'Starting Money': starting,
+            'Remaining Money': remaining,
+          };
+        });
+        teamSummaryData.sort((a, b) => a['Player'].localeCompare(b['Player']));
+        const teamSummaryCsv = Papa.unparse(teamSummaryData);
+
         const csvData = draftedPlayers.map((p) => ({
-          Player: p.name,
+          Pokemon: p.name,
           'Drafted By': p.pickedBy,
           Cost: p.cost,
         }));
 
-        const csvString = Papa.unparse(csvData);
+        const mainCsv = Papa.unparse(csvData);
+        const finalCsv = `Date: ${now}\nTotal Pokemon Sold: ${totalSold}\n\n${teamSummaryCsv}\n\n${mainCsv}`;
 
-        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const blob = new Blob([finalCsv], { type: 'text/csv;charset=utf-8;' });
         const link = document.createElement('a');
         const url = URL.createObjectURL(blob);
         link.setAttribute('href', url);

@@ -723,6 +723,7 @@ Key Moves:
 Honedge
 Key Moves:
    Swords Dance (1)
+   Fury Cutter (5)
    Shadow Sneak (20)
    Aerial Ace (22)
    Slash (29)
@@ -829,6 +830,7 @@ Key Moves:
    Captivate (Egg)
 
 Lotad
+Key Moves:
    Mega Drain (18*)
    Fake Out (16)
    Bullet Seed (TM)
@@ -839,6 +841,7 @@ Lotad
    Leech Seed (Egg)
 
 Machop
+Key Moves:
    Low Sweep (13)
    Knock Off (21)
    Earthquake (TM)
@@ -1325,10 +1328,11 @@ Key Moves:
    Pluck (24)
    Giga Drain (TM)
    Spirit Shackle (34*)
-   Thousand Arros (34**)
+   Thousand Arrows (34**)
    U-turn (MR)
    Leaf Storm (MR)
    Leaf Blade (44)
+   Feather Dance (49)
    Brave Bird (55)
    Curse (Egg)
 
@@ -1455,7 +1459,6 @@ Skiddo
 Key Moves:
    Leech Seed (12)
    Razor Leaf (13)
-   Milk Drink (20)
    Bulldoze (26)
    Seed Bomb (30)
    Aerial Ace (32/TM)
@@ -1463,6 +1466,7 @@ Key Moves:
    Brick Break (TM)
    Earthquake (MR/TM)
    Horn Leech (47)
+   Milk Drink (Egg)
 
 Skrelp
 Key Moves:
@@ -1727,7 +1731,7 @@ Key Moves:
    Ancient Power (MR)
    Dig (TM)
    Earthquake (46/TM)
-   Avalance (Egg)
+   Avalanche (Egg)
 
 Tadbulb
 Key Moves:
@@ -1969,7 +1973,7 @@ Key Moves:
    Dual Wingbeat (30)
    Thunderbolt (TM)
    Thunder (TM)
-   Shock Wave(TM)
+   Shock Wave (TM)
    Volt Switch (43)
    Discharge (48)
    Hurricane (55)

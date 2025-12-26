@@ -510,7 +510,8 @@ const specialMechanics = {
   Mareep: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
-  Skiddo: `Unique Mechanic: Milk Drink
+  Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
+\nTerrain doesn't exist in Emerald Blitz. Instead, Grass Pelt provides its 50% defense boost in the sun.
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
   Smoliv: `Unique Mechanic: Seed Sower
@@ -527,7 +528,7 @@ const specialMechanics = {
   Smeargle: `Unique Mechanic: Sketch
 \nSmeargle's signature move Sketch is more potent than ever before. Now, when used from the party menu, Smeargle can choose to learn one of four moves randomly selected from the Sketch pool, a collection of the strongest moves in Emerald Blitz. Happy sketching!
 \nNotably, Sketch is the only move in the game that cannot be relearned via the Move Relearner.`,
-Nincada: `Tip: Shedinja
+  Nincada: `Tip: Shedinja
 \nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Brawly, who has few options to hit it.
 \nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
   Zorua: `Tip: Illusion
@@ -550,6 +551,8 @@ Nincada: `Tip: Shedinja
 \nBy delaying Sewaddle's evolution until level 22, it can learn Struggle Bug before gym 3 while still evolving into Swadloon. Otherwise, Swadloon never learns the move.`,
   Treecko: `Tip: Delayed Evolution
 \nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
+  Goomy: `Tip: Rain Evolution
+\nBoth forms of Sliggoo require you find some rain to evolve them. Luckily, just east of Fortree City, Route 119 has a permanent rain shower. Use the "Evolution" option in the party menu to evolve Sliggoo when standing in the rain.`,
   Ponyta: `Tip: Run Away
 \nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
   Pansear: `Tip: Acrobatics

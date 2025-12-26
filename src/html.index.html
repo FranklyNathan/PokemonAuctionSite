@@ -427,6 +427,10 @@
               <img src="/KeyNPCLocations/KeyNPC6.png" alt="Key NPC Location 6" />
               <div class="caption">Day Care - Route 117</div>
             </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC7.png" alt="Key NPC Location 7" />
+              <div class="caption">Time-of-Day Jump - Starting House</div>
+            </div>
           </div>
         </section>
 
@@ -782,7 +786,12 @@
 
         <section id="complete-learnsets">
           <h2>Complete Learnsets</h2>
-          <p>Emerald Blitz uses generation 7 learnsets. Click <a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/level_up_learnsets/gen_7.h">here</a> for a complete list of all level up learnsets and <a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/teachable_learnsets.h">here</a> for all teachable learnsets.</p>
+          <p>Emerald Blitz uses generation 7 learnsets. For a complete list of the moves accessible to each Pokemon, see:</p>
+          <ul>
+            <li><a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/level_up_learnsets/gen_7.h" target="_blank" rel="noopener noreferrer">Level-Up Moves</a></li>
+            <li><a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/teachable_learnsets.h" target="_blank" rel="noopener noreferrer">Teachable Moves</a></li>
+            <li><a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/egg_moves.h" target="_blank" rel="noopener noreferrer">Egg Moves</a></li>
+          </ul>
         </section>
 
         <section id="ai-switch-logic">
@@ -790,14 +799,14 @@
           <p>The enemy AI is 50% likely to switch if...</p>
           <ul>
             <li>Their primary attacking type has been lowered to -3 or greater</li>
-            <li>They have been hit with Leech Seed and have an attacking stat lowered to -1 or greater</li>
-            <li>They are Drowsy from Yawn</li>
+            <li>They're Leech Seeded and have an attacking stat lowered to -1 or greater</li>
+            <li>They're Drowsy from Yawn</li>
           </ul>
           <p>The enemy AI is 100% likely to switch if...</p>
           <ul>
-            <li>It is their Pokémon's final turn of Perish Song</li>
-            <li>Their Pokémon has Truant and you have a Protect-like move</li>
-            <li>Your Pokémon has Wonder Guard, they cannot hit it, and the enemy has a different Pokémon which can hit it</li>
+            <li>It's their Pokémon's final turn of Perish Song</li>
+            <li>Their Pokémon has Truant and you've used a Protect-like move</li>
+            <li>Your Pokémon has Wonder Guard, their Pokemon can't hit it, and they have a different Pokémon which can hit it</li>
           </ul>
            <br>
           <br>
