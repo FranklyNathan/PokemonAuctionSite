@@ -1,0 +1,237 @@
+12/26/25
+
+-----------------------------------------------
+Balance Adjustments
+-----------------------------------------------
+
+New Mechanic: Day Care
+
+Now, after beating the first gym, players can choose to deposit up to one Pokémon at the Day Care. Once deposited, a Pokémon cannot be retrieved until the player has obtained a new gym badge. Once the Pokémon is retrieved, the first move in its move list is replaced with an Egg Move. Pokémon no longer gain experience while in the Day Care.
+
+Talking to the old man outside the Day Care will display which Egg Move each Pokémon in your party could learn. Additionally, the Egg Move each Pokémon learns is listed on the website as the final move in their "Key Moves" list.
+
+Selecting Route 117 on the Fly Map allows you to warp directly to the Day Care.
+
+
+//The premier change of the patch. This change...
+     -Allows for optional risk taking
+     -Lowers the game's difficulty by giving the player access to increased power
+     -Allows Pokémon whose learnsets were previously inadequate to join the pool
+
+//When designing Emerald Blitz, it's difficult to allow players optional access to increased power. Many players have proposed creating optional detours to retrieve powerful items or move tutors. Unfortunately, time is not a useful resource for balance. The game needs to be a blitz. Spending minutes on optional detours both 1) slows the pace of the game and 2) buffs those who play slowly under the assumption that if they defeat Steven, they'll win the race. This second concern can be alleviated by attaching some risk to the power (e.g. putting the Move Tutor behind an optional Rival fight), but this doesn't solve the problem of making the game take longer.
+
+//The Day Care, however, skirts this issue by incurring risk without requiring a time sink. Players now have a recurring decision: do they risk doing the next gym down a Pokemon in order to receive more power later?
+
+//Overall, though, the primary function of this system is to allow the available Pokemon pool to expand. Many Pokemon are locked out of the game not because they're particularly weak or don't scale well, but because their generation 7 learnsets are abysmal (especially through the early game). Now that Sneasel has access to Ice Punch, for instance, its infamously pathetic learnset is no longer a barrier to entry.
+
+
+Snarl TM Added
+//The Snarl TM is now available for purchase in Slateport after gym 4 for $3000.
+//Pokémon lines that gain access to Snarl: Umbreon, Growlithe, Houndour, Murkrow, Snubbull, Sneasel, Sableye, Corphish, Electrike, Shinx, Sandile, Zorua, Pancham, Rockruff, Litten, Toxel, Greavard, Fidough
+
+//Potentially the most significant change of the patch, and one that I consider somewhat experimental. I'm always reluctant to add TMs to the game, but in this case, several factors have converged to make me think it's at least worth trying. For starters, it's clear that the late game double battles are particularly difficult, and Snarl is in contention for best move in the game into them. Giving access to this TM allows me to weaken these fights without changing the fights themselves. Secondly, Snarl is a move that happens to be learned by a disproportionately high number of Pokémon with terrible learnsets. Snubbull, Shinx, Murkrow, Electrike and Rockruff are some such Pokémon with woefully lame learnsets, and giving them Snarl helps give them something to do. Thirdly, Dark lacks the "premier" TM that most other types have at least one of. And fourthly, this fits nicely into the Toxic-shaped hole in my TM spreadsheet.
+
+//One reason I'm apprehensive to add TMs like this is because it weakens the value of Pokémon who learn the move naturally via level. In this case, however, all Pokémon that currently have access to Snarl retain value; Poochyena, Zigzagoon and Fuecoco all get access to the move via level up for gym 3, while these other Pokémon must wait for gym 5.
+
+//And lastly, the elephant in the room: Umbreon. Players who read on will see that Umbreon's gameplan is massively nerfed this patch. Snarl gives it a new, more Blitz-friendly gameplan to keep it top tier without being quite so slow.
+
+//All of this said, this is a colossal change. Giving 17 (17!) new Pokémon access to one of the best moves in the game is a massive balance shift. It's one of the most consequential (if not the most consequential) TMs I could have added. Needless to say, we'll all be watching it closely.
+
+
+Skiddo and Mareep Level-Up Learnsets Reverted
+//Previously, Skiddo and Mareep were the only Pokémon in the game who were not using their generation 7 learnsets (because I wanted them to get Milk Drink early enough to make use of it). Now, Milk Drink has been added as the Egg Move for both. Mareep no longer learns the move via level up at all, while Skiddo gets it as Gogoat at level 58.
+
+
+Porygon Evolution Level 22 > 29
+//This is one of the only Pokémon in the draft whose evolution has been changed to an arbitrary level. The idea with 22 was that it fit with the 2 theme (lol), but Porygon2 is too far above the curve to be obtained that early.
+
+
+Smeargle's Sketch Move Pool Additions:
+Destiny Bond
+Draco Meteor
+Night Daze
+Perish Song
+Rain Dance
+Spiky Shield
+Sunny Day
+Tailwind
+Taunt
+Will-O-Wisp
+//I want Smeargle to have a bit more variance from run to run, which means expanding Sketch's options. Increasing the size of the move pool will make it harder to find the heavy hitters like Spore. This brings the total size of the pool from 32 to 42.
+
+Wattrel/Kilowattrel now learn Shock Wave via TM
+//Shock Wave was removed as a TM in generation 9. These two not learning Shock Wave is nonsensical, and they obviously would have access to it had they been introduced in generation 3. Other Pokémon like this will receive similar treatment if I spot them.
+
+
+Sleep Clause Added
+//Now, only one Pokémon on a team can be put to sleep at a time. The AI will see if you have a sleeping Pokémon in the back of your party and be disincentivized from using sleep moves.
+//Funnily, this means that you can start the Elite Four with a sleeping Pokémon in the back of your party to stop Breloom from using Spore.
+
+
+Fling Set to Gen9 Mechanics
+Items launched with Fling are now restored at the end of the battle.
+//I've decided that flinging King's Rock is an interesting gameplan that shouldn't break the bank.
+
+
+EVs Fully Disabled
+//Pokémon can no longer gain EVs. Honestly, I thought that I already had EV gain from battles disabled; it's an oversight that this wasn't the case to begin with. They weren't significant (since we weren't fighting wild Pokémon or random trainers), but they need to be removed to prevent incentivizing runners from grinding on wild Pokemon. 
+
+
+Camouflage Rework: Now matches the user's type to the type of the gym
+//For example, using Camouflage against Juan & Wallace will change the user to the Water type. In the Elite Four, using the move in Sidney's room will change your type to Dark, even if you're facing Spenser.
+//I doubt that this is particularly useful, but at least now it does something.
+
+Grass Pelt Rework:
+Now boosts 1.5x defense in Sun, not in Grassy Terrain
+Surge Surfer Rework:
+Now boosts 2x speed in Rain, not in Electric Terrain
+//Cleaning up the terrain abilities that had no function (since Emerald Blitz has no Terrain).
+
+
+-----------------------------------------------
+Stall Nerfs
+-----------------------------------------------
+
+Toxic TM Removed
+//Stalling with Toxic is inherently balanced by Emerald Blitz being a race. If you play slow, you're taking the risk that somebody faster than you beats the game and you lose. That said, in these early days when everyone is still learning the game, beating Champion Steven is all but a guaranteed win, so playing slowly has no downside. Toxic stalling is not in the spirit of the game, so I'm thinking it never should have been here in the first place.
+//Notably, Pokémon that learn Toxic or Toxic Spikes by level up retain access to the move. For now, I want to try making the move less ubiquitous and seeing if that's sufficient.
+
+
+The following moves have been reduced to 1 Power Point:
+Milk Drink
+Moonlight
+Morning Sun
+Slack Off
+Soft-Boiled
+Strength Sap
+Synthesis
+Recover
+Recycle
+Rest
+Roost
+Wish
+//Usually when you're using any of these moves more than once, you're up to no good. Sets like Umbreon's Charm/Screech/Moonlight core are too effective at allowing bulky Pokémon to (excruciatingly slowly) invalidate Elite Four fights. After the fastest player defeats Steven, the race should not continue on for over an hour while a runner far behind slowly grinds through the Elite Four with debuffs and infinite health to earn 2nd place. It's against the spirit of the game. Either the debuff moves or the healing moves need to be weakened, and I'm going with the healing moves.
+//Some healing moves, like Pollen Puff, Heal Pulse, Life Dew, Swallow, etc. have avoided my ire. This first pass hits the bare minimum. I may be back for more later.
+//Notably, this applies to opponents as well. Norman's Slakoth, for example, can no longer extend fights by Slacking Off over and over. Steven's Cradily is now a bit less resilient.
+
+Overworld PP Up and PP Max Removed
+//This should have been done last patch. It's weird to only have some Vitamins around, and these ones are often used for degenerate purposes anyway.
+
+
+AI now has a 50% chance to switch if Leech Seeded while an attacking stat is -1 or below
+//Setting up Leech Seed with attack drops allows you to "farm" weak Pokémon by dropping their attack stat, Leech Seeding, then switch stalling to heal your party. This strategy is lame and the AI will now stop you from doing it.
+//Notably, the attacking stat debuff needs to be in the attacking stat of the Pokémon's primary attacking type. Gardevoir won't switch out if you Charm it 3 times to drop its physical attack stat, for example. This point is also the case for enemy Pokémon switching out with -3 in an attacking stat, not just Leech Seed.
+
+
+AI now has a 50% chance to switch out while Drowsy
+//Yawn is a bit too good for how common it is. This makes it a bit less good.
+
+
+//As a closing point, I'll note that I'm aware these changes may not be harsh enough. Stall may yet live. I fear that even as we speak, Sooski is out there cooking up some heinous strategies to make his next run take four hours. That said, I'd rather move gradually and begin with what I see as no-brainer changes, then reassess next patch.
+
+
+
+-----------------------------------------------
+Boss Team Changes
+-----------------------------------------------
+
+Gym Leaders 2-4 Potion Count: 2 > 1
+//I have a complicated relationship with potions. On the one hand, they feel quintessentially Pokémon; I feel that taking them out makes the game feel less like the mainline games. On the other hand, so often they do nothing besides prolong fights, and working through multiple of them is particularly tedious. For the time being, I'm going to tap down the pre-gym-5 fights to just one potion.
+
+
+Tate&Liza 7/8 Slowbro Yawn/HealPulse > Brick Break
+//Giving the fight some anti-dark physical coverage so that Snarlers at least have to react to something. Funnily, Juan & Wallace's Throat Chop Wugtrio also gives them some counterplay.
+
+
+Norman 8 Spinda Flail > Encore
+//Norman's final Spinda no longer changes from previous iterations. Encore helps to limit your ability to set up on it.
+
+Tate & Liza 3 Lunatone Psyshock > Rock Throw
+Wattson 4-8 Mageton/Magnezone Thunder Wave > Supersonic
+Spenser Sceptile Agility > Night Slash
+Tucker Gardevoir Moonblast > Shadow Sneak
+Steven Aggron Iron Tail > Rock Slide
+//Keeping Shedinja weak but usable is a balancing act. This should help keep us upright.
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Forced Auto Save
+The game now automatically saves after defeating each gym leader.
+//Unfortunately, by the nature of me being a solo dev and a novice programmer, sometimes the game has bugs. And sometimes those bugs cause crashes. By automatically saving after each boss fight, the significance of crashes is mitigated.
+//This will sound silly, but this is the change I'm most excited about on the patch. Even if it's extremely rare, I'm always anxious about people crashing late into runs, computers rebooting, power going out, and a race subsequently being ruined. This change will make it so that the worst-case scenario, a player can never lose their run outright. 
+
+
+Save Menu Info Reworked
+The Save Menu now displays badges obtained, money, and total deaths.
+//Well, this is why I'm so jazzed about it. I was initially hesitant about forcing the player to spend time doing nothing after each gym just to watch the save dialogue. However, now that relevant info prints in the save window, that time is actually serving a purpose. I like what this does to the gameplay loop; After each win, the player gets to take a breath and reflect on what gyms they have remaining and their current money. It splits up the action nicely and feels more like an opportunity to collect yourself than a speedbump.
+//Lastly, I'm happy with the help this provides spectators. Now if you just pop into Boxer's stream and have 8 games to watch at once, when a player beats a boss, you'll see at a glance which gym leaders they've already fought.
+
+
+The In-Game Timer now starts counting when you receive Flygon
+//The timer no longer starts counting when you select New Game, but waits to count time until you have your bike. It will now no longer consider time spent in room and will reflect an accurate record of how long the run took.
+
+
+E4 Sidney/Spenser Level Check
+The first member of the Elite Four now refuses to battle if you have a Pokemon below the level cap. 
+//Their behavior now matches gym leaders and stops players from losing runs for forgetting to use their Rare Candy.
+
+
+Sketch Bugs Fixed:
+-When Smeargle attempts to learn Sketch via level up, it will no longer learn Sketch in every empty move slot it has
+-Using Sketch can no longer prompt Smeargle to learn a move it already knows
+-The Sketch Move Menu no longer occasionally corrupts visually
+//I didn't test this move thoroughly enough, as you can see. It should be good to go now.
+
+
+Yawn Bug Fixed:
+Pokémon holding Chesto Berries will now wake up instantly at the end of turn when put to sleep by Yawn.
+//Essential counterplay to Flannery's Slugma.
+
+
+The AI no longer has a 50% chance to switch out when Encored into a damaging move
+//This wasn't intended. If Encore ends up being a problem, I'll circle back to this in the future.
+
+
+Remaining Vitamins Removed
+//Patch 7.1 failed to fully clean up all of the vitamins. Hopefully now I've got them all.
+
+Wild Pokémon no longer hold items
+//Removes the ability to hunt Shuppet and thief their held Spell Tags, etc.
+
+
+Double Battle Leaders will now fight you even if you have just one Pokémon
+//Giving you the privilege to die with honor.
+
+
+Resprited the in-battle health box display
+//Removes the dark grey portion of the health box that awkwardly overlapped with the type icons.
+
+
+Fixed a bug where Flygon was unable to hop up certain ledges.
+Fixed a bug where Flygon could Fly to Route 123 from Oldale Town.
+//Move along, move along. Nothing to see here. Hey, look! New Pokémon!
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Pool Addition: Pansear
+//The people are clamoring for starters, and I'm a man of the people. I figure a new Sinnoh starter is a good place to begin!
+Pool Addition: Blipbug
+Pool Addition: Drifloon
+Pool Addition: Lotad
+Pool Addition: Machop
+Pool Addition: Nosepass
+Pool Addition: Roggenrola
+Pool Addition: Slakoth
+Pool Addition: Sneasel
+Pool Addition: Stufful
+Pool Addition: Wattrel
+Pool Addition: Yanma
+
+
+//I was originally planning on doing write ups for each of these Pokémon, but now that we have a smoking hot player base, I think it'd be more fun to allow people to discover their gameplans on their own. All I'll note is that a few of these Pokémon are finally able to enter the pool because the Day Care patches up some previous problem in their learnset. The expanded pool in turn allows overrepresented types like Ghost and Water to gain new members. Happy labbing!

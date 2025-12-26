@@ -44,7 +44,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -94,7 +94,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -144,7 +144,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -464,7 +464,7 @@ Class: Leader
 Pic: Leader Viola
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -514,7 +514,7 @@ Class: Leader
 Pic: Leader Viola
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -564,7 +564,7 @@ Class: Leader
 Pic: Leader Viola
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -884,7 +884,7 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -934,7 +934,7 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -984,7 +984,7 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -1304,7 +1304,7 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -1354,7 +1354,7 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -1404,7 +1404,7 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -1483,9 +1483,9 @@ Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
-- Tri Attack
+- Supersonic
 - Shock Wave
-- Thunder Wave
+- Tri Attack
 - Mirror Shot
 
 Manectric @ Sitrus Berry
@@ -1533,9 +1533,9 @@ Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
-- Tri Attack
+- Supersonic
 - Shock Wave
-- Thunder Wave
+- Tri Attack
 - Flash Cannon
 
 Raichu-Alola
@@ -1593,9 +1593,9 @@ Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
-- Tri Attack
+- Supersonic
 - Shock Wave
-- Thunder Wave
+- Tri Attack
 - Flash Cannon
 
 Raichu-Alola
@@ -1653,9 +1653,9 @@ Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
-- Zap Cannon
+- Supersonic
 - Shock Wave
-- Thunder Wave
+- Tri Attack
 - Flash Cannon
 
 Raichu-Alola
@@ -1724,7 +1724,7 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices
 
@@ -1774,7 +1774,7 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices
 
@@ -1824,7 +1824,7 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices
 
@@ -2144,7 +2144,7 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -2194,7 +2194,7 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -2244,7 +2244,7 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -2476,7 +2476,7 @@ Ability: Own Tempo
 - Teeter Dance
 - Sucker Punch
 - Facade
-- Flail
+- Encore
 
 Zoroark-Hisui
 Level: 46
@@ -2564,7 +2564,7 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -2614,7 +2614,7 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -2664,7 +2664,7 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -2974,7 +2974,7 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3004,7 +3004,7 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3034,7 +3034,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Confusion
-- Psyshock
+- Rock Throw
 - Calm Mind
 - Hypnosis
 
@@ -3054,7 +3054,7 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3245,7 +3245,7 @@ Nature: Serious
 Ability: Quick Draw
 - Shell Side Arm
 - Calm Mind
-- Yawn
+- Brick Break
 - Psychic
 
 Slowking-Galar
@@ -3315,7 +3315,7 @@ Nature: Serious
 Ability: Quick Draw
 - Shell Side Arm
 - Calm Mind
-- Heal Pulse
+- Brick Break
 - Psychic
 
 Slowking-Galar
@@ -3403,7 +3403,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3453,7 +3453,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3503,7 +3503,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3742,10 +3742,10 @@ Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Gooey
-- Triple Dive
 - Rain Dance
 - Throat Chop
 - Water Pulse
+- Triple Dive
 
 Wailord
 Level: 46
@@ -4016,7 +4016,7 @@ Nature: Serious
 Ability: Overgrow
 - Leaf Blade
 - X Scissor
-- Agility
+- Night Slash
 - Dual Chop
 
 Ludicolo
@@ -4278,7 +4278,7 @@ Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
-- Moonblast
+- Shadow Sneak
 - Psychic
 - Draining Kiss
 - Calm Mind
@@ -4427,7 +4427,7 @@ Ability: Sturdy
 - Steel Wing
 
 Goodra-Hisui
-Level: 56
+Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sap Sipper
@@ -4437,14 +4437,14 @@ Ability: Sap Sipper
 - Dragon Breath
 
 Aggron
-Level: 55
+Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
 - Thunder
 - Earthquake
 - Dragon Claw
-- Iron Tail
+- Rock Slide
 
 Cradily
 Level: 56

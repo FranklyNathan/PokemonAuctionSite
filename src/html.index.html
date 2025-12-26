@@ -317,6 +317,7 @@
             <li><a href="#slateport-market">Slateport Market Items</a></li>
             <li><a href="#gym-benchmarks">Gym Benchmarks</a></li>
             <li><a href="#complete-learnsets">Complete Learnsets</a></li>
+            <li><a href="#ai-switch-logic">AI Switch Logic</a></li>
           </ul>
         </nav>
 
@@ -422,6 +423,10 @@
               <img src="/KeyNPCLocations/KeyNPC5.png" alt="Key NPC Location 5" />
               <div class="caption">Substitute Tutor - Lilycove City</div>
             </div>
+            <div class="image-with-caption">
+              <img src="/KeyNPCLocations/KeyNPC6.png" alt="Key NPC Location 6" />
+              <div class="caption">Day Care - Route 117</div>
+            </div>
           </div>
         </section>
 
@@ -461,7 +466,6 @@
                 <span class="type-steel">Steel Wing</span>
                 <span class="type-dark">Thief</span>
                 <span class="type-dark">Torment</span>
-                <span class="type-poison">Toxic</span>
                 <span class="type-psychic">Trick Room</span>
               </div>
             </div>
@@ -486,6 +490,7 @@
                 <span class="type-steel">Iron Tail</span>
                 <span class="type-water">Rain Dance</span>
                 <span class="type-ghost">Shadow Ball</span>
+                <span class="type-dark">Snarl</span>
                 <span class="type-grass">Solar Beam</span>
                 <span class="type-fire">Sunny Day</span>
                 <span class="type-bug">X Scissor</span>
@@ -536,12 +541,15 @@
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/mawile.png" title="Mawile" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/minccino.png" title="Minccino" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/mudbray.png" title="Mudbray" style="max-height: 100%; max-width: 100%;"></div>
+                      <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/roggenrola.png" title="Roggenrola" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/scatterbug.png" title="Scatterbug" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/shellder.png" title="Shellder" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/shinx.png" title="Shinx" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/shroomish.png" title="Shroomish" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/snubbull.png" title="Snubbull" style="max-height: 100%; max-width: 100%;"></div>
+                      <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/stufful.png" title="Stufful" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/teddiursa.png" title="Teddiursa" style="max-height: 100%; max-width: 100%;"></div>
+                      <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/wattrel.png" title="Wattrel" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/wingull.png" title="Wingull" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/wooper.png" title="Wooper" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/zigzagoon.png" title="Zigzagoon" style="max-height: 100%; max-width: 100%;"></div>
@@ -562,8 +570,11 @@
                     <li>Shinx (Intimidate)</li>
                     <li>Shroomish (Poison Heal)</li>
                     <li>Snubbull (Intimidate)</li>
+                    <li>Stufful (Fluffy)</li>
                     <li>Teddiursa (Guts)</li>
+                    <li>Wattrel (Volt Absorb)</li>
                     <li>Wooper (Water Absorb)</li>
+                    <li>Roggenrola (Weak Armor, Sand Stream on Gigalith)</li>
                     <li>Wingull (Hydration, Drizzle on Pelipper)</li>
                     <li>Zigzagoon (Gluttony, Guts on Obstagoon)</li>
                   </ul>
@@ -646,16 +657,16 @@
             <div class="item-card">
               <div class="tm-header">Badge 4</div>
               <ul class="items-list">
-                <li><div class="evo-item-container"><span>Fire Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Growlithe &gt; Arcanine</li><li>Eevee &gt; Flareon</li></ul></li>
+                <li><div class="evo-item-container"><span>Fire Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Growlithe &gt; Arcanine</li><li>Pansear &gt; Simisear</li><li>Eevee &gt; Flareon</li></ul></li>
                 <li><div class="evo-item-container"><span>Water Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Poliwhirl &gt; Poliwrath</li><li>Shellder &gt; Cloyster</li><li>Staryu &gt; Starmie</li><li>Pikachu &gt; Raichu-Alola</li><li>Eevee &gt; Vaporeon</li></ul></li>
-                <li><div class="evo-item-container"><span>Thunder Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Magneton &gt; Magnezone</li><li>Helioptile &gt; Heliolisk</li><li>Charjabug &gt; Vikavolt</li><li>Pikachu &gt; Raichu</li><li>Eevee &gt; Jolteon</li></ul></li>
+                <li><div class="evo-item-container"><span>Thunder Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Magneton &gt; Magnezone</li><li>Nosepass &gt; Probopass</li><li>Charjabug &gt; Vikavolt</li><li>Pikachu &gt; Raichu</li><li>Eevee &gt; Jolteon</li></ul></li>
                 <li><div class="evo-item-container"><span>Leaf Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Gloom &gt; Vileplume</li><li>Exeggcute &gt; Exeggutor</li><li>Eevee &gt; Leafeon</li></ul></li>
                 <li><div class="evo-item-container"><span>Ice Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Vulpix-Alola &gt; Ninetales-Alola</li><li>Eevee &gt; Glaceon</li></ul></li>
                 <li><div class="evo-item-container"><span>Moon Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Clefairy &gt; Clefable</li><li>Jigglypuff &gt; Wigglytuff</li><li>Eevee &gt; Umbreon</li></ul></li>
-                <li><div class="evo-item-container"><span>Sun Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Gloom &gt; Bellossom</li><li>Exeggcute &gt; Exeggutor-Alola</li><li>Eevee &gt; Espeon</li></ul></li>
+                <li><div class="evo-item-container"><span>Sun Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Gloom &gt; Bellossom</li><li>Exeggcute &gt; Exeggutor-Alola</li><li>Helioptile &gt; Heliolisk</li><li>Eevee &gt; Espeon</li></ul></li>
                 <li><div class="evo-item-container"><span>Shiny Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Floette &gt; Florges</li><li>Minccino &gt; Cinccino</li><li>Togetic &gt; Togekiss</li><li>Roselia &gt; Roserade</li><li>Eevee &gt; Sylveon</li></ul></li>
                 <li><div class="evo-item-container"><span>Dawn Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Kirlia &gt; Gallade</li><li>Snorunt &gt; Froslass</li></ul></li>
-                <li><div class="evo-item-container"><span>Dusk Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Doublade &gt; Aegislash</li><li>Litwick &gt; Chandelure</li><li>Murkrow &gt; Honchkrow</li></ul></li>
+                <li><div class="evo-item-container"><span>Dusk Stone</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Doublade &gt; Aegislash</li><li>Litwick &gt; Chandelure</li><li>Murkrow &gt; Honchkrow</li><li>Sneasel &gt; Weavile</li></ul></li>
                 <li><div class="evo-item-container"><span>Dragon Scale</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Seadra &gt; Kingdra</li><li>Skrelp &gt; Dragalge</li></ul></li>
                 <li><div class="evo-item-container"><span>King's Rock</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Poliwhirl &gt; Politoed</li><li>Slowpoke-Galar &gt; Slowking-Galar</li><li>Scyther &gt; Kleavor</li></ul></li>
                 <li><div class="evo-item-container"><span>Metal Coat</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div><ul class="evo-list"><li>Scyther &gt; Scizor</li><li>Goomy &gt; Sliggoo-Hisui</li></ul></li>
@@ -669,16 +680,20 @@
                   <div class="evo-item-container"><span>Linking Cord</span><sl-icon-button name="chevron-down" label="Show evolutions"></sl-icon-button></div>
                   <ul class="evo-list">
                     <li style="display: flex; flex-wrap: wrap; gap: 0.2rem; margin-bottom: 0.5rem; max-width: 600px;">
+                      <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/boldore.png" title="Boldore" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/graveler.png" title="Graveler" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/gurdurr.png" title="Gurdurr" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/haunter.png" title="Haunter" style="max-height: 100%; max-width: 100%;"></div>
+                      <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/machoke.png" title="Machoke" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/porygon2.png" title="Porygon2" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/electabuzz.png" title="Electabuzz" style="max-height: 100%; max-width: 100%;"></div>
                       <div style="width: 30px; height: 24px; display: flex; justify-content: center; align-items: center;"><img src="/MiniIcons/magmar.png" title="Magmar" style="max-height: 100%; max-width: 100%;"></div>
                     </li>
+                    <li>Boldore &gt; Gigalith</li>
                     <li>Graveler &gt; Golem</li>
                     <li>Gurdurr &gt; Conkeldurr</li>
                     <li>Haunter &gt; Gengar</li>
+                    <li>Machoke &gt; Machamp</li>
                     <li>Porygon2 &gt; Porygon-Z</li>
                     <li>Electabuzz &gt; Electivire</li>
                     <li>Magmar &gt; Magmortar</li>
@@ -748,7 +763,7 @@
               <tr>
                 <th>Gym</th>
                 <th>Level Cap</th>
-                <th>Money Given</th>
+                <th>Money Awarded</th>
               </tr>
             </thead>
             <tbody>
@@ -768,7 +783,23 @@
         <section id="complete-learnsets">
           <h2>Complete Learnsets</h2>
           <p>Emerald Blitz uses generation 7 learnsets. Click <a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/level_up_learnsets/gen_7.h">here</a> for a complete list of all level up learnsets and <a href="https://github.com/FranklyNathan/EmeraldBlitz/blob/main/src/data/pokemon/teachable_learnsets.h">here</a> for all teachable learnsets.</p>
-          <br>
+        </section>
+
+        <section id="ai-switch-logic">
+          <h2>AI Switch Logic</h2>
+          <p>The enemy AI is 50% likely to switch if...</p>
+          <ul>
+            <li>Their primary attacking type has been lowered to -3 or greater</li>
+            <li>They have been hit with Leech Seed and have an attacking stat lowered to -1 or greater</li>
+            <li>They are Drowsy from Yawn</li>
+          </ul>
+          <p>The enemy AI is 100% likely to switch if...</p>
+          <ul>
+            <li>It is their Pokémon's final turn of Perish Song</li>
+            <li>Their Pokémon has Truant and you have a Protect-like move</li>
+            <li>Your Pokémon has Wonder Guard, they cannot hit it, and the enemy has a different Pokémon which can hit it</li>
+          </ul>
+           <br>
           <br>
           <br>
           <br>

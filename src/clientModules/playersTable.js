@@ -1,4 +1,4 @@
-import { getBooleanFilterButtons, toast, updateDraftCounter } from './html.js';
+import { getBooleanFilterButtons, toast, updateDraftCounter, calculateAveragePrice } from './html.js';
 import { playerSelected } from './clientActions.js';
 
 function isValidNumber(s) {
@@ -345,7 +345,6 @@ export async function loadPlayersData(ctx) {
 
   // Set the initial drafted count on the context and update the UI.
   ctx.draftedPokemonCount = initialDraftedCount;
-  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
 
   // Create a map for fast lookups by the persistent `player_id`.
   // This map contains ALL players, including evolutions.
@@ -365,6 +364,8 @@ export async function loadPlayersData(ctx) {
   }
 
   ctx.playersTableData = tableData;
+  const avg = calculateAveragePrice(ctx.playersTableData);
+  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned, avg);
 
   // create the players table
   const playerFields = tableData.length > 0 ? Object.keys(tableData[0]) : [];

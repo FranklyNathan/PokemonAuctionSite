@@ -53,6 +53,7 @@ import v6_8 from '../assets/PatchNotes/v6.8 Patch Notes.txt';
 import v6_9 from '../assets/PatchNotes/v6.9 Patch Notes.txt';
 import v7_0 from '../assets/PatchNotes/v7.0 Patch Notes.txt';
 import v7_1 from '../assets/PatchNotes/v7.1 Patch Notes.txt';
+import v7_2 from '../assets/PatchNotes/v7.2 Patch Notes.txt';
 import patchNotesHtml from './html.patchNotes.html';
 import { closeOrErrorHandler, handleClientMessage } from './mod.clientCommunication';
 import gymsText from '../assets/gyms.txt';
@@ -374,6 +375,7 @@ export default {
           'v6.9 Patch Notes.txt': v6_9,
           'v7.0 Patch Notes.txt': v7_0,
           'v7.1 Patch Notes.txt': v7_1,
+          'v7.2 Patch Notes.txt': v7_2,
         };
         const content = map[filename];
         if (content !== undefined) {

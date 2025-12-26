@@ -210,6 +210,9 @@
         <sl-button id="github-button" class="control-button" variant="neutral" title="Open GitHub Repository">
           <img class="invert-in-dark-mode" src="/generic/Github.png" alt="Open GitHub Repository" />
         </sl-button>
+        <sl-button id="twitch-button" class="control-button" variant="neutral" title="Open Twitch Channel">
+          <img class="invert-in-dark-mode" src="/generic/Twitch.png" alt="Twitch" />
+        </sl-button>
         <sl-button id="youtube-button" class="control-button" variant="neutral" title="Open YouTube Channel">
           <img class="invert-in-dark-mode" src="/generic/Youtube.png" alt="YouTube" />
         </sl-button>
@@ -292,6 +295,14 @@
       document.getElementById('github-button').addEventListener('click', () => {
         window.open('https://github.com/FranklyNathan/EmeraldBlitz', '_blank');
       });
+
+      // Twitch button listener
+      const twitchBtn = document.getElementById('twitch-button');
+      if (twitchBtn) {
+        twitchBtn.addEventListener('click', () => {
+          window.open('https://www.twitch.tv/emeraldblitzlive', '_blank');
+        });
+      }
 
       // Discord button listener
       const discordBtn = document.getElementById('discord-button');

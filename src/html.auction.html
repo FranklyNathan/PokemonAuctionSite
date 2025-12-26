@@ -256,6 +256,7 @@
     <sl-dialog id="disconnectedDialog" label="Disconnected!">
       <div style="display: flex; justify-content: space-between">
         Reload the page to reconnect.
+        <span id="disconnectedMessage">Reload the page to reconnect.</span>
         <sl-button id="refreshButton" slot="footer" variant="primary">Reload</sl-button>
       </div>
     </sl-dialog>
@@ -422,6 +423,36 @@
           let myparticipant = participant.content;
 
           const shadowRoot = this.attachShadow({ mode: 'open' }).appendChild(myparticipant.cloneNode(true));
+
+          this.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+
+            // Attempt to parse numeric ID if the element ID is like "team1"
+            let derivedId = this.id;
+            if (typeof derivedId === 'string' && derivedId.startsWith('team')) {
+              const parsed = parseInt(derivedId.replace('team', ''), 10);
+              if (!isNaN(parsed)) derivedId = parsed;
+            }
+
+            const team = ctx.teams[this.id] || ctx.teams[derivedId];
+            const teamName = team?.teamName || this.id;
+            const clientId = (team && team.clientId !== undefined) ? team.clientId : derivedId;
+
+            if (confirm(`Are you sure you want to kick ${teamName}?`)) {
+              console.group('[Debug] Kick Action Details');
+              console.log('Current ctx.stateId:', ctx.stateId);
+              console.log('Target team object:', team);
+              console.log('Calculated clientId:', clientId);
+
+              const payload = { type: 'kick', clientId: clientId, id: clientId, stateId: ctx.stateId };
+              const jsonPayload = JSON.stringify(payload);
+              console.log('Serialized payload being sent:', jsonPayload);
+              console.groupEnd();
+
+              if (ctx.ws) ctx.ws.send(jsonPayload);
+              else console.error('[Debug] ctx.ws is missing');
+            }
+          });
         }
       },
     );

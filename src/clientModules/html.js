@@ -1,7 +1,24 @@
-export function updateDraftCounter(count, total) {
+export function calculateAveragePrice(playersData) {
+  if (!playersData || playersData.length === 0) return 0;
+  let total = 0;
+  let count = 0;
+  for (const p of playersData) {
+    if (p.pickedBy && typeof p.cost === 'number') {
+      total += p.cost;
+      count++;
+    }
+  }
+  return count === 0 ? 0 : total / count;
+}
+
+export function updateDraftCounter(count, total, average) {
   const counterEl = document.getElementById('draft-counter');
   if (counterEl) {
-    counterEl.innerHTML = `Drafted: ${count} / ${total}`;
+    let text = `Drafted: ${count} / ${total}`;
+    if (typeof average === 'number' && count > 0) {
+      text += ` &nbsp;&nbsp;|&nbsp;&nbsp; Avg. Sale Price: $${Math.round(average)}`;
+    }
+    counterEl.innerHTML = text;
   }
 }
 
@@ -529,10 +546,15 @@ Nincada: `Tip: Shedinja
 \nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
   Gastly: `Tip: Delayed Evolution
 \nBy delaying Gastly's evolution until level 29, it can learn Shadow Ball before gym 4 while still evolving into Haunter. Otherwise, Haunter needs to wait all of the way until level 33, which doesn't come until two gyms later.`,
+  Sewaddle: `Tip: Delayed Evolution
+\nBy delaying Sewaddle's evolution until level 22, it can learn Struggle Bug before gym 3 while still evolving into Swadloon. Otherwise, Swadloon never learns the move.`,
   Treecko: `Tip: Delayed Evolution
 \nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
- Ponyta: `Tip: Run Away
+  Ponyta: `Tip: Run Away
 \nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
+  Pansear: `Tip: Acrobatics
+\nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!
+\nBut watch out! Once Pansear evolves, it stops learning moves via level up. Be sure to wait until it learns Acrobatics to use that Fire Stone!`,
   Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,

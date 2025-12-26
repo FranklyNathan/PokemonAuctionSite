@@ -377,5 +377,11 @@ export function onMessage(event, ctx) {
       toast('Error', m, 'danger');
       console.error(m);
       return;
+case 'kick_event':
+      const msgEl = document.getElementById('disconnectedMessage');
+      if (msgEl) {
+        msgEl.textContent = `You have been kicked by ${msg.kicker}. `;
+      }
+      return;
   }
 }

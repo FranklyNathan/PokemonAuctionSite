@@ -23,8 +23,8 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
   console.log(`[validate] 1. Validating message from clientId: ${clientId}`, msg);
   // check for an invalid message
   // make sure message type is valid
-  if (!(msg.hasOwnProperty('type') && Object.values<string>(ClientMessageType).includes(msg.type))) {
-    return sendError(ctx, `The message 'type' parameter ('${msg.stateId}') is invalid!`, clientId);
+  if (!(msg.hasOwnProperty('type') && (Object.values<string>(ClientMessageType).includes(msg.type) || msg.type === 'kick'))) {
+    return sendError(ctx, `The message 'type' parameter ('${msg.type}') is invalid!`, clientId);
   }
   // check stateId is valid and corresponds to the server's state
   if (!(msg.hasOwnProperty('stateId') && Object.values<string>(State).includes(msg.stateId))) {
@@ -39,7 +39,7 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
     return sendError(ctx, `Your 'stateId' (${msg.stateId}) does not match the server's state (${ctx.serverState})!`, clientId);
   }
   console.log(`[validate] 2. Entering switch for type: ${msg.type}`);
-  switch (msg.type as ClientMessageType) {
+  switch (msg.type as any) {
     case 'ready_up':
       if (ctx.serverState != State.PreAuction) {
         return sendError(ctx, `Readying up is not a valid after the Pre-Auction!`, clientId);
@@ -125,6 +125,11 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         return sendError(ctx, `You can only flashbang a player with more drafted Pokémon than you.`, clientId);
       }
       break;
+    case 'kick':
+      if (!msg.hasOwnProperty('id')) {
+        return sendError(ctx, `Kick target 'id' is missing.`, clientId);
+      }
+      break;
   }
 
   console.log(`[validate] 4. Message passed validation.`);
@@ -148,7 +153,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
   }
 
   // next act on the message.
-  switch (msg.type) {
+  switch (msg.type as any) {
     case ClientMessageType.ReadyUp:
       ctx.clientMap[clientId].ready = true;
       // if all clients are ready (only need the clients who aren't "done" drafting at the time of
@@ -234,6 +239,18 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       const flashbangerName = ctx.clientMap[clientId].teamName;
       await updateClients(ctx, true, false, `${flashbangerName} used Flashbang!`);
       return; // Exit after sending the bid update.
+    case 'kick':
+      console.log(`[Server] Kick command received from ${clientId} targeting ${msg.id}`);
+      const targetClient = ctx.clientMap[msg.id];
+      const kicker = ctx.clientMap[clientId];
+      const kickerName = kicker ? kicker.teamName : 'Admin';
+
+      if (targetClient && targetClient.ws) {
+        // Send a message to the client so they know why they are being disconnected
+        targetClient.ws.send(JSON.stringify({ type: 'kick_event', kicker: kickerName }));
+        targetClient.ws.close();
+      }
+      return;
     default:
       // A message type that has passed validation but has no action to take.
       // This is fine, we just don't need to send an update to clients.

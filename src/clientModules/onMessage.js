@@ -19,6 +19,7 @@ import {
   hideFlashbangOverlay,
   updateTeamCard,
   updateDraftCounter,
+  calculateAveragePrice,
 } from './html.js';
 
 /*
@@ -76,7 +77,8 @@ function recordDraft(ctx) {
 
   // Increment the draft count and update the UI
   ctx.draftedPokemonCount++;
-  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
+  const avg = calculateAveragePrice(ctx.playersTableData);
+  updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned, avg);
 
   // update the table row
   const row = ctx.playersTable.getRowNode(selectedPlayer.playerId);
@@ -217,7 +219,8 @@ function handleServerUpdate(msg, ctx) {
       }
     ctx.totalPokemonAuctioned = msg.totalPokemonAuctioned;
     // Initialize the counter display
-    updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
+    const avg = calculateAveragePrice(ctx.playersTableData);
+    updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned, avg);
   }
 
   // Handle pause state
@@ -387,6 +390,15 @@ export function onMessage(event, ctx) {
       const m = 'Received error message from the server with no other details...';
       toast('Error', m, 'danger');
       console.error(m);
+      return;
+    case 'kick_event':
+      const dialog = document.getElementById('disconnectedDialog');
+      if (dialog) {
+        const contentDiv = dialog.querySelector('div');
+        if (contentDiv && contentDiv.firstChild) {
+          contentDiv.firstChild.textContent = `You have been kicked by ${msg.kicker}. `;
+        }
+      }
       return;
   }
 }
