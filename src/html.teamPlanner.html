@@ -165,9 +165,88 @@
       </div>
     </sl-dialog>
 
+    <!-- Dialog for special mechanics -->
+    <sl-dialog id="specialMechanicDialog" no-header>
+      <div id="specialMechanicContent"></div>
+      <sl-button slot="footer" variant="primary" size="small">Close</sl-button>
+    </sl-dialog>
+
     <script type="module">
       let allPokemon = [];
       let speciesInfoMap = new Map();
+      
+      // Special mechanics info for Pokemon with unique gameplay tips
+const specialMechanics = {
+  Castform: `Unique Mechanic: Forecast
+\nStarting at level 20, Forecast gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
+\nWater: Rain (Drizzle)
+\nFire: Sun (Drought)
+\nIce: Hail (Snow Warning)`,
+  Mareep: `Unique Mechanic: Milk Drink
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
+  Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
+\nTerrain doesn't exist in Emerald Blitz. Instead, Grass Pelt provides its 50% defense boost in the sun.
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
+  Smoliv: `Unique Mechanic: Seed Sower
+\nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that attacks it and makes contact.`,
+  Greavard: `Unique Mechanic: Last Respects
+\nEach time one of your Pokemon faints, Greavard's signature move Last Respects permanently gains 15 power on top of its base 50.
+\nThe fainted Pokémon counter does not reset between battles.`,
+  Corsola: `Unique Mechanic: On-Death Evolution
+\nWhen Corsola faints, after the battle, it will transform into Galarian Corsola and revive at full HP.`,
+  Bombirdier: `Unique Mechanic: Stork's Blessing
+\nAt the end of a boss battle in which your Bombirdier with Stork's Blessing participated, if you have an empty slot in your party, you receive an egg. The egg contains a random Pokémon of the 19 possible babies. They hatch at level 5 and cannot level up.`,
+  Applin: `Unique Mechanic: Gym-Based Evolution
+\nApplin evolves into different Pokemon depending on which gym you're in. Gyms are randomized in Emerald Blitz, so cross your fingers to get Fortree, Lavaridge, or Rustboro early,`,
+  Rotom: `Unique Mechanic: Rotom Catalog
+\nRotom transforms with the consumable item Rotom Catalog, available in Fortree City. You're given three Rotom Catalogs. With the ability to change forms after seeing which boss you're about to face, Rotom's versatility is unmatched.`,
+  Smeargle: `Unique Mechanic: Sketch
+\nSmeargle's signature move Sketch is more potent than ever before. Now, when used from the party menu, Smeargle can choose to learn one of four moves randomly selected from the Sketch pool, a collection of the strongest moves in Emerald Blitz. Happy sketching!
+\nNotably, Sketch is the only move in the game that cannot be relearned via the Move Relearner.`,
+  Nincada: `Tip: Shedinja
+\nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Brawly, who has few options to hit it.
+\nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
+  Zorua: `Tip: Illusion
+\nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
+  Minior: `Tip: Rollout!
+\nMinior is the king of early game sweeps. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
+  Meowth: `Tip: Pay Day
+\nMeowth's signature move Pay Day is the only way in the game to earn extra money.
+\nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,
+  Lotad: `Tip: Delayed Evolution
+\nBy delaying Lotad's evolution until level 18, it can learn Mega Drain before gym 2. Otherwise, you'll be relying on the Bullet Seed TM for Grass STAB until you gain access to the Giga Drain TM.`,
+  Sableye: `Tip: Early Mega Evolution
+\nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
+  Mawile: `Tip: Early Mega Evolution
+\nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
+  Mankey: `Tip: Rage Fist
+\nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
+\nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
+  Gastly: `Tip: Delayed Evolution
+\nBy delaying Gastly's evolution until level 29, it can learn Shadow Ball before gym 4 while still evolving into Haunter. Otherwise, Haunter needs to wait all of the way until level 33, which doesn't come until two gyms later.`,
+  Sewaddle: `Tip: Delayed Evolution
+\nBy delaying Sewaddle's evolution until level 22, it can learn Struggle Bug before gym 3 while still evolving into Swadloon. Otherwise, Swadloon never learns the move.`,
+  Treecko: `Tip: Delayed Evolution
+\nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
+  Goomy: `Tip: Rain Evolution
+\nBoth forms of Sliggoo require you find some rain to evolve them. Luckily, just east of Fortree City, Route 119 has a permanent rain shower. Use the "Evolution" option in the party menu to evolve Sliggoo when standing in the rain.`,
+  Inkay: `Tip: One Crazy Contrary
+\nInkay and Malamar's ability Contrary inverts all stat changes. This makes Superpower boost Malamar's stats instead of lowering them, allowing it to increase its Attack and Defense by one stage.`,
+  Ponyta: `Tip: Run Away
+\nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
+  Pansear: `Tip: Acrobatics
+\nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!
+\nBut watch out! Once Pansear evolves, it stops learning moves via level up. Be sure to wait until it learns Acrobatics to use that Fire Stone!`,
+  Egg: `Tip: Baby Pokemon
+\nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
+\nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
+  Eevee: `Tip: The most important Pokemon of all!
+\nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
+\nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
+\nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
+};
       let teamPokemon = [];
 
       // Initialize the page
@@ -464,10 +543,36 @@
             <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
             <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">
               <span>${pokemon.name}</span>
+              ${
+                specialMechanics[pokemon.name]
+                  ? `<sl-button class="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+                       <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+                     </sl-button>`
+                  : ''
+              }
             </div>
             ${otherInfoHtml}
           </div>
         `;
+
+        // Add event listener for the special mechanic button if it was rendered
+        const specialMechanicBtn = speciesInfoDiv.querySelector('.special-mechanic-btn');
+        if (specialMechanicBtn) {
+          specialMechanicBtn.addEventListener('click', () => {
+            const dialog = document.getElementById('specialMechanicDialog');
+            const contentEl = document.getElementById('specialMechanicContent');
+            const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
+
+            const description = specialMechanics[pokemon.name];
+            const lines = description.split('\n');
+            const firstLine = lines.shift();
+            const restOfLines = lines.join('\n');
+            const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
+            contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+            dialog.show();
+            closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
+          });
+        }
 
         // Center section - Image
         const imageDiv = document.createElement('div');
