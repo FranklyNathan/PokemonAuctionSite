@@ -197,6 +197,7 @@
           </div>
           <!-- Chat box -->
           <div
+            id="chat-container"
             style="
               position: relative;
               width: 100%;
@@ -207,10 +208,18 @@
               flex-direction: column;
               border: 1px solid black;
               background-color: var(--container-bg-color);
+              transition: max-height 0.3s ease, min-height 0.3s ease;
             "
           >
-            <div style="padding: 0.5rem; border-bottom: 1px solid var(--sl-color-neutral-200); font-weight: bold;">
-              Chat
+            <div style="padding: 0.5rem; border-bottom: 1px solid var(--sl-color-neutral-200); font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+              <span>Chat</span>
+              <button
+                id="chat-toggle"
+                style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; color: var(--sl-color-neutral-600); font-size: 1.2rem; line-height: 1;"
+                aria-label="Collapse chat"
+              >
+                ▼
+              </button>
             </div>
             <div
               id="chat-messages"
@@ -630,6 +639,7 @@
         customElements.whenDefined('sl-radio-group'),
         customElements.whenDefined('sl-progress-bar'),
         customElements.whenDefined('sl-icon'),
+        customElements.whenDefined('sl-icon-button'),
       ]);
 
       // Add listener for 'Enter' key on the custom bid input
@@ -688,6 +698,10 @@
 
       // Pause button listener
       const pauseButton = document.getElementById('pause-button');
+      // Hide pause button for spectators
+      if (ctx.myClientId === -1) {
+        pauseButton.style.display = 'none';
+      }
       pauseButton.addEventListener('click', () => {
         if (ctx.ws) {
           ctx.ws.send(JSON.stringify({ type: 'toggle_pause', stateId: ctx.stateId }));
@@ -874,6 +888,34 @@
         if (event.key === 'Enter') {
           event.preventDefault();
           sendChatMessage();
+        }
+      });
+
+      // Chat collapse/expand functionality
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatContainer = document.getElementById('chat-container');
+      const chatMessagesDiv = document.getElementById('chat-messages');
+      const chatInputContainer = chatMessages.nextElementSibling;
+      let chatCollapsed = false;
+
+      chatToggle.addEventListener('click', () => {
+        chatCollapsed = !chatCollapsed;
+        if (chatCollapsed) {
+          chatContainer.style.minHeight = 'auto';
+          chatContainer.style.maxHeight = 'auto';
+          chatContainer.style.flex = '0';
+          chatMessagesDiv.style.display = 'none';
+          chatInputContainer.style.display = 'none';
+          chatToggle.textContent = '▲';
+          chatToggle.setAttribute('aria-label', 'Expand chat');
+        } else {
+          chatContainer.style.minHeight = '200px';
+          chatContainer.style.maxHeight = '300px';
+          chatContainer.style.flex = '2';
+          chatMessagesDiv.style.display = 'flex';
+          chatInputContainer.style.display = 'flex';
+          chatToggle.textContent = '▼';
+          chatToggle.setAttribute('aria-label', 'Collapse chat');
         }
       });
 

@@ -216,7 +216,7 @@ export class Auction implements DurableObject {
       return;
     }
     await transitionState(this.ctx);
-    await updateClients(this.ctx, true, true);
+    await updateClients(this.ctx, true, true, undefined, undefined, this.state);
     await this.ctx.storeCtx();
   }
 
@@ -231,13 +231,50 @@ export class Auction implements DurableObject {
         }),
       );
     } else {
+      const clientId = +clientIdStr;
+      const isSpectator = clientId === -1;
+      
       console.log(`[Durable Object] webSocketMessage received from client ${clientIdStr}.`);
       try {
         console.log(`[Durable Object] Message content: ${message as string}`);
       } catch (e) {
         console.log('[Durable Object] Message content is not a string.');
       }
-      await handleClientMessage(this.ctx, +clientIdStr, message);
+      
+      // Spectators can only send chat messages
+      if (isSpectator) {
+        try {
+          const msg = JSON.parse(message as string);
+          if (msg.type === 'chat_message') {
+            // Handle spectator chat
+            const chatPayload = {
+              type: 'chat_message',
+              teamName: 'Spectator',
+              message: msg.message,
+              timestamp: Date.now()
+            };
+            
+            // Broadcast to all clients and spectators
+            Object.values(this.ctx.clientMap).forEach((client) => {
+              if (client.connected && client.ws) {
+                client.ws.send(JSON.stringify(chatPayload));
+              }
+            });
+            // Also send to all spectators (using state to get all websockets)
+            this.state.getWebSockets().forEach((socket) => {
+              const tag = this.state.getTags(socket).at(0);
+              if (tag === '-1') { // This is a spectator
+                socket.send(JSON.stringify(chatPayload));
+              }
+            });
+          }
+        } catch (e) {
+          console.error('[Durable Object] Spectator message error:', e);
+        }
+        return; // Don't process other messages from spectators
+      }
+      
+      await handleClientMessage(this.ctx, clientId, message, this.state);
       await this.ctx.storeCtx();
     }
   }
@@ -247,7 +284,7 @@ export class Auction implements DurableObject {
     if (clientIdStr == undefined) {
       console.error('Failed to get client ID while closing websocket!');
     } else {
-      await closeOrErrorHandler(this.ctx, +clientIdStr);
+      await closeOrErrorHandler(this.ctx, +clientIdStr, this.state);
       await this.ctx.storeCtx();
     }
   }

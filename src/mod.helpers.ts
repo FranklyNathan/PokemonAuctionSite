@@ -84,6 +84,7 @@ export async function updateClients(
   sendTimerUpdate?: boolean,
   message?: string,
   remainingTimeOnResume?: number,
+  state?: DurableObjectState,
 ) {
   console.log(`[Server] Broadcasting 'updateClients'. state: ${ctx.serverState}, bid: ${ctx.currentBid}, bidder: ${ctx.highestBidder}`);
   let msg: ServerMessage = {
@@ -125,6 +126,18 @@ export async function updateClients(
   Object.values(ctx.clientMap)
     .filter((client) => client.connected && client.ws?.readyState == WebSocket.OPEN) // get the currently connected clients
     .forEach((client) => client.ws?.send(msgStr));
+  
+  // Also broadcast to all spectators
+  if (state) {
+    const allWebSockets = state.getWebSockets();
+    allWebSockets.forEach((ws) => {
+      const tags = state.getTags(ws);
+      // Check if this websocket is tagged as a spectator (clientId = "-1")
+      if (tags.includes("-1") && ws.readyState === WebSocket.OPEN) {
+        ws.send(msgStr);
+      }
+    });
+  }
 }
 
 function recordDraft(ctx: Ctx) {

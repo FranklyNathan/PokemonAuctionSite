@@ -147,7 +147,7 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
   return msg as ClientMessage;
 }
 
-export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageData: string | ArrayBuffer) {
+export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageData: string | ArrayBuffer, state?: DurableObjectState) {
   if (typeof messageData !== 'string') {
     console.error('[Server] Received non-string websocket message.');
     return sendError(ctx, 'Websocket message data must be a JSON string!', clientId);
@@ -177,7 +177,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       if (allReady) {
         console.log('[Server] All players are ready. Sending final pre-auction update.');
         // Send a final update for the PreAuction state so all clients see everyone as "ready".
-        await updateClients(ctx, true, true);
+        await updateClients(ctx, true, true, undefined, undefined, state);
         console.log('[Server] Pre-auction update sent. Transitioning to Bidding state...');
         // Now, transition to the next state (Bidding).
         // This function changes the state but does not send an update.
@@ -199,7 +199,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
         }
         await ctx.deleteAlarm();
         await ctx.storeCtx(); // Persist the pause state and remaining time immediately.
-        await updateClients(ctx, false, true, 'Auction Paused');
+        await updateClients(ctx, false, true, 'Auction Paused', undefined, state);
       } else {
         // Resume the timer
         if (ctx.remainingTimeOnPause && ctx.remainingTimeOnPause > 0) {
@@ -207,7 +207,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
           await ctx._setAlarm(Date.now() + resumeTime);
           ctx.remainingTimeOnPause = undefined; // Clear the value after setting the new alarm.
           await ctx.storeCtx(); // Persist the new alarm state immediately.
-          await updateClients(ctx, false, true, 'Auction Resumed', resumeTime);
+          await updateClients(ctx, false, true, 'Auction Resumed', resumeTime, state);
         } else {
           // If there was no remaining time on pause, do nothing. The alarm would have already fired or will fire correctly.
           console.log('[Server] Resuming with no remainingTimeOnPause. The alarm should handle the state transition if it expired.');
@@ -237,7 +237,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
         console.log(`[Server] Bid is over  $600. Using standard timer of ${newTimeLimit}ms.`);
       }
       ctx.setAlarm(newTimeLimit);
-      await updateClients(ctx, true, true);
+      await updateClients(ctx, true, true, undefined, undefined, state);
       return; // Exit after sending the bid update.
     case ClientMessageType.Flashbang:
       if (msg.targetClientId === undefined) return sendError(ctx, 'Invalid target for flashbang.', clientId);
@@ -248,7 +248,7 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       // Send an update to all clients about the cost change and new flashbang state.
       // No timer update is needed for this action.
       const flashbangerName = ctx.clientMap[clientId].teamName;
-      await updateClients(ctx, true, false, `${flashbangerName} used Flashbang!`);
+      await updateClients(ctx, true, false, `${flashbangerName} used Flashbang!`, undefined, state);
       return; // Exit after sending the bid update.
     case 'kick':
       console.log(`[Server] Kick command received from ${clientId} targeting ${msg.id}`);
@@ -282,11 +282,24 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
           timestamp: Date.now()
         };
         
+        const chatPayloadStr = JSON.stringify(chatPayload);
+        
+        // Send to all team members
         Object.entries(ctx.clientMap).forEach(([id, client]) => {
           if (client.connected && client.ws) {
-            client.ws.send(JSON.stringify(chatPayload));
+            client.ws.send(chatPayloadStr);
           }
         });
+        
+        // Also send to all spectators
+        if (state) {
+          state.getWebSockets().forEach((socket) => {
+            const tags = state.getTags(socket);
+            if (tags.includes('-1') && socket.readyState === WebSocket.OPEN) {
+              socket.send(chatPayloadStr);
+            }
+          });
+        }
       }
       return;
     default:
@@ -299,13 +312,13 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
   // After handling a message that might change state (like ReadyUp), send a final update.
   // We exclude messages that have their own update logic and return path (like Bid).
   console.log(`[Server] Sending final update for state: ${ctx.serverState}`);
-  await updateClients(ctx, true, true);
+  await updateClients(ctx, true, true, undefined, undefined, state);
 }
 
 ///////////////////
 // Handler for client disconnecting
 //////////////////
-export async function closeOrErrorHandler(ctx: Ctx, clientId: ClientId) {
+export async function closeOrErrorHandler(ctx: Ctx, clientId: ClientId, state?: DurableObjectState) {
   // remove this ws from the active sessions
   ctx.clientMap[clientId].connected = false;
   ctx.clientMap[clientId].ready = false;
@@ -327,5 +340,5 @@ export async function closeOrErrorHandler(ctx: Ctx, clientId: ClientId) {
   }
 
   // if we are in the bidding state, no need to do anything, auction continues
-  await updateClients(ctx, true, false);
+  await updateClients(ctx, true, false, undefined, undefined, state);
 }
