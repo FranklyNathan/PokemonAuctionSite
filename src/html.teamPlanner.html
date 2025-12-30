@@ -37,15 +37,17 @@
       background-color: var(--container-bg-color);
       border: 1px solid black;
       padding: 0.5rem;
+      padding-bottom: 3rem;
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
-      gap: 0.3rem;
+      gap: 0.8rem;
       margin-bottom: 1rem;
+      position: relative;
     }
 
     .species-info-text {
-      flex: 0.9;
+      flex: 0 0 280px;
       overflow-y: auto;
       font-size: 0.9rem;
       margin: 0;
@@ -54,7 +56,7 @@
     }
 
     .pokemon-image-container {
-      flex: 1;
+      flex: 0 0 300px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -74,14 +76,14 @@
     }
 
     .evolution-info-container {
-      width: 450px;
+      flex: 1;
+      min-width: 400px;
       text-align: left;
       overflow: auto;
       font-size: 0.9rem;
       margin: 0;
       gap: 0.5rem;
       flex-direction: column;
-      flex-shrink: 0;
     }
 
     .ability-link, .move-link {
@@ -128,7 +130,9 @@
     }
 
     .remove-button {
-      margin-top: 1rem;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
     }
   </style>
 
@@ -462,7 +466,6 @@
               <span>${pokemon.name}</span>
             </div>
             ${otherInfoHtml}
-            <sl-button class="remove-button" variant="danger" size="small">Remove from Team</sl-button>
           </div>
         `;
 
@@ -736,13 +739,18 @@
         container.appendChild(imageDiv);
         container.appendChild(evolutionDiv);
 
-        // Add remove button listener
-        const removeBtn = speciesInfoDiv.querySelector('.remove-button');
+        // Create and add remove button
+        const removeBtn = document.createElement('sl-button');
+        removeBtn.className = 'remove-button';
+        removeBtn.setAttribute('variant', 'danger');
+        removeBtn.setAttribute('size', 'small');
+        removeBtn.textContent = 'Remove from Team';
         removeBtn.addEventListener('click', () => {
           container.remove();
           teamPokemon = teamPokemon.filter(name => name !== pokemon.name);
           updateUrl();
         });
+        container.appendChild(removeBtn);
 
         return container;
       }
