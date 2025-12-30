@@ -293,6 +293,20 @@ function handleServerUpdate(msg, ctx) {
       case 'auction_over':
         console.log('[Client onMessage] Auction is over. Disabling controls.');
         document.getElementById('waiting-msg').innerHTML = 'The auction has ended!';
+        
+        // Add "View Your Team" button
+        const myTeam = ctx.teams[ctx.myClientId];
+        if (myTeam && myTeam.roster && myTeam.roster.length > 0) {
+          const pokemonNames = myTeam.roster
+            .map(p => p.name)
+            .sort((a, b) => a.localeCompare(b))
+            .map(name => encodeURIComponent(name))
+            .join(',');
+          const teamPlannerUrl = `/teamplanner?pokemon=${pokemonNames}`;
+          const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.location.href='${teamPlannerUrl}'">View Your Team!</sl-button>`;
+          document.getElementById('waiting-msg').innerHTML += buttonHtml;
+        }
+        
         disableRaiseButtons();
         resetTimerTime();
         break;

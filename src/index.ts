@@ -61,6 +61,8 @@ import gymsText from '../assets/gyms.txt';
 import auctionSetupHtml from './html.auctionSetup.html';
 import speciesInfoText from '../assets/speciesinfo.txt';
 import resultsHtml from './html.results.html';
+import teamPlannerHtml from './html.teamPlanner.html';
+import pokemonCsv from '../Pok.csv';
 import css from './style.css';
 
 import {
@@ -318,6 +320,9 @@ export default {
       } else if (path[0] === 'download' && request.method.toLowerCase() == 'get') {
         // User is at the Download page
         return new Response(downloadHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'teamplanner' && request.method.toLowerCase() == 'get') {
+        // User is at the Team Planner page
+        return new Response(teamPlannerHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
       } 
       
@@ -397,6 +402,9 @@ export default {
       } else if (path[0] === 'api' && path[1] === 'speciesinfo') {
         console.log(`[Worker Fetch] Matched /api/speciesinfo route. Content length: ${speciesInfoText.length}`);
         return new Response(speciesInfoText, { headers: { 'Content-Type': 'text/plain' } });
+      } else if (path[0] === 'api' && path[1] === 'pokemon-csv') {
+        console.log(`[Worker Fetch] Matched /api/pokemon-csv route.`);
+        return new Response(pokemonCsv, { headers: { 'Content-Type': 'text/csv' } });
       } else if (path[0] == 'style.css') {
         return new Response(css, { headers: { 'Content-Type': 'text/css;charset=UTF-8' } });
       } else if (path[0] == 'clientModules') {
