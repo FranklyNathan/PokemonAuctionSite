@@ -23,7 +23,7 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
   console.log(`[validate] 1. Validating message from clientId: ${clientId}`, msg);
   // check for an invalid message
   // make sure message type is valid
-  if (!(msg.hasOwnProperty('type') && (Object.values<string>(ClientMessageType).includes(msg.type) || msg.type === 'kick'))) {
+  if (!(msg.hasOwnProperty('type') && (Object.values<string>(ClientMessageType).includes(msg.type) || msg.type === 'kick' || msg.type === 'chat_message'))) {
     return sendError(ctx, `The message 'type' parameter ('${msg.type}') is invalid!`, clientId);
   }
   // check stateId is valid and corresponds to the server's state
@@ -128,6 +128,17 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
     case 'kick':
       if (!msg.hasOwnProperty('id')) {
         return sendError(ctx, `Kick target 'id' is missing.`, clientId);
+      }
+      break;
+    case 'chat_message':
+      if (!msg.hasOwnProperty('message') || typeof msg.message !== 'string') {
+        return sendError(ctx, `Chat message is missing or invalid.`, clientId);
+      }
+      if (msg.message.trim().length === 0) {
+        return sendError(ctx, `Chat message cannot be empty.`, clientId);
+      }
+      if (msg.message.length > 500) {
+        return sendError(ctx, `Chat message is too long (max 500 characters).`, clientId);
       }
       break;
   }
@@ -257,6 +268,25 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
         }
         // Forcefully handle the disconnection logic regardless of socket state
         await closeOrErrorHandler(ctx, +msg.id);
+      }
+      return;
+    case 'chat_message':
+      console.log(`[Server] Chat message received from ${clientId}: ${msg.message}`);
+      const sender = ctx.clientMap[clientId];
+      if (sender && msg.message) {
+        // Broadcast chat message to all connected clients
+        const chatPayload = {
+          type: 'chat_message',
+          teamName: sender.teamName,
+          message: msg.message,
+          timestamp: Date.now()
+        };
+        
+        Object.entries(ctx.clientMap).forEach(([id, client]) => {
+          if (client.connected && client.ws) {
+            client.ws.send(JSON.stringify(chatPayload));
+          }
+        });
       }
       return;
     default:

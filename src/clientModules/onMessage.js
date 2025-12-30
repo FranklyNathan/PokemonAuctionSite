@@ -414,5 +414,11 @@ export function onMessage(event, ctx) {
         }
       }
       return;
+    case 'chat_message':
+      // Handle incoming chat messages
+      if (window.addChatMessage && msg.teamName && msg.message && msg.timestamp) {
+        window.addChatMessage(msg.teamName, msg.message, msg.timestamp);
+      }
+      return;
   }
 }
