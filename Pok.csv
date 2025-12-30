@@ -21,6 +21,7 @@ Mega Metagross,Steel/Psychic,mega,Tough Claws,,,80,145,150,105,110,110,Metagross
 Blipbug,Bug,base,Swarm,Compound Eyes,Telepathy,25,20,20,25,45,45,,
 Dottler,Bug/Psychic,evo,Swarm,Compound Eyes,Telepathy,50,35,80,50,90,30,Level 10,
 Orbeetle,Bug/Psychic,evo,Swarm,Frisk,Telepathy,60,45,110,80,120,90,Level 30,
+Bombirdier,Flying/Dark,base,Stork's Blessing,,Rocky Payload,70,103,85,60,85,82,,
 Buizel,Water,base,Swift Swim,,Water Veil,55,65,35,60,30,85,,
 Floatzel,Water,evo,Swift Swim,,Water Veil,85,105,55,85,50,115,Level 26,
 Buneary,Normal,base,Run Away,Klutz,Limber,55,66,44,44,56,85,,Stage 1
@@ -134,6 +135,9 @@ Kingdra,Water/Dragon,evo,Swift Swim,Sniper,Damp,75,95,95,95,95,85,Dragon Scale,
 Houndour,Dark/Fire,base,Early Bird,Flash Fire,Unnerve,45,60,30,80,50,65,,Stage 1
 Houndoom,Dark/Fire,evo,Early Bird,Flash Fire,Unnerve,75,90,50,110,80,95,Level 24,Stage 1
 Mega Houndoom,Dark/Fire,mega,Solar Power,,,75,90,90,140,90,115,Houndoominite,Stage 1
+Inkay,Dark/Psychic,base,Contrary,Suction Cups,Infiltrator,53,54,53,37,46,45,,Stage 1
+Malamar,Dark/Psychic,evo,Contrary,Suction Cups,Infiltrator,86,92,88,68,75,73,Level 30,Stage 1
+Mega Malamar,Dark/Psychic,mega,Contrary,Suction Cups,Infiltrator,86,102,88,98,120,88,Malamarite,Stage 1
 Jangmo-o,Dragon,base,Bulletproof,Soundproof,Overcoat,45,55,65,45,45,45,,
 Hakamo-o,Dragon/Fighting,evo,Bulletproof,Soundproof,Overcoat,55,75,90,65,70,65,Level 35 (Whipped Dream),
 Kommo-o,Dragon/Fighting,evo,Bulletproof,Soundproof,Overcoat,75,110,125,100,105,85,Level 45,
@@ -141,7 +145,7 @@ Joltik,Bug/Electric,base,Compound Eyes,Unnerve,Swarm,50,47,50,57,50,65,,
 Galvantula,Bug/Electric,evo,Compound Eyes,Unnerve,Swarm,70,77,60,97,60,108,Level 36,
 Litten,Fire,base,Blaze,,Intimidate,45,65,40,60,40,70,,
 Torracat,Fire,evo,Blaze,,Intimidate,65,85,50,80,50,90,Level 17,
-Incineroar,Fire/Dark,evo,Blaze,,Intimidate,95,115,90,80,90,60,Level 36,
+Incineroar,Fire/Dark,evo,Blaze,,Intimidate,95,115,90,80,90,60,Level 34,
 Litwick,Ghost/Fire,base,Flash Fire,Flame Body,Infiltrator,50,30,55,65,55,20,,Stage 2
 Lampent,Ghost/Fire,evo,Flash Fire,Flame Body,Infiltrator,60,40,60,95,60,55,Level 41 (Whipped Dream),Stage 2
 Chandelure,Ghost/Fire,evo,Flash Fire,Flame Body,Infiltrator,60,55,90,145,90,80,Dusk Stone,Stage 2
@@ -215,7 +219,7 @@ Popplio,Water,base,Torrent,,Liquid Voice,50,54,54,66,56,40,,
 Brionne,Water,evo,Torrent,,Liquid Voice,60,69,69,91,81,50,Level 17,
 Primarina,Water/Fairy,evo,Torrent,,Liquid Voice,80,74,74,126,116,60,Level 34,
 Porygon,Normal,base,Trace,Download,Analytic,65,60,70,85,75,40,,
-Porygon2,Normal,evo,Trace,Download,Analytic,85,80,90,105,95,60,Level 22,
+Porygon2,Normal,evo,Trace,Download,Analytic,85,80,90,105,95,60,Level 29,
 Porygon-Z,Normal,evo,Adaptability,Download,Analytic,85,80,70,135,75,90,Linking Cord,
 Ralts,Psychic/Fairy,base,Synchronize,Trace,Telepathy,28,25,25,45,35,40,,Stage 2
 Kirlia,Psychic/Fairy,evo,Synchronize,Trace,Telepathy,38,35,35,65,55,50,Level 20,Stage 2

@@ -521,6 +521,8 @@ const specialMechanics = {
 \nThe fainted Pokémon counter does not reset between battles.`,
   Corsola: `Unique Mechanic: On-Death Evolution
 \nWhen Corsola faints, after the battle, it will transform into Galarian Corsola and revive at full HP.`,
+  Bombirdier: `Unique Mechanic: Stork's Blessing
+\nAt the end of a boss battle in which your Bombirdier with Stork's Blessing participated, if you have an empty slot in your party, you receive an egg. The egg contains a random Pokémon of the 19 possible babies. They hatch at level 5 and cannot level up.`,
   Applin: `Unique Mechanic: Gym-Based Evolution
 \nApplin evolves into different Pokemon depending on which gym you're in. Gyms are randomized in Emerald Blitz, so cross your fingers to get Fortree, Lavaridge, or Rustboro early,`,
   Rotom: `Unique Mechanic: Rotom Catalog
@@ -538,6 +540,8 @@ const specialMechanics = {
   Meowth: `Tip: Pay Day
 \nMeowth's signature move Pay Day is the only way in the game to earn extra money.
 \nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,
+  Lotad: `Tip: Delayed Evolution
+\nBy delaying Lotad's evolution until level 18, it can learn Mega Drain before gym 2. Otherwise, you'll be relying on the Bullet Seed TM for Grass STAB until you gain access to the Giga Drain TM.`,
   Sableye: `Tip: Early Mega Evolution
 \nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
   Mawile: `Tip: Early Mega Evolution
@@ -553,6 +557,8 @@ const specialMechanics = {
 \nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
   Goomy: `Tip: Rain Evolution
 \nBoth forms of Sliggoo require you find some rain to evolve them. Luckily, just east of Fortree City, Route 119 has a permanent rain shower. Use the "Evolution" option in the party menu to evolve Sliggoo when standing in the rain.`,
+  Inkay: `Tip: One Crazy Contrary
+\nInkay and Malamar's ability Contrary inverts all stat changes. This makes Superpower boost Malamar's stats instead of lowering them, allowing it to increase its Attack and Defense by one stage.`,
   Ponyta: `Tip: Run Away
 \nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
   Pansear: `Tip: Acrobatics

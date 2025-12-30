@@ -95,6 +95,21 @@ Key Moves:
    Calm Mind (44/TM)
    Recover (Egg)
 
+Bombirdier
+Key Moves:
+   Peck (1)
+   Thief (7)
+   Rock Throw (11)
+   Steel Wing (TM)
+   Pluck (20)
+   Rock Tomb (29/TM)
+   Hone Claws (MR)
+   Fly (HM)
+   Dual Wingbeat (42)
+   Rock Slide (47)
+   Knock Off (53)
+   Roost (Egg)
+
 Bonsly
 Key Moves:
    Rock Throw (12)
@@ -840,6 +855,19 @@ Key Moves:
    Ice Beam (TM)
    Leech Seed (Egg)
 
+Inkay
+Key Moves:
+   Reflect (4)
+   Foul Play (8)
+   Thief (TM)
+   Psybeam (21)
+   Light Screen (31)
+   Pluck (35)
+   Psycho Cut (39)
+   Night Slash (46)
+   Superpower (48)
+   Camouflage (Egg)
+
 Machop
 Key Moves:
    Low Sweep (13)
@@ -937,7 +965,7 @@ Key Moves:
    Aerial Ace (TM)
    Brick Break (TM)
    Screech (36)
-   Charm (Egg)
+   Night Slash (Egg)
 
 Mime Jr
 Key Moves:
@@ -1107,6 +1135,7 @@ Key Moves:
    Storm Throw (Egg)
 
 Pansear
+Key Moves:
    Incinerate (10)
    Yawn (16)
    Bite (19)
@@ -1217,6 +1246,7 @@ Key Moves:
    Ice Beam (TM)
    Zap Cannon (MR*)
    Discharge (40)
+   Tri-Attack (50)
    Nasty Plot (MR)
 
 Ralts
@@ -1453,7 +1483,7 @@ Key Moves:
    Facade (TM)
    Sky Uppercut (39)
    Seed Bomb (44)
-   Drain Punch (Egg)
+   Wake-Up Slap (Egg)
 
 Skiddo
 Key Moves:
@@ -1531,10 +1561,13 @@ Sketch Pool:
    Endeavor
    Explosion
    Feather Dance
+   Fissure
    Foul Play
    Gigaton Hammer
    King's Shield
    Leech Seed
+   Light Screen
+   Mat Block
    Milk Drink
    Night Daze
    Obstruct
@@ -1544,6 +1577,7 @@ Sketch Pool:
    Powder
    Rain Dance
    Rapid Spin
+   Reflect
    Sheer Cold
    Snarl
    Spiky Shield
@@ -1553,8 +1587,10 @@ Sketch Pool:
    Strength Sap
    Sunny Day
    Super Fang
+   Syrup Bomb
    Tailwind
    Tail Slap
+   Tail Whip
    Taunt
    Toxic Spikes
    Volt Switch
@@ -1757,6 +1793,7 @@ Key Moves:
    Sludge Bomb (TM)
    Dazzling Gleam (TM)
    Ice Beam (TM)
+   Giga Drain (TM)
    Surf (HM)
    Screech (40)
    Mirror Coat (Egg)
@@ -1870,6 +1907,7 @@ Key Moves:
    Stockpile (23)
    Sludge Bomb (29)
    Thunderbolt (TM)
+   Giga Drain (TM)
    Self Destruct (Egg)
 
 Turtwig
@@ -2033,6 +2071,7 @@ Key Moves:
    Ancient Power (33)
    Bug Buzz (MR)
    Air Slash (MR)
+   Giga Drain (TM)
    Psychic (TM)
    Shadow Ball (TM)
    U Turn (49)

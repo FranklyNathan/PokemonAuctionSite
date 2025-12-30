@@ -664,9 +664,40 @@
           return;
         }
 
+        // Sort by global draft order derived from draft log
+        const draftLog = document.getElementById('draft-log');
+        if (draftLog) {
+          const logEntries = Array.from(draftLog.children).map((el) => el.textContent);
+          const saleOrder = new Map();
+          let index = 0;
+
+          logEntries.forEach((entry) => {
+            // Find the longest matching pokemon name in this entry
+            let bestMatch = '';
+            for (const p of draftedPlayers) {
+              if (entry.includes(p.name) && p.name.length > bestMatch.length) {
+                bestMatch = p.name;
+              }
+            }
+            if (bestMatch && !saleOrder.has(bestMatch)) {
+              saleOrder.set(bestMatch, index++);
+            }
+          });
+
+          draftedPlayers.sort((a, b) => {
+            const orderA = saleOrder.has(a.name) ? saleOrder.get(a.name) : -1;
+            const orderB = saleOrder.has(b.name) ? saleOrder.get(b.name) : -1;
+            return orderB - orderA;
+          });
+        } else {
+          // Fallback
+          draftedPlayers.sort((a, b) => (a.draftOrder || 0) - (b.draftOrder || 0));
+        }
+
         // Prepare metadata
         const now = new Date().toLocaleString();
         const totalSold = draftedPlayers.length;
+        const draftId = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10)).join('');
 
         // Prepare Team Summary
         const teams = Object.values(ctx.teams);
@@ -684,14 +715,15 @@
         teamSummaryData.sort((a, b) => a['Player'].localeCompare(b['Player']));
         const teamSummaryCsv = Papa.unparse(teamSummaryData);
 
-        const csvData = draftedPlayers.map((p) => ({
+        const csvData = draftedPlayers.map((p, index) => ({
+          Order: index + 1,
           Pokemon: p.name,
           'Drafted By': p.pickedBy,
           Cost: p.cost,
         }));
 
         const mainCsv = Papa.unparse(csvData);
-        const finalCsv = `Date: ${now}\nTotal Pokemon Sold: ${totalSold}\n\n${teamSummaryCsv}\n\n${mainCsv}`;
+        const finalCsv = `Draft ID: ${draftId}\nDate: ${now}\nTotal Pokemon Sold: ${totalSold}\n\n${teamSummaryCsv}\n\n${mainCsv}`;
 
         const blob = new Blob([finalCsv], { type: 'text/csv;charset=utf-8;' });
         const link = document.createElement('a');

@@ -1,0 +1,83 @@
+12/29/25
+
+//A serious patch for serious people.
+
+
+-----------------------------------------------
+Balance Adjustments
+-----------------------------------------------
+
+Serious Mint Added
+//A consumable item to swap your Pokémon to a neutral nature. Available for $3000 from the Slateport shopkeeper who sells Ability Patches and Capsules.
+
+
+Sidney's Samurott Aerial Ace > Aqua Jet
+//Will this stop a sweep someday? ...Maybe!
+
+
+Breloom Egg Move Drain Punch > Wake-Up Slap
+//The true Spore payoff is here (and Breloom's power is back down to earth).
+
+Meowth Egg Move Spite > Night Slash
+//This was an oversight, I'd been referring to the wrong Meowth form in the Egg Move list.
+
+
+Smeargle Sketch Pool Additions:
+Fissure
+Light Screen
+Mat Block
+Reflect
+Syrup Bomb
+Tail Whip
+//Brings the total to 48 and makes the god Smeargle a bit more elusive.
+
+
+-----------------------------------------------
+Death and the Afterlife
+-----------------------------------------------
+
+[REDACTED]
+//A fate too terrible to describe.
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Hall of Fame display window now shows Total Deaths instead of Player ID
+//Giving the Hall of Fame screenshots a bit more punch.
+
+Hall of Fame confetti display now waits for an input to advance beyond showing your full team
+In-Game timer now stops counting when you enter the Hall of Fame room
+//Allowing you however long you need to grab your screenshot.
+
+
+Pokémon no longer use their Mega-Evolution Mini Sprite in the party menu after swapping out
+//Player Pokemon now properly de-mega after being swapped out.
+
+KOed Mega Pokémon no longer sometimes cause visual bugs on the HP window
+//Enemy Pokemon now properly de-mega after being KOed.
+
+Steven's Mega Metagross no longer shiny
+//Sorry Steven, but your silver monstrosity was causing too many visual hiccups.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Pool Addition: Inkay
+//Incurs a small amount of time loss from needing to turn your monitor upside-down during evolution.
+
+
+Pool Addition: Bombirdier
+//Both of Bombirdier's regular abilities have been replaced with...
+
+New Ability: Stork's Blessing
+At the end of a battle against a gym leader or elite 4 member in which a Pokémon with Stork's Blessing participated, if you have an empty slot in your party, you get an egg. The egg contains a random Pokémon of the 19 possible babies. A baby obtained via Stork's Blessing hatches at level 5 with a Sky Ribbon. Pokémon with Sky Ribbons cannot gain levels via the Rare Candy.
+//"Welcome to the team, Smoochum! Want to go play with the funny fire turtle?"
+
+
+//Thanks for reading, thanks for updating, and thanks for playing!! I'll see everybody online next week for loads of Boxer-hosted races.
+
+

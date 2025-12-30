@@ -245,10 +245,18 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       const kicker = ctx.clientMap[clientId];
       const kickerName = kicker ? kicker.teamName : 'Admin';
 
-      if (targetClient && targetClient.ws) {
-        // Send a message to the client so they know why they are being disconnected
-        targetClient.ws.send(JSON.stringify({ type: 'kick_event', kicker: kickerName }));
-        targetClient.ws.close();
+      if (targetClient) {
+        if (targetClient.ws) {
+          try {
+            // Send a message to the client so they know why they are being disconnected
+            targetClient.ws.send(JSON.stringify({ type: 'kick_event', kicker: kickerName }));
+            targetClient.ws.close();
+          } catch (e) {
+            console.warn(`[Server] Failed to cleanly close websocket for kicked client ${msg.id}:`, e);
+          }
+        }
+        // Forcefully handle the disconnection logic regardless of socket state
+        await closeOrErrorHandler(ctx, +msg.id);
       }
       return;
     default:
