@@ -337,7 +337,7 @@ function handleServerUpdate(msg, ctx) {
               .map(name => encodeURIComponent(name))
               .join(',');
             const teamPlannerUrl = `/teamplanner?pokemon=${pokemonNames}`;
-            const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.location.href='${teamPlannerUrl}'">View Your Team!</sl-button>`;
+            const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.open('${teamPlannerUrl}', '_blank')">View Your Team!</sl-button>`;
             document.getElementById('waiting-msg').innerHTML += buttonHtml;
             const eeveeButtonHtml = `<br><br><sl-button variant="success" size="large" onclick="window.showEeveeClaimDialog()">Claim Eeveelution</sl-button>`;
             document.getElementById('waiting-msg').innerHTML += eeveeButtonHtml;
