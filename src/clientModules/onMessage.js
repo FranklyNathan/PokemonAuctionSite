@@ -225,7 +225,30 @@ function handleServerUpdate(msg, ctx) {
   
   // Update Eevee claims if provided
   if (msg.hasOwnProperty('eeveeClaims')) {
-    ctx.eeveeClaims = msg.eeveeClaims;
+    // Check if we just claimed a new Eeveelution (for confetti)
+    const oldClaims = ctx.eeveeClaims || {};
+    const newClaims = msg.eeveeClaims;
+    let justClaimed = false;
+    
+    // Compare old and new claims to see if we claimed something new
+    for (const evo in newClaims) {
+      const newClaim = newClaims[evo];
+      const oldClaim = oldClaims[evo];
+      // If this evolution is now claimed by us and wasn't before
+      if (newClaim && newClaim.clientId === ctx.myClientId && 
+          (!oldClaim || oldClaim.clientId !== ctx.myClientId)) {
+        justClaimed = true;
+        break;
+      }
+    }
+    
+    ctx.eeveeClaims = newClaims;
+    
+    // Fire confetti if we just claimed an Eeveelution!
+    if (justClaimed) {
+      fireConfetti();
+    }
+    
     // If the dialog is open, refresh it to show updated claims
     const dialog = document.getElementById('eeveeClaimDialog');
     if (dialog && dialog.open && window.showEeveeClaimDialog) {
