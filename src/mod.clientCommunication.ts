@@ -218,6 +218,13 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
       // check that msg.bid is not undefined to make TS happy
       console.log(`[Server] Processing valid bid of ${msg.bid} from clientId: ${clientId}. Current state: ${ctx.serverState}`);
       if (msg.bid == undefined) return sendError(ctx, "The 'bid' parameter is empty!", clientId);
+      
+      // Double-check we're still in bidding state before processing (prevents race condition with alarm)
+      if (ctx.serverState !== State.Bidding) {
+        console.log(`[Server] Bid rejected - state changed to ${ctx.serverState} during processing`);
+        return sendError(ctx, `Bidding is no longer active. The auction has moved to ${ctx.serverState}.`, clientId);
+      }
+      
       // set the currentBid to this message's bid. We already validated the message's bid is the
       //   highest in validateClientMessageSchema().
       ctx.currentBid = msg.bid;
