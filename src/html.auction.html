@@ -342,6 +342,13 @@
       <sl-button slot="footer" variant="primary" size="small">Close</sl-button>
     </sl-dialog>
 
+    <sl-dialog id="eeveeClaimDialog" label="Claim Your Eeveelution" style="--width: 650px;">
+      <p>First person to evolve an Eevee into each evolution gets exclusive rights to that form!</p>
+      <p style="margin-bottom: 1rem;"><strong>Select which Eeveelution you want to use:</strong></p>
+      <div id="eevee-evolutions-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;"></div>
+      <sl-button slot="footer" variant="neutral" onclick="document.getElementById('eeveeClaimDialog').hide()">Close</sl-button>
+    </sl-dialog>
+
     <div id="flashbang-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.95); color: white; justify-content: center; align-items: center; z-index: 9999; font-size: 2rem; text-align: center;"></div>
 
     <!--
@@ -441,6 +448,7 @@
       myClientId: undefined, // number
       stateId: 'pre_auction', // this is the target for a string replace server side
       isPaused: false,
+      eeveeClaims: {}, // Track which Eeveelutions are claimed by whom
       selectedPlayerId: null, // number
       currentBid: null, // number
       previousBid: null, // number
@@ -918,6 +926,102 @@
           chatToggle.setAttribute('aria-label', 'Collapse chat');
         }
       });
+
+      // Eevee claim dialog function
+      window.showEeveeClaimDialog = function() {
+        const dialog = document.getElementById('eeveeClaimDialog');
+        const grid = document.getElementById('eevee-evolutions-grid');
+        
+        // List of all Eeveelutions
+        const evolutions = [
+          'Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon',
+          'Leafeon', 'Glaceon', 'Sylveon'
+        ];
+        
+        // Clear and populate grid
+        grid.innerHTML = '';
+        
+        evolutions.forEach(evo => {
+          const claim = ctx.eeveeClaims[evo];
+          const isClaimed = !!claim;
+          const isClaimedByMe = isClaimed && claim.clientId === ctx.myClientId;
+          
+          // Create card container
+          const card = document.createElement('div');
+          card.style.cssText = 'display: flex; flex-direction: column; align-items: center; text-align: center;';
+          
+          // Create image
+          const img = document.createElement('img');
+          img.src = `/evolutions/${evo}.png`;
+          img.alt = evo;
+          let imgStyle = 'width: 100%; max-width: 120px; height: auto; margin-bottom: 0.5rem; display: block;';
+          
+          // Grey out if claimed by someone else
+          if (isClaimed && !isClaimedByMe) {
+            imgStyle += ' filter: grayscale(100%) opacity(0.5);';
+          }
+          
+          img.style.cssText = imgStyle;
+          img.onerror = function() {
+            // Fallback if image doesn't load - show a placeholder
+            this.style.height = '80px';
+            this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            this.style.borderRadius = '8px';
+          };
+          
+          // Create name label
+          const nameLabel = document.createElement('div');
+          nameLabel.textContent = evo;
+          nameLabel.style.cssText = 'font-weight: bold; margin-bottom: 0.25rem; font-size: 0.9rem;';
+          
+          // Create button
+          const button = document.createElement('sl-button');
+          button.style.width = '100%';
+          button.setAttribute('size', 'small');
+          
+          if (isClaimedByMe) {
+            button.setAttribute('variant', 'success');
+            button.textContent = 'Unclaim';
+            button.addEventListener('click', () => {
+              ctx.ws.send(JSON.stringify({
+                type: 'unclaim_eevee',
+                stateId: ctx.stateId,
+                evolution: evo
+              }));
+            });
+          } else if (isClaimed) {
+            button.setAttribute('variant', 'danger');
+            button.setAttribute('disabled', 'true');
+            button.textContent = 'Claimed!';
+            const claimerLabel = document.createElement('div');
+            claimerLabel.textContent = `(${claim.teamName})`;
+            claimerLabel.style.cssText = 'font-size: 0.75rem; color: #666; margin-top: 0.25rem;';
+            card.appendChild(img);
+            card.appendChild(nameLabel);
+            card.appendChild(button);
+            card.appendChild(claimerLabel);
+            grid.appendChild(card);
+            return;
+          } else {
+            button.setAttribute('variant', 'primary');
+            button.textContent = 'Claim!';
+            button.addEventListener('click', () => {
+              ctx.ws.send(JSON.stringify({
+                type: 'claim_eevee',
+                stateId: ctx.stateId,
+                evolution: evo
+              }));
+            });
+          }
+          
+          card.appendChild(img);
+          card.appendChild(nameLabel);
+          card.appendChild(button);
+          grid.appendChild(card);
+        });
+        
+        dialog.show();
+      };
 
     }
 

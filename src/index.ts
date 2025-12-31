@@ -136,6 +136,7 @@ export class Auction implements DurableObject {
           flashbangsEnabled: false, // default to disabled
           biddingTimeLimit: 15 * SECONDS, // default overwridden by auction setup
           playerSelectionTimeLimit: 60 * SECONDS, // default overwridden by auction setup
+          eeveeClaims: {}, // Track Eeveelution claims
           _setAlarm: this.storage.setAlarm.bind(this.storage),
           setAlarm: (durationMs: number) => {
             this.ctx.currentTimeLimit = durationMs;
