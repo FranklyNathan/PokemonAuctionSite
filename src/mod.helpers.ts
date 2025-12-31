@@ -30,12 +30,17 @@ export function getSerializableCtx(ctx: Ctx) {
     biddingTimeLimit: ctx.biddingTimeLimit,
     totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     currentTimeLimit: ctx.currentTimeLimit,
+    eeveeClaims: ctx.eeveeClaims,
   };
 }
 
 export function unserializeCtx(ctx: Ctx, state: DurableObjectState, sql: SqlStorage) {
   // add the unserializable parts back to the context object:
   // set and delete alarm
+  // Ensure eeveeClaims exists (for backwards compatibility with old stored contexts)
+  if (!ctx.eeveeClaims) {
+    ctx.eeveeClaims = {};
+  }
   ctx._setAlarm = state.storage.setAlarm.bind(state.storage);
   ctx.storage = state.storage;
   ctx.setAlarm = (durationMs: number) => {
@@ -98,6 +103,7 @@ export async function updateClients(
     flashbangedClientId: ctx.flashbangedClientId,
     totalPokemonAuctioned: ctx.totalPokemonAuctioned,
     selectedPlayerId: ctx.selectedPlayerId,
+    eeveeClaims: ctx.eeveeClaims,
     message: message,
   };
 

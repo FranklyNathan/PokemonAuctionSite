@@ -222,6 +222,39 @@ function handleServerUpdate(msg, ctx) {
     const avg = calculateAveragePrice(ctx.playersTableData);
     updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned, avg);
   }
+  
+  // Update Eevee claims if provided
+  if (msg.hasOwnProperty('eeveeClaims')) {
+    // Check if we just claimed a new Eeveelution (for confetti)
+    const oldClaims = ctx.eeveeClaims || {};
+    const newClaims = msg.eeveeClaims;
+    let justClaimed = false;
+    
+    // Compare old and new claims to see if we claimed something new
+    for (const evo in newClaims) {
+      const newClaim = newClaims[evo];
+      const oldClaim = oldClaims[evo];
+      // If this evolution is now claimed by us and wasn't before
+      if (newClaim && newClaim.clientId === ctx.myClientId && 
+          (!oldClaim || oldClaim.clientId !== ctx.myClientId)) {
+        justClaimed = true;
+        break;
+      }
+    }
+    
+    ctx.eeveeClaims = newClaims;
+    
+    // Fire confetti if we just claimed an Eeveelution!
+    if (justClaimed) {
+      fireConfetti();
+    }
+    
+    // If the dialog is open, refresh it to show updated claims
+    const dialog = document.getElementById('eeveeClaimDialog');
+    if (dialog && dialog.open && window.showEeveeClaimDialog) {
+      window.showEeveeClaimDialog();
+    }
+  }
 
   // Handle pause state
   if (typeof msg.isPaused === 'boolean' && (msg.isPaused !== ctx.isPaused || !ctx.performedInitialUpdate)) {
@@ -306,6 +339,8 @@ function handleServerUpdate(msg, ctx) {
             const teamPlannerUrl = `/teamplanner?pokemon=${pokemonNames}`;
             const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.location.href='${teamPlannerUrl}'">View Your Team!</sl-button>`;
             document.getElementById('waiting-msg').innerHTML += buttonHtml;
+            const eeveeButtonHtml = `<br><br><sl-button variant="success" size="large" onclick="window.showEeveeClaimDialog()">Claim Eeveelution</sl-button>`;
+            document.getElementById('waiting-msg').innerHTML += eeveeButtonHtml;
           }
         }
         

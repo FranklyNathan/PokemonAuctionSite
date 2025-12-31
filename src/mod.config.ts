@@ -11,6 +11,8 @@ export enum ClientMessageType {
   Bid = 'bid',
   TogglePause = 'toggle_pause',
   Flashbang = 'flashbang',
+  ClaimEevee = 'claim_eevee',
+  UnclaimEevee = 'unclaim_eevee',
   Error = 'error',
 }
 
@@ -107,6 +109,7 @@ export interface Ctx {
   playerSelectionTimeLimit: number; // length of time in milliseconds for the Player Selection state
   totalPokemonAuctioned: number;
   currentTimeLimit?: number;
+  eeveeClaims: { [evolution: string]: { clientId: ClientId; teamName: string } }; // Track which Eeveelution is claimed by whom
   _setAlarm: Function;
   setAlarm: Function;
   deleteAlarm: Function;

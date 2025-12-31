@@ -141,6 +141,22 @@ function validateClientMessage(ctx: Ctx, clientId: ClientId, msg: any, rosterCou
         return sendError(ctx, `Chat message is too long (max 500 characters).`, clientId);
       }
       break;
+    case 'claim_eevee':
+      if (ctx.serverState !== State.AuctionOver) {
+        return sendError(ctx, `Eevee evolutions can only be claimed after the auction is over.`, clientId);
+      }
+      if (!msg.hasOwnProperty('evolution') || typeof msg.evolution !== 'string') {
+        return sendError(ctx, `Evolution name is missing or invalid.`, clientId);
+      }
+      break;
+    case 'unclaim_eevee':
+      if (ctx.serverState !== State.AuctionOver) {
+        return sendError(ctx, `Eevee evolutions can only be unclaimed after the auction is over.`, clientId);
+      }
+      if (!msg.hasOwnProperty('evolution') || typeof msg.evolution !== 'string') {
+        return sendError(ctx, `Evolution name is missing or invalid.`, clientId);
+      }
+      break;
   }
 
   console.log(`[validate] 4. Message passed validation.`);
@@ -308,6 +324,46 @@ export async function handleClientMessage(ctx: Ctx, clientId: ClientId, messageD
           });
         }
       }
+      return;
+    case 'claim_eevee':
+      console.log(`[Server] Eevee claim attempt from ${clientId} for ${msg.evolution}`);
+      const claimingTeam = ctx.clientMap[clientId];
+      
+      // Check if this evolution is already claimed
+      if (ctx.eeveeClaims[msg.evolution]) {
+        return sendError(ctx, `${msg.evolution} has already been claimed by ${ctx.eeveeClaims[msg.evolution].teamName}!`, clientId);
+      }
+      
+      // Claim the evolution
+      ctx.eeveeClaims[msg.evolution] = {
+        clientId: clientId,
+        teamName: claimingTeam.teamName
+      };
+      
+      console.log(`[Server] ${claimingTeam.teamName} claimed ${msg.evolution}`);
+      await ctx.storeCtx();
+      await updateClients(ctx, true, false, `${claimingTeam.teamName} claimed ${msg.evolution}!`, undefined, state);
+      return;
+    case 'unclaim_eevee':
+      console.log(`[Server] Eevee unclaim attempt from ${clientId} for ${msg.evolution}`);
+      
+      // Check if this evolution is claimed
+      if (!ctx.eeveeClaims[msg.evolution]) {
+        return sendError(ctx, `${msg.evolution} is not currently claimed.`, clientId);
+      }
+      
+      // Check if this team is the one who claimed it
+      if (ctx.eeveeClaims[msg.evolution].clientId !== clientId) {
+        return sendError(ctx, `You cannot unclaim ${msg.evolution} because it was claimed by ${ctx.eeveeClaims[msg.evolution].teamName}!`, clientId);
+      }
+      
+      // Unclaim the evolution
+      const unclaimingTeam = ctx.clientMap[clientId].teamName;
+      delete ctx.eeveeClaims[msg.evolution];
+      
+      console.log(`[Server] ${unclaimingTeam} unclaimed ${msg.evolution}`);
+      await ctx.storeCtx();
+      await updateClients(ctx, true, false, `${unclaimingTeam} unclaimed ${msg.evolution}.`, undefined, state);
       return;
     default:
       // A message type that has passed validation but has no action to take.
