@@ -294,17 +294,19 @@ function handleServerUpdate(msg, ctx) {
         console.log('[Client onMessage] Auction is over. Disabling controls.');
         document.getElementById('waiting-msg').innerHTML = 'The auction has ended!';
         
-        // Add "View Your Team" button
-        const myTeam = ctx.teams[ctx.myClientId];
-        if (myTeam && myTeam.roster && myTeam.roster.length > 0) {
-          const pokemonNames = myTeam.roster
-            .map(p => p.name)
-            .sort((a, b) => a.localeCompare(b))
-            .map(name => encodeURIComponent(name))
-            .join(',');
-          const teamPlannerUrl = `/teamplanner?pokemon=${pokemonNames}`;
-          const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.location.href='${teamPlannerUrl}'">View Your Team!</sl-button>`;
-          document.getElementById('waiting-msg').innerHTML += buttonHtml;
+        // Add "View Your Team" button (not for spectators)
+        if (ctx.myClientId !== -1) {
+          const myTeam = ctx.teams[ctx.myClientId];
+          if (myTeam && myTeam.roster && myTeam.roster.length > 0) {
+            const pokemonNames = myTeam.roster
+              .map(p => p.name)
+              .sort((a, b) => a.localeCompare(b))
+              .map(name => encodeURIComponent(name))
+              .join(',');
+            const teamPlannerUrl = `/teamplanner?pokemon=${pokemonNames}`;
+            const buttonHtml = `<br><br><sl-button variant="primary" size="large" onclick="window.location.href='${teamPlannerUrl}'">View Your Team!</sl-button>`;
+            document.getElementById('waiting-msg').innerHTML += buttonHtml;
+          }
         }
         
         disableRaiseButtons();
@@ -334,7 +336,9 @@ function handleServerUpdate(msg, ctx) {
   // This logic runs on EVERY update to ensure button state is correct, even without a state change.
   if (ctx.stateId === 'bidding') {
     console.log(`[Client onMessage] In bidding state. My ID: ${ctx.myClientId}, Highest Bidder: ${msg.highestBidder}`);
+    // Spectators (myClientId === -1) should not be able to bid
     if (
+      ctx.myClientId !== -1 &&
       ctx.myClientId !== msg.highestBidder &&
       !isTeamDoneDrafting(ctx, ctx.teams[ctx.myClientId]) &&
       ctx.flashbangedClientId !== ctx.myClientId // Cannot bid if flashbanged
@@ -412,6 +416,12 @@ export function onMessage(event, ctx) {
         if (contentDiv && contentDiv.firstChild) {
           contentDiv.firstChild.textContent = `You have been kicked by ${msg.kicker}. `;
         }
+      }
+      return;
+    case 'chat_message':
+      // Handle incoming chat messages
+      if (window.addChatMessage && msg.teamName && msg.message && msg.timestamp) {
+        window.addChatMessage(msg.teamName, msg.message, msg.timestamp);
       }
       return;
   }

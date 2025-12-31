@@ -195,6 +195,55 @@
               </div>
             </div>
           </div>
+          <!-- Chat box -->
+          <div
+            id="chat-container"
+            style="
+              position: relative;
+              width: 100%;
+              flex: 2;
+              min-height: 200px;
+              max-height: 300px;
+              display: flex;
+              flex-direction: column;
+              border: 1px solid black;
+              background-color: var(--container-bg-color);
+              transition: max-height 0.3s ease, min-height 0.3s ease;
+            "
+          >
+            <div style="padding: 0.5rem; border-bottom: 1px solid var(--sl-color-neutral-200); font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+              <span>Chat</span>
+              <button
+                id="chat-toggle"
+                style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; color: var(--sl-color-neutral-600); font-size: 1.2rem; line-height: 1;"
+                aria-label="Collapse chat"
+              >
+                ▼
+              </button>
+            </div>
+            <div
+              id="chat-messages"
+              style="
+                flex: 1;
+                overflow-y: auto;
+                padding: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+              "
+            ></div>
+            <div style="padding: 0.5rem; border-top: 1px solid var(--sl-color-neutral-200); display: flex; gap: 0.5rem;">
+              <sl-input
+                id="chat-input"
+                placeholder="Type a message..."
+                style="flex: 1;"
+                size="small"
+                autocomplete="off"
+              ></sl-input>
+              <sl-button id="chat-send" variant="primary" size="small">Send</sl-button>
+            </div>
+          </div>
           <div
             class="fade-bottom"
             style="
@@ -590,6 +639,7 @@
         customElements.whenDefined('sl-radio-group'),
         customElements.whenDefined('sl-progress-bar'),
         customElements.whenDefined('sl-icon'),
+        customElements.whenDefined('sl-icon-button'),
       ]);
 
       // Add listener for 'Enter' key on the custom bid input
@@ -648,6 +698,10 @@
 
       // Pause button listener
       const pauseButton = document.getElementById('pause-button');
+      // Hide pause button for spectators
+      if (ctx.myClientId === -1) {
+        pauseButton.style.display = 'none';
+      }
       pauseButton.addEventListener('click', () => {
         if (ctx.ws) {
           ctx.ws.send(JSON.stringify({ type: 'toggle_pause', stateId: ctx.stateId }));
@@ -752,6 +806,117 @@
       const bossBattlesButton = document.getElementById('boss-battles-button');
       bossBattlesButton.addEventListener('click', () => {
         window.open('/assets/boss-battles.html', '_blank');
+      });
+
+      // Chat functionality
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
+      const chatMessages = document.getElementById('chat-messages');
+
+      // Generate a consistent color for each team name
+      function getTeamColor(teamName) {
+        let hash = 0;
+        for (let i = 0; i < teamName.length; i++) {
+          const char = teamName.charCodeAt(i);
+          hash = ((hash << 5) - hash) + char;
+          hash = hash & hash; // Convert to 32bit integer
+        }
+        // Use a larger range and add some offset to create more distinct colors
+        const hue = (Math.abs(hash) * 137.508) % 360; // Golden angle for better distribution
+        // Use high saturation and medium-high lightness for vibrant, readable colors
+        return `hsl(${hue}, 75%, 60%)`;
+      }
+
+      // Make addChatMessage globally available for the message handler
+      window.addChatMessage = function addChatMessage(teamName, message, timestamp) {
+        const messageEl = document.createElement('div');
+        messageEl.style.cssText = 'display: flex; flex-direction: column; gap: 0.2rem;';
+        
+        const headerEl = document.createElement('div');
+        headerEl.style.cssText = 'display: flex; justify-content: space-between; align-items: center;';
+        
+        const nameEl = document.createElement('span');
+        nameEl.style.cssText = `font-weight: bold; color: ${getTeamColor(teamName)};`;
+        nameEl.textContent = teamName;
+        
+        const timeEl = document.createElement('span');
+        timeEl.style.cssText = 'font-size: 0.75rem; color: var(--sl-color-neutral-500);';
+        const date = new Date(timestamp);
+        timeEl.textContent = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        headerEl.appendChild(nameEl);
+        headerEl.appendChild(timeEl);
+        
+        const textEl = document.createElement('div');
+        textEl.style.cssText = 'word-wrap: break-word;';
+        textEl.textContent = message;
+        
+        messageEl.appendChild(headerEl);
+        messageEl.appendChild(textEl);
+        
+        chatMessages.appendChild(messageEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      };
+
+      function sendChatMessage() {
+        const message = chatInput.value.trim();
+        console.log('[Chat] Attempting to send message:', message);
+        console.log('[Chat] WebSocket exists:', !!ctx.ws);
+        console.log('[Chat] Client ID:', ctx.myClientId);
+        console.log('[Chat] State ID:', ctx.stateId);
+        
+        if (message && ctx.ws && ctx.myClientId !== undefined && ctx.myClientId !== null) {
+          const payload = {
+            type: 'chat_message',
+            stateId: ctx.stateId,
+            message: message
+          };
+          console.log('[Chat] Sending payload:', payload);
+          ctx.ws.send(JSON.stringify(payload));
+          chatInput.value = '';
+        } else {
+          console.warn('[Chat] Cannot send message. Missing:', {
+            hasMessage: !!message,
+            hasWebSocket: !!ctx.ws,
+            hasClientId: ctx.myClientId !== undefined && ctx.myClientId !== null
+          });
+        }
+      }
+
+      chatSend.addEventListener('click', sendChatMessage);
+      chatInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          sendChatMessage();
+        }
+      });
+
+      // Chat collapse/expand functionality
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatContainer = document.getElementById('chat-container');
+      const chatMessagesDiv = document.getElementById('chat-messages');
+      const chatInputContainer = chatMessages.nextElementSibling;
+      let chatCollapsed = false;
+
+      chatToggle.addEventListener('click', () => {
+        chatCollapsed = !chatCollapsed;
+        if (chatCollapsed) {
+          chatContainer.style.minHeight = 'auto';
+          chatContainer.style.maxHeight = 'auto';
+          chatContainer.style.flex = '0';
+          chatMessagesDiv.style.display = 'none';
+          chatInputContainer.style.display = 'none';
+          chatToggle.textContent = '▲';
+          chatToggle.setAttribute('aria-label', 'Expand chat');
+        } else {
+          chatContainer.style.minHeight = '200px';
+          chatContainer.style.maxHeight = '300px';
+          chatContainer.style.flex = '2';
+          chatMessagesDiv.style.display = 'flex';
+          chatInputContainer.style.display = 'flex';
+          chatToggle.textContent = '▼';
+          chatToggle.setAttribute('aria-label', 'Collapse chat');
+        }
       });
 
     }

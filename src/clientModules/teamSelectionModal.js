@@ -124,10 +124,55 @@ export function initTeamSelection(ctx) {
       });
     });
 
+  // Add spectator option
+  dialogContentEl.insertAdjacentHTML('beforeend', `
+    <sl-button id="spectatorSelect" variant="neutral" size="large" style="width: 100%;">
+      <strong>Join as Spectator</strong>
+    </sl-button>
+  `);
+  
+  // Handle spectator selection
+  const spectatorButtonEl = document.getElementById('spectatorSelect');
+  spectatorButtonEl.addEventListener('click', () => {
+    ctx.myClientId = -1; // Use -1 to indicate spectator
+    ctx.isSpectator = true;
+    teamSelectionDialogEl.hide();
+    
+    // Connect as spectator
+    let wsUrl = window.location.host + window.location.pathname + '/websocket/spectator';
+    if (window.location.host.includes('localhost')) {
+      wsUrl = 'ws://' + wsUrl;
+    } else {
+      wsUrl = 'wss://' + wsUrl;
+    }
+    setupWebsocket(ctx, -1, wsUrl);
+    
+    // Disable bidding buttons for spectators
+    document.getElementById('raise100')?.setAttribute('disabled', 'true');
+    document.getElementById('raise')?.setAttribute('disabled', 'true');
+    document.getElementById('raise-input')?.setAttribute('disabled', 'true');
+  });
+
   // check if all players are already connected
   let allTeamsConnected = Object.keys(ctx.teams).length > 0 && Object.values(ctx.teams).every((t) => t.connected);
   if (allTeamsConnected) {
-    showNoTeamsDialog();
+    // Auto-connect as spectator if all teams are full
+    ctx.myClientId = -1;
+    ctx.isSpectator = true;
+    
+    let wsUrl = window.location.host + window.location.pathname + '/websocket/spectator';
+    if (window.location.host.includes('localhost')) {
+      wsUrl = 'ws://' + wsUrl;
+    } else {
+      wsUrl = 'wss://' + wsUrl;
+    }
+    setupWebsocket(ctx, -1, wsUrl);
+    
+    // Disable bidding buttons for spectators
+    document.getElementById('raise100')?.setAttribute('disabled', 'true');
+    document.getElementById('raise')?.setAttribute('disabled', 'true');
+    document.getElementById('raise-input')?.setAttribute('disabled', 'true');
+    
     return;
   }
 
