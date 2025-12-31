@@ -346,7 +346,8 @@ const specialMechanics = {
         
         basePokemon.forEach(pokemon => {
           const option = document.createElement('sl-option');
-          option.value = pokemon.name;
+          // Shoelace replaces spaces with underscores in values, so we need to handle this
+          option.value = pokemon.name.replace(/\s/g, '_');
           option.textContent = pokemon.name;
           selectEl.appendChild(option);
         });
@@ -374,10 +375,10 @@ const specialMechanics = {
           const selectEl = document.getElementById('pokemon-select');
           const selectedPokemon = selectEl.value;
           
-          console.log('[Debug] Continue clicked, selected:', selectedPokemon);
-          
           if (selectedPokemon && selectedPokemon.length > 0) {
-            addPokemonToTeam(selectedPokemon);
+            // Convert underscores back to spaces (Shoelace replaces spaces with underscores)
+            const decodedPokemon = selectedPokemon.map(name => name.replace(/_/g, ' '));
+            addPokemonToTeam(decodedPokemon);
             selectEl.value = [];
             dialog.hide();
           }
@@ -580,7 +581,8 @@ const specialMechanics = {
         
         const img = document.createElement('img');
         img.className = 'pokemon-image';
-        img.src = `/baseforms/${pokemon.name}.png`;
+        // Use underscores for image filenames (file system uses underscores for spaces)
+        img.src = `/baseforms/${pokemon.name.replace(/\s/g, '_')}.png`;
         img.alt = pokemon.name;
         img.onerror = () => {
           img.style.display = 'none';
