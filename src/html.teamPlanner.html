@@ -37,7 +37,6 @@
       background-color: var(--container-bg-color);
       border: 1px solid black;
       padding: 0.5rem;
-      padding-bottom: 3rem;
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
@@ -131,8 +130,91 @@
 
     .remove-button {
       position: absolute;
-      bottom: 0.5rem;
+      top: 0.5rem;
       right: 0.5rem;
+    }
+
+    .evolution-summary-section {
+      display: none;
+      padding: 1rem;
+      background-color: var(--container-bg-color);
+      border: 1px solid black;
+      margin-bottom: 1rem;
+    }
+
+    .evolution-summary-section.visible {
+      display: block;
+    }
+
+    .evolution-summary-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    .team-summary-content {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .team-summary-column {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .team-summary-column:first-child {
+      border-right: 2px solid #666;
+      padding-right: 2rem;
+    }
+
+    .team-summary-column:last-child {
+      padding-left: 1rem;
+    }
+
+    .column-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.6rem;
+      color: #aaa;
+    }
+
+    .evolution-items-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .egg-moves-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-auto-flow: column;
+      grid-template-rows: repeat(5, auto);
+      gap: 0.4rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    .egg-move-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .evolution-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .evolution-item-count {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .evolution-item-note {
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 
@@ -144,6 +226,20 @@
         <sl-button id="home-button" class="control-button" variant="neutral" title="Go to Home" href="/">
           <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Go to Home" style="height: 1.3rem; position: relative; top: 5px;" />
         </sl-button>
+      </div>
+    </div>
+
+    <div id="evolution-summary" class="evolution-summary-section">
+      <div class="evolution-summary-title">Team Summary</div>
+      <div class="team-summary-content">
+        <div class="team-summary-column">
+          <div class="column-title">Evolution Items</div>
+          <div id="evolution-items-container" class="evolution-items-grid"></div>
+        </div>
+        <div class="team-summary-column">
+          <div class="column-title">Egg Moves</div>
+          <div id="egg-moves-container" class="egg-moves-list"></div>
+        </div>
       </div>
     </div>
 
@@ -248,6 +344,152 @@ const specialMechanics = {
 \nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
 };
       let teamPokemon = [];
+
+      // Extract evolution item from evolution_method string
+      function extractEvolutionItem(evolutionMethod) {
+        if (!evolutionMethod) return null;
+        
+        const method = evolutionMethod.trim();
+        
+        // Check for items in parentheses (e.g., "Level 32 (Whipped Dream)")
+        const parenMatch = method.match(/\(([^)]+)\)/);
+        if (parenMatch) {
+          return parenMatch[1].trim();
+        }
+        
+        // Check for stone evolutions (e.g., "Fire Stone", "Dusk Stone")
+        if (method.includes('Stone')) {
+          return method.trim();
+        }
+        
+        // Check for Linking Cord (standalone item)
+        if (method === 'Linking Cord') {
+          return method;
+        }
+        
+        return null;
+      }
+
+      // Update evolution summary to show items needed for all team Pokemon
+      function updateEvolutionSummary() {
+        const itemCounts = {};
+        const eggMoves = [];
+        
+        // Go through all team Pokemon and their evolutions
+        teamPokemon.forEach(pokemonName => {
+          const pokemon = allPokemon.find(p => p.name === pokemonName);
+          if (!pokemon) return;
+          
+          // Find the base form for this Pokemon's family
+          const playerIndex = allPokemon.findIndex((p) => p.name === pokemonName);
+          let baseIndex = -1;
+          if (playerIndex !== -1) {
+            for (let i = playerIndex; i >= 0; i--) {
+              if (allPokemon[i].stage === 'base') {
+                baseIndex = i;
+                break;
+              }
+            }
+          }
+          
+          // Find all evolutions and extract their items
+          if (baseIndex !== -1) {
+            for (let i = baseIndex + 1; i < allPokemon.length; i++) {
+              const potentialEvo = allPokemon[i];
+              if (potentialEvo.stage === 'base' || pokemon.stage === 'Basic') {
+                break;
+              }
+              
+              const item = extractEvolutionItem(potentialEvo.evolution_method);
+              if (item) {
+                if (!itemCounts[item]) {
+                  itemCounts[item] = 0;
+                }
+                itemCounts[item]++;
+              }
+            }
+          }
+          
+          // Extract egg moves from species info
+          const speciesInfo = speciesInfoMap.get(pokemonName);
+          if (speciesInfo && speciesInfo.description) {
+            const lines = speciesInfo.description.split('\n');
+            for (const line of lines) {
+              if (line.includes('(Egg)')) {
+                const moveName = line.split('(Egg)')[0].trim();
+                eggMoves.push({ move: moveName, pokemon: pokemonName });
+              }
+            }
+          }
+        });
+        
+        // Update the display
+        const itemsContainer = document.getElementById('evolution-items-container');
+        const eggMovesContainer = document.getElementById('egg-moves-container');
+        const summarySection = document.getElementById('evolution-summary');
+        
+        const hasItems = Object.keys(itemCounts).length > 0;
+        const hasEggMoves = eggMoves.length > 0;
+        
+        if (!hasItems && !hasEggMoves) {
+          summarySection.classList.remove('visible');
+          itemsContainer.innerHTML = '';
+          eggMovesContainer.innerHTML = '';
+        } else {
+          summarySection.classList.add('visible');
+          
+          // Update evolution items
+          if (hasItems) {
+            const itemsHtml = Object.entries(itemCounts)
+              .sort((a, b) => {
+                const itemA = a[0];
+                const itemB = b[0];
+                
+                // Whipped Dream always comes first
+                if (itemA === 'Whipped Dream') return -1;
+                if (itemB === 'Whipped Dream') return 1;
+                
+                // Linking Cord always comes last
+                if (itemA === 'Linking Cord') return 1;
+                if (itemB === 'Linking Cord') return -1;
+                
+                // Everything else sorted alphabetically
+                return itemA.localeCompare(itemB);
+              })
+              .map(([item, count]) => {
+                return `
+                  <div class="evolution-item">
+                    <div class="evolution-item-count">x${count}</div>
+                    <div style="font-size: 0.9rem;">${item}</div>
+                  </div>
+                `;
+              })
+              .join('');
+            
+            itemsContainer.innerHTML = itemsHtml;
+          } else {
+            itemsContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
+          }
+          
+          // Update egg moves
+          if (hasEggMoves) {
+            const eggMovesHtml = eggMoves
+              .map(({ move, pokemon }) => {
+                return `
+                  <div class="egg-move-item">
+                    <span style="font-weight: 500;">${move}</span>
+                    <span style="color: #888;">(${pokemon})</span>
+                  </div>
+                `;
+              })
+              .join('');
+            
+            eggMovesContainer.innerHTML = eggMovesHtml;
+          } else {
+            eggMovesContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
+          }
+        }
+      }
 
       // Initialize the page
       async function init() {
@@ -417,6 +659,8 @@ const specialMechanics = {
           console.log('[Debug] Updating URL with team:', teamPokemon);
           updateUrl();
         }
+        
+        updateEvolutionSummary();
       }
 
       // Helper function to get stat bar color
@@ -856,6 +1100,7 @@ const specialMechanics = {
           container.remove();
           teamPokemon = teamPokemon.filter(name => name !== pokemon.name);
           updateUrl();
+          updateEvolutionSummary();
         });
         container.appendChild(removeBtn);
 
