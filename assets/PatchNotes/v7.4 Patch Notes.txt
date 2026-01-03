@@ -1,0 +1,92 @@
+1/3/2026
+
+
+-----------------------------------------------
+Balance Adjustments
+-----------------------------------------------
+
+
+All instances of Dragon Rage have been replaced with Dragon Breath
+//The end of an era. For the record, this is not a case of "Nathan's been living under a rock for the past year and didn't realize Dragon Rage was stupid." We've long known that this move invalidated early gyms, but I've been staunchly opposed to making changes to generation 7 learnsets. Prior to this patch, all gen 7 learnsets were exactly as they appeared if you searched them on Bulbapedia (barring stuff like Terrain-setting moves, which I hardly count because Terrain as a mechanic has been removed). I liked this; it meant that even if you didn't have access to the website, you could use google to get an answer to your question. This change represents less of a philosophical shift in acceptable power level and more of a shift in how heavy-handed I'm willing to be with changes. It's a step toward being willing depart from the original in favor of doing something that improves the feel of the gameplay.
+//As for why Dragon Breath, after Gamefreak removed Dragon Rage from the game in generation 8, they replaced it with Dragon Breath on most learnsets, including Gible and Charmander. We'll take a page out of their book here.
+//And yes, this purge includes Smeargle, whose Dragon Rage has been replaced with Glare in the Sketch pool.
+
+
+Move Relearner Rework:
+If a Pokémon would learn a move at multiple levels, it now only learns the move at the latest level
+
+//For example, if a Pokémon learns Hurricane at level 1 and also at level 46, it now only learns the move at level 46. This prevents the Pokémon from gaining early access to the move via the Move Relearner.
+
+//"Nathan, are you a weirdo? What is this weirdo change??"
+//This change probably looks strange from the outside, so I'm going to go into great detail in explaining how it came to be. I've had problems with the Move Relearner since the beginning of time. On the one hand, it's neat that it gives unremarkable Pokémon like Poochyena and Snubbull access to Fire/Ice/Thunder Fang, granting otherwise one-dimensional picks the ability to contribute to a variety of gyms. I like that provides a diverse spread of types to spice up boring learnsets. On the other hand, however, giving 100+BP moves after the 4th gym is often overpowered. Gallade with Close Combat and Gardevoir with Moonblast are two of the worst offenders. They go from a near-useless Kirlia to the most powerful Pokémon in the game in the span of one gym; there's no gradual increase in power--it's just useless to broken all at once. I've long wrestled with how to address this in a way that felt natural.
+//I'd considered, for example, simply pushing back the Move Relearner to after gym 6, but after making a spreadsheet of every Move Relearner move, it became clear that this was punishing dozens of mid and low tiers when my only real problem was with a couple of bad eggs. Fire Fang is not so powerful a move that it needs to wait until after gym 6, but Close Combat is. The system needed a way to differentiate between what kinds of move were being re-learned.
+//Which is why I'm so relieved with this solution, because GameFreak has seemingly provided me with their own filter. Gallade *has* an appropriate time to learn Close Combat--it learns the move at level 53. Gamefreak has already assigned a logical time for Gallade to learn the move, they've just inexplicably also tacked it on as a Move Relearner move so that you never have to wait that long in the first place. By limiting the Move Relearner to only relearning moves the Pokémon wouldn't learn naturally at a later point, high-BP moves like Hurricane, Outrage and Close Combat are removed from the Relearner for most Pokemon, while average moves like Leaf Blade and the elemental fangs remain accessible from an appropriate threshold. Gallade gets Close Combat for the Elite Four while Granbull keeps Ice Fang for gym 5. This solution avoids needing to arbitrarily decide which moves are and aren't disqualified from the MR pool with a clean, universal rule. 
+
+
+After obtaining 8 badges, the Move Relearner can now teach all moves in a Pokémon's level up learnset, including moves learned above level 58
+
+//Which takes us to the 2nd and final change. Gardevoir does learn Moonblast, but not until level 61, three levels beyond Blitz's final cap. By giving access to this move via the Move Relearner after the 8th gym, I can remove the level 1 Moonblast while still allowing Gardevoir access to the move at an appropriate time.
+//Notably, some Pokémon are massively buffed into the Elite Four with this change. Kommo-o, for instance, now learns Close Combat and Outrage after beating the 8th gym, two moves it didn't have access to previously because they were above level 58. I see this as a beneficial change; I like that it's giving the player access to slightly higher power going into the game's hardest gauntlet.
+//In this way, these changes end up both buffing the overall power of the Move Relearner while also resulting in the player visiting it less. There's now no reason to visit the Move Relearner with your Masquerain, for example; instead of learning Bug Buzz and Quiver Dance immediately after beating the 4th gym, you now have to gain access to them gradually through leveling up the old-fashioned way. At the same time, though, many Pokémon now have access to their most powerful moves that were previously locked beyond level 60. The Move Relearner is now less important early (since the pool of Move Relearner moves available prior to gym 8 has shrunk) and more important later (since it's expanded after gym 8).
+//Finally, I'll note that I'm aware this is a huge nerf to both Mawile and Noibat. I'm sorry friends, but someone was bound to get caught up in the collateral damage. 
+
+
+Stage 1 Trade Evolutions Evolve at level 28
+This includes...
+Porygon > Porygon2
+Clamperl > Huntail/Gorebyss
+Phantump > Trevenant
+Spritzee > Aromatisse
+
+//Pokémon like Phantump and Spritzee have hitherto been ineligible for the pool. Needing to wait for the Linking Cord at gym 7 is a death knell for Pokémon with sub-350 BST. That said, I'm also reluctant to create arbitrary evolution methods for Pokémon whose current methods would technically qualify. So this is my compromise, a universal rule that applies to all trade-evolution Pokémon: stage-2 Pokémon evolve with the Linking Cord, while Stage-1 Pokémon evolve at level 28. 
+
+Clamperl Egg Move Aqua Ring > Muddy Water
+//Now that its evolution level is slightly delayed (it was 25 previously), Clamperl doesn't guarantee itself a strong STAB for gym 4. This gives it an option so that it can contribute before the Surf HM.
+
+
+Timburr Egg Move Drain Punch > Power-Up Punch
+//The people are clamoring to know if some day we'll live in a different world. They're clamoring to know if in this better, brighter world, Draining Kiss will heal less than 75%, or have less PP, or be eviscerated entirely. They want to know if after this patch, with Drain Punch and Dragon Rage now removed from all learnsets, with healing moves reduced to 1PP, if the writing is on the wall. I don't know, clamorers. The world works in mysterious ways. Only time will tell.
+
+
+Pickup/BallFetch/HoneyGather Rework
+All three abilities have had their existing effects removed and now do the same thing: at the end of a gym battle, if the Pokémon is holding no item, it "picks up" a Sitrus Berry.
+//Pickup no longer can "pick up" consumed berries. I never liked this mechanic. It doesn't make sense that you're picking up the berry that the opponent just consumed, and it's such a departure from how the ability worked in gen 3. I feel this version is more true to the original ability.
+//Those who've started the patch notes by cheating and scrolling to the bottom know that Yamper joins this patch with his otherwise useless ability Ball Fetch. Rather than come up with subtle differences between these abilities, I figured the most straightforward solution was to give all three the same effect. This should be thematically appropriate while giving the Pokemon some actual utility.
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Rotom Catalog now always consumed on use
+//Previously, the Rotom Catalogue wasn't being consumed if Rotom didn't learn the new form's move.
+
+Berries not Triggering fixed
+//Previously, berries did not trigger if the health was lost passively (like through Leech Seed or Fire Spin) or if the status was applied passively (through Yawn).
+//Fixed upstream by @moostoet after I reported the issue.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
++Bulbasaur
++Charmander
++Ekans
++Espurr (Mega included)
++Hippopotas
++Phantump
++Spritzee
++Squirtle
++Starly (Mega included)
++Yamper
+//I'll give a small shoutout here to Ekans, who, with Screech/Crunch, Intimidate and a level 22 evolution, is extremely strong into Winona, Brawly and Norman 3.
+
+
+New Megas:
++Chimecho
++Raichu X/Y
+//Mega Garchomp Z is in Purgatory while I mull what to do with it.
+//I'm aware that some of the new Megas function weirdly with their abilities (Greninja's type resets even if Protean already changed it, Staraptor triggers Intimidate when it enters the field, when it megas, and when it de-megas). It's not worth my time to wrestle with these given that Greninja and Staraptor will almost certainly get new abilities on Mega evolution anyway. For the time being, enjoy your overpowered interactions.
+
+

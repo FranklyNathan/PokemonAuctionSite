@@ -903,6 +903,7 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         Applin: ['Flapple', 'Appletun', 'Dipplin'],
         Cubone: ['Marowak', 'Marowak-Alola'],
         Dartrix: ['Decidueye', 'Decidueye-Hisui'],
+        Espurr: ['Meowstic-M', 'Meowstic-F'],
         Exeggcute: ['Exeggutor', 'Exeggutor-Alola'],
         Eevee: ['Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon', 'Leafeon', 'Glaceon', 'Sylveon'],
         Gloom: ['Vileplume', 'Bellossom'],
