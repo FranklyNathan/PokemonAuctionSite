@@ -1,0 +1,1155 @@
+<!doctype html>
+<html class="sl-theme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex Prototype</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      :root {
+        --shadow-color: var(--sl-color-neutral-400);
+        --container-bg-color: var(--sl-color-gray-100);
+        --input-shadow-color: var(--sl-color-neutral-400);
+      }
+      .sl-theme-dark {
+        --shadow-color: #000;
+        --input-shadow-color: #000;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      .page {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+        transition: grid-template-columns 250ms ease;
+      }
+      .page.with-detail {
+        grid-template-columns: min(50vw, 800px) 1fr;
+      }
+      .page.with-ability {
+        grid-template-columns: min(35vw, 550px) 1fr minmax(320px, 420px);
+      }
+      .page.with-move {
+        grid-template-columns: min(35vw, 550px) 1fr minmax(320px, 420px);
+      }
+      .page.detail-full.with-detail {
+        grid-template-columns: 0px 1fr;
+      }
+      .page.detail-full.with-ability {
+        grid-template-columns: 0px 1fr minmax(320px, 420px);
+      }
+      .page.detail-full.with-move {
+        grid-template-columns: 0px 1fr minmax(320px, 420px);
+      }
+      header {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .pill {
+        border: none;
+        background: transparent;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+      .ability-link {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+        transition: background 150ms ease;
+      }
+      .ability-link:hover {
+        background: rgba(255,255,255,0.1) !important;
+      }
+      .move-link {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+        transition: background 150ms ease;
+      }
+      .move-link:hover {
+        background: rgba(255,255,255,0.1) !important;
+      }
+      .detail-name {
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+      .sl-theme-dark .pill {
+        border: none;
+        background: transparent;
+      }
+      .panel {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+      }
+      .list-panel {
+        display: flex;
+        flex-direction: column;
+        min-height: 70vh;
+        overflow: hidden;
+        transition: opacity 180ms ease, transform 220ms ease;
+        width: min(50vw, 800px);
+      }
+      .page.with-ability .list-panel,
+      .page.with-move .list-panel {
+        width: min(35vw, 550px);
+      }
+      .page.list-only .list-panel {
+        margin: 0 auto;
+      }
+      .page.detail-full .list-panel {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-30px);
+      }
+      .search-row {
+        padding: 0.85rem 0.9rem 0.35rem;
+        border-bottom: none;
+        background: transparent;
+      }
+      .sl-theme-dark .search-row {
+        border-bottom: none;
+        background: transparent;
+      }
+      .search-row input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: inherit;
+        padding: 0.55rem 0.65rem;
+        border-radius: 0;
+        font-size: 0.95rem;
+      }
+      .table-head, .table-body {
+        display: grid;
+        grid-template-columns: 64px 60px 1fr 170px 240px;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.85rem;
+      }
+      .table-head {
+        position: sticky;
+        top: 0;
+        background: transparent;
+        border-bottom: none;
+        z-index: 1;
+        font-weight: 700;
+        color: inherit;
+      }
+      .rows {
+        overflow-y: auto;
+        max-height: calc(100vh - 220px);
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 64px 60px 1fr 170px 240px;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.55rem 0.75rem;
+        cursor: pointer;
+        border-bottom: none;
+        transition: background 120ms ease;
+      }
+      .sl-theme-dark .row {
+        border-bottom: none;
+      }
+      .row:hover {
+        background: var(--sl-color-neutral-200);
+      }
+      .sl-theme-dark .row:hover {
+        background: var(--sl-color-neutral-700);
+      }
+      .row.active {
+        background: var(--sl-color-primary-200);
+        border-left: none;
+      }
+      .sl-theme-dark .row.active {
+        background: var(--sl-color-primary-700);
+      }
+      .name-cell {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 700;
+      }
+      .type-badges, .ability-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.12rem 0.4rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        color: #0b111a;
+        font-weight: 700;
+        min-width: 55px;
+        text-align: center;
+        line-height: 1.2;
+      }
+      .stat-chip {
+        font-family: "Roboto Mono", "Cascadia Code", monospace;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.35rem;
+        border-radius: 0;
+        background: transparent;
+        border: none;
+      }
+      .pokemon-thumb {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+      .detail-panel {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        min-height: 70vh;
+        padding: 0.75rem 1rem 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        position: relative;
+      }
+      #abilityPanel {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        min-height: 70vh;
+        padding: 1rem 1.25rem 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+      }
+      #abilityPokemonList .row {
+        grid-template-columns: 64px 60px 1fr 170px;
+        padding: 0.5rem 0.6rem;
+        margin-bottom: 0.25rem;
+      }
+      #abilityPokemonList .row:hover {
+        background: var(--sl-color-neutral-200);
+      }
+      .sl-theme-dark #abilityPokemonList .row:hover {
+        background: var(--sl-color-neutral-700);
+      }
+      .detail-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        cursor: pointer;
+      }
+      .detail-main {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 0.75rem;
+        align-items: start;
+      }
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 60px 36px 1fr;
+        gap: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+        align-items: center;
+      }
+      .stat-bar {
+        height: 10px;
+        border-radius: 0;
+        background: transparent;
+        border: none;
+        overflow: hidden;
+      }
+      .sl-theme-dark .stat-bar {
+        background: transparent;
+      }
+      .stat-fill {
+        height: 100%;
+        background: #4CAF50;
+      }
+      .evo, .meta-line, .section-title {
+        font-weight: 700;
+        color: inherit;
+      }
+      .section-title {
+        margin: 0.1rem 0 0.3rem;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+      }
+      .moves-grid {
+        display: grid;
+        grid-template-columns: 38px 150px 65px 30px 48px 48px 32px 1fr;
+        gap: 0.15rem 0.35rem;
+        font-size: 0.8rem;
+        padding: 0.1rem 0;
+        border-radius: 0;
+        background: transparent;
+        border: none;
+        align-items: center;
+      }
+      .sl-theme-dark .moves-grid {
+        background: transparent;
+      }
+      .moves-grid > div {
+        display: flex;
+        align-items: center;
+      }
+      .cat-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.06);
+        color: inherit;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        font-size: 0.95rem;
+        color: inherit;
+      }
+      .ghost {
+        opacity: 0.6;
+      }
+      .empty-state {
+        text-align: center;
+        padding: 2rem;
+        color: inherit;
+      }
+      .controls {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      button.icon-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        color: inherit;
+        padding: 0.45rem 0.7rem;
+        border-radius: 0;
+        cursor: pointer;
+        box-shadow: none;
+      }
+      .sl-theme-dark button.icon-btn {
+        background: rgba(255, 255, 255, 0.08);
+        color: inherit;
+      }
+      button.icon-btn:hover {
+        filter: brightness(1.1);
+      }
+    </style>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+  </head>
+  <body>
+    <script>
+      // Apply saved theme and reveal body so the global stylesheet's opacity gate is lifted.
+      (function () {
+        const htmlEl = document.documentElement;
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark') htmlEl.classList.add('sl-theme-dark'); else htmlEl.classList.remove('sl-theme-dark');
+        document.body.classList.add('ready');
+      })();
+    </script>
+    <div class="page list-only" id="page">
+      <header>
+        <div class="title">Pokédex</div>
+      </header>
+
+      <div class="panel list-panel" id="listPanel">
+        <div class="search-row">
+          <input id="search" type="text" placeholder="Search name, type, ability, move, egg group" aria-label="Search" />
+        </div>
+        <div class="table-head">
+          <div>#</div>
+          <div></div>
+          <div>Name</div>
+          <div>Types</div>
+          <div>Abilities</div>
+        </div>
+        <div class="rows" id="rows"></div>
+      </div>
+
+      <div class="detail-panel" id="detailPanel" aria-live="polite">
+        <div class="empty-state" id="emptyState">Select a Pokémon to view details</div>
+        <div id="detailContent" hidden>
+          <div class="detail-header" id="detailHeader">
+            <div style="display:flex;gap:0.6rem;align-items:center;">
+              <img id="detailImage" src="" alt="" style="width:80px;height:80px;object-fit:contain;" />
+              <div style="display:flex;flex-direction:column;gap:0.3rem;">
+                <div class="detail-name" id="detailName"></div>
+                <div class="pill" id="detailDex"></div>
+              </div>
+            </div>
+            <button class="icon-btn" id="backButton">Back to list</button>
+          </div>
+          <div class="detail-main">
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div class="chip-row" id="detailTypes"></div>
+              <div class="chip-row" id="detailAbilities"></div>
+              <div class="chip-row" id="detailSize"></div>
+              <div class="meta" id="detailMeta"></div>
+            </div>
+            <div>
+              <div class="section-title">Base stats</div>
+              <div class="stats" id="detailStats"></div>
+            </div>
+          </div>
+          <div>
+            <div class="section-title">Evolution</div>
+            <div class="chip-row" id="detailEvo"></div>
+          </div>
+          <div>
+            <div class="section-title">Level-up moves</div>
+            <div class="moves-grid" id="detailMoves"></div>
+          </div>
+          <div>
+            <div class="section-title">TM / HM moves</div>
+            <div class="moves-grid" id="detailTm"></div>
+          </div>
+          <div>
+            <div class="section-title">Egg moves</div>
+            <div class="moves-grid" id="detailEgg"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="abilityPanel" aria-live="polite">
+        <div id="abilityContent">
+          <div class="detail-header" style="cursor:default;">
+            <div style="display:flex;flex-direction:column;gap:0.5rem;flex:1;">
+              <div class="detail-name" id="abilityName"></div>
+              <div style="color:var(--sl-color-neutral-400);font-size:0.9rem;line-height:1.4;" id="abilityDescription"></div>
+            </div>
+            <button class="icon-btn" id="closeAbilityButton">✕</button>
+          </div>
+          <div>
+            <div class="section-title">Pokémon with this ability</div>
+            <div id="abilityPokemonList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="movePanel" aria-live="polite">
+        <div id="moveContent">
+          <div class="detail-header" style="cursor:default;">
+            <div style="display:flex;flex-direction:column;gap:0.5rem;flex:1;">
+              <div class="detail-name" id="moveName"></div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;" id="moveTypeCategory"></div>
+              <div style="color:var(--sl-color-neutral-400);font-size:0.85rem;line-height:1.4;" id="moveDescription"></div>
+            </div>
+            <button class="icon-btn" id="closeMoveButton">✕</button>
+          </div>
+          <div>
+            <div id="moveStats" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.85rem;margin-bottom:0.75rem;"></div>
+          </div>
+          <div>
+            <div class="section-title">Pokémon that learn this move</div>
+            <div id="movePokemonList" style="max-height:55vh;overflow-y:auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const typeColors = {
+        Normal: '#A8A878', Fire: '#F08030', Water: '#6890F0', Electric: '#F8D030', Grass: '#78C850', Ice: '#98D8D8',
+        Fighting: '#C03028', Poison: '#A040A0', Ground: '#E0C068', Flying: '#A890F0', Psychic: '#F85888', Bug: '#A8B820',
+        Rock: '#B8A038', Ghost: '#705898', Dragon: '#7038F8', Dark: '#705848', Steel: '#B8B8D0', Fairy: '#EE99AC'
+      };
+
+      let pokemonData = [];
+
+      const state = {
+        filtered: [],
+        selected: null,
+        detailFull: false,
+      };
+
+      const rowsEl = document.getElementById('rows');
+      const searchEl = document.getElementById('search');
+      const pageEl = document.getElementById('page');
+      const detailPanel = document.getElementById('detailPanel');
+      const detailContent = document.getElementById('detailContent');
+      const emptyState = document.getElementById('emptyState');
+      const detailName = document.getElementById('detailName');
+      const detailDex = document.getElementById('detailDex');
+      const detailTypes = document.getElementById('detailTypes');
+      const detailAbilities = document.getElementById('detailAbilities');
+      const detailEgg = document.getElementById('detailEgg');
+      const detailSize = document.getElementById('detailSize');
+      const detailStats = document.getElementById('detailStats');
+      const detailEvo = document.getElementById('detailEvo');
+      const detailMoves = document.getElementById('detailMoves');
+      const detailTm = document.getElementById('detailTm');
+      const detailMeta = document.getElementById('detailMeta');
+      const backButton = document.getElementById('backButton');
+      const detailHeader = document.getElementById('detailHeader');
+
+      function badge(text, color) {
+        return `<span class="badge" style="background:${color};">${text}</span>`;
+      }
+
+      const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
+      const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
+
+      function renderList() {
+        rowsEl.innerHTML = '';
+        state.filtered.forEach((p) => {
+          const row = document.createElement('div');
+          row.className = 'row';
+          row.dataset.name = p.name;
+          if (state.selected && state.selected.name === p.name) row.classList.add('active');
+          const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
+          let fileName = p.name;
+          if (fileName.startsWith('Mega ')) {
+            fileName = fileName.substring(5) + '-Mega';
+          }
+          fileName = fileName.replace(/\s/g, '_');
+          const imagePath = `/${folder}/${fileName}.png`;
+          row.innerHTML = `
+            <div class="stat-chip">${p.dex.toString().padStart(3, '0')}</div>
+            <img src="${imagePath}" alt="${p.name}" class="pokemon-thumb" onerror="this.src='/baseforms/Egg.png'" />
+            <div class="name-cell">${p.name}</div>
+            <div class="type-badges">${p.types.map(t => badge(t, typeColors[t] || '#888')).join('')}</div>
+            <div class="ability-badges">${p.abilities.map(a => `<span class="pill ability-link" style="background:rgba(255,255,255,0.04);" onclick="event.stopPropagation(); showAbility('${a.name.replace(/'/g, "\\'")}')">${a.name}${a.hidden ? ' (H)' : ''}</span>`).join('')}</div>
+          `;
+          row.addEventListener('click', () => selectPokemon(p, true));
+          rowsEl.appendChild(row);
+        });
+      }
+
+      function getStatColor(statValue) {
+        if (statValue >= 150) return '#4CAF50'; // Green
+        if (statValue >= 120) return '#8BC34A'; // Light Green
+        if (statValue >= 100) return '#CDDC39'; // Yellow-Green
+        if (statValue >= 80) return '#FFC107'; // Amber
+        if (statValue >= 60) return '#FF9800'; // Orange
+        return '#FF5722'; // Red
+      }
+
+      function categoryIcon(cat) {
+        if (cat === 'Physical') return '<span class="cat-icon" title="Physical">P</span>';
+        if (cat === 'Special') return '<span class="cat-icon" title="Special">S</span>';
+        if (cat === 'Status') return '<span class="cat-icon" title="Status">–</span>';
+        return '<span class="cat-icon">–</span>';
+      }
+
+      function renderStats(stats) {
+        detailStats.innerHTML = '';
+        const entries = [
+          ['HP', stats.hp], ['Atk', stats.atk], ['Def', stats.def], ['SpA', stats.spa], ['SpD', stats.spd], ['Spe', stats.spe]
+        ];
+        entries.forEach(([label, val]) => {
+          const row = document.createElement('div');
+          row.style.display = 'contents';
+          const cap = Math.min(160, val);
+          const barColor = getStatColor(val);
+          row.innerHTML = `
+            <div style="font-weight:700;">${label}</div>
+            <div style="text-align:right;font-weight:700;">${val}</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:${(cap/160)*100}%;background:${barColor};"></div></div>
+          `;
+          detailStats.appendChild(row);
+        });
+      }
+
+      function renderMoves(list, target) {
+        if (!list || list.length === 0) {
+          target.innerHTML = '<div class="ghost" style="grid-column: 1 / -1;">No data yet.</div>';
+          return;
+        }
+        target.innerHTML = list.map(m => {
+          let sourceDisplay = '';
+          if (m.level) {
+            sourceDisplay = 'L' + m.level;
+          } else if (m.code) {
+            sourceDisplay = m.code;
+          } else if (m.source === 'Egg') {
+            sourceDisplay = 'Egg';
+          } else if (m.source === 'Move Relearner') {
+            sourceDisplay = 'MR';
+          } else if (m.source === 'Evolution') {
+            sourceDisplay = 'Evo';
+          } else if (m.source === 'TM') {
+            sourceDisplay = 'TM';
+          } else {
+            sourceDisplay = '—';
+          }
+          
+          // Look up move data from moves.json
+          const moveData = movesData ? movesData[m.name.toLowerCase()] : null;
+          
+          // Use moveData if available, otherwise fall back to existing data
+          const type = moveData?.type || m.type || '—';
+          const category = moveData?.category || m.category || '—';
+          const power = moveData?.power ?? m.power ?? '—';
+          const accuracy = moveData?.accuracy ?? m.accuracy ?? '—';
+          const pp = moveData?.pp ?? m.pp ?? '—';
+          
+          return `
+          <div>${sourceDisplay}</div>
+          <div style="font-weight:700;"><span class="move-link" onclick="event.stopPropagation(); showMove('${m.name.replace(/'/g, "\\'")}')">${m.name}</span></div>
+          <div>${badge(type, typeColors[type] || '#666')}</div>
+          <div>${categoryIcon(category)}</div>
+          <div>${power}</div>
+          <div>${accuracy}</div>
+          <div>${pp}</div>
+          <div class="ghost">${m.note || ''}</div>
+        `;
+        }).join('');
+      }
+
+      function renderEvolutions(pokemon) {
+        console.log('[Evolution Debug] renderEvolutions called for:', pokemon.name);
+        console.log('[Evolution Debug] evolutionData:', evolutionData);
+        
+        if (!evolutionData || !evolutionData.families) {
+          console.error('[Evolution Debug] Evolution data not loaded!');
+          detailEvo.innerHTML = '<span class="ghost">Evolution data not loaded</span>';
+          detailEvo.style.display = 'flex';
+          return;
+        }
+        
+        // Find the family this Pokemon belongs to
+        // Keys in evolutions.json are lowercase, members are capitalized
+        const pokemonNameLower = pokemon.name.toLowerCase();
+        let familyData = null;
+        let familyKey = null;
+        
+        console.log('[Evolution Debug] Looking for pokemon:', pokemonNameLower);
+        console.log('[Evolution Debug] Total families:', Object.keys(evolutionData.families).length);
+        
+        // Search through all families to find which one contains this Pokemon
+        // Check both the family key and the members array
+        for (const [key, family] of Object.entries(evolutionData.families)) {
+          // Check if the lowercase pokemon name matches the family key
+          if (key === pokemonNameLower) {
+            familyData = family;
+            familyKey = key;
+            console.log('[Evolution Debug] Found family by key:', key, 'with members:', family.members);
+            break;
+          }
+          // Also check members array (in case of evolved forms)
+          if (family.members && family.members.some(m => m.toLowerCase() === pokemonNameLower)) {
+            familyData = family;
+            familyKey = key;
+            console.log('[Evolution Debug] Found family by member:', key, 'with members:', family.members);
+            break;
+          }
+        }
+        
+        if (!familyData || !familyData.tree) {
+          console.error('[Evolution Debug] No evolution family found for:', pokemon.name);
+          detailEvo.innerHTML = '<span class="ghost">No evolution family found</span>';
+          detailEvo.style.display = 'flex';
+          return;
+        }
+        
+        // If the family only has one member, no evolutions to display
+        if (familyData.members.length === 1) {
+          console.log('[Evolution Debug] Family has only one member');
+          detailEvo.innerHTML = '<span class="ghost">No evolutions</span>';
+          detailEvo.style.display = 'flex';
+          return;
+        }
+
+
+        // Helper function to recursively render the evolution tree
+        function renderEvolutionTree(node, isRoot = false) {
+          let html = '';
+          
+          // Render current node
+          const nodePokemon = pokemonData.find(p => p.name === node.name);
+          if (!nodePokemon && !isRoot) return '';
+          
+          const folder = (nodePokemon && nodePokemon.stage === 'base') ? 'baseforms' : 'evolutions';
+          let fileName = node.name;
+          if (fileName.startsWith('Mega ')) {
+            fileName = fileName.substring(5) + '-Mega';
+          }
+          fileName = fileName.replace(/\s/g, '_');
+          const imagePath = `/${folder}/${fileName}.png`;
+          
+          const isCurrentPokemon = node.name === pokemon.name;
+          const bgOpacity = isCurrentPokemon ? '0.04' : '0.02';
+          
+          html += `
+            <div style="display: flex; flex-direction: column; align-items: center; padding: 0.5rem; border-radius: 8px; background: rgba(255,255,255,${bgOpacity}); margin: 0.5rem; cursor: pointer;" onclick="handleEvoClick('${node.name.replace(/'/g, "\\'")}')">
+              <img src="${imagePath}" alt="${node.name}" 
+                   style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 0.25rem;"
+                   onerror="this.src='/baseforms/Egg.png'">
+              <div style="font-weight: 600; font-size: 0.9rem;">${node.name}</div>
+            </div>
+          `;
+          
+          // Render children
+          if (node.children && node.children.length > 0) {
+            const isSplit = node.children.length > 1;
+            
+            if (isSplit) {
+              // Render split evolutions vertically
+              html += `<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">`;
+              for (const child of node.children) {
+                html += `<div style="display: flex; flex-direction: row; align-items: center;">`;
+                
+                // Determine arrow type
+                let arrowImage = 'SplitArrow.png';
+                if (child.name.startsWith('Mega ') || child.name.includes('-Mega')) {
+                  arrowImage = 'FormArrow.png';
+                }
+                
+                html += `
+                  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin: 0.5rem;">
+                    <img src="/generic/${arrowImage}" alt="Evolves to" style="width: 24px; height: 24px;">
+                    <div style="font-size: 0.7rem; text-align: center; width: 100px; color: rgba(255,255,255,0.7);">${child.method || ''}</div>
+                  </div>
+                `;
+                
+                html += renderEvolutionTree(child);
+                html += `</div>`;
+              }
+              html += `</div>`;
+            } else {
+              // Linear evolution
+              const child = node.children[0];
+              
+              // Determine arrow type
+              let arrowImage = 'Arrow.png';
+              if (child.name.startsWith('Mega ') || child.name.includes('-Mega')) {
+                arrowImage = 'FormArrow.png';
+              }
+              
+              html += `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin: 0.5rem;">
+                  <img src="/generic/${arrowImage}" alt="Evolves to" style="width: 24px; height: 24px;">
+                  <div style="font-size: 0.7rem; text-align: center; width: 100px; color: rgba(255,255,255,0.7);">${child.method || ''}</div>
+                </div>
+              `;
+              
+              html += renderEvolutionTree(child);
+            }
+          }
+          
+          return html;
+        }
+
+        // Build evolution HTML by rendering the tree
+        detailEvo.style.display = 'flex';
+        detailEvo.style.flexDirection = 'row';
+        detailEvo.style.flexWrap = 'wrap';
+        detailEvo.style.gap = '0rem';
+        detailEvo.style.alignItems = 'center';
+        
+        const html = renderEvolutionTree(familyData.tree, true);
+        detailEvo.innerHTML = html;
+      }
+
+      function handleEvoClick(pokemonName) {
+        const pokemon = pokemonData.find(p => p.name === pokemonName);
+        if (pokemon) {
+          selectPokemon(pokemon, true);
+        }
+      }
+
+      function renderDetail(p) {
+        if (!p) return;
+        const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
+        let fileName = p.name;
+        if (fileName.startsWith('Mega ')) {
+          fileName = fileName.substring(5) + '-Mega';
+        }
+        fileName = fileName.replace(/\s/g, '_');
+        const imagePath = `/${folder}/${fileName}.png`;
+        document.getElementById('detailImage').src = imagePath;
+        document.getElementById('detailImage').onerror = function() { this.src = '/baseforms/Egg.png'; };
+        document.getElementById('detailImage').alt = p.name;
+        detailName.textContent = p.name;
+        detailDex.textContent = '#' + p.dex.toString().padStart(3, '0');
+        detailTypes.innerHTML = p.types.map(t => badge(t, typeColors[t] || '#888')).join('');
+        detailAbilities.innerHTML = p.abilities.map(a => `<span class="pill ability-link" style="background:rgba(255,255,255,0.04);" onclick="showAbility('${a.name.replace(/'/g, "\\'")}')">  ${a.name}${a.hidden ? ' (H)' : ''}</span>`).join('');
+        detailSize.innerHTML = '';
+        detailSize.style.display = 'none';
+        detailMeta.innerHTML = '';
+        detailMeta.style.display = 'none';
+        renderStats(p.stats);
+        
+        // Render evolution chain
+        renderEvolutions(p);
+        
+        // Filter moves by source
+        const levelUpMoves = (p.moves || []).filter(m => m.source === 'Level' || m.level);
+        const tmMoves = (p.moves || []).filter(m => m.source === 'TM');
+        const eggMoves = (p.moves || []).filter(m => m.source === 'Egg');
+        const otherMoves = (p.moves || []).filter(m => m.source === 'Move Relearner' || m.source === 'Evolution');
+        
+        // Render moves in their respective sections
+        renderMoves(levelUpMoves.length ? levelUpMoves : otherMoves, detailMoves);
+        renderMoves(tmMoves.length ? tmMoves : p.tm, detailTm);
+        renderMoves(eggMoves, detailEgg);
+
+        detailContent.hidden = false;
+        emptyState.style.display = 'none';
+        detailPanel.style.display = 'flex';
+        pageEl.classList.add('with-detail');
+      }
+
+      function selectPokemon(pokemon, pushStateNeeded) {
+        state.selected = pokemon;
+        renderList();
+        renderDetail(pokemon);
+        pageEl.classList.remove('list-only');
+        if (pushStateNeeded) {
+          const slug = pokemon.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          history.pushState({ panel: true, name: pokemon.name }, '', '#' + slug);
+        }
+      }
+
+      function closePanel(fromPop) {
+        state.selected = null;
+        renderList();
+        detailContent.hidden = true;
+        detailPanel.style.display = 'none';
+        emptyState.style.display = 'block';
+        pageEl.classList.add('list-only');
+        pageEl.classList.remove('with-detail', 'detail-full');
+        if (!fromPop) {
+          history.replaceState({ panel: false }, '', location.pathname);
+        }
+      }
+
+      function filterList(value) {
+        const q = value.trim().toLowerCase();
+        if (!q) {
+          state.filtered = pokemonData;
+        } else {
+          state.filtered = pokemonData.filter(p => {
+            const hay = [
+              p.name,
+              p.types.join(' '),
+              p.abilities.join(' '),
+              (p.moves || []).map(m => m.name).join(' '),
+              (p.egg || []).join(' ')
+            ].join(' ').toLowerCase();
+            return hay.includes(q);
+          });
+        }
+        // Sort by dex number
+        state.filtered.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
+        renderList();
+      }
+
+      searchEl.addEventListener('input', (e) => filterList(e.target.value));
+      backButton.addEventListener('click', () => closePanel(false));
+
+      // Ability panel functionality
+      const abilityPanel = document.getElementById('abilityPanel');
+      const abilityName = document.getElementById('abilityName');
+      const abilityDescription = document.getElementById('abilityDescription');
+      const abilityPokemonList = document.getElementById('abilityPokemonList');
+      const closeAbilityButton = document.getElementById('closeAbilityButton');
+
+      function showAbility(abilityNameStr) {
+        const abilityInfo = abilitiesData ? abilitiesData[abilityNameStr.toLowerCase()] : null;
+        
+        // Set ability name and description
+        abilityName.textContent = abilityNameStr;
+        abilityDescription.textContent = abilityInfo ? abilityInfo.description : 'No description available.';
+        
+        // Find all Pokemon with this ability
+        const pokemonWithAbility = pokemonData.filter(p => 
+          p.abilities && p.abilities.some(a => a.name === abilityNameStr)
+        );
+        
+        // Sort by dex number
+        pokemonWithAbility.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
+        
+        // Render Pokemon list
+        abilityPokemonList.innerHTML = '';
+        pokemonWithAbility.forEach(p => {
+          const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
+          let fileName = p.name;
+          if (fileName.startsWith('Mega ')) {
+            fileName = fileName.substring(5) + '-Mega';
+          }
+          fileName = fileName.replace(/\\s/g, '_');
+          const imagePath = `/${folder}/${fileName}.png`;
+          const isHidden = p.abilities.find(a => a.name === abilityNameStr)?.hidden;
+          
+          const row = document.createElement('div');
+          row.className = 'row';
+          row.style.cursor = 'pointer';
+          row.innerHTML = `
+            <div class="stat-chip">${p.dex.toString().padStart(3, '0')}</div>
+            <img src="${imagePath}" alt="${p.name}" class="pokemon-thumb" onerror="this.src='/baseforms/Egg.png'" />
+            <div class="name-cell" style="flex:1;">${p.name}${isHidden ? ' <span style="color:var(--sl-color-neutral-500);font-size:0.85rem;">(Hidden)</span>' : ''}</div>
+            <div class="type-badges">${p.types.map(t => badge(t, typeColors[t] || '#888')).join('')}</div>
+          `;
+          row.addEventListener('click', () => selectPokemon(p, true));
+          abilityPokemonList.appendChild(row);
+        });
+        
+        // Show ability panel
+        abilityPanel.style.display = 'flex';
+        pageEl.classList.add('with-ability');
+      }
+
+      function closeAbilityPanel() {
+        abilityPanel.style.display = 'none';
+        pageEl.classList.remove('with-ability');
+      }
+
+      closeAbilityButton.addEventListener('click', closeAbilityPanel);
+
+      // Make showAbility available globally for onclick handlers
+      window.showAbility = showAbility;
+
+      // Move panel functionality
+      const movePanel = document.getElementById('movePanel');
+      const moveName = document.getElementById('moveName');
+      const moveTypeCategory = document.getElementById('moveTypeCategory');
+      const moveDescription = document.getElementById('moveDescription');
+      const moveStats = document.getElementById('moveStats');
+      const movePokemonList = document.getElementById('movePokemonList');
+      const closeMoveButton = document.getElementById('closeMoveButton');
+
+      function showMove(moveNameStr) {
+        const moveData = movesData ? movesData[moveNameStr.toLowerCase()] : null;
+        
+        // Set move name
+        moveName.textContent = moveNameStr;
+        
+        // Set type and category
+        const type = moveData?.type || 'Unknown';
+        const category = moveData?.category || 'Unknown';
+        moveTypeCategory.innerHTML = `${badge(type, typeColors[type] || '#666')} <span style="padding:0.1rem 0.3rem;border-radius:3px;background:rgba(255,255,255,0.08);font-size:0.75rem;text-transform:uppercase;font-weight:700;">${category}</span>`;
+        
+        // Set description
+        moveDescription.textContent = moveData?.description || 'No description available.';
+        
+        // Set stats (power, accuracy, pp)
+        moveStats.innerHTML = `
+          <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">Power:</span> <span style="font-weight:700;">${moveData?.power ?? '—'}</span></div>
+          <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">Accuracy:</span> <span style="font-weight:700;">${moveData?.accuracy ?? '—'}${moveData?.accuracy ? '%' : ''}</span></div>
+          <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">PP:</span> <span style="font-weight:700;">${moveData?.pp ?? '—'}</span></div>
+          <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">Priority:</span> <span style="font-weight:700;">${moveData?.priority ?? 0}</span></div>
+        `;
+        
+        // Find all Pokemon that can learn this move
+        const pokemonThatLearnMove = pokemonData.filter(p => 
+          p.moves && p.moves.some(m => m.name === moveNameStr)
+        );
+        
+        // Sort by dex number
+        pokemonThatLearnMove.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
+        
+        // Render Pokemon list
+        movePokemonList.innerHTML = '';
+        pokemonThatLearnMove.forEach(p => {
+          const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
+          let fileName = p.name;
+          if (fileName.startsWith('Mega ')) {
+            fileName = fileName.substring(5) + '-Mega';
+          }
+          fileName = fileName.replace(/\s/g, '_');
+          const imagePath = `/${folder}/${fileName}.png`;
+          const moveInfo = p.moves.find(m => m.name === moveNameStr);
+          let learnMethod = '';
+          if (moveInfo.level) learnMethod = `Level ${moveInfo.level}`;
+          else if (moveInfo.source) learnMethod = moveInfo.source;
+          else if (moveInfo.code) learnMethod = moveInfo.code;
+          else learnMethod = 'Unknown';
+          
+          const row = document.createElement('div');
+          row.className = 'row';
+          row.style.cursor = 'pointer';
+          row.innerHTML = `
+            <div class="stat-chip">${p.dex.toString().padStart(3, '0')}</div>
+            <img src="${imagePath}" alt="${p.name}" class="pokemon-thumb" onerror="this.src='/baseforms/Egg.png'" />
+            <div class="name-cell" style="flex:1;">${p.name}</div>
+            <div style="font-size:0.8rem;color:var(--sl-color-neutral-400);">${learnMethod}</div>
+          `;
+          row.addEventListener('click', () => selectPokemon(p, true));
+          movePokemonList.appendChild(row);
+        });
+        
+        // Show move panel
+        movePanel.style.display = 'flex';
+        pageEl.classList.add('with-move');
+        pageEl.classList.remove('with-ability');
+      }
+
+      function closeMovePanel() {
+        movePanel.style.display = 'none';
+        pageEl.classList.remove('with-move');
+      }
+
+      closeMoveButton.addEventListener('click', closeMovePanel);
+
+      // Make showMove available globally for onclick handlers
+      window.showMove = showMove;
+
+      detailHeader.addEventListener('click', () => {
+        if (!state.selected) return;
+        state.detailFull = !state.detailFull;
+        pageEl.classList.toggle('detail-full', state.detailFull);
+      });
+
+      window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.panel && event.state.name) {
+          const match = pokemonData.find(p => p.name === event.state.name);
+          if (match) selectPokemon(match, false);
+        } else {
+          closePanel(true);
+        }
+      });
+
+      // Do not reset the URL here; keep query parameters for deep linking
+      // history.replaceState({ panel: false }, '', location.pathname);
+      
+      // Global variable for evolution data
+      let evolutionData = null;
+      let movesData = null;
+      let abilitiesData = null;
+
+      // Fetch Pokemon data from API
+      async function loadData() {
+        try {
+          // Load pokedex, evolutions, moves, and abilities data in parallel
+          const [pokedexResponse, evolutionsResponse, movesResponse, abilitiesResponse] = await Promise.all([
+            fetch('/api/pokedex'),
+            fetch('/data/evolutions.json'),
+            fetch('/data/moves.json'),
+            fetch('/data/abilities.json')
+          ]);
+          
+          if (!pokedexResponse.ok) throw new Error('Failed to load Pokemon data');
+          if (!evolutionsResponse.ok) throw new Error('Failed to load evolution data');
+          if (!movesResponse.ok) throw new Error('Failed to load moves data');
+          if (!abilitiesResponse.ok) throw new Error('Failed to load abilities data');
+          
+          pokemonData = await pokedexResponse.json();
+          evolutionData = await evolutionsResponse.json();
+          const movesArray = await movesResponse.json();
+          const abilitiesArray = await abilitiesResponse.json();
+          
+          // Create a lookup map for moves by name
+          movesData = {};
+          movesArray.forEach(move => {
+            movesData[move.name.toLowerCase()] = move;
+          });
+          
+          // Create a lookup map for abilities by name
+          abilitiesData = {};
+          abilitiesArray.forEach(ability => {
+            abilitiesData[ability.name.toLowerCase()] = ability;
+          });
+          
+          console.log('Loaded', movesArray.length, 'moves and', abilitiesArray.length, 'abilities');
+          
+          // Sort by dex number
+          pokemonData.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
+          state.filtered = pokemonData;
+          renderList();
+        } catch (error) {
+          console.error('Error loading Pokemon data:', error);
+          rowsEl.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--sl-color-danger-600);">Failed to load Pokemon data. Please refresh the page.</div>';
+        }
+      }
+      
+      loadData().then(() => {
+        // Check URL parameters for ability or move to display
+        const urlParams = new URLSearchParams(window.location.search);
+        let abilityParam = urlParams.get('ability');
+        let moveParam = urlParams.get('move');
+        let pokemonParam = urlParams.get('pokemon');
+        
+        // If a pokemon param is present, select that Pokémon first
+        if (pokemonParam && pokemonData) {
+          const pokeName = decodeURIComponent(pokemonParam).trim();
+          const match = pokemonData.find(p => p.name.toLowerCase() === pokeName.toLowerCase());
+          if (match) {
+            selectPokemon(match, false);
+          }
+        }
+        if (abilityParam) {
+          // Normalize incoming param: lowercase, replace spaces/underscores/dashes with hyphens
+          let normParam = decodeURIComponent(abilityParam.replace(/\+/g, ' ')).trim().toLowerCase().replace(/[_\s-]+/g, '-');
+          // Find ability whose normalized name matches
+          let foundKey = null;
+          if (abilitiesData) {
+            foundKey = Object.keys(abilitiesData).find(k => k.trim().toLowerCase().replace(/[_\s-]+/g, '-') === normParam);
+          }
+          if (!foundKey) {
+            setTimeout(() => {
+              abilityName.textContent = abilityParam;
+              abilityDescription.textContent = 'No description available.';
+              abilityPokemonList.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--sl-color-danger-600);">No Pokémon found with this ability.</div>';
+              abilityPanel.style.display = 'flex';
+              pageEl.classList.add('with-ability');
+            }, 100);
+          } else {
+            setTimeout(() => showAbility(abilitiesData[foundKey].name), 100);
+          }
+        } else if (moveParam) {
+          let normParam = decodeURIComponent(moveParam.replace(/\+/g, ' ')).trim().toLowerCase().replace(/[_\s-]+/g, '-');
+          let foundKey = null;
+          if (movesData) {
+            foundKey = Object.keys(movesData).find(k => k.trim().toLowerCase().replace(/[_\s-]+/g, '-') === normParam);
+          }
+          if (!foundKey) {
+            setTimeout(() => {
+              moveName.textContent = moveParam;
+              moveDescription.textContent = 'No description available.';
+              moveStats.innerHTML = '';
+              movePokemonList.innerHTML = '<div style=\"padding:2rem;text-align:center;color:var(--sl-color-danger-600);\">No Pokémon found with this move.</div>';
+              movePanel.style.display = 'flex';
+              pageEl.classList.add('with-move');
+              pageEl.classList.remove('with-ability');
+            }, 100);
+          } else {
+            setTimeout(() => showMove(movesData[foundKey].name), 100);
+          }
+        }
+      });
+      // Start in list-only view; detail is shown only after a selection.
+      pageEl.classList.add('list-only');
+    </script>
+
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; height: 4rem; align-items: center; z-index: 1000;">
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
+      </sl-button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3703 @@
+{
+    "families": {
+        "archen": {
+            "members": [
+                "Archen",
+                "Archeops"
+            ],
+            "tree": {
+                "name": "Archen",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Archeops",
+                        "method": "Level 37",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "blipbug": {
+            "members": [
+                "Blipbug",
+                "Dottler",
+                "Orbeetle"
+            ],
+            "tree": {
+                "name": "Blipbug",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dottler",
+                        "method": "Level 10",
+                        "children": [
+                            {
+                                "name": "Orbeetle",
+                                "method": "Level 30",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "buizel": {
+            "members": [
+                "Buizel",
+                "Floatzel"
+            ],
+            "tree": {
+                "name": "Buizel",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Floatzel",
+                        "method": "Level 26",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "buneary": {
+            "members": [
+                "Buneary",
+                "Lopunny",
+                "Mega Lopunny"
+            ],
+            "tree": {
+                "name": "Buneary",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lopunny",
+                        "method": "Soothe Bell",
+                        "children": [
+                            {
+                                "name": "Mega Lopunny",
+                                "method": "Lopunnite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bunnelby": {
+            "members": [
+                "Bunnelby",
+                "Diggersby"
+            ],
+            "tree": {
+                "name": "Bunnelby",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Diggersby",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "cacnea": {
+            "members": [
+                "Cacnea",
+                "Cacturne"
+            ],
+            "tree": {
+                "name": "Cacnea",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Cacturne",
+                        "method": "Level 32",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "carvanha": {
+            "members": [
+                "Carvanha",
+                "Sharpedo",
+                "Mega Sharpedo"
+            ],
+            "tree": {
+                "name": "Carvanha",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Sharpedo",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Mega Sharpedo",
+                                "method": "Sharpedonite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "chewtle": {
+            "members": [
+                "Chewtle",
+                "Drednaw"
+            ],
+            "tree": {
+                "name": "Chewtle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Drednaw",
+                        "method": "Level 22",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "chinchou": {
+            "members": [
+                "Chinchou",
+                "Lanturn"
+            ],
+            "tree": {
+                "name": "Chinchou",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lanturn",
+                        "method": "Level 27",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "clamperl": {
+            "members": [
+                "Clamperl",
+                "Huntail",
+                "Gorebyss"
+            ],
+            "tree": {
+                "name": "Clamperl",
+                "method": "",
+                "children": []
+            }
+        },
+        "corphish": {
+            "members": [
+                "Corphish",
+                "Crawdaunt"
+            ],
+            "tree": {
+                "name": "Corphish",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Crawdaunt",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "corsola": {
+            "members": [
+                "Corsola",
+                "Corsola-Galar",
+                "Cursola"
+            ],
+            "tree": {
+                "name": "Corsola",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Corsola-Galar",
+                        "method": "on death",
+                        "children": [
+                            {
+                                "name": "Cursola",
+                                "method": "Level 38",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "cubone": {
+            "members": [
+                "Cubone",
+                "Marowak",
+                "Marowak-Alola"
+            ],
+            "tree": {
+                "name": "Cubone",
+                "method": "",
+                "children": []
+            }
+        },
+        "cutiefly": {
+            "members": [
+                "Cutiefly",
+                "Ribombee"
+            ],
+            "tree": {
+                "name": "Cutiefly",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Ribombee",
+                        "method": "Level 25",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "dewpider": {
+            "members": [
+                "Dewpider",
+                "Araquanid"
+            ],
+            "tree": {
+                "name": "Dewpider",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Araquanid",
+                        "method": "Level 22",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "diglett": {
+            "members": [
+                "Diglett",
+                "Dugtrio"
+            ],
+            "tree": {
+                "name": "Diglett",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dugtrio",
+                        "method": "Level 26",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "drifloon": {
+            "members": [
+                "Drifloon",
+                "Drifblim"
+            ],
+            "tree": {
+                "name": "Drifloon",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Drifblim",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "drilbur": {
+            "members": [
+                "Drilbur",
+                "Excadrill",
+                "Mega Excadrill"
+            ],
+            "tree": {
+                "name": "Drilbur",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Excadrill",
+                        "method": "Level 31",
+                        "children": [
+                            {
+                                "name": "Mega Excadrill",
+                                "method": "Excadrite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "ekans": {
+            "members": [
+                "Ekans",
+                "Arbok"
+            ],
+            "tree": {
+                "name": "Ekans",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Arbok",
+                        "method": "Level 22",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "electrike": {
+            "members": [
+                "Electrike",
+                "Manectric",
+                "Mega Manectric"
+            ],
+            "tree": {
+                "name": "Electrike",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Manectric",
+                        "method": "Level 26",
+                        "children": [
+                            {
+                                "name": "Mega Manectric",
+                                "method": "Manectite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "exeggcute": {
+            "members": [
+                "Exeggcute",
+                "Exeggutor",
+                "Exeggutor-Alola"
+            ],
+            "tree": {
+                "name": "Exeggcute",
+                "method": "",
+                "children": []
+            }
+        },
+        "feebas": {
+            "members": [
+                "Feebas",
+                "Milotic"
+            ],
+            "tree": {
+                "name": "Feebas",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Milotic",
+                        "method": "Soothe Bell",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "fidough": {
+            "members": [
+                "Fidough",
+                "Dachsbun"
+            ],
+            "tree": {
+                "name": "Fidough",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dachsbun",
+                        "method": "Level 26",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "flabebe": {
+            "members": [
+                "Flabebe",
+                "Floette",
+                "Florges"
+            ],
+            "tree": {
+                "name": "Flabebe",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Floette",
+                        "method": "Level 19",
+                        "children": [
+                            {
+                                "name": "Florges",
+                                "method": "Shiny Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "fletchling": {
+            "members": [
+                "Fletchling",
+                "Fletchinder",
+                "Talonflame"
+            ],
+            "tree": {
+                "name": "Fletchling",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Fletchinder",
+                        "method": "Level 17",
+                        "children": [
+                            {
+                                "name": "Talonflame",
+                                "method": "Level 35",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "fuecoco": {
+            "members": [
+                "Fuecoco",
+                "Crocalor",
+                "Skeledirge"
+            ],
+            "tree": {
+                "name": "Fuecoco",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Crocalor",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Skeledirge",
+                                "method": "Level 36",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "geodude": {
+            "members": [
+                "Geodude",
+                "Graveler",
+                "Golem"
+            ],
+            "tree": {
+                "name": "Geodude",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Graveler",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Golem",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "gossifleur": {
+            "members": [
+                "Gossifleur",
+                "Eldegoss"
+            ],
+            "tree": {
+                "name": "Gossifleur",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Eldegoss",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "greavard": {
+            "members": [
+                "Greavard",
+                "Houndstone"
+            ],
+            "tree": {
+                "name": "Greavard",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Houndstone",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "growlithe": {
+            "members": [
+                "Growlithe",
+                "Arcanine"
+            ],
+            "tree": {
+                "name": "Growlithe",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Arcanine",
+                        "method": "Fire Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "grubbin": {
+            "members": [
+                "Grubbin",
+                "Charjabug",
+                "Vikavolt"
+            ],
+            "tree": {
+                "name": "Grubbin",
+                "method": "",
+                "children": []
+            }
+        },
+        "hatenna": {
+            "members": [
+                "Hatenna",
+                "Hattrem",
+                "Hatterene"
+            ],
+            "tree": {
+                "name": "Hatenna",
+                "method": "",
+                "children": []
+            }
+        },
+        "helioptile": {
+            "members": [
+                "Helioptile",
+                "Heliolisk"
+            ],
+            "tree": {
+                "name": "Helioptile",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Heliolisk",
+                        "method": "Sun Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "hippopotas": {
+            "members": [
+                "Hippopotas",
+                "Hippowdon"
+            ],
+            "tree": {
+                "name": "Hippopotas",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Hippowdon",
+                        "method": "Level 34",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "horsea": {
+            "members": [
+                "Horsea",
+                "Seadra",
+                "Kingdra"
+            ],
+            "tree": {
+                "name": "Horsea",
+                "method": "",
+                "children": []
+            }
+        },
+        "houndour": {
+            "members": [
+                "Houndour",
+                "Houndoom",
+                "Mega Houndoom"
+            ],
+            "tree": {
+                "name": "Houndour",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Houndoom",
+                        "method": "Level 24",
+                        "children": [
+                            {
+                                "name": "Mega Houndoom",
+                                "method": "Houndoominite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "inkay": {
+            "members": [
+                "Inkay",
+                "Malamar",
+                "Mega Malamar"
+            ],
+            "tree": {
+                "name": "Inkay",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Malamar",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Mega Malamar",
+                                "method": "Malamarite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "jangmoo": {
+            "members": [
+                "Jangmo-o",
+                "Hakamo-o",
+                "Kommo-o"
+            ],
+            "tree": {
+                "name": "Jangmo-o",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Hakamo-o",
+                        "method": "Level 35 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Kommo-o",
+                                "method": "Level 45",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "joltik": {
+            "members": [
+                "Joltik",
+                "Galvantula"
+            ],
+            "tree": {
+                "name": "Joltik",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Galvantula",
+                        "method": "Level 36",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "litten": {
+            "members": [
+                "Litten",
+                "Torracat",
+                "Incineroar"
+            ],
+            "tree": {
+                "name": "Litten",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Torracat",
+                        "method": "Level 17",
+                        "children": [
+                            {
+                                "name": "Incineroar",
+                                "method": "Level 34",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "lotad": {
+            "members": [
+                "Lotad",
+                "Lombre",
+                "Ludicolo"
+            ],
+            "tree": {
+                "name": "Lotad",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lombre",
+                        "method": "Level 14",
+                        "children": [
+                            {
+                                "name": "Ludicolo",
+                                "method": "Water Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "machop": {
+            "members": [
+                "Machop",
+                "Machoke",
+                "Machamp"
+            ],
+            "tree": {
+                "name": "Machop",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Machoke",
+                        "method": "Level 28",
+                        "children": [
+                            {
+                                "name": "Machamp",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "magnemite": {
+            "members": [
+                "Magnemite",
+                "Magneton",
+                "Magnezone"
+            ],
+            "tree": {
+                "name": "Magnemite",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Magneton",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Magnezone",
+                                "method": "Thunder Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "makuhita": {
+            "members": [
+                "Makuhita",
+                "Hariyama"
+            ],
+            "tree": {
+                "name": "Makuhita",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Hariyama",
+                        "method": "Level 24",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "mankey": {
+            "members": [
+                "Mankey",
+                "Primeape",
+                "Annihilape"
+            ],
+            "tree": {
+                "name": "Mankey",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Primeape",
+                        "method": "Level 28",
+                        "children": [
+                            {
+                                "name": "Annihilape",
+                                "method": "Level 35",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mawile": {
+            "members": [
+                "Mawile",
+                "Mega Mawile"
+            ],
+            "tree": {
+                "name": "Mawile",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mega Mawile",
+                        "method": "Mawilite",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "meowth": {
+            "members": [
+                "Meowth",
+                "Perrserker"
+            ],
+            "tree": {
+                "name": "Meowth",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Perrserker",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "murkrow": {
+            "members": [
+                "Murkrow",
+                "Honchkrow"
+            ],
+            "tree": {
+                "name": "Murkrow",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Honchkrow",
+                        "method": "Dusk Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "minccino": {
+            "members": [
+                "Minccino",
+                "Cinccino"
+            ],
+            "tree": {
+                "name": "Minccino",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Cinccino",
+                        "method": "Shiny Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "minior": {
+            "members": [
+                "Minior",
+                "Minior-Core"
+            ],
+            "tree": {
+                "name": "Minior",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Minior-Core",
+                        "method": "Shields Down",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "morelull": {
+            "members": [
+                "Morelull",
+                "Shiinotic"
+            ],
+            "tree": {
+                "name": "Morelull",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Shiinotic",
+                        "method": "Level 24",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "mudbray": {
+            "members": [
+                "Mudbray",
+                "Mudsdale"
+            ],
+            "tree": {
+                "name": "Mudbray",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mudsdale",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "nincada": {
+            "members": [
+                "Nincada",
+                "Ninjask",
+                "Shedinja"
+            ],
+            "tree": {
+                "name": "Nincada",
+                "method": "",
+                "children": []
+            }
+        },
+        "noibat": {
+            "members": [
+                "Noibat",
+                "Noivern"
+            ],
+            "tree": {
+                "name": "Noibat",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Noivern",
+                        "method": "Soothe Bell",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "nosepass": {
+            "members": [
+                "Nosepass",
+                "Probopass"
+            ],
+            "tree": {
+                "name": "Nosepass",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Probopass",
+                        "method": "Thunder Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "numel": {
+            "members": [
+                "Numel",
+                "Camerupt",
+                "Mega Camerupt"
+            ],
+            "tree": {
+                "name": "Numel",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Camerupt",
+                        "method": "Level 33",
+                        "children": [
+                            {
+                                "name": "Mega Camerupt",
+                                "method": "Cameruptite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "pancham": {
+            "members": [
+                "Pancham",
+                "Pangoro"
+            ],
+            "tree": {
+                "name": "Pancham",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Pangoro",
+                        "method": "Level 32",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "pansear": {
+            "members": [
+                "Pansear",
+                "Simisear"
+            ],
+            "tree": {
+                "name": "Pansear",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Simisear",
+                        "method": "Fire Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "phantump": {
+            "members": [
+                "Phantump",
+                "Trevenant"
+            ],
+            "tree": {
+                "name": "Phantump",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Trevenant",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "pikipek": {
+            "members": [
+                "Pikipek",
+                "Trumbeak",
+                "Toucannon"
+            ],
+            "tree": {
+                "name": "Pikipek",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Trumbeak",
+                        "method": "Level 14",
+                        "children": [
+                            {
+                                "name": "Toucannon",
+                                "method": "Level 28",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "ponyta": {
+            "members": [
+                "Ponyta",
+                "Rapidash"
+            ],
+            "tree": {
+                "name": "Ponyta",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Rapidash",
+                        "method": "Level 40",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "poochyena": {
+            "members": [
+                "Poochyena",
+                "Mightyena"
+            ],
+            "tree": {
+                "name": "Poochyena",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mightyena",
+                        "method": "Level 18",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "popplio": {
+            "members": [
+                "Popplio",
+                "Brionne",
+                "Primarina"
+            ],
+            "tree": {
+                "name": "Popplio",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Brionne",
+                        "method": "Level 17",
+                        "children": [
+                            {
+                                "name": "Primarina",
+                                "method": "Level 34",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "porygon": {
+            "members": [
+                "Porygon",
+                "Porygon2",
+                "Porygon-Z"
+            ],
+            "tree": {
+                "name": "Porygon",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Porygon2",
+                        "method": "Level 28",
+                        "children": [
+                            {
+                                "name": "Porygon-Z",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "rockruff": {
+            "members": [
+                "Rockruff",
+                "Lycanroc-Midday",
+                "Lycanroc-Midnight"
+            ],
+            "tree": {
+                "name": "Rockruff",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lycanroc-Midday",
+                        "method": "",
+                        "children": []
+                    },
+                    {
+                        "name": "Lycanroc-Midnight",
+                        "method": "Level 25 at night",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "roggenrola": {
+            "members": [
+                "Roggenrola",
+                "Boldore",
+                "Gigalith"
+            ],
+            "tree": {
+                "name": "Roggenrola",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Boldore",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Gigalith",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "rolycoly": {
+            "members": [
+                "Rolycoly",
+                "Carkol",
+                "Coalossal"
+            ],
+            "tree": {
+                "name": "Rolycoly",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Carkol",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Coalossal",
+                                "method": "Level 34",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "sableye": {
+            "members": [
+                "Sableye",
+                "Mega Sableye"
+            ],
+            "tree": {
+                "name": "Sableye",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mega Sableye",
+                        "method": "Sablenite",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "salandit": {
+            "members": [
+                "Salandit",
+                "Salazzle"
+            ],
+            "tree": {
+                "name": "Salandit",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Salazzle",
+                        "method": "Level 33",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "sandile": {
+            "members": [
+                "Sandile",
+                "Krokorok",
+                "Krookodile"
+            ],
+            "tree": {
+                "name": "Sandile",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Krokorok",
+                        "method": "Level 29",
+                        "children": [
+                            {
+                                "name": "Krookodile",
+                                "method": "Level 40",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "sandshrew": {
+            "members": [
+                "Sandshrew",
+                "Sandslash-Alola"
+            ],
+            "tree": {
+                "name": "Sandshrew",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Sandslash-Alola",
+                        "method": "Level 22",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "scatterbug": {
+            "members": [
+                "Scatterbug",
+                "Spewpa",
+                "Vivillon"
+            ],
+            "tree": {
+                "name": "Scatterbug",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Spewpa",
+                        "method": "Level 9",
+                        "children": [
+                            {
+                                "name": "Vivillon",
+                                "method": "Level 12",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "sewaddle": {
+            "members": [
+                "Sewaddle",
+                "Swadloon",
+                "Leavanny"
+            ],
+            "tree": {
+                "name": "Sewaddle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Swadloon",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Leavanny",
+                                "method": "Soothe Bell",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "shellder": {
+            "members": [
+                "Shellder",
+                "Cloyster"
+            ],
+            "tree": {
+                "name": "Shellder",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Cloyster",
+                        "method": "Water Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "shinx": {
+            "members": [
+                "Shinx",
+                "Luxio",
+                "Luxray"
+            ],
+            "tree": {
+                "name": "Shinx",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Luxio",
+                        "method": "Level 15",
+                        "children": [
+                            {
+                                "name": "Luxray",
+                                "method": "Level 30",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "shroomish": {
+            "members": [
+                "Shroomish",
+                "Breloom"
+            ],
+            "tree": {
+                "name": "Shroomish",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Breloom",
+                        "method": "Level 23",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "shuppet": {
+            "members": [
+                "Shuppet",
+                "Banette",
+                "Mega Banette"
+            ],
+            "tree": {
+                "name": "Shuppet",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Banette",
+                        "method": "Level 37",
+                        "children": [
+                            {
+                                "name": "Mega Banette",
+                                "method": "Banettite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "skiddo": {
+            "members": [
+                "Skiddo",
+                "Gogoat"
+            ],
+            "tree": {
+                "name": "Skiddo",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Gogoat",
+                        "method": "Level 32",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "skrelp": {
+            "members": [
+                "Skrelp",
+                "Dragalge",
+                "Mega Dragalge"
+            ],
+            "tree": {
+                "name": "Skrelp",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dragalge",
+                        "method": "Dragon Scale",
+                        "children": [
+                            {
+                                "name": "Mega Dragalge",
+                                "method": "Dragalgite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "slakoth": {
+            "members": [
+                "Slakoth",
+                "Vigoroth",
+                "Slaking"
+            ],
+            "tree": {
+                "name": "Slakoth",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Vigoroth",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Slaking",
+                                "method": "Level 36",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "slowpoke": {
+            "members": [
+                "Slowpoke",
+                "Slowbro-Galar",
+                "Slowking-Galar"
+            ],
+            "tree": {
+                "name": "Slowpoke",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Slowbro-Galar",
+                        "method": "Level 37",
+                        "children": []
+                    },
+                    {
+                        "name": "Slowking-Galar",
+                        "method": "King's Rock",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "smoliv": {
+            "members": [
+                "Smoliv",
+                "Dolliv",
+                "Arboliva"
+            ],
+            "tree": {
+                "name": "Smoliv",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dolliv",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Arboliva",
+                                "method": "Level 35",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "sneasel": {
+            "members": [
+                "Sneasel",
+                "Weavile"
+            ],
+            "tree": {
+                "name": "Sneasel",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Weavile",
+                        "method": "Dusk Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "snubbull": {
+            "members": [
+                "Snubbull",
+                "Granbull"
+            ],
+            "tree": {
+                "name": "Snubbull",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Granbull",
+                        "method": "Level 23",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "solosis": {
+            "members": [
+                "Solosis",
+                "Duosion",
+                "Reuniclus"
+            ],
+            "tree": {
+                "name": "Solosis",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Duosion",
+                        "method": "Level 32 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Reuniclus",
+                                "method": "Level 41",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "spheal": {
+            "members": [
+                "Spheal",
+                "Sealeo",
+                "Walrein"
+            ],
+            "tree": {
+                "name": "Spheal",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Sealeo",
+                        "method": "Level 32 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Walrein",
+                                "method": "Level 44",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "spoink": {
+            "members": [
+                "Spoink",
+                "Grumpig"
+            ],
+            "tree": {
+                "name": "Spoink",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Grumpig",
+                        "method": "Level 32",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "spritzee": {
+            "members": [
+                "Spritzee",
+                "Aromatisse"
+            ],
+            "tree": {
+                "name": "Spritzee",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Aromatisse",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "staryu": {
+            "members": [
+                "Staryu",
+                "Starmie",
+                "Mega Starmie"
+            ],
+            "tree": {
+                "name": "Staryu",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Starmie",
+                        "method": "Water Stone",
+                        "children": [
+                            {
+                                "name": "Mega Starmie",
+                                "method": "Starmite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "stufful": {
+            "members": [
+                "Stufful",
+                "Bewear"
+            ],
+            "tree": {
+                "name": "Stufful",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Bewear",
+                        "method": "Level 27",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "surskit": {
+            "members": [
+                "Surskit",
+                "Masquerain"
+            ],
+            "tree": {
+                "name": "Surskit",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Masquerain",
+                        "method": "Level 22",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "swinub": {
+            "members": [
+                "Swinub",
+                "Piloswine",
+                "Mamoswine"
+            ],
+            "tree": {
+                "name": "Swinub",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Piloswine",
+                        "method": "Level 33 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Mamoswine",
+                                "method": "Move Relearn Ancient Power",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "teddiursa": {
+            "members": [
+                "Teddiursa",
+                "Ursaring",
+                "Ursaluna"
+            ],
+            "tree": {
+                "name": "Teddiursa",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Ursaring",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Ursaluna",
+                                "method": "Level 48",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tentacool": {
+            "members": [
+                "Tentacool",
+                "Tentacruel"
+            ],
+            "tree": {
+                "name": "Tentacool",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Tentacruel",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "timburr": {
+            "members": [
+                "Timburr",
+                "Gurdurr",
+                "Conkeldurr"
+            ],
+            "tree": {
+                "name": "Timburr",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Gurdurr",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Conkeldurr",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tinkatink": {
+            "members": [
+                "Tinkatink",
+                "Tinkatuff",
+                "Tinkaton"
+            ],
+            "tree": {
+                "name": "Tinkatink",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Tinkatuff",
+                        "method": "Level 24",
+                        "children": [
+                            {
+                                "name": "Tinkaton",
+                                "method": "Level 38",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "trapinch": {
+            "members": [
+                "Trapinch",
+                "Vibrava",
+                "Flygon"
+            ],
+            "tree": {
+                "name": "Trapinch",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Vibrava",
+                        "method": "Level 35 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Flygon",
+                                "method": "Level 45",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "trubbish": {
+            "members": [
+                "Trubbish",
+                "Garbodor"
+            ],
+            "tree": {
+                "name": "Trubbish",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Garbodor",
+                        "method": "Level 36",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "turtwig": {
+            "members": [
+                "Turtwig",
+                "Grotle",
+                "Torterra"
+            ],
+            "tree": {
+                "name": "Turtwig",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Grotle",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Torterra",
+                                "method": "Level 32",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tyrunt": {
+            "members": [
+                "Tyrunt",
+                "Tyrantrum"
+            ],
+            "tree": {
+                "name": "Tyrunt",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Tyrantrum",
+                        "method": "Level 39",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "vulpix": {
+            "members": [
+                "Vulpix",
+                "Ninetales-Alola"
+            ],
+            "tree": {
+                "name": "Vulpix",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Ninetales-Alola",
+                        "method": "Ice Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "wattrel": {
+            "members": [
+                "Wattrel",
+                "Kilowattrel"
+            ],
+            "tree": {
+                "name": "Wattrel",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Kilowattrel",
+                        "method": "Level 25",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "wingull": {
+            "members": [
+                "Wingull",
+                "Pelipper"
+            ],
+            "tree": {
+                "name": "Wingull",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Pelipper",
+                        "method": "Level 25",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "wishiwashi": {
+            "members": [
+                "Wishiwashi",
+                "Wishiwashi-School"
+            ],
+            "tree": {
+                "name": "Wishiwashi",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Wishiwashi-School",
+                        "method": "Schooling Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "wooper": {
+            "members": [
+                "Wooper",
+                "Clodsire"
+            ],
+            "tree": {
+                "name": "Wooper",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Clodsire",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "yamper": {
+            "members": [
+                "Yamper",
+                "Boltund"
+            ],
+            "tree": {
+                "name": "Yamper",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Boltund",
+                        "method": "Level 25",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "yanma": {
+            "members": [
+                "Yanma",
+                "Yanmega"
+            ],
+            "tree": {
+                "name": "Yanma",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Yanmega",
+                        "method": "Learn Ancient Power",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "zigzagoon": {
+            "members": [
+                "Zigzagoon",
+                "Linoone-Galar",
+                "Obstagoon"
+            ],
+            "tree": {
+                "name": "Zigzagoon",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Linoone-Galar",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Obstagoon",
+                                "method": "Level 35",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "zorua": {
+            "members": [
+                "Zorua",
+                "Zoroark"
+            ],
+            "tree": {
+                "name": "Zorua",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Zoroark",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "zubat": {
+            "members": [
+                "Zubat",
+                "Golbat",
+                "Crobat"
+            ],
+            "tree": {
+                "name": "Zubat",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Golbat",
+                        "method": "Level 22",
+                        "children": [
+                            {
+                                "name": "Crobat",
+                                "method": "Soothe Bell",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "azurill": {
+            "members": [
+                "Azurill",
+                "Marill",
+                "Azumarill"
+            ],
+            "tree": {
+                "name": "Azurill",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Marill",
+                        "method": "Level 10",
+                        "children": [
+                            {
+                                "name": "Azumarill",
+                                "method": "Level 18",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bonsly": {
+            "members": [
+                "Bonsly",
+                "Sudowoodo"
+            ],
+            "tree": {
+                "name": "Bonsly",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Sudowoodo",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "budew": {
+            "members": [
+                "Budew",
+                "Roselia",
+                "Roserade"
+            ],
+            "tree": {
+                "name": "Budew",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Roselia",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Roserade",
+                                "method": "Shiny Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "chingling": {
+            "members": [
+                "Chingling",
+                "Chimecho",
+                "Mega Chimecho"
+            ],
+            "tree": {
+                "name": "Chingling",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Chimecho",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Mega Chimecho",
+                                "method": "Chimechite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "elekid": {
+            "members": [
+                "Elekid",
+                "Electabuzz",
+                "Electivire"
+            ],
+            "tree": {
+                "name": "Elekid",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Electabuzz",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Electivire",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "happiny": {
+            "members": [
+                "Happiny",
+                "Chansey",
+                "Blissey"
+            ],
+            "tree": {
+                "name": "Happiny",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Chansey",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Blissey",
+                                "method": "Soothe Bell",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "igglybuff": {
+            "members": [
+                "Igglybuff",
+                "Jigglypuff",
+                "Wigglytuff"
+            ],
+            "tree": {
+                "name": "Igglybuff",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Jigglypuff",
+                        "method": "Level 10",
+                        "children": [
+                            {
+                                "name": "Wigglytuff",
+                                "method": "Moon Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "magby": {
+            "members": [
+                "Magby",
+                "Magmar",
+                "Magmortar"
+            ],
+            "tree": {
+                "name": "Magby",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Magmar",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Magmortar",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mantyke": {
+            "members": [
+                "Mantyke",
+                "Mantine"
+            ],
+            "tree": {
+                "name": "Mantyke",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mantine",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "munchlax": {
+            "members": [
+                "Munchlax",
+                "Snorlax"
+            ],
+            "tree": {
+                "name": "Munchlax",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Snorlax",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "riolu": {
+            "members": [
+                "Riolu",
+                "Lucario",
+                "Mega Lucario"
+            ],
+            "tree": {
+                "name": "Riolu",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lucario",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Mega Lucario",
+                                "method": "Lucarionite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "smoochum": {
+            "members": [
+                "Smoochum",
+                "Jynx"
+            ],
+            "tree": {
+                "name": "Smoochum",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Jynx",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "togepi": {
+            "members": [
+                "Togepi",
+                "Togetic",
+                "Togekiss"
+            ],
+            "tree": {
+                "name": "Togepi",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Togetic",
+                        "method": "",
+                        "children": [
+                            {
+                                "name": "Togekiss",
+                                "method": "Shiny Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "toxel": {
+            "members": [
+                "Toxel",
+                "Toxtricity-Amped",
+                "Toxtricity-Low_Key"
+            ],
+            "tree": {
+                "name": "Toxel",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Toxtricity-Low_Key",
+                        "method": "Level 30",
+                        "children": []
+                    },
+                    {
+                        "name": "Toxtricity-Amped",
+                        "method": "Level 30",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "wynaut": {
+            "members": [
+                "Wynaut",
+                "Wobbuffet"
+            ],
+            "tree": {
+                "name": "Wynaut",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Wobbuffet",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "applin": {
+            "members": [
+                "Applin",
+                "Flapple",
+                "Appletun",
+                "Dipplin",
+                "Hydrapple"
+            ],
+            "tree": {
+                "name": "Applin",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Flapple",
+                        "method": "Level up in Fortree Gym",
+                        "children": []
+                    },
+                    {
+                        "name": "Appletun",
+                        "method": "Level up in Lavaridge Gym",
+                        "children": []
+                    },
+                    {
+                        "name": "Dipplin",
+                        "method": "Level up in Rustboro Gym",
+                        "children": [
+                            {
+                                "name": "Hydrapple",
+                                "method": "Level 42",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "castform": {
+            "members": [
+                "Castform",
+                "Castform-Sunny",
+                "Castform-Rainy",
+                "Castform-Snowy"
+            ],
+            "tree": {
+                "name": "Castform",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Castform-Sunny",
+                        "method": "Sun",
+                        "children": []
+                    },
+                    {
+                        "name": "Castform-Rainy",
+                        "method": "Rain",
+                        "children": []
+                    },
+                    {
+                        "name": "Castform-Snowy",
+                        "method": "Hail",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "charmander": {
+            "members": [
+                "Charmander",
+                "Charmeleon",
+                "Charizard",
+                "Charizard-Mega_X",
+                "Charizard-Mega_Y"
+            ],
+            "tree": {
+                "name": "Charmander",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Charmeleon",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Charizard",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Charizard-Mega_X",
+                                        "method": "Charizardite X",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Charizard-Mega_Y",
+                                        "method": "Charizardite Y",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "honedge": {
+            "members": [
+                "Honedge",
+                "Doublade",
+                "Aegislash-Shield",
+                "Aegislash-Blade"
+            ],
+            "tree": {
+                "name": "Honedge",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Doublade",
+                        "method": "Level 35",
+                        "children": [
+                            {
+                                "name": "Aegislash-Shield",
+                                "method": "Dusk Stone",
+                                "children": []
+                            },
+                            {
+                                "name": "Aegislash-Blade",
+                                "method": "Dusk Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "eevee": {
+            "members": [
+                "Eevee",
+                "Vaporeon",
+                "Jolteon",
+                "Flareon",
+                "Espeon",
+                "Umbreon",
+                "Leafeon",
+                "Glaceon",
+                "Sylveon"
+            ],
+            "tree": {
+                "name": "Eevee",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Vaporeon",
+                        "method": "Water Stone",
+                        "children": []
+                    },
+                    {
+                        "name": "Jolteon",
+                        "method": "Thunder Stone",
+                        "children": []
+                    },
+                    {
+                        "name": "Flareon",
+                        "method": "Fire Stone",
+                        "children": []
+                    },
+                    {
+                        "name": "Espeon",
+                        "method": "Sun Shard",
+                        "children": []
+                    },
+                    {
+                        "name": "Umbreon",
+                        "method": "Moon Shard",
+                        "children": []
+                    },
+                    {
+                        "name": "Leafeon",
+                        "method": "Leaf Stone",
+                        "children": []
+                    },
+                    {
+                        "name": "Glaceon",
+                        "method": "Ice Stone",
+                        "children": []
+                    },
+                    {
+                        "name": "Sylveon",
+                        "method": "Shiny Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "espurr": {
+            "members": [
+                "Espurr",
+                "Meowstic-M",
+                "Meowstic-F",
+                "Mega Meowstic"
+            ],
+            "tree": {
+                "name": "Espurr",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Meowstic-M",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Mega Meowstic",
+                                "method": "Meowsticite",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Meowstic-F",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Mega Meowstic",
+                                "method": "Meowsticite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "ralts": {
+            "members": [
+                "Ralts",
+                "Kirlia",
+                "Gardevoir",
+                "Mega Gardevoir",
+                "Gallade",
+                "Mega Gallade"
+            ],
+            "tree": {
+                "name": "Ralts",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Kirlia",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Gardevoir",
+                                "method": "Level 30",
+                                "children": [
+                                    {
+                                        "name": "Mega Gardevoir",
+                                        "method": "Gardevoirite",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Gallade",
+                                "method": "Dawn Stone",
+                                "children": [
+                                    {
+                                        "name": "Mega Gallade",
+                                        "method": "Galladite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "snorunt": {
+            "members": [
+                "Snorunt",
+                "Glalie",
+                "Mega Glalie",
+                "Froslass",
+                "Mega Froslass"
+            ],
+            "tree": {
+                "name": "Snorunt",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Glalie",
+                        "method": "Level 42",
+                        "children": [
+                            {
+                                "name": "Mega Glalie",
+                                "method": "Glalitite",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Froslass",
+                        "method": "Dawn Stone",
+                        "children": [
+                            {
+                                "name": "Mega Froslass",
+                                "method": "Froslassite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "oddish": {
+            "members": [
+                "Oddish",
+                "Gloom",
+                "Vileplume",
+                "Bellossom"
+            ],
+            "tree": {
+                "name": "Oddish",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Gloom",
+                        "method": "Level 21",
+                        "children": [
+                            {
+                                "name": "Vileplume",
+                                "method": "Leaf Stone",
+                                "children": []
+                            },
+                            {
+                                "name": "Bellossom",
+                                "method": "Sun Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "goomy": {
+            "members": [
+                "Goomy",
+                "Sliggoo",
+                "Goodra",
+                "Sliggoo-Hisui",
+                "Goodra-Hisui"
+            ],
+            "tree": {
+                "name": "Goomy",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Sliggoo",
+                        "method": "Level 40",
+                        "children": [
+                            {
+                                "name": "Goodra",
+                                "method": "Level 50 (Rain)",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sliggoo-Hisui",
+                        "method": "Metal Coat",
+                        "children": [
+                            {
+                                "name": "Goodra-Hisui",
+                                "method": "Level 50",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mimejr": {
+            "members": [
+                "Mime Jr",
+                "Mr. Mime",
+                "Mr. Mime-Galar",
+                "Mr. Rime"
+            ],
+            "tree": {
+                "name": "Mime Jr",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mr. Mime",
+                        "method": "Level 20 (Day)",
+                        "children": []
+                    },
+                    {
+                        "name": "Mr. Mime-Galar",
+                        "method": "Level 20 (Night)",
+                        "children": [
+                            {
+                                "name": "Mr. Rime",
+                                "method": "Level 42",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "poliwag": {
+            "members": [
+                "Poliwag",
+                "Poliwhirl",
+                "Poliwrath",
+                "Politoed"
+            ],
+            "tree": {
+                "name": "Poliwag",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Poliwhirl",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Poliwrath",
+                                "method": "Water Stone",
+                                "children": []
+                            },
+                            {
+                                "name": "Politoed",
+                                "method": "King's Rock",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "pichu": {
+            "members": [
+                "Pichu",
+                "Pikachu",
+                "Raichu",
+                "Mega Raichu X",
+                "Mega Raichu Y",
+                "Raichu-Alola"
+            ],
+            "tree": {
+                "name": "Pichu",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Pikachu",
+                        "method": "Soothe Bell",
+                        "children": [
+                            {
+                                "name": "Raichu",
+                                "method": "Thunder Stone",
+                                "children": [
+                                    {
+                                        "name": "Mega Raichu X",
+                                        "method": "Raichunite X",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Mega Raichu Y",
+                                        "method": "Raichunite Y",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Raichu-Alola",
+                                "method": "Water Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "rotom": {
+            "members": [
+                "Rotom",
+                "Rotom-Heat",
+                "Rotom-Wash",
+                "Rotom-Mow",
+                "Rotom-Frost",
+                "Rotom-Fan"
+            ],
+            "tree": {
+                "name": "Rotom",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Rotom-Heat",
+                        "method": "Catalog",
+                        "children": []
+                    },
+                    {
+                        "name": "Rotom-Wash",
+                        "method": "Catalog",
+                        "children": []
+                    },
+                    {
+                        "name": "Rotom-Mow",
+                        "method": "Catalog",
+                        "children": []
+                    },
+                    {
+                        "name": "Rotom-Frost",
+                        "method": "Catalog",
+                        "children": []
+                    },
+                    {
+                        "name": "Rotom-Fan",
+                        "method": "Catalog",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "rowlet": {
+            "members": [
+                "Rowlet",
+                "Dartrix",
+                "Decidueye",
+                "Decidueye-Hisui"
+            ],
+            "tree": {
+                "name": "Rowlet",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Dartrix",
+                        "method": "Level 17",
+                        "children": [
+                            {
+                                "name": "Decidueye",
+                                "method": "Level 34 at night",
+                                "children": []
+                            },
+                            {
+                                "name": "Decidueye-Hisui",
+                                "method": "Level 34 at day",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "scyther": {
+            "members": [
+                "Scyther",
+                "Kleavor",
+                "Scizor",
+                "Mega Scizor"
+            ],
+            "tree": {
+                "name": "Scyther",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Kleavor",
+                        "method": "King's Rock",
+                        "children": []
+                    },
+                    {
+                        "name": "Scizor",
+                        "method": "Metal Coat",
+                        "children": [
+                            {
+                                "name": "Mega Scizor",
+                                "method": "Scizorite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tyrogue": {
+            "members": [
+                "Tyrogue",
+                "Hitmonlee",
+                "Hitmonchan",
+                "Hitmontop"
+            ],
+            "tree": {
+                "name": "Tyrogue",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Hitmonlee",
+                        "method": "Level 20",
+                        "children": []
+                    },
+                    {
+                        "name": "Hitmonchan",
+                        "method": "Level 20",
+                        "children": []
+                    },
+                    {
+                        "name": "Hitmontop",
+                        "method": "Level 20",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "aron": {
+            "members": [
+                "Aron",
+                "Lairon",
+                "Aggron",
+                "Mega Aggron"
+            ],
+            "tree": {
+                "name": "Aron",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lairon",
+                        "method": "Level 32 (Whipped Dream)",
+                        "children": [
+                            {
+                                "name": "Aggron",
+                                "method": "Level 42",
+                                "children": [
+                                    {
+                                        "name": "Mega Aggron",
+                                        "method": "Aggronite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bagon": {
+            "members": [
+                "Bagon",
+                "Shelgon",
+                "Salamence",
+                "Mega Salamence"
+            ],
+            "tree": {
+                "name": "Bagon",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Shelgon",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Salamence",
+                                "method": "Level 50",
+                                "children": [
+                                    {
+                                        "name": "Mega Salamence",
+                                        "method": "Salamencite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "beldum": {
+            "members": [
+                "Beldum",
+                "Metang",
+                "Metagross",
+                "Mega Metagross"
+            ],
+            "tree": {
+                "name": "Beldum",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Metang",
+                        "method": "Level 20",
+                        "children": [
+                            {
+                                "name": "Metagross",
+                                "method": "Level 45",
+                                "children": [
+                                    {
+                                        "name": "Mega Metagross",
+                                        "method": "Metagrossite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bombirdier": {
+            "members": [
+                "Bombirdier"
+            ],
+            "tree": {
+                "name": "Bombirdier",
+                "method": "",
+                "children": []
+            }
+        },
+        "bulbasaur": {
+            "members": [
+                "Bulbasaur",
+                "Ivysaur",
+                "Venusaur",
+                "Mega Venusaur"
+            ],
+            "tree": {
+                "name": "Bulbasaur",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Ivysaur",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Venusaur",
+                                "method": "Level 32",
+                                "children": [
+                                    {
+                                        "name": "Mega Venusaur",
+                                        "method": "Venusaurite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "chespin": {
+            "members": [
+                "Chespin",
+                "Quilladin",
+                "Chesnaught",
+                "Mega Chesnaught"
+            ],
+            "tree": {
+                "name": "Chespin",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Quilladin",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Chesnaught",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Chesnaught",
+                                        "method": "Chesnaughtite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "cleffa": {
+            "members": [
+                "Cleffa",
+                "Clefairy",
+                "Clefable",
+                "Mega Clefable"
+            ],
+            "tree": {
+                "name": "Cleffa",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Clefairy",
+                        "method": "Soothe Bell",
+                        "children": [
+                            {
+                                "name": "Clefable",
+                                "method": "Moon Stone",
+                                "children": [
+                                    {
+                                        "name": "Mega Clefable",
+                                        "method": "Clefablite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "fennekin": {
+            "members": [
+                "Fennekin",
+                "Braixen",
+                "Delphox",
+                "Mega Delphox"
+            ],
+            "tree": {
+                "name": "Fennekin",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Braixen",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Delphox",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Delphox",
+                                        "method": "Delphoxite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "froakie": {
+            "members": [
+                "Froakie",
+                "Frogadier",
+                "Greninja",
+                "Mega Greninja"
+            ],
+            "tree": {
+                "name": "Froakie",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Frogadier",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Greninja",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Greninja",
+                                        "method": "Greninjanite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "gastly": {
+            "members": [
+                "Gastly",
+                "Haunter",
+                "Gengar"
+            ],
+            "tree": {
+                "name": "Gastly",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Haunter",
+                        "method": "Level 25",
+                        "children": [
+                            {
+                                "name": "Gengar",
+                                "method": "Linking Cord",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "gible": {
+            "members": [
+                "Gible",
+                "Gabite",
+                "Garchomp",
+                "Mega Garchomp"
+            ],
+            "tree": {
+                "name": "Gible",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Gabite",
+                        "method": "Level 24",
+                        "children": [
+                            {
+                                "name": "Garchomp",
+                                "method": "Level 48",
+                                "children": [
+                                    {
+                                        "name": "Mega Garchomp",
+                                        "method": "Garchompite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "litwick": {
+            "members": [
+                "Litwick",
+                "Lampent",
+                "Chandelure",
+                "Mega Chandelure"
+            ],
+            "tree": {
+                "name": "Litwick",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Lampent",
+                        "method": "Level 41",
+                        "children": [
+                            {
+                                "name": "Chandelure",
+                                "method": "Dusk Stone",
+                                "children": [
+                                    {
+                                        "name": "Mega Chandelure",
+                                        "method": "Chandelite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mareep": {
+            "members": [
+                "Mareep",
+                "Flaaffy",
+                "Ampharos",
+                "Mega Ampharos"
+            ],
+            "tree": {
+                "name": "Mareep",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Flaaffy",
+                        "method": "Level 15",
+                        "children": [
+                            {
+                                "name": "Ampharos",
+                                "method": "Level 30",
+                                "children": [
+                                    {
+                                        "name": "Mega Ampharos",
+                                        "method": "Ampharosite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "mudkip": {
+            "members": [
+                "Mudkip",
+                "Marshtomp",
+                "Swampert",
+                "Mega Swampert"
+            ],
+            "tree": {
+                "name": "Mudkip",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Marshtomp",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Swampert",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Swampert",
+                                        "method": "Swampertite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "smeargle": {
+            "members": [
+                "Smeargle"
+            ],
+            "tree": {
+                "name": "Smeargle",
+                "method": "",
+                "children": []
+            }
+        },
+        "squirtle": {
+            "members": [
+                "Squirtle",
+                "Wartortle",
+                "Blastoise",
+                "Mega Blastoise"
+            ],
+            "tree": {
+                "name": "Squirtle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Wartortle",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Blastoise",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Blastoise",
+                                        "method": "Blastoisinite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "starly": {
+            "members": [
+                "Starly",
+                "Staravia",
+                "Staraptor"
+            ],
+            "tree": {
+                "name": "Starly",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Staravia",
+                        "method": "Level 14",
+                        "children": [
+                            {
+                                "name": "Staraptor",
+                                "method": "Level 34",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "torchic": {
+            "members": [
+                "Torchic",
+                "Combusken",
+                "Blaziken",
+                "Mega Blaziken"
+            ],
+            "tree": {
+                "name": "Torchic",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Combusken",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Blaziken",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Blaziken",
+                                        "method": "Blazikenite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "totodile": {
+            "members": [
+                "Totodile",
+                "Croconaw",
+                "Feraligatr",
+                "Mega Feraligatr"
+            ],
+            "tree": {
+                "name": "Totodile",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Croconaw",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Feraligatr",
+                                "method": "Level 30",
+                                "children": [
+                                    {
+                                        "name": "Mega Feraligatr",
+                                        "method": "Feraligatrite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "treecko": {
+            "members": [
+                "Treecko",
+                "Grovyle",
+                "Sceptile",
+                "Mega Sceptile"
+            ],
+            "tree": {
+                "name": "Treecko",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Grovyle",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Sceptile",
+                                "method": "Level 36",
+                                "children": [
+                                    {
+                                        "name": "Mega Sceptile",
+                                        "method": "Sceptilite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tynamo": {
+            "members": [
+                "Tynamo",
+                "Eelektrik",
+                "Eelektross"
+            ],
+            "tree": {
+                "name": "Tynamo",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Eelektrik",
+                        "method": "Level 39",
+                        "children": [
+                            {
+                                "name": "Eelektross",
+                                "method": "Thunder Stone",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "venipede": {
+            "members": [
+                "Venipede",
+                "Whirlipede",
+                "Scolipede",
+                "Mega Scolipede"
+            ],
+            "tree": {
+                "name": "Venipede",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Whirlipede",
+                        "method": "Level 22",
+                        "children": [
+                            {
+                                "name": "Scolipede",
+                                "method": "Level 30",
+                                "children": [
+                                    {
+                                        "name": "Mega Scolipede",
+                                        "method": "Scolipite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
