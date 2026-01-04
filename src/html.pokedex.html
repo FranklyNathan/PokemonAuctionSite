@@ -539,7 +539,13 @@
           if (state.selected && state.selected.name === p.name) row.classList.add('active');
           const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
           let fileName = p.name;
-          if (fileName.startsWith('Mega ')) {
+          if (fileName === "Mega Charizard X"){
+            fileName = "Charizard-Mega_X";
+          } 
+          else if(fileName === "Mega Charizard Y"){
+            fileName = "Charizard-Mega_Y";
+          }
+          else if(fileName.startsWith('Mega ')) {
             fileName = fileName.substring(5) + '-Mega';
           }
           fileName = fileName.replace(/\s/g, '_');
