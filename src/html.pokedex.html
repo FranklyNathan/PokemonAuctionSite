@@ -379,6 +379,13 @@
         const theme = localStorage.getItem('theme') || 'dark';
         if (theme === 'dark') htmlEl.classList.add('sl-theme-dark'); else htmlEl.classList.remove('sl-theme-dark');
         document.body.classList.add('ready');
+        // Hide move and ability panels on initial load
+        window.addEventListener('DOMContentLoaded', () => {
+          const movePanel = document.getElementById('movePanel');
+          const abilityPanel = document.getElementById('abilityPanel');
+          if (movePanel) movePanel.style.display = 'none';
+          if (abilityPanel) abilityPanel.style.display = 'none';
+        });
       })();
     </script>
     <div class="page list-only" id="page">
@@ -880,20 +887,24 @@
       const closeAbilityButton = document.getElementById('closeAbilityButton');
 
       function showAbility(abilityNameStr) {
+        // Always close move panel before opening ability panel
+        if (movePanel) movePanel.style.display = 'none';
+        pageEl.classList.remove('with-move');
+
         const abilityInfo = abilitiesData ? abilitiesData[abilityNameStr.toLowerCase()] : null;
-        
+
         // Set ability name and description
         abilityName.textContent = abilityNameStr;
         abilityDescription.textContent = abilityInfo ? abilityInfo.description : 'No description available.';
-        
+
         // Find all Pokemon with this ability
         const pokemonWithAbility = pokemonData.filter(p => 
           p.abilities && p.abilities.some(a => a.name === abilityNameStr)
         );
-        
+
         // Sort by dex number
         pokemonWithAbility.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
-        
+
         // Render Pokemon list
         abilityPokemonList.innerHTML = '';
         pokemonWithAbility.forEach(p => {
@@ -902,23 +913,23 @@
           if (fileName.startsWith('Mega ')) {
             fileName = fileName.substring(5) + '-Mega';
           }
-          fileName = fileName.replace(/\\s/g, '_');
+          fileName = fileName.replace(/\s/g, '_');
           const imagePath = `/${folder}/${fileName}.png`;
           const isHidden = p.abilities.find(a => a.name === abilityNameStr)?.hidden;
-          
+
           const row = document.createElement('div');
           row.className = 'row';
           row.style.cursor = 'pointer';
           row.innerHTML = `
             <div class="stat-chip">${p.dex.toString().padStart(3, '0')}</div>
             <img src="${imagePath}" alt="${p.name}" class="pokemon-thumb" onerror="this.src='/baseforms/Egg.png'" />
-            <div class="name-cell" style="flex:1;">${p.name}${isHidden ? ' <span style="color:var(--sl-color-neutral-500);font-size:0.85rem;">(Hidden)</span>' : ''}</div>
+            <div class="name-cell" style="flex:1;">${p.name}${isHidden ? ' <span style=\"color:var(--sl-color-neutral-500);font-size:0.85rem;\">(Hidden)</span>' : ''}</div>
             <div class="type-badges">${p.types.map(t => badge(t, typeColors[t] || '#888')).join('')}</div>
           `;
           row.addEventListener('click', () => selectPokemon(p, true));
           abilityPokemonList.appendChild(row);
         });
-        
+
         // Show ability panel
         abilityPanel.style.display = 'flex';
         pageEl.classList.add('with-ability');
@@ -944,19 +955,23 @@
       const closeMoveButton = document.getElementById('closeMoveButton');
 
       function showMove(moveNameStr) {
+        // Always close ability panel before opening move panel
+        if (abilityPanel) abilityPanel.style.display = 'none';
+        pageEl.classList.remove('with-ability');
+
         const moveData = movesData ? movesData[moveNameStr.toLowerCase()] : null;
-        
+
         // Set move name
         moveName.textContent = moveNameStr;
-        
+
         // Set type and category
         const type = moveData?.type || 'Unknown';
         const category = moveData?.category || 'Unknown';
         moveTypeCategory.innerHTML = `${badge(type, typeColors[type] || '#666')} <span style="padding:0.1rem 0.3rem;border-radius:3px;background:rgba(255,255,255,0.08);font-size:0.75rem;text-transform:uppercase;font-weight:700;">${category}</span>`;
-        
+
         // Set description
         moveDescription.textContent = moveData?.description || 'No description available.';
-        
+
         // Set stats (power, accuracy, pp)
         moveStats.innerHTML = `
           <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">Power:</span> <span style="font-weight:700;">${moveData?.power ?? '—'}</span></div>
@@ -964,15 +979,15 @@
           <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">PP:</span> <span style="font-weight:700;">${moveData?.pp ?? '—'}</span></div>
           <div><span style="color:var(--sl-color-neutral-500);font-size:0.75rem;text-transform:uppercase;">Priority:</span> <span style="font-weight:700;">${moveData?.priority ?? 0}</span></div>
         `;
-        
+
         // Find all Pokemon that can learn this move
         const pokemonThatLearnMove = pokemonData.filter(p => 
           p.moves && p.moves.some(m => m.name === moveNameStr)
         );
-        
+
         // Sort by dex number
         pokemonThatLearnMove.sort((a, b) => (a.dex || 9999) - (b.dex || 9999));
-        
+
         // Render Pokemon list
         movePokemonList.innerHTML = '';
         pokemonThatLearnMove.forEach(p => {
@@ -989,7 +1004,7 @@
           else if (moveInfo.source) learnMethod = moveInfo.source;
           else if (moveInfo.code) learnMethod = moveInfo.code;
           else learnMethod = 'Unknown';
-          
+
           const row = document.createElement('div');
           row.className = 'row';
           row.style.cursor = 'pointer';
@@ -1002,7 +1017,7 @@
           row.addEventListener('click', () => selectPokemon(p, true));
           movePokemonList.appendChild(row);
         });
-        
+
         // Show move panel
         movePanel.style.display = 'flex';
         pageEl.classList.add('with-move');
