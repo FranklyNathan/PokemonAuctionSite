@@ -401,8 +401,16 @@ const result = rows.map((row, idx) => {
     level: m.level,
   }));
   
-  // Get egg moves (use base form for megas)
-  const eggs = eggMoves.get(isMega ? baseFormName : name) || [];
+  // Get egg moves from the base form of the family for all members
+  let familyBaseName = name;
+  // Try to get the family key for this mon
+  const famKey = pokemonToFamily[name];
+  if (famKey && evolutionFamilies[famKey] && evolutionFamilies[famKey].tree && evolutionFamilies[famKey].tree.length > 0) {
+    familyBaseName = evolutionFamilies[famKey].tree[0].name;
+  } else if (isMega) {
+    familyBaseName = baseFormName;
+  }
+  const eggs = eggMoves.get(familyBaseName) || [];
   eggs.forEach(moveName => {
     moves.push({
       name: moveName,
@@ -455,7 +463,6 @@ const result = rows.map((row, idx) => {
     stage: row.stage || '',
     evolution_method: row.evolution_method || '',
     mega: row.mega || '',
-    evolutions: evolutions,
     meta: 'dummy dex; move stats dummy when not available',
   };
 });
