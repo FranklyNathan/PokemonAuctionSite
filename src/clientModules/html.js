@@ -640,22 +640,22 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
     let currentPokemonName = player.name;
     let info = speciesInfoMap.get(currentPokemonName);
 
-    const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
+    const formatAbilityForUrl = (ability) => encodeURIComponent(ability.trim().toLowerCase().replace(/[_\s-]+/g, '-'));
 
     // Build abilities HTML for base pokemon
     const abilityDivs = [];
     if (player.ability1) {
       const abilityName = player.ability1.trim();
-      abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+      abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(player.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
     }
     if (player.ability2) {
       const abilityName = player.ability2.trim();
-      abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+      abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(player.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
     }
     if (player.hidden_ability) {
       const abilityName = player.hidden_ability.trim();
       abilityDivs.push(
-        `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
+        `<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(player.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
       );
     }
     const abilitiesHtml = abilityDivs.join('');
@@ -717,13 +717,13 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
 
           const trimmedLine = processedLine.trim();
           if (trimmedLine.length > 0 && !trimmedLine.toLowerCase().startsWith('note:') && !trimmedLine.toLowerCase().startsWith('key moves:')) {
-            const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
+            const formatMoveForUrl = (move) => encodeURIComponent(move.trim().toLowerCase().replace(/[_\s-]+/g, '-'));
             const parenIndex = processedLine.indexOf('(');
             const moveName = (parenIndex !== -1 ? processedLine.substring(0, parenIndex) : processedLine).trim();
 
             if (moveName) {
-              const url = `https://pokemondb.net/move/${formatMoveForUrl(moveName)}`;
-              const link = `<a class="move-link" href="${url}" target="_blank" rel="noopener noreferrer">${moveName}</a>`;
+              const url = `/pokedex?move=${formatMoveForUrl(moveName)}&pokemon=${encodeURIComponent(player.name)}`;
+              const link = `<a class=\"move-link\" href=\"${url}\" target=\"_blank\" rel=\"noopener noreferrer\">${moveName}</a>`;
               processedLine = processedLine.replace(moveName, link);
             }
           }
@@ -993,16 +993,16 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         const evoAbilityDivs = [];
         if (evo.info.ability1) {
           const abilityName = evo.info.ability1.trim();
-          evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          evoAbilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(evo.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (evo.info.ability2) {
           const abilityName = evo.info.ability2.trim();
-          evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          evoAbilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(evo.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (evo.info.hidden_ability) {
           const abilityName = evo.info.hidden_ability.trim();
           evoAbilityDivs.push(
-            `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
+            `<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(evo.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
           );
         }
         const abilitiesHtml = evoAbilityDivs.join('');
