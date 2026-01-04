@@ -348,25 +348,32 @@ const specialMechanics = {
       // Extract evolution item from evolution_method string
       function extractEvolutionItem(evolutionMethod) {
         if (!evolutionMethod) return null;
-        
         const method = evolutionMethod.trim();
-        
+        // Prevent gender from being parsed as an item
+        if (/^(male|female)$/i.test(method)) return null;
         // Check for items in parentheses (e.g., "Level 32 (Whipped Dream)")
         const parenMatch = method.match(/\(([^)]+)\)/);
         if (parenMatch) {
-          return parenMatch[1].trim();
+          const item = parenMatch[1].trim();
+          if (/^(male|female)$/i.test(item)) return null;
+          return item;
         }
-        
         // Check for stone evolutions (e.g., "Fire Stone", "Dusk Stone")
         if (method.includes('Stone')) {
-          return method.trim();
-        }
-        
-        // Check for Linking Cord (standalone item)
-        if (method === 'Linking Cord') {
           return method;
         }
-        
+        // Check for specific evolution items
+        const specialItems = [
+          'Linking Cord',
+          'Whipped Dream',
+          'Dragon Scale',
+          'Metal Coat',
+          'Soothe Bell',
+          "King's Rock"
+        ];
+        if (specialItems.some(item => method === item)) {
+          return method;
+        }
         return null;
       }
 
