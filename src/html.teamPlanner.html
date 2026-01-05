@@ -348,25 +348,32 @@ const specialMechanics = {
       // Extract evolution item from evolution_method string
       function extractEvolutionItem(evolutionMethod) {
         if (!evolutionMethod) return null;
-        
         const method = evolutionMethod.trim();
-        
+        // Prevent gender from being parsed as an item
+        if (/^(male|female)$/i.test(method)) return null;
         // Check for items in parentheses (e.g., "Level 32 (Whipped Dream)")
         const parenMatch = method.match(/\(([^)]+)\)/);
         if (parenMatch) {
-          return parenMatch[1].trim();
+          const item = parenMatch[1].trim();
+          if (/^(male|female)$/i.test(item)) return null;
+          return item;
         }
-        
         // Check for stone evolutions (e.g., "Fire Stone", "Dusk Stone")
         if (method.includes('Stone')) {
-          return method.trim();
-        }
-        
-        // Check for Linking Cord (standalone item)
-        if (method === 'Linking Cord') {
           return method;
         }
-        
+        // Check for specific evolution items
+        const specialItems = [
+          'Linking Cord',
+          'Whipped Dream',
+          'Dragon Scale',
+          'Metal Coat',
+          'Soothe Bell',
+          "King's Rock"
+        ];
+        if (specialItems.some(item => method === item)) {
+          return method;
+        }
         return null;
       }
 
@@ -477,7 +484,7 @@ const specialMechanics = {
               .map(({ move, pokemon }) => {
                 return `
                   <div class="egg-move-item">
-                    <span style="font-weight: 500;">${move}</span>
+                    <a class="move-link" href="/pokedex?move=${encodeURIComponent(move)}&pokemon=${encodeURIComponent(pokemon)}" style="font-weight: 500;" target="_blank" rel="noopener noreferrer">${move}</a>
                     <span style="color: #888;">(${pokemon})</span>
                   </div>
                 `;
@@ -685,19 +692,22 @@ const specialMechanics = {
         const info = speciesInfoMap.get(pokemon.name);
         
         // Build abilities HTML
-        const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
+        // Normalize ability name for URL: lowercase, replace spaces/underscores/dashes with hyphens
+        const formatAbilityForUrl = (ability) => encodeURIComponent(
+          ability.trim().toLowerCase().replace(/[_\s-]+/g, '-')
+        );
         const abilityDivs = [];
         if (pokemon.ability1) {
           const abilityName = pokemon.ability1.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (pokemon.ability2) {
           const abilityName = pokemon.ability2.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
         }
         if (pokemon.hidden_ability) {
           const abilityName = pokemon.hidden_ability.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`);
+          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`);
         }
         const abilitiesHtml = abilityDivs.join('');
 
@@ -731,7 +741,8 @@ const specialMechanics = {
         // Get key moves from speciesInfoMap
         let keyMovesHtml = '';
         if (info && info.description) {
-          const formatMoveForUrl = (move) => move.toLowerCase().replace(/ /g, '-');
+          // Normalize move name for Pokédex URL: lowercase, replace spaces/underscores/dashes with hyphens
+          const formatMoveForUrl = (move) => encodeURIComponent(move.trim().toLowerCase().replace(/[_\s-]+/g, '-'));
           const moveLines = info.description
             .split('\n')
             .map((line) => {
@@ -750,7 +761,7 @@ const specialMechanics = {
                   yellow: '#F8D030',
                 };
                 const finalColor = colorMap[color] || color;
-                colorStyle = `style="color: ${finalColor};"`;
+                colorStyle = `style=\"color: ${finalColor};\"`;
                 leadingSpaces = line.match(/^\s*/)[0];
                 processedLine = line.replace(colorMatch[0], '').trim();
               }
@@ -761,8 +772,9 @@ const specialMechanics = {
                 const moveName = (parenIndex !== -1 ? processedLine.substring(0, parenIndex) : processedLine).trim();
 
                 if (moveName) {
-                  const url = `https://pokemondb.net/move/${formatMoveForUrl(moveName)}`;
-                  const link = `<a class="move-link" href="${url}" target="_blank" rel="noopener noreferrer">${moveName}</a>`;
+                  // Link to Pokédex move tab and open the correct Pokémon
+                  const url = `/pokedex?move=${formatMoveForUrl(moveName)}&pokemon=${encodeURIComponent(pokemon.name)}`;
+                  const link = `<a class=\"move-link\" href=\"${url}\" target=\"_blank\" rel=\"noopener noreferrer\">${moveName}</a>`;
                   processedLine = processedLine.replace(moveName, link);
                 }
               }
@@ -770,7 +782,7 @@ const specialMechanics = {
               return colorStyle ? `<span ${colorStyle}>${leadingSpaces}${processedLine}</span>` : processedLine;
             })
             .join('\n');
-          keyMovesHtml = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${moveLines}</pre>`;
+          keyMovesHtml = `<pre style=\"white-space: pre-wrap; font-family: inherit; margin: 0;\">${moveLines}</pre>`;
         }
 
         const otherInfoHtml = `

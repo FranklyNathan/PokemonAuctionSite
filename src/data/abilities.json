@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "NONE",
+    "name": "-------",
+    "description": "No special ability."
+  },
+  {
+    "id": "ADAPTABILITY",
+    "name": "Adaptability",
+    "description": "Boosts same type attacks."
+  },
+  {
+    "id": "AERILATE",
+    "name": "Aerilate",
+    "description": "Normal moves become Flying."
+  },
+  {
+    "id": "AFTERMATH",
+    "name": "Aftermath",
+    "description": "Fainting damages the foe."
+  },
+  {
+    "id": "AIR_LOCK",
+    "name": "Air Lock",
+    "description": "Negates weather effects."
+  },
+  {
+    "id": "ANALYTIC",
+    "name": "Analytic",
+    "description": "Moving last boosts power."
+  },
+  {
+    "id": "ANGER_POINT",
+    "name": "Anger Point",
+    "description": "Critical hits raise Attack."
+  },
+  {
+    "id": "ANGER_SHELL",
+    "name": "Anger Shell",
+    "description": "Gets angry at half HP."
+  },
+  {
+    "id": "ANTICIPATION",
+    "name": "Anticipation",
+    "description": "Senses dangerous moves."
+  },
+  {
+    "id": "ARENA_TRAP",
+    "name": "Arena Trap",
+    "description": "Prevents fleeing."
+  },
+  {
+    "id": "ARMOR_TAIL",
+    "name": "Armor Tail",
+    "description": "Protects from priority."
+  },
+  {
+    "id": "AROMA_VEIL",
+    "name": "Aroma Veil",
+    "description": "Prevents limiting of moves."
+  },
+  {
+    "id": "AS_ONE_ICE_RIDER",
+    "name": "As One",
+    "description": "Unnerve and Chilling Neigh."
+  },
+  {
+    "id": "AS_ONE_SHADOW_RIDER",
+    "name": "As One",
+    "description": "Unnerve and Grim Neigh."
+  },
+  {
+    "id": "AURA_BREAK",
+    "name": "Aura Break",
+    "description": "Reverse aura abilities."
+  },
+  {
+    "id": "BAD_DREAMS",
+    "name": "Bad Dreams",
+    "description": "Damages sleeping Pokémon."
+  },
+  {
+    "id": "BALL_FETCH",
+    "name": "Ball Fetch",
+    "description": "May pick up berries."
+  },
+  {
+    "id": "BATTERY",
+    "name": "Battery",
+    "description": "Boosts ally's Sp. Atk."
+  },
+  {
+    "id": "BATTLE_ARMOR",
+    "name": "Battle Armor",
+    "description": "Blocks critical hits."
+  },
+  {
+    "id": "BATTLE_BOND",
+    "name": "Battle Bond",
+    "description": "Changes form after a KO."
+  },
+  {
+    "id": "BEADS_OF_RUIN",
+    "name": "Beads of Ruin",
+    "description": "Lowers foes' Sp. Defense."
+  },
+  {
+    "id": "BEAST_BOOST",
+    "name": "Beast Boost",
+    "description": "KOs boost best stat."
+  },
+  {
+    "id": "BERSERK",
+    "name": "Berserk",
+    "description": "Boosts Sp. Atk at low HP."
+  },
+  {
+    "id": "BIG_PECKS",
+    "name": "Big Pecks",
+    "description": "Prevents Defense loss."
+  },
+  {
+    "id": "BLAZE",
+    "name": "Blaze",
+    "description": "Ups Fire moves in a pinch."
+  },
+  {
+    "id": "BULLETPROOF",
+    "name": "Bulletproof",
+    "description": "Avoids some projectiles."
+  },
+  {
+    "id": "CHEEK_POUCH",
+    "name": "Cheek Pouch",
+    "description": "Eating Berries restores HP."
+  },
+  {
+    "id": "CHILLING_NEIGH",
+    "name": "Chilling Neigh",
+    "description": "KOs boost Attack stat."
+  },
+  {
+    "id": "CHLOROPHYLL",
+    "name": "Chlorophyll",
+    "description": "Raises Speed in sunshine."
+  },
+  {
+    "id": "CLEAR_BODY",
+    "name": "Clear Body",
+    "description": "Prevents ability reduction."
+  },
+  {
+    "id": "CLOUD_NINE",
+    "name": "Cloud Nine",
+    "description": "Negates weather effects."
+  },
+  {
+    "id": "COLOR_CHANGE",
+    "name": "Color Change",
+    "description": "Changes type to foe's move."
+  },
+  {
+    "id": "COMATOSE",
+    "name": "Comatose",
+    "description": "Always drowsing."
+  },
+  {
+    "id": "COMMANDER",
+    "name": "Commander",
+    "description": "Commands from Dondozo."
+  },
+  {
+    "id": "COMPETITIVE",
+    "name": "Competitive",
+    "description": "Lowered stats up Sp. Atk."
+  },
+  {
+    "id": "COMPOUND_EYES",
+    "name": "Compound Eyes",
+    "description": "Raises accuracy."
+  },
+  {
+    "id": "CONTRARY",
+    "name": "Contrary",
+    "description": "Inverts stat changes."
+  },
+  {
+    "id": "CORROSION",
+    "name": "Corrosion",
+    "description": "Poisons any type."
+  },
+  {
+    "id": "COSTAR",
+    "name": "Costar",
+    "description": "Copies ally's stat changes."
+  },
+  {
+    "id": "COTTON_DOWN",
+    "name": "Cotton Down",
+    "description": "Lower Speed of all when hit."
+  },
+  {
+    "id": "CUD_CHEW",
+    "name": "Cud Chew",
+    "description": "Eats a used berry again."
+  },
+  {
+    "id": "CURIOUS_MEDICINE",
+    "name": "Curious Medicine",
+    "description": "Remove ally's stat changes."
+  },
+  {
+    "id": "CURSED_BODY",
+    "name": "Cursed Body",
+    "description": "Disables moves on contact."
+  },
+  {
+    "id": "CUTE_CHARM",
+    "name": "Cute Charm",
+    "description": "Infatuates on contact."
+  },
+  {
+    "id": "DAMP",
+    "name": "Damp",
+    "description": "Prevents self-destruction."
+  },
+  {
+    "id": "DANCER",
+    "name": "Dancer",
+    "description": "Dances along with others."
+  },
+  {
+    "id": "DARK_AURA",
+    "name": "Dark Aura",
+    "description": "Boosts Dark moves."
+  },
+  {
+    "id": "DAUNTLESS_SHIELD",
+    "name": "Dauntless Shield",
+    "description": "Ups Defense on entry."
+  },
+  {
+    "id": "DAZZLING",
+    "name": "Dazzling",
+    "description": "Protects from priority."
+  },
+  {
+    "id": "DEFEATIST",
+    "name": "Defeatist",
+    "description": "Gives up at half HP."
+  },
+  {
+    "id": "DEFIANT",
+    "name": "Defiant",
+    "description": "Lowered stats up Attack."
+  },
+  {
+    "id": "DELTA_STREAM",
+    "name": "Delta Stream",
+    "description": "Summons strong winds."
+  },
+  {
+    "id": "DESOLATE_LAND",
+    "name": "Desolate Land",
+    "description": "Summons intense sunlight."
+  },
+  {
+    "id": "DISGUISE",
+    "name": "Disguise",
+    "description": "Decoy protects it once."
+  },
+  {
+    "id": "DOWNLOAD",
+    "name": "Download",
+    "description": "Adjusts power favorably."
+  },
+  {
+    "id": "DRAGONS_MAW",
+    "name": "Dragon's Maw",
+    "description": "Ups Dragon-type moves."
+  },
+  {
+    "id": "DRIZZLE",
+    "name": "Drizzle",
+    "description": "Summons rain in battle."
+  },
+  {
+    "id": "DROUGHT",
+    "name": "Drought",
+    "description": "Summons sunlight in battle."
+  },
+  {
+    "id": "DRY_SKIN",
+    "name": "Dry Skin",
+    "description": "Prefers moisture to heat."
+  },
+  {
+    "id": "EARLY_BIRD",
+    "name": "Early Bird",
+    "description": "Awakens quickly from sleep."
+  },
+  {
+    "id": "EARTH_EATER",
+    "name": "Earth Eater",
+    "description": "Eats ground to heal HP."
+  },
+  {
+    "id": "EFFECT_SPORE",
+    "name": "Effect Spore",
+    "description": "Leaves spores on contact."
+  },
+  {
+    "id": "ELECTRIC_SURGE",
+    "name": "Electric Surge",
+    "description": "Field becomes Electric."
+  },
+  {
+    "id": "ELECTROMORPHOSIS",
+    "name": "Electromorphosis",
+    "description": "Gets Charged when hit."
+  },
+  {
+    "id": "EMBODY_ASPECT_TEAL_MASK",
+    "name": "Embody Aspect",
+    "description": "Raises Speed."
+  },
+  {
+    "id": "EMBODY_ASPECT_HEARTHFLAME_MASK",
+    "name": "Embody Aspect",
+    "description": "Raises Attack."
+  },
+  {
+    "id": "EMBODY_ASPECT_WELLSPRING_MASK",
+    "name": "Embody Aspect",
+    "description": "Raises Sp. Def."
+  },
+  {
+    "id": "EMBODY_ASPECT_CORNERSTONE_MASK",
+    "name": "Embody Aspect",
+    "description": "Raises Defense."
+  },
+  {
+    "id": "EMERGENCY_EXIT",
+    "name": "Emergency Exit",
+    "description": "Flees at half HP."
+  },
+  {
+    "id": "FAIRY_AURA",
+    "name": "Fairy Aura",
+    "description": "Boosts Fairy moves."
+  },
+  {
+    "id": "FILTER",
+    "name": "Filter",
+    "description": "Weakens “supereffective”."
+  },
+  {
+    "id": "FLAME_BODY",
+    "name": "Flame Body",
+    "description": "Burns the foe on contact."
+  },
+  {
+    "id": "FLARE_BOOST",
+    "name": "Flare Boost",
+    "description": "Ups Sp. Atk if burned."
+  },
+  {
+    "id": "FLASH_FIRE",
+    "name": "Flash Fire",
+    "description": "Powers up if hit by fire."
+  },
+  {
+    "id": "FLOWER_GIFT",
+    "name": "Flower Gift",
+    "description": "Allies power up in sunshine."
+  },
+  {
+    "id": "FLOWER_VEIL",
+    "name": "Flower Veil",
+    "description": "Protects Grass-types."
+  },
+  {
+    "id": "FLUFFY",
+    "name": "Fluffy",
+    "description": "Tougher but flammable."
+  },
+  {
+    "id": "FORECAST",
+    "name": "Forecast",
+    "description": "Changes with the weather."
+  },
+  {
+    "id": "FOREWARN",
+    "name": "Forewarn",
+    "description": "Determines a foe's move."
+  },
+  {
+    "id": "FRIEND_GUARD",
+    "name": "Friend Guard",
+    "description": "Lowers damage to partner."
+  },
+  {
+    "id": "FRISK",
+    "name": "Frisk",
+    "description": "Checks a foe's item."
+  },
+  {
+    "id": "FULL_METAL_BODY",
+    "name": "Full Metal Body",
+    "description": "Prevents stat reduction."
+  },
+  {
+    "id": "FUR_COAT",
+    "name": "Fur Coat",
+    "description": "Raises Defense."
+  },
+  {
+    "id": "GALE_WINGS",
+    "name": "Gale Wings",
+    "description": "Flying moves go first."
+  },
+  {
+    "id": "GALVANIZE",
+    "name": "Galvanize",
+    "description": "Normal moves turn Electric."
+  },
+  {
+    "id": "GLUTTONY",
+    "name": "Gluttony",
+    "description": "Eats Berries early."
+  },
+  {
+    "id": "GOOD_AS_GOLD",
+    "name": "Good as Gold",
+    "description": "Avoids status moves."
+  },
+  {
+    "id": "GOOEY",
+    "name": "Gooey",
+    "description": "Lowers Speed on contact."
+  },
+  {
+    "id": "GORILLA_TACTICS",
+    "name": "Gorilla Tactics",
+    "description": "Ups Attack and locks move."
+  },
+  {
+    "id": "GRASS_PELT",
+    "name": "Grass Pelt",
+    "description": "Ups Defense in grass."
+  },
+  {
+    "id": "GRASSY_SURGE",
+    "name": "Grassy Surge",
+    "description": "Field becomes grassy."
+  },
+  {
+    "id": "GRIM_NEIGH",
+    "name": "Grim Neigh",
+    "description": "KOs boost Sp. Atk stat."
+  },
+  {
+    "id": "GUARD_DOG",
+    "name": "Guard Dog",
+    "description": "Cannot be intimidated."
+  },
+  {
+    "id": "GULP_MISSILE",
+    "name": "Gulp Missile",
+    "description": "If hit, spits prey from sea."
+  },
+  {
+    "id": "GUTS",
+    "name": "Guts",
+    "description": "Ups Attack if suffering."
+  },
+  {
+    "id": "HADRON_ENGINE",
+    "name": "Hadron Engine",
+    "description": "Field becomes Electric."
+  },
+  {
+    "id": "HARVEST",
+    "name": "Harvest",
+    "description": "May recycle a used Berry."
+  },
+  {
+    "id": "HEALER",
+    "name": "Healer",
+    "description": "Heals partner Pokémon."
+  },
+  {
+    "id": "HEATPROOF",
+    "name": "Heatproof",
+    "description": "Heat and burn protection."
+  },
+  {
+    "id": "HEAVY_METAL",
+    "name": "Heavy Metal",
+    "description": "Doubles weight."
+  },
+  {
+    "id": "HONEY_GATHER",
+    "name": "Honey Gather",
+    "description": "May pick up berries."
+  },
+  {
+    "id": "HOSPITALITY",
+    "name": "Hospitality",
+    "description": "Restores ally's HP."
+  },
+  {
+    "id": "HUGE_POWER",
+    "name": "Huge Power",
+    "description": "Raises Attack."
+  },
+  {
+    "id": "HUNGER_SWITCH",
+    "name": "Hunger Switch",
+    "description": "Changes form each turn."
+  },
+  {
+    "id": "HUSTLE",
+    "name": "Hustle",
+    "description": "Trades accuracy for power."
+  },
+  {
+    "id": "HYDRATION",
+    "name": "Hydration",
+    "description": "Cures status in rain."
+  },
+  {
+    "id": "HYPER_CUTTER",
+    "name": "Hyper Cutter",
+    "description": "Prevents Attack reduction."
+  },
+  {
+    "id": "ICE_BODY",
+    "name": "Ice Body",
+    "description": "HP recovery in Hail."
+  },
+  {
+    "id": "ICE_FACE",
+    "name": "Ice Face",
+    "description": "Hail renews free hit."
+  },
+  {
+    "id": "ICE_SCALES",
+    "name": "Ice Scales",
+    "description": "Halves special damage."
+  },
+  {
+    "id": "ILLUMINATE",
+    "name": "Illuminate",
+    "description": "Encounter rate increases."
+  },
+  {
+    "id": "ILLUSION",
+    "name": "Illusion",
+    "description": "Appears as a partner."
+  },
+  {
+    "id": "IMMUNITY",
+    "name": "Immunity",
+    "description": "Prevents poisoning."
+  },
+  {
+    "id": "IMPOSTER",
+    "name": "Imposter",
+    "description": "Transforms into the foe."
+  },
+  {
+    "id": "INFILTRATOR",
+    "name": "Infiltrator",
+    "description": "Passes through barriers."
+  },
+  {
+    "id": "INNARDS_OUT",
+    "name": "Innards Out",
+    "description": "Hurts foe when defeated."
+  },
+  {
+    "id": "INNER_FOCUS",
+    "name": "Inner Focus",
+    "description": "Prevents flinching."
+  },
+  {
+    "id": "INSOMNIA",
+    "name": "Insomnia",
+    "description": "Prevents sleep."
+  },
+  {
+    "id": "INTIMIDATE",
+    "name": "Intimidate",
+    "description": "Lowers the foe's Attack."
+  },
+  {
+    "id": "INTREPID_SWORD",
+    "name": "Intrepid Sword",
+    "description": "Ups Attack on entry."
+  },
+  {
+    "id": "IRON_BARBS",
+    "name": "Iron Barbs",
+    "description": "Hurts to touch."
+  },
+  {
+    "id": "IRON_FIST",
+    "name": "Iron Fist",
+    "description": "Boosts punching moves."
+  },
+  {
+    "id": "JUSTIFIED",
+    "name": "Justified",
+    "description": "Dark hits raise Attack."
+  },
+  {
+    "id": "KEEN_EYE",
+    "name": "Keen Eye",
+    "description": "Prevents loss of accuracy."
+  },
+  {
+    "id": "KLUTZ",
+    "name": "Klutz",
+    "description": "Can't use hold items."
+  },
+  {
+    "id": "LEAF_GUARD",
+    "name": "Leaf Guard",
+    "description": "Blocks status in sunshine."
+  },
+  {
+    "id": "LEVITATE",
+    "name": "Levitate",
+    "description": "Not hit by Ground attacks."
+  },
+  {
+    "id": "LIBERO",
+    "name": "Libero",
+    "description": "Changes type to move's."
+  },
+  {
+    "id": "LIGHT_METAL",
+    "name": "Light Metal",
+    "description": "Halves weight."
+  },
+  {
+    "id": "LIGHTNING_ROD",
+    "name": "Lightning Rod",
+    "description": "Draws electrical moves."
+  },
+  {
+    "id": "LIMBER",
+    "name": "Limber",
+    "description": "Prevents paralysis."
+  },
+  {
+    "id": "LINGERING_AROMA",
+    "name": "Lingering Aroma",
+    "description": "Spreads with contact."
+  },
+  {
+    "id": "LIQUID_OOZE",
+    "name": "Liquid Ooze",
+    "description": "Draining causes injury."
+  },
+  {
+    "id": "LIQUID_VOICE",
+    "name": "Liquid Voice",
+    "description": "Makes sound moves Water."
+  },
+  {
+    "id": "LONG_REACH",
+    "name": "Long Reach",
+    "description": "Never makes contact."
+  },
+  {
+    "id": "MAGIC_BOUNCE",
+    "name": "Magic Bounce",
+    "description": "Reflects status moves."
+  },
+  {
+    "id": "MAGIC_GUARD",
+    "name": "Magic Guard",
+    "description": "Only damaged by attacks."
+  },
+  {
+    "id": "MAGICIAN",
+    "name": "Magician",
+    "description": "Steals the foe's held item."
+  },
+  {
+    "id": "MAGMA_ARMOR",
+    "name": "Magma Armor",
+    "description": "Prevents freezing."
+  },
+  {
+    "id": "MAGNET_PULL",
+    "name": "Magnet Pull",
+    "description": "Traps Steel-type Pokémon."
+  },
+  {
+    "id": "MARVEL_SCALE",
+    "name": "Marvel Scale",
+    "description": "Ups Defense if suffering."
+  },
+  {
+    "id": "MEGA_LAUNCHER",
+    "name": "Mega Launcher",
+    "description": "Boosts pulse moves."
+  },
+  {
+    "id": "MERCILESS",
+    "name": "Merciless",
+    "description": "Criticals poisoned foes."
+  },
+  {
+    "id": "MIMICRY",
+    "name": "Mimicry",
+    "description": "Changes type on terrain."
+  },
+  {
+    "id": "MINDS_EYE",
+    "name": "Mind's Eye",
+    "description": "Keen Eye and Scrappy."
+  },
+  {
+    "id": "MINUS",
+    "name": "Minus",
+    "description": "Powers up with Plus."
+  },
+  {
+    "id": "MIRROR_ARMOR",
+    "name": "Mirror Armor",
+    "description": "Reflect stat decreases."
+  },
+  {
+    "id": "MISTY_SURGE",
+    "name": "Misty Surge",
+    "description": "Field becomes misty."
+  },
+  {
+    "id": "MOLD_BREAKER",
+    "name": "Mold Breaker",
+    "description": "Moves hit through abilities."
+  },
+  {
+    "id": "MOODY",
+    "name": "Moody",
+    "description": "Stats change gradually."
+  },
+  {
+    "id": "MOTOR_DRIVE",
+    "name": "Motor Drive",
+    "description": "Electricity raises Speed."
+  },
+  {
+    "id": "MOXIE",
+    "name": "Moxie",
+    "description": "KOs raise Attack."
+  },
+  {
+    "id": "MULTISCALE",
+    "name": "Multiscale",
+    "description": "Halves damage at full HP."
+  },
+  {
+    "id": "MULTITYPE",
+    "name": "Multitype",
+    "description": "Changes type to its Plate."
+  },
+  {
+    "id": "MUMMY",
+    "name": "Mummy",
+    "description": "Spreads with contact."
+  },
+  {
+    "id": "MYCELIUM_MIGHT",
+    "name": "Mycelium Might",
+    "description": "Status moves never fail."
+  },
+  {
+    "id": "NATURAL_CURE",
+    "name": "Natural Cure",
+    "description": "Heals upon switching out."
+  },
+  {
+    "id": "NEUROFORCE",
+    "name": "Neuroforce",
+    "description": "Ups “supereffective”."
+  },
+  {
+    "id": "NEUTRALIZING_GAS",
+    "name": "Neutralizing Gas",
+    "description": "All Abilities are nullified."
+  },
+  {
+    "id": "NO_GUARD",
+    "name": "No Guard",
+    "description": "Ensures that all moves hit."
+  },
+  {
+    "id": "NORMALIZE",
+    "name": "Normalize",
+    "description": "Moves become Normal-type."
+  },
+  {
+    "id": "OBLIVIOUS",
+    "name": "Oblivious",
+    "description": "Prevents attraction."
+  },
+  {
+    "id": "OPPORTUNIST",
+    "name": "Opportunist",
+    "description": "Copies foe's stat change."
+  },
+  {
+    "id": "ORICHALCUM_PULSE",
+    "name": "Orichalcum Pulse",
+    "description": "Summons sunlight in battle."
+  },
+  {
+    "id": "OVERCOAT",
+    "name": "Overcoat",
+    "description": "Blocks weather and powder."
+  },
+  {
+    "id": "OVERGROW",
+    "name": "Overgrow",
+    "description": "Ups Grass moves in a pinch."
+  },
+  {
+    "id": "OWN_TEMPO",
+    "name": "Own Tempo",
+    "description": "Prevents confusion."
+  },
+  {
+    "id": "PARENTAL_BOND",
+    "name": "Parental Bond",
+    "description": "Moves hit twice."
+  },
+  {
+    "id": "PASTEL_VEIL",
+    "name": "Pastel Veil",
+    "description": "Protects team from poison."
+  },
+  {
+    "id": "PERISH_BODY",
+    "name": "Perish Body",
+    "description": "Foe faints in 3 turns if hit."
+  },
+  {
+    "id": "PICKPOCKET",
+    "name": "Pickpocket",
+    "description": "Steals the foe's held item."
+  },
+  {
+    "id": "PICKUP",
+    "name": "Pickup",
+    "description": "May pick up berries."
+  },
+  {
+    "id": "PIXILATE",
+    "name": "Pixilate",
+    "description": "Normal moves become Fairy."
+  },
+  {
+    "id": "PLUS",
+    "name": "Plus",
+    "description": "Powers up with Minus."
+  },
+  {
+    "id": "POISON_HEAL",
+    "name": "Poison Heal",
+    "description": "Restores HP if poisoned."
+  },
+  {
+    "id": "POISON_POINT",
+    "name": "Poison Point",
+    "description": "Poisons foe on contact."
+  },
+  {
+    "id": "POISON_PUPPETEER",
+    "name": "Poison Puppeteer",
+    "description": "Confuses poisoned foes."
+  },
+  {
+    "id": "POISON_TOUCH",
+    "name": "Poison Touch",
+    "description": "Poisons foe on contact."
+  },
+  {
+    "id": "POWER_CONSTRUCT",
+    "name": "Power Construct",
+    "description": "Cells aid it when weakened."
+  },
+  {
+    "id": "POWER_OF_ALCHEMY",
+    "name": "Power Of Alchemy",
+    "description": "Copies ally's ability."
+  },
+  {
+    "id": "POWER_SPOT",
+    "name": "Power Spot",
+    "description": "Powers up ally moves."
+  },
+  {
+    "id": "PRANKSTER",
+    "name": "Prankster",
+    "description": "Status moves go first."
+  },
+  {
+    "id": "PRESSURE",
+    "name": "Pressure",
+    "description": "Raises foe's PP usage."
+  },
+  {
+    "id": "PRIMORDIAL_SEA",
+    "name": "Primordial Sea",
+    "description": "Summons heavy rain."
+  },
+  {
+    "id": "PRISM_ARMOR",
+    "name": "Prism Armor",
+    "description": "Weakens “supereffective”."
+  },
+  {
+    "id": "PROPELLER_TAIL",
+    "name": "Propeller Tail",
+    "description": "Ignores foe's redirection."
+  },
+  {
+    "id": "PROTEAN",
+    "name": "Protean",
+    "description": "Changes type to used move."
+  },
+  {
+    "id": "PROTOSYNTHESIS",
+    "name": "Protosynthesis",
+    "description": "Sun boosts best stat."
+  },
+  {
+    "id": "PSYCHIC_SURGE",
+    "name": "Psychic Surge",
+    "description": "Field becomes weird."
+  },
+  {
+    "id": "PUNK_ROCK",
+    "name": "Punk Rock",
+    "description": "Ups and resists sound."
+  },
+  {
+    "id": "PURE_POWER",
+    "name": "Pure Power",
+    "description": "Raises Attack."
+  },
+  {
+    "id": "PURIFYING_SALT",
+    "name": "Purifying Salt",
+    "description": "Protected by pure salts."
+  },
+  {
+    "id": "QUARK_DRIVE",
+    "name": "Quark Drive",
+    "description": "Elec. field ups best stat."
+  },
+  {
+    "id": "QUEENLY_MAJESTY",
+    "name": "Queenly Majesty",
+    "description": "Protects from priority."
+  },
+  {
+    "id": "QUICK_DRAW",
+    "name": "Quick Draw",
+    "description": "Moves first occasionally."
+  },
+  {
+    "id": "QUICK_FEET",
+    "name": "Quick Feet",
+    "description": "Ups Speed if suffering."
+  },
+  {
+    "id": "RAIN_DISH",
+    "name": "Rain Dish",
+    "description": "Slight HP recovery in rain."
+  },
+  {
+    "id": "RATTLED",
+    "name": "Rattled",
+    "description": "Raises Speed when scared."
+  },
+  {
+    "id": "RECEIVER",
+    "name": "Receiver",
+    "description": "Copies ally's ability."
+  },
+  {
+    "id": "RECKLESS",
+    "name": "Reckless",
+    "description": "Boosts moves with recoil."
+  },
+  {
+    "id": "REFRIGERATE",
+    "name": "Refrigerate",
+    "description": "Normal moves become Ice."
+  },
+  {
+    "id": "REGENERATOR",
+    "name": "Regenerator",
+    "description": "Heals upon switching out."
+  },
+  {
+    "id": "RIPEN",
+    "name": "Ripen",
+    "description": "Doubles effect of Berries."
+  },
+  {
+    "id": "RIVALRY",
+    "name": "Rivalry",
+    "description": "Powers up against rivals."
+  },
+  {
+    "id": "RKS_SYSTEM",
+    "name": "RKS System",
+    "description": "Memories change its type."
+  },
+  {
+    "id": "ROCK_HEAD",
+    "name": "Rock Head",
+    "description": "Prevents recoil damage."
+  },
+  {
+    "id": "ROCKY_PAYLOAD",
+    "name": "Rocky Payload",
+    "description": "Powers up Rock moves."
+  },
+  {
+    "id": "ROUGH_SKIN",
+    "name": "Rough Skin",
+    "description": "Hurts to touch."
+  },
+  {
+    "id": "RUN_AWAY",
+    "name": "Run Away",
+    "description": "Makes escaping easier."
+  },
+  {
+    "id": "SAND_FORCE",
+    "name": "Sand Force",
+    "description": "Powers up in a sandstorm."
+  },
+  {
+    "id": "SAND_RUSH",
+    "name": "Sand Rush",
+    "description": "Ups Speed in a sandstorm."
+  },
+  {
+    "id": "SAND_SPIT",
+    "name": "Sand Spit",
+    "description": "Creates a sandstorm if hit."
+  },
+  {
+    "id": "SAND_STREAM",
+    "name": "Sand Stream",
+    "description": "Summons a sandstorm."
+  },
+  {
+    "id": "SAND_VEIL",
+    "name": "Sand Veil",
+    "description": "Ups evasion in a sandstorm."
+  },
+  {
+    "id": "SAP_SIPPER",
+    "name": "Sap Sipper",
+    "description": "Grass increases Attack."
+  },
+  {
+    "id": "SCHOOLING",
+    "name": "Schooling",
+    "description": "Forms a school when strong."
+  },
+  {
+    "id": "SCRAPPY",
+    "name": "Scrappy",
+    "description": "Hits Ghost-type Pokémon."
+  },
+  {
+    "id": "SCREEN_CLEANER",
+    "name": "Screen Cleaner",
+    "description": "Removes walls of light."
+  },
+  {
+    "id": "SEED_SOWER",
+    "name": "Seed Sower",
+    "description": "Sets Leech Seed when hit."
+  },
+  {
+    "id": "SERENE_GRACE",
+    "name": "Serene Grace",
+    "description": "Promotes added effects."
+  },
+  {
+    "id": "SHADOW_SHIELD",
+    "name": "Shadow Shield",
+    "description": "Halves damage at full HP."
+  },
+  {
+    "id": "SHADOW_TAG",
+    "name": "Shadow Tag",
+    "description": "Prevents the foe's escape."
+  },
+  {
+    "id": "SHARPNESS",
+    "name": "Sharpness",
+    "description": "Strengthens slicing moves."
+  },
+  {
+    "id": "SHED_SKIN",
+    "name": "Shed Skin",
+    "description": "Heals the body by shedding."
+  },
+  {
+    "id": "SHEER_FORCE",
+    "name": "Sheer Force",
+    "description": "Trades effects for power."
+  },
+  {
+    "id": "SHELL_ARMOR",
+    "name": "Shell Armor",
+    "description": "Blocks critical hits."
+  },
+  {
+    "id": "SHIELD_DUST",
+    "name": "Shield Dust",
+    "description": "Prevents added effects."
+  },
+  {
+    "id": "SHIELDS_DOWN",
+    "name": "Shields Down",
+    "description": "Shell breaks at half HP."
+  },
+  {
+    "id": "SIMPLE",
+    "name": "Simple",
+    "description": "Prone to wild stat changes."
+  },
+  {
+    "id": "SKILL_LINK",
+    "name": "Skill Link",
+    "description": "Multi-hit moves hit 5 times."
+  },
+  {
+    "id": "SLOW_START",
+    "name": "Slow Start",
+    "description": "Takes a while to get going."
+  },
+  {
+    "id": "SLUSH_RUSH",
+    "name": "Slush Rush",
+    "description": "Raises Speed in Hail/Snow."
+  },
+  {
+    "id": "SNIPER",
+    "name": "Sniper",
+    "description": "Boosts critical hits."
+  },
+  {
+    "id": "SNOW_CLOAK",
+    "name": "Snow Cloak",
+    "description": "Ups evasion in Hail."
+  },
+  {
+    "id": "SNOW_WARNING",
+    "name": "Snow Warning",
+    "description": "Summons hail in battle."
+  },
+  {
+    "id": "SOLAR_POWER",
+    "name": "Solar Power",
+    "description": "Powers up in sunshine."
+  },
+  {
+    "id": "SOLID_ROCK",
+    "name": "Solid Rock",
+    "description": "Weakens “supereffective”."
+  },
+  {
+    "id": "SOUL_HEART",
+    "name": "Soul-Heart",
+    "description": "KOs raise Sp. Atk."
+  },
+  {
+    "id": "SOUNDPROOF",
+    "name": "Soundproof",
+    "description": "Avoids sound-based moves."
+  },
+  {
+    "id": "SPEED_BOOST",
+    "name": "Speed Boost",
+    "description": "Gradually boosts Speed."
+  },
+  {
+    "id": "STAKEOUT",
+    "name": "Stakeout",
+    "description": "Stronger as foes switch in."
+  },
+  {
+    "id": "STALL",
+    "name": "Stall",
+    "description": "Always moves last."
+  },
+  {
+    "id": "STALWART",
+    "name": "Stalwart",
+    "description": "Ignores foe's redirection."
+  },
+  {
+    "id": "STAMINA",
+    "name": "Stamina",
+    "description": "Boosts Defense when hit."
+  },
+  {
+    "id": "STANCE_CHANGE",
+    "name": "Stance Change",
+    "description": "Transforms as it battles."
+  },
+  {
+    "id": "STATIC",
+    "name": "Static",
+    "description": "Paralyzes on contact."
+  },
+  {
+    "id": "STEADFAST",
+    "name": "Steadfast",
+    "description": "Flinching raises Speed."
+  },
+  {
+    "id": "STEAM_ENGINE",
+    "name": "Steam Engine",
+    "description": "Fire or Water hits up Speed."
+  },
+  {
+    "id": "STEELWORKER",
+    "name": "Steelworker",
+    "description": "Powers up Steel moves."
+  },
+  {
+    "id": "STEELY_SPIRIT",
+    "name": "Steely Spirit",
+    "description": "Boosts ally's Steel moves."
+  },
+  {
+    "id": "STENCH",
+    "name": "Stench",
+    "description": "May cause a foe to flinch."
+  },
+  {
+    "id": "STICKY_HOLD",
+    "name": "Sticky Hold",
+    "description": "Prevents item theft."
+  },
+  {
+    "id": "STORKS_BLESSING",
+    "name": "Stork's Blessing",
+    "description": "Delivers miraculous babies."
+  },
+  {
+    "id": "STORM_DRAIN",
+    "name": "Storm Drain",
+    "description": "Draws in Water moves."
+  },
+  {
+    "id": "STRONG_JAW",
+    "name": "Strong Jaw",
+    "description": "Boosts biting moves."
+  },
+  {
+    "id": "STURDY",
+    "name": "Sturdy",
+    "description": "Negates 1-hit KO attacks."
+  },
+  {
+    "id": "SUCTION_CUPS",
+    "name": "Suction Cups",
+    "description": "Firmly anchors the body."
+  },
+  {
+    "id": "SUPER_LUCK",
+    "name": "Super Luck",
+    "description": "Critical hits land often."
+  },
+  {
+    "id": "SUPERSWEET_SYRUP",
+    "name": "Supersweet Syrup",
+    "description": "Lowers the foe's Evasion."
+  },
+  {
+    "id": "SUPREME_OVERLORD",
+    "name": "Supreme Overlord",
+    "description": "Inherits fallen's strength."
+  },
+  {
+    "id": "SURGE_SURFER",
+    "name": "Surge Surfer",
+    "description": "Faster on electricity."
+  },
+  {
+    "id": "SWARM",
+    "name": "Swarm",
+    "description": "Ups Bug moves in a pinch."
+  },
+  {
+    "id": "SWEET_VEIL",
+    "name": "Sweet Veil",
+    "description": "Prevents party from sleep."
+  },
+  {
+    "id": "SWIFT_SWIM",
+    "name": "Swift Swim",
+    "description": "Raises Speed in rain."
+  },
+  {
+    "id": "SWORD_OF_RUIN",
+    "name": "Sword of Ruin",
+    "description": "Lowers foes' Defense."
+  },
+  {
+    "id": "SYMBIOSIS",
+    "name": "Symbiosis",
+    "description": "Passes its item to an ally."
+  },
+  {
+    "id": "SYNCHRONIZE",
+    "name": "Synchronize",
+    "description": "Passes on status problems."
+  },
+  {
+    "id": "TABLETS_OF_RUIN",
+    "name": "Tablets of Ruin",
+    "description": "Lowers foes' damage."
+  },
+  {
+    "id": "TANGLED_FEET",
+    "name": "Tangled Feet",
+    "description": "Ups evasion if confused."
+  },
+  {
+    "id": "TANGLING_HAIR",
+    "name": "Tangling Hair",
+    "description": "Lowers Speed on contact."
+  },
+  {
+    "id": "TECHNICIAN",
+    "name": "Technician",
+    "description": "Boosts weaker moves."
+  },
+  {
+    "id": "TELEPATHY",
+    "name": "Telepathy",
+    "description": "Can't be damaged by an ally."
+  },
+  {
+    "id": "TERA_SHELL",
+    "name": "Tera Shell",
+    "description": "Resists all at full HP."
+  },
+  {
+    "id": "TERA_SHIFT",
+    "name": "Tera Shift",
+    "description": "Terastallizes upon entry."
+  },
+  {
+    "id": "TERAFORM_ZERO",
+    "name": "Teraform Zero",
+    "description": "Zeroes weather and terrain."
+  },
+  {
+    "id": "TERAVOLT",
+    "name": "Teravolt",
+    "description": "Moves hit through abilities."
+  },
+  {
+    "id": "THERMAL_EXCHANGE",
+    "name": "Thermal Exchange",
+    "description": "Fire hits up Attack."
+  },
+  {
+    "id": "THICK_FAT",
+    "name": "Thick Fat",
+    "description": "Heat-and-cold protection."
+  },
+  {
+    "id": "TINTED_LENS",
+    "name": "Tinted Lens",
+    "description": "Ups “not very effective”."
+  },
+  {
+    "id": "TORRENT",
+    "name": "Torrent",
+    "description": "Ups Water moves in a pinch."
+  },
+  {
+    "id": "TOUGH_CLAWS",
+    "name": "Tough Claws",
+    "description": "Boosts contact moves."
+  },
+  {
+    "id": "TOXIC_BOOST",
+    "name": "Toxic Boost",
+    "description": "Ups Attack if poisoned."
+  },
+  {
+    "id": "TOXIC_CHAIN",
+    "name": "Toxic Chain",
+    "description": "Moves can poison."
+  },
+  {
+    "id": "TOXIC_DEBRIS",
+    "name": "Toxic Debris",
+    "description": "Throws poison spikes if hit."
+  },
+  {
+    "id": "TRACE",
+    "name": "Trace",
+    "description": "Copies special ability."
+  },
+  {
+    "id": "TRANSISTOR",
+    "name": "Transistor",
+    "description": "Ups Electric-type moves."
+  },
+  {
+    "id": "TRIAGE",
+    "name": "Triage",
+    "description": "Healing moves go first."
+  },
+  {
+    "id": "TRUANT",
+    "name": "Truant",
+    "description": "Moves only every two turns."
+  },
+  {
+    "id": "TURBOBLAZE",
+    "name": "Turboblaze",
+    "description": "Moves hit through abilities."
+  },
+  {
+    "id": "UNAWARE",
+    "name": "Unaware",
+    "description": "Ignores stat changes."
+  },
+  {
+    "id": "UNBURDEN",
+    "name": "Unburden",
+    "description": "Using a hold item ups Speed."
+  },
+  {
+    "id": "UNNERVE",
+    "name": "Unnerve",
+    "description": "Foes can't eat Berries."
+  },
+  {
+    "id": "UNSEEN_FIST",
+    "name": "Unseen Fist",
+    "description": "Contact evades protection."
+  },
+  {
+    "id": "VESSEL_OF_RUIN",
+    "name": "Vessel of Ruin",
+    "description": "Lowers foes' sp. damage."
+  },
+  {
+    "id": "VICTORY_STAR",
+    "name": "Victory Star",
+    "description": "Raises party accuracy."
+  },
+  {
+    "id": "VITAL_SPIRIT",
+    "name": "Vital Spirit",
+    "description": "Prevents sleep."
+  },
+  {
+    "id": "VOLT_ABSORB",
+    "name": "Volt Absorb",
+    "description": "Turns electricity into HP."
+  },
+  {
+    "id": "WANDERING_SPIRIT",
+    "name": "Wandering Spirit",
+    "description": "Trade abilities on contact."
+  },
+  {
+    "id": "WATER_ABSORB",
+    "name": "Water Absorb",
+    "description": "Changes water into HP."
+  },
+  {
+    "id": "WATER_BUBBLE",
+    "name": "Water Bubble",
+    "description": "Guards from fire and burns."
+  },
+  {
+    "id": "WATER_COMPACTION",
+    "name": "Water Compaction",
+    "description": "Water boosts Defense."
+  },
+  {
+    "id": "WATER_VEIL",
+    "name": "Water Veil",
+    "description": "Prevents burns."
+  },
+  {
+    "id": "WEAK_ARMOR",
+    "name": "Weak Armor",
+    "description": "Its stats change when hit."
+  },
+  {
+    "id": "WELL_BAKED_BODY",
+    "name": "Well-Baked Body",
+    "description": "Strengthened by Fire."
+  },
+  {
+    "id": "WHITE_SMOKE",
+    "name": "White Smoke",
+    "description": "Prevents ability reduction."
+  },
+  {
+    "id": "WIMP_OUT",
+    "name": "Wimp Out",
+    "description": "Flees at half HP."
+  },
+  {
+    "id": "WIND_POWER",
+    "name": "Wind Power",
+    "description": "Gets charged by wind."
+  },
+  {
+    "id": "WIND_RIDER",
+    "name": "Wind Rider",
+    "description": "Ups Attack if hit by wind."
+  },
+  {
+    "id": "WONDER_GUARD",
+    "name": "Wonder Guard",
+    "description": "Only “Supereffective” hits."
+  },
+  {
+    "id": "WONDER_SKIN",
+    "name": "Wonder Skin",
+    "description": "May avoid status problems."
+  },
+  {
+    "id": "ZEN_MODE",
+    "name": "Zen Mode",
+    "description": "Transforms at half HP."
+  },
+  {
+    "id": "ZERO_TO_HERO",
+    "name": "Zero to Hero",
+    "description": "Changes form on switch out."
+  }
+]

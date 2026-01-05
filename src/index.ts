@@ -7,6 +7,7 @@ import homeHtml from './html.home.html';
 import indexHtml from './html.index.html';
 import downloadHtml from './html.download.html';
 import faqHtml from './html.faq.html';
+import pokedexHtml from './html.pokedex.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
 import v1_7 from '../assets/PatchNotes/v1.7 Patch Notes.txt';
 import v1_8 from '../assets/PatchNotes/v1.8 Patch Notes.txt';
@@ -64,6 +65,10 @@ import speciesInfoText from '../assets/speciesinfo.txt';
 import resultsHtml from './html.results.html';
 import teamPlannerHtml from './html.teamPlanner.html';
 import pokemonCsv from '../Pok.csv';
+import pokedexData from './data/pokedex.json';
+import evolutionsData from './data/evolutions.json';
+import movesData from './data/moves.json';
+import abilitiesData from './data/abilities.json';
 import css from './style.css';
 
 import {
@@ -359,6 +364,9 @@ export default {
       } else if (path[0] === 'download' && request.method.toLowerCase() == 'get') {
         // User is at the Download page
         return new Response(downloadHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      } else if (path[0] === 'pokedex' && request.method.toLowerCase() == 'get') {
+        // Prototype Pokédex page with dummy data
+        return new Response(pokedexHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] === 'teamplanner' && request.method.toLowerCase() == 'get') {
         // User is at the Team Planner page
         return new Response(teamPlannerHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
@@ -445,6 +453,18 @@ export default {
       } else if (path[0] === 'api' && path[1] === 'pokemon-csv') {
         console.log(`[Worker Fetch] Matched /api/pokemon-csv route.`);
         return new Response(pokemonCsv, { headers: { 'Content-Type': 'text/csv' } });
+      } else if (path[0] === 'api' && path[1] === 'pokedex') {
+        console.log(`[Worker Fetch] Matched /api/pokedex route. Count: ${(pokedexData as any[]).length}`);
+        return new Response(JSON.stringify(pokedexData), { headers: { 'Content-Type': 'application/json' } });
+      } else if (path[0] === 'data' && path[1] === 'evolutions.json') {
+        console.log(`[Worker Fetch] Matched /data/evolutions.json route.`);
+        return new Response(JSON.stringify(evolutionsData), { headers: { 'Content-Type': 'application/json' } });
+      } else if (path[0] === 'data' && path[1] === 'moves.json') {
+        console.log(`[Worker Fetch] Matched /data/moves.json route.`);
+        return new Response(JSON.stringify(movesData), { headers: { 'Content-Type': 'application/json' } });
+      } else if (path[0] === 'data' && path[1] === 'abilities.json') {
+        console.log(`[Worker Fetch] Matched /data/abilities.json route.`);
+        return new Response(JSON.stringify(abilitiesData), { headers: { 'Content-Type': 'application/json' } });
       } else if (path[0] == 'style.css') {
         return new Response(css, { headers: { 'Content-Type': 'text/css;charset=UTF-8' } });
       } else if (path[0] == 'clientModules') {
