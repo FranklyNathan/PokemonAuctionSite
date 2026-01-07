@@ -1087,12 +1087,14 @@
       // Fetch Pokemon data from API
       async function loadData() {
         try {
+          // Cache busting: use current timestamp
+          const cacheBust = `v=${Date.now()}`;
           // Load pokedex, evolutions, moves, and abilities data in parallel
           const [pokedexResponse, evolutionsResponse, movesResponse, abilitiesResponse] = await Promise.all([
-            fetch('/api/pokedex'),
-            fetch('/data/evolutions.json'),
-            fetch('/data/moves.json'),
-            fetch('/data/abilities.json')
+            fetch(`/api/pokedex?${cacheBust}`),
+            fetch(`/data/evolutions.json?${cacheBust}`),
+            fetch(`/data/moves.json?${cacheBust}`),
+            fetch(`/data/abilities.json?${cacheBust}`)
           ]);
           
           if (!pokedexResponse.ok) throw new Error('Failed to load Pokemon data');
