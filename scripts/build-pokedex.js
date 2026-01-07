@@ -7,6 +7,7 @@ const speciesPath = path.join(root, 'assets', 'speciesinfo.txt');
 const gen7Path = path.join(root, 'src', 'data', 'gen_7.h');
 const teachablePath = path.join(root, 'src', 'data', 'teachable_learnsets.h');
 const outPath = path.join(root, 'src', 'data', 'pokedex.json');
+const evolutionsPath = path.join(root, 'src', 'data', 'evolutions.json');
 
 // List of TMs available at Slateport Market
 const SLATEPORT_TMS = [
@@ -21,6 +22,23 @@ const SLATEPORT_TMS = [
 
 // HMs we use
 const VALID_HMS = ['FLY', 'SURF', 'ROCK_SMASH', 'WATERFALL'];
+
+let evolutionFamilies = {};
+if (fs.existsSync(evolutionsPath)) {
+  const evolutionData = JSON.parse(fs.readFileSync(evolutionsPath, 'utf-8'));
+  evolutionFamilies = evolutionData.families || {};
+}
+
+// Create a lookup map: pokemon name -> family key
+const pokemonToFamily = {};
+for (const familyKey in evolutionFamilies) {
+  const family = evolutionFamilies[familyKey];
+  if (family.members) {
+    family.members.forEach(member => {
+      pokemonToFamily[member] = familyKey;
+    });
+  }
+}
 
 function readCSV(file) {
   const text = fs.readFileSync(file, 'utf8');
@@ -52,8 +70,8 @@ function parseSpeciesInfo(file) {
       continue;
     }
     
-    // Egg move line
-    if (current && line.startsWith('') && /\(Egg\)/i.test(line)) {
+    // Egg move line (handles (Egg), (Egg/TM), (Egg/MR), etc)
+    if (current && /\(Egg(\/|,|\)| )/i.test(line)) {
       const entry = line.replace(/^[-*\s]+/, '');
       if (!entry) continue;
       const moveName = entry.split('(')[0].trim();
@@ -85,6 +103,10 @@ function parseLevelUpMoves(file) {
       continue;
     }
     
+    // Ignore commented out LEVEL_UP_MOVE lines
+    if (/^\s*\/\/\s*LEVEL_UP_MOVE/.test(line)) {
+      continue;
+    }
     // Match move line: "LEVEL_UP_MOVE(25, MOVE_FIRE_FANG),"
     const moveMatch = line.match(/LEVEL_UP_MOVE\(\s*(\d+),\s*MOVE_(\w+)\)/);
     if (moveMatch && currentSpecies) {
@@ -164,198 +186,13 @@ const levelUpMoves = parseLevelUpMoves(gen7Path);
 console.log('Parsing TM/HM moves...');
 const teachableMoves = parseTeachableMoves(teachablePath);
 
-// Load hardcoded evolution data
-const evolutionsPath = path.join(__dirname, '../src/data/evolutions.json');
-let evolutionFamilies = {};
-if (fs.existsSync(evolutionsPath)) {
-  const evolutionData = JSON.parse(fs.readFileSync(evolutionsPath, 'utf-8'));
-  evolutionFamilies = evolutionData.families || {};
-}
-
-// Create a lookup map: pokemon name -> family key
-const pokemonToFamily = {};
-for (const familyKey in evolutionFamilies) {
-  const family = evolutionFamilies[familyKey];
-  family.members.forEach(member => {
-    pokemonToFamily[member] = familyKey;
-  });
-}
-
-// Split evolution configuration - same as frontend
-const SPLIT_EVOLUTIONS = {
-  Applin: ['Flapple', 'Appletun', 'Dipplin'],
-  Cubone: ['Marowak', 'Marowak-Alola'],
-  Dartrix: ['Decidueye', 'Decidueye-Hisui'],
-  Exeggcute: ['Exeggutor', 'Exeggutor-Alola'],
-  Eevee: ['Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon', 'Leafeon', 'Glaceon', 'Sylveon'],
-  Gloom: ['Vileplume', 'Bellossom'],
-  Goomy: ['Sliggoo', 'Sliggoo-Hisui'],
-  Kirlia: ['Gardevoir', 'Gallade'],
-  'Mime Jr': ['Mr. Mime', 'Mr. Rime'],
-  Pikachu: ['Raichu', 'Raichu-Alola'],
-  Poliwhirl: ['Poliwrath', 'Politoed'],
-  Rockruff: ['Lycanroc-Midday', 'Lycanroc-Midnight'],
-  Scyther: ['Scizor', 'Kleavor'],
-  Slowpoke: ['Slowbro-Galar', 'Slowking-Galar'],
-  Snorunt: ['Glalie', 'Froslass'],
-  Toxel: ['Toxtricity-Amped', 'Toxtricity-Low_Key'],
-  Tyrogue: ['Hitmonlee', 'Hitmonchan', 'Hitmontop'],
-};
-
-// Helper function to find evolution chain for a given pokémon
-function getEvolutionsForPokemon(currentIdx) {
-  const currentRow = rows[currentIdx];
-  const currentName = currentRow.name;
-  
-  // Check if this Pokémon belongs to a hardcoded family
-  const familyKey = pokemonToFamily[currentName];
-  if (familyKey && evolutionFamilies[familyKey]) {
-    const family = evolutionFamilies[familyKey];
-    const tree = family.tree;
-    const currentIndex = tree.findIndex(e => e.name === currentName);
-    
-    if (currentIndex !== -1) {
-      // Build the evolution array with proper isBase flags
-      const allEvos = tree.map((evo, idx) => {
-        let imageName = evo.name;
-        if (imageName.startsWith('Mega ')) {
-          const parts = imageName.split(' ');
-          imageName = `${parts[1]}-Mega`;
-        }
-        imageName = imageName.replace(/ /g, '_');
-        
-        return {
-          name: evo.name,
-          method: evo.method,
-          image: `${imageName}.png`,
-          isBase: idx < currentIndex
-        };
-      }).filter((e, idx) => idx !== currentIndex); // Exclude current Pokémon
-      
-      return allEvos;
-    }
-  }
-  
-  // Fall back to auto-generation if not hardcoded
-  const allInFamily = [];
-  
-  // Find the base form of this evolution family
-  let baseIdx = currentIdx;
-  
-  // If this is an evolved form, search backwards to find the base form
-  if (currentRow.stage && currentRow.stage !== 'base') {
-    for (let i = currentIdx - 1; i >= 0; i--) {
-      if (rows[i].stage === 'base') {
-        baseIdx = i;
-        break;
-      }
-    }
-  }
-  
-  // Build the full family list first
-  const fullFamily = [];
-  
-  // Add the base form
-  const baseRow = rows[baseIdx];
-  let baseImageName = baseRow.name;
-  if (baseImageName.startsWith('Mega ')) {
-    const parts = baseImageName.split(' ');
-    baseImageName = `${parts[1]}-Mega`;
-  }
-  baseImageName = baseImageName.replace(/ /g, '_');
-  
-  fullFamily.push({
-    name: baseRow.name,
-    method: '',
-    image: `${baseImageName}.png`,
-    idx: baseIdx
-  });
-  
-  // Add all evolutions from the base form
-  for (let i = baseIdx + 1; i < rows.length; i++) {
-    const potentialEvo = rows[i];
-    
-    // Stop if we hit the next base form
-    if (potentialEvo.stage === 'base') {
-      break;
-    }
-    
-    let imageName = potentialEvo.name;
-    // Handle Mega Evolution naming: "Mega Aggron" -> "Aggron-Mega"
-    if (imageName.startsWith('Mega ')) {
-      const parts = imageName.split(' ');
-      imageName = `${parts[1]}-Mega`;
-    }
-    // Standardize underscores for spaces
-    imageName = imageName.replace(/ /g, '_');
-    
-    fullFamily.push({
-      name: potentialEvo.name,
-      method: potentialEvo.evolution_method || '',
-      image: `${imageName}.png`,
-      idx: i
-    });
-  }
-  
-  // Check if current pokemon is part of a split branch
-  let isInBranch = false;
-  let branchBase = null;
-  let siblingBranches = [];
-  
-  for (const base in SPLIT_EVOLUTIONS) {
-    const branches = SPLIT_EVOLUTIONS[base];
-    if (branches.includes(currentName)) {
-      // We're viewing a branch member - filter out siblings and their descendants
-      isInBranch = true;
-      branchBase = base;
-      siblingBranches = branches.filter(b => b !== currentName);
-      break;
-    }
-  }
-  
-  // Filter the family based on split evolution logic
-  let filteredFamily = fullFamily;
-  
-  if (isInBranch) {
-    // We're in a specific branch - remove siblings and their Mega forms
-    filteredFamily = fullFamily.filter(member => {
-      // Keep if it's not a sibling
-      if (siblingBranches.includes(member.name)) {
-        return false;
-      }
-      
-      // Check if it's a Mega of a sibling
-      if (member.name.startsWith('Mega ')) {
-        const megaBase = member.name.substring(5).split(' ')[0];
-        if (siblingBranches.includes(megaBase)) {
-          return false;
-        }
-      } else if (member.name.includes('-Mega')) {
-        const megaBase = member.name.split('-')[0];
-        if (siblingBranches.includes(megaBase)) {
-          return false;
-        }
-      }
-      
-      return true;
-    });
-  }
-  // If not in a branch, show everything (ancestors before split see all branches and their megas)
-  
-  // Now filter to exclude current Pokémon and mark pre/post evolutions
-  return filteredFamily
-    .filter(p => p.idx !== currentIdx)
-    .map(p => ({
-      name: p.name,
-      method: p.method,
-      image: p.image,
-      isBase: p.idx < currentIdx  // Mark as "base" if it comes before current in the chain
-    }));
-}
 
 console.log('Building result...');
 const result = rows.map((row, idx) => {
-  const name = row.name || `Unknown-${idx + 1}`;
+  let name = row.name || `Unknown-${idx + 1}`;
+  // Special case for Mega Charizard X and Mega Raichu X
+  if (name.toLowerCase() === 'charizard-mega_x') name = 'Mega Charizard X';
+  if (name.toLowerCase() === 'raichu-mega_x') name = 'Mega Raichu X';
   const types = (row.type || '').split('/').filter(Boolean);
   
   // Parse abilities with hidden flag
@@ -388,8 +225,24 @@ const result = rows.map((row, idx) => {
     }
   }
   
-  // Get level-up moves (use base form for megas)
-  const levelMoves = levelUpMoves.get(isMega ? baseFormName : name) || [];
+  // Normalize form names for gen_7.h lookup (e.g., Ninetales-Alola -> NinetalesAlola)
+  function normalizeFormName(n) {
+    // Hardcoded base forms that need to lookup their Galarian/Alolan movesets
+    const hardcodedForms = {
+      Sandshrew: 'SandshrewAlola',
+      Zigzagoon: 'ZigzagoonGalar',
+      Vulpix: 'VulpixAlola',
+      Slowpoke: 'SlowpokeGalar',
+      'Mr. Mime': 'MrMime',
+      'Mr. Mime-Galar': 'MrMimeGalar',
+      'Mime Jr': 'MimeJr',
+      'Mr. Rime': 'MrRime'
+    };
+    if (hardcodedForms[n]) return hardcodedForms[n];
+    return n.replace(/-(Alola|Galar)$/i, (_, form) => form.charAt(0).toUpperCase() + form.slice(1));
+  }
+  const lookupName = normalizeFormName(isMega ? baseFormName : name);
+  const levelMoves = levelUpMoves.get(lookupName) || [];
   const moves = levelMoves.map(m => ({
     name: m.name,
     type: types[0] || 'Normal',
@@ -401,17 +254,26 @@ const result = rows.map((row, idx) => {
     level: m.level,
   }));
   
-  // Get egg moves from the base form of the family for all members
-  let familyBaseName = name;
-  // Try to get the family key for this mon
-  const famKey = pokemonToFamily[name];
-  if (famKey && evolutionFamilies[famKey] && evolutionFamilies[famKey].tree && evolutionFamilies[famKey].tree.length > 0) {
-    familyBaseName = evolutionFamilies[famKey].tree[0].name;
-  } else if (isMega) {
-    familyBaseName = baseFormName;
+  // Get egg moves for all members of the same family
+  let famKey = null;
+  if (typeof pokemonToFamily !== 'undefined' && pokemonToFamily[name]) {
+    famKey = pokemonToFamily[name]; 
   }
-  const eggs = eggMoves.get(familyBaseName) || [];
-  eggs.forEach(moveName => {
+  let familyMembers = famKey && evolutionFamilies[famKey] ? evolutionFamilies[famKey].members : [name];
+  let eggMoveSet = new Set(); 
+  familyMembers.forEach(member => {
+    if(name === "Mega Charizard X"){
+      eggMoveSet.add("Dragon Dance");
+    } else if(name === "Corsola-Galar" || name === "Cursola"){
+      eggMoveSet.add("Destiny Bond");
+    } else {
+      const memberEggs = eggMoves.get(member) || [];
+      memberEggs.forEach(move => eggMoveSet.add(move));
+    }
+    
+  });
+  
+  eggMoveSet.forEach(moveName => {
     moves.push({
       name: moveName,
       type: types[0] || 'Normal',
@@ -424,8 +286,9 @@ const result = rows.map((row, idx) => {
     });
   });
   
-  // Get TM/HM moves (use base form for megas)
-  const tms = teachableMoves.get(isMega ? baseFormName : name) || [];
+  // Get TM/HM moves (use normalized name as for level-up moves)
+  const tmLookupName = normalizeFormName(isMega ? baseFormName : name);
+  const tms = teachableMoves.get(tmLookupName) || [];
   const tmList = tms.map(moveName => ({
     name: moveName,
     type: types[0] || 'Normal',
@@ -440,18 +303,6 @@ const result = rows.map((row, idx) => {
   // Add TMs to moves array too
   moves.push(...tmList);
 
-  // Build evolution chain (use base form for megas)
-  let evolutions = getEvolutionsForPokemon(idx);
-  
-  // For mega forms, also copy evolutions from base form
-  if (isMega && evolutions.length === 0) {
-    // Find the base form in the rows
-    const baseFormIdx = rows.findIndex(r => r.name === baseFormName && r.stage !== 'mega');
-    if (baseFormIdx !== -1) {
-      evolutions = getEvolutionsForPokemon(baseFormIdx);
-    }
-  }
-
   return {
     dex: Number(row.dex_number) || -1,
     name,
@@ -461,9 +312,6 @@ const result = rows.map((row, idx) => {
     moves,
     tm: tmList,
     stage: row.stage || '',
-    evolution_method: row.evolution_method || '',
-    mega: row.mega || '',
-    meta: 'dummy dex; move stats dummy when not available',
   };
 });
 
