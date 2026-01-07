@@ -58,6 +58,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 366,Clamperl,Water,base,Shell Armor,,Rattled,35,64,85,74,55,32,,,
 367,Huntail,Water,evo,Swift Swim,,Water Veil,55,104,105,94,75,52,Level 28 (Male),,
 368,Gorebyss,Water,evo,Swift Swim,,Hydration,55,84,105,114,75,52,Level 28 (Female),,
+852,Clobbopus,Fighting,base,Limber,,Technician,50,68,60,50,50,32,,,
+853,Grapploct,Fighting,evo,Limber,,Technician,80,118,90,70,80,42,Water Stone,,
 341,Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,,,
 342,Crawdaunt,Water/Dark,evo,Hyper Cutter,Shell Armor,Adaptability,63,120,85,90,55,55,Level 30,,
 222,Corsola,Water/Rock,base,Hustle,Natural Cure,Regenerator,65,55,95,65,95,35,on death,,
@@ -426,7 +428,7 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 36,Mega Clefable,Fairy/Flying,mega,Cute Charm,Magic Guard,Unaware,95,80,93,135,110,70,Clefablite,Stage 2,TRUE
 433,Chingling,Psychic,base,Levitate,,,45,30,50,65,50,45,,Stage 1,TRUE
 358,Chimecho,Psychic,evo,Levitate,,,75,50,80,95,90,65,Level 20,Stage 1,TRUE
-358,Mega Chimecho,Psychic,evo,Levitate,,,75,50,110,135,120,65,Chimechite,Stage 1,TRUE
+358,Mega Chimecho,Psychic/Steel,evo,Levitate,,,75,50,110,135,120,65,Chimechite,Stage 1,TRUE
 239,Elekid,Electric,base,Static,,Vital Spirit,45,63,37,65,55,95,,,TRUE
 125,Electabuzz,Electric,evo,Static,,Vital Spirit,65,83,57,95,85,105,Level 30,,TRUE
 466,Electivire,Electric,evo,Motor Drive,,Vital Spirit,75,123,67,95,85,95,Linking Cord,,TRUE

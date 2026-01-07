@@ -339,7 +339,7 @@ Ability: Swarm
 - Rock Tomb
 
 Arcanine-Hisui
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
@@ -399,7 +399,7 @@ Ability: Swarm
 - Rock Tomb
 
 Arcanine-Hisui
-Level: 47
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
@@ -749,7 +749,7 @@ Ability: Swarm
 - Aerial Ace
 
 Ninjask
-Level: 39
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Speed Boost
@@ -809,7 +809,7 @@ Ability: Swarm
 - Aerial Ace
 
 Ninjask
-Level: 45
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Speed Boost
@@ -1159,7 +1159,7 @@ Ability: Guts
 - Bulk Up
 
 Medicham
-Level: 39
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pure Power
@@ -1229,7 +1229,7 @@ Ability: Pure Power
 - Bulk Up
 
 Blaziken
-Level: 45
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Blaze
@@ -1239,7 +1239,7 @@ Ability: Blaze
 - Focus Energy
 
 Sirfetch'd @ Leek
-Level: 47
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Steadfast
@@ -1589,7 +1589,7 @@ Ability: Soundproof
 - Explosion
 
 Magnezone
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magnet Pull
@@ -1659,7 +1659,7 @@ Ability: Magnet Pull
 - Flash Cannon
 
 Raichu-Alola
-Level: 47
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Surge Surfer
@@ -2019,7 +2019,7 @@ Ability: Drought
 - Attract
 
 Camerupt
-Level: 42
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magma Armor
@@ -2069,7 +2069,7 @@ Ability: Flame Body
 - Sunny Day
 
 Ninetales
-Level: 45
+Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Drought
@@ -2079,7 +2079,7 @@ Ability: Drought
 - Attract
 
 Camerupt
-Level: 47
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Magma Armor
@@ -2829,7 +2829,7 @@ Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
-Level: 40
+Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Chlorophyll
@@ -2859,7 +2859,7 @@ Ability: Keen Eye
 - Hurricane
 
 Skarmory
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
@@ -2889,7 +2889,7 @@ Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Tropius
-Level: 44
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Chlorophyll
@@ -2899,7 +2899,7 @@ Ability: Chlorophyll
 - Leaf Storm
 
 Braviary-Hisui
-Level: 45
+Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sheer Force
@@ -2919,7 +2919,7 @@ Ability: Keen Eye
 - Hurricane
 
 Skarmory
-Level: 44
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Keen Eye
@@ -3219,7 +3219,7 @@ Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Claydol
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
@@ -3229,7 +3229,7 @@ Ability: Levitate
 - Light Screen
 
 Xatu
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
@@ -3239,7 +3239,7 @@ Ability: Synchronize
 - Calm Mind
 
 Slowbro-Galar
-Level: 38
+Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Quick Draw
@@ -3249,7 +3249,7 @@ Ability: Quick Draw
 - Psychic
 
 Slowking-Galar
-Level: 38
+Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
@@ -3289,7 +3289,7 @@ Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Claydol
-Level: 44
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
@@ -3299,7 +3299,7 @@ Ability: Levitate
 - Light Screen
 
 Xatu
-Level: 44
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
@@ -3309,7 +3309,7 @@ Ability: Synchronize
 - Calm Mind
 
 Slowbro-Galar
-Level: 45
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Quick Draw
@@ -3319,7 +3319,7 @@ Ability: Quick Draw
 - Psychic
 
 Slowking-Galar
-Level: 45
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
@@ -3668,7 +3668,7 @@ Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
-Level: 41
+Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Gooey
@@ -3678,7 +3678,7 @@ Ability: Gooey
 - Triple Dive
 
 Wailord
-Level: 39
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
@@ -3698,7 +3698,7 @@ Ability: Oblivious
 - Rain Dance
 
 Gyarados
-Level: 41
+Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate
@@ -3738,7 +3738,7 @@ Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Wugtrio
-Level: 45
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Gooey
@@ -3748,7 +3748,7 @@ Ability: Gooey
 - Triple Dive
 
 Wailord
-Level: 46
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
@@ -3758,7 +3758,7 @@ Ability: Water Veil
 - Water Pulse
 
 Whiscash
-Level: 44
+Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Oblivious
@@ -3768,7 +3768,7 @@ Ability: Oblivious
 - Earthquake
 
 Gyarados
-Level: 46
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Intimidate

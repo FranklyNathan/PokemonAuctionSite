@@ -1,0 +1,52 @@
+1/6/2026
+
+-----------------------------------------------
+Balance Adjustments
+-----------------------------------------------
+
+New AI Behavior: Enemy trainers won't use healing items while at or above 50% HP
+//It's rare but startling when a gym leader sees that you can one-shot its 75% HP Pokémon but not its 100% HP Pokémon and proceeds to heal while at such high health. This behavior is too jarringly unlike original Emerald AI, which only heals if the Pokémon is below 25% or if the current missing HP > the amount of HP that will be healed.
+
+
+Gym 7/8 Levels Normalized
+//Late-game gym levels were weird, some were too low while others were too high. Most notably, the levels for Tate&Liza 7/8 and Juan&Wallace 7&8 came down by an average of 1 per Pokémon.
+
+
+Rage Fist: 50BP moves that increases in power by 50 each time the user is hit, capping at 150 --> 100.
+//Reduces the max base power of the move by 50.
+//No one ape should have all this rage.
+
+
+Boycott on Y and Z Enacted:
+Charizardite Y and Raichunite Y removed
+//The people love Charizard X. It's a Dragon!! Charizard Y, on the other hand, is highly cringe. Nobody wants to touch it with a ten-foot pole. Who would use such a thing? I will take it out to save you the distaste of needing to look at it.
+//This change also bars Yveltal and Zygarde from the pool.
+
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Move Relearner Shows all Potential Moves
+//The recent merge with upstream broke the Move Releaner, and it sporadically wasn't showing certain level-up moves as options to be relearned on certain Pokémon. This should now be fixed.
+
+Day/Night Evolutions Fixed
+//This same merge also broke the Day/Night cycle to allow "dead zones" where the game didn't consider it to be day or night. This should be fixed.
+
+De-Mega-Evolving Resets Types
+//Previously, for example, changing from Mega Feraligatr to Feraligatr wasn't removing the Dragon typing.
+
+Mime Jr. Evolves at level 15 > 20
+//This was correct in the documentation but wrong in game.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Clobbopus Added
+//Evolution Method: Water Stone
+//Egg Move: Power-Up Punch
+//I am not so heartless as IvanB. I will approve the Grapploct.
+

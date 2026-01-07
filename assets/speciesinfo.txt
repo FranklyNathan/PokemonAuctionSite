@@ -336,6 +336,17 @@ Key Moves:
    Moonblast (46*)
    Wish (Egg)
 
+Clobbopus
+Key Moves:
+   Rock Smash (1)
+   Detect (15)
+   Brick Break (20)
+   Bulk Up (25)
+   Octolock (Evo.)
+   Dig (TM)
+   Waterfall (HM)
+   Power-Up Punch (Egg)
+
 Combee
 Key Moves:
    Gust (1)
