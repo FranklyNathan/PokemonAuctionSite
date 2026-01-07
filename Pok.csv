@@ -46,7 +46,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 5,Charmeleon,Fire,evo,Blaze,,Solar Power,58,64,58,80,65,80,Level 16,Stage 2,
 6,Charizard,Fire/Flying,evo,Blaze,,Solar Power,78,84,78,109,85,100,Level 36,Stage 2,
 6,Charizard-Mega_X,Fire/Dragon,mega,Tough Claws,,,78,130,111,130,85,100,Charizardite X,Stage 2,
-6,Charizard-Mega_Y,Fire/Flying,mega,Drought,,,78,104,78,159,115,100,Charizardite Y,Stage 2,
 833,Chewtle,Water,base,Strong Jaw,Shell Armor,Swift Swim,50,64,50,38,38,41,,,
 834,Drednaw,Water/Rock,evo,Strong Jaw,Shell Armor,Swift Swim,90,115,90,48,68,74,Level 22,,
 650,Chespin,Grass,base,Overgrow,,Bulletproof,56,61,65,48,45,38,,Stage 2,
@@ -453,7 +452,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 25,Pikachu,Electric,evo,Static,,Lightning Rod,35,55,40,50,50,90,Level 10,Stage 2,TRUE
 26,Raichu,Electric,evo,Static,,Lightning Rod,60,90,55,90,80,110,Thunder Stone,Stage 2,TRUE
 26,Mega Raichu X,Electric,evo,Static,,Lightning Rod,60,135,95,90,95,110,Raichunite X,Stage 2,TRUE
-26,Mega Raichu Y,Electric,evo,Static,,Lightning Rod,60,100,55,160,80,130,Raichunite Y,Stage 2,TRUE
 26,Raichu-Alola,Electric/Psychic,evo,Surge Surfer,,,60,85,50,95,85,110,Water Stone,,TRUE
 447,Riolu,Fighting,base,Steadfast,Inner Focus,Prankster,40,70,40,35,40,60,,Stage 1,TRUE
 448,Lucario,Fighting/Steel,evo,Steadfast,Inner Focus,Justified,70,110,70,115,70,90,Level 30,Stage 1,TRUE

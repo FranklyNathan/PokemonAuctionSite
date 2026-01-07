@@ -542,13 +542,20 @@
           if (fileName === "Mega Charizard X"){
             fileName = "Charizard-Mega_X";
           } 
-          else if(fileName === "Mega Charizard Y"){
-            fileName = "Charizard-Mega_Y";
-          }
           else if(fileName.startsWith('Mega ')) {
             fileName = fileName.substring(5) + '-Mega';
           }
-          fileName = fileName.replace(/\s/g, '_');
+          // Hardcode Mime family image filenames
+          const mimeFamilyMap = {
+            "Mr. Mime": "Mr_Mime",
+            "Mr. Mime-Galar": "Mr_Mime-Galar",
+            "Mr. Rime": "Mr_Rime",
+          };
+          if (mimeFamilyMap[fileName]) {
+            fileName = mimeFamilyMap[fileName];
+          } else {
+            fileName = fileName.replace(/\s/g, '_');
+          }
           const imagePath = `/${folder}/${fileName}.png`;
           row.innerHTML = `
             <div class="stat-chip">${p.dex.toString().padStart(3, '0')}</div>
@@ -708,10 +715,22 @@
           
           const folder = (nodePokemon && nodePokemon.stage === 'base') ? 'baseforms' : 'evolutions';
           let fileName = node.name;
-          if (fileName.startsWith('Mega ')) {
+          if (fileName === "Mega Charizard X"){
+            fileName = "Charizard-Mega_X";
+          } else if (fileName.startsWith('Mega ')) {
             fileName = fileName.substring(5) + '-Mega';
           }
-          fileName = fileName.replace(/\s/g, '_');
+          // Hardcode Mime family image filenames
+          const mimeFamilyMap = {
+            "Mr. Mime": "Mr_Mime",
+            "Mr. Mime-Galar": "Mr_Mime-Galar",
+            "Mr. Rime": "Mr_Rime",
+          };
+          if (mimeFamilyMap[fileName]) {
+            fileName = mimeFamilyMap[fileName];
+          } else {
+            fileName = fileName.replace(/\s/g, '_');
+          }
           const imagePath = `/${folder}/${fileName}.png`;
           
           const isCurrentPokemon = node.name === pokemon.name;
@@ -799,7 +818,9 @@
         if (!p) return;
         const folder = p.stage === 'base' ? 'baseforms' : 'evolutions';
         let fileName = p.name;
-        if (fileName.startsWith('Mega ')) {
+        if (fileName === "Mega Charizard X"){
+            fileName = "Charizard-Mega_X";
+        } else if (fileName.startsWith('Mega ')) {
           fileName = fileName.substring(5) + '-Mega';
         }
         fileName = fileName.replace(/\s/g, '_');

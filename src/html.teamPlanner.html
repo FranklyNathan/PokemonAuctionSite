@@ -1,874 +1,574 @@
 <!doctype html>
 <html class="sl-theme-dark">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Planner</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <!-- shoelace components -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/card/card.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/select/select.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/option/option.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
-    <script src="vendor/papaparse.js"></script>
-  </head>
 
-  <style>
-    body {
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Planner</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- shoelace components -->
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/card/card.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/select/select.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/option/option.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+  <script src="vendor/papaparse.js"></script>
+</head>
 
-    .sl-theme-dark .invert-in-dark-mode {
-      filter: invert(1);
-    }
+<style>
+  body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .pokemon-info-section {
-      height: 300px;
-      background-color: var(--container-bg-color);
-      border: 1px solid black;
-      padding: 0.5rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: stretch;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      position: relative;
-    }
+  .sl-theme-dark .invert-in-dark-mode {
+    filter: invert(1);
+  }
 
-    .species-info-text {
-      flex: 0 0 280px;
-      overflow-y: auto;
-      font-size: 0.9rem;
-      margin: 0;
-      padding-right: 1rem;
-      direction: rtl;
-    }
+  .pokemon-info-section {
+    height: 300px;
+    background-color: var(--container-bg-color);
+    border: 1px solid black;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
 
-    .pokemon-image-container {
-      flex: 0 0 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
+  .species-info-text {
+    flex: 0 0 280px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    margin: 0;
+    padding-right: 1rem;
+    direction: rtl;
+  }
 
-    .pokemon-image {
-      max-height: 80%;
-      max-width: 100%;
-      object-fit: contain;
-    }
+  .pokemon-image-container {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    .pokemon-image-types {
-      display: flex;
-      gap: 0.2rem;
-    }
+  .pokemon-image {
+    max-height: 80%;
+    max-width: 100%;
+    object-fit: contain;
+  }
 
-    .evolution-info-container {
-      flex: 1;
-      min-width: 400px;
-      text-align: left;
-      overflow: auto;
-      font-size: 0.9rem;
-      margin: 0;
-      gap: 0.5rem;
-      flex-direction: column;
-    }
+  .pokemon-image-types {
+    display: flex;
+    gap: 0.2rem;
+  }
 
-    .ability-link, .move-link {
-      color: inherit;
-      text-decoration: none;
-    }
+  .evolution-info-container {
+    flex: 1;
+    min-width: 400px;
+    text-align: left;
+    overflow: auto;
+    font-size: 0.9rem;
+    margin: 0;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
 
-    #add-pokemon-dialog::part(panel) {
-      max-width: 600px;
-      width: 90%;
-    }
+  .ability-link,
+  .move-link {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    #team-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+  #add-pokemon-dialog::part(panel) {
+    max-width: 600px;
+    width: 90%;
+  }
 
-    .header-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: var(--container-bg-color);
-      border: 1px solid black;
-    }
+  #team-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .control-button {
-      --sl-spacing-x-small: 0;
-    }
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--container-bg-color);
+    border: 1px solid black;
+  }
 
-    .control-button::part(base) {
-      width: 3rem;
-      height: 1rem;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      overflow: visible;
-    }
+  .shopping-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
 
-    .control-button img {
-      width: 2rem;
-      height: 2rem;
-    }
+  .control-button {
+    --sl-spacing-x-small: 0;
+  }
 
-    .remove-button {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-    }
+  .control-button::part(base) {
+    width: 3rem;
+    height: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: visible;
+  }
 
-    .evolution-summary-section {
-      display: none;
-      padding: 1rem;
-      background-color: var(--container-bg-color);
-      border: 1px solid black;
-      margin-bottom: 1rem;
-    }
+  .control-button img {
+    width: 2rem;
+    height: 2rem;
+  }
 
-    .evolution-summary-section.visible {
-      display: block;
-    }
+  .remove-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
 
-    .evolution-summary-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.8rem;
-    }
+  .evolution-summary-section {
+    display: none;
+    padding: 1rem;
+    background-color: var(--container-bg-color);
+    border: 1px solid black;
+    margin-bottom: 1rem;
+  }
 
-    .team-summary-content {
-      display: flex;
-      gap: 2rem;
-    }
+  .shopping-summary-section {
+    display: block;
+    padding: 1rem;
+    background-color: var(--container-bg-color);
+    border: 1px solid black;
+    margin-bottom: 1rem;
+  }
 
-    .team-summary-column {
-      flex: 1;
-      min-width: 0;
-    }
+  .evolution-summary-section.visible {
+    display: block;
+  }
 
-    .team-summary-column:first-child {
-      border-right: 2px solid #666;
-      padding-right: 2rem;
-    }
+  .evolution-summary-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+  }
 
-    .team-summary-column:last-child {
-      padding-left: 1rem;
-    }
+  .team-summary-content {
+    display: flex;
+    gap: 2rem;
+  }
 
-    .column-title {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.6rem;
-      color: #aaa;
-    }
+  .team-summary-column {
+    flex: 1;
+    min-width: 0;
+  }
 
-    .evolution-items-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-    }
+  .team-summary-column:first-child {
+    border-right: 2px solid #666;
+    padding-right: 2rem;
+  }
 
-    .egg-moves-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-auto-flow: column;
-      grid-template-rows: repeat(5, auto);
-      gap: 0.4rem 2rem;
-      font-size: 0.9rem;
-    }
+  .team-summary-column:last-child {
+    padding-left: 1rem;
+  }
 
-    .egg-move-item {
-      display: flex;
-      gap: 0.5rem;
-      align-items: baseline;
-    }
+  .column-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #aaa;
+  }
 
-    .evolution-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-    }
+  .evolution-items-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
 
-    .evolution-item-count {
-      font-size: 1rem;
-      font-weight: bold;
-    }
+  .egg-moves-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-flow: column;
+    grid-template-rows: repeat(5, auto);
+    gap: 0.4rem 2rem;
+    font-size: 0.9rem;
+  }
 
-    .evolution-item-note {
-      font-size: 0.8rem;
-      color: #888;
-    }
-  </style>
+  .egg-move-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
 
-  <body>
-    <div class="header-section">
-      <h1>Team Planner</h1>
+  .evolution-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .evolution-item-count {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .evolution-item-note {
+    font-size: 0.8rem;
+    color: #888;
+  }
+</style>
+
+<body>
+  <div class="header-section">
+    <h1>Team Planner</h1>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <sl-button id="add-to-team-btn" variant="primary" size="medium">Add to Team</sl-button>
+      <sl-button id="home-button" class="control-button" variant="neutral" title="Go to Home" href="/">
+        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Go to Home"
+          style="height: 1.3rem; position: relative; top: 5px;" />
+      </sl-button>
+    </div>
+  </div>
+  <div class="shopping-summary-section">
+    <div class="shopping-header-section">
+      <h2>Shop Item Planner</h2>
       <div style="display: flex; gap: 0.5rem; align-items: center;">
-        <sl-button id="add-to-team-btn" variant="primary" size="medium">Add to Team</sl-button>
-        <sl-button id="home-button" class="control-button" variant="neutral" title="Go to Home" href="/">
-          <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Go to Home" style="height: 1.3rem; position: relative; top: 5px;" />
-        </sl-button>
+        <sl-button id="open-shop-item-modal-btn" variant="success" size="small">Add Item(s)</sl-button>
       </div>
     </div>
+    <div id="shop-items-list" class="egg-moves-list"></div>
+  </div>
 
-    <div id="evolution-summary" class="evolution-summary-section">
-      <div class="evolution-summary-title">Team Summary</div>
-      <div class="team-summary-content">
-        <div class="team-summary-column">
-          <div class="column-title">Evolution Items</div>
-          <div id="evolution-items-container" class="evolution-items-grid"></div>
-        </div>
-        <div class="team-summary-column">
-          <div class="column-title">Egg Moves</div>
-          <div id="egg-moves-container" class="egg-moves-list"></div>
-        </div>
+
+  <div id="evolution-summary" class="evolution-summary-section">
+    <div class="evolution-summary-title">Team Summary</div>
+    <div class="team-summary-content">
+      <div class="team-summary-column">
+        <div class="column-title">Evolution Items</div>
+        <div id="evolution-items-container" class="evolution-items-grid"></div>
+      </div>
+      <div class="team-summary-column">
+        <div class="column-title">Egg Moves</div>
+        <div id="egg-moves-container" class="egg-moves-list"></div>
       </div>
     </div>
+  </div>
 
-    <div id="team-container"></div>
+  <div id="team-container"></div>
 
-    <!-- Dialog for adding Pokemon -->
-    <sl-dialog id="add-pokemon-dialog" label="Select Pokemon">
-      <div style="margin-bottom: 1rem;">
-        <label for="pokemon-select" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
-          Choose your Pokemon team:
-        </label>
-        <sl-select id="pokemon-select" placeholder="Select Pokemon" multiple clearable hoist>
-          <!-- Options will be populated dynamically -->
-        </sl-select>
-      </div>
-      <div slot="footer" style="display: flex; gap: 0.5rem; justify-content: flex-end;">
-        <sl-button variant="neutral" id="cancel-btn">Cancel</sl-button>
-        <sl-button variant="primary" id="continue-btn">Continue</sl-button>
-      </div>
-    </sl-dialog>
+  <!-- Dialog for adding Pokemon -->
+  <sl-dialog id="add-pokemon-dialog" label="Select Pokemon">
+    <div style="margin-bottom: 1rem;">
+      <label for="pokemon-select" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+        Choose your Pokemon team:
+      </label>
+      <sl-select id="pokemon-select" placeholder="Select Pokemon" multiple clearable hoist>
+        <!-- Options will be populated dynamically -->
+      </sl-select>
+    </div>
+    <div slot="footer" style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+      <sl-button variant="neutral" id="cancel-btn">Cancel</sl-button>
+      <sl-button variant="primary" id="continue-btn">Continue</sl-button>
+    </div>
+  </sl-dialog>
 
-    <!-- Dialog for special mechanics -->
-    <sl-dialog id="specialMechanicDialog" no-header>
-      <div id="specialMechanicContent"></div>
-      <sl-button slot="footer" variant="primary" size="small">Close</sl-button>
-    </sl-dialog>
+  <!-- Modal for adding items -->
+  <sl-dialog id="shop-item-modal" label="Add Shop Items">
+    <div style="margin-bottom: 1rem;">
+      <label for="shop-item-multiselect" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Select items
+        to add:</label>
+      <sl-select id="shop-item-multiselect" placeholder="Select items" multiple clearable hoist
+        style="min-width: 300px;"></sl-select>
+      <div id="modal-item-list" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;"></div>
+    </div>
+    <div slot="footer" style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+      <sl-button variant="neutral" id="shop-item-modal-cancel">Cancel</sl-button>
+      <sl-button variant="primary" id="shop-item-modal-continue">Add Selected</sl-button>
+    </div>
+  </sl-dialog>
 
-    <script type="module">
-      let allPokemon = [];
-      let speciesInfoMap = new Map();
-      
-      // Special mechanics info for Pokemon with unique gameplay tips
-const specialMechanics = {
-  Castform: `Unique Mechanic: Forecast
+  <!-- Dialog for special mechanics -->
+  <sl-dialog id="specialMechanicDialog" no-header>
+    <div id="specialMechanicContent"></div>
+    <sl-button slot="footer" variant="primary" size="small">Close</sl-button>
+  </sl-dialog>
+
+  <script type="module">
+    let allPokemon = [];
+    let megaStones = [
+      "Mawilite",
+      "Sablenite",
+      "Banettite",
+      "Cameruptite",
+      "Chimechite",
+      "Dragalgite",
+      "Excadrillite",
+      "Froslassite",
+      "Glalitite",
+      "Houndoominite",
+      "Lopunnite",
+      "Lucarionite",
+      "Malamarite",
+      "Manectite",
+      "Meowsticite",
+      "Raichunite X",
+      "Scizorite",
+      "Sharpedonite",
+      "Starmite",
+      "Aggronite",
+      "Ampharosite",
+      "Blastoisinite",
+      "Blazikenite",
+      "Chandelurite",
+      "Charizardite X",
+      "Chesnaughtite",
+      "Clefablite",
+      "Delphoxite",
+      "Feraligatrite",
+      "Galladite",
+      "Garchompite",
+      "Gardevoirite",
+      "Gengarite",
+      "Greninjite",
+      "Salamencite",
+      "Sceptilite",
+      "Scoliopedite",
+      "Staraptite",
+      "Swampertite",
+      "Venusaurite",
+    ];
+    let speciesInfoMap = new Map();
+    // Shop items and TMs with prices and badge requirements
+    const SHOP_ITEMS = [
+      { name: "Ability Capsule", price: 3000, badge: "Game Start" },
+      { name: "Ability Patch", price: 5000, badge: "Game Start" },
+      { name: "Serious Mint", price: 3000, badge: "Game Start" },
+      { name: "Bullet Seed", price: 1000, badge: "Game Start" },
+      { name: "Hail", price: 1000, badge: "Game Start" },
+      { name: "Safeguard", price: 1000, badge: "Game Start" },
+      { name: "Sandstorm", price: 1000, badge: "Game Start" },
+      { name: "Skill Swap", price: 1000, badge: "Game Start" },
+      { name: "Steel Wing", price: 1000, badge: "Game Start" },
+      { name: "Thief", price: 1000, badge: "Game Start" },
+      { name: "Torment", price: 1000, badge: "Game Start" },
+      { name: "Trick Room", price: 1000, badge: "Game Start" },
+      { name: "Double Team", price: 2000, badge: "Badge 4" },
+      { name: "Light Screen", price: 2000, badge: "Badge 4" },
+      { name: "Reflect", price: 2000, badge: "Badge 4" },
+      { name: "Rest", price: 2000, badge: "Badge 4" },
+      { name: "Brick Break", price: 3000, badge: "Badge 4" },
+      { name: "Dazzling Gleam", price: 3000, badge: "Badge 4" },
+      { name: "Dig", price: 3000, badge: "Badge 4" },
+      { name: "Dragon Claw", price: 3000, badge: "Badge 4" },
+      { name: "Giga Drain", price: 3000, badge: "Badge 4" },
+      { name: "Hyper Beam", price: 3000, badge: "Badge 4" },
+      { name: "Iron Tail", price: 3000, badge: "Badge 4" },
+      { name: "Rain Dance", price: 3000, badge: "Badge 4" },
+      { name: "Shadow Ball", price: 3000, badge: "Badge 4" },
+      { name: "Snarl", price: 3000, badge: "Badge 4" },
+      { name: "Solar Beam", price: 3000, badge: "Badge 4" },
+      { name: "Sunny Day", price: 3000, badge: "Badge 4" },
+      { name: "X Scissor", price: 3000, badge: "Badge 4" },
+      { name: "Blizzard", price: 5000, badge: "Badge 4" },
+      { name: "Fire Blast", price: 5000, badge: "Badge 4" },
+      { name: "Flamethrower", price: 5000, badge: "Badge 4" },
+      { name: "Ice Beam", price: 5000, badge: "Badge 4" },
+      { name: "Sludge Bomb", price: 5000, badge: "Badge 4" },
+      { name: "Thunderbolt", price: 5000, badge: "Badge 4" },
+      { name: "Thunder", price: 5000, badge: "Badge 4" },
+      { name: "Protect", price: 5000, badge: "Badge 4" },
+      { name: "Psychic", price: 5000, badge: "Badge 4" },
+      { name: "Earthquake", price: 8000, badge: "Badge 4" },
+      { name: "Hone Claws", price: 8000, badge: "Badge 4" },
+      { name: "Mawilite", price: 10000, badge: "Game Start" },
+      { name: "Sablenite", price: 10000, badge: "Game Start" },
+      { name: "Banettite", price: 10000, badge: "Badge 6" },
+      { name: "Cameruptite", price: 10000, badge: "Badge 6" },
+      { name: "Chimechite", price: 10000, badge: "Badge 6" },
+      { name: "Dragalgite", price: 10000, badge: "Badge 6" },
+      { name: "Excadrillite", price: 10000, badge: "Badge 6" },
+      { name: "Froslassite", price: 10000, badge: "Badge 6" },
+      { name: "Glalitite", price: 10000, badge: "Badge 6" },
+      { name: "Houndoominite", price: 10000, badge: "Badge 6" },
+      { name: "Lopunnite", price: 10000, badge: "Badge 6" },
+      { name: "Lucarionite", price: 10000, badge: "Badge 6" },
+      { name: "Malamarite", price: 10000, badge: "Badge 6" },
+      { name: "Manectite", price: 10000, badge: "Badge 6" },
+      { name: "Meowsticite", price: 10000, badge: "Badge 6" },
+      { name: "Raichunite X", price: 10000, badge: "Badge 6" },
+      { name: "Scizorite", price: 10000, badge: "Badge 6" },
+      { name: "Sharpedonite", price: 10000, badge: "Badge 6" },
+      { name: "Starmite", price: 10000, badge: "Badge 6" },
+      { name: "Aggronite", price: 10000, badge: "Badge 8" },
+      { name: "Ampharosite", price: 10000, badge: "Badge 8" },
+      { name: "Blastoisinite", price: 10000, badge: "Badge 8" },
+      { name: "Blazikenite", price: 10000, badge: "Badge 8" },
+      { name: "Chandelurite", price: 10000, badge: "Badge 8" },
+      { name: "Charizardite X", price: 10000, badge: "Badge 8" },
+      { name: "Chesnaughtite", price: 10000, badge: "Badge 8" },
+      { name: "Clefablite", price: 10000, badge: "Badge 8" },
+      { name: "Delphoxite", price: 10000, badge: "Badge 8" },
+      { name: "Feraligatrite", price: 10000, badge: "Badge 8" },
+      { name: "Galladite", price: 10000, badge: "Badge 8" },
+      { name: "Garchompite", price: 10000, badge: "Badge 8" },
+      { name: "Gardevoirite", price: 10000, badge: "Badge 8" },
+      { name: "Gengarite", price: 10000, badge: "Badge 8" },
+      { name: "Greninjite", price: 10000, badge: "Badge 8" },
+      { name: "Salamencite", price: 10000, badge: "Badge 8" },
+      { name: "Sceptilite", price: 10000, badge: "Badge 8" },
+      { name: "Scoliopedite", price: 10000, badge: "Badge 8" },
+      { name: "Staraptite", price: 10000, badge: "Badge 8" },
+      { name: "Swampertite", price: 10000, badge: "Badge 8" },
+      { name: "Venusaurite", price: 10000, badge: "Badge 8" },
+    ];
+    let shopItems = [];
+
+    // Special mechanics info for Pokemon with unique gameplay tips
+    const specialMechanics = {
+      Castform: `Unique Mechanic: Forecast
 \nStarting at level 20, Forecast gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
 \nWater: Rain (Drizzle)
 \nFire: Sun (Drought)
 \nIce: Hail (Snow Warning)`,
-  Mareep: `Unique Mechanic: Milk Drink
+      Mareep: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
-  Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
+      Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
 \nTerrain doesn't exist in Emerald Blitz. Instead, Grass Pelt provides its 50% defense boost in the sun.
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
-  Smoliv: `Unique Mechanic: Seed Sower
+      Smoliv: `Unique Mechanic: Seed Sower
 \nTerrain doesn't exist in Emerald Blitz. Instead, Arboliva's Seed Sower ability sets Leech Seed on any Pokemon that attacks it and makes contact.`,
-  Greavard: `Unique Mechanic: Last Respects
+      Greavard: `Unique Mechanic: Last Respects
 \nEach time one of your Pokemon faints, Greavard's signature move Last Respects permanently gains 15 power on top of its base 50.
 \nThe fainted Pokémon counter does not reset between battles.`,
-  Corsola: `Unique Mechanic: On-Death Evolution
+      Corsola: `Unique Mechanic: On-Death Evolution
 \nWhen Corsola faints, after the battle, it will transform into Galarian Corsola and revive at full HP.`,
-  Bombirdier: `Unique Mechanic: Stork's Blessing
+      Bombirdier: `Unique Mechanic: Stork's Blessing
 \nAt the end of a boss battle in which your Bombirdier with Stork's Blessing participated, if you have an empty slot in your party, you receive an egg. The egg contains a random Pokémon of the 19 possible babies. They hatch at level 5 and cannot level up.`,
-  Applin: `Unique Mechanic: Gym-Based Evolution
+      Applin: `Unique Mechanic: Gym-Based Evolution
 \nApplin evolves into different Pokemon depending on which gym you're in. Gyms are randomized in Emerald Blitz, so cross your fingers to get Fortree, Lavaridge, or Rustboro early,`,
-  Rotom: `Unique Mechanic: Rotom Catalog
+      Rotom: `Unique Mechanic: Rotom Catalog
 \nRotom transforms with the consumable item Rotom Catalog, available in Fortree City. You're given three Rotom Catalogs. With the ability to change forms after seeing which boss you're about to face, Rotom's versatility is unmatched.`,
-  Smeargle: `Unique Mechanic: Sketch
+      Smeargle: `Unique Mechanic: Sketch
 \nSmeargle's signature move Sketch is more potent than ever before. Now, when used from the party menu, Smeargle can choose to learn one of four moves randomly selected from the Sketch pool, a collection of the strongest moves in Emerald Blitz. Happy sketching!
 \nNotably, Sketch is the only move in the game that cannot be relearned via the Move Relearner.`,
-  Nincada: `Tip: Shedinja
+      Nincada: `Tip: Shedinja
 \nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Brawly, who has few options to hit it.
 \nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
-  Zorua: `Tip: Illusion
+      Zorua: `Tip: Illusion
 \nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
-  Minior: `Tip: Rollout!
+      Minior: `Tip: Rollout!
 \nMinior is the king of early game sweeps. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
-  Meowth: `Tip: Pay Day
+      Meowth: `Tip: Pay Day
 \nMeowth's signature move Pay Day is the only way in the game to earn extra money.
 \nEach use of Pay Day in a gym battle earns you coins equal to 20 times the level of Meowth/Perrserker, up to a maximum of 2000.`,
-  Lotad: `Tip: Delayed Evolution
+      Lotad: `Tip: Delayed Evolution
 \nBy delaying Lotad's evolution until level 18, it can learn Mega Drain before gym 2. Otherwise, you'll be relying on the Bullet Seed TM for Grass STAB until you gain access to the Giga Drain TM.`,
-  Sableye: `Tip: Early Mega Evolution
+      Sableye: `Tip: Early Mega Evolution
 \nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
-  Mawile: `Tip: Early Mega Evolution
+      Mawile: `Tip: Early Mega Evolution
 \nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
-  Mankey: `Tip: Rage Fist
+      Mankey: `Tip: Rage Fist
 \nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
 \nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
-  Gastly: `Tip: Delayed Evolution
+      Gastly: `Tip: Delayed Evolution
 \nBy delaying Gastly's evolution until level 29, it can learn Shadow Ball before gym 4 while still evolving into Haunter. Otherwise, Haunter needs to wait all of the way until level 33, which doesn't come until two gyms later.`,
-  Sewaddle: `Tip: Delayed Evolution
+      Sewaddle: `Tip: Delayed Evolution
 \nBy delaying Sewaddle's evolution until level 22, it can learn Struggle Bug before gym 3 while still evolving into Swadloon. Otherwise, Swadloon never learns the move.`,
-  Treecko: `Tip: Delayed Evolution
+      Treecko: `Tip: Delayed Evolution
 \nNeither Grovyle nor Sceptile learn Giga Drain via level up, just Treecko. Because of this, Treecko is a rare case of a Pokemon that can benefit from delaying evolution for a full gym. By delaying evolution to Grovyle from 16 to 21, Treecko can learn Giga Drain a full two gyms earlier than it'd be able to otherwise via TM.`,
-  Goomy: `Tip: Rain Evolution
+      Goomy: `Tip: Rain Evolution
 \nBoth forms of Sliggoo require you find some rain to evolve them. Luckily, just east of Fortree City, Route 119 has a permanent rain shower. Use the "Evolution" option in the party menu to evolve Sliggoo when standing in the rain.`,
-  Inkay: `Tip: One Crazy Contrary
+      Inkay: `Tip: One Crazy Contrary
 \nInkay and Malamar's ability Contrary inverts all stat changes. This makes Superpower boost Malamar's stats instead of lowering them, allowing it to increase its Attack and Defense by one stage.`,
-  Ponyta: `Tip: Run Away
+      Ponyta: `Tip: Run Away
 \nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
-  Pansear: `Tip: Acrobatics
+      Pansear: `Tip: Acrobatics
 \nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!
 \nBut watch out! Once Pansear evolves, it stops learning moves via level up. Be sure to wait until it learns Acrobatics to use that Fire Stone!`,
-  Egg: `Tip: Baby Pokemon
+      Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
-  Eevee: `Tip: The most important Pokemon of all!
+      Eevee: `Tip: The most important Pokemon of all!
 \nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
 \nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
 \nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
-};
-      let teamPokemon = [];
+    };
+    let teamPokemon = [];
 
-      // Extract evolution item from evolution_method string
-      function extractEvolutionItem(evolutionMethod) {
-        if (!evolutionMethod) return null;
-        const method = evolutionMethod.trim();
-        // Prevent gender from being parsed as an item
-        if (/^(male|female)$/i.test(method)) return null;
-        // Check for items in parentheses (e.g., "Level 32 (Whipped Dream)")
-        const parenMatch = method.match(/\(([^)]+)\)/);
-        if (parenMatch) {
-          const item = parenMatch[1].trim();
-          if (/^(male|female)$/i.test(item)) return null;
-          return item;
-        }
-        // Check for stone evolutions (e.g., "Fire Stone", "Dusk Stone")
-        if (method.includes('Stone')) {
-          return method;
-        }
-        // Check for specific evolution items
-        const specialItems = [
-          'Linking Cord',
-          'Whipped Dream',
-          'Dragon Scale',
-          'Metal Coat',
-          'Soothe Bell',
-          "King's Rock"
-        ];
-        if (specialItems.some(item => method === item)) {
-          return method;
-        }
-        return null;
+    // Extract evolution item from evolution_method string
+    function extractEvolutionItem(evolutionMethod, pokemonName) {
+      if(megaStones.includes(evolutionMethod)){
+        shopItems.push({ name: evolutionMethod, assignedTo: [pokemonName]});
+        updateShopItemsList();
       }
-
-      // Update evolution summary to show items needed for all team Pokemon
-      function updateEvolutionSummary() {
-        const itemCounts = {};
-        const eggMoves = [];
-        
-        // Go through all team Pokemon and their evolutions
-        teamPokemon.forEach(pokemonName => {
-          const pokemon = allPokemon.find(p => p.name === pokemonName);
-          if (!pokemon) return;
-          
-          // Find the base form for this Pokemon's family
-          const playerIndex = allPokemon.findIndex((p) => p.name === pokemonName);
-          let baseIndex = -1;
-          if (playerIndex !== -1) {
-            for (let i = playerIndex; i >= 0; i--) {
-              if (allPokemon[i].stage === 'base') {
-                baseIndex = i;
-                break;
-              }
-            }
-          }
-          
-          // Find all evolutions and extract their items
-          if (baseIndex !== -1) {
-            for (let i = baseIndex + 1; i < allPokemon.length; i++) {
-              const potentialEvo = allPokemon[i];
-              if (potentialEvo.stage === 'base' || pokemon.stage === 'Basic') {
-                break;
-              }
-              
-              const item = extractEvolutionItem(potentialEvo.evolution_method);
-              if (item) {
-                if (!itemCounts[item]) {
-                  itemCounts[item] = 0;
-                }
-                itemCounts[item]++;
-              }
-            }
-          }
-          
-          // Extract egg moves from species info
-          const speciesInfo = speciesInfoMap.get(pokemonName);
-          if (speciesInfo && speciesInfo.description) {
-            const lines = speciesInfo.description.split('\n');
-            for (const line of lines) {
-              if (line.includes('(Egg)')) {
-                const moveName = line.split('(Egg)')[0].trim();
-                eggMoves.push({ move: moveName, pokemon: pokemonName });
-              }
-            }
-          }
-        });
-        
-        // Update the display
-        const itemsContainer = document.getElementById('evolution-items-container');
-        const eggMovesContainer = document.getElementById('egg-moves-container');
-        const summarySection = document.getElementById('evolution-summary');
-        
-        const hasItems = Object.keys(itemCounts).length > 0;
-        const hasEggMoves = eggMoves.length > 0;
-        
-        if (!hasItems && !hasEggMoves) {
-          summarySection.classList.remove('visible');
-          itemsContainer.innerHTML = '';
-          eggMovesContainer.innerHTML = '';
-        } else {
-          summarySection.classList.add('visible');
-          
-          // Update evolution items
-          if (hasItems) {
-            const itemsHtml = Object.entries(itemCounts)
-              .sort((a, b) => {
-                const itemA = a[0];
-                const itemB = b[0];
-                
-                // Whipped Dream always comes first
-                if (itemA === 'Whipped Dream') return -1;
-                if (itemB === 'Whipped Dream') return 1;
-                
-                // Linking Cord always comes last
-                if (itemA === 'Linking Cord') return 1;
-                if (itemB === 'Linking Cord') return -1;
-                
-                // Everything else sorted alphabetically
-                return itemA.localeCompare(itemB);
-              })
-              .map(([item, count]) => {
-                return `
-                  <div class="evolution-item">
-                    <div class="evolution-item-count">x${count}</div>
-                    <div style="font-size: 0.9rem;">${item}</div>
-                  </div>
-                `;
-              })
-              .join('');
-            
-            itemsContainer.innerHTML = itemsHtml;
-          } else {
-            itemsContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
-          }
-          
-          // Update egg moves
-          if (hasEggMoves) {
-            const eggMovesHtml = eggMoves
-              .map(({ move, pokemon }) => {
-                return `
-                  <div class="egg-move-item">
-                    <a class="move-link" href="/pokedex?move=${encodeURIComponent(move)}&pokemon=${encodeURIComponent(pokemon)}" style="font-weight: 500;" target="_blank" rel="noopener noreferrer">${move}</a>
-                    <span style="color: #888;">(${pokemon})</span>
-                  </div>
-                `;
-              })
-              .join('');
-            
-            eggMovesContainer.innerHTML = eggMovesHtml;
-          } else {
-            eggMovesContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
-          }
-        }
+      if (!evolutionMethod) return null;
+      const method = evolutionMethod.trim();
+      // Prevent gender from being parsed as an item
+      if (/^(male|female)$/i.test(method)) return null;
+      // Check for items in parentheses (e.g., "Level 32 (Whipped Dream)")
+      const parenMatch = method.match(/\(([^)]+)\)/);
+      if (parenMatch) {
+        const item = parenMatch[1].trim();
+        if (/^(male|female)$/i.test(item)) return null;
+        return item;
       }
-
-      // Initialize the page
-      async function init() {
-        document.body.classList.add('ready');
-        await loadPokemonData();
-        await loadSpeciesInfo();
-        populatePokemonSelect();
-        setupEventListeners();
-        loadFromUrl();
+      // Check for stone evolutions (e.g., "Fire Stone", "Dusk Stone")
+      if (method.includes('Stone')) {
+        return method;
       }
-
-      // Load Pokemon from URL parameters
-      function loadFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        const pokemonParam = params.get('pokemon');
-        console.log('[Debug] loadFromUrl - pokemonParam:', pokemonParam);
-        console.log('[Debug] loadFromUrl - allPokemon length:', allPokemon.length);
-        if (pokemonParam) {
-          const pokemonNames = pokemonParam.split(',').map(name => decodeURIComponent(name));
-          console.log('[Debug] loadFromUrl - decoded names:', pokemonNames);
-          addPokemonToTeam(pokemonNames, true); // Skip URL update when loading from URL
-        }
+      // Check for specific evolution items
+      const specialItems = [
+        'Linking Cord',
+        'Whipped Dream',
+        'Dragon Scale',
+        'Metal Coat',
+        'Soothe Bell',
+        "King's Rock"
+      ];
+      if (specialItems.some(item => method === item)) {
+        return method;
       }
+      return null;
+    }
 
-      // Update URL with current team
-      function updateUrl() {
-        const url = new URL(window.location);
-        if (teamPokemon.length > 0) {
-          url.searchParams.set('pokemon', teamPokemon.map(name => encodeURIComponent(name)).join(','));
-        } else {
-          url.searchParams.delete('pokemon');
-        }
-        window.history.replaceState({}, '', url);
-      }
+    // Update evolution summary to show items needed for all team Pokemon
+    function updateEvolutionSummary() {
+      const itemCounts = {};
+      const eggMoves = [];
 
-      // Load Pokemon data from CSV - same as auction setup
-      async function loadPokemonData() {
-        try {
-          console.log('[Debug] Loading Pokemon CSV data');
-          const response = await fetch('/api/pokemon-csv');
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const csvText = await response.text();
-          console.log('CSV text length:', csvText.length);
-          
-          const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-          allPokemon = parsed.data;
-          
-          console.log('Loaded', allPokemon.length, 'Pokemon');
-          console.log('First pokemon:', allPokemon[0]);
-        } catch (error) {
-          console.error('Failed to load Pokemon data:', error);
-          alert('Failed to load Pokemon data. Check console for details.');
-        }
-      }
+      // Go through all team Pokemon and their evolutions
+      teamPokemon.forEach(pokemonName => {
+        const pokemon = allPokemon.find(p => p.name === pokemonName);
+        if (!pokemon) return;
 
-      // Load species info
-      async function loadSpeciesInfo() {
-        try {
-          const response = await fetch('/api/speciesinfo');
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const text = await response.text();
-          const pokemonBlocks = text.split(/\r?\n\s*\r?\n/);
-
-          for (const block of pokemonBlocks) {
-            if (block.trim() === '') continue;
-            const blockLines = block.split(/\r?\n/);
-            const pokemonName = blockLines[0].trim();
-            const description = blockLines.slice(1).join('\n').trim();
-            if (pokemonName) {
-              speciesInfoMap.set(pokemonName, { description });
-            }
-          }
-          console.log('Loaded species info for', speciesInfoMap.size, 'Pokemon');
-        } catch (error) {
-          console.error('Failed to load species info:', error);
-        }
-      }
-
-      // Populate the select dropdown with Pokemon
-      function populatePokemonSelect() {
-        const selectEl = document.getElementById('pokemon-select');
-        console.log('Populating select with', allPokemon.length, 'Pokemon');
-        
-        // Filter to show only base stage Pokemon (no evolutions, no megas)
-        const basePokemon = allPokemon.filter(p => 
-          p.name && 
-          p.stage === 'base' && 
-          !p.name.startsWith('Mega ')
-        );
-        
-        console.log('Base Pokemon count:', basePokemon.length);
-        
-        basePokemon.forEach(pokemon => {
-          const option = document.createElement('sl-option');
-          // Shoelace replaces spaces with underscores in values, so we need to handle this
-          option.value = pokemon.name.replace(/\s/g, '_');
-          option.textContent = pokemon.name;
-          selectEl.appendChild(option);
-        });
-        
-        console.log('Select element children count:', selectEl.children.length);
-      }
-
-      // Setup event listeners
-      function setupEventListeners() {
-        const dialog = document.getElementById('add-pokemon-dialog');
-        const addBtn = document.getElementById('add-to-team-btn');
-        const cancelBtn = document.getElementById('cancel-btn');
-        const continueBtn = document.getElementById('continue-btn');
-        const homeButton = document.getElementById('home-button');
-
-        addBtn.addEventListener('click', () => {
-          dialog.show();
-        });
-
-        cancelBtn.addEventListener('click', () => {
-          dialog.hide();
-        });
-
-        continueBtn.addEventListener('click', () => {
-          const selectEl = document.getElementById('pokemon-select');
-          const selectedPokemon = selectEl.value;
-          
-          if (selectedPokemon && selectedPokemon.length > 0) {
-            // Convert underscores back to spaces (Shoelace replaces spaces with underscores)
-            const decodedPokemon = selectedPokemon.map(name => name.replace(/_/g, ' '));
-            addPokemonToTeam(decodedPokemon);
-            selectEl.value = [];
-            dialog.hide();
-          }
-        });
-
-        homeButton.addEventListener('click', () => {
-          window.location.href = '/';
-        });
-      }
-
-      // Add selected Pokemon to the team
-      function addPokemonToTeam(pokemonNames, skipUrlUpdate = false) {
-        console.log('[Debug] addPokemonToTeam called with:', pokemonNames, 'skipUrlUpdate:', skipUrlUpdate);
-        const container = document.getElementById('team-container');
-        
-        pokemonNames.forEach(name => {
-          if (teamPokemon.includes(name)) {
-            console.log(`${name} is already in the team`);
-            return;
-          }
-
-          const pokemonData = allPokemon.find(p => p.name === name);
-          if (!pokemonData) {
-            console.log('[Debug] Could not find Pokemon data for:', name);
-            return;
-          }
-
-          teamPokemon.push(name);
-          const card = createPokemonCard(pokemonData);
-          container.appendChild(card);
-        });
-        
-        console.log('[Debug] Current team after adding:', teamPokemon);
-        
-        if (!skipUrlUpdate) {
-          console.log('[Debug] Updating URL with team:', teamPokemon);
-          updateUrl();
-        }
-        
-        updateEvolutionSummary();
-      }
-
-      // Helper function to get stat bar color
-      function getStatColor(statValue) {
-        if (statValue >= 150) return '#4CAF50'; // Green
-        if (statValue >= 120) return '#8BC34A'; // Light Green
-        if (statValue >= 100) return '#CDDC39'; // Yellow-Green
-        if (statValue >= 80) return '#FFC107'; // Amber
-        if (statValue >= 60) return '#FF9800'; // Orange
-        return '#FF5722'; // Red
-      }
-
-      // Create a Pokemon card matching the auction page layout
-      function createPokemonCard(pokemon) {
-        const container = document.createElement('div');
-        container.className = 'pokemon-info-section';
-        
-        // Left section - Species info text
-        const speciesInfoDiv = document.createElement('div');
-        speciesInfoDiv.className = 'species-info-text';
-        
-        const info = speciesInfoMap.get(pokemon.name);
-        
-        // Build abilities HTML
-        // Normalize ability name for URL: lowercase, replace spaces/underscores/dashes with hyphens
-        const formatAbilityForUrl = (ability) => encodeURIComponent(
-          ability.trim().toLowerCase().replace(/[_\s-]+/g, '-')
-        );
-        const abilityDivs = [];
-        if (pokemon.ability1) {
-          const abilityName = pokemon.ability1.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
-        }
-        if (pokemon.ability2) {
-          const abilityName = pokemon.ability2.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
-        }
-        if (pokemon.hidden_ability) {
-          const abilityName = pokemon.hidden_ability.trim();
-          abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`);
-        }
-        const abilitiesHtml = abilityDivs.join('');
-
-        // Build stats HTML
-        const stats = [
-          { label: 'HP', key: 'hp' },
-          { label: 'Atk', key: 'attack' },
-          { label: 'Def', key: 'defense' },
-          { label: 'SpAtk', key: 'sp_attack' },
-          { label: 'SpDef', key: 'sp_defense' },
-          { label: 'Spd', key: 'speed' },
-        ];
-        const maxStat = 255;
-        const statsHtml = stats
-          .map((stat) => {
-            const statValue = pokemon[stat.key];
-            if (!statValue) return '';
-            const barWidth = (statValue / maxStat) * 100;
-            const barColor = getStatColor(statValue);
-            return `
-              <div style="display: flex; align-items: center; font-size: 0.7rem;">
-                <span style="width: 35px; text-align: right; font-weight: bold; margin-right: 4px;">${stat.label}</span>
-                <span style="width: 25px; text-align: left; margin-right: 1px;">${statValue}</span>
-                <div style="width: 100px; height: 8px;">
-                  <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
-                </div>
-              </div>`;
-          })
-          .join('');
-
-        // Get key moves from speciesInfoMap
-        let keyMovesHtml = '';
-        if (info && info.description) {
-          // Normalize move name for Pokédex URL: lowercase, replace spaces/underscores/dashes with hyphens
-          const formatMoveForUrl = (move) => encodeURIComponent(move.trim().toLowerCase().replace(/[_\s-]+/g, '-'));
-          const moveLines = info.description
-            .split('\n')
-            .map((line) => {
-              let processedLine = line;
-              let leadingSpaces = '';
-              const colorMatch = line.match(/^\s*(Yellow|Blue|Red|Green|Purple|Orange|Brown|Black|White|Gray|Pink|LightBlue):/i);
-              let colorStyle = '';
-              if (colorMatch) {
-                let color = colorMatch[1].toLowerCase();
-                const colorMap = {
-                  black: 'lightgray',
-                  blue: '#6890F0',
-                  green: '#78C850',
-                  purple: 'plum',
-                  red: '#F08030',
-                  yellow: '#F8D030',
-                };
-                const finalColor = colorMap[color] || color;
-                colorStyle = `style=\"color: ${finalColor};\"`;
-                leadingSpaces = line.match(/^\s*/)[0];
-                processedLine = line.replace(colorMatch[0], '').trim();
-              }
-
-              const trimmedLine = processedLine.trim();
-              if (trimmedLine.length > 0 && !trimmedLine.toLowerCase().startsWith('note:') && !trimmedLine.toLowerCase().startsWith('key moves:')) {
-                const parenIndex = processedLine.indexOf('(');
-                const moveName = (parenIndex !== -1 ? processedLine.substring(0, parenIndex) : processedLine).trim();
-
-                if (moveName) {
-                  // Link to Pokédex move tab and open the correct Pokémon
-                  const url = `/pokedex?move=${formatMoveForUrl(moveName)}&pokemon=${encodeURIComponent(pokemon.name)}`;
-                  const link = `<a class=\"move-link\" href=\"${url}\" target=\"_blank\" rel=\"noopener noreferrer\">${moveName}</a>`;
-                  processedLine = processedLine.replace(moveName, link);
-                }
-              }
-
-              return colorStyle ? `<span ${colorStyle}>${leadingSpaces}${processedLine}</span>` : processedLine;
-            })
-            .join('\n');
-          keyMovesHtml = `<pre style=\"white-space: pre-wrap; font-family: inherit; margin: 0;\">${moveLines}</pre>`;
-        }
-
-        const otherInfoHtml = `
-          <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
-            ${abilitiesHtml}
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
-            ${statsHtml}
-          </div>
-          <div style="font-size: 0.9rem;">${keyMovesHtml}</div>
-        `;
-
-        speciesInfoDiv.innerHTML = `
-          <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
-            <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">
-              <span>${pokemon.name}</span>
-              ${
-                specialMechanics[pokemon.name]
-                  ? `<sl-button class="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
-                       <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
-                     </sl-button>`
-                  : ''
-              }
-            </div>
-            ${otherInfoHtml}
-          </div>
-        `;
-
-        // Add event listener for the special mechanic button if it was rendered
-        const specialMechanicBtn = speciesInfoDiv.querySelector('.special-mechanic-btn');
-        if (specialMechanicBtn) {
-          specialMechanicBtn.addEventListener('click', () => {
-            const dialog = document.getElementById('specialMechanicDialog');
-            const contentEl = document.getElementById('specialMechanicContent');
-            const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
-
-            const description = specialMechanics[pokemon.name];
-            const lines = description.split('\n');
-            const firstLine = lines.shift();
-            const restOfLines = lines.join('\n');
-            const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
-            contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
-            dialog.show();
-            closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
-          });
-        }
-
-        // Center section - Image
-        const imageDiv = document.createElement('div');
-        imageDiv.className = 'pokemon-image-container';
-        
-        const img = document.createElement('img');
-        img.className = 'pokemon-image';
-        // Use underscores for image filenames (file system uses underscores for spaces)
-        img.src = `/baseforms/${pokemon.name.replace(/\s/g, '_')}.png`;
-        img.alt = pokemon.name;
-        img.onerror = () => {
-          img.style.display = 'none';
-        };
-        
-        const typesDiv = document.createElement('div');
-        typesDiv.className = 'pokemon-image-types';
-        if (pokemon.type) {
-          const types = pokemon.type.split(/[\s,\/]+/).filter((t) => t);
-          const typeImagesHtml = types
-            .map((type) => {
-              const trimmedType = type.trim();
-              return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
-            })
-            .join('');
-          typesDiv.innerHTML = typeImagesHtml;
-        }
-
-        imageDiv.appendChild(img);
-        imageDiv.appendChild(typesDiv);
-
-        // Right section - Evolution info (exact code from auction page)
-        const evolutionDiv = document.createElement('div');
-        evolutionDiv.className = 'evolution-info-container';
-        
-        // Build evolution chain
-        const evolutions = [];
-        
-        // 1. Find the index of the base form for the selected Pokémon's family.
-        const playerIndex = allPokemon.findIndex((p) => p.name === pokemon.name);
+        // Find the base form for this Pokemon's family
+        const playerIndex = allPokemon.findIndex((p) => p.name === pokemonName);
         let baseIndex = -1;
         if (playerIndex !== -1) {
           for (let i = playerIndex; i >= 0; i--) {
@@ -879,194 +579,819 @@ const specialMechanics = {
           }
         }
 
-        // 2. Iterate forward from the base form to find all its evolutions.
+        // Find all evolutions and extract their items
         if (baseIndex !== -1) {
           for (let i = baseIndex + 1; i < allPokemon.length; i++) {
             const potentialEvo = allPokemon[i];
-            // An evolution must not be a 'base' stage. Also, if the base form is a 'Basic' pokemon (like Mawile), it has no evolutions.
             if (potentialEvo.stage === 'base' || pokemon.stage === 'Basic') {
-              break; // Reached the next Pokémon family
+              break;
             }
-            // Any non-base Pokémon is considered an evolution in this family.
-            if (potentialEvo.name !== pokemon.name) {
-              evolutions.push({ name: potentialEvo.name, info: potentialEvo });
+
+            const item = extractEvolutionItem(potentialEvo.evolution_method, pokemonName);
+            if (item) {
+              if (!itemCounts[item]) {
+                itemCounts[item] = 0;
+              }
+              itemCounts[item]++;
             }
           }
         }
 
-        if (evolutions.length > 0) {
-          evolutionDiv.style.display = 'flex'; // Show the container
-          evolutionDiv.style.flexDirection = 'row'; // Arrange evolutions horizontally
-          evolutionDiv.style.justifyContent = 'flex-start'; // Align to the start
-          evolutionDiv.style.alignItems = 'flex-start'; // Align to the top
-
-          // Configuration for all form changes.
-          const formChanges = {
-            Aggron: ['Mega Aggron'],
-            Ampharos: ['Mega Ampharos'],
-            Banette: ['Mega Banette'],
-            Blaziken: ['Mega Blaziken'],
-            Camerupt: ['Mega Camerupt'],
-            Chandelure: ['Mega Chandelure'],
-            Chesnaught: ['Mega Chesnaught'],
-            Clefable: ['Mega Clefable'],
-            Delphox: ['Mega Delphox'],
-            Dragalge: ['Mega Dragalge'],
-            Excadrill: ['Mega Excadrill'],
-            Feraligatr: ['Mega Feraligatr'],
-            Froslass: ['Mega Froslass'],
-            Gallade: ['Mega Gallade'],
-            Garchomp: ['Mega Garchomp'],
-            Gardevoir: ['Mega Gardevoir'],
-            Glalie: ['Mega Glalie'],
-            Greninja: ['Mega Greninja'],
-            Houndoom: ['Mega Houndoom'],
-            Lopunny: ['Mega Lopunny'],
-            Lucario: ['Mega Lucario'],
-            Manectric: ['Mega Manectric'],
-            Mawile: ['Mega Mawile'],
-            Metagross: ['Mega Metagross'],
-            Sableye: ['Mega Sableye'],
-            Salamence: ['Mega Salamence'],
-            Sceptile: ['Mega Sceptile'],
-            Scizor: ['Mega Scizor'],
-            Scolipede: ['Mega Scolipede'],
-            Sharpedo: ['Mega Sharpedo'],
-            Starmie: ['Mega Starmie'],
-            Swampert: ['Mega Swampert'],
-            Aegislash: ['Aegislash-Blade'],
-            Castform: ['Castform-Sunny', 'Castform-Rainy', 'Castform-Snowy'],
-            Minior: ['Minior-Core'],
-            Rotom: ['Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow'],
-            Wishiwashi: ['Wishiwashi-School'],
-          };
-
-          // Configuration for special one-off arrows.
-          const specialArrows = {
-            Shedinja: 'Plus.png',
-          };
-
-          // Configuration for all split evolutions.
-          const splitEvolutions = {
-            Applin: ['Flapple', 'Appletun', 'Dipplin'],
-            Cubone: ['Marowak', 'Marowak-Alola'],
-            Dartrix: ['Decidueye', 'Decidueye-Hisui'],
-            Exeggcute: ['Exeggutor', 'Exeggutor-Alola'],
-            Eevee: ['Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon', 'Leafeon', 'Glaceon', 'Sylveon'],
-            Gloom: ['Vileplume', 'Bellossom'],
-            Goomy: ['Sliggoo', 'Sliggoo-Hisui'],
-            Kirlia: ['Gardevoir', 'Gallade'],
-            'Mime Jr': ['Mr. Mime', 'Mr. Rime'],
-            Pikachu: ['Raichu', 'Raichu-Alola'],
-            Poliwhirl: ['Poliwrath', 'Politoed'],
-            Rockruff: ['Lycanroc-Midday', 'Lycanroc-Midnight'],
-            Scyther: ['Scizor', 'Kleavor'],
-            Slowpoke: ['Slowbro-Galar', 'Slowking-Galar'],
-            Snorunt: ['Glalie', 'Froslass'],
-            Toxel: ['Toxtricity-Amped', 'Toxtricity-Low_Key'],
-            Tyrogue: ['Hitmonlee', 'Hitmonchan', 'Hitmontop'],
-          };
-          const evoNames = evolutions.map(evo => evo.name);
-          let splitBranches = [];
-          let isSplit = false;
-          let formBranches = [];
-          let isFormChange = false;
-
-          // Find if the current evolution chain contains a defined split.
-          for (const base in formChanges) {
-            const branches = formChanges[base];
-            if (branches.every(branch => evoNames.includes(branch))) {
-              isFormChange = true;
-              formBranches = branches;
-              break;
+        // Extract egg moves from species info
+        const speciesInfo = speciesInfoMap.get(pokemonName);
+        if (speciesInfo && speciesInfo.description) {
+          const lines = speciesInfo.description.split('\n');
+          for (const line of lines) {
+            if (line.includes('(Egg)')) {
+              const moveName = line.split('(Egg)')[0].trim();
+              eggMoves.push({ move: moveName, pokemon: pokemonName });
             }
           }
+        }
+      });
 
-          for (const base in splitEvolutions) {
-            const branches = splitEvolutions[base];
-            if (branches.every(branch => evoNames.includes(branch))) {
-              isSplit = true;
-              splitBranches = branches;
-              break;
+      // Update the display
+      const itemsContainer = document.getElementById('evolution-items-container');
+      const eggMovesContainer = document.getElementById('egg-moves-container');
+      const summarySection = document.getElementById('evolution-summary');
+
+      const hasItems = Object.keys(itemCounts).length > 0;
+      const hasEggMoves = eggMoves.length > 0;
+
+      if (!hasItems && !hasEggMoves) {
+        summarySection.classList.remove('visible');
+        itemsContainer.innerHTML = '';
+        eggMovesContainer.innerHTML = '';
+      } else {
+        summarySection.classList.add('visible');
+
+        // Update evolution items
+        if (hasItems) {
+          const itemsHtml = Object.entries(itemCounts)
+            .sort((a, b) => {
+              const itemA = a[0];
+              const itemB = b[0];
+
+              // Whipped Dream always comes first
+              if (itemA === 'Whipped Dream') return -1;
+              if (itemB === 'Whipped Dream') return 1;
+
+              // Linking Cord always comes last
+              if (itemA === 'Linking Cord') return 1;
+              if (itemB === 'Linking Cord') return -1;
+
+              // Everything else sorted alphabetically
+              return itemA.localeCompare(itemB);
+            })
+            .map(([item, count]) => {
+              return `
+                  <div class="evolution-item">
+                    <div class="evolution-item-count">x${count}</div>
+                    <div style="font-size: 0.9rem;">${item}</div>
+                  </div>
+                `;
+            })
+            .join('');
+
+          itemsContainer.innerHTML = itemsHtml;
+        } else {
+          itemsContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
+        }
+
+        // Update egg moves
+        if (hasEggMoves) {
+          const eggMovesHtml = eggMoves
+            .map(({ move, pokemon }) => {
+              return `
+                  <div class="egg-move-item">
+                    <a class="move-link" href="/pokedex?move=${encodeURIComponent(move)}&pokemon=${encodeURIComponent(pokemon)}" style="font-weight: 500;" target="_blank" rel="noopener noreferrer">${move}</a>
+                    <span style="color: #888;">(${pokemon})</span>
+                  </div>
+                `;
+            })
+            .join('');
+
+          eggMovesContainer.innerHTML = eggMovesHtml;
+        } else {
+          eggMovesContainer.innerHTML = '<div style="color: #888; font-style: italic;">None</div>';
+        }
+      }
+    }
+
+    // Initialize the page
+    async function init() {
+      document.body.classList.add('ready');
+      await loadPokemonData();
+      await loadSpeciesInfo();
+      populatePokemonSelect();
+      populateShopItemSelect();
+      setupEventListeners();
+      loadFromUrl();
+    }
+
+    // Load Pokemon from URL parameters
+    function loadFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const pokemonParam = params.get('pokemon');
+      console.log('[Debug] loadFromUrl - pokemonParam:', pokemonParam);
+      console.log('[Debug] loadFromUrl - allPokemon length:', allPokemon.length);
+      if (pokemonParam) {
+        const pokemonNames = pokemonParam.split(',').map(name => decodeURIComponent(name));
+        console.log('[Debug] loadFromUrl - decoded names:', pokemonNames);
+        addPokemonToTeam(pokemonNames, true); // Skip URL update when loading from URL
+      }
+    }
+
+    // Update URL with current team
+    function updateUrl() {
+      const url = new URL(window.location);
+      if (teamPokemon.length > 0) {
+        url.searchParams.set('pokemon', teamPokemon.map(name => encodeURIComponent(name)).join(','));
+      } else {
+        url.searchParams.delete('pokemon');
+      }
+      window.history.replaceState({}, '', url);
+    }
+
+    // Load Pokemon data from CSV - same as auction setup
+    async function loadPokemonData() {
+      try {
+        console.log('[Debug] Loading Pokemon CSV data');
+        const response = await fetch('/api/pokemon-csv');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const csvText = await response.text();
+        console.log('CSV text length:', csvText.length);
+
+        const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+        allPokemon = parsed.data;
+
+        console.log('Loaded', allPokemon.length, 'Pokemon');
+        console.log('First pokemon:', allPokemon[0]);
+      } catch (error) {
+        console.error('Failed to load Pokemon data:', error);
+        alert('Failed to load Pokemon data. Check console for details.');
+      }
+    }
+
+    // Load species info
+    async function loadSpeciesInfo() {
+      try {
+        const response = await fetch('/api/speciesinfo');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const text = await response.text();
+        const pokemonBlocks = text.split(/\r?\n\s*\r?\n/);
+
+        for (const block of pokemonBlocks) {
+          if (block.trim() === '') continue;
+          const blockLines = block.split(/\r?\n/);
+          const pokemonName = blockLines[0].trim();
+          const description = blockLines.slice(1).join('\n').trim();
+          if (pokemonName) {
+            speciesInfoMap.set(pokemonName, { description });
+          }
+        }
+        console.log('Loaded species info for', speciesInfoMap.size, 'Pokemon');
+      } catch (error) {
+        console.error('Failed to load species info:', error);
+      }
+    }
+
+    // Populate the select dropdown with Pokemon
+    function populatePokemonSelect() {
+      const selectEl = document.getElementById('pokemon-select');
+      console.log('Populating select with', allPokemon.length, 'Pokemon');
+
+      // Filter to show only base stage Pokemon (no evolutions, no megas)
+      const basePokemon = allPokemon.filter(p =>
+        p.name &&
+        p.stage === 'base' &&
+        !p.name.startsWith('Mega ')
+      );
+
+      console.log('Base Pokemon count:', basePokemon.length);
+
+      basePokemon.forEach(pokemon => {
+        const option = document.createElement('sl-option');
+        // Shoelace replaces spaces with underscores in values, so we need to handle this
+        option.value = pokemon.name.replace(/\s/g, '_');
+        option.textContent = pokemon.name;
+        selectEl.appendChild(option);
+      });
+
+      console.log('Select element children count:', selectEl.children.length);
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      const dialog = document.getElementById('add-pokemon-dialog');
+      const addBtn = document.getElementById('add-to-team-btn');
+      const cancelBtn = document.getElementById('cancel-btn');
+      const continueBtn = document.getElementById('continue-btn');
+      const homeButton = document.getElementById('home-button');
+      const openShopItemModalBtn = document.getElementById('open-shop-item-modal-btn');
+      const shopItemModal = document.getElementById('shop-item-modal');
+      const shopItemMultiselect = document.getElementById('shop-item-multiselect');
+      const shopItemModalCancel = document.getElementById('shop-item-modal-cancel');
+      const shopItemModalContinue = document.getElementById('shop-item-modal-continue');
+      const modalItemList = document.getElementById('modal-item-list');
+      let modalItems = [];
+
+      addBtn.addEventListener('click', () => {
+        dialog.show();
+      });
+
+      cancelBtn.addEventListener('click', () => {
+        dialog.hide();
+      });
+
+      continueBtn.addEventListener('click', () => {
+        const selectEl = document.getElementById('pokemon-select');
+        const selectedPokemon = selectEl.value;
+        if (selectedPokemon && selectedPokemon.length > 0) {
+          const decodedPokemon = selectedPokemon.map(name => name.replace(/_/g, ' '));
+          addPokemonToTeam(decodedPokemon);
+          selectEl.value = [];
+          dialog.hide();
+        }
+      });
+
+      homeButton.addEventListener('click', () => {
+        window.location.href = '/';
+      });
+
+      openShopItemModalBtn.addEventListener('click', () => {
+        populateShopItemSelect();
+        modalItems = [];
+        modalItemList.innerHTML = '';
+        shopItemModal.show();
+      });
+      shopItemMultiselect.addEventListener('sl-change', () => {
+        // When items are selected, add them to modalItems if not present
+        const selected = Array.from(shopItemMultiselect.value);
+        // Remove unselected
+        modalItems = modalItems.filter(i => selected.includes(i.name));
+        // Add new selections
+        selected.forEach(itemName => {
+          if (!modalItems.some(i => i.name === itemName)) {
+            modalItems.push({ name: itemName, assignedTo: [] });
+          }
+        });
+        renderModalItemList();
+      });
+      function renderModalItemList() {
+        modalItemList.innerHTML = '';
+        modalItems.forEach(item => {
+          const lookupName = item.name.replace(/_/g, ' ');
+          const itemObj = SHOP_ITEMS.find(obj => obj.name === lookupName) || { name: lookupName, price: '', badge: '' };
+          const div = document.createElement('div');
+          div.style.display = 'flex';
+          div.style.alignItems = 'center';
+          div.style.gap = '0.5rem';
+          div.innerHTML = `<span>${itemObj.name} <span style="color:#aaa; font-size:0.95em;">(${itemObj.badge} — ${itemObj.price.toLocaleString()})</span></span>`;
+          // Multi-select for assigning Pokémon
+          const assignSelect = document.createElement('sl-select');
+          assignSelect.setAttribute('placeholder', 'Assign Pokémon');
+          assignSelect.setAttribute('multiple', '');
+          assignSelect.setAttribute('clearable', '');
+          assignSelect.style.minWidth = '120px';
+          teamPokemon.forEach(name => {
+            const option = document.createElement('sl-option');
+            option.value = name;
+            option.textContent = name;
+            assignSelect.appendChild(option);
+          });
+          assignSelect.value = Array.isArray(item.assignedTo) ? [...item.assignedTo] : [];
+          assignSelect.addEventListener('sl-change', (e) => {
+            item.assignedTo = Array.isArray(assignSelect.value) ? [...assignSelect.value] : [assignSelect.value];
+          });
+          div.appendChild(assignSelect);
+          modalItemList.appendChild(div);
+        });
+      }
+      shopItemModalCancel.addEventListener('click', () => {
+        shopItemModal.hide();
+      });
+      shopItemModalContinue.addEventListener('click', () => {
+        // On save, add an entry to the item list for each item-pokemon combo, but only if at least one Pokémon is selected
+        let newEntries = [];
+        modalItems.forEach(item => {
+          if (!item.assignedTo || item.assignedTo.length === 0) {
+            // Do not add if no Pokémon selected
+            return;
+          }
+          item.assignedTo.forEach(pokemon => {
+            newEntries.push({ name: item.name, assignedTo: [pokemon] });
+          });
+        });
+        console.log('New shop item entries to add:', newEntries);
+        // Merge with existing shopItems, avoiding duplicates
+        shopItems = shopItems.concat(newEntries).filter((entry, idx, arr) =>
+          arr.findIndex(e => e.name === entry.name && JSON.stringify(e.assignedTo) === JSON.stringify(entry.assignedTo)) === idx
+        );
+        // Sort by item name alphabetically
+        shopItems.sort((a, b) => a.name.localeCompare(b.name));
+        console.log('Updated shopItems:', shopItems);
+        updateShopItemsList();
+        // Clear the multi-select box
+        const selectEl = document.getElementById('shop-item-multiselect');
+        if (selectEl) selectEl.value = [];
+        shopItemModal.hide();
+      });
+    }
+
+    function populateShopItemSelect() {
+      // Used for modal multi-select
+      const selectEl = document.getElementById('shop-item-multiselect');
+      selectEl.innerHTML = '';
+      SHOP_ITEMS.forEach(obj => {
+        const option = document.createElement('sl-option');
+        option.value = obj.name;
+        option.textContent = `${obj.name} (${obj.badge} — ${obj.price.toLocaleString()})`;
+        selectEl.appendChild(option);
+      });
+    }
+
+    function updateShopItemsList() {
+      const listEl = document.getElementById('shop-items-list');
+      listEl.innerHTML = '';
+      shopItems.forEach(item => {
+        const lookupName = item.name.replace(/_/g, ' ');
+        const itemObj = SHOP_ITEMS.find(obj => obj.name === lookupName) || { name: lookupName, price: '', badge: '' };
+        const itemDiv = document.createElement('div');
+        itemDiv.style.display = 'flex';
+        itemDiv.style.alignItems = 'center';
+        itemDiv.style.gap = '0.3rem';
+        itemDiv.style.padding = '0.2rem 0.6rem';
+        itemDiv.style.borderRadius = '6px';
+        itemDiv.style.fontSize = '1rem';
+        let displayText = `${itemObj.name} <span style="color:#aaa; font-size:0.95em;">(${itemObj.badge} — ${itemObj.price.toLocaleString()})`;
+        if (item.assignedTo && item.assignedTo.length > 0) {
+          displayText += ` <span style="color:#6cf;">(${item.assignedTo.join(', ')})</span>`;
+        }
+        displayText += '</span>';
+        itemDiv.innerHTML = `<span>${displayText}</span>`;
+        // Remove button
+        const removeBtn = document.createElement('sl-button');
+        removeBtn.setAttribute('variant', 'danger');
+        removeBtn.setAttribute('size', 'small');
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', () => {
+          shopItems = shopItems.filter(i => i !== item);
+          updateShopItemsList();
+        });
+        itemDiv.appendChild(removeBtn);
+        listEl.appendChild(itemDiv);
+      });
+    }
+
+    // Add selected Pokemon to the team
+    function addPokemonToTeam(pokemonNames, skipUrlUpdate = false) {
+      console.log('[Debug] addPokemonToTeam called with:', pokemonNames, 'skipUrlUpdate:', skipUrlUpdate);
+      const container = document.getElementById('team-container');
+
+      pokemonNames.forEach(name => {
+        if (teamPokemon.includes(name)) {
+          console.log(`${name} is already in the team`);
+          return;
+        }
+
+        const pokemonData = allPokemon.find(p => p.name === name);
+        if (!pokemonData) {
+          console.log('[Debug] Could not find Pokemon data for:', name);
+          return;
+        }
+
+        teamPokemon.push(name);
+        const card = createPokemonCard(pokemonData);
+        container.appendChild(card);
+
+        // Auto-add Mega Stone if needed
+        if (pokemonData.name && pokemonData.name.startsWith('Mega ')) {
+          // Already a Mega, skip
+          return;
+        }
+        // Check if this Pokémon can Mega Evolve
+        const megaName = `Mega ${pokemonData.name}`;
+        const hasMega = allPokemon.some(p => p.name === megaName);
+        if (hasMega) {
+          const megaStoneName = `${pokemonData.name} Mega Stone`;
+          if (!shopItems.includes(megaStoneName)) {
+            shopItems.push(megaStoneName);
+            updateShopItemsList();
+          }
+        }
+      });
+
+      console.log('[Debug] Current team after adding:', teamPokemon);
+
+      if (!skipUrlUpdate) {
+        console.log('[Debug] Updating URL with team:', teamPokemon);
+        updateUrl();
+      }
+
+      updateEvolutionSummary();
+    }
+
+    // Helper function to get stat bar color
+    function getStatColor(statValue) {
+      if (statValue >= 150) return '#4CAF50'; // Green
+      if (statValue >= 120) return '#8BC34A'; // Light Green
+      if (statValue >= 100) return '#CDDC39'; // Yellow-Green
+      if (statValue >= 80) return '#FFC107'; // Amber
+      if (statValue >= 60) return '#FF9800'; // Orange
+      return '#FF5722'; // Red
+    }
+
+    // Create a Pokemon card matching the auction page layout
+    function createPokemonCard(pokemon) {
+      const container = document.createElement('div');
+      container.className = 'pokemon-info-section';
+
+      // Left section - Species info text
+      const speciesInfoDiv = document.createElement('div');
+      speciesInfoDiv.className = 'species-info-text';
+
+      const info = speciesInfoMap.get(pokemon.name);
+
+      // Build abilities HTML
+      // Normalize ability name for URL: lowercase, replace spaces/underscores/dashes with hyphens
+      const formatAbilityForUrl = (ability) => encodeURIComponent(
+        ability.trim().toLowerCase().replace(/[_\s-]+/g, '-')
+      );
+      const abilityDivs = [];
+      if (pokemon.ability1) {
+        const abilityName = pokemon.ability1.trim();
+        abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+      }
+      if (pokemon.ability2) {
+        const abilityName = pokemon.ability2.trim();
+        abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+      }
+      if (pokemon.hidden_ability) {
+        const abilityName = pokemon.hidden_ability.trim();
+        abilityDivs.push(`<div><a class="ability-link" href="/pokedex?ability=${formatAbilityForUrl(abilityName)}&pokemon=${encodeURIComponent(pokemon.name)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`);
+      }
+      const abilitiesHtml = abilityDivs.join('');
+
+      // Build stats HTML
+      const stats = [
+        { label: 'HP', key: 'hp' },
+        { label: 'Atk', key: 'attack' },
+        { label: 'Def', key: 'defense' },
+        { label: 'SpAtk', key: 'sp_attack' },
+        { label: 'SpDef', key: 'sp_defense' },
+        { label: 'Spd', key: 'speed' },
+      ];
+      const maxStat = 255;
+      const statsHtml = stats
+        .map((stat) => {
+          const statValue = pokemon[stat.key];
+          if (!statValue) return '';
+          const barWidth = (statValue / maxStat) * 100;
+          const barColor = getStatColor(statValue);
+          return `
+              <div style="display: flex; align-items: center; font-size: 0.7rem;">
+                <span style="width: 35px; text-align: right; font-weight: bold; margin-right: 4px;">${stat.label}</span>
+                <span style="width: 25px; text-align: left; margin-right: 1px;">${statValue}</span>
+                <div style="width: 100px; height: 8px;">
+                  <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
+                </div>
+              </div>`;
+        })
+        .join('');
+
+      // Get key moves from speciesInfoMap
+      let keyMovesHtml = '';
+      if (info && info.description) {
+        // Normalize move name for Pokédex URL: lowercase, replace spaces/underscores/dashes with hyphens
+        const formatMoveForUrl = (move) => encodeURIComponent(move.trim().toLowerCase().replace(/[_\s-]+/g, '-'));
+        const moveLines = info.description
+          .split('\n')
+          .map((line) => {
+            let processedLine = line;
+            let leadingSpaces = '';
+            const colorMatch = line.match(/^\s*(Yellow|Blue|Red|Green|Purple|Orange|Brown|Black|White|Gray|Pink|LightBlue):/i);
+            let colorStyle = '';
+            if (colorMatch) {
+              let color = colorMatch[1].toLowerCase();
+              const colorMap = {
+                black: 'lightgray',
+                blue: '#6890F0',
+                green: '#78C850',
+                purple: 'plum',
+                red: '#F08030',
+                yellow: '#F8D030',
+              };
+              const finalColor = colorMap[color] || color;
+              colorStyle = `style=\"color: ${finalColor};\"`;
+              leadingSpaces = line.match(/^\s*/)[0];
+              processedLine = line.replace(colorMatch[0], '').trim();
             }
+
+            const trimmedLine = processedLine.trim();
+            if (trimmedLine.length > 0 && !trimmedLine.toLowerCase().startsWith('note:') && !trimmedLine.toLowerCase().startsWith('key moves:')) {
+              const parenIndex = processedLine.indexOf('(');
+              const moveName = (parenIndex !== -1 ? processedLine.substring(0, parenIndex) : processedLine).trim();
+
+              if (moveName) {
+                // Link to Pokédex move tab and open the correct Pokémon
+                const url = `/pokedex?move=${formatMoveForUrl(moveName)}&pokemon=${encodeURIComponent(pokemon.name)}`;
+                const link = `<a class=\"move-link\" href=\"${url}\" target=\"_blank\" rel=\"noopener noreferrer\">${moveName}</a>`;
+                processedLine = processedLine.replace(moveName, link);
+              }
+            }
+
+            return colorStyle ? `<span ${colorStyle}>${leadingSpaces}${processedLine}</span>` : processedLine;
+          })
+          .join('\n');
+        keyMovesHtml = `<pre style=\"white-space: pre-wrap; font-family: inherit; margin: 0;\">${moveLines}</pre>`;
+      }
+
+      const otherInfoHtml = `
+          <div style="font-size: 0.9rem; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem;">
+            ${abilitiesHtml}
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.5rem;">
+            ${statsHtml}
+          </div>
+          <div style="font-size: 0.9rem;">${keyMovesHtml}</div>
+        `;
+
+      speciesInfoDiv.innerHTML = `
+          <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
+            <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">
+              <span>${pokemon.name}</span>
+              ${specialMechanics[pokemon.name]
+          ? `<sl-button class="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+                       <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+                     </sl-button>`
+          : ''
+        }
+            </div>
+            ${otherInfoHtml}
+          </div>
+        `;
+
+      // Add event listener for the special mechanic button if it was rendered
+      const specialMechanicBtn = speciesInfoDiv.querySelector('.special-mechanic-btn');
+      if (specialMechanicBtn) {
+        specialMechanicBtn.addEventListener('click', () => {
+          const dialog = document.getElementById('specialMechanicDialog');
+          const contentEl = document.getElementById('specialMechanicContent');
+          const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
+
+          const description = specialMechanics[pokemon.name];
+          const lines = description.split('\n');
+          const firstLine = lines.shift();
+          const restOfLines = lines.join('\n');
+          const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
+          contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+          dialog.show();
+          closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
+        });
+      }
+
+      // Center section - Image
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'pokemon-image-container';
+
+      const img = document.createElement('img');
+      img.className = 'pokemon-image';
+      // Use underscores for image filenames (file system uses underscores for spaces)
+      img.src = `/baseforms/${pokemon.name.replace(/\s/g, '_')}.png`;
+      img.alt = pokemon.name;
+      img.onerror = () => {
+        img.style.display = 'none';
+      };
+
+      const typesDiv = document.createElement('div');
+      typesDiv.className = 'pokemon-image-types';
+      if (pokemon.type) {
+        const types = pokemon.type.split(/[\s,\/]+/).filter((t) => t);
+        const typeImagesHtml = types
+          .map((type) => {
+            const trimmedType = type.trim();
+            return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+          })
+          .join('');
+        typesDiv.innerHTML = typeImagesHtml;
+      }
+
+      imageDiv.appendChild(img);
+      imageDiv.appendChild(typesDiv);
+
+      // Right section - Evolution info (exact code from auction page)
+      const evolutionDiv = document.createElement('div');
+      evolutionDiv.className = 'evolution-info-container';
+
+      // Build evolution chain
+      const evolutions = [];
+
+      // 1. Find the index of the base form for the selected Pokémon's family.
+      const playerIndex = allPokemon.findIndex((p) => p.name === pokemon.name);
+      let baseIndex = -1;
+      if (playerIndex !== -1) {
+        for (let i = playerIndex; i >= 0; i--) {
+          if (allPokemon[i].stage === 'base') {
+            baseIndex = i;
+            break;
+          }
+        }
+      }
+
+      // 2. Iterate forward from the base form to find all its evolutions.
+      if (baseIndex !== -1) {
+        for (let i = baseIndex + 1; i < allPokemon.length; i++) {
+          const potentialEvo = allPokemon[i];
+          // An evolution must not be a 'base' stage. Also, if the base form is a 'Basic' pokemon (like Mawile), it has no evolutions.
+          if (potentialEvo.stage === 'base' || pokemon.stage === 'Basic') {
+            break; // Reached the next Pokémon family
+          }
+          // Any non-base Pokémon is considered an evolution in this family.
+          if (potentialEvo.name !== pokemon.name) {
+            evolutions.push({ name: potentialEvo.name, info: potentialEvo });
+          }
+        }
+      }
+
+      if (evolutions.length > 0) {
+        evolutionDiv.style.display = 'flex'; // Show the container
+        evolutionDiv.style.flexDirection = 'row'; // Arrange evolutions horizontally
+        evolutionDiv.style.justifyContent = 'flex-start'; // Align to the start
+        evolutionDiv.style.alignItems = 'flex-start'; // Align to the top
+
+        // Configuration for all form changes.
+        const formChanges = {
+          Aggron: ['Mega Aggron'],
+          Ampharos: ['Mega Ampharos'],
+          Banette: ['Mega Banette'],
+          Blaziken: ['Mega Blaziken'],
+          Camerupt: ['Mega Camerupt'],
+          Chandelure: ['Mega Chandelure'],
+          Chesnaught: ['Mega Chesnaught'],
+          Clefable: ['Mega Clefable'],
+          Delphox: ['Mega Delphox'],
+          Dragalge: ['Mega Dragalge'],
+          Excadrill: ['Mega Excadrill'],
+          Feraligatr: ['Mega Feraligatr'],
+          Froslass: ['Mega Froslass'],
+          Gallade: ['Mega Gallade'],
+          Garchomp: ['Mega Garchomp'],
+          Gardevoir: ['Mega Gardevoir'],
+          Glalie: ['Mega Glalie'],
+          Greninja: ['Mega Greninja'],
+          Houndoom: ['Mega Houndoom'],
+          Lopunny: ['Mega Lopunny'],
+          Lucario: ['Mega Lucario'],
+          Manectric: ['Mega Manectric'],
+          Mawile: ['Mega Mawile'],
+          Metagross: ['Mega Metagross'],
+          Sableye: ['Mega Sableye'],
+          Salamence: ['Mega Salamence'],
+          Sceptile: ['Mega Sceptile'],
+          Scizor: ['Mega Scizor'],
+          Scolipede: ['Mega Scolipede'],
+          Sharpedo: ['Mega Sharpedo'],
+          Starmie: ['Mega Starmie'],
+          Swampert: ['Mega Swampert'],
+          Aegislash: ['Aegislash-Blade'],
+          Castform: ['Castform-Sunny', 'Castform-Rainy', 'Castform-Snowy'],
+          Minior: ['Minior-Core'],
+          Rotom: ['Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow'],
+          Wishiwashi: ['Wishiwashi-School'],
+        };
+
+        // Configuration for special one-off arrows.
+        const specialArrows = {
+          Shedinja: 'Plus.png',
+        };
+
+        // Configuration for all split evolutions.
+        const splitEvolutions = {
+          Applin: ['Flapple', 'Appletun', 'Dipplin'],
+          Cubone: ['Marowak', 'Marowak-Alola'],
+          Dartrix: ['Decidueye', 'Decidueye-Hisui'],
+          Exeggcute: ['Exeggutor', 'Exeggutor-Alola'],
+          Eevee: ['Vaporeon', 'Jolteon', 'Flareon', 'Espeon', 'Umbreon', 'Leafeon', 'Glaceon', 'Sylveon'],
+          Gloom: ['Vileplume', 'Bellossom'],
+          Goomy: ['Sliggoo', 'Sliggoo-Hisui'],
+          Kirlia: ['Gardevoir', 'Gallade'],
+          'Mime Jr': ['Mr. Mime', 'Mr. Rime'],
+          Pikachu: ['Raichu', 'Raichu-Alola'],
+          Poliwhirl: ['Poliwrath', 'Politoed'],
+          Rockruff: ['Lycanroc-Midday', 'Lycanroc-Midnight'],
+          Scyther: ['Scizor', 'Kleavor'],
+          Slowpoke: ['Slowbro-Galar', 'Slowking-Galar'],
+          Snorunt: ['Glalie', 'Froslass'],
+          Toxel: ['Toxtricity-Amped', 'Toxtricity-Low_Key'],
+          Tyrogue: ['Hitmonlee', 'Hitmonchan', 'Hitmontop'],
+        };
+        const evoNames = evolutions.map(evo => evo.name);
+        let splitBranches = [];
+        let isSplit = false;
+        let formBranches = [];
+        let isFormChange = false;
+
+        // Find if the current evolution chain contains a defined split.
+        for (const base in formChanges) {
+          const branches = formChanges[base];
+          if (branches.every(branch => evoNames.includes(branch))) {
+            isFormChange = true;
+            formBranches = branches;
+            break;
+          }
+        }
+
+        for (const base in splitEvolutions) {
+          const branches = splitEvolutions[base];
+          if (branches.every(branch => evoNames.includes(branch))) {
+            isSplit = true;
+            splitBranches = branches;
+            break;
+          }
+        }
+
+        evolutions.forEach((evo, index) => {
+          // Determine which arrow to use for this specific evolution.
+          let arrowImage = 'Arrow.png'; // Default to the standard arrow.
+          if (specialArrows[evo.name]) {
+            arrowImage = specialArrows[evo.name];
+          } else if (isFormChange && formBranches.includes(evo.name)) {
+            arrowImage = 'FormArrow.png';
+          } else if (isSplit && splitBranches.includes(evo.name)) {
+            arrowImage = 'SplitArrow.png';
           }
 
-          evolutions.forEach((evo, index) => {
-            // Determine which arrow to use for this specific evolution.
-            let arrowImage = 'Arrow.png'; // Default to the standard arrow.
-            if (specialArrows[evo.name]) {
-              arrowImage = specialArrows[evo.name];
-            } else if (isFormChange && formBranches.includes(evo.name)) {
-              arrowImage = 'FormArrow.png';
-            } else if (isSplit && splitBranches.includes(evo.name)) {
-              arrowImage = 'SplitArrow.png';
-            }
-
-            const arrowHtml = `
+          const arrowHtml = `
               <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80px; gap: 0.5rem; margin-top: 1rem; margin-left: 0.1rem; margin-right: 0.1rem;">
                 <img src="/generic/${arrowImage}" alt="Evolves to" style="width: 24px; height: 24px;">
                 <div style="font-size: 0.7rem; text-align: center; width: 70px;">${evo.info.evolution_method || ''}</div>
               </div>
             `;
-            evolutionDiv.insertAdjacentHTML('beforeend', arrowHtml);
+          evolutionDiv.insertAdjacentHTML('beforeend', arrowHtml);
 
-            let imageName = evo.name;
-            // Handle Mega Evolution naming convention ("Mega Pokemon" -> "Pokemon-Mega")
-            if (imageName.startsWith('Mega ')) {
-              const parts = imageName.split(' ');
-              imageName = `${parts[1]}-Mega`;
-            }
-            // Standardize name for image files: replace problematic characters but preserve case.
-            imageName = imageName.replace(/\. /g, '_').replace(/ /g, '_');
-            const imagePath = `/evolutions/${imageName}.png`;
+          let imageName = evo.name;
+          // Handle Mega Evolution naming convention ("Mega Pokemon" -> "Pokemon-Mega")
+          if (imageName.startsWith('Mega ')) {
+            const parts = imageName.split(' ');
+            imageName = `${parts[1]}-Mega`;
+          }
+          // Standardize name for image files: replace problematic characters but preserve case.
+          imageName = imageName.replace(/\. /g, '_').replace(/ /g, '_');
+          const imagePath = `/evolutions/${imageName}.png`;
 
-            // Get types and create vertically stacked image tags
-            let typeImagesHtml = '';
-            if (evo.info.type) {
-              const types = evo.info.type.split(/[\s,\/]+/).filter((t) => t);
-              typeImagesHtml = types
-                .map((type) => {
-                  const trimmedType = type.trim();
-                  return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
-                })
-                .join('');
-            }
+          // Get types and create vertically stacked image tags
+          let typeImagesHtml = '';
+          if (evo.info.type) {
+            const types = evo.info.type.split(/[\s,\/]+/).filter((t) => t);
+            typeImagesHtml = types
+              .map((type) => {
+                const trimmedType = type.trim();
+                return `<img src="/TypeIcons/${trimmedType}IC_SV.png" alt="${trimmedType}" title="${trimmedType}" style="height: 16px;">`;
+              })
+              .join('');
+          }
 
-            // Get abilities and create vertically stacked divs
-            const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
-            const evoAbilityDivs = [];
-            if (evo.info.ability1) {
-              const abilityName = evo.info.ability1.trim();
-              evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
-            }
-            if (evo.info.ability2) {
-              const abilityName = evo.info.ability2.trim();
-              evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
-            }
-            if (evo.info.hidden_ability) {
-              const abilityName = evo.info.hidden_ability.trim();
-              evoAbilityDivs.push(
-                `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
-              );
-            }
-            const abilitiesHtml = evoAbilityDivs.join('');
+          // Get abilities and create vertically stacked divs
+          const formatAbilityForUrl = (ability) => ability.toLowerCase().replace(/ /g, '-');
+          const evoAbilityDivs = [];
+          if (evo.info.ability1) {
+            const abilityName = evo.info.ability1.trim();
+            evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          }
+          if (evo.info.ability2) {
+            const abilityName = evo.info.ability2.trim();
+            evoAbilityDivs.push(`<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a></div>`);
+          }
+          if (evo.info.hidden_ability) {
+            const abilityName = evo.info.hidden_ability.trim();
+            evoAbilityDivs.push(
+              `<div><a class="ability-link" href="https://pokemondb.net/ability/${formatAbilityForUrl(abilityName)}" target="_blank" rel="noopener noreferrer">${abilityName}</a> (H)</div>`,
+            );
+          }
+          const abilitiesHtml = evoAbilityDivs.join('');
 
-            // Generate stats bar graph
-            const stats = [
-              { label: 'HP', key: 'hp' },
-              { label: 'Atk', key: 'attack' },
-              { label: 'Def', key: 'defense' },
-              { label: 'SpAtk', key: 'sp_attack' },
-              { label: 'SpDef', key: 'sp_defense' },
-              { label: 'Spd', key: 'speed' },
-            ];
-            const statsHtml = stats
-              .map((stat) => {
-                const statValue = evo.info[stat.key];
-                if (!statValue) return '';
-                const barWidth = (statValue / maxStat) * 100;
-                const barColor = getStatColor(statValue);
-                return `
+          // Generate stats bar graph
+          const stats = [
+            { label: 'HP', key: 'hp' },
+            { label: 'Atk', key: 'attack' },
+            { label: 'Def', key: 'defense' },
+            { label: 'SpAtk', key: 'sp_attack' },
+            { label: 'SpDef', key: 'sp_defense' },
+            { label: 'Spd', key: 'speed' },
+          ];
+          const statsHtml = stats
+            .map((stat) => {
+              const statValue = evo.info[stat.key];
+              if (!statValue) return '';
+              const barWidth = (statValue / maxStat) * 100;
+              const barColor = getStatColor(statValue);
+              return `
                   <div style="display: flex; align-items: center; font-size: 0.7rem;">
                     <span style="width: 35px; text-align: right; font-weight: bold; margin-right: 4px;">${stat.label}</span>
                     <span style="width: 25px; text-align: left; margin-right: 1px;">${statValue}</span>
@@ -1074,9 +1399,9 @@ const specialMechanics = {
                       <div style="width: ${barWidth}%; background-color: ${barColor}; height: 100%; border-radius: 4px;"></div>
                     </div>
                   </div>`;
-              })
-              .join('');
-            const evolutionHtml = `
+            })
+            .join('');
+          const evolutionHtml = `
               <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; width: 140px;">
                 <div style="flex-shrink: 0; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
                   <img src="${imagePath}" alt="${evo.name}" title="${evo.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;"
@@ -1091,36 +1416,37 @@ const specialMechanics = {
                 </div>
               </div>
             `;
-            evolutionDiv.insertAdjacentHTML('beforeend', evolutionHtml);
-          });
-        } else {
-          evolutionDiv.style.display = 'none';
-        }
-
-        // Assemble container
-        container.appendChild(speciesInfoDiv);
-        container.appendChild(imageDiv);
-        container.appendChild(evolutionDiv);
-
-        // Create and add remove button
-        const removeBtn = document.createElement('sl-button');
-        removeBtn.className = 'remove-button';
-        removeBtn.setAttribute('variant', 'danger');
-        removeBtn.setAttribute('size', 'small');
-        removeBtn.textContent = 'Remove from Team';
-        removeBtn.addEventListener('click', () => {
-          container.remove();
-          teamPokemon = teamPokemon.filter(name => name !== pokemon.name);
-          updateUrl();
-          updateEvolutionSummary();
+          evolutionDiv.insertAdjacentHTML('beforeend', evolutionHtml);
         });
-        container.appendChild(removeBtn);
-
-        return container;
+      } else {
+        evolutionDiv.style.display = 'none';
       }
 
-      // Start the application
-      init();
-    </script>
-  </body>
+      // Assemble container
+      container.appendChild(speciesInfoDiv);
+      container.appendChild(imageDiv);
+      container.appendChild(evolutionDiv);
+
+      // Create and add remove button
+      const removeBtn = document.createElement('sl-button');
+      removeBtn.className = 'remove-button';
+      removeBtn.setAttribute('variant', 'danger');
+      removeBtn.setAttribute('size', 'small');
+      removeBtn.textContent = 'Remove from Team';
+      removeBtn.addEventListener('click', () => {
+        container.remove();
+        teamPokemon = teamPokemon.filter(name => name !== pokemon.name);
+        updateUrl();
+        updateEvolutionSummary();
+      });
+      container.appendChild(removeBtn);
+
+      return container;
+    }
+
+    // Start the application
+    init();
+  </script>
+</body>
+
 </html>

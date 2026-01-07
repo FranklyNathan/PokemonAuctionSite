@@ -2542,8 +2542,7 @@
                 "Charmander",
                 "Charmeleon",
                 "Charizard",
-                "Charizard-Mega_X",
-                "Charizard-Mega_Y"
+                "Mega Charizard X"
             ],
             "tree": {
                 "name": "Charmander",
@@ -2558,13 +2557,8 @@
                                 "method": "Level 36",
                                 "children": [
                                     {
-                                        "name": "Charizard-Mega_X",
+                                        "name": "Mega Charizard X",
                                         "method": "Charizardite X",
-                                        "children": []
-                                    },
-                                    {
-                                        "name": "Charizard-Mega_Y",
-                                        "method": "Charizardite Y",
                                         "children": []
                                     }
                                 ]
@@ -3695,6 +3689,23 @@
                                 ]
                             }
                         ]
+                    }
+                ]
+            }
+        },
+        "Clobbopus": {
+            "members": [
+                "Clobbopus",
+                "Grapploct"
+            ],
+            "tree": {
+                "name": "Clobbopus",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Grapploct",
+                        "method": "Water Stone",
+                        "children": []
                     }
                 ]
             }
