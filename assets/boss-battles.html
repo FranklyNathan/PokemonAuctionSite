@@ -91,6 +91,26 @@
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h1>Boss Battles</h1>
     </div>
+    <div style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center;">
+        <label for="boss-slot-select"><b>Stage:</b></label>
+        <select id="boss-slot-select">
+            <option value="">-- Select Stage --</option>
+            <option value="gym-1">Gym 1</option>
+            <option value="gym-2">Gym 2</option>
+            <option value="gym-3">Gym 3</option>
+            <option value="gym-4">Gym 4</option>
+            <option value="gym-5">Gym 5</option>
+            <option value="gym-6">Gym 6</option>
+            <option value="gym-7">Gym 7</option>
+            <option value="gym-8">Gym 8</option>
+            <option value="e4">Elite Four</option>
+            <option value="champion">Champion</option>
+        </select>
+        <label for="trainer-select"><b>Trainer:</b></label>
+        <select id="trainer-select" disabled>
+            <option value="">-- Select Trainer --</option>
+        </select>
+    </div>
     <pre id="boss-battles-content">Loading...</pre>
 
         <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
@@ -102,8 +122,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            setupBossFilters()
             fetchAndDisplayBosses();
         });
+
+        const gymLeaders = [
+            'VIOLA', 'ROXANNE', 'BRAWLY', 'WATTSON',
+            'FLANNERY', 'NORMAN', 'WINONA', 'TATE AND LIZA', 'JUAN AND WALLACE'
+        ];
+
+        const e4Members = [
+            'SIDNEY', 'SPENSER', 'PHOEBE', 'LUCY', 'GLACIA', 'TUCKER', 'DRAKE', 'BRANDON'
+        ];
 
         const trainerTypeColors = {
             'VIOLA': '#9ACD32',     // Bug
@@ -144,6 +174,15 @@
                     const trainerContainer = document.createElement('div');
                     trainerContainer.className = 'trainer-section';
 
+                    // Infer stage from trainer
+                    if (gymLeaders.includes(trainerContainer.dataset.trainer)) {
+                        trainerContainer.dataset.stage = 'gym';
+                    } else if (e4Members.includes(trainerContainer.dataset.trainer)) {
+                        trainerContainer.dataset.stage = 'e4';
+                    } else if (['ARCHIE', 'MAXIE'].includes(trainerContainer.dataset.trainer)) {
+                        trainerContainer.dataset.stage = 'gym-8';
+                    }
+
                     const pokemonRow = document.createElement('div');
                     pokemonRow.className = 'pokemon-row';
 
@@ -173,6 +212,33 @@
                                 }
                                 return word; // Keep numbers or other parts as they are
                             }).join(' ');
+                    }
+
+                    if (nameLine) {
+                        const rawName = nameLine.split(':')[1].trim();
+                        const trainerKey = rawName.replace(/ & /g, '&').toUpperCase();
+
+                        trainerContainer.dataset.trainer = trainerKey;
+
+                        // --- DETERMINE STAGE ---
+                        const trainerIdUpper = trainerIdLine.toUpperCase();
+                        const match = trainerIdUpper.match(/^(.*?)(?:\s+(\d+))?$/);
+                        trainerContainer.dataset.trainer = match[1];
+
+                        if (gymLeaders.includes(match[1])) {
+                            if (match) {
+                                trainerContainer.dataset.stage = `gym-${match[2]}`;
+                            }
+                        } 
+                        else if (e4Members.includes(trainerKey)) {
+                            trainerContainer.dataset.stage = 'e4';
+                        } 
+                        else if (['ARCHIE', 'MAXIE'].includes(trainerKey)) {
+                            trainerContainer.dataset.stage = 'gym-8';
+                        }
+                        else if (trainerKey === 'STEVEN') {
+                            trainerContainer.dataset.stage = 'champion';
+                        }
                     }
 
                     const trainerHeader = document.createElement('h2');
@@ -255,6 +321,114 @@
                 document.getElementById('boss-battles-content').textContent = `Error loading boss battles: ${error.message}`;
                 console.error('Failed to fetch and display boss battles:', error);
             }
+        }
+
+
+        function setupBossFilters() {
+            const slotSelect = document.getElementById('boss-slot-select');
+            const trainerSelect = document.getElementById('trainer-select');
+
+            slotSelect.addEventListener('change', () => {
+                const slot = slotSelect.value;
+                if (slot.includes("gym")) {
+                    // Parse gym number from slot value if needed
+                    let gymNumber = null;
+                    const gymMatch = slot.match(/^gym-(\d+)$/);
+                    if (gymMatch) {
+                        gymNumber = parseInt(gymMatch[1], 10);
+                    }
+
+                    trainerSelect.innerHTML = '<option value="">-- Select Trainer --</option>';
+
+                    gymLeaders.forEach(trKey => {
+                        const opt = document.createElement('option');
+                        opt.value = trKey;
+                        opt.textContent = trKey + " " + gymNumber;
+                        trainerSelect.appendChild(opt);
+                    });
+
+                    if(gymNumber === 8) {
+                        const archieOpt = document.createElement('option');
+                        archieOpt.value = 'ARCHIE';
+                        archieOpt.textContent = 'ARCHIE';
+                        trainerSelect.appendChild(archieOpt);
+                        const maxieOpt = document.createElement('option');
+                        maxieOpt.value = 'MAXIE';
+                        maxieOpt.textContent = 'MAXIE';
+                        trainerSelect.appendChild(maxieOpt);
+                    }
+                    trainerSelect.disabled = false;
+                }
+                else if(slot.includes("e4")) {
+                    trainerSelect.innerHTML = '<option value="">-- Select Trainer --</option>';
+
+                    e4Members.forEach(trKey => {
+                        const opt = document.createElement('option');
+                        opt.value = trKey;
+                        opt.textContent = trKey;
+                        trainerSelect.appendChild(opt);
+                    });
+                    trainerSelect.disabled = false;
+                }
+                else {
+                    trainerSelect.innerHTML = '<option value="">-- Select Trainer --</option>';
+                    trainerSelect.disabled = true;
+                }
+
+                applyBossFilters();
+            });
+
+            trainerSelect.addEventListener('change', () => {
+                applyBossFilters();
+            });
+        }
+
+        function parseTrainerLabel(value) {
+            const match = value.match(/^(.*?)(?:\s+(\d+))?$/);
+
+            return {
+                name: match ? match[1].trim() : value,
+                number: match && match[2] ? Number(match[2]) : null
+            };
+        }
+
+        function applyBossFilters() {
+            const slot = document.getElementById('boss-slot-select').value;
+            const trainerValue = document.getElementById('trainer-select').value;
+
+            const parsedTrainer = trainerValue
+                ? parseTrainerLabel(trainerValue)
+                : null;
+
+            document.querySelectorAll('.trainer-section').forEach(section => {
+                let visible = true;
+
+                // Stage filter
+                if (slot && section.dataset.stage !== slot) {
+                    visible = false;
+                }
+
+                // Trainer name filter
+                if (parsedTrainer) {
+                    const normalizedName = parsedTrainer.name
+                        .replace(/\sand\s/gi, ' AND ')
+                        .toUpperCase();
+
+                    if (section.dataset.trainer !== normalizedName) {
+                        visible = false;
+                    }
+
+                    // Team number filter (THIS is what narrows to 1 team)
+                    if (
+                        parsedTrainer.number !== null &&
+                        section.dataset.stage !== `gym-${parsedTrainer.number}`
+                    ) {
+                        visible = false;
+                    }
+                }
+
+                section.style.display = visible ? '' : 'none';
+            });
         }
     </script>
 
