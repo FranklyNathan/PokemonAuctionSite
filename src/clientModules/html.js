@@ -548,7 +548,7 @@ const specialMechanics = {
 \nMawile and Sableye are the only two Pokémon in Emerald Blitz who can Mega Evolve before the 7th gym. Their Mega stones are available from the start. However, you won't earn enough money to purchase them until after beating gym 3, since they cost a steep 10,000.`,
   Mankey: `Tip: Rage Fist
 \nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
-\nHowever, it's been nerfed in Emerald Blitz to cap at 150 base power instead of 350.`,
+\nHowever, it's been nerfed in Emerald Blitz to cap at 100 base power instead of 350.`,
   Gastly: `Tip: Delayed Evolution
 \nBy delaying Gastly's evolution until level 29, it can learn Shadow Ball before gym 4 while still evolving into Haunter. Otherwise, Haunter needs to wait all of the way until level 33, which doesn't come until two gyms later.`,
   Sewaddle: `Tip: Delayed Evolution
