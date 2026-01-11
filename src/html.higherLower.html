@@ -58,23 +58,26 @@
 <body class="ready">
     <!-- Decorative, non-interactive Flygon silhouette background (use <img src=> so the file is fetched directly) -->
     <div id="higher-lower-game" style="margin-top:2rem;display:flex;flex-direction:column;align-items:center;">
+        <h1 style="font-size:2.5rem;font-weight:bold;margin-bottom:1rem;text-align:center;letter-spacing:0.03em;">Which
+            is faster?</h1>
         <div id="score-area" style="margin-bottom:1em;"></div>
         <div id="game-area" class="hl-flex"></div>
         <div id="guess-row" style="display:flex;align-items:center;gap:1.5em;margin:1.5em 0;">
-            <span id="left-pokemon" style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
-            <div id="guess-buttons" style="display:none;">
-                <sl-button class="main-button" id="higher">Higher</sl-button>
-                <sl-button class="main-button" id="lower">Lower</sl-button>
-            </div>
-            <span id="right-pokemon" style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
+            <span id="left-pokemon"
+                style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
+            <!-- Guess by clicking the Pokémon images -->
+            <span id="right-pokemon"
+                style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
         </div>
         <sl-button class="main-button" size="large" id="start-game">Start Game</sl-button>
         <div id="result"></div>
     </div>
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-        <!-- Bottom row: Download, Tierlist, Patch Notes, Dark Mode -->
         <div style="display: flex; gap: 0.5rem;">
+            <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
+                <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
+            </sl-button>
             <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
         </div>
     </div>
@@ -216,15 +219,24 @@
                 const left = pokemonData[currentIndex];
                 const right = pokemonData[nextIndex];
                 leftPokemon.innerHTML = left ? `
-                    <img src="${getPokemonImageSrc(left)}" alt="${left.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;" onerror="this.src='/baseforms/Egg.png'">
+                    <img id="left-img" src="${getPokemonImageSrc(left)}" alt="${left.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;cursor:pointer;" onerror="this.src='/baseforms/Egg.png'">
                     ${left.name}
                     <div style="height:1.2em;font-size:1.1em;">${revealSpeeds ? `Speed: <b>${left.stats.spe}</b>` : ''}</div>
                 ` : '';
                 rightPokemon.innerHTML = right ? `
-                    <img src="${getPokemonImageSrc(right)}" alt="${right.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;" onerror="this.src='/baseforms/Egg.png'">
+                    <img id="right-img" src="${getPokemonImageSrc(right)}" alt="${right.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;cursor:pointer;" onerror="this.src='/baseforms/Egg.png'">
                     ${right.name}
                     <div style="height:1.2em;font-size:1.1em;">${revealSpeeds ? `Speed: <b>${right.stats.spe}</b>` : ''}</div>
                 ` : '';
+                // Add click handlers for guessing
+                const leftImg = document.getElementById('left-img');
+                const rightImg = document.getElementById('right-img');
+                if (leftImg) {
+                    leftImg.onclick = () => { if (gameActive) makeGuess('left'); };
+                }
+                if (rightImg) {
+                    rightImg.onclick = () => { if (gameActive) makeGuess('right'); };
+                }
             }
         }
 
@@ -255,8 +267,12 @@
             if (!gameActive) return;
             const current = pokemonData[currentIndex];
             const next = pokemonData[nextIndex];
-            const correct = (guess === 'higher' && next.stats.spe < current.stats.spe) ||
-                            (guess === 'lower' && next.stats.spe > current.stats.spe);
+            let correct = false;
+            if (guess === 'left') {
+                correct = current.stats.spe >= next.stats.spe;
+            } else if (guess === 'right') {
+                correct = next.stats.spe > current.stats.spe;
+            }
             // Reveal both speeds after guess
             updateGuessRow(true);
             if (correct) {
@@ -281,13 +297,7 @@
                 startGame();
             };
         }
-        if (guessButtons) {
-            guessButtons.onclick = (e) => {
-                if (!gameActive) return;
-                if (e.target && e.target.id === 'higher') makeGuess('higher');
-                if (e.target && e.target.id === 'lower') makeGuess('lower');
-            };
-        }
+        // No guess buttons needed; guesses are made by clicking images
         // --- End Higher or Lower Game Logic ---
     </script>
 </body>
