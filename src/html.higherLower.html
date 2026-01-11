@@ -271,7 +271,7 @@
             if (guess === 'left') {
                 correct = current.stats.spe >= next.stats.spe;
             } else if (guess === 'right') {
-                correct = next.stats.spe > current.stats.spe;
+                correct = next.stats.spe >= current.stats.spe;
             }
             // Reveal both speeds after guess
             updateGuessRow(true);
