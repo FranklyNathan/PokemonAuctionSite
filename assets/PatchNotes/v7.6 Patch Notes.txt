@@ -1,0 +1,120 @@
+1/10/2026
+
+//Buckle up, this is a significant one.
+
+-----------------------------------------------
+AI Modifications
+-----------------------------------------------
+
+Enemy trainers can no longer heal the same Pokémon multiple times
+//A long overdue change. Regulars will recognize what a colossal adjustment this is, but in short, it removes situations where players can "bait" all of the enemy's healing items on the same Pokémon, as with Steven's Sturdy Skarmory or Wattson's Sturdy Golem.
+//That said, there are also situations where this nerfs enemies. It's no longer possible, for instance, for Glacia to Full Retore her Walrein twice and elongate the fight quite so significantly. In all, though, it's a change that will make the game more difficult.
+
+If the AI scores multiple Pokémon as equally viable, it now picks at random instead of sending out in reverse party order
+//Previously, for example, if the AI assessed all of its Pokémon as equally viable into your Pokémon (no fast KO's, no positive type matchups, etc.), it would send out its next Pokémon in reverse party order. Now, however, it will send out its next Pokémon randomly from among Pokémon it considers equally viable.
+//In general, my goal is for the AI to be unpredictable and human-like. This isn't a game that's meant to be played in a calculator where you bait down the line to try to set up pre-prepared scenarios. This change will increase the importance of players being able to adapt on the fly. It's no longer the case that you can prepare sweeps based on knowing for 100% certain what the opponent will send in next.
+
+
+-----------------------------------------------
+Evolution Method Rework
+-----------------------------------------------
+
+Whipped Dream Removed
+//End of an era.
+
+Energy Guru NPC Added:
+After obtaining 2 badges, the Energy Guru now appears in Slateport City. He will evolve your Pokémon (free of charge!) if it fulfills the requirements that the Whipped Dream previously checked for:
+-It's the first form of a 3-stage line
+-It evolves above level 30
+
+Energy Oracle NPC Added:
+After obtaining 4 badges, the Energy Oracle now appears in Slateport City. She will evolve your Pokémon (for no added fee!) if it fulfills the following requirements:
+-It's the first form of a 2-stage line
+-It evolves above level 36
+
+The following Pokémon currently in the pool can now evolve early via the Energy Oracle:
+Ponyta
+Slowpoke (Slowbro)
+Corsola (Cursola)
+Snorunt (Glalie)
+Shuppet
+Archen
+Tyrunt
+
+The following Pokémon have had their evolution methods changed:
+Noibat Soothe Bell > Level 48
+Skrelp Dragon Scale > Level 48
+Feebas Soothe Bell > Level 40
+Clobbopus Water Stone > Level 38
+//This doesn't change their evolution threshold (they're still evolving after gym 4), but it does save you from needing to spend money on their items.
+
+
+-----------------------------------------------
+Boss Battle Changes
+-----------------------------------------------
+
+Brawly 8 Blaziken Double Kick > Sky Uppercut
+
+Tucker Azumarill Brick Break > Bounce
+Tucker Azumarill Thick Fat > Huge Power
+//I hear people have been talking smack.
+
+Juan&Wallace 1 Feebas > Luvdisc
+Juan&Wallace 1&2 Horsea Leer > Aurora Beam
+//The first two Juan&Wallace were too easy relative to their later iterations.
+
+Tate & Liza 7&8:
+Claydol Light Screen > Calm Mind
+Slowking Sludge Bomb > Acid
+//Tapping down this fight slightly.
+
+
+-----------------------------------------------
+Post-Run Fun
+-----------------------------------------------
+
+Victory Museum Added
+//It's in its infancy for now, but I've got boatloads of ideas for easter eggs! Look forward to this expanding over the coming months.
+
+
+-----------------------------------------------
+Bugfix
+-----------------------------------------------
+
+Crawdaunt learns Snarl 
+//I'd previously made it so that only Corphish could learn Snarl, when it needed to be the opposite.
+
+Stufful/Bewear learn Rock Smash
+//They don't get the move in the official games, but they've never been in a game together to have the chance. This gives Stufful access to STAB without relying on its Egg Move, Force Palm.
+
+Babies which Evolve at Level 10 appear Green in the Party Menu
+//I broke this a few patches ago.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Pool Additions:
+Bounsweet
+Cufant
+Lillipup
+Litleo
+Rookidee
+Sizzlipede
+Swirlix
+//Oracle Evolutions begin here
+Amaura
+Clauncher
+Croagunk
+Elgyem
+Larvesta
+Meditite
+Sandygast
+Skorupi
+Snover
+Tirtouga
+Varoom
+
+//It's getting a little crowded in here! Enjoy!
+

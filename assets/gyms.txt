@@ -1234,7 +1234,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Blaze
 - Bulk Up
-- Double Kick
+- Sky Uppercut
 - Blaze Kick
 - Focus Energy
 
@@ -3186,7 +3186,7 @@ Ability: Own Tempo
 - Psychic
 - Calm Mind
 - Water Gun
-- Amnesia
+- Acid
 
 Lunatone @ Sitrus Berry
 Level: 35
@@ -3226,7 +3226,7 @@ Ability: Levitate
 - Earthquake
 - Ancient Power
 - Psychic
-- Light Screen
+- Calm Mind
 
 Xatu
 Level: 40
@@ -3256,7 +3256,7 @@ Ability: Own Tempo
 - Eerie Spell
 - Calm Mind
 - Power Gem
-- Sludge Bomb
+- Acid
 
 Lunatone @ Sitrus Berry
 Level: 42
@@ -3296,7 +3296,7 @@ Ability: Levitate
 - Earthquake
 - Ancient Power
 - Psychic
-- Light Screen
+- Calm Mind
 
 Xatu
 Level: 45
@@ -3326,7 +3326,7 @@ Ability: Own Tempo
 - Eerie Spell
 - Calm Mind
 - Power Gem
-- Sludge Bomb
+- Acid
 
 Lunatone @ Sitrus Berry
 Level: 48
@@ -3368,17 +3368,8 @@ Ability: Gooey
 - Water Pulse
 - Mud Slap
 
-Feebas
+Wailmer
 Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Oblivious
-- Splash
-- Water Pulse
-- Flail
-
-Wailmer @ Oran Berry
-Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
@@ -3387,6 +3378,16 @@ Ability: Water Veil
 - Rollout
 - Water Pulse
 
+Luvdisc @ Oran Berry
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Swift Swim
+- Water Pulse
+- Heart Stamp
+- Draining Kiss
+- Flail
+
 Horsea @ Oran Berry
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -3394,7 +3395,7 @@ Nature: Serious
 Ability: Swift Swim
 - Water Pulse
 - Smokescreen
-- Leer
+- Aurora Beam
 - Twister
 
 === TRAINER_JUAN_2 ===
@@ -3444,7 +3445,7 @@ Nature: Serious
 Ability: Swift Swim
 - Water Pulse
 - Smokescreen
-- Leer
+- Aurora Beam
 - Twister
 
 === TRAINER_JUAN_3 ===
@@ -3467,16 +3468,6 @@ Ability: Gooey
 - Water Pulse
 - Mud Slap
 
-Wailmer @ Oran Berry
-Level: 23
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Water Veil
-- Whirlpool
-- Defense Curl
-- Rollout
-- Water Pulse
-
 Barboach
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -3486,6 +3477,16 @@ Ability: Oblivious
 - Water Pulse
 - Mud Slap
 - Flail
+
+Wailmer @ Oran Berry
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Water Veil
+- Whirlpool
+- Defense Curl
+- Rollout
+- Water Pulse
 
 Seadra @ Sitrus Berry
 Level: 24
@@ -4257,10 +4258,10 @@ Azumarill
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Thick Fat
+Ability: Huge Power
 - Play Rough
 - Aqua Tail
-- Brick Break
+- Bounce
 - Double Edge
 
 Mawile
