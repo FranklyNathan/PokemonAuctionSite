@@ -2312,7 +2312,7 @@
   },
   {
     "id": "DOUBLE_EDGE",
-    "name": "Double-Edge",
+    "name": "Double Edge",
     "type": "Normal",
     "accuracy": 100,
     "pp": 15,
@@ -3618,7 +3618,7 @@
   },
   {
     "id": "FREEZE_DRY",
-    "name": "Freeze-Dry",
+    "name": "Freeze Dry",
     "power": 70,
     "type": "Ice",
     "accuracy": 100,
@@ -5807,7 +5807,7 @@
   },
   {
     "id": "LOCK_ON",
-    "name": "Lock-On",
+    "name": "Lock On",
     "power": 0,
     "type": "Normal",
     "pp": 5,
@@ -6839,7 +6839,7 @@
   },
   {
     "id": "MUD_SLAP",
-    "name": "Mud-Slap",
+    "name": "Mud Slap",
     "power": 20,
     "type": "Ground",
     "accuracy": 100,
@@ -6862,7 +6862,7 @@
   },
   {
     "id": "MULTI_ATTACK",
-    "name": "Multi-Attack",
+    "name": "Multi Attack",
     "type": "Normal",
     "accuracy": 100,
     "pp": 10,
@@ -6960,7 +6960,7 @@
   },
   {
     "id": "NEVER_ENDING_NIGHTMARE",
-    "name": "Never-Ending Nightmare",
+    "name": "Never Ending Nightmare",
     "power": 1,
     "type": "Ghost",
     "accuracy": 0,
@@ -7698,7 +7698,7 @@
   },
   {
     "id": "POWER_UP_PUNCH",
-    "name": "Power-Up Punch",
+    "name": "Power Up Punch",
     "power": 40,
     "type": "Fighting",
     "accuracy": 100,
@@ -8691,7 +8691,7 @@
   },
   {
     "id": "SAVAGE_SPIN_OUT",
-    "name": "Savage Spin-Out",
+    "name": "Savage Spin Out",
     "power": 1,
     "type": "Bug",
     "accuracy": 0,
@@ -8866,7 +8866,7 @@
   },
   {
     "id": "SELF_DESTRUCT",
-    "name": "Self-Destruct",
+    "name": "Self Destruct",
     "type": "Normal",
     "accuracy": 100,
     "pp": 5,
@@ -9522,7 +9522,7 @@
   },
   {
     "id": "SOFT_BOILED",
-    "name": "Soft-Boiled",
+    "name": "Soft Boiled",
     "power": 0,
     "type": "Normal",
     "accuracy": 100,
@@ -10906,7 +10906,7 @@
   },
   {
     "id": "TOPSY_TURVY",
-    "name": "Topsy-Turvy",
+    "name": "Topsy Turvy",
     "power": 0,
     "type": "Dark",
     "pp": 20,
@@ -11040,7 +11040,7 @@
   },
   {
     "id": "TRICK_OR_TREAT",
-    "name": "Trick-or-Treat",
+    "name": "Trick or Treat",
     "power": 0,
     "type": "Ghost",
     "accuracy": 100,
@@ -11182,7 +11182,7 @@
   },
   {
     "id": "U_TURN",
-    "name": "U-turn",
+    "name": "U turn",
     "power": 70,
     "type": "Bug",
     "accuracy": 100,
@@ -11223,7 +11223,7 @@
   },
   {
     "id": "V_CREATE",
-    "name": "V-create",
+    "name": "V Create",
     "power": 180,
     "type": "Fire",
     "accuracy": 95,
@@ -11368,7 +11368,7 @@
   },
   {
     "id": "WAKE_UP_SLAP",
-    "name": "Wake-Up Slap",
+    "name": "Wake Up Slap",
     "type": "Fighting",
     "accuracy": 100,
     "pp": 10,
@@ -11580,7 +11580,7 @@
   },
   {
     "id": "WILL_O_WISP",
-    "name": "Will-O-Wisp",
+    "name": "Will O Wisp",
     "power": 0,
     "type": "Fire",
     "pp": 15,
@@ -11706,7 +11706,7 @@
   },
   {
     "id": "X_SCISSOR",
-    "name": "X-Scissor",
+    "name": "X Scissor",
     "power": 80,
     "type": "Bug",
     "accuracy": 100,

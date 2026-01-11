@@ -11,7 +11,7 @@
                 "children": [
                     {
                         "name": "Archeops",
-                        "method": "Level 37",
+                        "method": "Level 37 (Energy Oracle)",
                         "children": []
                     }
                 ]
@@ -219,7 +219,7 @@
                         "children": [
                             {
                                 "name": "Cursola",
-                                "method": "Level 38",
+                                "method": "Level 38 (Energy Oracle)",
                                 "children": []
                             }
                         ]
@@ -395,7 +395,7 @@
                 "children": [
                     {
                         "name": "Milotic",
-                        "method": "Soothe Bell",
+                        "method": "Level 40 (Energy Oracle)",
                         "children": []
                     }
                 ]
@@ -695,7 +695,7 @@
                 "children": [
                     {
                         "name": "Hakamo-o",
-                        "method": "Level 35 (Whipped Dream)",
+                        "method": "Level 35 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Kommo-o",
@@ -1003,7 +1003,7 @@
                 "children": [
                     {
                         "name": "Noivern",
-                        "method": "Soothe Bell",
+                        "method": "Level 48 (Energy Oracle)",
                         "children": []
                     }
                 ]
@@ -1136,7 +1136,7 @@
                 "children": [
                     {
                         "name": "Rapidash",
-                        "method": "Level 40",
+                        "method": "Level 40 (Energy Oracle)",
                         "children": []
                     }
                 ]
@@ -1471,7 +1471,7 @@
                 "children": [
                     {
                         "name": "Banette",
-                        "method": "Level 37",
+                        "method": "Level 37 (Energy Oracle)",
                         "children": [
                             {
                                 "name": "Mega Banette",
@@ -1512,7 +1512,7 @@
                 "children": [
                     {
                         "name": "Dragalge",
-                        "method": "Dragon Scale",
+                        "method": "Level 48 (Energy Oracle)",
                         "children": [
                             {
                                 "name": "Mega Dragalge",
@@ -1560,7 +1560,7 @@
                 "children": [
                     {
                         "name": "Slowbro-Galar",
-                        "method": "Level 37",
+                        "method": "Level 37 (Energy Oracle)",
                         "children": []
                     },
                     {
@@ -1641,7 +1641,7 @@
                 "children": [
                     {
                         "name": "Duosion",
-                        "method": "Level 32 (Whipped Dream)",
+                        "method": "Level 32 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Reuniclus",
@@ -1665,7 +1665,7 @@
                 "children": [
                     {
                         "name": "Sealeo",
-                        "method": "Level 32 (Whipped Dream)",
+                        "method": "Level 32 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Walrein",
@@ -1781,7 +1781,7 @@
                 "children": [
                     {
                         "name": "Piloswine",
-                        "method": "Level 33 (Whipped Dream)",
+                        "method": "Level 33 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Mamoswine",
@@ -1894,7 +1894,7 @@
                 "children": [
                     {
                         "name": "Vibrava",
-                        "method": "Level 35 (Whipped Dream)",
+                        "method": "Level 35 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Flygon",
@@ -1958,7 +1958,7 @@
                 "children": [
                     {
                         "name": "Tyrantrum",
-                        "method": "Level 39",
+                        "method": "Level 39 (Energy Oracle)",
                         "children": []
                     }
                 ]
@@ -2751,7 +2751,7 @@
                 "children": [
                     {
                         "name": "Glalie",
-                        "method": "Level 42",
+                        "method": "Level 42 (Energy Oracle)",
                         "children": [
                             {
                                 "name": "Mega Glalie",
@@ -3087,7 +3087,7 @@
                 "children": [
                     {
                         "name": "Lairon",
-                        "method": "Level 32 (Whipped Dream)",
+                        "method": "Level 32 (Energy Guru)",
                         "children": [
                             {
                                 "name": "Aggron",
@@ -3704,7 +3704,372 @@
                 "children": [
                     {
                         "name": "Grapploct",
-                        "method": "Water Stone",
+                        "method": "Level 38 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Bounsweet": {
+            "members": [
+                "Bounsweet",
+                "Steenee",
+                "Tsareena"
+            ],
+            "tree": {
+                "name": "Bounsweet",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Steenee",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Tsareena",
+                                "method": "Level 29 (Stomp)",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Cufant": {
+            "members": [
+                "Cufant",
+                "Copperajah"
+            ],
+            "tree": {
+                "name": "Cufant",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Copperajah",
+                        "method": "Level 34",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Lillipup": {
+            "members": [
+                "Lillipup",
+                "Herdier",
+                "Stoutland"
+            ],
+            "tree": {
+                "name": "Lillipup",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Herdier",
+                        "method": "Level 16",
+                        "children": [
+                            {
+                                "name": "Stoutland",
+                                "method": "Level 32",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Litleo": {
+            "members": [
+                "Litleo",
+                "Pyroar",
+                "Mega Pyroar"
+            ],
+            "tree": {
+                "name": "Litleo",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Pyroar",
+                        "method": "Level 35",
+                        "children": [
+                            {
+                                "name": "Mega Pyroar",
+                                "method": "Pyroarite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Rookidee": {
+            "members": [
+                "Rookidee",
+                "Corvisquire",
+                "Corviknight"
+            ],
+            "tree": {
+                "name": "Rookidee",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Corvisquire",
+                        "method": "Level 18",
+                        "children": [
+                            {
+                                "name": "Corviknight",
+                                "method": "Level 38",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Sizzlipede": {
+            "members": [
+                "Sizzlipede",
+                "Centiskorch"
+            ],
+            "tree": {
+                "name": "Sizzlipede",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Centiskorch",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Swirlix": {
+            "members": [
+                "Swirlix",
+                "Slurpuff"
+            ],
+            "tree": {
+                "name": "Swirlix",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Slurpuff",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Amaura": {
+            "members": [
+                "Amaura",
+                "Aurorus"
+            ],
+            "tree": {
+                "name": "Amaura",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Aurorus",
+                        "method": "Level 39 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Clauncher": {
+            "members": [
+                "Clauncher",
+                "Clawitzer"
+            ],
+            "tree": {
+                "name": "Clauncher",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Clawitzer",
+                        "method": "Level 38 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Croagunk": {
+            "members": [
+                "Croagunk",
+                "Toxicroak"
+            ],
+            "tree": {
+                "name": "Croagunk",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Toxicroak",
+                        "method": "Level 37 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Elgyem": {
+            "members": [
+                "Elgyem",
+                "Beheeyem"
+            ],
+            "tree": {
+                "name": "Elgyem",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Beheeyem",
+                        "method": "Level 42 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Larvesta": {
+            "members": [
+                "Larvesta",
+                "Volcarona"
+            ],
+            "tree": {
+                "name": "Larvesta",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Volcarona",
+                        "method": "Level 59 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Meditite": {
+            "members": [
+                "Meditite",
+                "Medicham",
+                "Mega Medicham"
+            ],
+            "tree": {
+                "name": "Meditite",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Medicham",
+                        "method": "Level 37 (Energy Oracle)",
+                        "children": [
+                            {
+                                "name": "Mega Medicham",
+                                "method": "Medichamite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Sandygast": {
+            "members": [
+                "Sandygast",
+                "Palossand"
+            ],
+            "tree": {
+                "name": "Sandygast",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Palossand",
+                        "method": "Level 42 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Skorupi": {
+            "members": [
+                "Skorupi",
+                "Drapion"
+            ],
+            "tree": {
+                "name": "Skorupi",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Drapion",
+                        "method": "Level 40 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Snover": {
+            "members": [
+                "Snover",
+                "Abomasnow",
+                "Mega Abomasnow"
+            ],
+            "tree": {
+                "name": "Snover",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Abomasnow",
+                        "method": "Level 40 (Energy Oracle)",
+                        "children": [
+                            {
+                                "name": "Mega Abomasnow",
+                                "method": "Abomasite",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Tirtouga": {
+            "members": [
+                "Tirtouga",
+                "Carracosta"
+            ],
+            "tree": {
+                "name": "Tirtouga",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Carracosta",
+                        "method": "Level 37 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Varoom": {
+            "members": [
+                "Varoom",
+                "Revaroom"
+            ],
+            "tree": {
+                "name": "Varoom",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Revaroom",
+                        "method": "Level 40 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Blitzle": {
+            "members": [
+                "Blitzle",
+                "Zebstrika"
+            ],
+            "tree": {
+                "name": "Blitzle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Zebstrika",
+                        "method": "Level 27",
                         "children": []
                     }
                 ]

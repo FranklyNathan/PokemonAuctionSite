@@ -65,7 +65,7 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 367,Huntail,Water,evo,Swift Swim,,Water Veil,55,104,105,94,75,52,Level 28 (Male),,
 368,Gorebyss,Water,evo,Swift Swim,,Hydration,55,84,105,114,75,52,Level 28 (Female),,
 692,Clauncher,Water,base,Mega Launcher,,,50,53,62,58,63,44,,,
-693,Clawitzer,Water,evo,Mega Launcher,,,71,73,88,120,89,59,Level 37,,
+693,Clawitzer,Water,evo,Mega Launcher,,,71,73,88,120,89,59,Level 37 (Oracle),,
 852,Clobbopus,Fighting,base,Limber,,Technician,50,68,60,50,50,32,,,
 853,Grapploct,Fighting,evo,Limber,,Technician,80,118,90,70,80,42,Level 38 (Oracle),,
 341,Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,,,
