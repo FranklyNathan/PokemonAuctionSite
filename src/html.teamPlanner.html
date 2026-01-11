@@ -919,6 +919,7 @@
       const listEl = document.getElementById('shop-items-list');
       listEl.innerHTML = '';
       shopItems.forEach(item => {
+        console.log('Rendering shop item:', item);
         const lookupName = item.name.replace(/_/g, ' ');
         const itemObj = SHOP_ITEMS.find(obj => obj.name === lookupName) || { name: lookupName, price: '', badge: '' };
         const itemDiv = document.createElement('div');
@@ -968,22 +969,6 @@
         teamPokemon.push(name);
         const card = createPokemonCard(pokemonData);
         container.appendChild(card);
-
-        // Auto-add Mega Stone if needed
-        if (pokemonData.name && pokemonData.name.startsWith('Mega ')) {
-          // Already a Mega, skip
-          return;
-        }
-        // Check if this Pokémon can Mega Evolve
-        const megaName = `Mega ${pokemonData.name}`;
-        const hasMega = allPokemon.some(p => p.name === megaName);
-        if (hasMega) {
-          const megaStoneName = `${pokemonData.name} Mega Stone`;
-          if (!shopItems.includes(megaStoneName)) {
-            shopItems.push(megaStoneName);
-            updateShopItemsList();
-          }
-        }
       });
 
       console.log('[Debug] Current team after adding:', teamPokemon);

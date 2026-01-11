@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="sl-theme-dark">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Draft</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/dark.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .sl-theme-dark .invert-in-dark-mode {
+            filter: invert(1);
+        }
+
+        .sl-theme-dark sl-button[variant='neutral']::part(label) {
+            color: white;
+        }
+
+        .main-button {
+            width: 15rem;
+            margin-bottom: 1rem;
+        }
+
+        .main-button::part(base) {
+            transition: filter 0.3s ease;
+        }
+
+        .main-button:hover::part(base) {
+            filter: brightness(1.3);
+        }
+    </style>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-group/tab-group.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab/tab.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-panel/tab-panel.js"></script>
+</head>
+
+<body class="ready">
+    <!-- Decorative, non-interactive Flygon silhouette background (use <img src=> so the file is fetched directly) -->
+    <div id="higher-lower-game" style="margin-top:2rem;display:flex;flex-direction:column;align-items:center;">
+        <h1 style="font-size:2.5rem;font-weight:bold;margin-bottom:1rem;text-align:center;letter-spacing:0.03em;">Which
+            is faster?</h1>
+        <div id="score-area" style="margin-bottom:1em;"></div>
+        <div id="game-area" class="hl-flex"></div>
+        <div id="guess-row" style="display:flex;align-items:center;gap:1.5em;margin:1.5em 0;">
+            <span id="left-pokemon"
+                style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
+            <!-- Guess by clicking the Pokémon images -->
+            <span id="right-pokemon"
+                style="min-width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:bold;"></span>
+        </div>
+        <sl-button class="main-button" size="large" id="start-game">Start Game</sl-button>
+        <div id="result"></div>
+    </div>
+
+    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <div style="display: flex; gap: 0.5rem;">
+            <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
+                <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
+            </sl-button>
+            <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
+        </div>
+    </div>
+
+    <script type="module">
+        // Set the base path for Shoelace assets (like icons) before any components are rendered.
+        import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/utilities/base-path.js';
+        setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+
+        // Wait for all shoelace components used on the page to be defined.
+        await Promise.all([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-icon-button')]);
+
+        // --- Dark Mode Logic ---
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const htmlEl = document.documentElement;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlEl.classList.add('sl-theme-dark');
+                darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
+            } else {
+                htmlEl.classList.remove('sl-theme-dark');
+                darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', savedTheme);
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+        // --- End Dark Mode Logic ---
+    </script>
+    <script>
+        // Global variable for evolution data
+        let evolutionData = null;
+        let movesData = null;
+        let abilitiesData = null;
+        let pokemonData = [];
+        async function loadData() {
+            try {
+                // Cache busting: use current timestamp
+                const cacheBust = `v=${Date.now()}`;
+                // Load pokedex, evolutions, moves, and abilities data in parallel
+                const [pokedexResponse, evolutionsResponse, movesResponse, abilitiesResponse] = await Promise.all([
+                    fetch(`/api/pokedex?${cacheBust}`),
+                    fetch(`/data/evolutions.json?${cacheBust}`),
+                    fetch(`/data/moves.json?${cacheBust}`),
+                    fetch(`/data/abilities.json?${cacheBust}`)
+                ]);
+
+                if (!pokedexResponse.ok) throw new Error('Failed to load Pokemon data');
+                if (!evolutionsResponse.ok) throw new Error('Failed to load evolution data');
+                if (!movesResponse.ok) throw new Error('Failed to load moves data');
+                if (!abilitiesResponse.ok) throw new Error('Failed to load abilities data');
+
+                pokemonData = await pokedexResponse.json();
+                evolutionData = await evolutionsResponse.json();
+                const movesArray = await movesResponse.json();
+                const abilitiesArray = await abilitiesResponse.json();
+
+                // Create a lookup map for moves by name
+                movesData = {};
+                movesArray.forEach(move => {
+                    movesData[move.name.toLowerCase()] = move;
+                });
+
+                // Create a lookup map for abilities by name
+                abilitiesData = {};
+                abilitiesArray.forEach(ability => {
+                    abilitiesData[ability.name.toLowerCase()] = ability;
+                });
+
+                console.log('Loaded', movesArray.length, 'moves and', abilitiesArray.length, 'abilities');
+
+                // Sort by dex number
+                shuffleArray(pokemonData);
+                state.filtered = pokemonData;
+            } catch (error) {
+                console.error('Error loading Pokemon data:', error);
+                rowsEl.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--sl-color-danger-600);">Failed to load Pokemon data. Please refresh the page.</div>';
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        loadData();
+
+        // --- Higher or Lower Game Logic ---
+        let currentIndex = 0;
+        let nextIndex = 0;
+        let score = 0;
+        let gameActive = false;
+        const startBtn = document.getElementById('start-game');
+        const resultDiv = document.getElementById('result');
+        const scoreArea = document.getElementById('score-area');
+        const guessButtons = document.getElementById('guess-buttons');
+        const higherBtn = document.getElementById('higher');
+        const lowerBtn = document.getElementById('lower');
+        const leftPokemon = document.getElementById('left-pokemon');
+        const rightPokemon = document.getElementById('right-pokemon');
+
+        function getRandomIndex(exclude = []) {
+            let idx;
+            do {
+                idx = Math.floor(Math.random() * pokemonData.length);
+            } while (exclude.includes(idx));
+            return idx;
+        }
+
+
+        function getPokemonImageSrc(pokemon) {
+            if (!pokemon || !pokemon.name) return '';
+            let name = pokemon.name;
+            // If it's a Mega, move 'Mega' to the end, separated by a hyphen
+            if (name.startsWith('Mega ')) {
+                name = name.replace(/^Mega /, '') + '-Mega';
+            }
+            // Only replace spaces with underscores, keep hyphens and other characters, remove periods
+            let fileName = name.replace(/ /g, '_').replace(/\./g, '') + '.png';
+            const folder = pokemon.stage === 'base' ? 'baseforms' : 'evolutions';
+            return `/${folder}/${fileName}`;
+        }
+
+        // If revealSpeeds is true, show both speeds under the names
+        function updateGuessRow(revealSpeeds = false) {
+            if (leftPokemon && rightPokemon && typeof currentIndex === 'number' && typeof nextIndex === 'number') {
+                const left = pokemonData[currentIndex];
+                const right = pokemonData[nextIndex];
+                leftPokemon.innerHTML = left ? `
+                    <img id="left-img" src="${getPokemonImageSrc(left)}" alt="${left.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;cursor:pointer;" onerror="this.src='/baseforms/Egg.png'">
+                    ${left.name}
+                    <div style="height:1.2em;font-size:1.1em;">${revealSpeeds ? `Speed: <b>${left.stats.spe}</b>` : ''}</div>
+                ` : '';
+                rightPokemon.innerHTML = right ? `
+                    <img id="right-img" src="${getPokemonImageSrc(right)}" alt="${right.name}" style="width:48px;height:48px;display:block;margin:0 auto 0.2em auto;cursor:pointer;" onerror="this.src='/baseforms/Egg.png'">
+                    ${right.name}
+                    <div style="height:1.2em;font-size:1.1em;">${revealSpeeds ? `Speed: <b>${right.stats.spe}</b>` : ''}</div>
+                ` : '';
+                // Add click handlers for guessing
+                const leftImg = document.getElementById('left-img');
+                const rightImg = document.getElementById('right-img');
+                if (leftImg) {
+                    leftImg.onclick = () => { if (gameActive) makeGuess('left'); };
+                }
+                if (rightImg) {
+                    rightImg.onclick = () => { if (gameActive) makeGuess('right'); };
+                }
+            }
+        }
+
+        function updateScoreArea() {
+            if (scoreArea) {
+                scoreArea.textContent = gameActive ? `Score: ${score}` : '';
+            }
+        }
+
+        function showGuessButtons(show) {
+            if (guessButtons) guessButtons.style.display = show ? 'block' : 'none';
+        }
+
+        function startGame() {
+            if (!pokemonData.length) return;
+            score = 0;
+            gameActive = true;
+            resultDiv.textContent = '';
+            startBtn.style.display = 'none';
+            updateScoreArea();
+            currentIndex = getRandomIndex();
+            nextIndex = getRandomIndex([currentIndex]);
+            updateGuessRow();
+            showGuessButtons(true);
+        }
+
+        function makeGuess(guess) {
+            if (!gameActive) return;
+            const current = pokemonData[currentIndex];
+            const next = pokemonData[nextIndex];
+            let correct = false;
+            if (guess === 'left') {
+                correct = current.stats.spe >= next.stats.spe;
+            } else if (guess === 'right') {
+                correct = next.stats.spe > current.stats.spe;
+            }
+            // Reveal both speeds after guess
+            updateGuessRow(true);
+            if (correct) {
+                score++;
+                resultDiv.textContent = `Correct!`;
+                updateScoreArea();
+                setTimeout(() => {
+                    currentIndex = nextIndex;
+                    nextIndex = getRandomIndex([currentIndex]);
+                    updateGuessRow();
+                }, 1000);
+            } else {
+                resultDiv.textContent = `Wrong! Final Score: ${score}`;
+                gameActive = false;
+                updateScoreArea();
+                startBtn.style.display = '';
+            }
+        }
+
+        if (startBtn) {
+            startBtn.onclick = () => {
+                startGame();
+            };
+        }
+        // No guess buttons needed; guesses are made by clicking images
+        // --- End Higher or Lower Game Logic ---
+    </script>
+</body>
+
+</html>

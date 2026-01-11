@@ -9,6 +9,7 @@ import downloadHtml from './html.download.html';
 import faqHtml from './html.faq.html';
 import pokedexHtml from './html.pokedex.html';
 import bossBattlesHtml from '../assets/boss-battles.html';
+import higherLower from './html.higherLower.html'
 import v1_7 from '../assets/PatchNotes/v1.7 Patch Notes.txt';
 import v1_8 from '../assets/PatchNotes/v1.8 Patch Notes.txt';
 import v1_9 from '../assets/PatchNotes/v1.9 Patch Notes.txt';
@@ -372,6 +373,9 @@ export default {
       } else if (path[0] === 'teamplanner' && request.method.toLowerCase() == 'get') {
         // User is at the Team Planner page
         return new Response(teamPlannerHtml, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
+      }else if (path[0] === 'higherlower' && request.method.toLowerCase() == 'get') {
+        // User is at the Team Planner page
+        return new Response(higherLower, { headers: { 'Content-Type': 'text/html;charset=UTF-8' } });
       } else if (path[0] == 'new-auction' || path[0] == 'new-pokemon-auction') {
       } 
       
