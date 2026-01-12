@@ -343,7 +343,7 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 851,Centiskorch,Fire/Bug,evo,Flash Fire,White Smoke,Flame Body,100,115,65,90,90,65,Level 28,,
 928,Smoliv,Grass/Normal,base,Early Bird,,Harvest,41,35,45,58,51,30,,,
 929,Dolliv,Grass/Normal,evo,Early Bird,,Harvest,52,53,60,78,78,33,Level 25,,
-390,Arboliva,Grass/Normal,evo,Seed Sower,,Harvest,78,69,90,125,109,39,Level 35,,
+930,Arboliva,Grass/Normal,evo,Seed Sower,,Harvest,78,69,90,125,109,39,Level 35,,
 235,Smeargle,Normal,base,Own Tempo,Technician,Moody,55,20,35,20,45,75,,,
 215,Sneasel,Dark/Ice,base,Inner Focus,Keen Eye,Pickpocket,55,95,55,35,75,115,,,
 461,Weavile,Dark/Ice,evo,Pressure,,Pickpocket,70,120,65,45,85,125,Dusk Stone,,

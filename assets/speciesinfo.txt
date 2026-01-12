@@ -517,6 +517,25 @@ Key Moves:
    Earthquake (47/TM)
    Reversal (Egg)
 
+Dratini
+   Dragon Breath (15)
+   Flamethrower (TM)
+   Ice Beam (TM)
+   Thunderbolt (TM)
+   Surf (HM)
+   Waterfall (HM)
+   Dragon Tail (33)
+   Aqua Tail (39)
+   Steel Wing (TM)
+   Earthquake (TM)
+   Roost (MR)
+   Fire Punch (MR)
+   Thunder Punch (MR)
+   Dragon Dance (MR!)
+   Outrage (MR!)
+   Hurricane (MR!)
+   Extreme Speed (Egg)
+
 Drifloon
 Key Moves:
    Gust (8)
@@ -2110,6 +2129,17 @@ Key Moves:
    Bug Buzz (42)
    Quiver Dance (52)
    Lunge (Egg)
+
+Swablu
+Key Moves:
+   Peck (11)
+   Steel Wing (TM)
+   Dragon Breath (Evo.)
+   Dragon Dance (MR)
+   Dragon Pulse (40)
+   Perish Song (46)
+   Moonblast (52)
+   Hyper Voice (Egg)
 
 Swinub
 Key Moves:
