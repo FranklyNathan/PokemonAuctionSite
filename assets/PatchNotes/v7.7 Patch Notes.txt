@@ -1,0 +1,86 @@
+1/15/2026
+
+
+-----------------------------------------------
+New Mechanic: Obedience
+-----------------------------------------------
+
+Pokémon with a BST of 430 or higher have a 50% chance of disobeying before the player has obtained 2 badges
+A Pokémon disobeying randomly chooses one of the four following actions instead of executing its turn:
+1. Doing Nothing
+2. Using a random move
+3. Hitting itself (inflicts confusion damage to itself)
+4. Falling asleep
+
+//The people want Stonjourner. They yearn for the Turtonator. They search distant lands desperately, feverishly, for Klawf. And yet, these non-evolving Pokémon have hitherto eluded us. I don't like how it feels to draft high BST Pokemon and stomp all over the first two gyms. I hate the draft strategy of trying to secure at least one Pokémon that invalidates the early game in order to go faster. This is the reason Dragon Rage was removed in the first place. Bombirdier was made to deliver babies, not sweep Slakoths. But how to fix the issue? At last, a solution: sometimes your Bombirdier takes a nap.
+
+The following Pokémon currently in the pool have a BST of 430 or greater and are accessible before gym 3:
+Bombirdier
+Rotom
+Sneasel
+Minior
+Scyther
+Flapple
+Appletun
+Dipplin
+Vigoroth
+//Pokémon with 430+ BST will be noted on the website with a "!" button.
+
+
+//I suspect some will be concerned that these recent patches have been adding a lot of mechanics. This is true and fair. However, if we're going to expand the pool to include ever more Pokémon (which I think is worthwhile), there need to be catch-all rules to address generic problems keeping out whole swaths of Pokémon. Last patch's Energy Oracle allowed many Pokémon with prohibitively awkward evolution levels to join and will allow many more. Obedience will do the same.
+//Many mechanics have been tossed around over the months for how to solve the issue of high-BST base forms: give them a lower level cap, don't allow the player to access them until mid game, give them a negative stat modifier that falls off later, etc. This solution appeals to me because it's in line with what the actual Pokémon games do. Trade in a level 80 Swampert for the 2nd gym? Sure, but it isn't going to listen to you! You'll need to prove yourself as a trainer before Scyther starts respecting you.
+//You'll find in gameplay that this doesn't stop these Pokémon from being valuable into the early gyms. It just stops them from being quite so invalidating.
+
+
+-----------------------------------------------
+Bugfix & QoL
+-----------------------------------------------
+
+Cities with gyms you've defeated now appear green (not pink) on the mini map.
+//So that, at a glance, you can see which city's gyms you've defeated
+
+
+"CLEAR" added as option to Party Menu
+Selecting CLEAR removes all items from all Pokémon in the party and adds them to the bag
+//A faster alternative to taking every item off of your Pokémon one at a time
+
+
+Defeating the Dewford gym or walking into the Dewford Pokemon Center moves Briney to Dewford
+//Gives the player a convenient way to reset Briney if they Fly back to Dewford after parking him at Slateport
+
+
+Fallarbor fly location moved to the Move Relearner's doorstep
+//Saved you a few steps
+
+
+Carvanha, Sharpedo, Drapion, Litleo, Pyroar, and Bombirdier learn Snarl
+//Pokémon I missed on the first pass
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Emolga
+Gothita
+Remoraid
+
+//Pokémon with a BST of 430+:
+Absol
+Falinks
+Hawlucha
+Klawf
+Miltank
+Stonjourner
+Turtonator
+
+//Absol, Falinks and Hawlucha Mega Stones are available after gym 6.
+//Most of what I have to say on this is written above in the "Obedience" section. I guess I'll add that I'm pleased with how these new additions affect the game's power breakpoints. At the moment, gyms 3 and 4 are the most difficult leaders because they come before the player gets access to so many evolutions and TMs but after the enemy aces have begun evolving (Hariyama, Vigoroth, Manectric, etc.). These new high-BST Pokémon like Miltank and Turtonator are at their strongest at gyms 3 and 4 where they're fully obedient yet their high BST still outshines the average Pokémon. They'll help to give the player more options into a phase of the game that's particularly unforgiving.
+
+
+-----------------------------------------------
+Pool Removals
+-----------------------------------------------
+
+Larvesta
+//He's flown just a bit too close to the sun. There are ways that Volcarona could be balanced, and I expect it to be back one day. For the time being, he's going to the sidelines while I mull how best to deal with things that sweep so monstrously even at just a +1 boost.

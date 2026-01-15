@@ -457,6 +457,9 @@
       Mareep: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
+  Mareep: `Unique Mechanic: Milk Drink
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
       Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
 \nTerrain doesn't exist in Emerald Blitz. Instead, Grass Pelt provides its 50% defense boost in the sun.
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
@@ -481,7 +484,7 @@
 \nWith its Wonder Guard ability, Shedinja is immune to all non-super-effective damage. This makes it excellent into Brawly, who has few options to hit it.
 \nTo evolve Nincada into both Ninjask and Shedinja, make sure you have an extra spot in your party when it reaches level 20.`,
       Zorua: `Tip: Illusion
-\nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns.`,
+\nZorua and Zoroark's signature ability causes them to take on the appearance of the last Pokemon in your party. The AI treats the Illusioned Pokemon as the Pokemon it's disguised as, but if it uses a Psychic-type move and fails to deal damage, it will realize it's up against an Illusion Pokemon and attack accordingly on subsequent turns. Similarly, if your Zoroark uses a move that the Pokemon its disguised as cannot learn, the AI will know that it's a Zoroark.`,
       Minior: `Tip: Rollout!
 \nMinior is the king of early game sweeps. By starting the fight using Defense Curl, Minior's STAB Rollout starts at 2x power. Then, if Minior drops below half health at any point, its Shields Down ability triggers, increasing its attack and speed stat to all but guarentee that subsequent Rollouts one hit KO.`,
       Meowth: `Tip: Pay Day
@@ -518,7 +521,14 @@
 \nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
 \nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
 \nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
+      Phantump: `Tip: Bullet Seed or Bust
+\nPhantump's grass learnset is woefully shallow. Be sure to buy the Bullet Seed TM from the Slateport Market after the first gym to give it access to grass-type STAB!`,
     };
+    const dangerPokemon = [
+      "Absol", "Falinks", "Hawlucha", "Klawf", "Miltank", "Stonjourner", "Turtonator",
+      "Bombirdier", "Rotom", "Sneasel", "Minior", "Scyther", "Applin", "Slakoth"
+    ];
+
     let teamPokemon = [];
 
     // Extract evolution item from evolution_method string
@@ -1106,6 +1116,8 @@
           <div style="font-size: 0.9rem;">${keyMovesHtml}</div>
         `;
 
+      const isDanger = dangerPokemon.includes(pokemon.name);
+
       speciesInfoDiv.innerHTML = `
           <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
             <style>.ability-link, .move-link { color: inherit; text-decoration: none; }</style>
@@ -1114,6 +1126,12 @@
               ${specialMechanics[pokemon.name]
           ? `<sl-button class="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
                        <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+                     </sl-button>`
+          : ''
+        }
+              ${isDanger
+          ? `<sl-button class="danger-btn" size="small" variant="neutral" title="Warning: High BST!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+                       <img src="/generic/Danger.png" alt="Warning" style="height: 1.2rem; position: relative; top: 4px;"/>
                      </sl-button>`
           : ''
         }
@@ -1135,6 +1153,25 @@
           const firstLine = lines.shift();
           const restOfLines = lines.join('\n');
           const styledDescription = `<span style="font-weight: bold; font-size: 1.1em;">${firstLine}</span>\n${restOfLines}`;
+          contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+          dialog.show();
+          closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
+        });
+      }
+
+      // Add event listener for the danger button if it was rendered
+      const dangerBtn = speciesInfoDiv.querySelector('.danger-btn');
+      if (dangerBtn) {
+        dangerBtn.addEventListener('click', () => {
+          const dialog = document.getElementById('specialMechanicDialog');
+          const contentEl = document.getElementById('specialMechanicContent');
+          const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
+
+          const message = `Warning: High BST!\nThis Pokémon has a Base Stat Total of 430 or above. It might not obey you until you've obtained 2 gym badges. (Before obtaining two badges, this pokemon has a 50% chance to disobey your command in battle.)`;
+          const lines = message.split('\n');
+          const firstLine = lines.shift();
+          const restOfLines = lines.join('\n');
+          const styledDescription = `<span style="font-weight: bold; font-size: 1.1em; color: var(--sl-color-danger-600);">${firstLine}</span>\n${restOfLines}`;
           contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
           dialog.show();
           closeBtn.addEventListener('click', () => dialog.hide(), { once: true });

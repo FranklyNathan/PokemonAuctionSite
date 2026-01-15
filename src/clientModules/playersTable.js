@@ -1,4 +1,4 @@
-import { getBooleanFilterButtons, toast, updateDraftCounter, calculateAveragePrice } from './html.js';
+import { getBooleanFilterButtons, toast, updateDraftCounter, calculateAveragePrice, specialMechanics } from './html.js';
 import { playerSelected } from './clientActions.js';
 
 function isValidNumber(s) {
@@ -164,12 +164,17 @@ const cols = [
         .replace(/ /g, '-')
         .replace(/[^a-z0-9-]/g, ''); // Sanitize to match file names like 'mime-jr'
       const iconPath = `/MiniIcons/${iconName}.png`;
+      let mechanicIcon = '';
+      if (specialMechanics[pokemonName]) {
+        mechanicIcon = `<img src="/generic/star.png" alt="Special Mechanic" title="${specialMechanics[pokemonName].split('\n')[0]}" style="height: 16px; margin-left: 4px;">`;
+      }
       return `
         <span style="display: flex; align-items: center; height: 100%;">
           <div style="width: 32px; display: flex; justify-content: center; align-items: center; margin-right: 8px; flex-shrink: 0;">
             <img src="${iconPath}" alt="${pokemonName}" title="${pokemonName}" style="max-height: 24px; max-width: 24px;" loading="lazy" decoding="async">
           </div>
           <span>${pokemonName}</span>
+          ${mechanicIcon}
         </span>
       `;
     },

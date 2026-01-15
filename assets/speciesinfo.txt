@@ -6,6 +6,22 @@ Key Moves:
    Psychic (38/TM)
    Calm Mind (41)
 
+Absol
+Key Moves:
+   Pursuit (10)
+   Bite (16)
+   Night Slash (29)
+   Snarl (TM)
+   Flamethrower (TM)
+   Ice Beam (TM)
+   Thunderbolt (TM)
+   X Scissor (TM)
+   Water Pulse (TM)
+   Detect (33)
+   Psycho Cut (37)
+   Perish Song (MR)
+   Punishment (Egg)
+
 Amaura
 Key Moves:
    Rock Throw (10)
@@ -130,6 +146,7 @@ Key Moves:
    Pluck (20)
    Rock Tomb (29/TM)
    Hone Claws (MR)
+   Snarl (TM)
    Fly (HM)
    Dual Wingbeat (42)
    Rock Slide (47)
@@ -237,6 +254,7 @@ Carvanha
 Key Moves:
    Aqua Jet (11)
    Ice Fang (25)
+   Snarl (TM)
    Poison Fang (34)
    Crunch (40)
    Waterfall (HM)
@@ -408,7 +426,6 @@ Key Moves:
    Bubblebeam (14)
    Protect (17)
    Knock Off (23)
-   Hone Claws (TM)
    Snarl (TM)
    X-Scissor (TM)
    Razor Shell (32)
@@ -644,6 +661,17 @@ Key Moves:
    Recover (50)
    Skill Swap (Egg)
 
+Emolga
+Key Moves:
+   Charge (10)
+   Spark (13)
+   Nuzzle (15)
+   Acrobatics (30)
+   Encore (38)
+   Volt Switch (42)
+   Discharge (50)
+   Roost (Egg)
+
 Espurr
 Key Moves:
    Confusion (9)
@@ -671,6 +699,16 @@ Key Moves:
    Flamethrower (TM)
    Sludge Bomb (TM)
    Moonlight (Egg)
+
+Falinks
+Key Moves:
+   Protect (1)
+   Rock Smash (5)
+   Bulk Up (20)
+   Brick Break (TM)
+   First Impression (35)
+   Close Combat (50)
+   Megahorn (55)
 
 Feebas
 Key Moves:
@@ -857,6 +895,18 @@ Key Moves:
    Leaf Storm (46)
    Growth (Egg)
 
+Gothita
+   Confusion (3)
+   Psybeam (16)
+   Trick Room (TM)
+   Psyshock (25)
+   Thunderbolt (TM)
+   Shadow Ball (TM)
+   Calm Mind (TM)
+   Psychic (39)
+   Charm (54)
+   Dark Pulse (Egg)
+
 Greavard
 Key Moves:
    Dig (16)
@@ -927,6 +977,7 @@ Key Moves:
    Bulk Up (TM)
    Flying Press (28)
    High Jump Kick (44)
+   Baton Pass (Egg)
 
 Helioptile
 Key Moves:
@@ -1029,6 +1080,17 @@ Key Moves:
    Bug Buzz (MR!)
    Cross Poison (Egg)
 
+Klawf
+Key Moves:
+   Rock Tomb (13)
+   Protect (21)
+   Rock Blast (24)
+   X Scissor (29)
+   Brick Break (TM)
+   Rock Slide (42)
+   High Horsepower (47)
+   Crabhammer (Egg)
+
 Kubfu
 Key Moves:
    Rock Smash (1)
@@ -1070,6 +1132,7 @@ Key Moves:
    Ember (5)
    Work Up (8)
    Flamethower (TM/38)
+   Snarl (TM)
    Hyper Beam (MR)
    Hyper Voice (48)
    Overheat (57/TM)
@@ -1238,6 +1301,18 @@ Key Moves:
    Aerial Ace (TM)
    Screech (36)
    Night Slash (Egg)
+
+Miltank
+Key Moves:
+   Defense Curl (5)
+   Stomp (8)
+   Milk Drink (11)
+   Rollout (19)
+   Body Slam (24)
+   Zen Headbutt (29)
+   Brick Break (TM)
+   Earthquake (TM)
+   Heart Stamp (Egg)
 
 Mime Jr
 Key Moves:
@@ -1438,6 +1513,7 @@ Key Moves:
    Shadow Claw (Evo.)
    Phantom Force (45)
    Horn Leech (54)
+   Grudge (Egg)
 
 Pichu
 Key Moves:
@@ -1563,6 +1639,7 @@ Key Moves:
    Signal Beam (34)
    Surf (HM)
    Ice Beam (40/TM)
+   Mud Shot (Egg)
 
 Riolu
 Key Moves:
@@ -1617,6 +1694,7 @@ Key Moves:
 
 Rookidee
 Key Moves:
+   Peck (1)
    Hone Claws (8)
    Pluck (16)
    Taunt (TM)
@@ -2024,6 +2102,7 @@ Key Moves:
    X Scissor (TM)
    Brick Break (TM)
    Iron Tail (TM)
+   Snarl (TM)
    Toxic Spikes (34)
    Night Slash (38)
    Fell Stinger (53)
@@ -2109,6 +2188,15 @@ Key Moves:
    Rest (TM)
    Surf (HM)
    Waterfall (HM)
+
+Stonjourner
+Key Moves:
+   Rock Tomb (12)
+   Earthquake (TM)
+   Stealth Rock (30)
+   Rock Slide (36)
+   Heavy Slam (54)
+   Stone Edge (60)
 
 Stufful
 Key Moves:
@@ -2334,6 +2422,16 @@ Key Moves:
    Crunch (45)
    Leaf Storm (57)
    Growth (Egg)
+
+Turtonator
+Key Moves:
+   Protect (9)
+   Incinerate (13)
+   Flamethrower (29)
+   Shock Wave (TM)
+   Dragon Pulse (41)
+   Overheat (49/TM)
+   Fire Spin (Egg)
 
 Tynamo
 Key Moves:

@@ -501,13 +501,16 @@ function getStatColor(statValue) {
   return '#f44336'; // red
 }
 
-const specialMechanics = {
+export const specialMechanics = {
   Castform: `Unique Mechanic: Forecast
 \nStarting at level 20, Forecast gains the additional effect of setting weather whenever Castform enters the fight. The weather created depends on the type of the first move in Castform's move list:
 \nWater: Rain (Drizzle)
 \nFire: Sun (Drought)
 \nIce: Hail (Snow Warning)`,
   Mareep: `Unique Mechanic: Milk Drink
+\nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
+\nEach evolution line can only use Milk Drink once, so choose wisely!`,
+  Miltank: `Unique Mechanic: Milk Drink
 \nWhen used outside of battle, Milk Drink levels up one other Pokémon, ignoring the level cap.
 \nEach evolution line can only use Milk Drink once, so choose wisely!`,
   Skiddo: `Unique Mechanics: Grass Pelt & Milk Drink
