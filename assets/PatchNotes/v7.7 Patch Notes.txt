@@ -29,6 +29,7 @@ Vigoroth
 
 //I suspect some will be concerned that these recent patches have been adding a lot of mechanics. This is true and fair. However, if we're going to expand the pool to include ever more Pokémon (which I think is worthwhile), there need to be catch-all rules to address generic problems keeping out whole swaths of Pokémon. Last patch's Energy Oracle allowed many Pokémon with prohibitively awkward evolution levels to join and will allow many more. Obedience will do the same.
 //Many mechanics have been tossed around over the months for how to solve the issue of high-BST base forms: give them a lower level cap, don't allow the player to access them until mid game, give them a negative stat modifier that falls off later, etc. This solution appeals to me because it's in line with what the actual Pokémon games do. Trade in a level 80 Swampert for the 2nd gym? Sure, but it isn't going to listen to you! You'll need to prove yourself as a trainer before Scyther starts respecting you.
+//Minior ends up by far the least affected of these Pokémon because once Rollout begins, it stops checking obedience on subsequent rolls of the attack.
 //You'll find in gameplay that this doesn't stop these Pokémon from being valuable into the early gyms. It just stops them from being quite so invalidating.
 
 
@@ -57,6 +58,10 @@ Carvanha, Sharpedo, Drapion, Litleo, Pyroar, and Bombirdier learn Snarl
 //Pokémon I missed on the first pass
 
 
+Larvesta Removed
+//The most important bug to fix at all. He's flown just a bit too close to the sun. There are ways that Volcarona could be balanced, and I expect it to be back one day. For the time being, he's going to the sidelines while I mull how best to deal with things that sweep so monstrously even at just a +1 boost.
+
+
 -----------------------------------------------
 Pool Additions
 -----------------------------------------------
@@ -77,10 +82,3 @@ Turtonator
 //Absol, Falinks and Hawlucha Mega Stones are available after gym 6.
 //Most of what I have to say on this is written above in the "Obedience" section. I guess I'll add that I'm pleased with how these new additions affect the game's power breakpoints. At the moment, gyms 3 and 4 are the most difficult leaders because they come before the player gets access to so many evolutions and TMs but after the enemy aces have begun evolving (Hariyama, Vigoroth, Manectric, etc.). These new high-BST Pokémon like Miltank and Turtonator are at their strongest at gyms 3 and 4 where they're fully obedient yet their high BST still outshines the average Pokémon. They'll help to give the player more options into a phase of the game that's particularly unforgiving.
 
-
------------------------------------------------
-Pool Removals
------------------------------------------------
-
-Larvesta
-//He's flown just a bit too close to the sun. There are ways that Volcarona could be balanced, and I expect it to be back one day. For the time being, he's going to the sidelines while I mull how best to deal with things that sweep so monstrously even at just a +1 boost.

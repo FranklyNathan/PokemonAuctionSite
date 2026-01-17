@@ -707,6 +707,7 @@ Key Moves:
    Bulk Up (20)
    Brick Break (TM)
    First Impression (35)
+   No Retreat (40)
    Close Combat (50)
    Megahorn (55)
 
@@ -974,8 +975,11 @@ Key Moves:
    Karate Chop (4)
    Wing Attack (8)
    Roost (12)
-   Bulk Up (TM)
+   Aerial Ace (16)
+   Encore (20)
+   Fling (24)
    Flying Press (28)
+   Bulk Up (TM)
    High Jump Kick (44)
    Baton Pass (Egg)
 
@@ -2197,6 +2201,7 @@ Key Moves:
    Rock Slide (36)
    Heavy Slam (54)
    Stone Edge (60)
+   Curse (Egg)
 
 Stufful
 Key Moves:
