@@ -185,6 +185,7 @@ Key Moves:
 
 Buizel
 Key Moves:
+   Water Sport (7)
    Water Gun (15)
    Taunt (TM)
    Aqua Jet (24)
@@ -981,7 +982,7 @@ Key Moves:
    Flying Press (28)
    Bulk Up (TM)
    High Jump Kick (44)
-   Baton Pass (Egg)
+   Agility (Egg)
 
 Helioptile
 Key Moves:
@@ -1554,7 +1555,8 @@ Key Moves:
 
 Poliwag
 Key Moves:
-   Water Gun (5)
+   Water Sport (1)
+   Bubble (11)
    Rain Dance (18)
    Dynamic Punch (32*)  
    Brick Break (TM*)
@@ -2215,6 +2217,7 @@ Key Moves:
 
 Surskit
 Key Moves:
+   Water Sport (14)
    Air Cutter (22)
    Ice Beam (TM)
    Water Pulse (TM)
@@ -2545,6 +2548,16 @@ Key Moves:
    Hurricane (55)
    Feather Dance (Egg)
 
+Weedle
+Key Moves:
+   Bug Bite (9)
+   Thief (TM)
+   Toxic Spikes (29)
+   Brick Break (TM)
+   X Scissor (TM)
+   Poison Jab (35)
+   Fell Stinger (44)
+
 Wingull
 Key Moves:
    Water Pulse (15)
@@ -2592,6 +2605,23 @@ Key Moves:
    Waterfall (HM)
    Earthquake (48/TM)
    Acid Spray (Egg)
+
+Wurmple
+Key Moves:
+   Bug Bite (15)
+   Gust (Evo.)
+   Morning Sun (17*)
+   Air Cutter (20*)
+   Mega Drain (22*)
+   Silver Wind (25*)
+   Giga Drain (TM/32*)
+   Shadow Ball (TM)
+   Moonlight (17**)
+   Venoshock (20**)
+   Psybeam (22**)
+   Light Screen (27**)
+   Bug Buzz (35)
+   Quiver Dance (40)
 
 Yamper
 Key Moves:

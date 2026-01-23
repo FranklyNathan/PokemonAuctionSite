@@ -1,0 +1,94 @@
+1/22/2026
+
+//Lots of new cosmetics, some bug fix, and one weedy boi
+
+-----------------------------------------------
+Visual Changes
+-----------------------------------------------
+
+New Wardrobes!
+Interacting with PC in your room now allows you to change your character's palette.
+
+New Text Window Borders!
+15 new borders have been added with more on the way for future patches.
+
+//Cosmetic additions like this have been on my list for a while. In a game where spectating involves watching 8 screens at once, I want a way to tell who's who at a glance. Allowing player sprites to look more distinct will help.
+//Huge thanks to Zarha, jarikr and Flippy for this first batch of new windows!
+
+
+Mega Sprites added for the following Pokémon:
+Feraligatr
+Chandelure
+Chesnaught
+Clefable
+Delphox
+Dragalge
+Falinks
+Greninja
+Hawlucha
+Malamar
+Pyroar
+Raichu X
+Scolipede
+Staraptor
+Starmie
+//Some are missing icons
+//Thanks to the amazing artists at PokeCommunity and beyond who worked on creating and compiling these!
+
+
+Surf Rework:
+The player can no longer Surf using the Surf Blob. Instead, Flygon can move over dark water after obtaining the Surf HM.
+//The surf sprite glitches have been such a headache, made all the more ridiculous by the fact that the main route through he game only involves surfing for ~15 tiles in a straight line. Adding the additional palette swaps introduced further, more significant surf corruption, so I've done away with it entirely. My current implementation is janky; you can use Flygon to clip out of bounds on the ocean routes and do other weird things. That said, it's worth it for the time being if only to solve the player sprite exploding every time you surf East of Mauville.
+
+
+-----------------------------------------------
+Balance Changes
+-----------------------------------------------
+
+Frisk Rework:
+If a Pokémon with Frisk is sent out while not holding an item, it will now steal the opponent's item (instead of only revealing it).
+
+Anticipation Rework:
+If Anticipation triggers, it now raises the Evasiveness of the Anticipating Pokémon by one stage.
+
+//Other useless abilities like Run Away, Ball Fetch and Honey Gather have already been reworked to have useful effects. I don't want there to exist abilities which literally do nothing in the context of Blitz. These were just a matter of me sitting down to rework them. A lot of Pokémon in the pool happen to get Frisk, so it'll give you quite a few extra ways to snag off that pesky Thick Club and Leek.
+
+
+Brawly 7/8 Machamp Strength>Thunderpunch
+//Giving Machamp something to deter Flying types from setup sweeping quite so mindlessly.
+
+
+Egg Move Swaps
+Hawlucha: Baton Pass > Agility
+//This fellow is strong enough as is without a useful egg move, especially on a Pokémon you're incentivized to dump off during gym 2
+Sandygast: Amnesia > Ancient Power
+//An oversight, it was meant to be this originally
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Pokémon stored in the Day Care now appear on the Fly overworld map
+//I'll never forget you in the daycare again, my precious Croagunk...
+
+Pressing Select on the Fly overworld map now teleports your cursor to Slateport City.
+//Now that's what I call time save
+
+Mega Evolution Symbol no longer appears as a black void
+//I think I fixed it? Fingers crossed--
+
+Skrelp Evolution Level 28 > 48
+//This was a typo. The documentation was always correct but it was wrong in game.
+
+Vivillon Icy Snow now uses its correct icon sprite
+//This was an upstream bug found by none other than Flippy Spatula. I've reported it to earn all the credit for myself.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
++Weedle
+//They really thought I was going to make a new patch without the Weedle
+
