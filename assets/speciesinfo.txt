@@ -221,9 +221,10 @@ Bunnelby
 Key Moves:
    Take Down (15)
    Mud Shot (18)
-   Bulk Up (TM)
+   Bulldoze (MR)
    Dig (TM/37)
    Earthquake (TM/57)
+   Bulk Up (TM)
    Spikes (Egg)
 
 Castform
@@ -275,7 +276,9 @@ Key Moves:
    Ice Shard (12)
    Avalanche (27)
    Bounce (31)
+   Earthquake (TM)
    Ice Spinner (44)
+   Icicle Crash (Egg)
 
 Charmander
 Key Moves:
@@ -782,6 +785,23 @@ Key Moves:
    Ice Fang (29)
    Glaive Rush (Evo.)
 
+Frillish
+Key Moves:
+   Water Sport (1)
+   Bubble Beam (13)
+   Recover (17)
+   Water Pulse (22)
+   Ominous Wind (27)
+   Dazzling Gleam (TM)
+   Giga Drain (TM)
+   Shadow Ball (TM)
+   Ice Beam (TM)
+   Sludge Bomb (TM)
+   Surf (HM)
+   Shock Wave (TM)
+   Water Spout (MR!)
+   Pain Split (Egg)
+
 Froakie
 Key Moves:
    Lick (10)
@@ -1045,6 +1065,20 @@ Key Moves:
    Inferno (MR)
    Overheat (TM)
    Sucker Punch (Egg)
+
+Impidimp
+Key Moves:
+   Fake Out (1)
+   Bite (4)
+   Thief (TM)
+   Assurance (16)
+   False Surrender (Evo.)
+   Sucker Punch (24)
+   Spirit Break (Evo.)
+   Bulk Up (MR)
+   Power Up Punch (MR)
+   Play Rough (48)
+   Hammer Arm (MR!)
 
 Igglybuff
 Key Moves:
@@ -1467,6 +1501,19 @@ Key Moves:
    Giga Drain (34*/TM)
    Quiver Dance (39**)
    Strength Sap (Egg)
+
+Onix
+Key Moves:
+   Rock Tomb (10)
+   Stealth Rock (16)
+   Ice Fang (MR)
+   Fire Fang (MR)
+   Thunder Fang (MR)
+   Earthquake (TM)
+   Screech (31)
+   Rock Slide (34)
+   Crunch (37)
+   Heavy Slam (Egg)
 
 Oricorio
 Key Moves:
@@ -2020,6 +2067,19 @@ Key Moves:
    Night Slash (35)
    Ice Punch (Egg)
 
+Snivy
+Key Moves:
+   Vine Whip (7)
+   Growth (13)
+   Leaf Tornado (16)
+   Leech Seed (20)
+   Mega Drain (24)
+   Leaf Blade (32)
+   Coil (36)
+   Giga Drain (44)
+   Leaf Storm (MR!)
+   Glare (Egg)
+
 Snorunt
 Key Moves:
    Ice Shard (10)
@@ -2083,6 +2143,18 @@ Key Moves:
    Sucker Punch (40)
    Phantom Force (MR!)
    Gunk Shot (Egg)
+
+Sigilyph
+Key Moves:
+   Gust (4)
+   Psywave (8)
+   Tailwind (11)
+   Psybeam (18)
+   Air Cutter (21)
+   Light Screen (24)
+   Psychic (TM/44)
+   Air Slash (41)
+   Ancient Power (Egg)
 
 Sizzlipede
 Key Moves:
@@ -2148,6 +2220,7 @@ Key Moves:
    Play Rough (42)
 
 Spritzee
+Key Moves:
    Fairy Wind (1)
    Echoed Voice (13)
    Calm Mind (17)
@@ -2158,7 +2231,19 @@ Spritzee
    Reflect (57/TM)
    Wish (Egg)
 
+Stantler
+Key Moves:
+   Stomp (13)
+   Take Down (21)
+   Calm Mind (27)
+   Psyshield Bash (TM)
+   Psychic (TM)
+   Zen Headbutt (37)
+   Megahorn (MR!)
+   Double Kick (Egg)
+
 Starly
+Key Moves:
    Wing Attack (9)
    Steel Wing (TM)
    Thief (TM)
@@ -2520,6 +2605,10 @@ Key Moves:
 
 Voltorb
 Key Moves:
+   Thundershock (4)
+   Screech (13)
+   Taunt (TM)
+   Charge Beam (16)
    Electro Ball (22)
    Giga Drain (TM)
    Discharge (34)
@@ -2590,9 +2679,13 @@ Key Moves:
 
 Wooloo
 Key Moves:
+   Tackle (1)
+   Defense Curl (4)
    Double Kick (16)
    Headbutt (21)
-   Milk Drink (Egg)
+   Rollout (MT)
+   Last Resort (56)
+   Counter (Egg)
 
 Wooper
 Key Moves:

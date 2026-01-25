@@ -866,16 +866,16 @@ Ability: Inner Focus
 - Brutal Swing
 - Peck
 - Rock Smash
-- Sand Attack
+- Roost
 
 Makuhita @ Oran Berry
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
-- Arm Thrust
-- Sand Attack
-- Reversal
+- Drain Punch
+- Strength
+- Fire Punch
 - Bulk Up
 
 === TRAINER_BRAWLY_2 ===
@@ -903,7 +903,7 @@ Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Pure Power
-- Focus Punch
+- Force Palm
 - Light Screen
 - Reflect
 - Bulk Up
@@ -916,16 +916,16 @@ Ability: Inner Focus
 - Brutal Swing
 - Peck
 - Rock Smash
-- Sand Attack
+- Roost
 
 Makuhita @ Oran Berry
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Drain Punch
 - Strength
-- Vital Throw
-- Reversal
+- Fire Punch
 - Bulk Up
 
 === TRAINER_BRAWLY_3 ===
@@ -966,15 +966,15 @@ Ability: Inner Focus
 - Brutal Swing
 - Peck
 - Rock Smash
-- Sand Attack
+- Roost
 
 Hariyama @ Sitrus Berry
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Force Palm
 - Strength
-- Vital Throw
 - Brine
 - Bulk Up
 
@@ -1016,16 +1016,16 @@ Ability: Inner Focus
 - Brutal Swing
 - Fury Cutter
 - Rock Smash
-- Sand Attack
+- Roost
 
 Hariyama @ Sitrus Berry
 Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Force Palm
 - Smelling Salts
-- Vital Throw
-- Knock Off
+- Brine
 - Bulk Up
 
 === TRAINER_BRAWLY_5 ===
@@ -1073,8 +1073,8 @@ Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Force Palm
 - Smelling Salts
-- Vital Throw
 - Knock Off
 - Bulk Up
 
@@ -1133,8 +1133,8 @@ Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
+- Force Palm
 - Smelling Salts
-- Vital Throw
 - Knock Off
 - Bulk Up
 
@@ -1193,8 +1193,8 @@ Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
-- Smelling Salts
-- Vital Throw
+- Close Combat
+- Strength
 - Knock Off
 - Bulk Up
 
@@ -1253,8 +1253,8 @@ Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
-- Smelling Salts
 - Close Combat
+- Strength
 - Knock Off
 - Bulk Up
 
@@ -1704,9 +1704,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Solid Rock
 - Overheat
+- Magnitude
 - Tackle
-- Growl
-- Attract
+- Amnesia
 
 Torkoal @ Oran Berry
 Level: 15
@@ -1754,9 +1754,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Solid Rock
 - Overheat
-- Tackle
 - Magnitude
-- Attract
+- Tackle
+- Amnesia
 
 Torkoal @ Oran Berry
 Level: 19
@@ -1804,9 +1804,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Solid Rock
 - Overheat
-- Sunny Day
 - Magnitude
-- Attract
+- Sunny Day
+- Amnesia
 
 Torkoal @ Sitrus Berry
 Level: 24
@@ -1856,7 +1856,7 @@ Ability: Magma Armor
 - Overheat
 - Earth Power
 - Sunny Day
-- Attract
+- Amnesia
 
 Torkoal @ White Herb
 Level: 29
@@ -1905,8 +1905,8 @@ Nature: Serious
 Ability: Magma Armor
 - Overheat
 - Earth Power
+- Sunny Day
 - Take Down
-- Attract
 
 Torkoal @ White Herb
 Level: 32
@@ -1965,8 +1965,8 @@ Nature: Serious
 Ability: Magma Armor
 - Overheat
 - Earth Power
-- Take Down
-- Attract
+- Sunny Day
+- Rock Slide
 
 Torkoal @ White Herb
 Level: 35
@@ -2016,7 +2016,7 @@ Ability: Drought
 - Overheat
 - Flamethrower
 - Hex
-- Attract
+- Will O Wisp
 
 Camerupt
 Level: 40
@@ -2025,7 +2025,7 @@ Nature: Serious
 Ability: Magma Armor
 - Overheat
 - Earth Power
-- Take Down
+- Sunny Day
 - Rock Slide
 
 Torkoal @ White Herb
@@ -2076,7 +2076,7 @@ Ability: Drought
 - Overheat
 - Flamethrower
 - Hex
-- Attract
+- Will O Wisp
 
 Camerupt
 Level: 46
@@ -2085,7 +2085,7 @@ Nature: Serious
 Ability: Magma Armor
 - Overheat
 - Earthquake
-- Eruption
+- Sunny Day
 - Rock Slide
 
 Torkoal @ White Herb
@@ -2115,7 +2115,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Sneak
 - Facade
-- Leer
+- Copycat
 - Torment
 
 Zigzagoon-Galar
@@ -2133,10 +2133,10 @@ Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Truant
-- Slack Off
-- Scratch
-- Facade
 - Feint Attack
+- Slack Off
+- Facade
+- Play Rough
 
 === TRAINER_NORMAN_2 ===
 Name: NORMAN
@@ -2154,7 +2154,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
 - Teeter Dance
-- Psybeam
+- Assist
 - Facade
 - Encore
 
@@ -2165,7 +2165,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Sneak
 - Facade
-- Leer
+- Copycat
 - Torment
 
 Zigzagoon-Galar
@@ -2178,15 +2178,15 @@ Ability: Quick Feet
 - Facade
 - Pin Missile
 
-Slakoth @ Oran Berry
+Vigoroth @ Oran Berry
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Truant
-- Slack Off
-- Play Rough
+Ability: Vital Spirit
+- Beat Up
+- Endure
 - Facade
-- Feint Attack
+- Trailblaze
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
@@ -2204,7 +2204,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
 - Teeter Dance
-- Psybeam
+- Assist
 - Facade
 - Encore
 
@@ -2215,7 +2215,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Sneak
 - Facade
-- Curse
+- Copycat
 - Torment
 
 Linoone-Galar
@@ -2233,10 +2233,10 @@ Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Vital Spirit
-- Fury Swipes
+- Beat Up
 - Uproar
 - Facade
-- Feint Attack
+- Trailblaze
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
@@ -2254,7 +2254,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
 - Teeter Dance
-- Psybeam
+- Assist
 - Facade
 - Encore
 
@@ -2265,7 +2265,7 @@ Nature: Serious
 Ability: Illusion
 - Shadow Sneak
 - Facade
-- Curse
+- Copycat
 - Torment
 
 Linoone-Galar
@@ -2283,10 +2283,10 @@ Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Vital Spirit
-- Slash
+- Beat Up
 - Uproar
 - Facade
-- Feint Attack
+- Trailblaze
 
 === TRAINER_NORMAN_5 ===
 Name: NORMAN
@@ -2964,9 +2964,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Psywave
-- Fire Spin
-- Calm Mind
 - Harden
+- Calm Mind
+- Fire Spin
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
@@ -2994,9 +2994,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Psywave
-- Fire Spin
+- Rock Throw
 - Calm Mind
-- Rock Slide
+- Fire Spin
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -3036,7 +3036,7 @@ Ability: Levitate
 - Confusion
 - Rock Throw
 - Calm Mind
-- Hypnosis
+- Icy Wind
 
 Solrock @ Sitrus Berry
 Level: 24
@@ -3044,9 +3044,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Psywave
-- Fire Spin
+- Rock Throw
 - Calm Mind
-- Rock Slide
+- Incinerate
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
@@ -3083,20 +3083,20 @@ Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
-- Cosmic Power
-- Psyshock
+- Confusion
+- Rock Throw
 - Calm Mind
-- Hypnosis
+- Icy Wind
 
 Solrock @ Sitrus Berry
 Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
-- Cosmic Power
-- Fire Spin
-- Calm Mind
+- Confusion
 - Rock Slide
+- Calm Mind
+- Incinerate
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: TATE&LIZA
@@ -3133,20 +3133,20 @@ Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
-- Cosmic Power
+- Confusion
 - Power Gem
 - Calm Mind
-- Hypnosis
+- Icy Wind
 
 Solrock @ Sitrus Berry
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
-- Cosmic Power
+- Confusion
 - Rock Slide
 - Calm Mind
-- Fire Spin
+- Incinerate
 
 === TRAINER_TATE_AND_LIZA_6 ===
 Name: TATE&LIZA
@@ -3159,7 +3159,7 @@ Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
 Xatu
-Level: 31
+Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
@@ -3178,15 +3178,15 @@ Ability: Levitate
 - Calm Mind
 - Self Destruct
 
-Slowpoke-Galar
-Level: 31
+Oranguru
+Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Own Tempo
-- Psychic
+Ability: Telepathy
+- Stored Power
 - Calm Mind
-- Water Gun
-- Acid
+- Trick Room
+- Feint Attack
 
 Lunatone @ Sitrus Berry
 Level: 35
@@ -3196,7 +3196,7 @@ Ability: Levitate
 - Psychic
 - Power Gem
 - Calm Mind
-- Hypnosis
+- Moonblast
 
 Solrock @ Sitrus Berry
 Level: 35
@@ -3206,7 +3206,7 @@ Ability: Levitate
 - Sunny Day
 - Solar Beam
 - Psychic
-- Fire Spin
+- Incinerate
 
 === TRAINER_TATE_AND_LIZA_7 ===
 Name: TATE&LIZA
@@ -3238,25 +3238,15 @@ Ability: Synchronize
 - Air Slash
 - Calm Mind
 
-Slowbro-Galar
-Level: 37
+Oranguru
+Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Quick Draw
-- Shell Side Arm
-- Calm Mind
-- Brick Break
+Ability: Telepathy
 - Psychic
-
-Slowking-Galar
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Own Tempo
-- Eerie Spell
 - Calm Mind
-- Power Gem
-- Acid
+- Trick Room
+- Foul Play
 
 Lunatone @ Sitrus Berry
 Level: 42
@@ -3304,29 +3294,19 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Synchronize
 - Psychic
-- Tailwind
+- Sunny Day
 - Air Slash
 - Calm Mind
 
-Slowbro-Galar
+Oranguru
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Quick Draw
-- Shell Side Arm
-- Calm Mind
-- Brick Break
+Ability: Telepathy
 - Psychic
-
-Slowking-Galar
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Own Tempo
-- Eerie Spell
 - Calm Mind
-- Power Gem
-- Acid
+- Trick Room
+- Foul Play
 
 Lunatone @ Sitrus Berry
 Level: 48
@@ -3358,45 +3338,25 @@ Items: Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wiglett
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Sand Attack
-- Wrap
-- Water Pulse
-- Mud Slap
-
-Wailmer
-Level: 11
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Water Veil
-- Whirlpool
-- Growl
-- Rollout
-- Water Pulse
-
-Luvdisc @ Oran Berry
+Dondozo @ Oran Berry
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Swift Swim
-- Water Pulse
-- Heart Stamp
-- Draining Kiss
-- Flail
+Ability: Unaware
+- Tackle
+- Waterfall
+- Noble Roar
+- Water Gun
 
-Horsea @ Oran Berry
-Level: 15
+Tatsugiri @ Oran Berry
+Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Swift Swim
+Ability: Commander
+- Harden
 - Water Pulse
-- Smokescreen
-- Aurora Beam
-- Twister
+- Rapid Spin
+- Splash
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -3408,45 +3368,25 @@ Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wiglett
-Level: 16
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Wrap
-- Water Pulse
-- Mud Slap
-
-Barboach
-Level: 15
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Oblivious
-- Mud Bomb
-- Water Pulse
-- Mud Slap
-- Flail
-
-Wailmer @ Oran Berry
+Dondozo @ Oran Berry
 Level: 19
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Water Veil
-- Whirlpool
-- Defense Curl
-- Rollout
-- Water Pulse
+Ability: Unaware
+- Lick
+- Waterfall
+- Noble Roar
+- Water Gun
 
-Horsea @ Oran Berry
-Level: 19
+Tatsugiri @ Oran Berry
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Swift Swim
+Ability: Commander
+- Harden
 - Water Pulse
-- Smokescreen
-- Aurora Beam
-- Twister
+- Rapid Spin
+- Splash
 
 === TRAINER_JUAN_3 ===
 Name: JUAN
@@ -3458,28 +3398,8 @@ Items: Super Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wiglett
+Wailmer
 Level: 22
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Wrap
-- Water Pulse
-- Mud Slap
-
-Barboach
-Level: 20
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Oblivious
-- Mud Bomb
-- Water Pulse
-- Mud Slap
-- Flail
-
-Wailmer @ Oran Berry
-Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
@@ -3488,15 +3408,35 @@ Ability: Water Veil
 - Rollout
 - Water Pulse
 
-Seadra @ Sitrus Berry
+Barboach
+Level: 20
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Oblivious
+- Mud Bomb
+- Waterfall
+- Amnesia
+- Rain Dance
+
+Dondozo @ Sitrus Berry
 Level: 24
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Poison Point
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Water Gun
+
+Tatsugiri @ Sitrus Berry
+Level: 23
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Commander
+- Helping Hand
 - Water Pulse
-- Smokescreen
-- Aurora Beam
-- Bounce
+- Rapid Spin
+- Dark Pulse
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -3508,18 +3448,8 @@ Items: Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wiglett
-Level: 24
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Wrap
-- Water Pulse
-- Mud Slap
-
 Wailmer
-Level: 25
+Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
@@ -3528,25 +3458,35 @@ Ability: Water Veil
 - Rollout
 - Water Pulse
 
-Seadra @ Oran Berry
-Level: 26
+Barboach
+Level: 25
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Poison Point
-- Water Pulse
-- Smokescreen
-- Aurora Beam
-- Bounce
+Ability: Oblivious
+- Mud Bomb
+- Waterfall
+- Amnesia
+- Rain Dance
 
-Milotic @ Sitrus Berry
+Dondozo @ Sitrus Berry
 Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Marvel Scale
-- Disarming Voice
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Water Gun
+
+Tatsugiri @ Sitrus Berry
+Level: 27
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Commander
+- Helping Hand
 - Water Pulse
-- Dragon Tail
-- Captivate
+- Rapid Spin
+- Dark Pulse
 
 === TRAINER_JUAN_5 ===
 Name: JUAN
@@ -3558,35 +3498,35 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wugtrio
-Level: 29
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Throat Chop
-- Water Pulse
-- Triple Dive
-
-Whiscash
+Dondozo
 Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Oblivious
-- Mud Bomb
-- Water Pulse
-- Muddy Water
-- Thrash
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Surf
 
-Seadra @ Sitrus Berry
+Tatsugiri
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Commander
+- Helping Hand
+- Water Pulse
+- Rapid Spin
+- Dark Pulse
+
+Seadra @ Chesto Berry
 Level: 31
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Poison Point
 - Water Pulse
-- Smokescreen
 - Aurora Beam
 - Bounce
+- Rest
 
 Milotic @ Sitrus Berry
 Level: 32
@@ -3608,35 +3548,35 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wugtrio
-Level: 32
+Dondozo
+Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Throat Chop
-- Water Pulse
-- Triple Dive
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Surf
 
-Wailmer
-Level: 30
+Tatsugiri
+Level: 31
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Water Veil
-- Water Spout
-- Defense Curl
-- Rollout
+Ability: Commander
+- Helping Hand
 - Water Pulse
+- Rapid Spin
+- Dark Pulse
 
 Whiscash
-Level: 31
+Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Oblivious
 - Mud Bomb
-- Water Pulse
-- Muddy Water
-- Thrash
+- Rain Dance
+- Waterfall
+- Rock Slide
 
 Milotic @ Sitrus Berry
 Level: 35
@@ -3668,45 +3608,35 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wugtrio
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Throat Chop
-- Water Pulse
-- Triple Dive
-
-Wailord
+Dondozo
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Water Veil
-- Water Spout
-- Heavy Slam
-- Noble Roar
-- Water Pulse
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Surf
 
-Whiscash
+Tatsugiri
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Oblivious
-- Earthquake
+Ability: Commander
+- Helping Hand
 - Water Pulse
-- Muddy Water
-- Rain Dance
+- Rapid Spin
+- Dark Pulse
 
-Gyarados
+Whiscash
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Intimidate
-- Ice Fang
-- Water Pulse
-- Crunch
-- Dragon Rage
+Ability: Oblivious
+- Mud Bomb
+- Rain Dance
+- Waterfall
+- Rock Slide
 
 Milotic @ Sitrus Berry
 Level: 42
@@ -3725,7 +3655,7 @@ Nature: Serious
 Ability: Swift Swim
 - Water Pulse
 - Dragon Pulse
-- Double Team
+- Bounce
 - Rest
 
 === TRAINER_JUAN_8 ===
@@ -3738,45 +3668,35 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
-Wugtrio
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Gooey
-- Rain Dance
-- Throat Chop
-- Water Pulse
-- Triple Dive
-
-Wailord
+Dondozo
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Water Veil
-- Water Spout
-- Heavy Slam
-- Blizzard
+Ability: Unaware
+- Lick
+- Waterfall
+- Order Up
+- Surf
+
+Tatsugiri
+Level: 43
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Commander
+- Helping Hand
 - Water Pulse
+- Dragon Pulse
+- Dark Pulse
 
 Whiscash
-Level: 43
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Oblivious
-- Rain Dance
-- Water Pulse
-- Dragon Dance
 - Earthquake
-
-Gyarados
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Intimidate
-- Crunch
-- Ice Fang
-- Water Pulse
-- Dragon Dance
+- Rain Dance
+- Waterfall
+- Rock Slide
 
 Milotic @ Sitrus Berry
 Level: 48
@@ -3795,7 +3715,7 @@ Nature: Serious
 Ability: Swift Swim
 - Water Pulse
 - Dragon Pulse
-- Double Team
+- Bounce
 - Rest
 
 === TRAINER_ARCHIE ===
@@ -3858,7 +3778,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE ===
+=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie

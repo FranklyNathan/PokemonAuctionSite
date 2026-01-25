@@ -1,0 +1,84 @@
+1/25/2026
+
+//The patch in which I go over each of the boss battles to smooth over any rough edges. In all, this update nerfs the most difficult 3-4 and 7-8 gyms while buffing some of the weaker 1-2s, with a focus on reducing the presence of status/flinch/accuracydrop.
+
+-----------------------------------------------
+Gym Leader Adjustments
+-----------------------------------------------
+
+Brawly 1-2 Adjustments
+Farfetch'd Sand Attack > Roost
+Meditite 2 Focus Punch > Force Palm
+Makuhita Sand Attack > Fire Punch
+Makuhita Arm Thrust/Vital Throw > Drain Punch
+//With 237BST, this fellow Makuhita is too underwhelming. It needs a way to hit ghost types and it needs a way to pose a threat.
+
+Brawly 3-6 Adjustments
+Hariyama 3-6 Vital Throw > Force Palm
+Hariyama 4-6 Strength > Smelling Salts
+Hariyama 4 Knock Off > Brine
+//Gives Hariyama a new identity of being Paralysis-themed in exchange for losing 10 BP on its 2 main moves and delaying Knock Off until the gym 5 power spike. Be sure to equip your Cheri Berries or bring a ghost type.
+//I know that difficulty wise this is a side-grade in a fight most would probably prefer outright nerfed, but Hariyama needs to be formidable or the fight is a total pushover. I'm hoping that this change gives Brawly more defined strengths and weaknesses and a clearer identity.
+
+
+Norman 1-4 Adjustments
+Zorua Leer/Curse > Copycat
+Norman 1 Slakoth Scratch > Play Rough
+Norman 2 Slakoth > Vigoroth
+Norman 2-4 Spinda Psybeam > Assist
+Vigoroth Slash > Trailblaze
+Vigoroth Feint Attack > Beat Up
+
+//Norman 1-2 were too easy and 3-4 were too hard. This change attempts to smooth over that difficulty imbalance.
+//By replacing Feint Attack with Beat Up, Vigoroth now has an option to break Shedinja that isn't quite so threatening into Ghost Types. This gives some value back to Ghost, who should be good into the normal-type leader. Vigoroth can still hit them, but it'll be doing so with non-STAB, low Base Power moves.
+//I've tacked on Trailblaze, which feels thematically appropriate for a Petalburg Woods Pokémon whose identity is being high-energy. I like that by having grass coverage, Vigoroth is strong into Water and Ground types, the two best types in the game.
+//The Spinda is a bit too strong in these early gyms, but I can't well take Facade off of it. At the very least, I can swap off Psybeam to remove its ability to threaten fighting types so significantly.
+//Lastly, on Zorua's Leer, I'm trying to phase out some of these stat debuff moves that the AI is so obsessed with spamming (usually to its own detriment).
+
+
+Flannery 1-8 Adjustments
+Numel/Camerupt 1-8 Attract > Amnesia/Sunny Day
+Ninetales 7-8 Attract > Will O Wisp
+//The people have spoken. They don't find Numel attractive. I'm fine with saying that one Attract on Torkoal is sufficient to establish Flannery's theming.
+
+
+//So far, the formula for crafting gym leader teams has been using exclusively Hoenn Regional Dex Mons with 1-2 Regional forms. At this advanced stage, I'm thinking it's worth departing from that formula in a few instances in order to create more interesting fights:
+
+
+Tate & Liza 3-7 Rework
+T&L 2-3 Solrock Rock Slide > Rock Throw
+T&L 3-5 Solrock Fire Spin > Incinerate
+T&L 3-5 Solrock Cosmic Power/Psywave > Confusion
+T&L 4 Lunatone Psyshock > Confusion
+T&L 3-5 Lunatone Hypnosis > Icy Wind
+T&L 6-7 Lunatone Hypnosis > Moonblast
+T&L 8 Xatu Tailwind > Sunny Day
+T&L 6-8 Slowpoke/Slowbro/Slowking > Oranguru
+
+//Did you flinch reading that? Overall, it's a massive nerf to T&L 2-4, but this fight didn't need to be so punishing and it still has plenty of tricks up its sleeve.
+//I like Fire & Ice dynamic of Icy Wind and Fire Spin/Incinerate for Early T&L, and I think it'll be more interesting to play against than Hypnosis and Rock Slide flinch.
+//Oranguru feels like a good fit for this fight thematically. It gets Telepathy, so it sticks with the theme of Pokémon immune to the Claydol's Earthquake. It sets Trick Room, which adds a wrinkle to the draft by giving some upside to being slow. It's a monkey, and the people love monkeys (just look at Pansear)! All of these factors combine to make it a perfect fit for a double battle team.
+//Both double battles now cap out at 5 Pokémon instead of 6. I continue to be concerned with how much longer the late game double battles are compared to the singles.
+
+
+Juan & Wallace 1-8 Rework
+All iterations reworked to center around Dondozo + Tatsugiri
+
+//Check the boss battles page of the website for full documentation. Every iteration of the fight has been modified to incorporate this dynamic duo. I've modified the fight so that the catfish each use Waterfall (but not Water Pulse) while the others use Water Pulse (but not Waterfall) so that both rewards for the fight are in play. I've removed all remaining instances of Mud Slap so that accuracy lowering is no longer a core mechanic.
+//I was originally testing the DozoGiri change as more of a silly idea, but I ended up being really pleased with it. Slowly chipping away at this thing's enormous HP is unlike any other fight in the game. The 1v2 nature of the fight makes Dondozo vulnerable to stat debuffs like Baby-Doll Eyes and Paralysis/Sleep.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Cetoddle
+Voltorb
+Onix
+Impidimp (Guru)
+Frillish (Oracle)
+Stantler (430+ BST, Evolves at Lv28)
+
+//Focuses on smoothing over the type distribution by giving Ice, Electric, and Psychic an extra member. Onix (Steelix), Frillish, and Impidimp were previously part of over-represented types which are a bit less crowded than they were previously.
+
+

@@ -785,7 +785,7 @@
         }));
 
         const mainCsv = Papa.unparse(csvData);
-        const finalCsv = `Draft ID: ${draftId}\nPatch: v7.8\nDate: ${now}\nTotal Pokemon Sold: ${totalSold}\n\n${teamSummaryCsv}\n\n${mainCsv}`;
+        const finalCsv = `Draft ID: ${draftId}\nPatch: v7.9\nDate: ${now}\nTotal Pokemon Sold: ${totalSold}\n\n${teamSummaryCsv}\n\n${mainCsv}`;
 
         const blob = new Blob([finalCsv], { type: 'text/csv;charset=utf-8;' });
         const link = document.createElement('a');
