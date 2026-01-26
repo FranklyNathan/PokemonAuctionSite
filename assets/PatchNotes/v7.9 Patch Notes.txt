@@ -64,7 +64,10 @@ T&L 6-8 Slowpoke/Slowbro/Slowking > Oranguru
 Juan & Wallace 1-8 Rework
 All iterations reworked to center around Dondozo + Tatsugiri
 
+
 //Check the boss battles page of the website for full documentation. Every iteration of the fight has been modified to incorporate this dynamic duo. I've modified the fight so that the catfish each use Waterfall (but not Water Pulse) while the others use Water Pulse (but not Waterfall) so that both rewards for the fight are in play. I've removed all remaining instances of Mud Slap so that accuracy lowering is no longer a core mechanic.
+//Tatsugiri's signature ability Commander now procs on both Dondozo and Whiscash (the master of catfish, as god intended)
+//All Potions in the fight have been replaced with Full Heals
 //I was originally testing the DozoGiri change as more of a silly idea, but I ended up being really pleased with it. Slowly chipping away at this thing's enormous HP is unlike any other fight in the game. The 1v2 nature of the fight makes Dondozo vulnerable to stat debuffs like Baby-Doll Eyes and Paralysis/Sleep.
 
 

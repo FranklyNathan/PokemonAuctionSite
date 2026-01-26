@@ -1864,8 +1864,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: White Smoke
 - Overheat
-- Sunny Day
 - Body Slam
+- Sunny Day
 - Attract
 
 === TRAINER_FLANNERY_5 ===
@@ -3334,7 +3334,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Potion
+Items: Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3364,7 +3364,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Super Potion
+Items: Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3394,7 +3394,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Super Potion
+Items: Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3444,7 +3444,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion
+Items: Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3494,7 +3494,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Full Heal / Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3544,7 +3544,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Full Heal / Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3604,7 +3604,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Full Heal / Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3664,7 +3664,7 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
+Items: Full Heal / Full Heal
 Double Battle: Yes
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 
@@ -3778,7 +3778,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
+=== TRAINER_MAXIE ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie

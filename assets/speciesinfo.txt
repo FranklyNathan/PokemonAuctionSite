@@ -377,7 +377,7 @@ Key Moves:
    Aqua Tail (39)
    Coil (45)
    Hydro Pump (50)
-   Aqua Ring (Egg)
+   Muddy Water (Egg)
 
 Clauncher
 Key Moves:
@@ -2236,7 +2236,7 @@ Key Moves:
    Stomp (13)
    Take Down (21)
    Calm Mind (27)
-   Psyshield Bash (TM)
+   Psyshield Bash (Evo.)
    Psychic (TM)
    Zen Headbutt (37)
    Megahorn (MR!)
