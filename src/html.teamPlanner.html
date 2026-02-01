@@ -322,13 +322,16 @@
     let megaStones = [
       "Mawilite",
       "Sablenite",
+      "Abomasite",
       "Banettite",
       "Cameruptite",
       "Chimechite",
       "Dragalgite",
       "Excadrillite",
+      "Falinksite"
       "Froslassite",
       "Glalitite",
+      "Hawluchite",
       "Houndoominite",
       "Lopunnite",
       "Lucarionite",
@@ -359,6 +362,7 @@
       "Scoliopedite",
       "Staraptite",
       "Swampertite",
+      "Tyranitarite",
       "Venusaurite",
     ];
     let speciesInfoMap = new Map();
@@ -406,13 +410,16 @@
       { name: "Hone Claws", price: 8000, badge: "Badge 4" },
       { name: "Mawilite", price: 10000, badge: "Game Start" },
       { name: "Sablenite", price: 10000, badge: "Game Start" },
+      { name: "Abomasite", price: 10000, badge: "Badge 6" },
       { name: "Banettite", price: 10000, badge: "Badge 6" },
       { name: "Cameruptite", price: 10000, badge: "Badge 6" },
       { name: "Chimechite", price: 10000, badge: "Badge 6" },
       { name: "Dragalgite", price: 10000, badge: "Badge 6" },
       { name: "Excadrillite", price: 10000, badge: "Badge 6" },
+      { name: "Falinksite", price: 10000, badge: "Badge 6" },
       { name: "Froslassite", price: 10000, badge: "Badge 6" },
       { name: "Glalitite", price: 10000, badge: "Badge 6" },
+      { name: "Hawluchite", price: 10000, badge: "Badge 6" },
       { name: "Houndoominite", price: 10000, badge: "Badge 6" },
       { name: "Lopunnite", price: 10000, badge: "Badge 6" },
       { name: "Lucarionite", price: 10000, badge: "Badge 6" },
@@ -443,6 +450,7 @@
       { name: "Scoliopedite", price: 10000, badge: "Badge 8" },
       { name: "Staraptite", price: 10000, badge: "Badge 8" },
       { name: "Swampertite", price: 10000, badge: "Badge 8" },
+      { name: "Tyranitarite", price: 10000, badge: "Badge 8" },
       { name: "Venusaurite", price: 10000, badge: "Badge 8" },
     ];
     let shopItems = [];
@@ -499,8 +507,6 @@
       Mankey: `Tip: Rage Fist
 \nPrimeape's signature move Rage Fist begins at 50 base power and grows stronger each time Primeape is hit.
 \nHowever, it's been nerfed in Emerald Blitz to cap at 100 base power instead of 350.`,
-      Gastly: `Tip: Delayed Evolution
-\nBy delaying Gastly's evolution until level 29, it can learn Shadow Ball before gym 4 while still evolving into Haunter. Otherwise, Haunter needs to wait all of the way until level 33, which doesn't come until two gyms later.`,
       Sewaddle: `Tip: Delayed Evolution
 \nBy delaying Sewaddle's evolution until level 22, it can learn Struggle Bug before gym 3 while still evolving into Swadloon. Otherwise, Swadloon never learns the move.`,
       Treecko: `Tip: Delayed Evolution
@@ -512,8 +518,7 @@
       Ponyta: `Tip: Run Away
 \nRun Away now functions like Emergency Exit, forcibly switching the Pokémon out once it drops below a 1/4 HP threshold. Rapidash is the only Pokémon in Emerald Blitz who retains access to this useful ability all of the way to its final evolution.`,
       Pansear: `Tip: Acrobatics
-\nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!
-\nBut watch out! Once Pansear evolves, it stops learning moves via level up. Be sure to wait until it learns Acrobatics to use that Fire Stone!`,
+\nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!`,
       Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
@@ -521,8 +526,6 @@
 \nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
 \nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
 \nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
-      Phantump: `Tip: Bullet Seed or Bust
-\nPhantump's grass learnset is woefully shallow. Be sure to buy the Bullet Seed TM from the Slateport Market after the first gym to give it access to grass-type STAB!`,
     };
     const dangerPokemon = [
       "Absol", "Falinks", "Hawlucha", "Klawf", "Miltank", "Stonjourner", "Turtonator", "Stantler",

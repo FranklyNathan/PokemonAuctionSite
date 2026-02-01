@@ -1,0 +1,170 @@
+2/1/2026
+
+If you're looking for just the changes without the context, feel free to skip all of the "//" comments and scroll straight to "Pokémon Level Up Learnsets Expanded"
+
+-----------------------------------------------
+Balance Adjustments
+-----------------------------------------------
+
+//Since the dawn of time, I've been extremely conservative on Pokémon learnsets and resistant to changing them. In the game's early days, before we had a website with at-a-glance information, I considered it essential that we could google learnsets and use Bulbapedia to check what our Pokémon learned. Even once we compiled documentation, I retained this philosophy because adjusting learnsets seemed to be a bottomless can of worms. If I decided to buff Granbull and move Play Rough from level 43 to 29, giving it a STAB option 4 gyms earlier, why not also give Phantump Horn Leech 15 levels earlier? Or Graveler Stealth Rock one level earlier? Or delay Zigzagoon's Snarl until gym 2? It becomes a game where I'm effectively choosing which tier each Pokémon belongs in, and I'm inviting an endless wave of DMs from people who want their favorite pick buffed. In other words, learnset adjustments are too granular for me to be making them on a case-by-case basis. I could always be slightly nerfing or slightly buffing any given Pokémon in a manner that's fundamentally arbitrary. I don't want that responsibility. In a game that relies on drafts filled with good, average, and bad Pokémon, there's no reason for me to be picking at will which Pokémon to turn from average to good. Some Pokémon need to be bad; the draft is more interesting and demands more strategy if some picks are worth relatively little. And if some Pokémon have to be bad, it's just as well that GameFreak has provided a baseline power level for each one. It stops me from having to endlessly tinker with learnsets and saves me the headache of appeasing (and failing to appease) every player whose favorite Pokémon is mediocre. I was more than happy to leave it alone and focus on other aspects of the game.
+
+//That said, there are problems with the current learnsets. Some Pokémon are sorely missing moves worth using. Being weak is one thing, but being boring is another, and a Pokémon that only has one move it can use for the majority of the game is boring. While buffing bottom tiers is not fundamentally desirable, making boring Pokémon more interesting is. 
+
+//Additionally, I always understood that my logic was flawed. It can't be that I'm creating top tiers out of thin air by giving Sharpedo Fiscious Rend, sure, but that's not a good reason to avoid improving learnsets in places where they're blatantly flawed. If I can make the game more fun to play by making Pokémon more interesting, I should be doing so. There's a middle ground I can find where I keep the game in line with the mainline series games while also tapping into new generation learnsets to smooth over generation 7 weirdness.
+
+//At this point, I imagine some people are wondering why I didn't just update to generation 9 and call it a day. After all, newer generations give access to newer, stronger moves and (usually) more diverse movesets. There are a few problems here. One, new generations of Pokémon don't actually include all of the Pokémon, meaning that updating to generation 9 mainline game learnsets would actually mean updating some Pokémon to generation 9, some to 8, and some would still be stuck in 7 (it's okay Pansear, we love you here)! In this way, it makes the playing field bizarrely unequal. Secondly, in the transition from generation 7 to 8, over 100 moves were removed from the game, including moves I consider fundamental to Hoenn and great inclusions in Blitz, including Sky Uppercut, Pursuit, Water Sport, Smelling Salts, Bubble, among others. But thirdly, and most importantly, it doesn't really achieve the desired effect; for 90% of Pokémon, generation 9 is only shuffling around existing moves. For most "boring" Pokémon, they'd still need another layer of change on top to actually address the issue. And lastly, it involves recreating all of the documentation we've spent the last year working on, essentially reseting our knowledge base.
+
+//For all of these reasons, I've at no point been in a rush to wade into rebalancing learnsets, though I've always known it was on the horizon. However, it was last week that I learned of something truly heinous. Something so ugly I can scarcely summon the gumption to type it out. Ursaluna, a gen9 Pokemon who uses its generation 9 learnset in Blitz (as that's all it has) gets Play Rough via the Move Relearner. I always knew this. But what I didn't understand is that Teddiursa/Ursaring also learn Play Rough at level 29 in generation 9, but don't learn the move at all in generation 7. Because we use generation 7 learnsets, they skip Play Rough, but then once they evolve to a newer generation Pokemon, that newer Ursaluna then gets access to a gen 9 learnset (since it can't use a generation 7 learnset--it didn't exist), and relearns a move from a past form that skipped the move. In short, Ursaluna is able to tap into gen 9 Ursaring's learnset to learn Play Rough, but our Ursaring doesn't learn Play Rough because we're using generation 7. This is so ridiculous that I knew I'd have to change something.
+
+//Which left me with two options: Either I go through all generation 8-9 learnsets and wipe out all new changes, "devamping" these Pokémon's learnsets back to what they might have been in generation 7; or, I add moves to generation 1-7 Pokémon in a way that brings them up to speed. While I am pure evil, not even I am so heartless as to go through the process of nerfing two entire generations of Pokémon, so this wasn't much of a choice. It's time to go back and add modern learnset changes like level 29 Play Rough back to Ursaring.
+
+//But if I'm doing this, I'd like to at least have some guidelines. Even if its a loose system I create, I'd like something to point to when people nag me to give Sharpedo Fishious Rend. So, here's the rule: We still use generation 7 as our baseline, for all of the reasons listed above. However,a Pokémon can have a move added to its learnset if it learns the move by level up in a future generation mainline game or ZA (BDSP and Arceus are too weird). If I bring  move backwards like this, the Pokémon learns the move at the same level as it does in a future generation. Additionally, in the name of justice, if I bring a move backwards, I bring it backwards for *every* Pokémon in the pool that can learn it. If I'm bringing Freeze Dry back for Glaceon, for example, I also have to give it to Ninetales, since both learn it via level in future generations. Finally, if a Pokemon currently learns the move as a Move Relearner move but gets it as an Evolution Move in future generations (such that it learns it immediately upon evolving), it's been changed to an Evolution Move. We may as well save the player a Heart Scale trip, and it gives some otherwise moveless early game Pokemon like Bunnelby sorely needed options. Similarly, Pokemon who narrowly miss a move by evolving after they'd learn it (like Orbeetle evolving at level 30 and missing level 28 Bug Buzz) will also have these moves shifted to be Evoultion Moves. There are a lot of new MR moves being added, so it will help to offset this by shifting some existing ones to be Evolution Moves instead.
+
+//With all of this said, I'm still focusing on preserving a "generation 3 feel" where possible. That means that even though I could bring Headlong Rush back to give it to Hariyama and Torterra, I'd prefer that they continue using Earthquake like any honest, self-respecting physical attacker would.
+
+//Beyond this, the primary goal is to make learnsets more interesting and create new, unique playstyles where possible. Chilly Reception on Slowking allows for a draft synergy with ice-types who can learn Blizzard, so we'll bring it in. Pokémon like Phantump, Yanma, Tyrunt, Solosis and Houndour feel too awkward without STABs to use for so much of the early game, so we'll tap into their gen 8 and 9 learnsets give them each a move to attack with early. Carvanha might not be ready for Fiscous Rend, but Flip Turn does fit neatly with its playstyle, allowing it to make use of its unique stat spread to hit and run instead of hit and die. Lastly, something needs to be done about Totodile's (lack of a) learnset, so we'll give it the high-utility Breaking Swipe to allow it a Dragon option in honor of its new mega (I like that this move gives it something unique to set it apart from the other 3-stage water types).
+
+//Lastly, I'll reiterate that although these changes often have the effect of buffing low tiers, that's not the goal. The huge range of power between picks in the game is a feature, not a bug. It is not, nor will it ever be, my mission to reduce the number of relatively weak Pokémon in the pool. I like that Diglett is an underwhelming Pokemon who can try to be a ground type but is desperately trying (and often failing) to fulfill its role. Even if I could give it a boost, I prefer its current existence as a $1200 dweeb, perfect for somebody who just went all in on Ralts but still wants a ground type with their last bit of money. If you prioritize having a strong ground type, you have the option to bid on a more expensive one. I want each type to have some top tiers and some bottom; the draft becomes less dynamic if all Pokémon of a certain type fulfill their role about as well as one another and are worth roughly the same. I do want to fix learnsets that feel ridiculous, but that doesn't mean buffing Pokémon like Diglett who already get STABs of their primary attacking stat at reasonable levels.
+
+//Okay, enough! Change list, go!
+
+
+Pokémon Level Up Learnsets Expanded
+New moves include...
+Acid Spray: Sliggoo (Evo.)
+Air Cutter: Yanma (14)
+Aqua Cutter: Gallade (MR)
+Branch Poke: Phantump (4)
+Breaking Swipe: Onix (22), Croconaw (26), Ampharos (42), Milotic (16), Krookodile (Evo.), Heliolisk (30), Goodras (MR), Tyrantrum (MR)
+Chilly Reception: Slowking (MR)
+Confusion: Solosis (1), Gastly (8)
+Dig: Ninjask/Shedinja (MR), Hitmontop (32)
+Drain Punch: Hitmonchan (Evo.)
+Flip Turn: Carvanha (20)
+Freeze Dry: Glaceon (40), Ninetales (MR)
+High Horsepower: Miltank (55)
+Incinerate: Houndour (20), Numel (15), Salandit (30)
+Leech Life: Arbok (33), Noibat (24)
+Leech Seed: Treecko (15), Lombre (30), Leafeon (MR), Snover (35)
+Mega Drain: Exeggcute (15)
+Meteor Mash: Lucario (48), Clefable (MR)
+Moonblast: Clefable (MR), Vileplume/Bellossom (MR), Wigglytuff (53), Meowstic (MR)
+Moonlight: Clefable (MR), Vileplume/Bellossom (MR)
+Mortal Spin: Scolipede (MR), Roserade (MR)
+Play Rough: Ursaring (29), Arcanine (MR)
+Smart Strike: Rapidash (Evo.)
+Strength Sap: Drifblim (MR)
+Thunder Punch: Raichu (Evo.)
+Razor Shell: Cloyster (MR)
+Rock Throw: Tyrunt (8), Larvitar (3)
+Water Pulse: Marshtomp (18), Kingdra (37), Sliggoo (25)
+Volt Switch: Luxio (30), Heliolisk (MR)
+
+
+Pokémon Level Up Learnsets Expanded (Continued)
+Wyrdeer: Jump Kick (43)
+Kleavor: Night Slash (45)
+//In some rare cases, the inverse is true: a Pokémon in generation 7 learns a move that was removed from the game or culled from its learnset in future generations, causing a new evolution it received to miss the move.
+
+
+Moves changed from Move Relearner to Evolution Moves
+Abomasnow: Ice Punch
+Aegislash: King's Shield
+Blastoise: Flash Cannon
+Charizard: Air Slash
+Diggersby: Bulldoze
+Noivern: Dragon Pulse
+Scizor: Bullet Punch
+Alolan Marowak: Shadow Bone
+Orbeetle: Bug Buzz
+Fletchinder: Flame Charge
+//This final one breaks the rule, but it's too outrageous not to change. Fletchinder has no physical fire move until level 38, but learns Flame Charge on evolution (level 17) in generation 8.
+//Still, the premier winner of this change may be Diggersby, who goes from getting Bulldoze after gym 4 to getting it after gym 2.
+
+
+Updated Pokémon Egg Moves
+Lotad: Leech Seed > Teeter Dance
+Snover: Leech Seed > Avalanche
+Treecko: Leech Seed > Grass Whistle
+//Notably, Vulpix retains Freeze Dry as its egg move but now has an new option of getting it via MR
+
+
+Updated Starting Learnsets
+Bulbasaur Poison Powder > Leech Seed
+Buizel Growl > Sonic Boom
+Eevee Sand Attack > Helping Hand
+//Once upon a time we started with level 5 Pokémon and leveled them up to 15. This lasted about five minutes before we realized it was dumb. For this reason, I rearrange starting learnsets to allow Pokémon to start with "optimal" learnsets.
+//Obviously changing Eevee's starting set is a big deal. I'm hoping that it improves player's matchups into the ever-menacing early game doubles. In my heart, it also feels more fitting for a starter Eevee than Sand Attack.
+//Bulbasaur was listed as starting with Leech Seed on the website but incorrectly didn't in game
+
+
+Borderline-Useless Moves Removed
+Situations like Swampert learning Take Down at level 44 or Shiinotic learning Spotlight at level 53, moves which almost always do nothing but waste time, have been removed
+//I did a pass to trim down learnset a few months ago and removed tons of almost-always-skipped options (Foresight, Bide, Sweet Scent, etc.). For 8.0, I've done another more aggressive pass for this patch to further cut down on moves that you're never learning in the first place. In all, this has removed about 250 entries from existing learnsets. Of these 250, they're overwhelmingly Normal-type attacking moves like Rage, Slam, Rock Climb, Double Hit, Double Slap, Take Down, Feint, Spit Up, Fury Attack, and Razor Wind being learned by Pokémon who've already learned multiple moves with higher Base Power. If you're curious to see the removals in greater detail, you can follow the "Learnsets" link in Blitz Index to go to the gen_7.h file on GitHub. If you ctrl+f for "//LEVEL_UP_MOVE", you'll get a full list of everything that's been nixed. 
+
+
+Abilities of all Pokémon that existed in Generation 7 reset to what they were in Generation 7 (Read: Gallade loses Sharpness)
+//If a Pokémon had Guts/NoAbility in generation 7 but Guts/Intimidate in generation 9, it now has Guts/NoAbility. Like learnsets, we'll use generation 7 for abilities. Currently, the only Pokémon this affects is Gallade.
+//The most expensive Pokémon in the game didn't need a generation 9 buff to give its Night Slash and Leaf Blade +50% damage... especially when this is the only gen1-7 Pokémon in the game getting a buff from a post-gen-7 ability. Ultimately, I think Gallade is more interesting and healthy as a Pokémon with a more diverse more-relearner pool but with less sweeping power. Hopefully the Aqua Cutter / Sharpness swap will achieve this.
+
+
+
+-----------------------------------------------
+Boss Battle Adjustments
+-----------------------------------------------
+
+Flannery 2 Vulpix Tail Whip > Quick Attack
+//That's one way to get her to stop clicking it
+
+Juan & Wallace 3-4 Barboach Rain Dance > Dragon Dance
+//I'm still not entirely convinced that this is necessary, but it is a difficult fight and it's jarring for the newly reworked fight to be one of the hardest in the game. This should make it much easier.
+//That said, I still can't stop Barboach from dancing. It's in his DNA. 
+
+Juan & Wallace 3 Barboach Mud Bomb > Mud Slap
+//Guess I can't stop him from slapping either.
+
+Juan & Wallace 5 Seadra Aurora Beam > Twister
+//Grass is uniquely weak into this iteration of the fight where J&W have no Barboach/Whiscash and Seadra has Aurora Beam
+
+Juan & Wallace 1-4 Tatsugiri Oran/Sitrus Berry Removed
+//Bringing early versions of this fight in line with other single boss battles by limiting it to just one berry
+
+Juan & Wallace 1-8 Tatsugiri Form Randomized
+//Tatsugiri is now randomized between Curly (orange), Droopy (red) and Stretchy (yellow) form
+//This doesn't affect the stats or learnset of Tatsugiri, it only affects the stat boosted by Dondozo's Order Up (a move it has in J&W 3-8). When Order Up is used, Dondozo's stats are boosted based on the type of Tatsugiri in its mouth: Curly boosts the Attack, Droopy boosts the Defense, and Stretchy boosts Speed. Previously, Tatsugiri was always Curly.
+//Beyond visual variety, this change is to promote realism. It is well known that in real life, a Tatsugiri is not always Curly. To be sure, occasionally it can be Curly, but at other times it may be Stretchy, and sometimes, alas, it is Droopy. No longer will Juan and Wallace break our immersion with their perpetually Curly Tatsugiri.
+
+Sidney Cacturne Feint Attack > Sucker Punch
+//Quake in your boots
+
+Glacia Glalie Explosion > Headbutt
+
+
+-----------------------------------------------
+Bugfix and QoL
+-----------------------------------------------
+
+Fixed disobedience sleep crash
+//Previously, a Pokémon disobeying and falling asleep would crash the game if another Pokémon had been put to sleep via Yawn earlier in the battle. Now, disobedience can never attempt to cause a Pokémon to fall asleep if another has already fallen asleep. Instead, the Pokémon will disobey by not acting at all.
+
+Fixed Archie/Maxie Paying out too little
+//Previously, these two leaders were paying out 4/5ths of what they were supposed to. What cheapskates!
+
+Fixed graphical corruption on Female Steelix following sprite
+
+Fixed some in-battle background ugliness
+//I foolishly hadn't tested how all of our new borders looked in battle, and learned that we'd indexed them incorrectly. I fixed some of them with more to come soon.
+
+Flabebe color randomized
+//Like Minior and Scatterbug, Flabebe is now a random color of its five possible options
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
++Larvitar
++Paras
++Shroodle
+//Paras is bad, but it's a bug type in a pool where bug had quietly fallen to the 4th scarcest type. Dry Skin, early Spore and grass attacks make it excellent into Juan & Wallace.
+

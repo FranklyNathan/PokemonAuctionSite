@@ -1702,7 +1702,7 @@ Numel
 Level: 12
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Solid Rock
+Ability: Oblivious
 - Overheat
 - Magnitude
 - Tackle
@@ -1745,14 +1745,14 @@ Nature: Serious
 Ability: Flash Fire
 - Will O Wisp
 - Feint Attack
-- Tail Whip
+- Quick Attack
 - Fire Spin
 
 Numel
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Solid Rock
+Ability: Oblivious
 - Overheat
 - Magnitude
 - Tackle
@@ -1802,7 +1802,7 @@ Numel
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Solid Rock
+Ability: Oblivious
 - Overheat
 - Magnitude
 - Sunny Day
@@ -3348,7 +3348,7 @@ Ability: Unaware
 - Noble Roar
 - Water Gun
 
-Tatsugiri @ Oran Berry
+Tatsugiri
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -3378,7 +3378,7 @@ Ability: Unaware
 - Noble Roar
 - Water Gun
 
-Tatsugiri @ Oran Berry
+Tatsugiri
 Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -3406,17 +3406,17 @@ Ability: Water Veil
 - Whirlpool
 - Defense Curl
 - Rollout
-- Water Pulse
+- Dragon Dance
 
 Barboach
 Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Oblivious
-- Mud Bomb
+- Mud Slap
 - Waterfall
 - Amnesia
-- Rain Dance
+- Dragon Dance
 
 Dondozo @ Sitrus Berry
 Level: 24
@@ -3428,7 +3428,7 @@ Ability: Unaware
 - Order Up
 - Water Gun
 
-Tatsugiri @ Sitrus Berry
+Tatsugiri
 Level: 23
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -3466,7 +3466,7 @@ Ability: Oblivious
 - Mud Bomb
 - Waterfall
 - Amnesia
-- Rain Dance
+- Dragon Dance
 
 Dondozo @ Sitrus Berry
 Level: 29
@@ -3478,7 +3478,7 @@ Ability: Unaware
 - Order Up
 - Water Gun
 
-Tatsugiri @ Sitrus Berry
+Tatsugiri
 Level: 27
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
@@ -3524,7 +3524,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Poison Point
 - Water Pulse
-- Aurora Beam
+- Twister
 - Bounce
 - Rest
 
@@ -3563,6 +3563,7 @@ Level: 31
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
+- (Can Command Whiscash)
 - Helping Hand
 - Water Pulse
 - Rapid Spin
@@ -3623,6 +3624,7 @@ Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
+- (Can Command Whiscash)
 - Helping Hand
 - Water Pulse
 - Rapid Spin
@@ -3683,6 +3685,7 @@ Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
+- (Can Command Whiscash)
 - Helping Hand
 - Water Pulse
 - Dragon Pulse
@@ -3855,7 +3858,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sand Veil
 - Leech Seed
-- Feint Attack
+- Sucker Punch
 - Needle Arm
 - Spiky Shield
 
@@ -4129,7 +4132,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Inner Focus
 - Crunch
-- Explosion
+- Headbutt
 - Hail
 - Freeze Dry
 
