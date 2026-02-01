@@ -399,7 +399,7 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 683,Aromatisse,Fairy,evo,Healer,,Aroma Veil,101,72,72,99,89,29,Level 28,,
 234,Stantler,Normal,base,Intimidate,Frisk,Sap Sipper,73,95,62,85,65,85,,,
 899,Wyrdeer,Normal/Psychic,evo,Intimidate,Frisk,Sap Sipper,103,105,72,105,75,65,Level 28,,
-396,Starly,Normal/Flying,base,Intimidate,,Reckless,40,55,30,30,30,60,,Stage 2,
+396,Starly,Normal/Flying,base,Keen Eye,,Reckless,40,55,30,30,30,60,,Stage 2,
 397,Staravia,Normal/Flying,evo,Intimidate,,Reckless,55,75,50,40,40,80,Level 14,Stage 2,
 398,Staraptor,Normal/Flying,evo,Intimidate,,Reckless,85,120,70,50,60,100,Level 34,Stage 2,
 398,Mega Staraptor,Fighting/Flying,mega,Intimidate,,Reckless,85,140,100,60,90,110,Staraptite,Stage 2,

@@ -4074,6 +4074,336 @@
                     }
                 ]
             }
+        },
+        "Emolga": {
+            "members": [
+                "Emolga"
+            ],
+            "tree": {
+                "name": "Emolga",
+                "method": "",
+                "children": []
+            }
+        },
+        "Gothita": {
+            "members": [
+                "Gothita",
+                "Gothorita",
+                "Gothitelle"
+            ],
+            "tree": {
+                "name": "Gothita",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Gothorita",
+                        "method": "Level 32 (Energy Guru)",
+                        "children": [
+                            {
+                                "name": "Gothitelle",
+                                "method": "Level 41",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Remoraid": {
+            "members": [
+                "Remoraid",
+                "Octillery"
+            ],
+            "tree": {
+                "name": "Remoraid",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Octillery",
+                        "method": "Level 25",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Absol": {
+            "members": [
+                "Absol",
+                "Mega Absol"
+            ],
+            "tree": {
+                "name": "Absol",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mega Absol",
+                        "method": "Absolite",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Falinks": {
+            "members": [
+                "Falinks",
+                "Mega Falinks"
+            ],
+            "tree": {
+                "name": "Falinks",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mega Falinks",
+                        "method": "Falinksite",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Hawlucha": {
+            "members": [
+                "Hawlucha",
+                "Mega Hawlucha"
+            ],
+            "tree": {
+                "name": "Hawlucha",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Mega Hawlucha",
+                        "method": "Hawluchite",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Klawf": {
+            "members": [
+                "Klawf"
+            ],
+            "tree": {
+                "name": "Klawf",
+                "method": "",
+                "children": []
+            }
+        },
+        "Miltank": {
+            "members": [
+                "Miltank"
+            ],
+            "tree": {
+                "name": "Miltank",
+                "method": "",
+                "children": []
+            }
+        },
+        "Stonjourner": {
+            "members": [
+                "Stonjourner"
+            ],
+            "tree": {
+                "name": "Stonjourner",
+                "method": "",
+                "children": []
+            }
+        },
+        "Turtonator": {
+            "members": [
+                "Turtonator"
+            ],
+            "tree": {
+                "name": "Turtonator",
+                "method": "",
+                "children": []
+            }
+        },
+        "Weedle": {
+            "members": [
+                "Weedle",
+                "Kakuna",
+                "Beedrill",
+                "Mega Beedrill"
+            ],
+            "tree": {
+                "name": "Weedle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Kakuna",
+                        "method": "Level 7",
+                        "children": [
+                            {
+                                "name": "Beedrill",
+                                "method": "Level 10",
+                                "children": [
+                                    {
+                                        "name": "Mega Beedrill",
+                                        "method": "Beedrillite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Cetoddle": {
+            "members": [
+                "Cetoddle",
+                "Cetitan"
+            ],
+            "tree": {
+                "name": "Cetoddle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Cetitan",
+                        "method": "Ice Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Voltorb": {
+            "members": [
+                "Voltorb",
+                "Electrode"
+            ],
+            "tree": {
+                "name": "Voltorb",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Electrode",
+                        "method": "Leaf Stone",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Impidimp": {
+            "members": [
+                "Impidimp",
+                "Morgrem",
+                "Grimmsnarl"
+            ],
+            "tree": {
+                "name": "Impidimp",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Morgrem",
+                        "method": "Level 32 (Energy Guru)",
+                        "children": [
+                            {
+                                "name": "Grimmsnarl",
+                                "method": "Level 42",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Frillish": {
+            "members": [
+                "Frillish",
+                "Jellicent"
+            ],
+            "tree": {
+                "name": "Frillish",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Jellicent",
+                        "method": "Level 40 (Energy Oracle)",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Stantler": {
+            "members": [
+                "Stantler",
+                "Wyrdeer"
+            ],
+            "tree": {
+                "name": "Stantler",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Wyrdeer",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Larvitar": {
+            "members": [
+                "Larvitar",
+                "Pupitar",
+                "Tyranitar",
+                "Mega Tyranitar"
+            ],
+            "tree": {
+                "name": "Larvitar",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Pupitar",
+                        "method": "Level 30",
+                        "children": [
+                            {
+                                "name": "Tyranitar",
+                                "method": "Level 55",
+                                "children": [
+                                    {
+                                        "name": "Mega Tyranitar",
+                                        "method": "Tyranitarite",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Paras": {
+            "members": [
+                "Paras",
+                "Parasect"
+            ],
+            "tree": {
+                "name": "Paras",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Parasect",
+                        "method": "Level 24",
+                        "children": []
+                    }
+                ]
+            }
+        },
+        "Shroodle": {
+            "members": [
+                "Shroodle",
+                "Grafaiai"
+            ],
+            "tree": {
+                "name": "Shroodle",
+                "method": "",
+                "children": [
+                    {
+                        "name": "Grafaiai",
+                        "method": "Level 28",
+                        "children": []
+                    }
+                ]
+            }
         }
     }
 }
