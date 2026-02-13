@@ -567,6 +567,14 @@ export const specialMechanics = {
   Pansear: `Tip: Acrobatics
 \nFling your held King's Rock at the opponent to flinch them, then use Acrobatics for big damage? Now that's a gameplan I can get behind!
 \nBut watch out! Once Pansear evolves, it stops learning moves via level up. Be sure to wait until it learns Acrobatics to use that Fire Stone!`,
+  Shroodle: `Tip: Doodle
+\nShroodle's signature move Doodle is something special! Now, when used from the party menu, Grafaiai can choose to swap to one of four abilities randomly selected from the Doodle pool, a collection of the strongest abilities in Emerald Blitz. Happy doodling!
+\nNotably, Doodle is forgotten once used and cannot be relearned via the Move Relearner.
+\nThe full Doodle pool includes: Drizzle, Drought, Dry Skin, Effect Spore, Flash Fire, Fluffy, Levitate, Illusion, Intimidate, Protean, Perish Body, Pixilate, Refrigerate, Regenerator, Sap Sipper, Seed Sower, Sheer Force, Sturdy, Tough Claws, and Volt Absorb`,
+  Burmy: `Tip: Burmy Binder
+\nBurmy and Wormadam change cloaks using the consumable Burmy Binder, available in the Pretty Petal Flower Shop. You're given three Burmy Binders. With the ability to change forms after seeing which boss you're about to face, and the ability to change its Hidden Power type, Wormadam has excellent versatility!`,
+  "Plusle and Minun": `Tip: Two is better than One!
+\nA two-for-one special! Plusle and Minun appear as one unit to be purchased together. In game, you can't pick one from the notebook without being given the other.`,
   Egg: `Tip: Baby Pokemon
 \nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
@@ -575,6 +583,11 @@ export const specialMechanics = {
 \nThere's just one catch: once a player evolves their Eevee, no other player can evolve their Eevee into that same species. This means that beating the fourth gym and gaining access to evolution stones is especially imperative!
 \nEevee's ability to evolve into eight different types of Pokemon makes it invaluable for filling out your team with coverage for your draft's weaker matchups. That said, don't underestimate Eevee into the first few gyms! Its ability to lower the opponent's stats help get many early game teams over the hill.`,
 };
+
+const dangerPokemon = [
+  "Absol", "Falinks", "Hawlucha", "Klawf", "Miltank", "Stonjourner", "Turtonator", "Stantler",
+  "Bombirdier", "Rotom", "Sneasel", "Minior", "Scyther", "Applin", "Slakoth"
+];
 
 /**
  * Updates the UI to display the auctioned player's image and species info.
@@ -758,6 +771,8 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
       `;
     }
 
+    const isDanger = dangerPokemon.includes(player.name);
+
     // Always display the name, and add other info if it exists.
     infoEl.innerHTML = `
       <div style="direction: ltr; text-align: left; padding-left: 1.5rem;">
@@ -768,6 +783,13 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
             specialMechanics[player.name]
               ? `<sl-button id="special-mechanic-btn" size="small" variant="neutral" title="Special Mechanic!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
                    <img src="/generic/star.png" alt="Special Mechanic" style="height: 1.2rem; position: relative; top: 4px;"/>
+                 </sl-button>`
+              : ''
+          }
+          ${
+            isDanger
+              ? `<sl-button id="danger-btn" size="small" variant="neutral" title="Warning: High BST!" style="--sl-spacing-x-small: 0rem; width: 2rem;">
+                   <img src="/generic/Danger.png" alt="Warning" style="height: 1.2rem; position: relative; top: 4px;"/>
                  </sl-button>`
               : ''
           }
@@ -795,6 +817,25 @@ export function displayPlayerAuctionInfo(player, speciesInfoMap, allPlayers) {
         dialog.show();
 
         closeBtn.addEventListener('click', () => dialog.hide(), { once: true }); // Close on internal button click
+      });
+    }
+
+    // Add event listener for the danger button if it was rendered.
+    const dangerBtn = infoEl.querySelector('#danger-btn');
+    if (dangerBtn) {
+      dangerBtn.addEventListener('click', () => {
+        const dialog = document.getElementById('specialMechanicDialog');
+        const contentEl = document.getElementById('specialMechanicContent');
+        const closeBtn = dialog.querySelector('sl-button[slot="footer"]');
+
+        const message = `Warning: High BST!\nThis Pokémon has a Base Stat Total of 430 or above. It might not obey you until you've obtained 2 gym badges. (Before obtaining two badges, this pokemon has a 50% chance to disobey your command in battle.)`;
+        const lines = message.split('\n');
+        const firstLine = lines.shift();
+        const restOfLines = lines.join('\n');
+        const styledDescription = `<span style="font-weight: bold; font-size: 1.1em; color: var(--sl-color-danger-600);">${firstLine}</span>\n${restOfLines}`;
+        contentEl.innerHTML = `<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${styledDescription}</pre>`;
+        dialog.show();
+        closeBtn.addEventListener('click', () => dialog.hide(), { once: true });
       });
     }
 

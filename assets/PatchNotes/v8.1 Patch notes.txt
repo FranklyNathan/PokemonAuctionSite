@@ -1,0 +1,126 @@
+2/7/2026
+
+-----------------------------------------------
+Pool Addition: Burmy
+-----------------------------------------------
+
+Burmy evolves into Wormadam at level 20 regardless of gender; Mothim is unobtainable.
+
+New Item: Burmy Binder
+//You've heard of the Rotom Catalog, but nothing could have prepared you for the Burmy Binder. These beautiful binders can change the form of both Burmy and Wormadam to Grass, Sandy or Trash cloak. You're given three by the bottom-right NPC in the Pretty Petal Flower Shop (the berry store). Like the Rotom Catalog, they're consumable. Thanks to Zarha for the super cute sprite!
+
+
+-----------------------------------------------
+New Slateport NPC: Hidden Power Guy
+-----------------------------------------------
+
+For the low price of $1000, The Hidden Power NPC allows a Pokémon to choose its Hidden Power type. He can be used multiple times on the same Pokémon. His service is accessible from the beginning of the game. As a reminder, the  Hidden Power TM is not accessible in game. The only Pokémon who learn Hidden Power include...
+Solosis (14)
+Burmy (20)
+Meditite (20)
+Elgyem (22)
+
+
+-----------------------------------------------
+Ability Rework: Doodle
+-----------------------------------------------
+
+Grafaiai's signature ability Doodle now functions like Smeargle's Sketch but for abilities. When Doodle is used from the party menu, it offers the player four options for Grafaiai's new ability from the following pool:
+
+Drizzle
+Drought
+Dry Skin
+Effect Spore
+Flash Fire
+Fluffy
+Levitate
+Illusion
+Intimidate
+Protean
+Perish Body
+Pixilate
+Refrigerate
+Regenerator
+Sap Sipper
+Seed Sower
+Sheer Force
+Sturdy
+Tough Claws
+Volt Absorb
+
+Like Sketch, Doodle is forgotten after being used from the Party Menu and cannot be relearned via the Move Relearner.
+
+Additionally, Doodle has been added to Smeargle's Sketch pool.
+
+
+-----------------------------------------------
+New Evolution Moves
+-----------------------------------------------
+
+The following Pokémon now learn these moves upon evolution:
+Boldore Rock Slide
+Coalossal Stealth Rock
+Gossifleur Synthesis
+Grafaiai Poison Jab
+Kilowattrel Dual Wingbeat
+Swadloon Struggle Bug
+Toucannon Screech
+Poliwhirl Mud Shot
+Zebstrika Stomp
+
+//Pokémon that could receive a move within a certain gym's level cap by delaying an evolution, but do not learn the move in time without delaying (like Shroodle, who evolves at level 28 but learns Poison Jab at 29, while Grafaiai learns it at 33) now no longer need to delay. I did this with Haunter Shadow Ball last patch and now do the same with the others in its same situation. Notably, this doesn't apply to Pokémon like Treecko who learn Giga Drain by delaying a level 16 evolution to 21 because it crosses the gym 2 level cap of 19. If the delay would pass a gym leader's level cap, you'll need to wait. 
+//For this reason, this change isn't technically a "buff" to anything beyond that it's saving you the tediousness of holding B on the evolution a few times. All of these moves were already accessible at the point you're gaining access to them if you were delaying.
+
+
+-----------------------------------------------
+Boss Battle Adjustments
+-----------------------------------------------
+
+Brawly 1-3 Makuhita/Hariyama Strength > Fake Out
+//Sharply reduces Hariyama's damage on fighting resists. In Brawly 1-2, this makes the fight slightly "harder" by making it take an extra turn. On Brawly 3, this makes it significantly easier.
+
+Norman 5 Spinda Sucker Punch > Assist
+Norman 6 Loudred Bite > Fire Fang
+Norman 7-8 Crunch > Fire Blast
+//Previously, ghosts had too little value into late Normans when every one of his Pokémon can hit them super effectively. This at least allows ghost types to have some niche.
+
+Tate&Liza Solrock 1-2 Fire Spin > Ember
+//It can't technically learn Ember, but Fire Spin is occasionally bugged and I'm not sure how to fix it. This'll do for now.
+
+Juan&Wallace Wailmer 3-4 Whirlpool > Astonish
+//See above
+
+Juan&Wallace Tatsugiri 3-4 Dark Pulse > Feint Attack
+//He's not quite maniacal enough at this stage for a full on Dark Pulse
+
+Juan&Wallace 6-7 Milotic Ice Beam > Recover
+Juan&Wallace 8 Milotic Disarming Voice > Dazzling Gleam
+//Buffing Grass into late Juan & Wallace
+
+Juan&Wallace 5-8 Tatsugiri Helping Hand > Flip Turn
+//The AI isn't smart enough to use Helping Hand properly
+
+
+Enemy AI Change: Accuracy Drop Moves no longer gain additional score
+The AI is a beautiful mystery... But I've made the accuracy drop moves (Sand Attack, Mud Slap) less of one. Boss trainers will no longer assign additional score to AccDrop moves. In other words, Barboach will now only use Mud Slap if it sees it as doing comparable damage to Waterfall, instead of clicking it every turn forever no matter what. Even after 1 Baby Doll Eyes, it'll still now only use Waterfall (unless it has a Super Effective Mud Slap). This will enable strategies that focus on dropping its attack one stage with Eevee and then leaving it alive while you focus the other side of the fight.
+
+
+-----------------------------------------------
+Bugfix, QoL and Visuals
+-----------------------------------------------
+
+Juan & Wallace 1-6 now pay out the correct value
+//They were previously paying out slightly less than intended. All gym leaders now pay the same amount. Thanks to KHC42 for spotting this.
+
+Volt Switch Commander Bug Fixed
+//Fixed a bug in which if Dondozo was killed via Volt Switch (or another pivoting move) while Tatsugiri was inside of it, Tatsugiri would pop out but remain invincible. Thanks to Jason for finding it and the expansion devs upstream for fixing it!
+
+Fixed remaining in-battle background ugliness
+//Last patch began fixing some of the border index problems. The second wave of borders have been fixed--thanks Zarha! We've also got a sweet new Castform window from Jari and two new top-tier themed windows from Zarha.
+
+Mega Stone Sprites Added
+//No longer does every Mega Stone sprite use Audino's pink and white palette. Thanks to kittenchilly upstream for adding them!
+
+Portable PC Streamlined
+//Removed three text boxes that previously appeared when using the Portable PC (saves three A presses per use).
+

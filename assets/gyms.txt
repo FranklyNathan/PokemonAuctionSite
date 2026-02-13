@@ -874,7 +874,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Drain Punch
-- Strength
+- Fake Out
 - Fire Punch
 - Bulk Up
 
@@ -924,7 +924,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Drain Punch
-- Strength
+- Fake Out
 - Fire Punch
 - Bulk Up
 
@@ -974,7 +974,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Guts
 - Force Palm
-- Strength
+- Fake Out
 - Brine
 - Bulk Up
 
@@ -2014,7 +2014,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Drought
 - Overheat
-- Flamethrower
+- Solar Beam
 - Hex
 - Will O Wisp
 
@@ -2074,7 +2074,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Drought
 - Overheat
-- Flamethrower
+- Solar Beam
 - Hex
 - Will O Wisp
 
@@ -2304,7 +2304,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
 - Teeter Dance
-- Sucker Punch
+- Assist
 - Facade
 - Encore
 
@@ -2373,9 +2373,9 @@ Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Soundproof
-- Bite
+- Fire Fang
 - Facade
-- Screech
+- Disarming Voice
 - Uproar
 
 Linoone-Galar
@@ -2433,7 +2433,7 @@ Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Soundproof
-- Crunch
+- Fire Blast
 - Facade
 - Hyper Voice
 - Thunder Fang
@@ -2493,7 +2493,7 @@ Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Soundproof
-- Crunch
+- Fire Blast
 - Facade
 - Boomburst
 - Thunder Fang
@@ -2966,7 +2966,7 @@ Ability: Levitate
 - Psywave
 - Harden
 - Calm Mind
-- Fire Spin
+- Ember
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
@@ -2996,7 +2996,7 @@ Ability: Levitate
 - Psywave
 - Rock Throw
 - Calm Mind
-- Fire Spin
+- Ember
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -3044,7 +3044,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Levitate
 - Psywave
-- Rock Throw
+- Rock Slide
 - Calm Mind
 - Incinerate
 
@@ -3403,10 +3403,10 @@ Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
-- Whirlpool
+- Astonish
 - Defense Curl
 - Rollout
-- Dragon Dance
+- Water Pulse
 
 Barboach
 Level: 20
@@ -3425,7 +3425,7 @@ Nature: Serious
 Ability: Unaware
 - Lick
 - Waterfall
-- Order Up
+- Noble Roar
 - Water Gun
 
 Tatsugiri
@@ -3436,7 +3436,7 @@ Ability: Commander
 - Helping Hand
 - Water Pulse
 - Rapid Spin
-- Dark Pulse
+- Feint Attack
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
@@ -3453,7 +3453,7 @@ Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Water Veil
-- Whirlpool
+- Astonish
 - Defense Curl
 - Rollout
 - Water Pulse
@@ -3486,7 +3486,7 @@ Ability: Commander
 - Helping Hand
 - Water Pulse
 - Rapid Spin
-- Dark Pulse
+- Feint Attack
 
 === TRAINER_JUAN_5 ===
 Name: JUAN
@@ -3513,7 +3513,7 @@ Level: 29
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
-- Helping Hand
+- Flip Turn
 - Water Pulse
 - Rapid Spin
 - Dark Pulse
@@ -3563,8 +3563,7 @@ Level: 31
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
-- (Can Command Whiscash)
-- Helping Hand
+- Flip Turn
 - Water Pulse
 - Rapid Spin
 - Dark Pulse
@@ -3579,16 +3578,6 @@ Ability: Oblivious
 - Waterfall
 - Rock Slide
 
-Milotic @ Sitrus Berry
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Marvel Scale
-- Disarming Voice
-- Water Pulse
-- Icy Wind
-- Ice Beam
-
 Kingdra @ Chesto Berry
 Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -3598,6 +3587,16 @@ Ability: Swift Swim
 - Dragon Pulse
 - Bounce
 - Rest
+
+Milotic @ Sitrus Berry
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Marvel Scale
+- Disarming Voice
+- Water Pulse
+- Icy Wind
+- Rain Dance
 
 === TRAINER_JUAN_7 ===
 Name: JUAN&WALCE
@@ -3624,8 +3623,7 @@ Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
-- (Can Command Whiscash)
-- Helping Hand
+- Flip Turn
 - Water Pulse
 - Rapid Spin
 - Dark Pulse
@@ -3648,7 +3646,7 @@ Ability: Marvel Scale
 - Disarming Voice
 - Water Pulse
 - Icy Wind
-- Ice Beam
+- Recover
 
 Kingdra @ Chesto Berry
 Level: 42
@@ -3685,8 +3683,7 @@ Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Commander
-- (Can Command Whiscash)
-- Helping Hand
+- Flip Turn
 - Water Pulse
 - Dragon Pulse
 - Dark Pulse
@@ -3706,10 +3703,10 @@ Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Marvel Scale
+- Dazzling Gleam
 - Water Pulse
 - Ice Beam
 - Recover
-- Icy Wind
 
 Kingdra @ Chesto Berry
 Level: 48
@@ -3781,7 +3778,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE ===
+=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
@@ -3872,25 +3869,25 @@ Ability: Torrent
 - Megahorn
 - Aqua Jet
 
-Shiftry
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Nature: Serious
-Ability: Chlorophyll
-- Leaf Tornado
-- Double Team
-- Swagger
-- Hurricane
-
 Crawdaunt
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Hyper Cutter
+Ability: Adaptability
 - Crabhammer
 - Swords Dance
-- Night Slash
+- Knock Off
 - Facade
+
+Grimmsnarl
+Level: 53
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Prankster
+- Foul Play
+- Play Rough
+- Sucker Punch
+- Torment
 
 Absol @ Sitrus Berry
 Level: 55
@@ -3913,15 +3910,15 @@ Double Battle: No
 AI: Basic Trainer / Smart Mon Choices / Smart Switching
 Mugshot: Green
 
-Roserade
+Shiftry
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Poison Point
-- Toxic Spikes
-- Giga Drain
-- Leech Seed
-- Sludge Bomb
+Ability: Chlorophyll
+- Leaf Tornado
+- Double Team
+- Swagger
+- Hurricane
 
 Decidueye-Hisui
 Level: 54
@@ -3949,7 +3946,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Own Tempo
 - Giga Drain
-- Hydro Pump
+- Surf
 - Ice Beam
 - Astonish
 
@@ -4061,9 +4058,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Liquid Ooze
 - Sludge Bomb
-- Pain Split
 - Encore
 - Shadow Ball
+- Toxic
 
 Dustox
 Level: 53
@@ -4142,8 +4139,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Thick Fat
 - Surf
+- Ice Fang
 - Body Slam
-- Ice Beam
 - Freeze Dry
 
 === TRAINER_TUCKER ===
@@ -4164,7 +4161,7 @@ Nature: Serious
 Ability: Cute Charm
 - Sing
 - Hyper Voice
-- Dazzling Gleam
+- Play Rough
 - Light Screen
 
 Rapidash-Galar
@@ -4177,15 +4174,15 @@ Ability: Pastel Veil
 - Megahorn
 - Dazzling Gleam
 
-Azumarill
+Togekiss
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Huge Power
-- Play Rough
-- Aqua Tail
-- Bounce
-- Double Edge
+Ability: Serene Grace
+- Aura Sphere
+- Dazzling Gleam
+- Air Slash
+- Encore
 
 Mawile
 Level: 53
@@ -4228,25 +4225,25 @@ Ability: Harvest
 - Sludge Bomb
 - Seed Bomb
 
-Altaria
+Dragalge
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Natural Cure
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Ability: Poison Touch
+- Thunderbolt
+- Surf
+- Poison Tail
+- Dragon Tail
 
 Kingdra
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
-Ability: Sniper
-- Smokescreen
+Ability: Swift Swim
+- Hurricane
 - Dragon Pulse
 - Octazooka
-- Ice Beam
+- Agility
 
 Flygon
 Level: 53
@@ -4395,7 +4392,78 @@ Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Clear Body
+- Meteor Mash
 - Hammer Arm
 - Psychic
-- Meteor Mash
 - Hyper Beam
+
+=== TRAINER_WALLY ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer / Smart Mon Choices / Smart Switching
+Mugshot: Yellow
+
+Roserade
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Poison Point
+- Giga Drain
+- Leech Seed
+- Sludge Bomb
+- Toxic Spikes
+
+Azumarill
+Level: 55
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Huge Power
+- Play Rough
+- Waterfall
+- Bounce
+- Double Edge
+
+Talonflame
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Flame Body
+- Brave Bird
+- Flame Charge
+- Roost
+- Steel Wing
+
+Magnezone
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Sturdy
+- Tri Attack
+- Light Screen
+- Discharge
+- Thunder Wave
+
+Garchomp
+Level: 56
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Rough Skin
+- Dragon Claw
+- Dig
+- Flamethrower
+- Sandstorm
+
+Gallade @ Galladite
+Level: 58
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Serious
+Ability: Steadfast
+- Close Combat
+- Leaf Blade
+- Psycho Cut
+- Swords Dance

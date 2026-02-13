@@ -1,0 +1,75 @@
+2/13/2026
+
+-----------------------------------------------
+Boss Battle Adjustments
+-----------------------------------------------
+
+Tate & Liza 3 Solrock Rock Throw > Rock Slide
+Juan & Wallace 3 Dondozo Order Up > Noble Roar
+//Evening out the power discrepancy between the gym 3 doubles. Tate&Liza became bit too trivial by taking Rock Slide off of Solrock in 7.9, and Dondozo now scales more evenly over the course of the game.
+
+Flannery 7/8 Ninetales Flamethrower > Solar Beam
+//Trying to make these late Flanneries a bit less straightforward for Surf users to sweep. For counterplay, try the Rain/Hail/Sandstorm TMs to make Solar Beam deal half damage.
+
+
+//I'm tweaking some E4 teams to incorporate non Hoenn-dex Pokemon in situations where I feel they can be made more engaging without sacrificing the theming of the fights:
+
+Spenser Ludicolo Hydro Pump > Surf
+Sidney Crawdaunt Night Slash > Knock Off
+Sidney Crawdaunt Hyper Cutter > Adaptability
+Sidney Shiftry > Grimmsnarl
+//It's no secret that Sidney is the weakest Elite Four member. These changes attempt to even the difficulty out between the two opening fights. Grimmsnarl's impressive stats and complimentary typing help insulate it from the sweeps to which Sidney is so susceptible... and if you squint, it kind of looks like Sidney too.
+
+Spenser Roserade > Shiftry
+Tucker Azumarill > Togekiss
+//Freeing up the slots
+
+Drake Altaria > Dragalge
+//As I tweak these teams, my foremost concern is keeping them thematically appropriate. Dragalge, a seahorse, feels fitting for a dragon-master sailor. It also pairs well with his Kingdra. 
+//Balance wise, this slightly mitigates the power of Ice, specifically Water-types spamming Ice Beam. Dragalge's huge special defense stat allows it to survive Ice Beam from Water types and fight back with a Thunderbolt, more than can be said about 4x weak Altaria.
+//Given that Altaria is already Winona's ace, I don't feel so bad about removing Drake's.
+
+Drake Kingdra Sniper > Swift Swim
+Drake Kingdra Ice Beam > Hurricane
+Drake Kingdra Smokescreen > Agility
+//With Altaria sent packing, it can't be that three of Drake's Pokémon are unable to hit Shedinja, so Hurricane it is. Collectively, these changes are more of a buff than I want, so I've removed Sniper.
+
+Lucy Swalot Pain Split > Toxic
+Tucker Wigglytuff Dazzling Gleam > Play Rough
+Glacia Walrein Ice Beam > Ice Fang
+//Potentially the most threatening Pokémon across the eight E4 fights, Walrein could use a slight nerf. It's important to me that it keeps Freeze Dry to stop Water types from walling it (Water is a strong enough type as is), but we can take its 90BP STAB down a notch. If it's spamming Surf for highest damage, it at least doesn't have a freeze chance. Ice Fang feels thematically fitting for Walrein anyway (that goes for all three of the above move changes).
+
+
+-----------------------------------------------
+Visual Additions
+-----------------------------------------------
+
+KO Counter
+//A Pokémon's summary screen now lists its total KOs accrued. The Hall of Fame Screen now prints the player's Pokémon with the most KOs to be properly immortalized.
+
+Disobedience Pokémon Appear Purple in the Party Menu
+//Similar to how Pokémon that can evolve turn bright green, Pokémon with a BST of 430 or greater will appear purple while the player has fewer than two badges.
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Plusle and Minun
+//Meet Blitz's 2-for-1 special! Plusle and Minun appear in the auction as one unit to be purchased together. In game, you can't pick one from the notebook without being given the other. This is a powerhouse pair who destroy the doubles gyms; expect them to be selling for big money in the auction.
+
+Chimchar
+Nymble
+Piplup
+Snivy
+Tympole
+//For those keeping score, the complete starter trios are now gens 1, 3, 4, 6 & 7, with gens 2, 5 and 9 each contributing one representative to form a sixth trio.
+
+
+-----------------------------------------------
+Intro Sequence Tweak
+-----------------------------------------------
+
+A friend stops by?
+//It seems you've had a visitor, but Mom's not sure who it was. Oh well, it was probably nothing...
+//(Check out the boss battles page for documentation on your choice's ramifications)

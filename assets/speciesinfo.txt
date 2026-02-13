@@ -112,12 +112,27 @@ Key Moves:
    Zen Headbutt (32)
    Meteor Mash (44)
 
+Bibarel
+Key Moves:
+   Defense Curl (5)
+   Rollout (9)
+   Headbutt (13)
+   Water Gun (Evo.)
+   Hyper Fang (18)
+   Yawn (23)
+   Crunch (28)
+   Waterfall (HM)
+   Super Fang (38)
+   Curse (58)
+   Aqua Tail (Egg)
+
 Blitzle
 Key Moves:
    Charge (8)
    Shock Wave (11)
    Flame Charge (18)
    Spark (25)
+   Stomp (Evo.)
    Thunder (TM)
    Discharge (36)
    Overheat (TM)
@@ -208,6 +223,7 @@ Key Moves:
    Sky Uppercut (Egg)
 
 Bulbasaur
+Key Moves:
    Leech Seed (7)
    Vide Whip (9)
    Razor Leaf (19*/20)
@@ -227,6 +243,16 @@ Key Moves:
    Earthquake (TM/57)
    Bulk Up (TM)
    Spikes (Egg)
+
+Burmy
+Key Moves:
+   Protect (1)
+   Bug Bite (15)
+   Hidden Power (20)
+   Quiver Dance (Evo.)
+   Giga Drain (TM)
+   Metal Sound (29***)
+   Bug Buzz (50)
 
 Castform
 Key Moves:
@@ -470,6 +496,7 @@ Key Moves:
    Zen Headbutt (43)
 
 Croagunk
+Key Moves:
    Taunt (10)
    Rock Smash (HM)
    Thief (TM)
@@ -487,7 +514,6 @@ Key Moves:
    Bonemerang (21)
    Shadow Bone (Evo.**)
    Earthquake (TM)
-   Overheat (TM**)
    Flare Blitz (53**)
    Iron Head (Egg)
 
@@ -542,6 +568,7 @@ Key Moves:
    Reversal (Egg)
 
 Dratini
+Key Moves:
    Dragon Breath (15)
    Flamethrower (TM)
    Ice Beam (TM)
@@ -890,6 +917,7 @@ Key Moves:
    Sky Uppercut (55)
 
 Golett
+Key Moves:
    Shadow Punch (13)
    Stomping Tantrum (21)
    Heavy Slam (Evo.)
@@ -921,12 +949,14 @@ Key Moves:
    Rapid Spin (4)
    Razor Leaf (12)
    Leaf Tornado (23)
+   Synthesis (Evo.)
    Giga Drain (TM)
    Light Screen (TM)
    Leaf Storm (46)
    Growth (Egg)
 
 Gothita
+Key Moves:
    Confusion (3)
    Psybeam (16)
    Trick Room (TM)
@@ -1184,6 +1214,7 @@ Key Moves:
    Outrage (Egg)
 
 Lillipup
+Key Moves:
    Bite (8)
    Take Down (15)
    Work Up (20)
@@ -1529,6 +1560,20 @@ Key Moves:
    Eruption (52)
    Heavy Slam (Egg)
 
+Nymble
+Key Moves:
+   Struggle Bug (4)
+   Assurance (9)
+   Screech (14)
+   Bug Bite (22)
+   Lunge (Evo.)
+   X Scissor (TM)
+   Detect (MR)
+   Sucker Punch (40)
+   First Impression (44)
+   Axe Kick (53)
+   Skitter Smack (Egg)
+
 Oddish
 Key Moves:
    Growth (1)
@@ -1634,7 +1679,8 @@ Key Moves:
    Pluck (15)
    Bullet Seed (TM)
    Steel Wing (TM)
-   Beak Blast (28)
+   Beak Blast (Evo.)
+   Screech (Evo.)
    Rock Blast (MR)
    Screech (30)
    Aerial Ace (TM)
@@ -1654,11 +1700,27 @@ Key Moves:
    Drill Peck (52)
    Icy Wind (Egg)
 
+Plusle and Minun
+Key Moves:
+   Thunder Wave (1)
+   Helping Hand (4)
+   Spark (7)
+   Encore (10)
+   Electro Ball (19)
+   Charm (25+)
+   Fake Tears (25-)
+   Thunderbolt (TM)
+   Discharge (31)
+   Nuzzle (MR)
+   Wish (Egg+)
+   Tearful Look (Egg-)
+
 Poliwag
 Key Moves:
    Water Sport (1)
    Bubble (11)
    Rain Dance (18)
+   Mud Shot (Evo.)
    Dynamic Punch (32*)  
    Brick Break (TM*)
    Bulk Up (TM*)
@@ -1797,7 +1859,7 @@ Key Moves:
    Incinerate (27)
    Rock Tomb (TM)
    Overheat (TM)
-   Stealth Rock (37)
+   Stealth Rock (Evo.)
    Heat Crash (45)
    Mud Slap (Egg)
 
@@ -1939,6 +2001,7 @@ Key Moves:
    Razor Leaf (15)
    Struggle Bug (22)
    Protect (Evo.)
+   Struggle Bug (Evo.)
    X-Scissor (TM/39)
    Aerial Ace (TM)
    Steel Wing (TM)
@@ -1976,8 +2039,9 @@ Key Moves:
    Taunt (TM)
    Slash (21)
    U Turn (25)
+   Doodle (Evo.)
+   Poison Jab (Evo.)
    Dig (TM)
-   Poison Jab (33)
    Knock Off (45)
    Gunk Shot (51)
    Parting Shot (Egg)
@@ -2151,9 +2215,11 @@ Key Moves:
    Leaf Tornado (16)
    Leech Seed (20)
    Mega Drain (24)
+   Iron Tail (TM)
+   Protect (TM)
    Leaf Blade (32)
    Coil (36)
-   Giga Drain (44)
+   Giga Drain (44/TM)
    Leaf Storm (MR!)
    Glare (Egg)
 
@@ -2608,6 +2674,20 @@ Key Moves:
    Overheat (49/TM)
    Fire Spin (Egg)
 
+Tympole
+Key Moves:
+   Bubble Beam (12)
+   Mud Shot (16)
+   Muddy Water (28)
+   Earthquake (TM)
+   Ice Beam (TM)
+   Sludge Bomb (TM)
+   Surf (HM)
+   Waterfall (HM)
+   Drain Punch (44)
+   Hydro Pump (53)
+   Earth Power (Egg)
+
 Tynamo
 Key Moves:
    Spark (1)
@@ -2715,7 +2795,7 @@ Key Moves:
    Thunder Shock (4)
    Pluck (11)
    Roost (23)
-   Dual Wingbeat (30)
+   Dual Wingbeat (Evo.)
    Thunderbolt (TM)
    Thunder (TM)
    Shock Wave (TM)

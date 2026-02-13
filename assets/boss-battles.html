@@ -155,6 +155,7 @@
             'LUCY': '#A040A0',      // Poison
             'TUCKER': '#EE99AC',    // Fairy
             'BRANDON': '#E0C068',   // Ground
+            'WALLY': '#3CB371',     // Wally Green
         };
 
         async function fetchAndDisplayBosses() {
@@ -236,7 +237,7 @@
                         else if (['ARCHIE', 'MAXIE'].includes(trainerKey)) {
                             trainerContainer.dataset.stage = 'gym-8';
                         }
-                        else if (trainerKey === 'STEVEN') {
+                        else if (trainerKey === 'STEVEN' || trainerKey === 'WALLY') {
                             trainerContainer.dataset.stage = 'champion';
                         }
                     }
@@ -366,6 +367,17 @@
                         const opt = document.createElement('option');
                         opt.value = trKey;
                         opt.textContent = trKey;
+                        trainerSelect.appendChild(opt);
+                    });
+                    trainerSelect.disabled = false;
+                }
+                else if(slot === "champion") {
+                    trainerSelect.innerHTML = '<option value="">-- Select Trainer --</option>';
+                    const champions = ['STEVEN', 'WALLY'];
+                    champions.forEach(trKey => {
+                        const opt = document.createElement('option');
+                        opt.value = trKey;
+                        opt.textContent = trKey.charAt(0) + trKey.slice(1).toLowerCase();
                         trainerSelect.appendChild(opt);
                     });
                     trainerSelect.disabled = false;
