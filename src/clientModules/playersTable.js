@@ -238,7 +238,7 @@ export function createPlayersTable(playersTableWrapperEl, ctx, playerFields, onP
     .add('mega')
     .add('drafted_by_id')
     .add('hp')
-    .add('attack').add('defense').add('sp_attack').add('sp_defense').add('speed');  // find the extra stats fields that were added and save them to the Ctx
+    .add('attack').add('defense').add('sp_attack').add('sp_defense').add('speed').add('is_baby');  // find the extra stats fields that were added and save them to the Ctx
   ctx.extraPlayerStatsFields = playerFields.filter((fieldId) => !currentFields.has(fieldId));
   // add extra stats fields to the table
   ctx.extraPlayerStatsFields.forEach((fieldId) => {
@@ -337,6 +337,7 @@ export async function loadPlayersData(ctx) {
       pickedBy: draftedByName,
       cost: cost,
       keeper: row.keeper || draftedById != null,
+      draftOrder: row.draft_order || row.draftOrder,
     };
     // Overwrite existing keys with the above values we just set. This preserves any
     //   other bonus data the auction creator passed in (other fields like `goals`, etc)

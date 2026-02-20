@@ -3778,7 +3778,7 @@ Ability: Rough Skin
 - Slash
 - Aqua Jet
 
-=== TRAINER_MAXIE_MAGMA_HIDEOUT ===
+=== TRAINER_MAXIE ===
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie

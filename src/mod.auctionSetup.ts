@@ -39,6 +39,7 @@ export async function initPlayers(ctx: Ctx, data: string | any[]): Promise<Respo
     row.cost = cost;
     row.drafted_by_id = drafted_by_id;
     row.keeper = keeper;
+    if (row.Order) row.draftOrder = row.Order;
 
     // Create the final nested structure that the database queries expect.
     return {

@@ -62,6 +62,7 @@ function recordDraft(ctx) {
   }
   selectedPlayer.pickedBy = ctx.teams[ctx.highestBidder].teamName;
   selectedPlayer.cost = ctx.currentBid;
+  selectedPlayer.draftOrder = ctx.draftedPokemonCount + 1;
 
   addDraftLog(ctx.teams[ctx.highestBidder].teamName, ctx.currentBid, selectedPlayer.name);
   console.log(`[Debug] Attempting to add mini-sprite for player '${selectedPlayer.name}' to winner card for client ID: ${ctx.highestBidder}`);

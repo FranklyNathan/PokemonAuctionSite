@@ -33,12 +33,6 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/badge/badge.js"></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-group/tab-group.js"
-    ></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab/tab.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-panel/tab-panel.js"></script>
-    <script
-      type="module"
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/progress-bar/progress-bar.js"
     ></script>
     <script src="vendor/ag-grid.js"></script>
@@ -54,19 +48,6 @@
     #tierlistDialog::part(body) {
       height: 100%;
       padding: 0;
-    }
-
-    #tierlistDialog sl-tab-panel::part(base) {
-      padding: 0;
-    }
-    
-    #tierlistDialog sl-tab-group {
-      margin-top: 0;
-    }
-
-    /* Make the tabs only as tall as their content */
-    #tierlistDialog sl-tab::part(base) {
-      padding: var(--sl-spacing-2x-small) var(--sl-spacing-medium);
     }
 
     #tierlistDialog::part(header) {
@@ -201,9 +182,9 @@
             style="
               position: relative;
               width: 100%;
-              flex: 2;
-              min-height: 200px;
-              max-height: 300px;
+              flex: 0;
+              min-height: auto;
+              max-height: auto;
               display: flex;
               flex-direction: column;
               border: 1px solid black;
@@ -216,9 +197,9 @@
               <button
                 id="chat-toggle"
                 style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; color: var(--sl-color-neutral-600); font-size: 1.2rem; line-height: 1;"
-                aria-label="Collapse chat"
+                aria-label="Expand chat"
               >
-                ▼
+                ▲
               </button>
             </div>
             <div
@@ -227,13 +208,13 @@
                 flex: 1;
                 overflow-y: auto;
                 padding: 0.5rem;
-                display: flex;
+                display: none;
                 flex-direction: column;
                 gap: 0.5rem;
                 font-size: 0.9rem;
               "
             ></div>
-            <div style="padding: 0.5rem; border-top: 1px solid var(--sl-color-neutral-200); display: flex; gap: 0.5rem;">
+            <div style="padding: 0.5rem; border-top: 1px solid var(--sl-color-neutral-200); display: none; gap: 0.5rem;">
               <sl-input
                 id="chat-input"
                 placeholder="Type a message..."
@@ -323,18 +304,8 @@
       <sl-button id="cancelBidButton" slot="footer">Cancel</sl-button>
     </sl-dialog>
 
-    <sl-dialog id="tierlistDialog" label="Tierlist" style="--width: 60vw; --height: 80vh;">
-      <sl-tab-group>
-        <sl-tab slot="nav" panel="full-game" active>Full Game Tiers</sl-tab>
-        <sl-tab slot="nav" panel="gym-1-5">Gym 1-5 Tiers</sl-tab>
-
-        <sl-tab-panel name="full-game" active style="height: 100%;">
-          <img src="/tierlist.png" alt="Full Game Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
-        </sl-tab-panel>
-        <sl-tab-panel name="gym-1-5" style="height: 100%;">
-          <img src="/earlytiers.png" alt="Gym 1-5 Tierlist" style="width: 100%; height: 100%; object-fit: contain;" />
-        </sl-tab-panel>
-      </sl-tab-group>
+    <sl-dialog id="tierlistDialog" label="Tierlist" style="--width: 80vw; --height: 90vh;">
+      <img src="/tierlist.png" alt="Full Game Tierlist" style="width: 100%; height: auto;" />
     </sl-dialog>
 
     <sl-dialog id="specialMechanicDialog" no-header>
@@ -425,7 +396,7 @@
     import { CountDownTimer } from '/clientModules/CountDownTimer.js';
     import { addPlayerIconToTeamCard } from '/clientModules/html.js';
     import { initTeamSelection } from '/clientModules/teamSelectionModal.js';
-    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast } from '/clientModules/html.js';
+    import { setTimerTime, initBidButtonListeners, updateTeamCard, addMeIcon, toast, updateDraftCounter } from '/clientModules/html.js';
     import { loadPlayersData, setupResourceModeKeyboardNav } from '/clientModules/playersTable.js';
 
     const SECONDS = 1000;
@@ -582,12 +553,24 @@
      */
     function populateInitialDraftIcons(ctx) {
       console.log('[Init] Populating initial draft icons for all teams.');
+      let totalDrafted = 0;
       for (const team of Object.values(ctx.teams)) {
         if (team.roster && Array.isArray(team.roster)) {
           console.log(`[Init] Found ${team.roster.length} players for team ${team.teamName}.`);
-          team.roster.forEach((player) => addPlayerIconToTeamCard(team.clientId, player.name));
+          totalDrafted += team.roster.length;
+          team.roster.forEach((player) => {
+            addPlayerIconToTeamCard(team.clientId, player.name);
+            const pData = ctx.playersTableData.find((p) => p.name === player.name);
+            if (pData) {
+              pData.pickedBy = team.teamName;
+              pData.cost = player.cost;
+              if (player.draftOrder) pData.draftOrder = player.draftOrder;
+            }
+          });
         }
       }
+      ctx.draftedPokemonCount = totalDrafted;
+      updateDraftCounter(ctx.draftedPokemonCount, ctx.totalPokemonAuctioned);
     }
 
     async function main() {
@@ -728,7 +711,7 @@
 
         // Sort by global draft order derived from draft log
         const draftLog = document.getElementById('draft-log');
-        if (draftLog) {
+        if (draftLog && draftLog.children.length > 0) {
           const logEntries = Array.from(draftLog.children).map((el) => el.textContent);
           const saleOrder = new Map();
           let index = 0;
@@ -904,7 +887,7 @@
       const chatContainer = document.getElementById('chat-container');
       const chatMessagesDiv = document.getElementById('chat-messages');
       const chatInputContainer = chatMessages.nextElementSibling;
-      let chatCollapsed = false;
+      let chatCollapsed = true;
 
       chatToggle.addEventListener('click', () => {
         chatCollapsed = !chatCollapsed;
@@ -926,6 +909,18 @@
           chatToggle.setAttribute('aria-label', 'Collapse chat');
         }
       });
+
+      // Draft Log Persistence
+      const draftLog = document.getElementById('draft-log');
+      const storageKey = `draft_log_${window.location.pathname}`;
+
+      if (draftLog && draftLog.children.length === 0) {
+        const savedLog = localStorage.getItem(storageKey);
+        if (savedLog) draftLog.innerHTML = savedLog;
+      }
+
+      const logObserver = new MutationObserver(() => localStorage.setItem(storageKey, draftLog.innerHTML));
+      if (draftLog) logObserver.observe(draftLog, { childList: true, subtree: true });
 
       // Eevee claim dialog function
       window.showEeveeClaimDialog = function() {
