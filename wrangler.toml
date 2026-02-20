@@ -3,27 +3,29 @@ main = "src/index.ts"
 account_id = "f4b3ff34c134a82a4d5574cacbf68b38"
 compatibility_date = "2025-06-29"
 
-# bundling rules https://developers.cloudflare.com/workers/wrangler/configuration/#bundling
 rules = [
   # bundle the clientModules as text so they can be imported as text and served to the
   #   client instead of being bundled as actual js code and interpreted when imported.
   { type = "Text", globs = [
     "**/clientModules/*.js",
     "**/*.css",
-  ], fallthrough = true },
-  # vendor the packages imported from the browser
-  { type = "Text", globs = [
     "**/node_modules/ag-grid-community/dist/ag-grid-community.min.js",
     "**/node_modules/canvas-confetti/dist/confetti.browser.js",
     "**/node_modules/papaparse/papaparse.min.js",
-  ], fallthrough = true },
-  { type = "Text", globs = [
     "**/*.svg",
-  ], fallthrough = true },
-  { type = "Text", globs = [
     "**/*.csv",
   ], fallthrough = true },
 ]
+
+[env.preview]
+name = "my-site-preview"
+[[env.preview.durable_objects.bindings]]
+name = "AUCTION"
+class_name = "Auction"
+
+# Ensure the bucket points to the same place as your main site
+[env.preview.site]
+bucket = "./assets"
 
 # Bind a Durable Object. Durable objects are a scale-to-zero compute primitive based on the actor model.
 # Durable Objects can live for as long as needed. Use these when you need a long-running "server", such as in realtime apps.

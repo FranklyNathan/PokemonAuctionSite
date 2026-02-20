@@ -13,7 +13,6 @@
       body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
@@ -144,8 +143,8 @@
       /* Only run the fade-in animation on the initial page load */
       body.initial-load .home-bg-silhouette {
         opacity: 0; /* Start invisible for the animation */
-        animation: flygonFadeIn 3.6s ease forwards;
-        animation-delay: 3.2s;
+        animation: flygonFadeIn 1.6s ease forwards;
+        animation-delay: 1.2s;
       }
 
       /* In dark mode, keep the silhouette dark (black) but slightly more visible than
@@ -174,20 +173,24 @@
     </style>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/dialog/dialog.js"></script>
+    <script type="module" src="/components/site-header.js"></script>
   </head>
   <body class="initial-load">
   <!-- Decorative, non-interactive Flygon silhouette background (use <img src=> so the file is fetched directly) -->
   <img class="home-bg-silhouette" src="/evolutions/Flygon.png" alt="" aria-hidden="true" />
-    <div class="welcome-terminal"><span id="welcome-text"></span><span id="welcome-caret" aria-hidden="true">█</span></div>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <sl-button class="main-button" size="large" onclick="window.location.href='/setup'">Auction Setup</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.location.href='/teamplanner'">Team Planner</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.location.href='/faq'">FAQ</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.location.href='/pokedex'">Pokédex</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.location.href='/index'">Blitz Info</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.open('/assets/boss-battles.html', '_blank')">Boss Battles</sl-button>
-      <sl-button class="main-button" size="large" onclick="window.location.href='/higherlower'">Pokemon Speed Test</sl-button>
+    <site-header></site-header>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+    <!-- <div class="welcome-terminal"><span id="welcome-text"></span><span id="welcome-caret" aria-hidden="true">█</span></div> -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <sl-button id="download-patch-butt,on" class="main-button" size="large" variant="primary">Download Patch</sl-button>
+      <div style="text-align: center;">
+        <p style="version-info">Current Release: v8.2</p>
+        <p style="margin: 0.5rem 0 0 0; max-width: 30rem;">
+          Once downloaded, apply the patch online using this <a href="https://www.marcrobledo.com/RomPatcher.js/" target="_blank" rel="noopener noreferrer" style="color: var(--sl-color-primary-500);">ROM Patcher</a>
+        </p>
+      </div>
+    </div>
     </div>
 
     <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
@@ -208,8 +211,8 @@
       </div>
       <!-- Bottom row: Download, Tierlist, Patch Notes, Dark Mode -->
       <div style="display: flex; gap: 0.5rem;">
-        <sl-button id="download-button" class="control-button" variant="neutral" title="Download Patch">
-          <img class="invert-in-dark-mode" src="/generic/Download.png" alt="Download Patch" />
+        <sl-button id="speed-test-button" class="control-button" variant="neutral" title="Speed Test" onclick="window.location.href='/higherlower'">
+          <img class="invert-in-dark-mode" src="/generic/gba.png" alt="Speed Test" />
         </sl-button>
         <sl-button id="tierlist-button" class="control-button" variant="neutral" title="View Tierlist">
           <img class="invert-in-dark-mode" src="/generic/TierIcon.png" alt="View Tierlist" />
@@ -217,6 +220,8 @@
         <sl-button id="patchnotes-button" class="control-button" variant="neutral" title="View Patch Notes" onclick="window.location.href='/patchnotes'">
           <img class="invert-in-dark-mode" src="/generic/pencil.png" alt="Patch Notes" />
         </sl-button>
+      <!-- Bottom row: Dark Mode -->
+      <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
         <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
       </div>
     </div>
@@ -262,10 +267,16 @@
       });
       // --- End Dark Mode Logic ---
 
-      // Download button listener
-      document.getElementById('download-button').addEventListener('click', () => {
-        window.location.href = '/download';
-      });
+      const downloadPatch = () => {
+        const link = document.createElement('a');
+        link.href = '/emeraldblitz.bps';
+        link.download = 'emeraldblitz.bps';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+      document.getElementById('download-patch-button').addEventListener('click', downloadPatch);
 
       // GitHub button listener
       document.getElementById('github-button').addEventListener('click', () => {

@@ -59,9 +59,11 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/tab-panel/tab-panel.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/switch/switch.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
+    <script type="module" src="/components/site-header.js"></script>
   </head>
 
-  <body style="padding: 1rem">
+  <body>
+    <site-header></site-header>
     <div style="display: flex; width: 100%; justify-content: center">
       <h1 style="background-color: var(--container-bg-color); padding: 0.5rem 1rem; border: 1px solid black">Auction Setup</h1>
     </div>
@@ -89,7 +91,7 @@
           <sl-input
             id="numTeams"
             name="numTeams"
-            label="Number of Teams"
+            label="Number of Players"
             type="number"
             value="2"
             min="2"
@@ -145,7 +147,7 @@
             name="totalPokemonAuctioned"
             label="Total Pokémon Auctioned"
             type="number"
-            value="64"
+            value="16"
             min="1"
             max="300"
             step="1"
@@ -183,13 +185,6 @@
 
     <!-- Tierlist dialog removed from auction setup page to hide tiers control on this page -->
 
-    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <!-- Home button + dark mode toggle (home added to match other pages) -->
-      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
-        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
-      </sl-button>
-      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral"></sl-button>
-    </div>
   </body>
 
   <script type="module">
@@ -198,30 +193,20 @@
     // Add the `ready` class so the UI fades in.
 
     // --- Dark Mode Logic ---
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const htmlEl = document.documentElement;
 
-    function applyTheme(theme, isInitial = false) {
-      const tableWrapper = document.getElementById('players-table-wrapper');
-  if (theme === 'dark') {
-    htmlEl.classList.add('sl-theme-dark');
-  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
-  } else {
-    htmlEl.classList.remove('sl-theme-dark');
-  darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
-  }
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.add('sl-theme-dark');
+      } else {
+        htmlEl.classList.remove('sl-theme-dark');
+      }
     }
 
   // Check for saved theme in localStorage on page load and apply it.
   // Default to dark mode across the site.
   const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
-
-    darkModeToggle.addEventListener('click', () => {
-      const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
-      localStorage.setItem('theme', newTheme);
-      applyTheme(newTheme);
-    });
     // --- End Dark Mode Logic ---
 
     // GitHub/Tier controls removed from this page; corresponding listeners omitted to
@@ -230,6 +215,7 @@
     document.body.classList.add('ready');
 
     const numTeamsEl = document.getElementById('numTeams');
+    const totalPokemonAuctionedEl = document.getElementById('totalPokemonAuctioned');
     const defaultFundsEl = document.getElementById('defaultFunds');
     const updateDefaultFundsEl = document.getElementById('updateDefaultFunds');
     const teamNamesContainer = document.getElementById('teamNames');
@@ -239,7 +225,7 @@
       return `
         <div id="team${n}Config" style="display: flex; flex-wrap: wrap; align-content: center; gap: 0.5rem; padding-top: 0.5rem">
           <div style="flex: 6; display: flex; font-weight: bold; align-items: center; justify-content: center;">${n + 1}</div>
-          <sl-input name="team${n}Name" class="requiredConfig" placeholder="Team ${n + 1} Name" style="flex: 74;" pattern="[a-zA-Z0-9']+" title="Name must not use any special characters!" maxlength="50" autocomplete="off"></sl-input>
+          <sl-input name="team${n}Name" class="requiredConfig" placeholder="Player ${n + 1} Name" style="flex: 74;" pattern="[a-zA-Z0-9']+" title="Name must not use any special characters!" maxlength="50" autocomplete="off"></sl-input>
           <sl-input name="team${n}Funds" class="requiredConfig default-funds" placeholder="Available Funds" type="number" min="0" max="1000000" step="1" title="Integer value" inputmode="decimal" style="flex: 20;" autocomplete="off" value="${defaultFundsEl.value}"></sl-input>
         </div>`;
     }
@@ -272,6 +258,7 @@
       if (numTeamsEl.checkValidity()) {
         // convert string to number!
         updateTeamNameInputs(+numTeamsEl.value);
+        totalPokemonAuctionedEl.value = +numTeamsEl.value * 8;
       }
     });
 

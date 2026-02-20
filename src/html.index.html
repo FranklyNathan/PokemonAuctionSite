@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/style.css" />
     <style>      
       body {
-        padding: 1rem;
+        padding: 0;
         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       }
       .topbar {
@@ -297,8 +297,11 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/button/button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon-button/icon-button.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/components/icon/icon.js"></script>
+    <script type="module" src="/components/site-header.js"></script>
   </head>
   <body>
+    <site-header></site-header>
+    <div style="padding: 1rem">
     <div class="topbar">
       <div class="page-title">Blitz Index</div>
     </div>
@@ -887,13 +890,6 @@
 
         </div>
     </div>
-
-    <!-- Bottom-right controls (home + dark mode toggle) -->
-    <div style="position: fixed; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem">
-      <sl-button id="home-button" class="control-button" variant="neutral" title="Home" href="/">
-        <img class="invert-in-dark-mode" src="/generic/Home.png" alt="Home" />
-      </sl-button>
-      <sl-button id="dark-mode-toggle" class="control-button" variant="neutral" title="Toggle Light/Dark Mode"></sl-button>
     </div>
 
     <script type="module">
@@ -905,30 +901,18 @@
       await Promise.all([customElements.whenDefined('sl-button'), customElements.whenDefined('sl-icon-button')]);
 
       // --- Dark Mode Logic ---
-      const darkModeToggle = document.getElementById('dark-mode-toggle');
       const htmlEl = document.documentElement;
 
       function applyTheme(theme) {
         if (theme === 'dark') {
           htmlEl.classList.add('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/solrock.png" alt="Light Mode">';
         } else {
           htmlEl.classList.remove('sl-theme-dark');
-          darkModeToggle.innerHTML = '<img class="invert-in-dark-mode" src="/generic/lunatone.png" alt="Dark Mode">';
         }
       }
 
       const savedTheme = localStorage.getItem('theme') || 'dark';
       applyTheme(savedTheme);
-      if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', savedTheme);
-      }
-
-      darkModeToggle.addEventListener('click', () => {
-        const newTheme = htmlEl.classList.contains('sl-theme-dark') ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
-        applyTheme(newTheme);
-      });
       // --- End Dark Mode Logic ---
 
       document.body.classList.add('ready');
