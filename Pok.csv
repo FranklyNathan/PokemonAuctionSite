@@ -1,6 +1,4 @@
 dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp_attack,sp_defense,speed,evolution_method,mega,is_baby
-359,Absol,Dark,base,Pressure,Super Luck,Justified,65,130,60,75,60,75,,Stage 1,
-359,Mega Absol,Dark,mega,Magic Bounce,,,65,150,60,115,60,115,Absolite,Stage 1,
 698,Amaura,Rock/Ice,base,Refrigerate,,Snow Warning,77,59,50,67,63,46,,,
 699,Aurorus,Rock/Ice,evo,Refrigerate,,Snow Warning,123,77,72,99,92,58,Level 39 (Oracle),,
 840,Applin,Grass/Dragon,base,Ripen,Gluttony,Bulletproof,40,40,80,40,40,20,,,
@@ -27,10 +25,14 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 826,Orbeetle,Bug/Psychic,evo,Swarm,Frisk,Telepathy,60,45,110,80,120,90,Level 30,,
 522,Blitzle,Electric,base,Lightning Rod,Motor Drive,Sap Sipper,45,60,32,50,32,76,,,
 523,Zebstrika,Electric,evo,Lightning Rod,Motor Drive,Sap Sipper,75,100,63,80,63,116,Level 27,,
-962,Bombirdier,Flying/Dark,base,Stork's Blessing,,Rocky Payload,70,103,85,60,85,82,,,
+438,Bonsly,Rock,base,Sturdy,Rock Head,Rattled,50,80,95,10,45,10,,,
+185,Sudowoodo,Rock,evo,Sturdy,Rock Head,Rattled,70,100,115,30,65,30,Level 20,,
 761,Bounsweet,Grass,base,Leaf Guard,Oblivious,Sweet Veil,42,30,38,30,38,32,,,
 762,Steenee,Grass,evo,Leaf Guard,Oblivious,Sweet Veil,52,40,48,40,48,62,Level 18,,
 763,Tsareena,Grass,evo,Leaf Guard,Queenly Majesty,Sweet Veil,72,120,98,50,98,72,Level 29 (Stomp),,
+406,Budew,Grass/Poison,base,Natural Cure,Poison Point,Leaf Guard,40,30,35,50,70,55,,,
+315,Roselia,Grass/Poison,evo,Natural Cure,Poison Point,Leaf Guard,50,60,45,100,80,65,Level 20,,
+407,Roserade,Grass/Poison,evo,Natural Cure,Poison Point,Technician,60,70,65,125,105,90,Shiny Stone,,
 418,Buizel,Water,base,Swift Swim,,Water Veil,55,65,35,60,30,85,,,
 419,Floatzel,Water,evo,Swift Swim,,Water Veil,85,105,55,85,50,115,Level 26,,
 1,Bulbasaur,Grass/Poison,base,Overgrow,,Chlorophyll,45,49,49,65,65,45,,Stage 2,
@@ -54,6 +56,9 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 351,Castform-Snowy,Ice,evo,Forecast,,,70,70,70,70,70,70,Hail,,
 974,Cetoddle,Ice,base,Thick Fat,Snow Cloak,Sheer Force,108,68,45,30,40,43,,,
 975,Cetitan,Ice,evo,Thick Fat,Slush Rush,Sheer Force,170,113,65,45,55,73,Ice Stone,,
+935,Charcadet,Fire,base,Flash Fire,,Flame Body,40,50,40,50,40,35,,,
+936,Armarouge,Fire/Psychic,evo,Flash Fire,,Weak Armor,85,60,100,125,80,75,Dawn Stone,,
+937,Ceruledge,Fire/Ghost,evo,Flash Fire,,Weak Armor,75,125,80,60,100,85,Dusk Stone,,
 318,Carvanha,Water/Dark,base,Rough Skin,,Speed Boost,45,90,20,65,20,65,,Stage 1,
 319,Sharpedo,Water/Dark,evo,Rough Skin,,Speed Boost,70,120,40,95,40,95,Level 30,Stage 1,
 319,Mega Sharpedo,Water/Dark,mega,Strong Jaw,,,70,140,70,110,65,105,Sharpedonite,Stage 1,
@@ -72,6 +77,9 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 392,Infernape,Fire/Fighting,evo,Blaze,,Iron Fist,76,104,71,104,71,108,Level 36,,
 170,Chinchou,Water/Electric,base,Volt Absorb,Illuminate,Water Absorb,75,38,38,56,56,67,,,
 171,Lanturn,Water/Electric,evo,Volt Absorb,Illuminate,Water Absorb,125,58,58,76,76,67,Level 27,,
+433,Chingling,Psychic,base,Levitate,,,45,30,50,65,50,45,,Stage 1,
+358,Chimecho,Psychic,evo,Levitate,,,75,50,80,95,90,65,Level 20,Stage 1,
+358,Mega Chimecho,Psychic/Steel,evo,Levitate,,,75,50,110,135,120,65,Chimechite,Stage 1,
 366,Clamperl,Water,base,Shell Armor,,Rattled,35,64,85,74,55,32,,,
 367,Huntail,Water,evo,Swift Swim,,Water Veil,55,104,105,94,75,52,Level 28 (Male),,
 368,Gorebyss,Water,evo,Swift Swim,,Hydration,55,84,105,114,75,52,Level 28 (Female),,
@@ -81,6 +89,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 853,Grapploct,Fighting,evo,Limber,,Technician,80,118,90,70,80,42,Level 38 (Oracle),,
 341,Corphish,Water,base,Hyper Cutter,Shell Armor,Adaptability,43,80,65,50,35,35,,,
 342,Crawdaunt,Water/Dark,evo,Hyper Cutter,Shell Armor,Adaptability,63,120,85,90,55,55,Level 30,,
+546,Cottonee,Grass/Fairy,base,Prankster,Infiltrator,Chlorophyll,40,27,60,37,50,66,,,
+547,Whimsicott,Grass/Fairy,evo,Prankster,Infiltrator,Chlorophyll,60,67,85,77,75,116,Sun Stone,,
 222,Corsola,Water/Rock,base,Hustle,Natural Cure,Regenerator,65,55,95,65,95,35,,,
 222,Corsola-Galar,Ghost,evo,Weak Armor,,Cursed Body,60,55,100,65,100,30,on death,,
 864,Cursola,Ghost,evo,Weak Armor,,Perish Body,60,95,50,145,130,30,Level 38 (Oracle),,
@@ -107,6 +117,9 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 309,Electrike,Electric,base,Static,Lightning Rod,Minus,40,45,40,65,40,65,,Stage 1,
 310,Manectric,Electric,evo,Static,Lightning Rod,Minus,70,75,60,105,60,105,Level 26,Stage 1,
 310,Mega Manectric,Electric,mega,Intimidate,,,70,75,80,135,80,135,Manectite,Stage 1,
+239,Elekid,Electric,base,Static,,Vital Spirit,45,63,37,65,55,95,,,
+125,Electabuzz,Electric,evo,Static,,Vital Spirit,65,83,57,95,85,105,Level 30,,
+466,Electivire,Electric,evo,Motor Drive,,Vital Spirit,75,123,67,95,85,95,Linking Cord,,
 605,Elgyem,Psychic,base,Telepathy,Synchronize,Analytic,55,55,55,85,55,30,,,
 606,Beheeyem,Psychic,evo,Telepathy,Synchronize,Analytic,75,75,75,125,95,40,Level 42 (Oracle),,
 587,Emolga,Electric/Flying,base,Static,,Motor Drive,55,75,60,75,60,103,,,
@@ -117,8 +130,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 102,Exeggcute,Grass/Psychic,base,Chlorophyll,,Harvest,60,40,80,60,45,40,,,
 103,Exeggutor,Grass/Psychic,evo,Chlorophyll,,Harvest,95,95,85,125,75,55,Leaf Stone,,
 103,Exeggutor-Alola,Grass/Dragon,evo,Frisk,,Harvest,95,105,85,125,75,45,Sun Stone,,
-870,Falinks,Fighting,base,Battle Armor,,Defiant,65,100,100,70,60,75,,Stage 1,
-870,Mega Falinks,Fighting,mega,Battle Armor,,Defiant,65,135,135,70,65,100,Falinksite,Stage 1,
+83,Farfetch'd-Galar,Fighting,base,Steadfast,,Scrappy,52,95,55,58,62,55,,,
+865,Sirfetch'd,Fighting,evo,Steadfast,,Scrappy,62,135,95,68,82,65,Level 28,,
 349,Feebas,Water,base,Swift Swim,Oblivious,Adaptability,20,15,20,10,55,80,,,
 350,Milotic,Water,evo,Marvel Scale,Competitive,Cute Charm,95,60,79,100,125,81,Level 40 (Oracle),,
 653,Fennekin,Fire,base,Blaze,,Magician,40,45,40,62,60,60,,Stage 2,
@@ -173,8 +186,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 856,Hatenna,Psychic,base,Healer,Anticipation,Magic Bounce,42,30,45,56,53,39,,,
 857,Hattrem,Psychic,evo,Healer,Anticipation,Magic Bounce,57,40,65,86,73,49,Level 32 (Guru),,
 858,Hatterene,Psychic/Fairy,evo,Healer,Anticipation,Magic Bounce,57,90,95,136,103,29,Level 42,,
-701,Hawlucha,Fighting/Flying,base,Limber,Unburden,Mold Breaker,78,92,75,74,63,118,,Stage 1,
-701,Mega Hawlucha,Fighting/Flying,mega,Limber,Unburden,Mold Breaker,78,137,100,74,93,118,Hawluchanite,Stage 1,
 694,Helioptile,Electric/Normal,base,Dry Skin,Sand Veil,Solar Power,44,38,33,61,43,70,,,
 695,Heliolisk,Electric/Normal,evo,Dry Skin,Sand Veil,Solar Power,62,55,52,109,94,109,Sun Stone,,
 449,Hippopotas,Ground,base,Sand Stream,,Sand Force,68,72,78,38,42,32,,,
@@ -200,7 +211,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 784,Kommo-o,Dragon/Fighting,evo,Bulletproof,Soundproof,Overcoat,75,110,125,100,105,85,Level 45,,
 595,Joltik,Bug/Electric,base,Compound Eyes,Unnerve,Swarm,50,47,50,57,50,65,,,
 596,Galvantula,Bug/Electric,evo,Compound Eyes,Unnerve,Swarm,70,77,60,97,60,108,Level 36,,
-950,Klawf,Rock,base,Anger Shell,Shell Armor,Regenerator,70,100,115,35,55,75,,,
 246,Larvitar,Rock/Ground,base,Guts,,Sand Veil,50,64,50,45,50,41,,Stage 2,
 247,Pupitar,Rock/Ground,evo,Shed Skin,,,70,84,70,65,70,51,Level 30,Stage 2,
 248,Tyranitar,Rock/Dark,evo,Sand Stream,,Unnerve,100,134,110,95,100,61,Level 55,Stage 2,
@@ -224,6 +234,9 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 66,Machop,Fighting,base,Guts,No Guard,Steadfast,70,80,50,35,35,35,,,
 67,Machoke,Fighting,evo,Guts,No Guard,Steadfast,80,100,70,50,60,45,Level 28,,
 68,Machamp,Fighting,evo,Guts,No Guard,Steadfast,90,130,80,65,85,55,Linking Cord,,
+240,Magby,Fire,base,Flame Body,,Vital Spirit,45,75,37,70,55,83,,,
+126,Magmar,Fire,evo,Flame Body,,Vital Spirit,65,95,57,100,85,93,Level 30,,
+467,Magmortar,Fire,evo,Flame Body,,Vital Spirit,75,95,67,125,95,83,Linking Cord,,
 81,Magnemite,Electric/Steel,base,Magnet Pull,Sturdy,Analytic,25,35,70,95,55,45,,,
 82,Magneton,Electric/Steel,evo,Magnet Pull,Sturdy,Analytic,50,60,95,120,70,70,Level 30,,
 462,Magnezone,Electric/Steel,evo,Magnet Pull,Sturdy,Analytic,70,70,115,130,90,60,Thunder Stone,,
@@ -232,6 +245,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 56,Mankey,Fighting,base,Vital Spirit,Anger Point,Defiant,40,80,35,35,45,70,,,
 57,Primeape,Fighting,evo,Vital Spirit,Anger Point,Defiant,65,105,60,60,70,95,Level 28,,
 979,Annihilape,Fighting/Ghost,evo,Vital Spirit,Inner Focus,Defiant,110,115,80,50,90,90,Level 35,,
+458,Mantyke,Water/Flying,base,Swift Swim,Water Absorb,Water Veil,45,20,50,60,120,50,,,
+226,Mantine,Water/Flying,evo,Swift Swim,Water Absorb,Water Veil,85,40,70,80,140,70,Level 20,,
 179,Mareep,Electric,base,Static,,Plus,55,40,40,65,45,35,,Stage 2,
 180,Flaaffy,Electric,evo,Static,,Plus,70,55,55,80,60,45,Level 15,Stage 2,
 181,Ampharos,Electric,evo,Static,,Plus,90,75,85,115,90,55,Level 30,Stage 2,
@@ -243,11 +258,16 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 308,Mega Medicham,Fighting/Psychic,mega,Pure Power,,,60,100,85,80,85,100,Medichamite,Stage 1,
 52,Meowth,Steel,base,Pickup,Tough Claws,Unnerve,50,65,55,40,40,40,,,
 863,Perrserker,Steel,evo,Battle Armor,Tough Claws,Steely Spirit,70,110,100,50,60,50,Level 28,,
-241,Miltank,Normal,base,Thick Fat,Scrappy,Sap Sipper,95,80,105,40,70,100,,,
 198,Murkrow,Dark/Flying,base,Insomnia,Super Luck,Prankster,60,85,42,85,42,91,,,
 430,Honchkrow,Dark/Flying,evo,Insomnia,Super Luck,Moxie,100,125,52,105,52,71,Dusk Stone,,
+439,Mime Jr,Psychic/Fairy,base,Soundproof,Filter,Technician,20,25,45,70,90,60,,,
+122,Mr. Mime,Psychic/Fairy,evo,Soundproof,Filter,Technician,40,45,65,100,120,90,Level 20 at day,,
+122,Mr. Mime-Galar,Ice/Psychic,evo,Vital Spirit,Screen Cleaner,Ice Body,50,65,65,90,90,100,Level 20 at night,,
+866,Mr. Rime,Ice/Psychic,evo,Tangled Feet,Screen Cleaner,Ice Body,80,85,75,110,100,70,Level 42,,
 572,Minccino,Normal,base,Cute Charm,Technician,Skill Link,55,50,40,40,40,75,,,
 573,Cinccino,Normal,evo,Cute Charm,Technician,Skill Link,75,95,60,65,60,115,Shiny Stone,,
+200,Misdreavus,Ghost,base,Levitate,,,60,60,60,85,85,85,,,
+429,Mismagius,Ghost,evo,Levitate,,,60,60,60,105,105,105,Dusk Stone,,
 774,Minior,Rock/Flying,base,Shields Down,,,60,60,100,60,100,60,,,
 774,Minior-Core,Rock/Flying,evo,Shields Down,,,60,100,60,100,60,120,Shields Down,,
 755,Morelull,Grass/Fairy,base,Illuminate,Effect Spore,Rain Dish,40,35,55,65,75,15,,,
@@ -258,6 +278,10 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 259,Marshtomp,Water/Ground,evo,Torrent,,Damp,70,85,70,60,70,50,Level 16,Stage 2,
 260,Swampert,Water/Ground,evo,Torrent,,Damp,100,110,90,85,90,60,Level 36,Stage 2,
 260,Mega Swampert,Water/Ground,mega,Swift Swim,,,100,150,110,95,110,70,Swampertite,Stage 2,
+446,Munchlax,Normal,base,Pickup,Thick Fat,Gluttony,135,85,40,40,85,5,,,
+143,Snorlax,Normal,evo,Immunity,Thick Fat,Gluttony,160,110,65,65,110,30,Level 30,,
+827,Nickit,Dark,base,Run Away,Unburden,Stakeout,40,28,28,47,52,50,,,
+828,Thievul,Dark,evo,Run Away,Unburden,Stakeout,70,58,58,87,92,90,Level 18,,
 290,Nincada,Bug/Ground,base,Compound Eyes,,Run Away,31,45,90,30,30,40,,,
 291,Ninjask,Bug/Flying,evo,Speed Boost,,Infiltrator,61,90,45,50,50,160,Level 20,,
 292,Shedinja,Bug/Ghost,evo,Wonder Guard,,,1,90,45,30,30,40,Empty party slot,,
@@ -283,8 +307,15 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 514,Simisear,Fire,evo,Gluttony,,Blaze,75,98,63,98,63,101,Fire Stone,,
 46,Paras,Bug/Grass,base,Effect Spore,Dry Skin,Damp,35,70,55,45,55,25,,,
 47,Parasect,Bug/Grass,evo,Effect Spore,Dry Skin,Damp,60,95,80,60,80,30,Level 24,,
+231,Phanpy,Ground,base,Pickup,,Sand Veil,90,60,60,40,40,40,,,
+232,Donphan,Ground,evo,Sturdy,,Sand Veil,90,120,120,60,60,50,Level 25,,
 708,Phantump,Ghost/Grass,base,Natural Cure,Frisk,Harvest,43,70,48,50,60,38,,,
 709,Trevenant,Ghost/Grass,evo,Natural Cure,Frisk,Harvest,85,110,76,65,82,56,Level 28,,
+172,Pichu,Electric,base,Static,,Lightning Rod,20,40,15,35,35,60,,Stage 2,
+25,Pikachu,Electric,evo,Static,,Lightning Rod,35,55,40,50,50,90,Level 10,Stage 2,
+26,Raichu,Electric,evo,Static,,Lightning Rod,60,90,55,90,80,110,Thunder Stone,Stage 2,
+26,Mega Raichu X,Electric,evo,Static,,Lightning Rod,60,135,95,90,95,110,Raichunite X,Stage 2,
+26,Raichu-Alola,Electric/Psychic,evo,Surge Surfer,,,60,85,50,95,85,110,Water Stone,,
 731,Pikipek,Normal/Flying,base,Keen Eye,Skill Link,Pickup,35,75,30,30,30,65,,,
 732,Trumbeak,Normal/Flying,evo,Keen Eye,Skill Link,Pickup,55,85,50,40,50,75,Level 14,,
 733,Toucannon,Normal/Flying,evo,Keen Eye,Skill Link,Sheer Force,80,120,75,75,75,60,Level 28,,
@@ -306,6 +337,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 137,Porygon,Normal,base,Trace,Download,Analytic,65,60,70,85,75,40,,,
 233,Porygon2,Normal,evo,Trace,Download,Analytic,85,80,90,105,95,60,Level 28,,
 474,Porygon-Z,Normal,evo,Adaptability,Download,Analytic,85,80,70,135,75,90,Linking Cord,,
+509,Purrloin,Dark,base,Limber,Unburden,Prankster,41,50,37,50,37,66,,,
+510,Liepard,Dark,evo,Limber,Unburden,Prankster,64,88,50,88,50,106,Level 20,,
 280,Ralts,Psychic/Fairy,base,Synchronize,Trace,Telepathy,28,25,25,45,35,40,,Stage 2,
 281,Kirlia,Psychic/Fairy,evo,Synchronize,Trace,Telepathy,38,35,35,65,55,50,Level 20,Stage 2,
 282,Gardevoir,Psychic/Fairy,evo,Synchronize,Trace,Telepathy,68,65,65,125,115,80,Level 30,Stage 2,
@@ -314,6 +347,9 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 475,Mega Gallade,Psychic/Fighting,mega,Inner Focus,,,68,165,95,65,115,110,Galladite,Stage 2,
 223,Remoraid,Water,base,Hustle,Sniper,Moody,35,65,35,65,35,65,,,
 224,Octillery,Water,evo,Suction Cups,Sniper,Moody,75,105,75,105,75,45,Level 25,,
+447,Riolu,Fighting,base,Steadfast,Inner Focus,Prankster,40,70,40,35,40,60,,Stage 1,
+448,Lucario,Fighting/Steel,evo,Steadfast,Inner Focus,Justified,70,110,70,115,70,90,Level 30,Stage 1,
+448,Mega Lucario,Fighting/Steel,mega,Adaptability,,,70,145,88,140,70,112,Lucarionite,Stage 1,
 744,Rockruff,Rock,base,Keen Eye,Vital Spirit,Steadfast,45,65,40,30,40,60,,,
 745,Lycanroc-Midday,Rock,evo,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,Level 25 at day,,
 745,Lycanroc-Midnight,Rock,evo,Keen Eye,Vital Spirit,No Guard,85,115,75,55,75,82,Level 25 at night,,
@@ -426,7 +462,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 120,Staryu,Water,base,Illuminate,Natural Cure,Analytic,30,45,55,70,55,85,,Stage 1,
 121,Starmie,Water/Psychic,evo,Illuminate,Natural Cure,Analytic,60,75,85,100,85,115,Water Stone,Stage 1,
 121,Mega Starmie,Water/Psychic,mega,Illuminate,Natural Cure,Analytic,60,140,105,130,105,120,Starmite,Stage 1,
-874,Stonjourner,Rock,base,Power Spot,,,100,125,135,20,20,70,,,
 759,Stufful,Normal/Fighting,base,Fluffy,Klutz,Cute Charm,70,75,50,45,50,50,,,
 760,Bewear,Normal/Fighting,evo,Fluffy,Klutz,Unnerve,120,125,80,55,60,60,Level 27,,
 283,Surskit,Bug/Water,base,Swift Swim,,Rain Dish,40,30,32,50,52,65,,,
@@ -466,7 +501,6 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 254,Mega Sceptile,Grass/Dragon,mega,Lightning Rod,,,70,110,75,145,85,145,Sceptilite,Stage 2,
 568,Trubbish,Poison,base,Stench,Sticky Hold,Aftermath,50,50,62,40,62,65,,,
 569,Garbodor,Poison,evo,Stench,Weak Armor,Aftermath,80,95,82,60,82,75,Level 36,,
-776,Turtonator,Fire/Dragon,base,Shell Armor,,,60,78,135,91,85,36,,,
 387,Turtwig,Grass,base,Overgrow,,Shell Armor,55,68,64,45,55,31,,,
 388,Grotle,Grass,evo,Overgrow,,Shell Armor,75,89,85,55,65,36,Level 18,,
 389,Torterra,Grass/Ground,evo,Overgrow,,Shell Armor,95,109,105,75,85,56,Level 32,,
@@ -477,6 +511,10 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 603,Eelektrik,Electric,evo,Levitate,,,65,85,70,75,70,40,Level 39 (Guru),Stage 2,
 604,Eelektross,Electric,evo,Levitate,,,85,115,80,105,80,50,Thunder Stone,Stage 2,
 604,Mega Eelektross,Electric,evo,Levitate,,,85,145,80,135,90,80,Eelektrossite,Stage 2,
+236,Tyrogue,Fighting,base,Guts,Steadfast,Vital Spirit,35,35,35,35,35,35,,,
+106,Hitmonlee,Fighting,evo,Limber,Reckless,Unburden,50,120,53,35,110,87,Level 20,,
+107,Hitmonchan,Fighting,evo,Keen Eye,Iron Fist,Inner Focus,50,105,79,35,110,76,Level 20,,
+237,Hitmontop,Fighting,evo,Intimidate,Technician,Steadfast,50,95,95,35,110,70,Level 20,,
 696,Tyrunt,Rock/Dragon,base,Strong Jaw,,Sturdy,58,89,77,45,45,48,,,
 697,Tyrantrum,Rock/Dragon,evo,Strong Jaw,,Rock Head,82,121,119,69,59,71,Level 39 (Oracle),,
 965,Varoom,Steel/Poison,base,Overcoat,,Slow Start,45,70,63,30,45,47,,,
@@ -487,6 +525,8 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 545,Mega Scolipede,Bug/Poison,mega,Poison Point,Swarm,Speed Boost,60,140,149,75,99,62,Scolipedite,Stage 2,
 100,Voltorb,Electric/Grass,base,Soundproof,Static,Aftermath,40,30,50,55,55,100,,,
 101,Electrode,Electric/Grass,evo,Soundproof,Static,Aftermath,60,50,70,80,80,150,Leaf Stone,,
+320,Wailmer,Water,base,Water Veil,Oblivious,Pressure,130,70,35,70,35,60,,,
+321,Wailord,Water,evo,Water Veil,Oblivious,Pressure,170,90,45,90,45,60,Level 40,,
 37,Vulpix,Ice,base,Snow Cloak,,Snow Warning,38,41,40,50,65,65,,,
 38,Ninetales-Alola,Ice/Fairy,evo,Snow Cloak,,Snow Warning,73,67,75,81,100,109,Ice Stone,,
 940,Wattrel,Electric/Flying,base,Wind Power,Volt Absorb,Competitive,40,40,35,55,40,70,,,
@@ -514,65 +554,19 @@ dex_number,name,type,stage,ability1,ability2,hidden_ability,hp,attack,defense,sp
 42,Golbat,Poison/Flying,evo,Inner Focus,,Infiltrator,75,80,70,65,75,90,Level 22,,
 169,Crobat,Poison/Flying,evo,Inner Focus,,Infiltrator,85,90,80,70,80,130,Soothe Bell,,
 -1,Egg,???,base,,,,,,,,,,,,
--1,Egg,???,base,,,,,,,,,,,,
--1,Egg,???,base,,,,,,,,,,,,
 298,Azurill,Normal/Fairy,base,Thick Fat,Huge Power,Sap Sipper,50,20,40,20,40,20,,,TRUE
 183,Marill,Water/Fairy,evo,Thick Fat,Huge Power,Sap Sipper,70,20,50,20,50,40,Level 10,,TRUE
 184,Azumarill,Water/Fairy,evo,Thick Fat,Huge Power,Sap Sipper,100,50,80,60,80,50,Level 18,,TRUE
-438,Bonsly,Rock,base,Sturdy,Rock Head,Rattled,50,80,95,10,45,10,,,TRUE
-185,Sudowoodo,Rock,evo,Sturdy,Rock Head,Rattled,70,100,115,30,65,30,Level 20,,TRUE
-406,Budew,Grass/Poison,base,Natural Cure,Poison Point,Leaf Guard,40,30,35,50,70,55,,,TRUE
-315,Roselia,Grass/Poison,evo,Natural Cure,Poison Point,Leaf Guard,50,60,45,100,80,65,Level 20,,TRUE
-407,Roserade,Grass/Poison,evo,Natural Cure,Poison Point,Technician,60,70,65,125,105,90,Shiny Stone,,TRUE
 173,Cleffa,Fairy,base,Cute Charm,Magic Guard,Friend Guard,50,25,28,45,55,15,,Stage 2,TRUE
 35,Clefairy,Fairy,evo,Cute Charm,Magic Guard,Friend Guard,70,45,48,60,65,35,Level 10,Stage 2,TRUE
 36,Clefable,Fairy,evo,Cute Charm,Magic Guard,Unaware,95,70,73,95,90,60,Moon Stone,Stage 2,TRUE
 36,Mega Clefable,Fairy/Flying,mega,Cute Charm,Magic Guard,Unaware,95,80,93,135,110,70,Clefablite,Stage 2,TRUE
-433,Chingling,Psychic,base,Levitate,,,45,30,50,65,50,45,,Stage 1,TRUE
-358,Chimecho,Psychic,evo,Levitate,,,75,50,80,95,90,65,Level 20,Stage 1,TRUE
-358,Mega Chimecho,Psychic/Steel,evo,Levitate,,,75,50,110,135,120,65,Chimechite,Stage 1,TRUE
-239,Elekid,Electric,base,Static,,Vital Spirit,45,63,37,65,55,95,,,TRUE
-125,Electabuzz,Electric,evo,Static,,Vital Spirit,65,83,57,95,85,105,Level 30,,TRUE
-466,Electivire,Electric,evo,Motor Drive,,Vital Spirit,75,123,67,95,85,95,Linking Cord,,TRUE
-440,Happiny,Normal,base,Natural Cure,Serene Grace,Friend Guard,100,5,5,15,65,30,,,TRUE
-113,Chansey,Normal,evo,Natural Cure,Serene Grace,Healer,250,5,5,35,105,50,Level 20,,TRUE
-242,Blissey,Normal,evo,Natural Cure,Serene Grace,Healer,255,10,10,75,135,55,Soothe Bell,,TRUE
 174,Igglybuff,Normal/Fairy,base,Cute Charm,Competitive,Friend Guard,90,30,15,40,20,15,,,TRUE
 39,Jigglypuff,Normal/Fairy,evo,Cute Charm,Competitive,Friend Guard,115,45,20,45,25,20,Level 10,,TRUE
 40,Wigglytuff,Normal/Fairy,evo,Cute Charm,Competitive,Frisk,140,70,45,85,50,45,Moon Stone,,TRUE
-240,Magby,Fire,base,Flame Body,,Vital Spirit,45,75,37,70,55,83,,,TRUE
-126,Magmar,Fire,evo,Flame Body,,Vital Spirit,65,95,57,100,85,93,Level 30,,TRUE
-467,Magmortar,Fire,evo,Flame Body,,Vital Spirit,75,95,67,125,95,83,Linking Cord,,TRUE
-458,Mantyke,Water/Flying,base,Swift Swim,Water Absorb,Water Veil,45,20,50,60,120,50,,,TRUE
-226,Mantine,Water/Flying,evo,Swift Swim,Water Absorb,Water Veil,85,40,70,80,140,70,Level 20,,TRUE
-439,Mime Jr,Psychic/Fairy,base,Soundproof,Filter,Technician,20,25,45,70,90,60,,,TRUE
-122,Mr. Mime,Psychic/Fairy,evo,Soundproof,Filter,Technician,40,45,65,100,120,90,Level 20 at day,,TRUE
-122,Mr. Mime-Galar,Ice/Psychic,evo,Vital Spirit,Screen Cleaner,Ice Body,50,65,65,90,90,100,Level 20 at night,,TRUE
-866,Mr. Rime,Ice/Psychic,evo,Tangled Feet,Screen Cleaner,Ice Body,80,85,75,110,100,70,Level 42,,TRUE
-446,Munchlax,Normal,base,Pickup,Thick Fat,Gluttony,135,85,40,40,85,5,,,TRUE
-143,Snorlax,Normal,evo,Immunity,Thick Fat,Gluttony,160,110,65,65,110,30,Level 30,,TRUE
-172,Pichu,Electric,base,Static,,Lightning Rod,20,40,15,35,35,60,,Stage 2,TRUE
-25,Pikachu,Electric,evo,Static,,Lightning Rod,35,55,40,50,50,90,Level 10,Stage 2,TRUE
-26,Raichu,Electric,evo,Static,,Lightning Rod,60,90,55,90,80,110,Thunder Stone,Stage 2,TRUE
-26,Mega Raichu X,Electric,evo,Static,,Lightning Rod,60,135,95,90,95,110,Raichunite X,Stage 2,TRUE
-26,Raichu-Alola,Electric/Psychic,evo,Surge Surfer,,,60,85,50,95,85,110,Water Stone,,TRUE
-447,Riolu,Fighting,base,Steadfast,Inner Focus,Prankster,40,70,40,35,40,60,,Stage 1,TRUE
-448,Lucario,Fighting/Steel,evo,Steadfast,Inner Focus,Justified,70,110,70,115,70,90,Level 30,Stage 1,TRUE
-448,Mega Lucario,Fighting/Steel,mega,Adaptability,,,70,145,88,140,70,112,Lucarionite,Stage 1,TRUE
-238,Smoochum,Ice/Psychic,base,Oblivious,Forewarn,Hydration,45,30,15,85,65,65,,,TRUE
-124,Jynx,Ice/Psychic,evo,Oblivious,Forewarn,Dry Skin,65,50,35,115,95,95,Level 30,,TRUE
 175,Togepi,Fairy,base,Hustle,Serene Grace,Super Luck,35,20,65,40,65,20,,,TRUE
 176,Togetic,Fairy/Flying,evo,Hustle,Serene Grace,Super Luck,55,40,85,80,105,40,Level 20,,TRUE
 468,Togekiss,Fairy/Flying,evo,Hustle,Serene Grace,Super Luck,85,50,95,120,115,80,Shiny Stone,,TRUE
-848,Toxel,Electric/Poison,base,Rattled,Static,Klutz,40,38,35,54,35,40,,,TRUE
-849,Toxtricity-Amped,Electric/Poison,evo,Punk Rock,Plus,Technician,75,98,70,114,70,75,Level 30,,TRUE
-849,Toxtricity-Low_Key,Electric/Poison,evo,Punk Rock,Minus,Technician,75,98,70,114,70,75,Level 30,,TRUE
-236,Tyrogue,Fighting,base,Guts,Steadfast,Vital Spirit,35,35,35,35,35,35,,,TRUE
-106,Hitmonlee,Fighting,evo,Limber,Reckless,Unburden,50,120,53,35,110,87,Level 20,,TRUE
-107,Hitmonchan,Fighting,evo,Keen Eye,Iron Fist,Inner Focus,50,105,79,35,110,76,Level 20,,TRUE
-237,Hitmontop,Fighting,evo,Intimidate,Technician,Steadfast,50,95,95,35,110,70,Level 20,,TRUE
-360,Wynaut,Psychic,base,Shadow Tag,,Telepathy,95,23,48,23,48,23,,,TRUE
-202,Wobbuffet,Psychic,evo,Shadow Tag,,Telepathy,190,33,58,33,58,33,Level 20,,TRUE
 133,Eevee,Normal,base,Run Away,Adaptability,Anticipation,55,55,50,45,65,55,,,TRUE
 134,Vaporeon,Water,evo,Water Absorb,,Hydration,130,65,60,110,95,65,Water Stone,,TRUE
 135,Jolteon,Electric,evo,Volt Absorb,,Quick Feet,65,65,60,110,95,130,Thunder Stone,,TRUE

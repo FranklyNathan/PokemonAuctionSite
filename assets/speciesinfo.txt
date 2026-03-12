@@ -308,6 +308,26 @@ Key Moves:
    Ice Spinner (44)
    Icicle Crash (Egg)
 
+Charcadet
+Key Moves:
+   Fire Spin (12)
+   Will-O-Wisp (16)
+   Flame Charge (24)
+   Incinerate (28)
+   Overheat (TM)
+   Psyshock (Evo.*)
+   Mystical Fire (MR*)
+   Calm Mind (37/TM*)
+   Flamethrower (48/TM*)
+   Armor Cannon (MR!*)
+   Shadow Claw (Evo.**)
+   Night Slash (MR**)
+   Bulk Up (TM**)
+   Bitter Blade (48**)
+   Psycho Cut (56**)
+   Shadow Ball (TM)
+   Destiny Bond (Egg)
+
 Charmander
 Key Moves:
   Ember (7)
@@ -466,6 +486,17 @@ Key Moves:
    Swords Dance (37)
    Crunch (43)
    Dragon Dance (Egg)
+
+Cottonee
+Key Moves:
+   Leech Seed (8)
+   Stun Spore (10)
+   Mega Drain (13)
+   Giga Drain (26)
+   Charm (28)
+   Hurricane (46)
+   Moonblast (50)
+   Encore (Egg)
 
 Corsola
 Key Moves:
@@ -750,6 +781,18 @@ Key Moves:
    No Retreat (40)
    Close Combat (50)
    Megahorn (55)
+
+Farfetch'd
+Key Moves:
+   Fury Cutter (10)
+   Rock Smash (15)
+   Brutal Swing (20)
+   Detect (25)
+   Knock Off (30)
+   Brick Break (TM/40)
+   Leaf Blade (55)
+   Brave Bird (MR!)
+   Sky Attack (Egg)
 
 Feebas
 Key Moves:
@@ -1445,6 +1488,20 @@ Key Moves:
    Power Gem (38)
    Explosion (MT)
 
+Misdreavus
+Key Moves:
+   Psywave (1)
+   Hex (23)
+   Psybeam (28)
+   Dazzling Gleam (TM)
+   Psychic (TM)
+   Shadow Ball (TM)
+   Thunderbolt (TM)
+   Mystical Fire (MR)
+   Power Gem (MR)
+   Calm Mind (TM)
+   Ominous Wind (Egg)
+
 Morelull
 Key Moves:
    Moonlight (11)
@@ -1518,6 +1575,17 @@ Key Moves:
    X-Scissor (47*/TM)
    Shadow Ball (33**)
    Night Slash (Egg)
+
+Nickit
+Key Moves:
+   Assurance (8)
+   Snarl (12)
+   Taunt (TM)
+   Hone Claws (16)
+   Sucker Punch (28)
+   Night Slash (34)
+   Parting Shot (52)
+   Knock Off (Egg)
 
 Noibat
 Key Moves:
@@ -1649,6 +1717,7 @@ Key Moves:
    Bulldoze (15)
    Knock Off (MR)
    Rapid Spin (MR)
+   Rock Slide (TM)
    Earthquake (43/TM)
    Ice Shard (Egg)
 
@@ -1777,6 +1846,17 @@ Key Moves:
    Discharge (40)
    Tri-Attack (50)
    Nasty Plot (MR)
+
+Purrloin
+Key Moves:
+   Pursuit (15)
+   Fake Out (21)
+   Hone Claws (Evo.)
+   Snarl (TM)
+   Assurance (31)
+   Night Slash (43)
+   Play Rough (58)
+   Encore (Egg)
 
 Ralts
 Key Moves:
@@ -2789,6 +2869,17 @@ Key Moves:
    Blizzard (TM)
    Calm Mind (TM)
    Freeze Dry (Egg/MR)
+
+Wailmer
+Key Moves:
+   Water Gun (7)
+   Water Pulse (19)
+   Ice Beam (TM)
+   Surf (HM)
+   Waterfall (HM)
+   Water Spout (33)
+   Heavy Slam (MR!)
+   Body Slam (Egg)
 
 Wattrel
 Key Moves:

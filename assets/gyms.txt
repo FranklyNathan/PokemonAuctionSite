@@ -3359,7 +3359,7 @@ Ability: Commander
 - Splash
 
 === TRAINER_JUAN_2 ===
-Name: JUAN
+Name: JUAN&WALCE
 Class: Leader
 Pic: Leader Juan
 Gender: Male
@@ -3389,7 +3389,7 @@ Ability: Commander
 - Splash
 
 === TRAINER_JUAN_3 ===
-Name: JUAN
+Name: JUAN&WALCE
 Class: Leader
 Pic: Leader Juan
 Gender: Male
@@ -3439,7 +3439,7 @@ Ability: Commander
 - Feint Attack
 
 === TRAINER_JUAN_4 ===
-Name: JUAN
+Name: JUAN&WALCE
 Class: Leader
 Pic: Leader Juan
 Gender: Male
@@ -3489,7 +3489,7 @@ Ability: Commander
 - Feint Attack
 
 === TRAINER_JUAN_5 ===
-Name: JUAN
+Name: JUAN&WALCE
 Class: Leader
 Pic: Leader Juan
 Gender: Male
@@ -4443,7 +4443,7 @@ Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Sturdy
-- Tri Attack
+- Flash Cannon
 - Light Screen
 - Discharge
 - Thunder Wave
@@ -4454,7 +4454,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Serious
 Ability: Rough Skin
 - Dragon Claw
-- Dig
+- Earthquake
 - Flamethrower
 - Sandstorm
 

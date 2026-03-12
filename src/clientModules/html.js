@@ -576,7 +576,7 @@ export const specialMechanics = {
   "Plusle and Minun": `Tip: Two is better than One!
 \nA two-for-one special! Plusle and Minun appear as one unit to be purchased together. In game, you can't pick one from the notebook without being given the other.`,
   Egg: `Tip: Baby Pokemon
-\nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Pichu, Cleffa, Igglybuff, Smoochum, Tyrogue, Elekid, Magby, Azurill, Wynaut, Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke and Toxel.
+\nAn egg can hatch into any baby Pokemon. The full list of babies includes Togepi, Cleffa, Igglybuff, and Azurill.
 \nThe steps required to hatch an egg have been greatly reduced. You can hatch eggs in your room before the run begins.`,
   Eevee: `Tip: The most important Pokemon of all!
 \nEevee is Emerald Blitz's starter Pokemon, available to all players from the beginning of the game.
@@ -585,8 +585,6 @@ export const specialMechanics = {
 };
 
 const dangerPokemon = [
-  "Absol", "Falinks", "Hawlucha", "Klawf", "Miltank", "Stonjourner", "Turtonator", "Stantler",
-  "Bombirdier", "Rotom", "Sneasel", "Minior", "Scyther", "Applin", "Slakoth"
 ];
 
 /**

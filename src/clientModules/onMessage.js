@@ -7,7 +7,6 @@ import {
   removeSelectingIndicator,
   hideSelectedPlayerCard,
   updateSelectedPlayerCard,
-  jiggleCurrentBid,
   clearHighestBidder,
   resetTimerTime,
   toast,
@@ -20,6 +19,7 @@ import {
   updateTeamCard,
   updateDraftCounter,
   calculateAveragePrice,
+  jiggleCurrentBid,
 } from './html.js';
 
 /*

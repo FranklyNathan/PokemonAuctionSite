@@ -1,0 +1,168 @@
+3/1/2026
+
+-----------------------------------------------
+Reworked Mechanic: Eggs
+-----------------------------------------------
+
+The egg pool now includes only Cleffa, Igglybuff, Togepi, and Azurill
+
+//I see the pros and cons of eggs as follows:
+Pros:
+• They're silly and fun
+• They allow for the thrill of hatching something strong
+• They give the auction a twist and help to keep things fresh
+Cons:
+• They're impossible to team plan around. Because of this, there's little strategy involved
+• Several Pokémon that would be fun to play with more often are locked behind a 1/19 gamble
+• The pool is currently underrepresenting electric types, some of which are locked in the egg
+
+//This change attempts to remedy the cons without removing the pros. By making the pool exclusively fairies, they're now easier to plan around, and the other babies are directly draftable.
+
+There's now only one egg in the draft.
+Bombirdier's egg pool is also limited to just these four Fairy Pokémon.
+
+
+-----------------------------------------------
+New Mechanic: Slateport Black Market
+-----------------------------------------------
+
+A shady salesman has set up shop in the top left of the Slateport Market.
+
+For the price of $6000, he'll offer to let you rent one of his Pokémon. Once rented, you can use it for the next gym before returning it. You can rent one Pokemon at a time.
+
+After renting, when you re-enter the market with a new badge, the salesman teleports to you and reclaims your rented Pokemon. If the rented Pokémon is fainted, he scolds you thoroughly and charges you an additional $6000 for being so careless.
+
+...Still, even if it's fainted, returning the rental Pokémon is the right thing to do. I shudder to think what would happen if you attempted to steal it.
+
+
+The following Pokémon are in the rental pool:
+Absol
+Drampa
+Falinks
+Hawlucha
+Heracross
+Kangaskhan
+Pinsir
+Skarmory
+
+Bombirdier
+Bouffalant
+Carnivine
+Comfey
+Cryogonal
+Dhelmise
+Durant
+Heatmor
+Lapras
+Miltank
+Mimikyu
+Relicanth
+Seviper
+Stonjourner
+Togedemaru
+Torkoal
+Tropius
+Turtonator
+Zangoose
+
+The Fine Print:
+-Once renter NPC chooses a Pokémon to offer to you, he'll continue to offer that same Pokémon until you rent it (it doesn't randomize each time you speak to him).
+-You can no longer rent Pokémon after obtaining the 7th badge.
+-Mega Stones for the eight Pokémon in the pool who can mega evolve are available for purchase in Slateport's outdoor market after you obtain the 6th gym badge.
+-Stealing a Pokémon effectively locks you out of the Slateport outdoor market, as renter NPC will reclaim his Pokémon on entrance. Because of this, doing so by renting at the latest possible point costs $28,250 (the cost of the rental plus the prize money you're no longer able to spend on anything but berries).
+
+
+-----------------------------------------------
+Balance Changes
+-----------------------------------------------
+
+Obedience Removed
+//Nothing to see here
+
+All Evolution Item costs changed to 1000 (Fire Stone, King's Rock, etc.)
+//Needing to keep in mind how "expensive" each Pokémon is in-game is an interesting wrinkle to the draft, but Ability Patches and TMs are enough without also needing to spend so much money just to evolve.
+
+Wally Magnezone Tri-Attack > Flash Cannon
+Wally Garchomp Dig > Earthquake
+//Early feedback has been that Wally is significantly easier than Steven. These are the obvious adjustments--we'll start here and reassess later.
+
+Pokémon boosted by Commander cannot land critical hits
+//A nerf to prevent early Dondozo from scoring a critical hit to one-shot your Eevee through Baby-Doll Eyes. Tatsugiri's Commander boost now restricts the boosted Pokémon from ever critting.
+
+Mega Chesnaught / Delphox / Greninja Mega Abilities updated to Bulletproof / Levitate / Protean
+//Per the new Champions trailer
+
+
+-----------------------------------------------
+TM Changes
+-----------------------------------------------
+
+Rock Slide TM Added (cost: 3000)
+//*Viola shudders*
+//I don't like expanding the TM pool because doing so homogenizes Pokémon (all of the Surf/IceBeam Water types begin to blend together). That said, Rock Slide is a tutor move in Emerald, Rock is the one of just two types without a purchasable TM, and physical attackers have a decidedly weaker pool than special attackers, so here it is. Did you know that Mantyke can learn this move? I knew he was up to no good!
+//Replaces the Hidden Power TM, a TM that was inaccessible.
+
+All Weather TMs now cost 2000
+//Pushes back Hail and Sandstorm until after gym 4. These TMs aren't available until this later point in vanilla Emerald anyway.
+//Even if some are stronger than others, it feels cleaner to have them all at the same cost and available at the same threshold.
+
+
+-----------------------------------------------
+QoL Changes & Bugfix
+-----------------------------------------------
+
+In-Game Timer now displays seconds
+//Whenever the player's in-game time is printed (on the trainer card, while saving, or on the Hall of Fame screen), it now displays with seconds.
+
+Juan&Wallace can no longer switch out Dondozo or Whiscash
+//Preventing bugs during which the catfish swap out while a Tatsugiri is inside of them. Spam Charm until the cows come home.
+
+Added Mega Evolution Sprites for Excadrill, Froslass and Eelektrik
+//Thanks to GRAFAIAIMX for posting these for public use
+
+Added a new Portable PC sprite
+//Thanks to Zarha for continuing to cook
+
+Added an De-Eeveelution NPC
+//The woman wearing yellow in the Slateport Market can now devolve your Eevee if you talk to her with exactly four badges and an Eeveelution in your party. Any evolution-specific moves are forgotten, and she pays you back the price of your stone. As she will tell you in her dialogue, she's only to be used if you're in a race and accidentally evolved your Eevee into an Eeveelution that's already been claimed.
+//Again, this NPC is not intended for regular use. She's here as we prepare for competitive races so that referees can solve disputes or mistakes mid-race if necessary.
+
+
+-----------------------------------------------
+Pool Removals
+-----------------------------------------------
+
+Absol
+Bombirdier
+Falinks
+Hawlucha
+Klawf
+Miltank
+Stonjourner
+Turtonator
+
+
+-----------------------------------------------
+Pool Additions
+-----------------------------------------------
+
+Charcadet (Evolves with Dawn and Dusk Stone)
+Cottonee
+Farfetch'd Galar (Evolves at 28)
+Misdreavus
+Nickit
+Phanpy
+Purrloin
+Wailmer
+
+Bonsly
+Budew
+Chingling
+Elekid
+Magby
+Mantyke
+Mime Jr.
+Munchlax
+Pichu
+Riolu
+Tyrogue
