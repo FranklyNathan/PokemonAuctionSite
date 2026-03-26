@@ -183,13 +183,12 @@
     <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
     <!-- <div class="welcome-terminal"><span id="welcome-text"></span><span id="welcome-caret" aria-hidden="true">█</span></div> -->
     <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-      <sl-button id="download-patch-button" class="main-button" size="large" variant="primary">Download Patch</sl-button>
-      <div style="text-align: center;">
-        <p style="version-info">Current Release: v8.31</p>
-        <p style="margin: 0.5rem 0 0 0; max-width: 30rem;">
-          Once downloaded, apply the patch online using this <a href="https://www.marcrobledo.com/RomPatcher.js/" target="_blank" rel="noopener noreferrer" style="color: var(--sl-color-primary-500);">ROM Patcher</a>
-        </p>
-      </div>
+      <sl-button href="https://emeraldblitz.com/" target="_blank" class="main-button" size="large" variant="primary" style="width: auto; height: auto; padding: 1rem;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; white-space: normal; text-align: center;">
+          <span style="font-size: 1.5rem; font-weight: bold;">Hey, you! Emerald Blitz has a new website, and it rules! Check it out here!</span>
+          <span style="font-size: 1.2rem;">https://emeraldblitz.com/</span>
+        </div>
+      </sl-button>
     </div>
     </div>
 
@@ -266,17 +265,6 @@
         applyTheme(newTheme);
       });
       // --- End Dark Mode Logic ---
-
-      const downloadPatch = () => {
-        const link = document.createElement('a');
-        link.href = '/emeraldblitz.bps';
-        link.download = 'emeraldblitz.bps';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
-
-      document.getElementById('download-patch-button').addEventListener('click', downloadPatch);
 
       // GitHub button listener
       document.getElementById('github-button').addEventListener('click', () => {
